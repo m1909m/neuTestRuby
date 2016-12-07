@@ -13,3 +13,10 @@ module NeuTestRuby
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+config.generators do |g|
+  g.fixture_replacement :factory_girl
+  g.view_specs false
+  g.controller_specs false
+  g.helper_specs false
+end
