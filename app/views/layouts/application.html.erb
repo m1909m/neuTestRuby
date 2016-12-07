@@ -35,51 +35,63 @@
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
     <![endif]-->
-  </head>
-  <body>
+  </head><body class ="container-fluid">
+  <div class="row">
+    <div class="container col-sm-8 col-md-9">
+      <header>
 
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">NeuTestRuby</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+        <%= render 'layouts/headerLogo' %>
+      </header>
+
+      <div class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" style="border-bottom: 5px solid #f46720; width: 100%;">
+            <li><a href="#">Aktuelles</a></li>
+            <li><a href="#">Verband</a></li>
+            <li><a href="#">Mitgliedschaft</a></li>
+            <li><a href="#">Fortbildung</a></li>
+            <li><a href="#">Shop / Arbeithilfen</a></li>
           </ul>
         </div>
       </div>
     </div>
+    <main role="main" class="container-fluid">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </main>
+    <div class="topSize col-sm-4 col-md-3">
+      <nav id="navbar-right" class="nav" style="margin-top:15px;">
+        <form class="navbar-form" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Suchen" style="float: left;width: 80%;">
+            <button type="submit" class="btn btn-default" style="width: 20%;">Los</button>
+          </div>
+        </form>
+        <ul class="nav">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Zugangsbereich</a></li>
+          <li><a href="#">Download</a></li>
+          <li><a href="#">ARK-RWL</a></li>
+          <li><a href="#">ARK-DD</a></li>
+        </ul>
 
-      <footer>
-        <p>&copy; Company 2016</p>
-      </footer>
+      </nav>
+    </div>
+    <!--
+      <footer class="footer col-md-9">
 
-    </div> <!-- /container -->
-
+      </footer> -->
+  </div>
   </body>
 </html>

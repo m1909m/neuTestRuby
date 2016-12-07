@@ -17,6 +17,7 @@
 // Font Awesome
 @import "fontawesome/font-awesome";
 
+
 // Glyphicons
 //@import "twitter/bootstrap/glyphicons.less";
 
@@ -30,3 +31,74 @@
 //
 // Example:
 // @link-color: #ff0000;
+
+#navbar-right {
+  background-color: #feecde;
+  border: 1px solid black;
+  padding: 15px;
+
+}
+
+#navbar-right ul li {
+  border-top: 5px solid #f46720;
+  padding-left: 5px;
+}
+
+#navbar-right ul li a {
+  color: black;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border: 0px;
+}
+
+
+
+.container-fluid h1 {
+  color: #c2c3c1;
+}
+
+.thumbnail {
+  -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.5);
+  background-color: #f4f4f3;
+  min-width: 200px;
+  width: auto;
+  max-width: 300px;
+  margin: 5px;
+}
+.thumbnail:hover {
+  -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.5);
+  background-color: #f4f4f3;
+  min-width: 200px;
+  width: auto;
+  max-width: 300px;
+  margin: 5px;
+}
+
+.caption h3 {
+  font-size: 1.1em;
+}
+
+.caption p {
+  font-size: 0.8em;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .topSize {
+    margin-top: 150px;
+  }
+
+  .navbar-default ul li {
+    width: 20%;
+    text-align: center;
+  }
+
+}
