@@ -19,5 +19,3 @@ module NeuTestRuby
     end
   end
 end
-
-test
