@@ -62,7 +62,7 @@ class NewslettersController < ApplicationController
     end
   end
 
-  def send
+  def sendNewsletter
     NewsMailer.news_email(Newsletter.last).deliver
   end
 
