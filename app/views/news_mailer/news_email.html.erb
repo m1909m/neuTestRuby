@@ -8,6 +8,6 @@
 <%=raw @newsletter.newsBody %>
 
 <footer><%=raw @newsletter.newsFooter %></footer>
-<%= link_to 'Newsletter abmelden', '/abo_newsletter/:email' %>
+<%= link_to 'Newsletter abmelden', '/abo_newsletter/' + @aboNewsletters.eMail %>
 </body>
 </html>
