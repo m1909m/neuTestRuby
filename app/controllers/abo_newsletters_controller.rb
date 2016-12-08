@@ -56,8 +56,23 @@ class AboNewslettersController < ApplicationController
   def destroy
     @abo_newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to abo_newsletters_url, notice: 'Abo newsletter was successfully destroyed.' }
+      format.html { redirect_to @abo_newsletters_url, notice: 'Abo newsletter was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # Get /abo_newsletter/email/signOut
+  def signOutNews
+    @abo_newsletter = AboNewsletter.find(params[:email])
+    @abo_newsletter.enable = false
+    respond_to do |format|
+      if @abo_newsletter.save
+        format.html { redirect_to @abo_newsletter, notice: 'Abo fürs Newsletter wurde erfolgreich abgemeldet.' }
+        format.json { render :signOutNews, status: :created, location: @abo_newsletter }
+      else
+        format.html { render :new }
+        format.json { render json: @abo_newsletter.errors, status: :unprocessable_entity }
+      end
     end
   end
 
