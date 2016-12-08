@@ -1,3 +1,4 @@
+<%= tinymce_assets %>
 <%= form_for(newsletter) do |f| %>
   <% if newsletter.errors.any? %>
     <div id="error_explanation">
@@ -15,12 +16,12 @@
     <%= f.label :from %>
     <%= f.text_field :from %>
   </div>
-
-  <div class="field">
-    <%= f.label :to %>
-    <%= f.text_field :to %>
-  </div>
 <!--
+  <div class="field">
+    <#%= f.label :to %>
+    <#%= f.text_field :to %>
+  </div>
+
   <div class="field">
     <%#= f.label :type %>
     <%#= f.text_field :type %>
@@ -28,17 +29,17 @@
 
   <div class="field">
     <%= f.label :newsHeader %>
-    <%= f.text_area :newsHeader %>
+    <%= f.text_area :newsHeader, class: "tinymce" %>
   </div>
 
   <div class="field">
     <%= f.label :newsBody %>
-    <%= f.text_area :newsBody %>
+    <%= f.text_area :newsBody, class: "tinymce" %>
   </div>
 
   <div class="field">
     <%= f.label :newsFooter %>
-    <%= f.text_area :newsFooter %>
+    <%= f.text_area :newsFooter, class: "tinymce" %>
   </div>
 
   <div class="field">
@@ -50,3 +51,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+<%= tinymce %>
