@@ -69,6 +69,6 @@ class AboNewslettersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def abo_newsletter_params
-      params.require(:abo_newsletter).permit(:eMail, :enable, :newsletter_id)
+      params.require(:abo_newsletter).permit(:eMail, :enable)
     end
 end
