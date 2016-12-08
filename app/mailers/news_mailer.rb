@@ -1,4 +1,4 @@
-class NewsMailer < ActionMMailer::Base
+class NewsMailer < ActionMailer::Base
   def news_email(newsletter)
     @aboNewsletter = AboNewsletter.all
     @newsletter = newsletter
