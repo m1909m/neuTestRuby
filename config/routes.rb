@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get 'current/index'
   root :to => "current#index"
 
-  get '/abo_newsletter/:email', to: "AboNewsletters#signOutNews"
+  get '/abo_newsletter/:email', to: "abonewsletters#signOutNews"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
