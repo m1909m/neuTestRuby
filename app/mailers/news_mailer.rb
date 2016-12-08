@@ -6,7 +6,8 @@ class NewsMailer < ActionMailer::Base
 
       if(@aboNewsletters.enable == true)
         @email = @aboNewsletters.eMail
-        @url = "http://vkm.marianit.de/abo_newsletter/" + @aboNewsletters.id
+        @id = @aboNewsletters.id
+        @url = "http://vkm.marianit.de/abo_newsletter/" + String(@id)
         mail :to=> @email,
              :subject=> "News-Mail"
       end
