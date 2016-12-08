@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208102508) do
+ActiveRecord::Schema.define(version: 20161208120034) do
+
+  create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "eMail"
+    t.boolean  "enable"
+    t.integer  "newsletter_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["newsletter_id"], name: "index_abo_newsletters_on_newsletter_id", using: :btree
+  end
 
   create_table "newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "from"
@@ -24,4 +33,5 @@ ActiveRecord::Schema.define(version: 20161208102508) do
     t.datetime "updated_at",               null: false
   end
 
+  add_foreign_key "abo_newsletters", "newsletters"
 end
