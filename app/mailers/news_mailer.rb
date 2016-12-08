@@ -6,8 +6,8 @@ class NewsMailer < ActionMMailer::Base
     @aboNewsletter.each do |aboNewsletter|
       if(aboNewsletter.enable == true)
         @email = aboNewsletter.eMail
-        mail (to: @email,
-          subject: "News-Mail")
+        mail to: @email,
+          subject: "News-Mail"
       end
     end
 
