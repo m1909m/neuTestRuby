@@ -1,0 +1,1 @@
+json.partial! "abo_newsletters/abo_newsletter", abo_newsletter: @abo_newsletter

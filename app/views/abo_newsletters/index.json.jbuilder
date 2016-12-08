@@ -1,0 +1,1 @@
+json.array! @abo_newsletters, partial: 'abo_newsletters/abo_newsletter', as: :abo_newsletter
