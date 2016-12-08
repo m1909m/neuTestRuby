@@ -19,6 +19,7 @@ class NewslettersController < ApplicationController
 
   # GET /newsletters/1/edit
   def edit
+    @newsletter = Newsletter.find(params[:id])
   end
 
   # POST /newsletters
