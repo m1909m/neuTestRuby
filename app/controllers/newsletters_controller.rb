@@ -29,9 +29,12 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
+        @aboNewsletters = AboNewsletter.all
+        @aboNewsletters.each do |aboNewsletter|
+          @abo_newsletter = aboNewsletter
+          NewsMailer.news_email(Newsletter.last, @abo_newsletter).deliver
 
-        NewsMailer.news_email(Newsletter.last).deliver
-
+        end
         format.html { redirect_to @newsletter, notice: 'Newsletter was successfully created.' }
         format.json { render :show, status: :created, location: @newsletter }
       else
