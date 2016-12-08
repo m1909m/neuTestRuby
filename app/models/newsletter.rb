@@ -1,6 +1,6 @@
 class Newsletter < ApplicationRecord
-  has_many :abo_newsletters
+  #has_many :abo_newsletters
   #Prüfung auf vorhandensein
-  validates :from, :to, :type, :newsHeader, :newsBody, :newsFooter, presence: true
+  validates :from, :to, :newsHeader, :newsBody, :newsFooter, presence: true
 
 end
