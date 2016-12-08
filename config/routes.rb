@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :newsletters
   get 'current/index'
   root :to => "current#index"
 

@@ -1,0 +1,52 @@
+<%= form_for(newsletter) do |f| %>
+  <% if newsletter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(newsletter.errors.count, "error") %> prohibited this newsletter from being saved:</h2>
+
+      <ul>
+      <% newsletter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :from %>
+    <%= f.text_field :from %>
+  </div>
+
+  <div class="field">
+    <%= f.label :to %>
+    <%= f.text_field :to %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.text_field :type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :newsHeader %>
+    <%= f.text_area :newsHeader %>
+  </div>
+
+  <div class="field">
+    <%= f.label :newsBody %>
+    <%= f.text_area :newsBody %>
+  </div>
+
+  <div class="field">
+    <%= f.label :newsFooter %>
+    <%= f.text_area :newsFooter %>
+  </div>
+
+  <div class="field">
+    <%= f.label :appendix %>
+    <%= f.text_area :appendix %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
