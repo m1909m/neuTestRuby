@@ -5,9 +5,11 @@ class NewsMailer < ActionMailer::Base
     @newsletter = newsletter
 
       if(@aboNewsletters.enable == true)
+        @fromV = @newsletter.from
         @email = @aboNewsletters.eMail
-        mail :to=> @email,
-          :subject=> "News-Mail"
+        mail :from=> @fromV,
+             :to=> @email,
+             :subject=> "News-Mail"
       end
 
 
