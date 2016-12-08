@@ -29,7 +29,6 @@ development:
   encoding: utf8
   reconnect: false
   dataabase: vkmDB
-  pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: admin
+  host: localhost
