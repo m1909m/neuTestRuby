@@ -2,12 +2,10 @@
 
 <h1>Newsletters</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>From</th>
-      <th>To</th>
-      <th>Type</th>
       <th>Newsheader</th>
       <th>Newsbody</th>
       <th>Newsfooter</th>
@@ -20,7 +18,6 @@
     <% @newsletters.each do |newsletter| %>
       <tr>
         <td><%= newsletter.from %></td>
-        <td><%= newsletter.type %></td>
         <td><%= newsletter.newsHeader %></td>
         <td><%= newsletter.newsBody %></td>
         <td><%= newsletter.newsFooter %></td>
