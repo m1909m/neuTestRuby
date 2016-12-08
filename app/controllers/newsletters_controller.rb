@@ -35,7 +35,7 @@ class NewslettersController < ApplicationController
           NewsMailer.news_email(Newsletter.last, @abo_newsletter).deliver
 
         end
-        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully created.' }
+        format.html { redirect_to @newsletter, notice: 'Newsletter wurde erfolgreich erstellt.' }
         format.json { render :show, status: :created, location: @newsletter }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class NewslettersController < ApplicationController
   def update
     respond_to do |format|
       if @newsletter.update(newsletter_params)
-        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully updated.' }
+        format.html { redirect_to @newsletter, notice: 'Newsletter wurde erfolgreich geändert' }
         format.json { render :show, status: :ok, location: @newsletter }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class NewslettersController < ApplicationController
   def destroy
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to newsletters_url, notice: 'Newsletter was successfully destroyed.' }
+      format.html { redirect_to newsletters_url, notice: 'Newsletter wurde erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end

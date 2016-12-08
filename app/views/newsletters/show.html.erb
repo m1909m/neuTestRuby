@@ -4,17 +4,17 @@
   <strong>From:</strong>
   <%= @newsletter.from %>
 </p>
-
+<!--
 <p>
   <strong>To:</strong>
-  <%= @newsletter.to %>
+  <%#= @newsletter.to %>
 </p>
 
 <p>
   <strong>Type:</strong>
-  <%= @newsletter.type %>
+  <%#= @newsletter.type %>
 </p>
-
+-->
 <p>
   <strong>Newsheader:</strong>
   <%= @newsletter.newsHeader %>
@@ -29,11 +29,11 @@
   <strong>Newsfooter:</strong>
   <%= @newsletter.newsFooter %>
 </p>
-
+<!--
 <p>
   <strong>Appendix:</strong>
-  <%= @newsletter.appendix %>
-</p>
+  <%#= @newsletter.appendix %>
+</p> -->
 
-<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-<%= link_to 'Back', newsletters_path %>
+<%= link_to 'Bearbeiten', edit_newsletter_path(@newsletter) %> |
+<%= link_to 'Zurück', newsletters_path %>
