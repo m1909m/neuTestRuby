@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Newsletters</h1>
-
+<% if current_user.present? %>
 <table class="table">
   <thead>
     <tr>
@@ -31,3 +31,9 @@
 <br>
 
 <%= link_to 'Neuer Newsletter erstellen', new_newsletter_path %>
+
+<% else %>
+<%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newsletter_path %>
+<% end %>
+
+

@@ -15,5 +15,7 @@
   <#%= @abo_newsletter.newsletter %>
 </p>
 -->
+<% if current_user.present? %>
 <%= link_to 'Bearbeiten', edit_abo_newsletter_path(@abo_newsletter) %> |
 <%= link_to 'Zurück', abo_newsletters_path %>
+<% end %>
