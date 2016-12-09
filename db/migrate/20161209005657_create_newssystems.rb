@@ -4,7 +4,6 @@ class CreateNewssystems < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :subTitle
       t.text :story
-      t.createNews :date
 
       t.timestamps
     end
