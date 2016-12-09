@@ -25,8 +25,9 @@ class NewssystemsController < ApplicationController
   # POST /newssystems.json
   def create
     @newssystem = Newssystem.new(newssystem_params)
-
+    @newssystem.createNews = Date.today
     respond_to do |format|
+
       if @newssystem.save
         format.html { redirect_to @newssystem, notice: 'Newssystem was successfully created.' }
         format.json { render :show, status: :created, location: @newssystem }

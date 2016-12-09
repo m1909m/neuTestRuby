@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Newssystems</h1>
-
+<h1>Aktuelles</h1>
+<!--
 <table>
   <thead>
     <tr>
@@ -12,20 +12,44 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @newssystems.each do |newssystem| %>
+  <tbody> -->
+  <% @color = true %>
+    <% @newssystems.each do |newssystem|
+        if(@color == true)
+          @color = false;%>
+
+      <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
+        <div class="caption">
+          <h3><%= newssystem.createNews %><br><%= newssystem.title %></h3>
+          <p><%= newssystem.story %><</p>
+          <%= link_to 'weiterlesen', newssystem, :style => 'float: right;color: #f4bfa5;'%>
+
+        </div>
+      </div>
+        <% endif(@color == false)
+          @color = true%>
+        <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
+          <div class="caption">
+            <h3><%= newssystem.createNews %><br><%= newssystem.title %></h3>
+            <p><%= newssystem.story %><</p>
+            <%= link_to 'weiterlesen', newssystem, :style => 'float: right;color: #f4bfa5;'%>
+
+          </div>
+        </div>
+        <% end %>
+        <!--
       <tr>
-        <td><%= newssystem.title %></td>
-        <td><%= newssystem.subTitle %></td>
-        <td><%= newssystem.story %></td>
-        <td><%= link_to 'Show', newssystem %></td>
-        <td><%= link_to 'Edit', edit_newssystem_path(newssystem) %></td>
-        <td><%= link_to 'Destroy', newssystem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%#= newssystem.title %></td>
+        <td><%#= newssystem.subTitle %></td>
+        <td><%#= newssystem.story %></td>
+        <td><%#= link_to 'Show', newssystem %></td>
+        <td><%#= link_to 'Edit', edit_newssystem_path(newssystem) %></td>
+        <td><%#= link_to 'Destroy', newssystem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>-->
     <% end %>
-  </tbody>
-</table>
+ <!-- </tbody>
+</table> -->
 
 <br>
 
-<%= link_to 'New Newssystem', new_newssystem_path %>
+<%= link_to 'Neue News erstellen', new_newssystem_path %>
