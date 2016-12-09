@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :newssystems
   resources :abo_newsletters
   resources :newsletters
   get 'current/index'

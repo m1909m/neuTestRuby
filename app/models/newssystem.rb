@@ -1,0 +1,2 @@
+class Newssystem < ApplicationRecord
+end

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Newssystems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Story</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newssystems.each do |newssystem| %>
+      <tr>
+        <td><%= newssystem.title %></td>
+        <td><%= newssystem.subTitle %></td>
+        <td><%= newssystem.story %></td>
+        <td><%= link_to 'Show', newssystem %></td>
+        <td><%= link_to 'Edit', edit_newssystem_path(newssystem) %></td>
+        <td><%= link_to 'Destroy', newssystem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newssystem', new_newssystem_path %>

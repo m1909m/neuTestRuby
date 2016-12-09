@@ -257,3 +257,1629 @@ app/controllers/newsletters_controller.rb:68:in `set_newsletter'
   Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.7ms)
   Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (169.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('564057786633393990', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('564057786633393990')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `abo_newsletters`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'abo_newsletters'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `newsletters`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newsletters'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'abo_newsletters'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newsletters'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('564057786633393990', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('564057786633393990')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `abo_newsletters`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'abo_newsletters'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `newsletters`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newsletters'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'abo_newsletters'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newsletters'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-12-08 16:54:40 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 3274ms (Views: 3201.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/abo_newsletters" for 127.0.0.1 at 2016-12-08 16:54:55 +0100
+Processing by AboNewslettersController#index as HTML
+  Rendering abo_newsletters/index.html.erb within layouts/application
+  [1m[36mAboNewsletter Load (0.9ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendered abo_newsletters/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 256ms (Views: 239.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/abo_newsletters/new" for 127.0.0.1 at 2016-12-08 16:55:02 +0100
+Processing by AboNewslettersController#new as HTML
+  Rendering abo_newsletters/new.html.erb within layouts/application
+  Rendered abo_newsletters/_form.html.erb (2443.0ms)
+  Rendered abo_newsletters/new.html.erb within layouts/application (2447.1ms)
+  Rendered layouts/_headerLogo.html.erb (0.8ms)
+Completed 200 OK in 3111ms (Views: 3003.1ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/abo_newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:55:06 +0100
+Processing by AboNewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mAboNewsletter Load (3.0ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 42ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find AboNewsletter with 'id'=logo_h):
+  
+app/controllers/abo_newsletters_controller.rb:67:in `set_abo_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.9ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (156.2ms)
+Started POST "/abo_newsletters" for 127.0.0.1 at 2016-12-08 16:55:17 +0100
+Processing by AboNewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"elmyKc2ZzxDe4Q5Ex4k62iOT/ddiF7LkX5fMtNoTOY3GdIN2nySEnoTEuVZC201a/lHJewgmab7U6uIyTFelEw==", "abo_newsletter"=>{"eMail"=>"m-vennewald@web.de", "enable"=>"1"}, "commit"=>"Create Abo newsletter"}
+  [1m[35m (14.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO `abo_newsletters` (`eMail`, `enable`, `created_at`, `updated_at`) VALUES ('m-vennewald@web.de', 1, '2016-12-08 15:55:17', '2016-12-08 15:55:17')[0m
+  [1m[35m (19.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/abo_newsletters/1
+Completed 302 Found in 72ms (ActiveRecord: 43.6ms)
+
+
+Started GET "/abo_newsletters/1" for 127.0.0.1 at 2016-12-08 16:55:18 +0100
+Processing by AboNewslettersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAboNewsletter Load (3.9ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 1 LIMIT 1[0m
+  Rendering abo_newsletters/show.html.erb within layouts/application
+  Rendered abo_newsletters/show.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_headerLogo.html.erb (1.1ms)
+Completed 200 OK in 444ms (Views: 429.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/abo_newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:55:19 +0100
+Processing by AboNewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mAboNewsletter Load (1.8ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 12ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find AboNewsletter with 'id'=logo_h):
+  
+app/controllers/abo_newsletters_controller.rb:67:in `set_abo_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (34.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (291.8ms)
+Started GET "/abo_newsletters/1" for 127.0.0.1 at 2016-12-08 16:55:24 +0100
+Processing by AboNewslettersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAboNewsletter Load (2.1ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 1 LIMIT 1[0m
+  Rendering abo_newsletters/show.html.erb within layouts/application
+  Rendered abo_newsletters/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_headerLogo.html.erb (0.5ms)
+Completed 200 OK in 439ms (Views: 428.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/abo_newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:55:25 +0100
+Processing by AboNewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mAboNewsletter Load (3.1ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 13ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find AboNewsletter with 'id'=logo_h):
+  
+app/controllers/abo_newsletters_controller.rb:67:in `set_abo_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (189.0ms)
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 16:55:29 +0100
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (3.3ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (31.7ms)
+  Rendered layouts/_headerLogo.html.erb (1.0ms)
+Completed 200 OK in 753ms (Views: 704.9ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/newsletters/sendNewsletter" for 127.0.0.1 at 2016-12-08 16:55:32 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/newsletters/sendNewsletter"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered collection of /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [19 times] (35.1ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.9ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (230.9ms)
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 16:55:40 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (40.1ms)
+  Rendered newsletters/new.html.erb within layouts/application (51.1ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 540ms (Views: 490.6ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:55:41 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (3.0ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 18ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.1ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.8ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (212.6ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 16:56:19 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wufzSFFHuepbOcNZRnbPPoHS5umvkhxcMTZhqDUOJr98m9WTshqWHO5tcf2R/qJqsbU6PL1OBsNI+2nCRI9e0A==", "newsletter"=>{"from"=>"info@vkm.de", "to"=>"m-venewald@web.de", "newsHeader"=>"neuer Header", "newsBody"=>"<p>Testbody mit pTag</p>", "newsFooter"=>"@marian", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (9.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.1ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('info@vkm.de', 'm-venewald@web.de', 'neuer Header', '<p>Testbody mit pTag</p>', '@marian', '', '2016-12-08 15:56:19', '2016-12-08 15:56:19')[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (2.1ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (5.0ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (1.7ms)
+NewsMailer#news_email: processed outbound mail in 1500.4ms
+Sent mail to m-vennewald@web.de (49.4ms)
+Date: Thu, 08 Dec 2016 16:56:23 +0100
+To: m-vennewald@web.de
+Message-ID: <584982a7d628_63c526b6578852b3@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>neuer Header</title>
+</head>
+<body>
+&lt;p&gt;Testbody mit pTag&lt;/p&gt;
+
+<footer>@marian</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/1
+Completed 302 Found in 3690ms (ActiveRecord: 44.5ms)
+
+
+Started GET "/newsletters/1" for 127.0.0.1 at 2016-12-08 16:56:23 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNewsletter Load (2.6ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 1 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 358ms (Views: 344.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:56:23 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (14.3ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 17ms (ActiveRecord: 14.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (132.0ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (291.9ms)
+Started GET "/abo_newsletters" for 127.0.0.1 at 2016-12-08 16:58:07 +0100
+Processing by AboNewslettersController#index as HTML
+  Rendering abo_newsletters/index.html.erb within layouts/application
+  [1m[36mAboNewsletter Load (4.0ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendered abo_newsletters/index.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 212ms (Views: 206.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/abo_newsletters/new" for 127.0.0.1 at 2016-12-08 16:58:11 +0100
+Processing by AboNewslettersController#new as HTML
+  Rendering abo_newsletters/new.html.erb within layouts/application
+  Rendered abo_newsletters/_form.html.erb (10.5ms)
+  Rendered abo_newsletters/new.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_headerLogo.html.erb (0.4ms)
+Completed 200 OK in 189ms (Views: 187.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/abo_newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:58:11 +0100
+Processing by AboNewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mAboNewsletter Load (7.0ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 9ms (ActiveRecord: 7.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find AboNewsletter with 'id'=logo_h):
+  
+app/controllers/abo_newsletters_controller.rb:67:in `set_abo_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.1ms)
+Started POST "/abo_newsletters" for 127.0.0.1 at 2016-12-08 16:58:25 +0100
+Processing by AboNewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g/hd2pasnLZ5r6FxwWmkXMU7W7OGIOagzK/QhX+t5WA/1WyFxBHXOCOKFmNEO9PcGPlvH+wRPfpH0v4D6el5/g==", "abo_newsletter"=>{"eMail"=>"m.vennewald@schwerte.de", "enable"=>"1"}, "commit"=>"Create Abo newsletter"}
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.9ms)[0m  [1m[32mINSERT INTO `abo_newsletters` (`eMail`, `enable`, `created_at`, `updated_at`) VALUES ('m.vennewald@schwerte.de', 1, '2016-12-08 15:58:25', '2016-12-08 15:58:25')[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/abo_newsletters/2
+Completed 302 Found in 42ms (ActiveRecord: 25.8ms)
+
+
+Started GET "/abo_newsletters/2" for 127.0.0.1 at 2016-12-08 16:58:25 +0100
+Processing by AboNewslettersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAboNewsletter Load (4.6ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 2 LIMIT 1[0m
+  Rendering abo_newsletters/show.html.erb within layouts/application
+  Rendered abo_newsletters/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_headerLogo.html.erb (1.3ms)
+Completed 200 OK in 309ms (Views: 241.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/abo_newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:58:25 +0100
+Processing by AboNewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mAboNewsletter Load (5.1ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 8ms (ActiveRecord: 5.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find AboNewsletter with 'id'=logo_h):
+  
+app/controllers/abo_newsletters_controller.rb:67:in `set_abo_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (34.9ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (326.7ms)
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 16:58:33 +0100
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (1.5ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 353ms (Views: 350.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 16:58:51 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (31.2ms)
+  Rendered newsletters/new.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 315ms (Views: 308.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:58:52 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (3.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 6ms (ActiveRecord: 3.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.2ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.6ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.3ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 16:59:08 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EaXKcvXAsRYkR6X8yqhDo7lkLP0lDb33Q3p9yaPXm8yv2eypFp2e4JETF1gdIC73iQPwKDfRp2g6t3Wj0lbjow==", "newsletter"=>{"from"=>"sdf", "to"=>"sdf", "newsHeader"=>"neuer Title", "newsBody"=>"<p> mit ptag</p>", "newsFooter"=>"sjdkfhjasdfh", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.5ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('sdf', 'sdf', 'neuer Title', '<p> mit ptag</p>', 'sjdkfhjasdfh', '', '2016-12-08 15:59:08', '2016-12-08 15:59:08')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (1.7ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (6.3ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (0.8ms)
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (0.9ms)
+NewsMailer#news_email: processed outbound mail in 77.7ms
+Sent mail to m.vennewald@schwerte.de (1.8ms)
+Date: Thu, 08 Dec 2016 16:59:08 +0100
+To: m.vennewald@schwerte.de
+Message-ID: <5849834c6a3fd_63c526b637085344@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>neuer Title</title>
+</head>
+<body>
+&lt;p&gt; mit ptag&lt;/p&gt;
+
+<footer>sjdkfhjasdfh</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/2
+Completed 302 Found in 126ms (ActiveRecord: 35.2ms)
+
+
+Started GET "/newsletters/2" for 127.0.0.1 at 2016-12-08 16:59:08 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNewsletter Load (1.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 2 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 558ms (Views: 552.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 16:59:09 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (6.8ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 19ms (ActiveRecord: 6.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (24.2ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.6ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (215.7ms)
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 17:00:02 +0100
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (6.9ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 304ms (Views: 295.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 17:13:32 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (0.4ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (165.2ms)
+  Rendered layouts/_headerLogo.html.erb (4.7ms)
+Completed 200 OK in 3011ms (Views: 2933.2ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 17:13:38 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (3019.6ms)
+  Rendered newsletters/new.html.erb within layouts/application (3039.2ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 3477ms (Views: 3475.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:13:42 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (0.6ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.8ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.3ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:14:09 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yaHqxqjNOX55rH2h2L0DLdkiATTL6z+jm/K0cDSy4HB33cwdS5AWiMz4zwUPNW556UXd4dk3JTziP7waRTOYHw==", "newsletter"=>{"from"=>"m-vennew", "to"=>"test@web.de", "newsHeader"=>"", "newsBody"=>"Neuer titel", "newsFooter"=>"<p> Neuer Text mit Ptag</p>", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (33.0ms)
+  Rendered newsletters/new.html.erb within layouts/application (35.5ms)
+  Rendered layouts/_headerLogo.html.erb (4.6ms)
+Completed 200 OK in 444ms (Views: 376.5ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:14:21 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fSKUocVppvawBiosuTQkZpcbZCYDaqCMJg6ieLI6CvWLeACyXdt+/28Nrv1xGIR5uiE5w6iovb5Y3LpKN6FXUw==", "newsletter"=>{"from"=>"m-vennew", "to"=>"test@web.de", "newsHeader"=>"Nuer Titel", "newsBody"=>"Neuer titel", "newsFooter"=>"<p> Neuer Text mit Ptag</p>", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('m-vennew', 'test@web.de', 'Nuer Titel', 'Neuer titel', '<p> Neuer Text mit Ptag</p>', '', '2016-12-08 16:14:21', '2016-12-08 16:14:21')[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 22.1ms)
+
+
+  
+SyntaxError (/home/docker/Dokumente/projects/neuTestRuby/app/mailers/news_mailer.rb:9: syntax error, unexpected tLABEL
+        mail (to: @email,
+                 ^
+/home/docker/Dokumente/projects/neuTestRuby/app/mailers/news_mailer.rb:10: syntax error, unexpected ')', expecting keyword_end):
+  
+app/mailers/news_mailer.rb:9: syntax error, unexpected tLABEL
+app/mailers/news_mailer.rb:10: syntax error, unexpected ')', expecting keyword_end
+app/controllers/newsletters_controller.rb:33:in `block in create'
+app/controllers/newsletters_controller.rb:30:in `create'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (174.6ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:16:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fSKUocVppvawBiosuTQkZpcbZCYDaqCMJg6ieLI6CvWLeACyXdt+/28Nrv1xGIR5uiE5w6iovb5Y3LpKN6FXUw==", "newsletter"=>{"from"=>"m-vennew", "to"=>"test@web.de", "newsHeader"=>"Nuer Titel", "newsBody"=>"Neuer titel", "newsFooter"=>"<p> Neuer Text mit Ptag</p>", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('m-vennew', 'test@web.de', 'Nuer Titel', 'Neuer titel', '<p> Neuer Text mit Ptag</p>', '', '2016-12-08 16:16:14', '2016-12-08 16:16:14')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (7.1ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (5.2ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (2.5ms)
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (1.3ms)
+NewsMailer#news_email: processed outbound mail in 857.2ms
+Sent mail to m.vennewald@schwerte.de (35.0ms)
+Date: Thu, 08 Dec 2016 17:16:17 +0100
+To: m.vennewald@schwerte.de
+Message-ID: <58498751b3d8a_64612a4ee38706f4@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuer Titel</title>
+</head>
+<body>
+Neuer titel
+
+<footer>&lt;p&gt; Neuer Text mit Ptag&lt;/p&gt;</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/4
+Completed 302 Found in 3709ms (ActiveRecord: 39.5ms)
+
+
+Started GET "/newsletters/4" for 127.0.0.1 at 2016-12-08 17:16:17 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNewsletter Load (2.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 4 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 2266ms (Views: 2134.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:16:20 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (5.7ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 11ms (ActiveRecord: 5.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.1ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.3ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (180.8ms)
+Started GET "/abo_newsletters" for 127.0.0.1 at 2016-12-08 17:17:19 +0100
+Processing by AboNewslettersController#index as HTML
+  Rendering abo_newsletters/index.html.erb within layouts/application
+  [1m[36mAboNewsletter Load (17.1ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendered abo_newsletters/index.html.erb within layouts/application (35.4ms)
+  Rendered layouts/_headerLogo.html.erb (0.5ms)
+Completed 200 OK in 362ms (Views: 342.1ms | ActiveRecord: 17.1ms)
+
+
+Started DELETE "/abo_newsletters/2" for 127.0.0.1 at 2016-12-08 17:17:27 +0100
+Processing by AboNewslettersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HTDox58CnE4vuvWIKupKAPcsxB8KLVWkUTVsk7I92N/ranzUB7BER/CxcVnixuof2haZ+qHvSJYv53ShN6aFeQ==", "id"=>"2"}
+  [1m[36mAboNewsletter Load (4.0ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 2[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/abo_newsletters
+Completed 302 Found in 24ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/abo_newsletters" for 127.0.0.1 at 2016-12-08 17:17:27 +0100
+Processing by AboNewslettersController#index as HTML
+  Rendering abo_newsletters/index.html.erb within layouts/application
+  [1m[36mAboNewsletter Load (0.5ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendered abo_newsletters/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_headerLogo.html.erb (6.0ms)
+Completed 200 OK in 420ms (Views: 416.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 17:17:32 +0100
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (3.2ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 314ms (Views: 309.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 17:17:35 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (2304.3ms)
+  Rendered newsletters/new.html.erb within layouts/application (2310.4ms)
+  Rendered layouts/_headerLogo.html.erb (5.3ms)
+Completed 200 OK in 2806ms (Views: 2797.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:17:38 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (7.0ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 14ms (ActiveRecord: 7.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (23.7ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (52.4ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (152.3ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:17:48 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XO7EGQuAiFW1ab3verBxkVJekee2UUyjqI99bbsz7UjikuLC6N2nowA9D0utOBzFYjlNMqSNVjzRQnUHyrKVJw==", "newsletter"=>{"from"=>"sdfasdf", "to"=>"sdfasdaf", "newsHeader"=>"sdfasddf", "newsBody"=>"dsfasddf", "newsFooter"=>"sdfasdf", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (10.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('sdfasdf', 'sdfasdaf', 'sdfasddf', 'dsfasddf', 'sdfasdf', '', '2016-12-08 16:17:48', '2016-12-08 16:17:48')[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (0.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (6.0ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (1.4ms)
+NewsMailer#news_email: processed outbound mail in 67.0ms
+Sent mail to m-vennewald@web.de (8.5ms)
+Date: Thu, 08 Dec 2016 17:17:48 +0100
+To: m-vennewald@web.de
+Message-ID: <584987ac64af3_64612a4edac707e1@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sdfasddf</title>
+</head>
+<body>
+dsfasddf
+
+<footer>sdfasdf</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/5
+Completed 302 Found in 180ms (ActiveRecord: 37.2ms)
+
+
+Started GET "/newsletters/5" for 127.0.0.1 at 2016-12-08 17:17:48 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNewsletter Load (3.3ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 5 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_headerLogo.html.erb (16.0ms)
+Completed 200 OK in 320ms (Views: 311.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:17:49 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (4.6ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 12ms (ActiveRecord: 4.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (82.4ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.0ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (396.4ms)
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:17:51 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (28.8ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 32ms (ActiveRecord: 28.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.9ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.4ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (155.2ms)
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 17:34:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (3.6ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (205.1ms)
+  Rendered layouts/_headerLogo.html.erb (0.8ms)
+Completed 200 OK in 4682ms (Views: 4507.0ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 17:34:29 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (3078.2ms)
+  Rendered newsletters/new.html.erb within layouts/application (3090.3ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 3557ms (Views: 3540.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:34:33 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (8.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 18ms (ActiveRecord: 8.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (21.1ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.0ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:34:59 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WjzpG+LI8zLs9TxE9pcnzrcMwPDy2DJz6X9ScPkXo3jkQM/AAZXcxFmhjuAhH0qah2scJeAEKOyQsloaiJbbFw==", "newsletter"=>{"from"=>"info@vkm.de", "to"=>"m-venewald@web.de", "newsHeader"=>"Neuer titel", "newsBody"=>"<p> body mit ptag</p>", "newsFooter"=>"@marian", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (23.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('info@vkm.de', 'm-venewald@web.de', 'Neuer titel', '<p> body mit ptag</p>', '@marian', '', '2016-12-08 16:34:59', '2016-12-08 16:34:59')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (8.0ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (3.2ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (1.2ms)
+NewsMailer#news_email: processed outbound mail in 847.0ms
+Sent mail to m-vennewald@web.de (57.2ms)
+Date: Thu, 08 Dec 2016 17:35:02 +0100
+To: m-vennewald@web.de
+Message-ID: <58498bb6f47a_64c32391eec65787@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuer titel</title>
+</head>
+<body>
+&lt;p&gt; body mit ptag&lt;/p&gt;
+
+<footer>@marian</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/6
+Completed 302 Found in 2996ms (ActiveRecord: 49.7ms)
+
+
+Started GET "/newsletters/6" for 127.0.0.1 at 2016-12-08 17:35:02 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mNewsletter Load (0.6ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 6 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 637ms (Views: 623.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:35:02 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (1.2ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 10ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (29.8ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.8ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (261.2ms)
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 17:42:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (6.5ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (178.3ms)
+  Rendered layouts/_headerLogo.html.erb (7.4ms)
+Completed 200 OK in 3723ms (Views: 3639.2ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 17:42:49 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (2227.2ms)
+  Rendered newsletters/new.html.erb within layouts/application (2235.3ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 2694ms (Views: 2571.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:42:52 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (13.0ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 19ms (ActiveRecord: 13.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.3ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (142.1ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:43:21 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e/65o9lQMOSYXVIsyAN11hXTYeJfmHqrJJTluW/Jl7/Fgp94Og0fEi0J4IgfixiCJbS9N01EYDRdWe3THkjv0A==", "newsletter"=>{"from"=>"info@vkm.de", "to"=>"m-venewald@web.de", "newsHeader"=>"Neuer title", "newsBody"=>"<p>neuer nody mit ptag</p>", "newsFooter"=>"neuer footer", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (7.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('info@vkm.de', 'm-venewald@web.de', 'Neuer title', '<p>neuer nody mit ptag</p>', 'neuer footer', '', '2016-12-08 16:43:21', '2016-12-08 16:43:21')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (0.6ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (0.5ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (7.8ms)
+NewsMailer#news_email: processed outbound mail in 784.5ms
+Sent mail to m-vennewald@web.de (23.1ms)
+Date: Thu, 08 Dec 2016 17:43:24 +0100
+To: m-vennewald@web.de
+Message-ID: <58498dac6402b_650f21489c430087@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuer title</title>
+</head>
+<body>
+&lt;p&gt;neuer nody mit ptag&lt;/p&gt;
+
+<footer>neuer footer</footer>
+</body>
+</html>
+Completed 500 Internal Server Error in 2544ms (ActiveRecord: 18.9ms)
+
+
+  
+ArgumentError (An SMTP From address is required to send a message. Set the message smtp_envelope_from, return_path, sender, or from address.):
+  
+app/controllers/newsletters_controller.rb:33:in `block in create'
+app/controllers/newsletters_controller.rb:30:in `create'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (133.2ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:50:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e/65o9lQMOSYXVIsyAN11hXTYeJfmHqrJJTluW/Jl7/Fgp94Og0fEi0J4IgfixiCJbS9N01EYDRdWe3THkjv0A==", "newsletter"=>{"from"=>"info@vkm.de", "to"=>"m-venewald@web.de", "newsHeader"=>"Neuer title", "newsBody"=>"<p>neuer nody mit ptag</p>", "newsFooter"=>"neuer footer", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (5.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.8ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('info@vkm.de', 'm-venewald@web.de', 'Neuer title', '<p>neuer nody mit ptag</p>', 'neuer footer', '', '2016-12-08 16:50:29', '2016-12-08 16:50:29')[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (2.5ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (1.9ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (3.4ms)
+NewsMailer#news_email: processed outbound mail in 881.7ms
+Sent mail to m-vennewald@web.de (1580.0ms)
+Date: Thu, 08 Dec 2016 17:50:32 +0100
+From: marian.vennewald@gds-medien.de
+To: m-vennewald@web.de
+Message-ID: <58498f5828afd_65741e506a497954@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuer title</title>
+</head>
+<body>
+&lt;p&gt;neuer nody mit ptag&lt;/p&gt;
+
+<footer>neuer footer</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/8
+Completed 302 Found in 4724ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/newsletters/8" for 127.0.0.1 at 2016-12-08 17:50:33 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mNewsletter Load (4.7ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 8 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 2327ms (Views: 2316.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:50:36 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (6.3ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 10ms (ActiveRecord: 6.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.7ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (29.9ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.5ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (363.0ms)
+Started GET "/abo_newsletters" for 127.0.0.1 at 2016-12-08 17:51:32 +0100
+Processing by AboNewslettersController#index as HTML
+  Rendering abo_newsletters/index.html.erb within layouts/application
+  [1m[36mAboNewsletter Load (15.1ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendered abo_newsletters/index.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_headerLogo.html.erb (0.4ms)
+Completed 200 OK in 239ms (Views: 216.3ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/abo_newsletters/new" for 127.0.0.1 at 2016-12-08 17:51:36 +0100
+Processing by AboNewslettersController#new as HTML
+  Rendering abo_newsletters/new.html.erb within layouts/application
+  Rendered abo_newsletters/_form.html.erb (1181.6ms)
+  Rendered abo_newsletters/new.html.erb within layouts/application (1191.7ms)
+  Rendered layouts/_headerLogo.html.erb (19.0ms)
+Completed 200 OK in 1568ms (Views: 1556.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/abo_newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:51:38 +0100
+Processing by AboNewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mAboNewsletter Load (9.0ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 18ms (ActiveRecord: 9.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find AboNewsletter with 'id'=logo_h):
+  
+app/controllers/abo_newsletters_controller.rb:67:in `set_abo_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (116.9ms)
+Started POST "/abo_newsletters" for 127.0.0.1 at 2016-12-08 17:51:49 +0100
+Processing by AboNewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+cce0FWGsYgXSBiHEfXZ+h0y/DYp56nB1KKcoo7Fo79F6i+PBzv6Bk1tr5WUp656wPDImkPWcptf37IkGIE/IQ==", "abo_newsletter"=>{"eMail"=>"m.vennewald@schwerte.de", "enable"=>"1"}, "commit"=>"Create Abo newsletter"}
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO `abo_newsletters` (`eMail`, `enable`, `created_at`, `updated_at`) VALUES ('m.vennewald@schwerte.de', 1, '2016-12-08 16:51:49', '2016-12-08 16:51:49')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/abo_newsletters/3
+Completed 302 Found in 23ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/abo_newsletters/3" for 127.0.0.1 at 2016-12-08 17:51:49 +0100
+Processing by AboNewslettersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAboNewsletter Load (0.6ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 3 LIMIT 1[0m
+  Rendering abo_newsletters/show.html.erb within layouts/application
+  Rendered abo_newsletters/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 385ms (Views: 378.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/abo_newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:51:50 +0100
+Processing by AboNewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mAboNewsletter Load (10.5ms)[0m  [1m[34mSELECT  `abo_newsletters`.* FROM `abo_newsletters` WHERE `abo_newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 19ms (ActiveRecord: 10.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find AboNewsletter with 'id'=logo_h):
+  
+app/controllers/abo_newsletters_controller.rb:67:in `set_abo_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (167.4ms)
+Started GET "/abo_newsletters" for 127.0.0.1 at 2016-12-08 17:51:54 +0100
+Processing by AboNewslettersController#index as HTML
+  Rendering abo_newsletters/index.html.erb within layouts/application
+  [1m[36mAboNewsletter Load (0.6ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendered abo_newsletters/index.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_headerLogo.html.erb (0.7ms)
+Completed 200 OK in 421ms (Views: 417.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 17:51:57 +0100
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (2.8ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (21.7ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 337ms (Views: 300.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 17:52:01 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (134.8ms)
+  Rendered newsletters/new.html.erb within layouts/application (150.5ms)
+  Rendered layouts/_headerLogo.html.erb (0.5ms)
+Completed 200 OK in 382ms (Views: 379.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:52:01 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (7.2ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 17ms (ActiveRecord: 7.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.9ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (163.9ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 17:52:32 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mEljwWF9zR5MAfUpgPc4wCDJSSibLeWLQlonS5yA0KImNUUagiDi6PlVR41Xf1WUEK6V/Ynx/xQ7ly8h7QGozQ==", "newsletter"=>{"from"=>"info@vkm.de", "to"=>"m-venewald@web.de", "newsHeader"=>"neuer titel", "newsBody"=>"<p> mit p tag</p>", "newsFooter"=>"dsfsadf", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('info@vkm.de', 'm-venewald@web.de', 'neuer titel', '<p> mit p tag</p>', 'dsfsadf', '', '2016-12-08 16:52:32', '2016-12-08 16:52:32')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNewsletter Load (7.1ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  [1m[36mAboNewsletter Load (2.3ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (0.9ms)
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (0.9ms)
+NewsMailer#news_email: processed outbound mail in 67.6ms
+Sent mail to m.vennewald@schwerte.de (1569.1ms)
+Date: Thu, 08 Dec 2016 17:52:32 +0100
+From: marian.vennewald@gds-medien.de
+To: m.vennewald@schwerte.de
+Message-ID: <58498fd0a8930_65741e5085c98063@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>neuer titel</title>
+</head>
+<body>
+&lt;p&gt; mit p tag&lt;/p&gt;
+
+<footer>dsfsadf</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/9
+Completed 302 Found in 1687ms (ActiveRecord: 21.4ms)
+
+
+Started GET "/newsletters/9" for 127.0.0.1 at 2016-12-08 17:52:34 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mNewsletter Load (3.9ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 9 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_headerLogo.html.erb (1.7ms)
+Completed 200 OK in 452ms (Views: 438.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 17:52:34 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (6.9ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 32ms (ActiveRecord: 6.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:75:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (21.2ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (143.7ms)
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 18:12:49 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (18.5ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (189.6ms)
+  Rendered layouts/_headerLogo.html.erb (2.2ms)
+Completed 200 OK in 3585ms (Views: 3325.4ms | ActiveRecord: 36.9ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 18:13:00 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (798.1ms)
+  Rendered newsletters/new.html.erb within layouts/application (799.5ms)
+  Rendered layouts/_headerLogo.html.erb (2.6ms)
+Completed 200 OK in 997ms (Views: 994.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 18:13:01 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (0.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:78:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.7ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.7ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (131.4ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 18:13:28 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ZQuCT3jPrXdHPKCOeJNnH3UX/Z7ZGWgCY3a0aCyahNL6AjS3r4RQ2hIQCbuaiDITbODI2m4fz9wQNK70TMSfA==", "newsletter"=>{"from"=>"neu", "to"=>"neu", "newsHeader"=>"neu", "newsBody"=>"<p>neu mit pTag</p>", "newsFooter"=>"NEUNEUNEUENU", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (8.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `to`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('neu', 'neu', 'neu', '<p>neu mit pTag</p>', 'NEUNEUNEUENU', '', '2016-12-08 17:13:28', '2016-12-08 17:13:28')[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAboNewsletter Load (0.5ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  [1m[36mNewsletter Load (1.5ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (0.6ms)
+NewsMailer#news_email: processed outbound mail in 588.2ms
+Sent mail to m-vennewald@web.de (2462.5ms)
+Date: Thu, 08 Dec 2016 18:13:30 +0100
+From: marian.vennewald@gds-medien.de
+To: m-vennewald@web.de
+Message-ID: <584994ba5ea06_65e3217b4a09545@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <title>neu</title>
+</head>
+<body>
+&lt;p&gt;neu mit pTag&lt;/p&gt;
+
+<footer>NEUNEUNEUENU</footer>
+</body>
+</html>
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m  [["LIMIT", 1]]
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (0.3ms)
+NewsMailer#news_email: processed outbound mail in 53.7ms
+Sent mail to m.vennewald@schwerte.de (1850.8ms)
+Date: Thu, 08 Dec 2016 18:13:32 +0100
+From: marian.vennewald@gds-medien.de
+To: m.vennewald@schwerte.de
+Message-ID: <584994bcdb27c_65e3217b4a0955d9@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <title>neu</title>
+</head>
+<body>
+&lt;p&gt;neu mit pTag&lt;/p&gt;
+
+<footer>NEUNEUNEUENU</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/10
+Completed 302 Found in 6106ms (ActiveRecord: 31.9ms)
+
+
+Started GET "/newsletters/10" for 127.0.0.1 at 2016-12-08 18:13:34 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mNewsletter Load (15.3ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 10 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_headerLogo.html.erb (0.8ms)
+Completed 200 OK in 606ms (Views: 577.0ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 18:13:35 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (4.1ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 23ms (ActiveRecord: 4.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:78:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.2ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.9ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (158.0ms)
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 18:51:03 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (0.4ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (85.1ms)
+  Rendered layouts/_headerLogo.html.erb (1.2ms)
+Completed 200 OK in 22681ms (Views: 22616.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 18:51:32 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (4331.5ms)
+  Rendered newsletters/new.html.erb within layouts/application (4333.6ms)
+  Rendered layouts/_headerLogo.html.erb (0.5ms)
+Completed 200 OK in 4739ms (Views: 4735.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 18:51:37 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (9.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 30ms (ActiveRecord: 9.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:78:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (184.6ms)
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 18:58:45 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (4697.3ms)
+  Rendered newsletters/new.html.erb within layouts/application (4714.8ms)
+  Rendered layouts/_headerLogo.html.erb (4.6ms)
+Completed 200 OK in 5480ms (Views: 5336.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 18:58:52 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (6.7ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 38ms (ActiveRecord: 6.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:78:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.8ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (243.9ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 19:15:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EAylmzlRVyZ1ajpQv33VVgO7qPhxZWNozE+sRI1uGS3mVjGIoeOPL6phvoF3UXVJLoH1HdqnflqynbR2CPVEiw==", "newsletter"=>{"from"=>"sdafsdf", "newsHeader"=>"<p>Title</p>", "newsBody"=>"<p style=\"text-align: left;\">Test sddsffdsddfsddfs<strong>sssssssfsdfsdf</strong></p>\r\n<p style=\"text-align: center;\"><strong>sdfsdf</strong></p>", "newsFooter"=>"<p>@marian</p>", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (8.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (2102.9ms)
+  Rendered newsletters/new.html.erb within layouts/application (2118.6ms)
+  Rendered layouts/_headerLogo.html.erb (0.6ms)
+Completed 200 OK in 5181ms (Views: 3019.9ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/newsletters" for 127.0.0.1 at 2016-12-08 19:16:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mNewsletter Load (5.6ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (120.5ms)
+  Rendered layouts/_headerLogo.html.erb (2.0ms)
+Completed 200 OK in 3654ms (Views: 3538.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 19:16:43 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (2299.4ms)
+  Rendered newsletters/new.html.erb within layouts/application (2312.8ms)
+  Rendered layouts/_headerLogo.html.erb (0.5ms)
+Completed 200 OK in 2756ms (Views: 2753.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 19:16:46 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (10.1ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 18ms (ActiveRecord: 10.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:78:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.2ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (200.7ms)
+Started GET "/newsletters/new" for 127.0.0.1 at 2016-12-08 19:16:56 +0100
+Processing by NewslettersController#new as HTML
+  Rendering newsletters/new.html.erb within layouts/application
+  Rendered newsletters/_form.html.erb (35.7ms)
+  Rendered newsletters/new.html.erb within layouts/application (40.8ms)
+  Rendered layouts/_headerLogo.html.erb (0.3ms)
+Completed 200 OK in 245ms (Views: 238.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 19:16:57 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (3.6ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 7ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:78:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (59.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (286.2ms)
+Started POST "/newsletters" for 127.0.0.1 at 2016-12-08 19:17:14 +0100
+Processing by NewslettersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eNqcUnpzlA6Te0U/BSW6hYU1uI5i59NyYJHmqEnUt7SOgAhB4sFMB0xwwe7NCRqaqA/la8klzkAeQ/6azE/qEg==", "newsletter"=>{"from"=>"neu", "newsHeader"=>"<p>Title</p>", "newsBody"=>"<p style=\"text-align: left;\">Test sddsffdsddfsddfs<strong>sssssssfsdfsdf</strong></p>\r\n<p style=\"text-align: center;\"><strong>sdfsdf</strong></p>", "newsFooter"=>"<p>@marian</p>", "appendix"=>""}, "commit"=>"Create Newsletter"}
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (22.1ms)[0m  [1m[32mINSERT INTO `newsletters` (`from`, `newsHeader`, `newsBody`, `newsFooter`, `appendix`, `created_at`, `updated_at`) VALUES ('neu', '<p>Title</p>', '<p style=\"text-align: left;\">Test sddsffdsddfsddfs<strong>sssssssfsdfsdf</strong></p>\r\n<p style=\"text-align: center;\"><strong>sdfsdf</strong></p>', '<p>@marian</p>', '', '2016-12-08 18:17:14', '2016-12-08 18:17:14')[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAboNewsletter Load (7.3ms)[0m  [1m[34mSELECT `abo_newsletters`.* FROM `abo_newsletters`[0m
+  [1m[36mNewsletter Load (3.4ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (1.7ms)
+NewsMailer#news_email: processed outbound mail in 1332.4ms
+Sent mail to m-vennewald@web.de (3574.8ms)
+Date: Thu, 08 Dec 2016 19:17:18 +0100
+From: marian.vennewald@gds-medien.de
+To: m-vennewald@web.de
+Message-ID: <5849a3ae403ab_2a628fbc3485366@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <title>&lt;p&gt;Title&lt;/p&gt;</title>
+</head>
+<body>
+&lt;p style=&quot;text-align: left;&quot;&gt;Test sddsffdsddfsddfs&lt;strong&gt;sssssssfsdfsdf&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;sdfsdf&lt;/strong&gt;&lt;/p&gt;
+
+<footer>&lt;p&gt;@marian&lt;/p&gt;</footer>
+</body>
+</html>
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` ORDER BY `newsletters`.`id` DESC LIMIT 1[0m  [["LIMIT", 1]]
+  Rendering news_mailer/news_email.html.erb
+  Rendered news_mailer/news_email.html.erb (0.6ms)
+NewsMailer#news_email: processed outbound mail in 72.4ms
+Sent mail to m.vennewald@schwerte.de (3928.8ms)
+Date: Thu, 08 Dec 2016 19:17:21 +0100
+From: marian.vennewald@gds-medien.de
+To: m.vennewald@schwerte.de
+Message-ID: <5849a3b1db1c7_2a628fbc348542f@docker-VirtualBox.mail>
+Subject: News-Mail
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <title>&lt;p&gt;Title&lt;/p&gt;</title>
+</head>
+<body>
+&lt;p style=&quot;text-align: left;&quot;&gt;Test sddsffdsddfsddfs&lt;strong&gt;sssssssfsdfsdf&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;sdfsdf&lt;/strong&gt;&lt;/p&gt;
+
+<footer>&lt;p&gt;@marian&lt;/p&gt;</footer>
+</body>
+</html>
+Redirected to http://localhost:3000/newsletters/11
+Completed 302 Found in 11066ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/newsletters/11" for 127.0.0.1 at 2016-12-08 19:17:25 +0100
+Processing by NewslettersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mNewsletter Load (0.7ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 11 LIMIT 1[0m
+  Rendering newsletters/show.html.erb within layouts/application
+  Rendered newsletters/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_headerLogo.html.erb (0.8ms)
+Completed 200 OK in 341ms (Views: 336.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/newsletters/logo_h.png" for 127.0.0.1 at 2016-12-08 19:17:26 +0100
+Processing by NewslettersController#show as PNG
+  Parameters: {"id"=>"logo_h"}
+  [1m[36mNewsletter Load (4.3ms)[0m  [1m[34mSELECT  `newsletters`.* FROM `newsletters` WHERE `newsletters`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 9ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Newsletter with 'id'=logo_h):
+  
+app/controllers/newsletters_controller.rb:78:in `set_newsletter'
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.8ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/docker/.rvm/gems/ruby-2.3.1@rails5.0.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (169.4ms)
