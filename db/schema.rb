@@ -33,5 +33,13 @@ ActiveRecord::Schema.define(version: 20161208120034) do
     t.datetime "updated_at",               null: false
   end
 
-  add_foreign_key "abo_newsletters", "newsletters"
+  create_table "newssystem", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string :title
+    t.string :subTitle
+    t.text :story
+    t.createNews :date
+
+    t.timestamps
+  end
+
 end
