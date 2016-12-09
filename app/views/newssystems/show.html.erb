@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
-
+<!--
 <p>
   <strong>Title:</strong>
-  <%= @newssystem.title %>
+  <%#= @newssystem.title %>
 </p>
 
 <p>
   <strong>Subtitle:</strong>
-  <%= @newssystem.subTitle %>
+  <%#= @newssystem.subTitle %>
 </p>
 
 <p>
   <strong>Story:</strong>
-  <%= @newssystem.story %>
-</p>
+  <%#= @newssystem.story %>
+</p> -->
+
+<div class="thumbnail col-xs-12" style="">
+  <div class="caption">
+    <h2><%= @newssystem.created_at.strftime("%d.%m.%Y") %><br><%= @newssystem.title %></h2>
+    <p style="font-size: 1.0em;"><%= @newssystem.story %></p>
+  </div>
+</div>
+
 <% if current_user.present? %>
 <%= link_to 'Edit', edit_newssystem_path(@newssystem) %> |
 <% end %>

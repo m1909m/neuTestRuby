@@ -12,13 +12,14 @@
         <%= f.label :password %>
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
-      <% if devise_mapping.rememberable? %>
+        <!--
+      <%# if devise_mapping.rememberable? %>
         <div class="checkbox">
-          <%= f.label :remember_me do %>
-            <%= f.check_box :remember_me %> <%= t('.remember_me', :default => "Remember me") %>
-          <% end %>
+          <%#= f.label :remember_me do %>
+            <%#= f.check_box :remember_me %> <%#= t('.remember_me', :default => "Remember me") %>
+          <%# end %>
         </div>
-      <% end %>
+      <%# end %> -->
       <%= f.submit  t('.sign_in', :default => "Sign in"), class: "btn btn-primary" %>
     <% end %>
   </div>
