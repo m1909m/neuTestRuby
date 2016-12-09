@@ -30,5 +30,5 @@ development:
   reconnect: false
   database: vkmDB
   username: root
-  password: admin1234@
+  password: admin
   host: localhost

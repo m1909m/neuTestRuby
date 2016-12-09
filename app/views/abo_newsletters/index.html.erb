@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Abonennten Newsletters</h1>
-
+<% if current_user.present? %>
 <table class="table">
   <thead>
     <tr>
@@ -28,3 +28,6 @@
 <br>
 
 <%= link_to 'Neuen Abonennten für den Newsletter hinzufügen', new_abo_newsletter_path %>
+<% else %>
+<h2>Sie haben sich erfolgreich angemeldet</h2>
+<% end %>

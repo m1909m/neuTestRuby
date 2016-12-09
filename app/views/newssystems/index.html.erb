@@ -13,6 +13,7 @@
   </thead>
 
   <tbody> -->
+  
   <% @color = true %>
     <% @newssystems.each do |newssystem|
         if(@color == true)
@@ -37,6 +38,7 @@
           </div>
         </div>
         <% end %>
+      
         <!--
       <tr>
         <td><%#= newssystem.title %></td>
@@ -51,6 +53,8 @@
 </table> -->
 
 <br>
+<% if current_user.present? %>
 <div class="col-sm-12">
 <%= link_to 'Neue News erstellen', new_newssystem_path %>
 </div>
+<% end %>
