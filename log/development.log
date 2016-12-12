@@ -2437,3 +2437,342 @@ Processing by NewslettersController#index as HTML
 Completed 200 OK in 807ms (Views: 784.4ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (83.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (47.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK('6570175255828259460', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (31.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateNewsletters (20161208102508)
+  [1m[35m (100.3ms)[0m  [1m[35mCREATE TABLE `newsletters` (`id` int AUTO_INCREMENT PRIMARY KEY, `from` varchar(255), `to` varchar(255), `type` varchar(255), `newsHeader` text, `newsBody` text, `newsFooter` text, `appendix` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (37.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20161208102508')[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAboNewsletters (20161208120034)
+  [1m[35m (115.9ms)[0m  [1m[35mCREATE TABLE `abo_newsletters` (`id` int AUTO_INCREMENT PRIMARY KEY, `eMail` varchar(255), `enable` tinyint(1), `newsletter_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_abo_newsletters_on_newsletter_id`  (`newsletter_id`), CONSTRAINT `fk_rails_87283c759b`
+FOREIGN KEY (`newsletter_id`)
+  REFERENCES `newsletters` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (46.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20161208120034')[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateNewssystems (20161209005657)
+  [1m[35m (68.2ms)[0m  [1m[35mCREATE TABLE `newssystems` (`id` int AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `subTitle` varchar(255), `story` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20161209005657')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20161209082141)
+  [1m[35m (68.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (31.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20161209082141')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (15.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2016-12-12 13:20:32', '2016-12-12 13:20:32')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('6570175255828259460')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `abo_newsletters`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'abo_newsletters'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `newsletters`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newsletters'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `newssystems`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newssystems'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'abo_newsletters'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newsletters'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newssystems'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK('6570175255828259460', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('6570175255828259460')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (37.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (46.9ms)[0m  [1m[35mSHOW CREATE TABLE `abo_newsletters`[0m
+  [1m[35m (37.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'abo_newsletters'[0m
+  [1m[35m (31.3ms)[0m  [1m[35mSHOW CREATE TABLE `newsletters`[0m
+  [1m[35m (53.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newsletters'[0m
+  [1m[35m (15.6ms)[0m  [1m[35mSHOW CREATE TABLE `newssystems`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newssystems'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'abo_newsletters'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newsletters'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newssystems'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'users'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-12-12 14:21:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewssystemsController#index as HTML
+  Rendering newssystems/index.html.erb within layouts/application
+  Rendered newssystems/index.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 16262ms (Views: 16088.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2016-12-12 14:22:00 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered collection of C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [42 times] (37.8ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (316.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (3085.4ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-12 14:22:24 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3542.0ms)
+Completed 200 OK in 5035ms (Views: 4653.9ms | ActiveRecord: 75.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-12-12 14:22:43 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jgBcmAVx5pcS848Gs0pCCbuo7A9N6u1J+df3Wd2Xl16GiWGWbJYbvR9lxdqfVgPb2RBcK1upmJ5dWJRRyTQYhg==", "user"=>{"email"=>"test@web.de", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@web.de' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 17ms (ActiveRecord: 2.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jgBcmAVx5pcS848Gs0pCCbuo7A9N6u1J+df3Wd2Xl16GiWGWbJYbvR9lxdqfVgPb2RBcK1upmJ5dWJRRyTQYhg==", "user"=>{"email"=>"test@web.de", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- bcrypt_ext):
+  
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:16:in `rescue in <top (required)>'
+bcrypt-3.1.11-x64 (mingw32) lib/bcrypt.rb:12:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/encryptor.rb:1:in `<top (required)>'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `block in require'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:259:in `load_dependency'
+activesupport (5.0.0.1) lib/active_support/dependencies.rb:293:in `require'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:147:in `password_digest'
+devise (4.2.0) lib/devise/models/database_authenticatable.rb:40:in `password='
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `public_send'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:46:in `_assign_attribute'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:40:in `block in _assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `each'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:39:in `_assign_attributes'
+activerecord (5.0.0.1) lib/active_record/attribute_assignment.rb:26:in `_assign_attributes'
+activemodel (5.0.0.1) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+activerecord (5.0.0.1) lib/active_record/core.rb:319:in `initialize'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+activerecord (5.0.0.1) lib/active_record/inheritance.rb:65:in `new'
+devise (4.2.0) app/controllers/devise/sessions_controller.rb:9:in `new'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:73:in `recall'
+devise (4.2.0) lib/devise/failure_app.rb:39:in `respond'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:251:in `block in action'
+devise (4.2.0) lib/devise/failure_app.rb:21:in `call'
+devise (4.2.0) lib/devise/delegator.rb:5:in `call'
+warden (1.2.6) lib/warden/manager.rb:142:in `call_failure_app'
+warden (1.2.6) lib/warden/manager.rb:128:in `process_unauthenticated'
+warden (1.2.6) lib/warden/manager.rb:43:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2147.4ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-12 14:26:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1449.3ms)
+Completed 200 OK in 4275ms (Views: 4196.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-12 14:26:59 +0100
+Processing by NewssystemsController#index as HTML
+  Rendering newssystems/index.html.erb within layouts/application
+  Rendered newssystems/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 573ms (Views: 541.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newssystems" for 127.0.0.1 at 2016-12-12 14:27:05 +0100
+Processing by NewssystemsController#index as HTML
+  Rendering newssystems/index.html.erb within layouts/application
+  Rendered newssystems/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 313ms (Views: 293.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-12 14:27:11 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 358ms (Views: 357.0ms | ActiveRecord: 0.0ms)
+
+
