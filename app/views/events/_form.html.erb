@@ -1,0 +1,72 @@
+<%= form_for(event) do |f| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :minSize %>
+    <%= f.number_field :minSize %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maxSize %>
+    <%= f.number_field :maxSize %>
+  </div>
+
+  <div class="field">
+    <%= f.label :days %>
+    <%= f.text_field :days %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hours %>
+    <%= f.text_field :hours %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weeks %>
+    <%= f.number_field :weeks %>
+  </div>
+
+  <div class="field">
+    <%= f.label :startDate %>
+    <%= f.date_select :startDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endDate %>
+    <%= f.date_select :endDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :startLoginDate %>
+    <%= f.datetime_select :startLoginDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endLoginDate %>
+    <%= f.datetime_select :endLoginDate %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

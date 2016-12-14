@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Minsize:</strong>
+  <%= @event.minSize %>
+</p>
+
+<p>
+  <strong>Maxsize:</strong>
+  <%= @event.maxSize %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @event.days %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @event.hours %>
+</p>
+
+<p>
+  <strong>Weeks:</strong>
+  <%= @event.weeks %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @event.startDate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @event.endDate %>
+</p>
+
+<p>
+  <strong>Startlogindate:</strong>
+  <%= @event.startLoginDate %>
+</p>
+
+<p>
+  <strong>Endlogindate:</strong>
+  <%= @event.endLoginDate %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
