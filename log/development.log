@@ -2776,3 +2776,10 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 358ms (Views: 357.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-12 17:06:49 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 2614ms (Views: 2509.9ms | ActiveRecord: 0.0ms)
+
+
