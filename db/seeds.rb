@@ -9,5 +9,5 @@ pass = SecureRandom.hex(5)
 admin = User.create email: "admin@vkm.de",
                     password: pass,
                     password_confirmation: pass
-asmin.add_role = :admin
+admin.add_role :admin
 puts "Admin password is #{pass}"

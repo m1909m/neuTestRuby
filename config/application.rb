@@ -16,6 +16,7 @@ module NeuTestRuby
       g.view_specs false
       g.controller_specs false
       g.helper_specs false
+      g.assets true
     end
   end
 end
