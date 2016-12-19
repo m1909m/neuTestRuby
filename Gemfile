@@ -45,6 +45,8 @@ gem 'coffee-script-source', '= 1.11.1'
 
 #Rollen von users
 gem 'rolify'
+
+gem 'cancan'
 #Admin bereich
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
