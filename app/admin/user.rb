@@ -12,13 +12,13 @@ ActiveAdmin.register User do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :email, :password, :password_confirmation, role_ids: []
+  permit_params :email, role_ids: []
 
   form do |f|
     f.inputs 'Details' do
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+#      f.input :password
+#      f.input :password_confirmation
       f.input :roles
     end
     f.actions

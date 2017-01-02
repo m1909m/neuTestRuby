@@ -36,8 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :street
       t.string :plz
       t.string :city
-      t.string :number
-      t.string :fax
+      t.string :telefonNumber
 
 
       t.timestamps null: false
