@@ -15,10 +15,8 @@ ActiveRecord::Schema.define(version: 20161216104912) do
   create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "eMail"
     t.boolean  "enable"
-    t.integer  "newsletter_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["newsletter_id"], name: "index_abo_newsletters_on_newsletter_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -75,6 +73,7 @@ ActiveRecord::Schema.define(version: 20161216104912) do
     t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "event_id"
   end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -90,12 +89,6 @@ ActiveRecord::Schema.define(version: 20161216104912) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "street"
-    t.string   "plz"
-    t.string   "city"
-    t.string   "telefonNumber"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -104,6 +97,12 @@ ActiveRecord::Schema.define(version: 20161216104912) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "street"
+    t.string   "plz"
+    t.string   "city"
+    t.string   "telefonNumber"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -116,5 +115,4 @@ ActiveRecord::Schema.define(version: 20161216104912) do
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
   end
 
-  add_foreign_key "abo_newsletters", "newsletters"
 end

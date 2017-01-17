@@ -22,7 +22,7 @@ ActiveAdmin.register User do
     column :street
     column :plz
     column :citys
-    default_actions
+    actions
   end
 
 
