@@ -5943,3 +5943,408 @@ app/assets/stylesheets/active_admin/admin_bootstrap.scss:3
   Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
   Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (114.8ms)
+Started GET "/admin/users/" for 127.0.0.1 at 2017-01-17 23:47:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (9.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (8.5ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (2660.6ms)
+Completed 500 Internal Server Error in 3010ms (ActiveRecord: 24.4ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/config
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/images
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/formtastic-3.1.4/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bourbon-4.2.7/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-bootstrap-views-0.0.9/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/source
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+    1: insert_tag renderer_for(:index)
+  
+app/assets/stylesheets/active_admin/admin_bootstrap.scss:1
+app/assets/stylesheets/active_admin.scss:15
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (31.9ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.4ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (192.1ms)
+Started GET "/admin/users/" for 127.0.0.1 at 2017-01-17 23:49:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (7.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (3194.7ms)
+Completed 500 Internal Server Error in 3759ms (ActiveRecord: 15.6ms)
+
+
+  
+ActionView::Template::Error ("#wrapper" failed to @extend ".container".
+The selector ".container" was not found.
+Use "@extend .container !optional" if the extend should be able to fail.
+):
+    1: insert_tag renderer_for(:index)
+  
+app/assets/stylesheets/active_admin/admin_bootstrap.scss:3
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (37.0ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.3ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (275.9ms)
+Started GET "/admin/users/" for 127.0.0.1 at 2017-01-18 11:51:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (25.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (2.6ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (1322.9ms)
+Completed 500 Internal Server Error in 1604ms (ActiveRecord: 13.5ms)
+
+
+  
+ActionView::Template::Error ("#wrapper" failed to @extend ".container".
+The selector ".container" was not found.
+Use "@extend .container !optional" if the extend should be able to fail.
+):
+    1: insert_tag renderer_for(:index)
+  
+app/assets/stylesheets/active_admin/admin_bootstrap.scss:3
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.0ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.6ms)
+Started GET "/admin/users/" for 127.0.0.1 at 2017-01-18 11:52:03 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (8.6ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (411.8ms)
+Completed 500 Internal Server Error in 578ms (ActiveRecord: 13.9ms)
+
+
+  
+ActionView::Template::Error ("#wrapper" failed to @extend ".container".
+The selector ".container" was not found.
+Use "@extend .container !optional" if the extend should be able to fail.
+):
+    1: insert_tag renderer_for(:index)
+  
+app/assets/stylesheets/active_admin/admin_bootstrap.scss:3
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (208.5ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (312.4ms)
+Started GET "/admin/users/" for 127.0.0.1 at 2017-01-18 11:53:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (1.1ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (18077.7ms)
+Completed 500 Internal Server Error in 18648ms (ActiveRecord: 11.9ms)
+
+
+  
+ActionView::Template::Error ("form" failed to @extend "form[role="form"]".
+The selector "form[role="form"]" was not found.
+Use "@extend form[role="form"] !optional" if the extend should be able to fail.
+):
+    1: insert_tag renderer_for(:index)
+  
+app/assets/stylesheets/active_admin/admin_bootstrap.scss:75
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.2ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.5ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (266.3ms)
+Started GET "/admin/users/" for 127.0.0.1 at 2017-01-18 12:03:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (4.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` desc LIMIT 30 OFFSET 0[0m
+  [1m[36mRole Load (6.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (50269.0ms)
+Completed 200 OK in 50493ms (Views: 50289.2ms | ActiveRecord: 36.7ms)
+
+
+Started GET "/admin/users/" for 127.0.0.1 at 2017-01-18 12:05:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (2.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.css.scss to /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets/active_admin/bootstrap.scss. (called from block (2 levels) in build_active_admin_head at /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/lib/active_admin/views/pages/base.rb:27)
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `users` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` desc LIMIT 30 OFFSET 0[0m
+  [1m[36mRole Load (3.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (41929.6ms)
+Completed 200 OK in 42168ms (Views: 41952.0ms | ActiveRecord: 40.9ms)
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2017-01-18 12:12:24 +0100
+Processing by Admin::UsersController#new as HTML
+  [1m[36mUser Load (24.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (4.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/new.html.arb
+  [1m[36mRole Load (1.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/new.html.arb (1661.9ms)
+Completed 200 OK in 1792ms (Views: 1721.7ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2017-01-18 12:12:35 +0100
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (14.7ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/page/index.html.arb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/page/index.html.arb (333.6ms)
+Completed 200 OK in 373ms (Views: 339.5ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/admin/newssystems" for 127.0.0.1 at 2017-01-18 12:13:08 +0100
+Processing by Admin::NewssystemsController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (17.2ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `newssystems` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (625.0ms)
+Completed 200 OK in 704ms (Views: 632.7ms | ActiveRecord: 31.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('564057786633393990', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (26.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateRooms (20170122232403)
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE `rooms` (`id` int AUTO_INCREMENT PRIMARY KEY, `number` int, `size` int, `building` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170122232403')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('564057786633393990')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `abo_newsletters`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'abo_newsletters'[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW CREATE TABLE `active_admin_comments`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'active_admin_comments'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `events`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'events'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `newsletters`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newsletters'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `newssystems`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newssystems'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `reservations`[0m
+  [1m[35m (6.2ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `rooms`[0m
+  [1m[35m (3.6ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'rooms'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `users_roles`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'abo_newsletters'
+[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'active_admin_comments'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newsletters'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newssystems'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'reservations'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'roles'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'rooms'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'users_roles'
+[0m
+Started GET "/admin/newssystems" for 127.0.0.1 at 2017-01-23 12:18:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::NewssystemsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (5.6ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `newssystems` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (3824.9ms)
+Completed 200 OK in 4144ms (Views: 3847.1ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/admin/rooms" for 127.0.0.1 at 2017-01-23 12:18:24 +0100
+Processing by Admin::RoomsController#index as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (3.1ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `rooms` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (787.3ms)
+Completed 200 OK in 843ms (Views: 802.0ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/admin/rooms/new" for 127.0.0.1 at 2017-01-23 12:18:35 +0100
+Processing by Admin::RoomsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (2.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/new.html.arb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/new.html.arb (505.2ms)
+Completed 200 OK in 561ms (Views: 520.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/admin/rooms" for 127.0.0.1 at 2017-01-23 12:18:52 +0100
+Processing by Admin::RoomsController#index as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (9.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `rooms` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (700.1ms)
+Completed 200 OK in 771ms (Views: 711.6ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/admin/events" for 127.0.0.1 at 2017-01-23 12:43:36 +0100
+Processing by Admin::EventsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (0.6ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `events` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[36mReservation Load (1.8ms)[0m  [1m[34mSELECT `reservations`.* FROM `reservations`[0m
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/index.html.arb (513.4ms)
+Completed 200 OK in 566ms (Views: 523.5ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/admin/events/new" for 127.0.0.1 at 2017-01-23 12:43:41 +0100
+Processing by Admin::EventsController#new as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (3.5ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/new.html.arb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/views/active_admin/resource/new.html.arb (510.6ms)
+Completed 200 OK in 577ms (Views: 522.0ms | ActiveRecord: 7.2ms)
+
+

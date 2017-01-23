@@ -1,6 +1,6 @@
 @import 'bootstrap';
 
-#wrapper { @extend .container; }
+#wrapper { @extend .container-fluid; }
 
 /* Header and Nav */
 #header {
@@ -72,7 +72,7 @@
 
 /* Forms */
 form {
-  @extend form[role="form"];
+  @extend form;
 
   .inputs, .actions {
     ol {
