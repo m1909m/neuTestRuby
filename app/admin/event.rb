@@ -13,5 +13,23 @@ ActiveAdmin.register Event do
 #   permitted
 # end
 
+  form do |f|
+    f.inputs 'Details' do
+      f.input :name
+      f.input :description
+      f.input :minSize
+      f.input :maxSize
+      f.input :weeks
+      f.input :days
+      f.input :hours
+      f.input :startDate, as: :datepicker
+      f.input :endDate, as: :datepicker
+      f.input :startLoginDate, as: :datepicker
+      f.input :endLoginDate, as: :datepicker
+
+    end
+    f.actions
+  end
+
 
 end

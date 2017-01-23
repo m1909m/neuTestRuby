@@ -33,6 +33,7 @@ ActiveAdmin.register User do
       f.input :lastName
       f.input :street
       f.input :plz
+
       f.input :city
 #      f.input :password
 #      f.input :password_confirmation
