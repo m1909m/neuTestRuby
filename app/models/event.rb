@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
   has_many :reservations
-  belongs_to :roomplanings
+  belongs_to :roomplaning
 end

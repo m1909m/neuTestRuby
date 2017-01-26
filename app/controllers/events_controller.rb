@@ -25,6 +25,36 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @room = params[:maxSize]
+    if(parms[:weeks] <= 0)
+      @startDate = params[:startDate]
+      @hours = params[:hours]
+#      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
+      @roomplaning = Roomplaning.new
+      @roomplaning.year = @startDate.strftime("%Y")
+      @roomplaning.week = @startDate.cweek
+      @day = @startDate.strftime("%a")
+      case @day
+        when "Mon"
+          @roomplaning.monday = @startDate
+        when "Tue"
+          @roomplaning.tuesday = @startDate
+        when "Wed"
+          @roomplaning.wednesday = @startDate
+        when "Thu"
+          @roomplaning.thursday = @startDate
+        when "Fri"
+          @roomplaning.friday = @startDate
+        else
+      end
+
+      @roomplaning.events = @event
+      @event.publish = false
+      @roomplaning.save
+    else
+
+    end
+
 
     respond_to do |format|
       if @event.save
