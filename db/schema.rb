@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122232403) do
+ActiveRecord::Schema.define(version: 20170126122713) do
 
   create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "eMail"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170122232403) do
     t.integer  "minSize"
     t.integer  "maxSize"
     t.string   "days"
-    t.string   "hours"
+    t.float    "hours",          limit: 24
     t.integer  "weeks"
     t.date     "startDate"
     t.date     "endDate"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170122232403) do
     t.datetime "endLoginDate"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "roomplaning_id"
   end
 
   create_table "newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -86,12 +87,25 @@ ActiveRecord::Schema.define(version: 20170122232403) do
     t.index ["name"], name: "index_roles_on_name", using: :btree
   end
 
+  create_table "roomplanings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "week"
+    t.datetime "monday"
+    t.datetime "tuesday"
+    t.datetime "wednesday"
+    t.datetime "thursday"
+    t.datetime "friday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "year"
+  end
+
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "number"
     t.integer  "size"
     t.string   "building"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "roomplaning_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
