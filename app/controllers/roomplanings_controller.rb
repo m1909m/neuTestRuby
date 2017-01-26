@@ -5,7 +5,7 @@ class RoomplaningsController < InheritedResources::Base
   # GET /newssystems
   # GET /newssystems.json
   def index
-    @roomplaning = Roomplaning.all
+    @roomplanings = Roomplaning.all
   end
 
   # GET /newssystems/1
@@ -15,7 +15,7 @@ class RoomplaningsController < InheritedResources::Base
 
   # GET /newssystems/new
   def new
-    @roomplaning= Roomplaning.new
+    @roomplaning = Roomplaning.new
   end
 
   # GET /newssystems/1/edit
