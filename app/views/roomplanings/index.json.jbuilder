@@ -1,0 +1,1 @@
+json.array! @roomplanings, partial: 'roomplanings/roomplaning', as: :roomplaning

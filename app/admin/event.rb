@@ -15,17 +15,17 @@ ActiveAdmin.register Event do
 
   form do |f|
     f.inputs 'Details' do
-      f.input :name
-      f.input :description
-      f.input :minSize
-      f.input :maxSize
-      f.input :weeks
-      f.input :days
-      f.input :hours
-      f.input :startDate, as: :datepicker
-      f.input :endDate, as: :datepicker
-      f.input :startLoginDate, as: :datepicker
-      f.input :endLoginDate, as: :datepicker
+      f.input :name, :label => 'Titel'
+      f.input :description, :label => 'Beschreibung'
+      f.input :minSize, :label => 'Gewünschte Teilnehmer'
+      f.input :maxSize, :label => 'Maximale Teilnehmer'
+  #    f.input :days
+      f.input :hours, :label => 'Dauer der Veranstaltung in Minuten'
+      f.input :weeks, :label => 'Dauer der Veranstaltung in Wochen'
+      f.input :startDate, as: :datepicker, :label => 'Start der Veranstaltung'
+      f.input :endDate, as: :datepicker, :label => 'Ende der Veranstaltung'
+      f.input :startLoginDate, as: :datepicker, :label => 'Beginn der Anmeldung'
+      f.input :endLoginDate, as: :datepicker, :label => 'Ende der Anmeldung'
 
     end
     f.actions

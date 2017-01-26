@@ -1,0 +1,2 @@
+class Roomplaning < ApplicationRecord
+end

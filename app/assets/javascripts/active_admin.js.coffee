@@ -1,8 +1,11 @@
-#   require active_admin/base
+#=   require active_admin/base
 #= require jquery
 #= require jquery_ujs
 #= require twitter/bootstrap
 #= require bootstrap
-  #= require bootstrap-datepicker
+#= require bootstrap-datepicker
+#= require moment
+#= require bootstrap-datetimepicker
 #= require turbolinks
+#= require ./dPicker
 #= require_tree .
