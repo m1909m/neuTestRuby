@@ -4,8 +4,5 @@
 #= require twitter/bootstrap
 #= require bootstrap
 #= require bootstrap-datepicker
-#= require moment
-#= require bootstrap-datetimepicker
 #= require turbolinks
-#= require ./dPicker
 #= require_tree .

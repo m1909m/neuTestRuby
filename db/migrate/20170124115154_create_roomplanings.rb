@@ -1,6 +1,7 @@
 class CreateRoomplanings < ActiveRecord::Migration[5.0]
   def change
     create_table :roomplanings do |t|
+      t.integer :year
       t.integer :week
       t.string :monday
       t.string :tuesday
