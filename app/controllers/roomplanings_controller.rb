@@ -1,6 +1,6 @@
 class RoomplaningsController < InheritedResources::Base
 
-  before_action :set_newssystem, only: [:show, :edit, :update, :destroy]
+  before_action :set_roomplaning, only: [:show, :edit, :update, :destroy]
 
   # GET /newssystems
   # GET /newssystems.json
