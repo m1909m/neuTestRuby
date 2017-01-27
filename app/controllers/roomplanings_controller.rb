@@ -2,28 +2,28 @@ class RoomplaningsController < InheritedResources::Base
 
   before_action :set_roomplaning, only: [:show, :edit, :update, :destroy]
 
-  # GET /newssystems
-  # GET /newssystems.json
+  # GET /roomplanings
+  # GET /roomplanings.json
   def index
     @roomplanings = Roomplaning.all
   end
 
-  # GET /newssystems/1
-  # GET /newssystems/1.json
+  # GET /roomplanings/1
+  # GET /roomplanings/1.json
   def show
   end
 
-  # GET /newssystems/new
+  # GET /roomplanings/new
   def new
     @roomplaning = Roomplaning.new
   end
 
-  # GET /newssystems/1/edit
+  # GET /roomplanings/1/edit
   def edit
   end
 
-  # POST /newssystems
-  # POST /newssystems.json
+  # POST /roomplanings
+  # POST /roomplanings.json
   def create
     @roomplaning = Roomplaning.new(roomplaning_params)
 
@@ -40,8 +40,8 @@ class RoomplaningsController < InheritedResources::Base
     end
   end
 
-  # PATCH/PUT /newssystems/1
-  # PATCH/PUT /newssystems/1.json
+  # PATCH/PUT /roomplanings/1
+  # PATCH/PUT /roomplanings/1.json
   def update
     respond_to do |format|
       if @roomplaning.update(roomplaning_params)
@@ -54,8 +54,8 @@ class RoomplaningsController < InheritedResources::Base
     end
   end
 
-  # DELETE /newssystems/1
-  # DELETE /newssystems/1.json
+  # DELETE /roomplanings/1
+  # DELETE /roomplanings/1.json
   def destroy
     @roomplaning.destroy
     respond_to do |format|

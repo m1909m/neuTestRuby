@@ -1,3 +1,3 @@
 class Room < ApplicationRecord
-  belongs_to :roomplaning
+  belongs_to :roomplanings
 end
