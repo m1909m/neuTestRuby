@@ -25,7 +25,7 @@ class RoomplaningsController < InheritedResources::Base
   # POST /newssystems
   # POST /newssystems.json
   def create
-    @roomplaning = Roomplaning.new(newssystem_params)
+    @roomplaning = Roomplaning.new(roomplaning_params)
 
 
     respond_to do |format|
@@ -44,7 +44,7 @@ class RoomplaningsController < InheritedResources::Base
   # PATCH/PUT /newssystems/1.json
   def update
     respond_to do |format|
-      if @roomplaning.update(newssystem_params)
+      if @roomplaning.update(roomplaning_params)
         format.html { redirect_to @roomplaning, notice: 'Nroomplaning was successfully updated.' }
         format.json { render :show, status: :ok, location: @roomplaning }
       else
