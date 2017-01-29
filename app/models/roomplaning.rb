@@ -1,4 +1,4 @@
 class Roomplaning < ApplicationRecord
-  has_one :events
-  has_one :rooms
+  has_one :event
+  has_one :room
 end
