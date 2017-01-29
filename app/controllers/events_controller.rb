@@ -26,25 +26,25 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @room = params[:maxSize]
-    if(parms[:weeks] <= 0)
-      @startDate = params[:startDate]
+    if params[:weeks] <= 0
+      @startdateVa = params[:startDate]
       @hours = params[:hours]
 #      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
       @roomplaning = Roomplaning.new
-      @roomplaning.year = @startDate.strftime("%Y")
-      @roomplaning.week = @startDate.cweek
-      @day = @startDate.strftime("%a")
+      @roomplaning.year = @startdateVa.strftime("%Y")
+      @roomplaning.week = @startdateVa.cweek
+      @day = @startdateVa.strftime("%a")
       case @day
         when "Mon"
-          @roomplaning.monday = @startDate
+          @roomplaning.monday = @startdateVa
         when "Tue"
-          @roomplaning.tuesday = @startDate
+          @roomplaning.tuesday = @startdateVa
         when "Wed"
-          @roomplaning.wednesday = @startDate
+          @roomplaning.wednesday = @startdateVa
         when "Thu"
-          @roomplaning.thursday = @startDate
+          @roomplaning.thursday = @startdateVa
         when "Fri"
-          @roomplaning.friday = @startDate
+          @roomplaning.friday = @startdateVa
         else
       end
 
