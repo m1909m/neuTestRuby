@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @room = params[:maxSize]
-    if params[:weeks] <= 0
+    if params[:weeks].to_i <= 0
       @startdateVa = params[:startDate]
       @hours = params[:hours]
 #      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
