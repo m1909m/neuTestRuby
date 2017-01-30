@@ -33,20 +33,20 @@ class EventsController < ApplicationController
       @hours = event_params[:hours]
 #      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
       @roomplaning = Roomplaning.new
-      @roomplaning.year = Date.strptime(@startdateVa, '%Y').to_s
+      @roomplaning.year = Date.strptime(@startdateVa, '%m/%d/%Y').strftime('%Y').to_s
       @roomplaning.week = Date.strptime(@startdateVa, '%m/%d/%Y').cweek
-      @day = Date.strptime(@startdateVa, '%a').to_s
+      @day = Date.strptime(@startdateVa, '%m/%d/%Y').strftime('%a').to_s
       case @day
         when "Mon"
-          @roomplaning.monday = Date.strptime(@startdateVa, '%d %m %Y')
+          @roomplaning.monday = Date.strptime(@startdateVa, '%m/%d/%Y')
         when "Tue"
-          @roomplaning.tuesday = Date.strptime(@startdateVa, '%d %m %Y')
+          @roomplaning.tuesday = Date.strptime(@startdateVa, '%m/%d/%Y')
         when "Wed"
-          @roomplaning.wednesday = Date.strptime(@startdateVa, '%d %m %Y')
+          @roomplaning.wednesday = Date.strptime(@startdateVa, '%m/%d/%Y')
         when "Thu"
-          @roomplaning.thursday = Date.strptime(@startdateVa, '%d %m %Y')
+          @roomplaning.thursday = Date.strptime(@startdateVa, '%m/%d/%Y')
         when "Fri"
-          @roomplaning.friday = Date.strptime(@startdateVa, '%d %m %Y')
+          @roomplaning.friday = Date.strptime(@startdateVa, '%m/%d/%Y')
         else
       end
 
