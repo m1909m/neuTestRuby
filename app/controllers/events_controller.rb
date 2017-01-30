@@ -50,7 +50,7 @@ class EventsController < ApplicationController
         else
       end
 
-      @roomplaning.events = @event
+      @roomplaning.event = @event.id
       @event.publish = false
       if @roomplaning.save
         format.html { redirect_to @roomplaning, notice: 'roomplaning was successfully created.' }
