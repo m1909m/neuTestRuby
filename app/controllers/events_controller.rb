@@ -25,12 +25,12 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @room = params[:maxSize]
+    @room = event_params[:maxSize]
     if permitted[:event][:weeks].to_i <= 0
-      puts params[:startDate]
-      @startdateVa = permitted[:event][:startDate]
+      puts event_params[:startDate]
+      @startdateVa = event_params[:startDate]
       puts @startdateVa
-      @hours = permitted[:event][:hours]
+      @hours = event_params[:hours]
 #      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
       @roomplaning = Roomplaning.new
       @roomplaning.year = Date.strptime(@startdateVa, '%Y').to_s
