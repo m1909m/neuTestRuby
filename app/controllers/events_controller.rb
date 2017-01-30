@@ -53,8 +53,7 @@ class EventsController < ApplicationController
       @roomplaning.event = @event.id
       @event.publish = false
       if @roomplaning.save
-        format.html { redirect_to @roomplaning, notice: 'roomplaning was successfully created.' }
-        format.json { render :show, status: :created, location: @roomplaning }
+
       else
         format.html { render :new }
         format.json { render json: @roomplaning.errors, status: :unprocessable_entity }
