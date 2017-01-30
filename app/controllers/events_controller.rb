@@ -34,7 +34,7 @@ class EventsController < ApplicationController
 #      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
       @roomplaning = Roomplaning.new
       @roomplaning.year = Date.strptime(@startdateVa, '%Y').to_s
-      @roomplaning.week = Date.strptime(@startdateVa, '%Y-%m-%d').cweek
+      @roomplaning.week = Date.strptime(@startdateVa, '%m/%d/%Y').cweek
       @day = Date.strptime(@startdateVa, '%a').to_s
       case @day
         when "Mon"
