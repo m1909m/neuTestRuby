@@ -27,7 +27,9 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @room = params[:maxSize]
     if params[:weeks].to_i <= 0
+      puts params[:startDate]
       @startdateVa = params[:startDate]
+      puts @startdateVa
       @hours = params[:hours]
 #      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
       @roomplaning = Roomplaning.new
