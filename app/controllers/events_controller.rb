@@ -62,8 +62,10 @@ class EventsController < ApplicationController
     else
 
     end
-    @event.startDate = Date.strptime(event_params[:startDate], '%m/%d/%Y').strftime('%m/%d/%Y')
-
+    @event.startDate = Date.strptime(event_params[:startDate], '%m/%d/%Y').strftime('%d/%m/%Y')
+    if event_params[:endDate].present?
+      @event.startDate = Date.strptime(event_params[:endDate], '%m/%d/%Y').strftime('%d/%m/%Y')
+    end
 
     respond_to do |format|
       if @event.save
