@@ -62,7 +62,7 @@ class EventsController < ApplicationController
     else
 
     end
-    @event.startDate = Date.strptime(@startdateVa, '%m/%d/%Y').strftime('%m/%d/%Y')
+    @event.startDate = Date.strptime(event_params[:startDate], '%m/%d/%Y').strftime('%m/%d/%Y')
 
 
     respond_to do |format|
