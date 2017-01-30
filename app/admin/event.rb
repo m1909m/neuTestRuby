@@ -13,6 +13,24 @@ ActiveAdmin.register Event do
 #   permitted
 # end
 
+
+  permit_params :name, :description, :minSize, :maxSize, :hours, :weeks, :startDate, :endDate, :startLoginDate, :endLoginDate, :publish
+
+  index do
+    column :name
+    column :description
+    column :minSize
+    column :maxSize
+    column :hours
+    column :weeks
+    column :startDate
+    column :endDate
+    column :startLoginDate
+    column :endLoginDate
+    column :publish
+    actions
+  end
+
   form do |f|
     f.inputs 'Details' do
       f.input :name, :label => 'Titel'
@@ -20,7 +38,7 @@ ActiveAdmin.register Event do
       f.input :minSize, :label => 'Gewünschte Teilnehmer'
       f.input :maxSize, :label => 'Maximale Teilnehmer'
   #    f.input :days
-      f.input :hours, :label => 'Dauer der Veranstaltung in Minuten'
+      f.input :hours, :label => 'Dauer der Veranstaltung in Stunden'
       f.input :weeks, :label => 'Dauer der Veranstaltung in Wochen'
       f.input :startDate, as: :datepicker, :label => 'Start der Veranstaltung'
       f.input :endDate, as: :datepicker, :label => 'Ende der Veranstaltung'

@@ -27,9 +27,9 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @room = event_params[:maxSize]
     if event_params[:weeks].to_i <= 0
-      puts event_params[:startDate]
+
       @startdateVa = event_params[:startDate]
-      puts @startdateVa
+
       @hours = event_params[:hours]
 #      @room = Room.find_by_size([params[:minSize]. params[:maxSize]])
       @roomplaning = Roomplaning.new
@@ -51,6 +51,7 @@ class EventsController < ApplicationController
       end
 
       @roomplaning.event = @event.id
+      @event.roomplaning = @roomplaning.id
       @event.publish = false
       if @roomplaning.save
 
@@ -61,6 +62,7 @@ class EventsController < ApplicationController
     else
 
     end
+    @event.startDate = Date.strptime(@startdateVa, '%m/%d/%Y')
 
 
     respond_to do |format|
