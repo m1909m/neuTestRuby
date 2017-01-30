@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @room = event_params[:maxSize]
-    if permitted[:event][:weeks].to_i <= 0
+    if event_params[:weeks].to_i <= 0
       puts event_params[:startDate]
       @startdateVa = event_params[:startDate]
       puts @startdateVa
