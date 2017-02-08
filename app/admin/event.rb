@@ -44,7 +44,7 @@ ActiveAdmin.register Event do
       f.input :endDate, as: :datepicker, :label => 'Ende der Veranstaltung'
       f.input :startLoginDate, as: :datepicker, :label => 'Beginn der Anmeldung'
       f.input :endLoginDate, as: :datepicker, :label => 'Ende der Anmeldung'
-
+     # f.input :rooms, :label => 'verfügbare Räume'
     end
     f.actions
   end

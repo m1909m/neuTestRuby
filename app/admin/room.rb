@@ -12,6 +12,16 @@ ActiveAdmin.register Room do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+permit_params :number, :size, :building
+#TODO Building picture
 
+form do |f|
+  f.inputs 'Raum Hinzufügen' do
+    f.input :number
+    f.input :size
+    f.input :building
+  end
+  f.actions
+end
 
 end
