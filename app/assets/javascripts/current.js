@@ -2,7 +2,7 @@
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 var app = angular
-  .module('app', ['ngMaterial', 'ui.calendar'])
+  .module('app', ['ui.calendar'])
   .controller('appController', ['$scope', function($scope) {
 
 $calendar = $('[ui-calendar]');
