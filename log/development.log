@@ -14922,3 +14922,52 @@ app/admin/event.rb:35:in `block (2 levels) in <top (required)>'
   Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.0ms)
   Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (263.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-09 00:57:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (16.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewssystemsController#index as HTML
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mNewssystem Load (0.4ms)[0m  [1m[34mSELECT `newssystems`.* FROM `newssystems`[0m
+  Rendered newssystems/index.html.erb within layouts/application (103.5ms)
+  Rendered layouts/_headerLogo.html.erb (2.5ms)
+Completed 200 OK in 55771ms (Views: 55719.4ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-09 00:58:54 +0100
+Processing by NewssystemsController#index as HTML
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mNewssystem Load (12.0ms)[0m  [1m[34mSELECT `newssystems`.* FROM `newssystems`[0m
+  Rendered newssystems/index.html.erb within layouts/application (35.3ms)
+  Rendered layouts/_headerLogo.html.erb (72.2ms)
+Completed 200 OK in 3105ms (Views: 3075.2ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-09 00:59:09 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 72ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-09 00:59:09 +0100
+Processing by NewssystemsController#index as HTML
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mNewssystem Load (12.6ms)[0m  [1m[34mSELECT `newssystems`.* FROM `newssystems`[0m
+  Rendered newssystems/index.html.erb within layouts/application (50.0ms)
+  Rendered layouts/_headerLogo.html.erb (5.4ms)
+Completed 200 OK in 3151ms (Views: 3111.4ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-09 00:59:27 +0100
+Processing by NewssystemsController#index as HTML
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mNewssystem Load (3.7ms)[0m  [1m[34mSELECT `newssystems`.* FROM `newssystems`[0m
+  Rendered newssystems/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_headerLogo.html.erb (2.9ms)
+Completed 200 OK in 2472ms (Views: 2457.5ms | ActiveRecord: 5.6ms)
+
+
