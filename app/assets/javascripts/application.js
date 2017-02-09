@@ -17,5 +17,7 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-ui-calendar
+//= require moment
+//= require fullcalendar
 //= require turbolinks
 //= require_tree .
