@@ -2,6 +2,15 @@
 
 <div class="center-block row">
   <h1 class="col-sm-12">Aktuelles</h1>
+
+  <% if current_user.present? %>
+      <li><%= link_to 'Neues Seminar erstellen', %></li>
+
+  <% else %>
+      <li><%= link_to 'Bitte Loggen Sie sich ein', new_user_session_path %></li>
+
+  <% end %>
+  <!--
   <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
     <div class="caption">
       <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
@@ -86,5 +95,6 @@
       <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
     </div>
   </div>
+  -->
 </div>
 
