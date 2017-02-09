@@ -16,5 +16,6 @@
 //= require twitter/bootstrap
 //= require angular
 //= require angular-ui-router
+//= require angular-ui-calendar
 //= require turbolinks
 //= require_tree .
