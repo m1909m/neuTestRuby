@@ -3,6 +3,6 @@
 #= require jquery_ujs
 #= require twitter/bootstrap
 #= require bootstrap
-#= require bootstrap-datepicker
+# require bootstrap-datepicker
 #= require turbolinks
 #= require_tree .
