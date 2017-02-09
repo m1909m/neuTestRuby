@@ -1,90 +1,18 @@
-<% content_for :title do %>Aktuelles<% end %>
-test
-<div class="center-block row">
-  <h1 class="col-sm-12">Aktuelles</h1>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
+<% content_for :title do %>TEST Kalender<% end %>
+
+
+<div ng-app="app" ng-controller="appController" ng-cloak>
+
+  <div>{{alertMessage}}</div>
+
+  <div class="pull-left">
+    <md-button class="md-raised" ng-click="changeView('month')">month</md-button>
+    <md-button class="md-raised" ng-click="changeView('basicWeek')">week</md-button>
+    <md-button class="md-raised" ng-click="changeView('basicDay')">day</md-button>
   </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
+
+  <div ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar">
   </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
-  <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
-    <div class="caption">
-      <h3>15.07.2016<br>Schlichtungsausschuss der ARK-DD am 12. Juli 2016</h3>
-      <p>Obwohl die Dienstnehmerseite in der anberaumten Sitzung der Schlichtung angeboten hatte, ihre Anträge zurückzuziehen, war die Dienstgeberseite nicht bereit, auf dieses konstruktive Angebot einzugehen. Sie verfolgte weiter ihre Forderungen nach generellen Absenkungen in der Altenhilfe und behauptete dabei, auf die Hälfte der Absenkungen verzichtet zu haben.</p>
-      <a href="aktuelles.html" style="float: right;color: #f4bfa5;">weiterlesen</a>
-    </div>
-  </div>
+
 </div>
 
