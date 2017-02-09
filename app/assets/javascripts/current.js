@@ -1,13 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-app = angular
+//# Place all the behaviors and hooks related to the matching controller here.
+//# All this logic will automatically be available in application.js.
+//# You can use CoffeeScript in this file: http://coffeescript.org/
+var app = angular
   .module('app', ['ngMaterial', 'ui.calendar'])
   .controller('appController', ['$scope', function($scope) {
 
 $calendar = $('[ui-calendar]');
 
-  date = new Date(),
+  var date = new Date(),
     d = date.getDate(),
     m = date.getMonth(),
     y = date.getFullYear();
@@ -16,15 +16,15 @@ $calendar = $('[ui-calendar]');
     $calendar.fullCalendar('changeView',view);
 };
 
-# /* config object */
+ /* config object */
 $scope.uiConfig = {
   calendar: {
     lang: 'de',
     height: '100%',
     editable: true,
     header: {
-#//left: 'month basicWeek basicDay',
-#//center: 'title',
+//left: 'month basicWeek basicDay',
+//center: 'title',
 right: 'today prev,next'
 },
 eventClick: function(date, jsEvent, view) {
