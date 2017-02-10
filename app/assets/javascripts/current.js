@@ -19,7 +19,7 @@ $calendar = $('[ui-calendar]');
  /* config object */
 $scope.uiConfig = {
   calendar: {
-    schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+  //  schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
     lang: 'de',
     height: '100%',
     editable: true,
