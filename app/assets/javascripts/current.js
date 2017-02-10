@@ -51,7 +51,8 @@ $scope.events = [{
 }, {
   title: 'Long Event',
   start: new Date(y, m, d - 5),
-  end: new Date(y, m, d - 2)
+  end: new Date(y, m, d - 2),
+    resourceId: 'b' // start out in resource 'b'
 }, {
   id: 999,
   title: 'Repeating Event',
