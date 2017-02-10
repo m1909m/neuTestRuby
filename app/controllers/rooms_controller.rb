@@ -7,7 +7,7 @@ class RoomsController < InheritedResources::Base
   def angular
 
     @rooms = Room.all
-    render 'rooms/index'
+    render 'rooms/_index'
   end
 
   # GET /rooms
