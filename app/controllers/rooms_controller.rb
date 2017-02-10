@@ -7,7 +7,7 @@ class RoomsController < InheritedResources::Base
   def angular
 
     @rooms = Room.all
-    render 'rooms/index'
+    #render 'rooms/index'
   end
 
   # GET /rooms
@@ -16,6 +16,7 @@ class RoomsController < InheritedResources::Base
     @rooms = Room.all
     respond_to do |format|
       format.json { render json: @rooms.to_json }
+      format.html
     end
   end
 
