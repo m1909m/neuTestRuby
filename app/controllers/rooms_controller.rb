@@ -16,7 +16,6 @@ class RoomsController < InheritedResources::Base
 
     respond_to do |format|
       format.json { render json: Room.all }
-      format.html
     end
   end
 
