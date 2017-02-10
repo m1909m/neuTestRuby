@@ -15,6 +15,7 @@
 //= require tinymce
 //= require twitter/bootstrap
 //= require angular
+//= require angular-resource
 //= require angular-ui-router
 //= require angular-ui-calendar
 //= require moment
