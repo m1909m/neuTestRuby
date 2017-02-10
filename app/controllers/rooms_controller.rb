@@ -3,7 +3,7 @@ class RoomsController < InheritedResources::Base
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def angular
-    render 'layouts/application'
+    render 'rooms/index'
   end
 
   def index
