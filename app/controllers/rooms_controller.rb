@@ -7,13 +7,15 @@ class RoomsController < InheritedResources::Base
   def angular
 
     @rooms = Room.all
-    render 'rooms/_index'
+    render 'rooms/index'
   end
 
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    respond_to do |format|
+      format.json { render json: Room.all }
+    end
   end
 
   def show
