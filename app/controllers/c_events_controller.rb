@@ -1,6 +1,6 @@
 class CEventsController < InheritedResources::Base
 
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_c_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @events = Event.where(start: params[:start]..params[:end])
@@ -31,7 +31,7 @@ class CEventsController < InheritedResources::Base
 
   private
 
-    def set_event
+    def set_c_event
       @event = Event.find(params[:id])
     end
 
