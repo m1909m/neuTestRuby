@@ -11,27 +11,24 @@ myApp.config([
                 url: '/administrator/rooms',
                 templateUrl: '/rooms.html',
                 controller: 'RoomCtrl',
-                resolve: {
-                    roomPromise: ['rooms', function(rooms){
-                        return rooms.getAll();
-                    }]
-                }
-            })
-            .state('room', {
-                url: '/rooms/{id}',
-                templateUrl: '/calender.html',
-                controller: 'CalendarCtrl'
+
             });
 
         $urlRouterProvider.otherwise('rooms');
     }]);
-myApp.controller('RoomCtrl', ['$scope', 'room', function($scope, room) {
-    $scope.rooms = room.index();
+myApp.factory("RRoom", function($resource) {
+    return $resource("rooms/:id", { id: '@id' }, {
+        index:   { method: 'GET', isArray: true, responseType: 'json' },
+        update:  { method: 'PUT', responseType: 'json' }
+    });
+});
+myApp.controller('RoomCtrl', ['$scope', 'room', function($scope, Room) {
+    $scope.rooms = Room.index();
 
     $scope.addRoom = function() {
-        visitor = room.save($scope.newRoom);
+        visitor = Room.save($scope.newRoom);
 
-        $scope.visitors.push(room);
+        $scope.visitors.push(Room);
         $scope.newRoom = {};
     };
 
@@ -39,9 +36,3 @@ myApp.controller('RoomCtrl', ['$scope', 'room', function($scope, room) {
 myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
 }]);
-myApp.factory("room", function($resource) {
-    return $resource("rooms/:id", { id: '@id' }, {
-        index:   { method: 'GET', isArray: true, responseType: 'json' },
-        update:  { method: 'PUT', responseType: 'json' }
-    });
-});
