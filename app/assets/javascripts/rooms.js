@@ -11,7 +11,7 @@ myApp.config(function($routeProvider) {
         });
 });*/
 myApp.factory("Room", function($resource) {
-    return $resource("/rooms", {
+    return $resource("/rooms", {}, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
     });
