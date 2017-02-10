@@ -1,17 +1,17 @@
-<h1>Räume</h1>
+
 <div ng-app="roomsContainer">
-  <ui-view></ui-view>
+  <ng-view></ng-view>
 
 </div>
 
 <script type="text/ng-template" id="/rooms.html">
-  <div class="page-header">
-    <h1>Rooms</h1>
+
+    <h1>Räume</h1>
     <div ng-show="!rooms.length">Keine Räume vorhanden</div>
     <div ng-repeat="room in rooms" style="margin: 5px;">
       {{room.number}}
     </div>
-  </div>
+
 
   <!-- rest of template -->
 </script>

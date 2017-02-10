@@ -17,6 +17,7 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-resource
+//= require angular-route
 //= require angular-ui-calendar
 //= require moment
 //= require fullcalendar

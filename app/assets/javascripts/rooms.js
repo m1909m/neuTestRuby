@@ -1,21 +1,14 @@
 /**
  * Created by Marian on 10.02.2017.
  */
-var myApp = angular.module('roomsContainer', ['ui.router', 'ngResource']);
-myApp.config([
-    '$stateProvider',
-    '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
-        $stateProvider
-            .state('rooms', {
-                url: '/administrator/rooms',
-                templateUrl: '/rooms.html',
-                controller: 'RoomCtrl'
-
-            });
-
-        $urlRouterProvider.otherwise('rooms');
-    }]);
+var myApp = angular.module('roomsContainer', ['ngRoute', 'ngResource']);
+myApp.config(function($routeProvider) {
+    $routeProvider
+        .when("/", {
+            templateUrl : "room.html",
+            controller : "RoomCtrrl"
+        });
+});
 myApp.factory("Room", function($resource) {
     return $resource("rooms/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
