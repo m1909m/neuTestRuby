@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :c_events
+  resources :c_events do
+    resource :rooms, only:  [:show, :create] do
+
+    end
+  end
   resources :roomplanings
   ActiveAdmin.routes(self)
   resources :events
@@ -10,6 +14,8 @@ Rails.application.routes.draw do
   get 'current/index'
 
   root :to => "newssystems#index"
+
+  get 'administrator/rooms', to: "rooms#angular"
 
   get '/abo_newsletter/:email', to: "abo_newsletters#signOutNews"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

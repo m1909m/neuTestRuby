@@ -107,11 +107,11 @@ var app = angular
       /* config object */
       $scope.uiConfig = {
           calendar:{
-              height: 450,
+              height: 500,
               editable: true,
               header:{
-                  left: 'title',
-                  center: '',
+                  left: 'month basicWeek basicDay agendaWeek agendaDay',
+                  center: 'title',
                   right: 'today prev,next'
               },
               dayClick: $scope.dayClick,
