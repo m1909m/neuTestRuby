@@ -1,6 +1,6 @@
 class RoomsController < InheritedResources::Base
 
-  #respond_to :json
+  respond_to :json
 
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
