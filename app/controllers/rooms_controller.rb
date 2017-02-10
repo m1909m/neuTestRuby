@@ -13,9 +13,7 @@ class RoomsController < InheritedResources::Base
   # GET /rooms
   # GET /rooms.json
   def index
-
     @rooms = Room.all
-
   end
 
   def show
