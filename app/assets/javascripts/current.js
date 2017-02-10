@@ -13,12 +13,13 @@ $calendar = $('[ui-calendar]');
     y = date.getFullYear();
 
   $scope.changeView = function(view){
-    $calendar.fullCalendar({schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'},'changeView',view);
+    $calendar.fullCalendar('changeView',view);
 };
 
  /* config object */
 $scope.uiConfig = {
   calendar: {
+    schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
     lang: 'de',
     height: '100%',
     editable: true,
