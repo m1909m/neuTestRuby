@@ -10,29 +10,29 @@ myApp.config([
             .state('rooms', {
                 url: '/administrator/rooms',
                 templateUrl: '/rooms.html',
-                controller: 'RoomCtrl',
+                controller: 'RoomCtrl'
 
             });
 
         $urlRouterProvider.otherwise('rooms');
     }]);
-myApp.factory("RRoom", function($resource) {
+myApp.factory("Room", function($resource) {
     return $resource("rooms/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
     });
 });
-myApp.controller('RoomCtrl', ['$scope', 'room', function($scope, Room) {
+myApp.controller('RoomCtrl', function($scope, Room) {
     $scope.rooms = Room.index();
 
     $scope.addRoom = function() {
-        visitor = Room.save($scope.newRoom);
+        room = Room.save($scope.newRoom);
 
-        $scope.visitors.push(Room);
+        $scope.rooms.push(room);
         $scope.newRoom = {};
     };
 
-}]);
+});/*
 myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
-}]);
+}]);*/
