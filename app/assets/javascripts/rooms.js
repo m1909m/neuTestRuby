@@ -10,7 +10,12 @@ myApp.config([
             .state('rooms', {
                 url: '/administrator/rooms',
                 templateUrl: '/rooms.html',
-                controller: 'RoomCtrl'
+                controller: 'RoomCtrl',
+                resolve: {
+                    roomPromise: ['rooms', function(rooms){
+                        return rooms.getAll();
+                    }]
+                }
             })
             .state('room', {
                 url: '/rooms/{id}',
