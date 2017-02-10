@@ -1,6 +1,6 @@
 class RoomsController < InheritedResources::Base
 
-  respond_to :json
+  #respond_to :json
 
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
@@ -11,10 +11,7 @@ class RoomsController < InheritedResources::Base
   # GET /rooms
   # GET /rooms.json
   def index
-    respond_to do |format|
-      format.json { render json: Room.all }
 
-    end
     @rooms = Room.all
   end
 
