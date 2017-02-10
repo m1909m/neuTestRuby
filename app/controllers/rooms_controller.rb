@@ -17,6 +17,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    render 'rooms/show'
   end
 
   def new
