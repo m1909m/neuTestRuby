@@ -6,6 +6,7 @@ gem 'less-rails'
 gem 'tinymce-rails', '~> 4.3'
 
 gem 'node'
+gem 'angularjs-rails', '~> 1.2.25'
 gem 'angular-rails-templates'
 gem 'angular-ui-calendar-rails'
 
