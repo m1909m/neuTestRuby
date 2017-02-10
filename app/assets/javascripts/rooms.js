@@ -1,7 +1,7 @@
 /**
  * Created by Marian on 10.02.2017.
  */
-var myApp = angular.module('roomsContainer', ['ui.router', 'templates']);
+var myApp = angular.module('roomsContainer', ['ui.router']);
 myApp.config([
     '$stateProvider',
     '$urlRouterProvider',
