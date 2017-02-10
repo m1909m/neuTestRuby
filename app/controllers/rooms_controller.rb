@@ -6,6 +6,8 @@ class RoomsController < InheritedResources::Base
     render 'rooms/index'
   end
 
+  # GET /rooms
+  # GET /rooms.json
   def index
     @rooms = Room.all
   end

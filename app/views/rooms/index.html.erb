@@ -6,7 +6,9 @@
 <script type="text/ng-template" id="/rooms.html">
   <div class="page-header">
     <h1>Rooms</h1>
-
+    <div ng-repeat="room in rooms" style="margin: 5px;">
+      {{room.number}}
+    </div>
   </div>
 
   <!-- rest of template -->
