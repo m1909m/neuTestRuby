@@ -35,7 +35,13 @@ $scope.uiConfig = {
     dayClick: $scope.alertEventOnClick,
     eventDrop: $scope.alertOnDrop,
     eventResize: $scope.alertOnResize,
-    eventRender: $scope.eventRender
+    eventRender: $scope.eventRender,
+      resources: [
+          { id: 'a', title: 'Room A' },
+          { id: 'b', title: 'Room B' },
+          { id: 'c', title: 'Room C' },
+          { id: 'd', title: 'Room D' }
+      ]
   }
 };
 
