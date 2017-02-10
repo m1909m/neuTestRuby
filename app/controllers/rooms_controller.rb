@@ -1,4 +1,4 @@
-class RoomsController < InheritedResources::Base
+class RoomsController < ApplicationController
 
   respond_to :json
 
@@ -13,9 +13,8 @@ class RoomsController < InheritedResources::Base
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
     respond_to do |format|
-      format.json { render json: @rooms.to_json }
+      format.json { render json: Room.all }
       format.html
     end
   end
