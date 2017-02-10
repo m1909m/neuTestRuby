@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   root :to => "newssystems#index"
 
-  get 'administrator/rooms', to: "rooms#angular"
+  #get 'administrator/rooms', to: "rooms#angular"
 
   get '/abo_newsletter/:email', to: "abo_newsletters#signOutNews"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

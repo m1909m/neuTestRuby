@@ -5,6 +5,8 @@ class RoomsController < InheritedResources::Base
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def angular
+
+    @rooms = Room.all
     render 'rooms/index'
   end
 
