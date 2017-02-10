@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :c_events do
-    resource :rooms, only:  [:show, :create] do
+  resources :c_events
+    resource :rooms
 
-    end
-  end
   resources :roomplanings
   ActiveAdmin.routes(self)
   resources :events
