@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :c_events
   resources :roomplanings
   ActiveAdmin.routes(self)
   resources :events

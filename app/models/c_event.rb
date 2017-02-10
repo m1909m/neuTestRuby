@@ -1,0 +1,2 @@
+class CEvent < ApplicationRecord
+end

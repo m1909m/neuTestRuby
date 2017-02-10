@@ -15076,3 +15076,342 @@ Processing by NewssystemsController#index as HTML
 Completed 200 OK in 4448ms (Views: 4368.9ms | ActiveRecord: 20.8ms)
 
 
+Started GET "/current/index" for 127.0.0.1 at 2017-02-09 23:12:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (43.5ms)
+Completed 500 Internal Server Error in 6673ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:6:43: reserved word 'function'):
+     7:     <title><%= content_for?(:title) ? yield(:title) : "vkm-rwl - Verband kirchlicher Mitarbeiterinnen und Mitarbeiter Rheinland Westfalen Lippe" %></title>
+     8:     <%= csrf_meta_tags %>
+     9:     
+    10:     <%= stylesheet_link_tag "application", :media => "all" %>
+    11: 
+    12:     <!-- For third-generation iPad with high-resolution Retina display: -->
+    13:     <!-- Size should be 144 x 144 pixels -->
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__3766454950093481274_47312222576740'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (79.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.7ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (261.7ms)
+Started GET "/current/index" for 127.0.0.1 at 2017-02-09 23:18:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (10.4ms)
+Completed 200 OK in 67246ms (Views: 67213.4ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-09 23:28:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (9.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (14.1ms)
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (24.0ms)
+Completed 200 OK in 14776ms (Views: 14723.7ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-09 23:31:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (3.4ms)
+Completed 200 OK in 12710ms (Views: 12670.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-09 23:46:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (12.5ms)
+Completed 200 OK in 21036ms (Views: 20854.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 00:00:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (14.8ms)
+Completed 200 OK in 74352ms (Views: 74308.0ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 00:21:57 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 6668ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-datepicker.
+Load paths:
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/config
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/images
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/bower_components
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/formtastic-3.1.4/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bourbon-4.2.7/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-bootstrap-views-0.0.9/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.17.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/fullcalendar-rails-3.1.0.0/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/fullcalendar-rails-3.1.0.0/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/angular-ui-calendar-rails-0.8.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/angular-rails-templates-1.0.2/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/source
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+     6:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     7:     <title><%= content_for?(:title) ? yield(:title) : "vkm-rwl - Verband kirchlicher Mitarbeiterinnen und Mitarbeiter Rheinland Westfalen Lippe" %></title>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:     <%= csrf_meta_tags %>
+    12: 
+  
+app/assets/stylesheets/active_admin.scss:16
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1277647613361010298_47390258166580'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (139.3ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (424.3ms)
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 00:22:20 +0100
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2584ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-datepicker.
+Load paths:
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/config
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/images
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/bower_components
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/formtastic-3.1.4/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bourbon-4.2.7/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-bootstrap-views-0.0.9/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.17.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/fullcalendar-rails-3.1.0.0/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/fullcalendar-rails-3.1.0.0/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/angular-ui-calendar-rails-0.8.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/angular-rails-templates-1.0.2/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/source
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+     6:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     7:     <title><%= content_for?(:title) ? yield(:title) : "vkm-rwl - Verband kirchlicher Mitarbeiterinnen und Mitarbeiter Rheinland Westfalen Lippe" %></title>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:     <%= csrf_meta_tags %>
+    12: 
+  
+app/assets/stylesheets/active_admin.scss:16
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1277647613361010298_69913156868980'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (30.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.7ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.9ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (260.8ms)
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 00:24:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (3.8ms)
+Completed 200 OK in 75525ms (Views: 75491.0ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 00:39:32 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (17.7ms)
+Completed 200 OK in 14657ms (Views: 14621.3ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 01:32:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (9.9ms)
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (29.1ms)
+Completed 200 OK in 15177ms (Views: 15149.0ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 01:39:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (2.0ms)
+Completed 200 OK in 13568ms (Views: 13524.8ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 02:05:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 4140ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'angular-resource' with type 'application/javascript'
+Checked in these paths: 
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/config
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/images
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/app/assets/stylesheets
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/bower_components
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/javascripts
+  /home/docker/Dokumente/projects/neuTestRuby/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-4f494073c6c0/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/formtastic-3.1.4/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bourbon-4.2.7/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-bootstrap-views-0.0.9/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/momentjs-rails-2.17.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/fullcalendar-rails-3.1.0.0/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/fullcalendar-rails-3.1.0.0/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/angular-ui-calendar-rails-0.8.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/angular-rails-templates-1.0.2/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/app/assets/source
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/tinymce-rails-4.5.1/vendor/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/fonts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/javascripts
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/app/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/twitter-bootstrap-rails-3.2.2/vendor/assets/stylesheets
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.0/lib/assets/javascripts):
+     6:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     7:     <title><%= content_for?(:title) ? yield(:title) : "vkm-rwl - Verband kirchlicher Mitarbeiterinnen und Mitarbeiter Rheinland Westfalen Lippe" %></title>
+     8: 
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:     <%= csrf_meta_tags %>
+    12: 
+  
+app/assets/javascripts/application.js:18
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__1193914163207955378_47386929396680'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (22.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (167.5ms)
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 02:12:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (2.3ms)
+Completed 200 OK in 19273ms (Views: 19207.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 02:23:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (3.0ms)
+Completed 200 OK in 16588ms (Views: 16558.6ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 03:12:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (9.3ms)
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (11.8ms)
+Completed 200 OK in 158196ms (Views: 158094.1ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/current/index" for 127.0.0.1 at 2017-02-10 03:33:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  Rendered current/index.html.erb within layouts/application (51.2ms)
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (7.4ms)
+Completed 200 OK in 36290ms (Views: 36216.5ms | ActiveRecord: 8.0ms)
+
+

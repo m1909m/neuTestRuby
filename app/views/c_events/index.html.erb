@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>C Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Color</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @c_events.each do |c_event| %>
+      <tr>
+        <td><%= c_event.title %></td>
+        <td><%= c_event.start %></td>
+        <td><%= c_event.end %></td>
+        <td><%= c_event.color %></td>
+        <td><%= c_event.description %></td>
+        <td><%= link_to 'Show', c_event %></td>
+        <td><%= link_to 'Edit', edit_c_event_path(c_event) %></td>
+        <td><%= link_to 'Destroy', c_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New C Event', new_c_event_path %>
