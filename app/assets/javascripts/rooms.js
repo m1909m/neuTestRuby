@@ -18,6 +18,13 @@ myApp.factory("Room", function($resource) {
     });
 });
 */
+
+myApp.factory("CEvent", function($resource) {
+    return $ressource("/c_events/:id", { id: '@id' }, {
+        index: { method: 'GET', isArrary: true, responseType: 'json' }
+    });
+});
+
 myApp.controller('RoomCtrl', function($scope, Room) {
     $scope.rooms = Room.index();
 
@@ -32,11 +39,6 @@ myApp.controller('RoomCtrl', function($scope, Room) {
 myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
 }]);
-myApp.factory("CEvent", function($resource) {
-    return $ressource("/c_events/:id", { id: '@id' }, {
-        index: { method: 'GET', isArrary: true, responseType: 'json' }
-    });
-});
 myApp.controller('calendarController', ['$scope', function($scope, CEvent) {
 
         var date = new Date();
