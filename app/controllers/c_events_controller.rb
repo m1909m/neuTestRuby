@@ -1,4 +1,4 @@
-class CEventsController < InheritedResources::Base
+class CEventsController < ApplicationController
 
   before_action :set_c_event, only: [:show, :edit, :update, :destroy]
 

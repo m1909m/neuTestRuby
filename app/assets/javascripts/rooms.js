@@ -19,7 +19,7 @@ myApp.factory("Room", function($resource) {
 });
 */
 
-myApp.factory("Cevent", function($resource) {
+myApp.factory("CEvent", function($resource) {
     return $ressource("/c_events/:id", { id: '@id' }, {
         index: { method: 'GET', isArrary: true, responseType: 'json' }
     });
@@ -39,8 +39,8 @@ myApp.controller('RoomCtrl', function($scope, Room) {
 myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
 }]);
-myApp.controller('calendarController', ['$scope', function($scope, Cevent) {
-    $scope.events = Cevent.index();
+myApp.controller('calendarController', ['$scope', function($scope, CEvent) {
+    $scope.events = CEvent.index();
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
