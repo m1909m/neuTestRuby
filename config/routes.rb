@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :c_events
+  resources :c_events, defaults: {format: :json}
   resources :rooms
 
   resources :roomplanings

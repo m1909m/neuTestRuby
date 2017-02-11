@@ -30,6 +30,11 @@ myApp.controller('RoomCtrl', function($scope, Room) {
 myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
 }]);
+myApp.factory("CEvent", function($resource) {
+    return $ressource("/c_events/:id", { id: '@id' }, {
+        index: { method: 'GET', isArrary: true, responseType: 'json' }
+    });
+});
 myApp.controller('calendarController', ['$scope', function($scope) {
         var date = new Date();
         var d = date.getDate();
@@ -53,10 +58,11 @@ myApp.controller('calendarController', ['$scope', function($scope) {
          }
          });
          */
-        /*
+
          //to explicitly add events to the calendar
          //you can add the events in following ways
-         $scope.events = [
+         $scope.events = CEvent.index();
+        /*
          {title: 'All Day Event',start: new Date('Thu Oct 17 2013 09:00:00 GMT+0530 (IST)')},
          {title: 'Long Event',start: new Date('Thu Oct 17 2013 10:00:00 GMT+0530 (IST)'),end: new Date('Thu Oct 17 2013 17:00:00 GMT+0530 (IST)')},
          {id: 999,title: 'Repeating Event',start: new Date('Thu Oct 17 2013 09:00:00 GMT+0530 (IST)'),allDay: false},
@@ -136,10 +142,12 @@ myApp.controller('calendarController', ['$scope', function($scope) {
             calendar:{
                 height: 500,
                 editable: true,
+                selectable: true,
+                selectHelper: true,
                 header:{
-                    left: 'month basicWeek basicDay agendaWeek agendaDay',
+                    left: 'prev,next today',
                     center: 'title',
-                    right: 'today prev,next'
+                    right: 'month,agendaWeek,agendaDay'
                 },
                 dayClick: $scope.dayClick,
                 eventDrop: $scope.alertOnDrop,
