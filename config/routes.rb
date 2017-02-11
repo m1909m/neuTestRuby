@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   root :to => "newssystems#index"
 
-  get 'administrator/rooms', to: "rooms#index"
+  get 'administrator/rooms', to: "rooms#angular"
 
   #get '/rooms', to: "rooms#index"
 

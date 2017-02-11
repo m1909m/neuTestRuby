@@ -10,12 +10,14 @@ myApp.config(function($routeProvider) {
             controller : "RoomCtrrl"
         });
 });*/
+/*
 myApp.factory("Room", function($resource) {
     return $resource("/administrator/rooms/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
     });
 });
+*/
 myApp.controller('RoomCtrl', function($scope, Room) {
     $scope.rooms = Room.index();
 
@@ -36,7 +38,7 @@ myApp.factory("CEvent", function($resource) {
     });
 });
 myApp.controller('calendarController', ['$scope', function($scope, CEvent) {
-    $scope.events = CEvent.index();
+
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
