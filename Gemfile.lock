@@ -72,6 +72,7 @@ GEM
       sprockets (>= 3.0, < 5)
       tilt
     angular-ui-calendar-rails (0.8.1)
+    angularjs-rails (1.2.26)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (7.1.4)
@@ -319,6 +320,7 @@ DEPENDENCIES
   activeadmin!
   angular-rails-templates
   angular-ui-calendar-rails
+  angularjs-rails (~> 1.2.25)
   bootstrap-datepicker-rails
   bootstrap3-datetimepicker-rails (~> 4.17.43)
   byebug
