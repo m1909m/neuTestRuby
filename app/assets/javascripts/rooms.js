@@ -21,7 +21,7 @@ myApp.factory("Room", function($resource) {
 
 myApp.factory("CEvent", function($resource) {
     return $resource("/c_events/:id", { id: '@id' }, {
-        index: { method: 'GET', isArrary: false, responseType: 'json' }
+        index: { method: 'GET', isArrary: true, responseType: 'json' }
     });
 });
 

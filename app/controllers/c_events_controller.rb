@@ -1,5 +1,6 @@
 class CEventsController < ApplicationController
 
+  respond_to :json
   before_action :set_c_event, only: [:show, :edit, :update, :destroy]
 
   def index
