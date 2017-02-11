@@ -164,5 +164,5 @@ myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEv
         };
 
         /* event sources array*/
-        $scope.eventSources = [$scope.events, $scope.eventSource, $scope.eventsF];
+        $scope.eventSources = [$scope.events, $scope.eventSource, $scope.events];
     }]);
