@@ -40,12 +40,13 @@ myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
 }]);
 myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEvent) {
+    $scope.events = [];
     $scope.events = CEvent.index();
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
-        var currentView = "month";
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    var currentView = "month";
 
 
         //event source that pulls from google.com
