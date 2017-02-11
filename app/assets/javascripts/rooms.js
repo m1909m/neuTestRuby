@@ -20,7 +20,7 @@ myApp.factory("Room", function($resource) {
 */
 
 myApp.factory("CEvent", function($resource) {
-    return $ressource("/c_events/:id", { id: '@id' }, {
+    return $resource("/c_events/:id", { id: '@id' }, {
         index: { method: 'GET', isArrary: true, responseType: 'json' }
     });
 });
