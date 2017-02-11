@@ -19,7 +19,7 @@ myApp.factory("Room", function($resource) {
 });
 */
 
-myApp.factory("CEvent", function($resource) {
+myApp.factory("Cevent", function($resource) {
     return $ressource("/c_events/:id", { id: '@id' }, {
         index: { method: 'GET', isArrary: true, responseType: 'json' }
     });
@@ -39,8 +39,8 @@ myApp.controller('RoomCtrl', function($scope, Room) {
 myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
 }]);
-myApp.controller('calendarController', ['$scope', function($scope, CEvent) {
-
+myApp.controller('calendarController', ['$scope', function($scope, Cevent) {
+    $scope.events = Cevent.index();
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -66,7 +66,7 @@ myApp.controller('calendarController', ['$scope', function($scope, CEvent) {
 
          //to explicitly add events to the calendar
          //you can add the events in following ways
-         $scope.events = CEvent.index();
+
         /*
          {title: 'All Day Event',start: new Date('Thu Oct 17 2013 09:00:00 GMT+0530 (IST)')},
          {title: 'Long Event',start: new Date('Thu Oct 17 2013 10:00:00 GMT+0530 (IST)'),end: new Date('Thu Oct 17 2013 17:00:00 GMT+0530 (IST)')},
