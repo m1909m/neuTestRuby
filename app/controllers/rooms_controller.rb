@@ -6,8 +6,8 @@ class RoomsController < ApplicationController
 
   def angular
 
-    @rooms = Room.all
-    #render 'rooms/index'
+    #@rooms = Room.all
+    render 'rooms/index'
   end
 
   # GET /rooms

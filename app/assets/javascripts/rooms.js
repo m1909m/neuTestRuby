@@ -35,7 +35,8 @@ myApp.factory("CEvent", function($resource) {
         index: { method: 'GET', isArrary: true, responseType: 'json' }
     });
 });
-myApp.controller('calendarController', ['$scope', function($scope) {
+myApp.controller('calendarController', ['$scope', function($scope, CEvent) {
+    $scope.events = CEvent.index();
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
