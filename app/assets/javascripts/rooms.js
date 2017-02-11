@@ -39,7 +39,7 @@ myApp.controller('RoomCtrl', function($scope, Room) {
 myApp.controller('CalendarCtrl', ['$scope', function($scope) {
 
 }]);
-myApp.controller('calendarController', ['$scope', function($scope, CEvent) {
+myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEvent) {
     $scope.events = CEvent.index();
         var date = new Date();
         var d = date.getDate();
