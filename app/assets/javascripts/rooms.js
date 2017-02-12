@@ -117,9 +117,13 @@ myApp.config([
             })
             .state('room', {
                 url: '/{id}',
+                parent: rooms,
                 templateUrl: '../../assets/calendar.html',
                 controller: 'calendarController'
             });
 
         $urlRouterProvider.otherwise('rooms');
     }]);
+myApp.run(['$state', function ($state) {
+    $state.transitionTo('rooms');
+}]);
