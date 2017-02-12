@@ -12,6 +12,11 @@ myApp.config(function($routeProvider) {
 });*/
 
 myApp.factory("Room", function($resource) {
+    return $resource("/administrator/rooms/:id", { id: '@id' }, {
+        index:   { method: 'GET', isArray: true, responseType: 'json' },
+        update:  { method: 'PUT', responseType: 'json' }
+    });
+    /*
     var o = {
     };
     o.rooms = function () {
@@ -24,15 +29,15 @@ myApp.factory("Room", function($resource) {
         return $resource("/c_events/:id", { id: '@id' }, {
             index: { method: 'GET', isArray: true, responseType: 'json' }
         });
-    }
+    };*/
 });
 
-
+/*
 myApp.factory("CEvent", function($resource) {
     return $resource("/c_events/:id", { id: '@id' }, {
         index: { method: 'GET', isArray: true, responseType: 'json' }
     });
-});
+});*/
 
 myApp.controller('RoomCtrl', 'Room', function($scope, Room) {
     $scope.rooms = Room.rooms.index();
