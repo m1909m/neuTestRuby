@@ -12,7 +12,7 @@ myApp.config(function($routeProvider) {
 });*/
 
 myApp.factory("Room", function($resource) {
-    return $resource("/administrator/rooms/:id", { id: '@id' }, {
+    return $resource("/rooms/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
     });
