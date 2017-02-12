@@ -42,7 +42,7 @@ class CEventsController < ApplicationController
     end
 
     def c_event_params
-      params.require(:c_event).permit(:title, :start, :end, :color, :description)
+      params.require(:c_event).permit(:title, :start, :end, :color, :description, :room_id)
     end
 end
 

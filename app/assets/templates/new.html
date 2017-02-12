@@ -26,8 +26,9 @@
         <div class="form-group">
             <label for="date">Zeitraum</label>
            <!-- <input id="date" type="text" name="daterange" />-->
-            <input id="date" type="daterange" ng-model="dates1" name="daterange"> {{dates1|json}}
+            <input id="date" type="daterange" ng-model="newEvent.date" name="daterange"> {{dates1|json}}
         </div>
+        <datetimepicker data-ng-model="data.date" data-on-set-time="onTimeSet(newDate, oldDate)"></datetimepicker>
 
 
         <button type="submit" class="btn btn-default" >Speichern</button>

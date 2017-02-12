@@ -100,9 +100,15 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', functi
 myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
+    $scope.onTimeSet = function (newDate, oldDate) {
+        console.log(newDate);
+        console.log(oldDate);
+    }
     $scope.addEvent = function() {
+        newEvent = $scope.newEvent;
+        start = newEvent;
         event = Room.events.save($scope.newEvent);
-        $scope.events.push(visitor);
+        $scope.events.push(event);
         $scope.newEvent = {};
     }
 }]);
