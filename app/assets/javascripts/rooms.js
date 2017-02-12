@@ -70,7 +70,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
 }]);
 myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
     $scope.events = [];
-    $scope.events = Room.events.index([{'id': $stateParams.id}]);
+    $scope.events = Room.events.index([{'roomid': $stateParams.id}]);
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
