@@ -28,12 +28,8 @@
            <!-- <input id="date" type="text" name="daterange" />-->
             <input id="date" type="daterange" ng-model="newEvent.date" name="daterange"> {{newEvent.date|json}}
         </div>
-        <input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" />{{datePicker.date|json}}
+        <input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" name="daterange" />{{datePicker.date|json}}
 
-        <datetimepicker ng-model="date"
-                        date-format="dd-MMM-yyyy hh:mm"
-                        date-options="dateOptions" >
-        </datetimepicker>
 
         <button type="submit" class="btn btn-default" >Speichern</button>
 
