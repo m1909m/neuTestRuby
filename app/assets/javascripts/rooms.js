@@ -1,7 +1,7 @@
 /**
  * Created by Marian on 10.02.2017.
  */
-var myApp = angular.module('roomsContainer', ['ngRoute', 'ngResource', 'ui.calendar']);
+var myApp = angular.module('roomsContainer', ['ui.router', 'ngResource', 'ui.calendar']);
 
 
 
