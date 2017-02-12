@@ -99,7 +99,7 @@ myApp.config(function($routeProvider) {
     //$locationProvider.html5Mode(true);
     $routeProvider
         .when("/", {
-            templateUrl : "<%= asset_path('rooms/index.html') %>",
+            templateUrl : "../assets/index.html",
             controller : "RoomCtrl"
         }).otherwise({ redirectTo: "/administrator/rooms" });
 });
