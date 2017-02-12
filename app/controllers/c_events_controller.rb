@@ -23,12 +23,12 @@ class CEventsController < ApplicationController
   end
 
   def create
-    @c_event = CEvent.new(event_params)
+    @c_event = CEvent.new(c_event_params)
     @c_event.save
   end
 
   def update
-    @c_event.update(event_params)
+    @c_event.update(c_event_params)
   end
 
   def destroy

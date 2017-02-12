@@ -5,10 +5,10 @@
             timePickerIncrement: 5,
             timePicker24Hour: true,
             startDate: Date.today,
-            endDate: Date.today,
-            locale: {
-                format: 'DD/MM/YYYY hh:mm'
-            }
+            endDate: Date.today
+           // locale: {
+             //   format: 'DD/MM/YYYY hh:mm'
+           // }
         });
     });
 </script>
@@ -25,12 +25,8 @@
         </div>
         <div class="form-group">
             <label for="date">Zeitraum</label>
-            <input id="date" type="text" name="daterange" />
-        </div>
-        <div class="input-daterange" id="datepicker" >
-            <input type="text" class="input-small" name="start" />
-            <span class="add-on" style="vertical-align: top;height:20px">to</span>
-            <input type="text" class="input-small" name="end" />
+           <!-- <input id="date" type="text" name="daterange" />-->
+            <input id="date" type="daterange" ng-model="dates1" name="daterange"> {{dates1|json}}
         </div>
 
 
