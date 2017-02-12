@@ -12,24 +12,20 @@ myApp.config(function($routeProvider) {
 });*/
 
 myApp.factory("Room", function($resource) {
-    return $resource("/rooms/:id", { id: '@id' }, {
-        index:   { method: 'GET', isArray: true, responseType: 'json' },
-        update:  { method: 'PUT', responseType: 'json' }
-    });
-    /*
+
     var o = {
     };
-    o.rooms = function () {
-        return $resource("/administrator/rooms/:id", { id: '@id' }, {
+    o.rooms = $resource("/rooms/:id", { id: '@id' }, {
             index:   { method: 'GET', isArray: true, responseType: 'json' },
             update:  { method: 'PUT', responseType: 'json' }
         });
-    };
+
     o.Events = function(){
         return $resource("/c_events/:id", { id: '@id' }, {
             index: { method: 'GET', isArray: true, responseType: 'json' }
         });
-    };*/
+    };
+    return o;
 });
 
 /*
@@ -41,7 +37,7 @@ myApp.factory("CEvent", function($resource) {
 
 myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
     $scope.rooms = [];
-    $scope.rooms = Room.index();
+    $scope.rooms = Room.room.index();
 
     $scope.addRoom = function() {
         room = Room.save($scope.newRoom);
