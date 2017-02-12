@@ -3,13 +3,7 @@
  */
 var myApp = angular.module('roomsContainer', ['ngRoute', 'ngResource', 'ui.calendar']);
 
-myApp.config(function($routeProvider) {
-    $routeProvider
-        .when("/administrator/rooms/", {
-            templateUrl : "room.htm",
-            controller : "RoomCtrl"
-        });
-});
+
 
 myApp.factory("Room", function($resource) {
 
@@ -101,3 +95,10 @@ myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEv
     /* event sources array*/
     $scope.eventSources = [$scope.events];
 }]);
+myApp.config(function($routeProvider) {
+    $routeProvider
+        .when("/administrator/rooms/", {
+            templateUrl : "room.htm",
+            controller : "RoomCtrl"
+        });
+});
