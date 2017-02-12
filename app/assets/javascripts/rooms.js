@@ -100,9 +100,11 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', functi
 myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
-    //event = Room.events.save($scope.newEvent);
-    //$scope.events.push(visitor);
-    $scope.newEvent = {};
+    $scope.addEvent = function() {
+        event = Room.events.save($scope.newEvent);
+        $scope.events.push(visitor);
+        $scope.newEvent = {};
+    }
 }]);
 /*
 myApp.config(function($routeProvider) {
