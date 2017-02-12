@@ -13,7 +13,11 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+   # @rooms = Room.all
+    respond_to do |format|
+      format.json { render json: Room.all}
+
+    end
   end
 
   def show
