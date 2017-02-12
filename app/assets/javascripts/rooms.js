@@ -95,8 +95,8 @@ myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEv
     /* event sources array*/
     $scope.eventSources = [$scope.events];
 }]);
-myApp.config(function($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+myApp.config(function($routeProvider) {
+    //$locationProvider.html5Mode(true);
     $routeProvider
         .when("/", {
             templateUrl : "<%= asset_path('rooms/index.html') %>",
