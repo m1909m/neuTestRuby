@@ -12,12 +12,12 @@
   <% end %>
 
     <div class="form-inputs">
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :date_range, input_html: { class: "form-control input-sm date-range-picker" } %>
-      <%= f.input_field :start, as: :hidden, value: Date.today, class: 'form-control input-sm start_hidden' %>
-      <%= f.input_field :end, as: :hidden, value: Date.today, class: 'form-control input-sm end_hidden' %>
-      <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
+      <%= f.text_field :title %>
+      <%= f.text_field :description %>
+      <%= f.text_field :date_range, input_html: { class: "form-control input-sm date-range-picker" } %>
+      <%= f.text_field :start, as: :hidden, value: Date.today, class: 'form-control input-sm start_hidden' %>
+      <%= f.text_field :end, as: :hidden, value: Date.today, class: 'form-control input-sm end_hidden' %>
+      <%= f.check_box :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
     </div>
 
     <div class="form-actions">
