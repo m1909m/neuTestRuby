@@ -98,7 +98,7 @@ myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEv
 myApp.config(function($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl : "/room.htm",
+            templateUrl : "/administrator/rooms",
             controller : "RoomCtrl"
         });
 });
