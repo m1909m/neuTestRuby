@@ -111,12 +111,12 @@ myApp.config([
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('rooms', {
-                url: '/',
+                url: '/administrator/rooms/',
                 templateUrl: '../../assets/rooms.html',
                 controller: 'RoomCtrl'
             })
             .state('room', {
-                url: '/{id}',
+                url: '/administrator/rooms/{id}',
                 parent: rooms,
                 templateUrl: '../../assets/calendar.html',
                 controller: 'calendarController'
@@ -124,6 +124,3 @@ myApp.config([
 
         $urlRouterProvider.otherwise('rooms');
     }]);
-myApp.run(['$state', function ($state) {
-    $state.transitionTo('rooms');
-}]);
