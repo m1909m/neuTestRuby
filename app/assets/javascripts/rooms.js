@@ -112,8 +112,8 @@ myApp.config([
         $stateProvider
             .state('/', {
                 url: '/',
-                //templateUrl: '../../assets/rooms.html',
-                templateUrl: '/rooms.html',
+                templateUrl: '../../assets/rooms.html',
+                //templateUrl: '/rooms.html',
                 controller: 'RoomCtrl'
             })
             .state('Rooms', {
