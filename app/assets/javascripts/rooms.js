@@ -2,14 +2,14 @@
  * Created by Marian on 10.02.2017.
  */
 var myApp = angular.module('roomsContainer', ['ngRoute', 'ngResource', 'ui.calendar']);
-/*
+
 myApp.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
+        .when("/administrator/rooms/", {
             templateUrl : "room.html",
-            controller : "RoomCtrrl"
+            controller : "RoomCtrl"
         });
-});*/
+});
 
 myApp.factory("Room", function($resource) {
 
