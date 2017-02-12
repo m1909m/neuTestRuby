@@ -114,13 +114,13 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
             'Last 7 Days': [moment().subtract(6, 'days'), moment()],
             'Last 30 Days': [moment().subtract(29, 'days'), moment()]
         }
-    }
+    };
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
     $scope.onTimeSet = function (newDate, oldDate) {
         console.log(newDate);
         console.log(oldDate);
-    }
+    };
     $scope.addEvent = function() {
         newEvent = $scope.newEvent;
         start = newEvent;
