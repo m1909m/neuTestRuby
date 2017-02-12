@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    $(function() {
+        $('input[name="daterange"]').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 5,
+            timePicker24Hour: true,
+            startDate: Date.today,
+            endDate: Date.today,
+            locale: {
+                format: 'DD/MM/YYYY hh:mm'
+            }
+        });
+    });
+</script>
+<div ng-app="roomsContainer">
+    <form>
+
+        <div class="col-xs-12">
+            <input type="text" ng-model="newEvent.title" class="form-control" placeholder="Titel" />
+        </div>
+        <div class="col-xs-12">
+            <textarea type="text" ng-model="newEvent.description" class="form-control" placeholder="Beschreibung" />
+        </div>
+        <div class="form-group">
+            <input type="text" name="daterange" />
+
+
+        </div>
+
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Speichern</button>
+
+    </form>
+</div>

@@ -1,52 +1,9 @@
-<script type="text/javascript">
-    $(function() {
-        $('input[name="daterange"]').daterangepicker({
-            timePicker: true,
-            timePickerIncrement: 5,
-            timePicker24Hour: true,
-            startDate: Date.today,
-            endDate: Date.today,
-            locale: {
-                format: 'DD/MM/YYYY hh:mm'
-            }
-        });
-    });
-</script>
+
 <div ng-app="roomsContainer">
 <h1>Kalender</h1>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addEvent">Veranstaltung erstellen</button>
+    <a href="#/{{roomId}}/new" type="button" class="btn btn-info btn-lg">Veranstaltung erstellen</a>
 
     <div class="calendar" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
 
-    <div class="modal hide fade" id="addEvent" role="dialog" aria-labelledby="Neue Veranstaltung" aria-hidden="true">
-        <div clss="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Neue Veranstaltung</h4>
-                </div>
-                <form>
-                    <div class="modal-body">
-                        <div class="col-xs-12">
-                            <input type="text" ng-model="newEvent.title" class="form-control" placeholder="Titel" />
-                        </div>
-                        <div class="col-xs-12">
-                            <textarea type="text" ng-model="newEvent.description" class="form-control" placeholder="Beschreibung" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="daterange" />
-
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Speichern</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-
-    </div>
 
 </div>
