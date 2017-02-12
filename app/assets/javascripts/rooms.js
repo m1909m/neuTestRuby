@@ -20,12 +20,12 @@ myApp.factory("Room", function($resource) {
     return o;
 });
 
-
+/*
 myApp.factory("CEvent", function($resource) {
     return $resource("/c_events/:id", { id: '@id' }, {
         index: { method: 'GET', isArray: true, responseType: 'json' }
     });
-});
+});*/
 
 myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
     $scope.rooms = [];
