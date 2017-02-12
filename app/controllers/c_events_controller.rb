@@ -17,6 +17,10 @@ class CEventsController < ApplicationController
 
   def new
     @c_event = CEvent.new
+    respond_to do |format|
+      format.html
+
+    end
   end
 
   def edit
