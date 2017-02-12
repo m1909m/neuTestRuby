@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require tinymce
 //= require twitter/bootstrap
-//= require bootstrap-modal
+// require bootstrap-modal
 //= require angular
 //= require angular-ui-router
 //= require angular-resource
