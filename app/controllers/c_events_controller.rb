@@ -7,7 +7,7 @@ class CEventsController < ApplicationController
   #  @events = CEvent.where(start: params[:start]..params[:end])
     #@c_events = CEvent.all
     respond_to do |format|
-      format.json { render json: CEvent.all }
+      format.json { render json: CEvent.where(room_id: params[:id])}
 
     end
   end
