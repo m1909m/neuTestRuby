@@ -133,7 +133,7 @@ myApp.config([
             })
             .state('create', {
                 url: '/{id}/new',
-                templateUrl: '../../assets/calendar.html',
+                templateUrl: '../../assets/new.html',
                 controller: 'eventController'
             });
 
