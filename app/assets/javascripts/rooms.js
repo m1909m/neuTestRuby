@@ -1,7 +1,8 @@
 /**
  * Created by Marian on 10.02.2017.
+ * 'daterangepicker'
  */
-var myApp = angular.module('roomsContainer', ['ui.router', 'ngResource', 'ui.calendar', 'daterangepicker']);
+var myApp = angular.module('roomsContainer', ['ui.router', 'ngResource', 'ui.calendar' ]);
 
 
 
@@ -98,7 +99,7 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', functi
     $scope.eventSources = [$scope.events];
 }]);
 myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
-    $scope.options = {
+    /*$scope.options = {
         applyClass: 'btn-green',
         locale: {
             applyLabel: "Apply",
@@ -114,7 +115,7 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
             'Last 7 Days': [moment().subtract(6, 'days'), moment()],
             'Last 30 Days': [moment().subtract(29, 'days'), moment()]
         }
-    };
+    };*/
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
     $scope.onTimeSet = function (newDate, oldDate) {
