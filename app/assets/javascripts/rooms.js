@@ -98,6 +98,23 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', functi
     $scope.eventSources = [$scope.events];
 }]);
 myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
+    $scope.options = {
+        applyClass: 'btn-green',
+        locale: {
+            applyLabel: "Apply",
+            fromLabel: "From",
+            format: "YYYY-MM-DD", //will give you 2017-01-06
+            //format: "D-MMM-YY", //will give you 6-Jan-17
+            //format: "D-MMMM-YY", //will give you 6-January-17
+            toLabel: "To",
+            cancelLabel: 'Cancel',
+            customRangeLabel: 'Custom range'
+        },
+        ranges: {
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()]
+        }
+    }
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
     $scope.onTimeSet = function (newDate, oldDate) {
