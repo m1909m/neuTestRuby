@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :c_events, defaults: {format: :json}
-  resources :rooms
+  resources :rooms, defaults: {format: :json}
 
   resources :roomplanings
   ActiveAdmin.routes(self)
