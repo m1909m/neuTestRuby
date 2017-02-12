@@ -38,7 +38,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
         $scope.newRoom = {};
     };
 
-    $scope.showEventCal = function($id){
+    $scope.showEventCal = function($id) {
         $scope.events = [];
        // $scope.events = Room.events.index([{'id': $id}]);
         $scope.events = Room.events.index({"roomid": $id});
@@ -68,9 +68,9 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
     };
 
 }]);
-myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEvent) {
+myApp.controller('calendarController', ['$scope', '$stateParams', 'CEvent', function($scope, $stateParams, CEvent) {
     $scope.events = [];
-    $scope.events = CEvent.index([{'id': $id}]);
+    $scope.events = CEvent.index([{'id': $stateParams.id}]);
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -95,6 +95,7 @@ myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEv
     /* event sources array*/
     $scope.eventSources = [$scope.events];
 }]);
+/*
 myApp.config(function($routeProvider) {
     //$locationProvider.html5Mode(true);
     $routeProvider
@@ -102,4 +103,23 @@ myApp.config(function($routeProvider) {
             templateUrl : "../../assets/rooms.html",
             controller : "RoomCtrl"
         }).otherwise({ redirectTo: "/administrator/rooms" });
-});
+});*/
+
+myApp.config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('room', {
+                url: '/',
+                templateUrl: '../../assets/rooms.html',
+                controller: 'RoomCtrl'
+            })
+            .state('rooms', {
+                url: '/{id}',
+                templateUrl: '/posts.html',
+                controller: 'calendarController'
+            });
+
+        $urlRouterProvider.otherwise('room');
+    }]);
