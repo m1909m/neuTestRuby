@@ -12,10 +12,19 @@ myApp.config(function($routeProvider) {
 });*/
 
 myApp.factory("Room", function($resource) {
-    return $resource("/administrator/rooms/:id", { id: '@id' }, {
-        index:   { method: 'GET', isArray: true, responseType: 'json' },
-        update:  { method: 'PUT', responseType: 'json' }
-    });
+    var o = {
+    };
+    o.rooms = function () {
+        return $resource("/administrator/rooms/:id", { id: '@id' }, {
+            index:   { method: 'GET', isArray: true, responseType: 'json' },
+            update:  { method: 'PUT', responseType: 'json' }
+        });
+    };
+    o.Events = function(){
+        return $resource("/c_events/:id", { id: '@id' }, {
+            index: { method: 'GET', isArray: true, responseType: 'json' }
+        });
+    }
 });
 
 
@@ -25,8 +34,8 @@ myApp.factory("CEvent", function($resource) {
     });
 });
 
-myApp.controller('RoomCtrl', 'Room', 'CEvent', function($scope, Room, CEvent) {
-    $scope.rooms = Room.index();
+myApp.controller('RoomCtrl', 'Room', function($scope, Room) {
+    $scope.rooms = Room.rooms.index();
 
     $scope.addRoom = function() {
         room = Room.save($scope.newRoom);
@@ -36,7 +45,7 @@ myApp.controller('RoomCtrl', 'Room', 'CEvent', function($scope, Room, CEvent) {
     };
     $scope.showEventCal = function($id){
         $scope.events = [];
-        $scope.events = CEvent.index([{'id': $id}]);
+        $scope.events = Room.Events.index([{'id': $id}]);
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -63,9 +72,6 @@ myApp.controller('RoomCtrl', 'Room', 'CEvent', function($scope, Room, CEvent) {
     };
 
 });
-myApp.controller('CalendarCtrl', ['$scope', function($scope) {
-
-}]);
 myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEvent) {
     $scope.events = [];
     $scope.events = CEvent.index([{'id': $id}]);
