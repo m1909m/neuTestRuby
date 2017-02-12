@@ -70,6 +70,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
 
 }]);
 myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
+    $scope.roomId = $stateParams.id;
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
     var date = new Date();
@@ -95,6 +96,13 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', functi
 
     /* event sources array*/
     $scope.eventSources = [$scope.events];
+}]);
+myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
+    $scope.events = [];
+    $scope.events = Room.events.index({"roomid": $stateParams.id});
+    event = Room.events.save($scope.newEvent);
+    $scope.events.push(visitor);
+    $scope.newEvent = {};
 }]);
 /*
 myApp.config(function($routeProvider) {
@@ -122,6 +130,11 @@ myApp.config([
                // parent: rooms,
                 templateUrl: '../../assets/calendar.html',
                 controller: 'calendarController'
+            })
+            .state('create', {
+                url: '/{id}/new',
+                templateUrl: '../../assets/calendar.html',
+                controller: 'eventController'
             });
 
         $urlRouterProvider.otherwise('/');
