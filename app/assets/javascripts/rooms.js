@@ -47,7 +47,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
     $scope.showEventCal = function($id){
         $scope.events = [];
        // $scope.events = Room.events.index([{'id': $id}]);
-        $scope.events = Room.events.index({"id": $id});
+        $scope.events = Room.events.index({"roomid": $id});
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
