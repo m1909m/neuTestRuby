@@ -110,7 +110,7 @@ myApp.config([
     '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('rooms', {
+            .state('/', {
                 url: '/',
                 //templateUrl: '../../assets/rooms.html',
                 templateUrl: '/rooms.html',
@@ -123,5 +123,5 @@ myApp.config([
                 controller: 'calendarController'
             });
 
-        $urlRouterProvider.otherwise('rooms');
+        $urlRouterProvider.otherwise('/');
     }]);
