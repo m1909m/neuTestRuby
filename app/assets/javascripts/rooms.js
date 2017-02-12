@@ -116,8 +116,8 @@ myApp.config([
                 //templateUrl: '/rooms.html',
                 controller: 'RoomCtrl'
             })
-            .state('Rooms', {
-                url: '/administrator/rooms/{id}',
+            .state('rooms', {
+                url: '/{id}',
                // parent: rooms,
                 templateUrl: '../../assets/calendar.html',
                 controller: 'calendarController'
