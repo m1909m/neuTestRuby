@@ -40,6 +40,7 @@ myApp.factory("CEvent", function($resource) {
 });*/
 
 myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
+    $scope.rooms = [];
     $scope.rooms = Room.index();
 
     $scope.addRoom = function() {
@@ -48,6 +49,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
         $scope.rooms.push(room);
         $scope.newRoom = {};
     };
+
     $scope.showEventCal = function($id){
         $scope.events = [];
         $scope.events = Room.Events.index([{'id': $id}]);
