@@ -110,16 +110,16 @@ myApp.config([
     '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('room', {
+            .state('rooms', {
                 url: '/',
                 templateUrl: '../../assets/rooms.html',
                 controller: 'RoomCtrl'
             })
-            .state('rooms', {
+            .state('room', {
                 url: '/{id}',
-                templateUrl: '/posts.html',
+                templateUrl: '../../assets/calendar.html',
                 controller: 'calendarController'
             });
 
-        $urlRouterProvider.otherwise('room');
+        $urlRouterProvider.otherwise('rooms');
     }]);
