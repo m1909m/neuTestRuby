@@ -117,7 +117,7 @@ myApp.config([
             })
             .state('room', {
                 url: '/administrator/rooms/{id}',
-                parent: rooms,
+               // parent: rooms,
                 templateUrl: '../../assets/calendar.html',
                 controller: 'calendarController'
             });
