@@ -95,10 +95,11 @@ myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEv
     /* event sources array*/
     $scope.eventSources = [$scope.events];
 }]);
-myApp.config(function($routeProvider) {
+myApp.config(function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider
         .when("/", {
-            templateUrl : "<%= asset_path('rooms/index.html.erb') %>",
+            templateUrl : "<%= asset_path('rooms/index.html') %>",
             controller : "RoomCtrl"
-        });
+        }).otherwise({ redirectTo: "/administrator/rooms" });
 });
