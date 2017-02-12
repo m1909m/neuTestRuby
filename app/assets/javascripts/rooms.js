@@ -6,7 +6,7 @@ var myApp = angular.module('roomsContainer', ['ngRoute', 'ngResource', 'ui.calen
 myApp.config(function($routeProvider) {
     $routeProvider
         .when("/administrator/rooms/", {
-            templateUrl : "room.html",
+            templateUrl : "room.htm",
             controller : "RoomCtrl"
         });
 });
