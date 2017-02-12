@@ -6,15 +6,18 @@
   <ui-view></ui-view>
 </div>
 
-<!--
+
 <script type="text/ng-template" id="/rooms.html">
 
-    <h1>Räume</h1>
-    <div ng-show="!rooms.length">Keine Räume vorhanden</div>
-    <div ng-repeat="room in rooms" style="margin: 5px;">
-      {{room.number}}
+  <h1>Räume</h1>
+  <div ng-show="!rooms.length">Keine Räume vorhanden</div>
+  <div ng-repeat="room in rooms" style="margin: 5px;">
+    <div class="list-group">
+      <a href="/1" ng-click="" class="list-group-item"><table><tr><td>{{room.number}}</td><td>{{room.size}}</td><td>{{room.building}}</td></tr></table></a>
     </div>
+
+  </div>
 
 
   -- rest of template --
-</script> -->
+</script>
