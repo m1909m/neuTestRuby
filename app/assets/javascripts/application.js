@@ -20,7 +20,7 @@
 //= require angular-resource
 //= require angular-route
 //= require angular-ui-calendar
-//= require angular-ui-bootstrap-datetimepicker
+//= require angular-daterangepicker
 //= require moment
 //= require fullcalendar
 //= require turbolinks
