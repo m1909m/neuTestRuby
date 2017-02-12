@@ -39,7 +39,7 @@ myApp.factory("CEvent", function($resource) {
     });
 });*/
 
-myApp.controller('RoomCtrl', 'Room', function($scope, Room) {
+myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
     $scope.rooms = Room.index();
 
     $scope.addRoom = function() {
@@ -76,7 +76,7 @@ myApp.controller('RoomCtrl', 'Room', function($scope, Room) {
         $scope.eventSources = [$scope.events];
     };
 
-});
+}]);
 myApp.controller('calendarController', ['$scope', 'CEvent', function($scope, CEvent) {
     $scope.events = [];
     $scope.events = CEvent.index([{'id': $id}]);
