@@ -40,7 +40,7 @@ myApp.factory("CEvent", function($resource) {
 });*/
 
 myApp.controller('RoomCtrl', 'Room', function($scope, Room) {
-    $scope.rooms = Room.rooms.index();
+    $scope.rooms = Room.index();
 
     $scope.addRoom = function() {
         room = Room.save($scope.newRoom);
