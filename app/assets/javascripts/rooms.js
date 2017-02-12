@@ -20,11 +20,9 @@ myApp.factory("Room", function($resource) {
             update:  { method: 'PUT', responseType: 'json' }
         });
 
-    o.Events = function(){
-        return $resource("/c_events/:id", { id: '@id' }, {
+    o.events = $resource("/c_events/:id", { id: '@id' }, {
             index: { method: 'GET', isArray: true, responseType: 'json' }
         });
-    };
     return o;
 });
 
@@ -48,7 +46,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
 
     $scope.showEventCal = function($id){
         $scope.events = [];
-        $scope.events = Room.Events.index([{'id': $id}]);
+        $scope.events = Room.events.index([{'id': $id}]);
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
