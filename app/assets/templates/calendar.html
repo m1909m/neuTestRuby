@@ -1,3 +1,17 @@
+<script type="text/javascript">
+    $(function() {
+        $('input[name="daterange"]').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 5,
+            timePicker24Hour: true,
+            startDate: Date.today,
+            endDate: Date.today,
+            locale: {
+                format: 'DD/MM/YYYY hh:mm'
+            }
+        });
+    });
+</script>
 <div ng-app="roomsContainer">
 <h1>Kalender</h1>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addEvent">Veranstaltung erstellen</button>
@@ -20,22 +34,9 @@
                             <textarea type="text" ng-model="newEvent.description" class="form-control" placeholder="Beschreibung" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="daterange" value="Date.today- 01/01/2015 2:00 PM" />
+                            <input type="text" name="daterange" />
 
-                            <script type="text/javascript">
-                                $(function() {
-                                    $('input[name="daterange"]').daterangepicker({
-                                        timePicker: true,
-                                        timePickerIncrement: 5,
-                                        timePicker24Hour: true,
-                                        startDate: Date.today,
-                                        endDate: Date.today,
-                                        locale: {
-                                            format: 'DD/MM/YYYY hh:mm'
-                                        }
-                                    });
-                                });
-                            </script>
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -48,14 +49,4 @@
 
     </div>
 
-</div>
-
-
-<div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :date_range, input_html: { class: "form-control input-sm date-range-picker" } %>
-    <%= f.input_field :start, as: :hidden, value: Date.today, class: 'form-control input-sm start_hidden' %>
-    <%= f.input_field :end, as: :hidden, value: Date.today, class: 'form-control input-sm end_hidden' %>
-    <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
 </div>
