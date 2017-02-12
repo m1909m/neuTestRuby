@@ -110,7 +110,7 @@ myApp.config([
     '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('Room', {
+            .state('/administrator/rooms/', {
                 url: '/administrator/rooms/',
                 //templateUrl: '../../assets/rooms.html',
                 templateUrl: '/rooms.html',
