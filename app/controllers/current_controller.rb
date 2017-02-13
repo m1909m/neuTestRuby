@@ -1,6 +1,7 @@
 class CurrentController < ApplicationController
   def index
   end
+
   def verband
 
   end
