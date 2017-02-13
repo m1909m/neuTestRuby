@@ -34,7 +34,7 @@ class MembersController < ApplicationController
     puts @event.inspect
     @event = CEvent.where(id: member_params[:event_id])
     puts @event.inspect
-    @event.select{|t| t.respond_to?(:base_class)}.each do |obj|
+    @event.select{|t| t.respond_to?(:CEvent)}.each do |obj|
       #check obj.attr
       @newEvent.id = obj.id
       @newEvent.title = obj.title
