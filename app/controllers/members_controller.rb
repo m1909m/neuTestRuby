@@ -1,11 +1,13 @@
 class MembersController < ApplicationController
 
   before_action :set_member, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_event, only: [:new]
   # GET /members
   # GET /members.json
   def index
     @members = Member.all
+    @events = CEvent.find_by_free(true)
+    @rooms = Room.all
   end
 
   # GET /members/1
@@ -70,6 +72,9 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
+  def set_event
+    $eventNumber = params[:id]
+  end
 
   def member_params
       params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id)
