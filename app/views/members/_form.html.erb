@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+    <div class="field">
+      <%= f.label :event_id %>
+      <%= f.collection_select(:member, :event_id, @events, :id, :name_with_initial, prompt: true)%>
+    </div>
+
   <div class="field">
     <%= f.label :gender %>
     <%= f.text_field :gender %>
@@ -91,10 +96,7 @@
     <%= f.check_box :accept %>
   </div>
 
-  <div class="field">
-    <%= f.label :event_id %>
-    <%= f.number_field :event_id %>
-  </div>
+
 
   <div class="actions">
     <%= f.submit %>
