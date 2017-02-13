@@ -5,7 +5,7 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'tinymce-rails', '~> 4.3'
 
-#gem 'node'
+gem 'node', '~ 0.2'
 gem 'nodejs-rails', '~> 0.0.1'
 
 gem 'angularjs-rails', '~> 1.2.25'
@@ -52,7 +52,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 
 gem 'coffee-script-source', '= 1.11.1'
-gem 'sprockets', '3.7.1'
+# gem 'sprockets', '3.7.1'
 #Rollen von users
 gem 'rolify'
 
