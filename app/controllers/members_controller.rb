@@ -29,23 +29,34 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
-    @event = CEvent.new()
+    @newEvent = CEvent.new()
 
     puts @event.inspect
     @event = CEvent.where(id: member_params[:event_id])
     @event.select{|t| t.respond_to?(:base_class)}.each do |obj|
       #check obj.attr
-      obj.member = obj.member + 1
+      @newEvent.id = obj.id
+      @newEvent.title = obj.title
+      @newEvent.start = obj.start
+      @newEvent.end = obj.end
+      @newEvent.color = obj.color
+      @newEvent.description = obj.description
+      @newEvent.created_at = obj.created_at
+      @newEvent.room_id = obj.room_id
+      @newEvent.minSize = obj.minSize
+      @newEvent.maxSize = obj.maxSize
+      @newEvent.member = obj.member + 1
+      @newEvent.free = obj.free
     end
-    puts @event.inspect
+    puts @newEvent.inspect
 
-    @event.member = @event.member + 1
+
     respond_to do |format|
 
       if @member.save
 
 
-        if @event.update(@event)
+        if @event.update(@newEvent)
           format.html { redirect_to @member, notice: 'Mitglied wurde erfolgreich erstellt.' }
           format.json { render :show, status: :created, location: @member }
         else
