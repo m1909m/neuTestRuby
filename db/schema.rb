@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210085936) do
+ActiveRecord::Schema.define(version: 20170213115449) do
 
   create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "eMail"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 20170210085936) do
     t.datetime "updated_at",                  null: false
     t.integer  "room_id"
     t.boolean  "all_day_event"
+    t.integer  "minSize"
+    t.integer  "maxSize"
+    t.integer  "member"
+    t.boolean  "free"
+    t.datetime "startLogin"
+    t.datetime "endLogin"
   end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,6 +69,28 @@ ActiveRecord::Schema.define(version: 20170210085936) do
     t.boolean  "publish"
   end
 
+  create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "gender"
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "street"
+    t.string   "plz"
+    t.string   "place"
+    t.string   "job"
+    t.string   "phone"
+    t.string   "eMail"
+    t.boolean  "sleep"
+    t.string   "room"
+    t.string   "nameCompany"
+    t.string   "streetCompany"
+    t.string   "placeCompany"
+    t.string   "veggie"
+    t.boolean  "accept"
+    t.integer  "event_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "from"
     t.string   "to"
@@ -73,6 +101,7 @@ ActiveRecord::Schema.define(version: 20170210085936) do
     t.text     "appendix",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.boolean  "default"
   end
 
   create_table "newssystems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -81,6 +110,8 @@ ActiveRecord::Schema.define(version: 20170210085936) do
     t.text     "story",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.boolean  "send"
+    t.datetime "sendDate"
   end
 
   create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -119,6 +150,7 @@ ActiveRecord::Schema.define(version: 20170210085936) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "roomplaning_id"
+    t.string   "picture"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

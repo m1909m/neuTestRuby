@@ -22762,3 +22762,1425 @@ Processing by CEventsController#index as JSON
 Completed 200 OK in 103ms (Views: 84.2ms | ActiveRecord: 13.2ms)
 
 
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:02:02 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 09:02:03', '2017-02-13 09:02:03')[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCEvent Load (17.8ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+Completed 500 Internal Server Error in 327ms (ActiveRecord: 32.3ms)
+
+
+  
+NoMethodError (undefined method `member' for #<CEvent::ActiveRecord_Relation:0x0055dde2c53ee0>
+Did you mean?  member?):
+  
+app/controllers/members_controller.rb:36:in `block in create'
+app/controllers/members_controller.rb:32:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (40.8ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.3ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (173.8ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:02:26 +0100
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (16.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 09:02:26', '2017-02-13 09:02:26')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCEvent Load (2.4ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 20.4ms)
+
+
+  
+NoMethodError (undefined method `member' for #<CEvent::ActiveRecord_Relation:0x007f7b4c127f40>
+Did you mean?  member?):
+  
+app/controllers/members_controller.rb:36:in `block in create'
+app/controllers/members_controller.rb:32:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.6ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.7ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:08:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (8.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (4.3ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+Completed 500 Internal Server Error in 497ms (ActiveRecord: 19.5ms)
+
+
+  
+NoMethodError (undefined method `member' for #<CEvent::ActiveRecord_Relation:0x0055e7c63ec3b8>
+Did you mean?  member?):
+  
+app/controllers/members_controller.rb:35:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.2ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.7ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (28.8ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (163.7ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:14:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (2.6ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+Completed 500 Internal Server Error in 438ms (ActiveRecord: 23.2ms)
+
+
+  
+NoMethodError (undefined method `member' for #<CEvent::ActiveRecord_Relation:0x0055f5ef5207c0>
+Did you mean?  member?):
+  
+app/controllers/members_controller.rb:37:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.3ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.6ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (262.8ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:16:50 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (1.1ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+Completed 500 Internal Server Error in 545ms (ActiveRecord: 20.8ms)
+
+
+  
+NoMethodError (undefined method `member' for #<CEvent::ActiveRecord_Relation:0x005640d23cc8a0>
+Did you mean?  member?):
+  
+app/controllers/members_controller.rb:37:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (51.0ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.8ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (254.8ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:20:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (5.0ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+Completed 500 Internal Server Error in 521ms (ActiveRecord: 29.8ms)
+
+
+  
+NoMethodError (undefined method `member' for #<CEvent::ActiveRecord_Relation:0x00565264825c78>
+Did you mean?  member?):
+  
+app/controllers/members_controller.rb:38:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (57.0ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.2ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (48.9ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (424.3ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:25:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (33.1ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+Completed 500 Internal Server Error in 1412ms (ActiveRecord: 72.6ms)
+
+
+  
+NoMethodError (undefined method `member' for #<CEvent::ActiveRecord_Relation:0x005580fd410fb8>
+Did you mean?  member?):
+  
+app/controllers/members_controller.rb:42:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (83.9ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.5ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (37.3ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (631.8ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:32:57 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (19.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (5.7ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.2ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 09:32:58', '2017-02-13 09:32:58')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 479ms (ActiveRecord: 62.8ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/members_controller.rb:59:in `block in create'
+app/controllers/members_controller.rb:54:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (28.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.9ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.3ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (226.3ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:36:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (0.6ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+  [1m[35m (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 09:36:40', '2017-02-13 09:36:40')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 514ms (ActiveRecord: 50.6ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/members_controller.rb:60:in `block in create'
+app/controllers/members_controller.rb:55:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.7ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (175.1ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:38:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[36mCEvent Load (1.2ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (24.5ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 09:38:30', '2017-02-13 09:38:30')[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 51.0ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/members_controller.rb:60:in `block in create'
+app/controllers/members_controller.rb:55:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (39.8ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (43.7ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.9ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (280.3ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:54:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (13.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (187.0ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 09:54:19', '2017-02-13 09:54:19')[0m
+  [1m[35m (11.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 625ms (ActiveRecord: 220.3ms)
+
+
+  
+NoMethodError (undefined method `increment_member' for #<Member:0x0056406c2a8200>
+Did you mean?  increment):
+  
+app/controllers/members_controller.rb:37:in `block in create'
+app/controllers/members_controller.rb:35:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (21.5ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.8ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (259.6ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 10:56:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (17.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 09:56:04', '2017-02-13 09:56:04')[0m
+  [1m[36mCEvent Load (1.4ms)[0m  [1m[34mSELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`member_id` = 8 LIMIT 1[0m
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 517ms (ActiveRecord: 77.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'c_events.member_id' in 'where clause': SELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`member_id` = 8 LIMIT 1):
+  
+app/models/member.rb:8:in `increment_member'
+app/controllers/members_controller.rb:37:in `block in create'
+app/controllers/members_controller.rb:35:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (26.8ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.6ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (208.1ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 11:03:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 10:03:46', '2017-02-13 10:03:46')[0m
+  [1m[36mCEvent Load (3.2ms)[0m  [1m[34mSELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`member_id` = 9 LIMIT 1[0m
+  [1m[35m (5.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 28.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'c_events.member_id' in 'where clause': SELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`member_id` = 9 LIMIT 1):
+  
+app/models/member.rb:8:in `increment_member'
+app/controllers/members_controller.rb:37:in `block in create'
+app/controllers/members_controller.rb:35:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.2ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 11:09:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.7ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 10:09:42', '2017-02-13 10:09:42')[0m
+  [1m[35m (3.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 34.8ms)
+
+
+  
+NoMethodError (undefined method `member' for nil:NilClass):
+  
+app/models/member.rb:8:in `increment_member'
+app/controllers/members_controller.rb:37:in `block in create'
+app/controllers/members_controller.rb:35:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (27.5ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.4ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (142.8ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 11:13:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (8.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 10:13:19', '2017-02-13 10:13:19')[0m
+  [1m[36mCEvent Load (19.2ms)[0m  [1m[34mSELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`member_id` = 11 LIMIT 1[0m
+  [1m[35m (7.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 740ms (ActiveRecord: 48.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'c_events.member_id' in 'where clause': SELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`member_id` = 11 LIMIT 1):
+  
+app/models/member.rb:8:in `increment_member'
+app/controllers/members_controller.rb:37:in `block in create'
+app/controllers/members_controller.rb:35:in `create'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (31.3ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (40.9ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (195.5ms)
+Started POST "/members" for 127.0.0.1 at 2017-02-13 11:18:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nTStv0+vFH10JBLeiznIwaegFt7kEgiSBuZfGRPb24InyrNT8ZDER/IcvhzUsykfJj+uJwM/Dfr8YdKnMIlhYQ==", "member"=>{"gender"=>"Herr", "firstName"=>"Marian", "lastName"=>"Vennew", "plz"=>"sdfj", "place"=>"lkj", "street"=>"löhjlh", "job"=>"lökhlh", "phone"=>"6754", "eMail"=>"hsdfasdf", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"sdfsdf", "placeCompany"=>"sdfsdf", "streetCompany"=>"assfsddf", "veggie"=>"nein", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.8ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Herr', 'Marian', 'Vennew', 'löhjlh', 'sdfj', 'lkj', 'lökhlh', '6754', 'hsdfasdf', 1, 'kein Zimmer', 'sdfsdf', 'assfsddf', 'sdfsdf', 'nein', 1, 8, '2017-02-13 10:18:31', '2017-02-13 10:18:31')[0m
+  [1m[36mCEvent Load (11.9ms)[0m  [1m[34mSELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8 LIMIT 1[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/members/12
+Completed 302 Found in 549ms (ActiveRecord: 56.7ms)
+
+
+Started GET "/members/12" for 127.0.0.1 at 2017-02-13 11:18:32 +0100
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mMember Load (11.9ms)[0m  [1m[34mSELECT  `members`.* FROM `members` WHERE `members`.`id` = 12 LIMIT 1[0m
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (7.6ms)
+Completed 200 OK in 18571ms (Views: 18530.6ms | ActiveRecord: 25.0ms)
+
+
+Started GET "/members/new/8" for 127.0.0.1 at 2017-02-13 11:23:32 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#new as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCEvent Load (10.4ms)[0m  [1m[34mSELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8 LIMIT 1[0m
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/_form.html.erb (94.4ms)
+  Rendered members/new.html.erb within layouts/application (123.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (15.0ms)
+Completed 200 OK in 10439ms (Views: 9894.4ms | ActiveRecord: 40.1ms)
+
+
+Started POST "/members" for 127.0.0.1 at 2017-02-13 11:24:07 +0100
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wFGfb0tTt8ja6StY+uE5MT3Ka4uG0wjiC4C+FVB5OvB6r4GD9Wxn8lzRh5qla9jvvFXTcmH+DYrxBzOrcyuAEw==", "member"=>{"gender"=>"Frau", "firstName"=>"dsfsd", "lastName"=>"kjlhkjh", "plz"=>"kjlhjkl", "place"=>"hjhjk", "street"=>"hkljh", "job"=>"kjlh", "phone"=>"kljh", "eMail"=>"kljh", "sleep"=>"keine Übernachtung", "room"=>"kein Zimmer", "nameCompany"=>"kjhkljh", "placeCompany"=>"kjhkjl", "streetCompany"=>"hklhkljh", "veggie"=>"uoiu", "accept"=>"1", "event_id"=>"8"}, "commit"=>"Jetzt Anmelden"}
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.8ms)[0m  [1m[32mINSERT INTO `members` (`gender`, `firstName`, `lastName`, `street`, `plz`, `place`, `job`, `phone`, `eMail`, `sleep`, `room`, `nameCompany`, `streetCompany`, `placeCompany`, `veggie`, `accept`, `event_id`, `created_at`, `updated_at`) VALUES ('Frau', 'dsfsd', 'kjlhkjh', 'hkljh', 'kjlhjkl', 'hjhjk', 'kjlh', 'kljh', 'kljh', 1, 'kein Zimmer', 'kjhkljh', 'hklhkljh', 'kjhkjl', 'uoiu', 1, 8, '2017-02-13 10:24:07', '2017-02-13 10:24:07')[0m
+  [1m[36mCEvent Load (0.4ms)[0m  [1m[34mSELECT  `c_events`.* FROM `c_events` WHERE `c_events`.`id` = 8 LIMIT 1[0m
+  [1m[35mSQL (23.6ms)[0m  [1m[33mUPDATE `c_events` SET `member` = 1, `updated_at` = '2017-02-13 10:24:07' WHERE `c_events`.`id` = 8[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/members/13
+Completed 302 Found in 76ms (ActiveRecord: 43.7ms)
+
+
+Started GET "/members/13" for 127.0.0.1 at 2017-02-13 11:24:08 +0100
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mMember Load (1.7ms)[0m  [1m[34mSELECT  `members`.* FROM `members` WHERE `members`.`id` = 13 LIMIT 1[0m
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (19.3ms)
+Completed 200 OK in 1753ms (Views: 1741.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/members/13" for 127.0.0.1 at 2017-02-13 11:28:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  `members`.* FROM `members` WHERE `members`.`id` = 13 LIMIT 1[0m
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (22.0ms)
+Completed 200 OK in 4708ms (Views: 4565.4ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/members/13" for 127.0.0.1 at 2017-02-13 11:30:01 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mMember Load (5.1ms)[0m  [1m[34mSELECT  `members`.* FROM `members` WHERE `members`.`id` = 13 LIMIT 1[0m
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (10.0ms)
+Completed 200 OK in 7864ms (Views: 7740.4ms | ActiveRecord: 22.4ms)
+
+
+Started GET "/zugangsbereich" for 127.0.0.1 at 2017-02-13 11:30:17 +0100
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered current/index.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_headerLogo.html.erb (14.9ms)
+Completed 200 OK in 1171ms (Views: 1149.9ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/administrator/rooms" for 127.0.0.1 at 2017-02-13 11:30:28 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (1.8ms)
+Completed 200 OK in 734ms (Views: 732.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/administrator/rooms" for 127.0.0.1 at 2017-02-13 11:32:04 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (2.3ms)
+Completed 200 OK in 1273ms (Views: 1266.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:32:17 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (24.9ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 102ms (Views: 60.1ms | ActiveRecord: 39.6ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:32:37 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (5.2ms)
+Completed 200 OK in 2256ms (Views: 2249.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:32:48 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (26.8ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 54ms (Views: 22.8ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:32:59 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (8.7ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 106ms (Views: 83.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:33:25 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:33:25 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mCEvent Load (7.0ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+  [1m[36mRoom Load (23.7ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 29ms (Views: 3.3ms | ActiveRecord: 23.7ms)
+
+
+Completed 200 OK in 72ms (Views: 54.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:37:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (7.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (59.5ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (6.9ms)
+Completed 200 OK in 17658ms (Views: 17588.5ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:38:09 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (11.5ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:38:09 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 177ms (Views: 145.2ms | ActiveRecord: 27.8ms)
+
+
+Completed 200 OK in 223ms (Views: 90.2ms | ActiveRecord: 123.7ms)
+
+
+Started GET "/mitglied" for 127.0.0.1 at 2017-02-13 11:45:31 +0100
+Processing by CurrentController#mitglied as HTML
+  Rendering current/mitglied.html.erb within layouts/application
+  Rendered current/mitglied.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (36.5ms)
+Completed 200 OK in 2500ms (Views: 2475.8ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/zugangsbereich" for 127.0.0.1 at 2017-02-13 11:48:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered current/index.html.erb within layouts/application (324.7ms)
+  Rendered layouts/_headerLogo.html.erb (7.8ms)
+Completed 200 OK in 45430ms (Views: 45308.7ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:49:13 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (10.2ms)
+Completed 200 OK in 3696ms (Views: 3681.2ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/zugangsbereich" for 127.0.0.1 at 2017-02-13 11:49:24 +0100
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered current/index.html.erb within layouts/application (11.8ms)
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:49:26 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_headerLogo.html.erb (9.3ms)
+Completed 200 OK in 2013ms (Views: 2002.1ms | ActiveRecord: 9.7ms)
+
+
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (12.0ms)
+Completed 200 OK in 3054ms (Views: 3045.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:49:31 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (20.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (13.4ms)
+Completed 200 OK in 2374ms (Views: 2350.3ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:49:51 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (14.3ms)
+Completed 200 OK in 1554ms (Views: 1547.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:49:59 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (18.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 119ms (Views: 72.0ms | ActiveRecord: 44.3ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:50:03 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (4.4ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 139ms (Views: 89.9ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:50:08 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (16.5ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 48ms (Views: 17.6ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:50:08 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 34ms (Views: 13.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:52:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (11.0ms)
+Completed 200 OK in 8275ms (Views: 8211.2ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:52:26 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:52:26 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mCEvent Load (29.3ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+  [1m[36mRoom Load (25.0ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 135ms (Views: 82.8ms | ActiveRecord: 49.7ms)
+
+
+Completed 200 OK in 301ms (Views: 228.0ms | ActiveRecord: 44.2ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:56:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (9.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (28.6ms)
+Completed 200 OK in 9123ms (Views: 9073.3ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:56:36 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:56:36 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mCEvent Load (14.6ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+  [1m[36mRoom Load (9.9ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 120ms (Views: 77.3ms | ActiveRecord: 25.1ms)
+
+
+Completed 200 OK in 132ms (Views: 30.7ms | ActiveRecord: 100.1ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 11:58:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (7.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (8.3ms)
+Completed 200 OK in 8644ms (Views: 8611.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 11:58:44 +0100
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 11:58:44 +0100
+Processing by CEventsController#index as JSON
+Processing by RoomsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mRoom Load (32.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[36mCEvent Load (42.2ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 213ms (Views: 137.5ms | ActiveRecord: 73.9ms)
+
+
+Completed 200 OK in 220ms (Views: 153.7ms | ActiveRecord: 45.2ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:00:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (13.0ms)
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (9.2ms)
+Completed 200 OK in 27032ms (Views: 26979.8ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:01:05 +0100
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:01:05 +0100
+Processing by RoomsController#index as JSON
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mRoom Load (11.0ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[36mCEvent Load (17.8ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 244ms (Views: 185.8ms | ActiveRecord: 38.0ms)
+
+
+Completed 200 OK in 293ms (Views: 126.0ms | ActiveRecord: 149.7ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:23:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (9.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (4.7ms)
+Completed 200 OK in 21325ms (Views: 21250.6ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:23:48 +0100
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:23:48 +0100
+Processing by RoomsController#index as JSON
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mRoom Load (38.0ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 134ms (Views: 46.6ms | ActiveRecord: 74.8ms)
+
+
+  [1m[36mCEvent Load (67.4ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 253ms (Views: 127.7ms | ActiveRecord: 88.0ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:26:32 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (10.6ms)
+Completed 200 OK in 19707ms (Views: 19581.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:27:01 +0100
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:27:02 +0100
+Processing by RoomsController#index as JSON
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mRoom Load (20.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[36mCEvent Load (19.9ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 236ms (Views: 170.9ms | ActiveRecord: 43.0ms)
+
+
+Completed 200 OK in 214ms (Views: 156.5ms | ActiveRecord: 42.1ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:28:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (7.8ms)
+Completed 200 OK in 20399ms (Views: 20341.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:29:11 +0100
+Processing by CEventsController#index as JSON
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:29:11 +0100
+  Parameters: {"roomid"=>"1"}
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (2.0ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[36mCEvent Load (111.1ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 248ms (Views: 241.4ms | ActiveRecord: 4.3ms)
+
+
+Completed 200 OK in 362ms (Views: 220.1ms | ActiveRecord: 131.4ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:33:03 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (12.0ms)
+Completed 200 OK in 7785ms (Views: 7726.5ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:33:20 +0100
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:33:20 +0100
+Processing by RoomsController#index as JSON
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mRoom Load (31.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 88ms (Views: 46.3ms | ActiveRecord: 32.4ms)
+
+
+  [1m[36mCEvent Load (70.1ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 271ms (Views: 182.6ms | ActiveRecord: 78.8ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:38:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (9.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (10.9ms)
+Completed 200 OK in 22307ms (Views: 22084.0ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:39:21 +0100
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:39:21 +0100
+Processing by RoomsController#index as JSON
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mRoom Load (12.9ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  [1m[36mCEvent Load (12.0ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 217ms (Views: 161.3ms | ActiveRecord: 24.7ms)
+
+
+Completed 200 OK in 240ms (Views: 145.0ms | ActiveRecord: 65.5ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:42:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (16.5ms)
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (9.7ms)
+Completed 200 OK in 23492ms (Views: 23372.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:42:46 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:42:46 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mCEvent Load (14.9ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+  [1m[36mRoom Load (8.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 90ms (Views: 77.6ms | ActiveRecord: 10.1ms)
+
+
+Completed 200 OK in 251ms (Views: 198.5ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:52:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (7.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (8.0ms)
+Completed 200 OK in 30189ms (Views: 30130.5ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 12:52:58 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (0.6ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 174ms (Views: 106.6ms | ActiveRecord: 27.6ms)
+
+
+Started POST "/c_events" for 127.0.0.1 at 2017-02-13 12:53:44 +0100
+Processing by CEventsController#create as JSON
+  Parameters: {"title"=>"Erstes Seminar", "description"=>"Zur üübung der Webseite", "minSize"=>10, "start"=>"2017-02-17T09:00:00.000Z", "end"=>"2017-02-17T17:00:00.000Z", "room_id"=>"1", "member"=>0, "free"=>1, "c_event"=>{"title"=>"Erstes Seminar", "start"=>"2017-02-17T09:00:00.000Z", "end"=>"2017-02-17T17:00:00.000Z", "description"=>"Zur üübung der Webseite", "room_id"=>"1", "minSize"=>10, "member"=>0, "free"=>1}}
+  [1m[35m (6.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (4.4ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (14.5ms)[0m  [1m[32mINSERT INTO `c_events` (`title`, `start`, `end`, `description`, `created_at`, `updated_at`, `room_id`, `minSize`, `maxSize`, `member`, `free`) VALUES ('Erstes Seminar', '2017-02-17 09:00:00', '2017-02-17 17:00:00', 'Zur üübung der Webseite', '2017-02-13 11:53:44', '2017-02-13 11:53:44', 1, 10, 30, 0, 1)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 12:53:45 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (1.0ms)
+No template found for CEventsController#create, rendering head :no_content
+Completed 204 No Content in 882ms (ActiveRecord: 35.8ms)
+
+
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (46.0ms)
+Completed 200 OK in 2076ms (Views: 2060.8ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 12:53:51 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (5.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 5.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK('564057786633393990', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddLoginTime (20170213115449)
+  [1m[35m (83.1ms)[0m  [1m[35mALTER TABLE `c_events` ADD `startLogin` datetime[0m
+  [1m[35m (80.2ms)[0m  [1m[35mALTER TABLE `c_events` ADD `endLogin` datetime[0m
+  [1m[35m (176.9ms)[0m  [1m[35mALTER TABLE `newsletters` ADD `default` tinyint(1)[0m
+  [1m[35m (81.8ms)[0m  [1m[35mALTER TABLE `newssystems` ADD `send` tinyint(1)[0m
+  [1m[35m (72.6ms)[0m  [1m[35mALTER TABLE `newssystems` ADD `sendDate` datetime[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170213115449')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('564057786633393990')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.8ms)[0m  [1m[35mSHOW CREATE TABLE `abo_newsletters`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'abo_newsletters'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW CREATE TABLE `active_admin_comments`[0m
+  [1m[35m (2.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'active_admin_comments'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW CREATE TABLE `c_events`[0m
+  [1m[35m (4.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'c_events'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `events`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'events'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `members`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'members'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `newsletters`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newsletters'[0m
+  [1m[35m (6.0ms)[0m  [1m[35mSHOW CREATE TABLE `newssystems`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'newssystems'[0m
+  [1m[35m (3.7ms)[0m  [1m[35mSHOW CREATE TABLE `reservations`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW CREATE TABLE `roomplanings`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `rooms`[0m
+  [1m[35m (1.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'rooms'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `users_roles`[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'abo_newsletters'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'active_admin_comments'
+[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'c_events'
+[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'members'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newsletters'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'newssystems'
+[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'reservations'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'roles'
+[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'roomplanings'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'rooms'
+[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'vkmDB'
+  AND fk.table_name = 'users_roles'
+[0m
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 13:38:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (13.3ms)
+Completed 200 OK in 22406ms (Views: 22330.5ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 13:39:24 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (6.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 199ms (Views: 180.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 13:39:31 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (10.8ms)
+Completed 200 OK in 2499ms (Views: 2494.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 13:39:58 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.9ms)
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 13:40:01 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (24.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (18.0ms)
+Completed 200 OK in 5531ms (Views: 5505.0ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/verband" for 127.0.0.1 at 2017-02-13 13:40:06 +0100
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (28.0ms)
+Completed 200 OK in 5490ms (Views: 5481.3ms | ActiveRecord: 6.9ms)
+
+
+Processing by CurrentController#verband as HTML
+  Rendering current/verband.html.erb within layouts/application
+  Rendered current/verband.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (18.1ms)
+Completed 200 OK in 3473ms (Views: 3452.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/impressum" for 127.0.0.1 at 2017-02-13 13:40:14 +0100
+Processing by CurrentController#impressum as HTML
+  Rendering current/impressum.html.erb within layouts/application
+  Rendered current/impressum.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (51.0ms)
+Completed 200 OK in 3030ms (Views: 3023.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/impressum/agb" for 127.0.0.1 at 2017-02-13 13:40:23 +0100
+Processing by CurrentController#agb as HTML
+  Rendering current/agb.html.erb within layouts/application
+  Rendered current/agb.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (15.2ms)
+Completed 200 OK in 3071ms (Views: 3030.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2017-02-13 13:41:20 +0100
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mCEvent Load (0.6ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1[0m
+  [1m[36mRoom Load (6.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+  Rendered members/index.html.erb within layouts/application (81.5ms)
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (9.3ms)
+Completed 200 OK in 2472ms (Views: 2387.2ms | ActiveRecord: 34.8ms)
+
+
+Started GET "/zugangsbereich" for 127.0.0.1 at 2017-02-13 13:54:13 +0100
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  [1m[36mUser Load (20.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered current/index.html.erb within layouts/application (27.0ms)
+  Rendered layouts/_headerLogo.html.erb (3.9ms)
+Completed 200 OK in 2367ms (Views: 2344.0ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/zugangsbereich" for 127.0.0.1 at 2017-02-13 13:54:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#index as HTML
+  Rendering current/index.html.erb within layouts/application
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered current/index.html.erb within layouts/application (158.3ms)
+  Rendered layouts/_headerLogo.html.erb (7.0ms)
+Completed 200 OK in 8351ms (Views: 8288.8ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 13:54:57 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (12.9ms)
+Completed 200 OK in 968ms (Views: 966.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 13:55:08 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (37.9ms)
+Completed 200 OK in 2040ms (Views: 2033.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 13:55:17 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (2.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 128ms (Views: 102.2ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 13:55:21 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (2.1ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 118ms (Views: 93.6ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 13:55:27 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (2.0ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/c_events" for 127.0.0.1 at 2017-02-13 13:56:25 +0100
+Processing by CEventsController#create as JSON
+  Parameters: {"title"=>"Mit anmeldung", "description"=>"zum test", "minSize"=>10, "start"=>"2017-02-24T07:00:00.000Z", "end"=>"2017-02-24T15:00:00.000Z", "startLogin"=>"2017-02-13T07:00:00.000Z", "endLogin"=>"2017-02-22T17:00:00.000Z", "room_id"=>"1", "member"=>0, "free"=>1, "c_event"=>{"title"=>"Mit anmeldung", "start"=>"2017-02-24T07:00:00.000Z", "end"=>"2017-02-24T15:00:00.000Z", "description"=>"zum test", "room_id"=>"1", "minSize"=>10, "member"=>0, "free"=>1, "startLogin"=>"2017-02-13T07:00:00.000Z", "endLogin"=>"2017-02-22T17:00:00.000Z"}}
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (9.5ms)[0m  [1m[34mSELECT  `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO `c_events` (`title`, `start`, `end`, `description`, `created_at`, `updated_at`, `room_id`, `minSize`, `maxSize`, `member`, `free`, `startLogin`, `endLogin`) VALUES ('Mit anmeldung', '2017-02-24 07:00:00', '2017-02-24 15:00:00', 'zum test', '2017-02-13 12:56:25', '2017-02-13 12:56:25', 1, 10, 30, 0, 1, '2017-02-13 07:00:00', '2017-02-22 17:00:00')[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/administrator/rooms/" for 127.0.0.1 at 2017-02-13 13:56:25 +0100
+Processing by RoomsController#angular as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  Rendered rooms/index.html.erb within layouts/application (0.8ms)
+No template found for CEventsController#create, rendering head :no_content
+Completed 204 No Content in 540ms (ActiveRecord: 28.9ms)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (14.5ms)
+Completed 200 OK in 2094ms (Views: 2087.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at 2017-02-13 13:56:32 +0100
+Processing by RoomsController#index as JSON
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms`[0m
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2017-02-13 13:56:38 +0100
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mCEvent Load (3.3ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1 AND (startLogin <= '2017-02-13T00:00:00+00:00' AND endLogin >= '2017-02-13T00:00:00+00:00')[0m
+  Rendered members/index.html.erb within layouts/application (88.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (12.4ms)
+Completed 200 OK in 2346ms (Views: 2315.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2017-02-13 14:06:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#index as HTML
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members`[0m
+Completed 500 Internal Server Error in 622ms (ActiveRecord: 3.1ms)
+
+
+  
+NameError (undefined local variable or method `startLogin' for #<MembersController:0x0055e9fa1c8538>):
+  
+app/controllers/members_controller.rb:9:in `index'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.6ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (561.7ms)
+Started GET "/members" for 127.0.0.1 at 2017-02-13 14:09:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mCEvent Load (0.7ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1 AND (startLogin < '2017-02-13') AND (endLogin > '2017-02-13')[0m
+  Rendered members/index.html.erb within layouts/application (19.4ms)
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (9.7ms)
+Completed 200 OK in 8518ms (Views: 8466.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2017-02-13 14:11:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mCEvent Load (2.4ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1 AND (c_events.startLogin < '2017-02-13') AND (c_events.endLogin > '2017-02-13')[0m
+  Rendered members/index.html.erb within layouts/application (14.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (13.0ms)
+Completed 200 OK in 8072ms (Views: 7978.8ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2017-02-13 14:33:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mCEvent Load (8.0ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1 AND (`c_events`.`startLogin` < '2017-02-13') AND (`c_events`.`endLogin` > '2017-02-13')[0m
+  Rendered members/index.html.erb within layouts/application (18.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (18.2ms)
+Completed 200 OK in 8195ms (Views: 8132.1ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/c_events/" for 127.0.0.1 at 2017-02-13 14:36:29 +0100
+Processing by CEventsController#index as JSON
+  [1m[36mCEvent Load (3.0ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` IS NULL[0m
+Completed 200 OK in 49ms (Views: 34.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/c_events/1" for 127.0.0.1 at 2017-02-13 14:36:43 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/c_events/1"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.4ms)
+  Rendered collection of /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [154 times] (178.4ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (29.4ms)
+  Rendering /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /root/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (391.6ms)
+Started GET "/c_events?id=1" for 127.0.0.1 at 2017-02-13 14:36:51 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mCEvent Load (22.7ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` IS NULL[0m
+Completed 200 OK in 28ms (Views: 3.3ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/c_events?id=2" for 127.0.0.1 at 2017-02-13 14:37:10 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mCEvent Load (12.0ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` IS NULL[0m
+Completed 200 OK in 21ms (Views: 2.6ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/c_events?id=1" for 127.0.0.1 at 2017-02-13 14:37:32 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mCEvent Load (4.4ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` IS NULL[0m
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/c_events" for 127.0.0.1 at 2017-02-13 14:37:39 +0100
+Processing by CEventsController#index as JSON
+  [1m[36mCEvent Load (6.4ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` IS NULL[0m
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/c_events?roomid=1" for 127.0.0.1 at 2017-02-13 14:37:53 +0100
+Processing by CEventsController#index as JSON
+  Parameters: {"roomid"=>"1"}
+  [1m[36mCEvent Load (2.6ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`room_id` = 1[0m
+Completed 200 OK in 33ms (Views: 16.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2017-02-13 14:41:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (10.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mCEvent Load (0.7ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1 AND (`c_events`.`startLogin` < '2017-02-13T00:00:00+00:00') AND (`c_events`.`endLogin` > '2017-02-13T00:00:00+00:00')[0m
+  Rendered members/index.html.erb within layouts/application (21.7ms)
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started GET "/members/" for 127.0.0.1 at 2017-02-13 14:41:36 +0100
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  Rendered layouts/_headerLogo.html.erb (10.2ms)
+Completed 200 OK in 10081ms (Views: 9933.0ms | ActiveRecord: 17.1ms)
+
+
+  [1m[36mCEvent Load (9.7ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1 AND (`c_events`.`startLogin` < '2017-02-13T00:00:00+00:00') AND (`c_events`.`endLogin` > '2017-02-13T00:00:00+00:00')[0m
+  Rendered members/index.html.erb within layouts/application (30.7ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (8.2ms)
+Completed 200 OK in 2010ms (Views: 1994.1ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/members" for 127.0.0.1 at 2017-02-13 14:42:32 +0100
+Processing by MembersController#index as HTML
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mCEvent Load (3.4ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events` WHERE `c_events`.`free` = 1 AND (`c_events`.`startLogin` < '2017-02-13T00:00:00+00:00') AND (`c_events`.`endLogin` > '2017-02-13T00:00:00+00:00')[0m
+  Rendered members/index.html.erb within layouts/application (14.8ms)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (19.8ms)
+Completed 200 OK in 3402ms (Views: 3348.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/newsletters" for 127.0.0.1 at 2017-02-13 14:42:40 +0100
+Processing by NewslettersController#index as HTML
+  Rendering newsletters/index.html.erb within layouts/application
+  [1m[36mUser Load (28.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mNewsletter Load (8.7ms)[0m  [1m[34mSELECT `newsletters`.* FROM `newsletters`[0m
+  Rendered newsletters/index.html.erb within layouts/application (130.7ms)
+  Rendered layouts/_headerLogo.html.erb (36.7ms)
+Completed 200 OK in 2590ms (Views: 2519.5ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/ark-rwl" for 127.0.0.1 at 2017-02-13 14:42:56 +0100
+Processing by CurrentController#arkrwl as HTML
+  Rendering current/arkrwl.html.erb within layouts/application
+  Rendered current/arkrwl.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (7.0ms)
+Completed 200 OK in 2156ms (Views: 2151.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ark-rwl" for 127.0.0.1 at 2017-02-13 14:43:05 +0100
+Processing by CurrentController#arkrwl as HTML
+  Rendering current/arkrwl.html.erb within layouts/application
+  Rendered current/arkrwl.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (13.7ms)
+Completed 200 OK in 1737ms (Views: 1730.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/ark-rwl" for 127.0.0.1 at 2017-02-13 14:48:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CurrentController#arkrwl as HTML
+  Rendering current/arkrwl.html.erb within layouts/application
+  Rendered current/arkrwl.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (37.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (10.6ms)
+Completed 200 OK in 15294ms (Views: 15207.5ms | ActiveRecord: 55.7ms)
+
+
