@@ -56,8 +56,8 @@ gem 'rolify'
 
 gem 'cancan'
 #Admin bereich
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 
 group :development, :test do
