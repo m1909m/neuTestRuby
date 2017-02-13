@@ -32,7 +32,7 @@ class MembersController < ApplicationController
 
 
     @event = CEvent.where(id: member_params[:event_id])
-    puts @event
+    puts @event.inspect
 
     @event.member = @event.member + 1
     respond_to do |format|
