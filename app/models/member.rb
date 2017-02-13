@@ -5,6 +5,6 @@ class Member < ApplicationRecord
   after_create :increment_member
 
   def increment_member
-    self.c_event.update_attribute(:member, self.c_event.member + 1)
+    self.c_event.update_attribute(:event_id, self.c_event.member + 1)
   end
 end
