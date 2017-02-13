@@ -33,6 +33,10 @@ class MembersController < ApplicationController
 
     puts @event.inspect
     @event = CEvent.where(id: member_params[:event_id])
+    @event.select{|t| t.respond_to?(:base_class)}.each do |obj|
+      #check obj.attr
+      obj.member = obj.member + 1
+    end
     puts @event.inspect
 
     @event.member = @event.member + 1
