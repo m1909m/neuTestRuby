@@ -1,7 +1,7 @@
 <%= form_for(member) do |f| %>
   <% if member.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(member.errors.count, "error") %> pFehler beim Speichern</h2>
+      <h2><%= pluralize(member.errors.count, "error") %> Fehler beim Speichern</h2>
 
       <ul>
       <% member.errors.full_messages.each do |message| %>
@@ -12,9 +12,11 @@
   <% end %>
 
 
-  <div class="field">
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
+  <div class="field form-group">
+    <%= f.label :gender, 'Herr', :value => "Herr" %>
+    <%= f.radio_button :gender, true %>
+    <%= f.label :gender, "Frau", :value => "Frau" %>
+    <%= f.radio_button :gender, false, :checked => true %>
   </div>
 
   <div class="field">
