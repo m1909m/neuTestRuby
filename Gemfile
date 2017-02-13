@@ -5,7 +5,7 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'tinymce-rails', '~> 4.3'
 
-gem 'node', '~ 0.2.0'
+gem 'node', '~> 0.2.0'
 gem 'nodejs-rails', '~> 0.0.1'
 
 gem 'angularjs-rails', '~> 1.2.25'
