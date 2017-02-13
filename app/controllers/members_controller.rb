@@ -7,6 +7,7 @@ class MembersController < ApplicationController
   def index
     @members = Member.all
     @events = CEvent.where(free: true)
+
     @rooms = Room.all
   end
 
@@ -31,6 +32,7 @@ class MembersController < ApplicationController
 
 
     @event = CEvent.where(id: member_params[:event_id])
+    puts @event
 
     @event.member = @event.member + 1
     respond_to do |format|
