@@ -12,28 +12,28 @@
   <% end %>
 
 
-  <div class="form-group">
+  <div class="form-group radio">
 
-    <%= f.radio_button :gender, "Herr" %>
+    <%= f.radio_button :gender, "Herr", style:"margin-left: 0px;margin-top:2px;" %>
     <%= f.label :gender, 'Herr', :value => "Herr", class: "radio-inline" %>
-    <%= f.radio_button :gender, "Frau", :checked => true %>
+    <%= f.radio_button :gender, "Frau", :checked => true, style:"margin-left: 0px;margin-top:2px;" %>
     <%= f.label :gender, "Frau", :value => "Frau", class: "radio-inline"  %>
   </div>
 
   <div class="form-group">
     <%= f.label :firstName, "Vorname", class:"col-sm-6 control-label" %>
-    <%= f.text_field :firstName, class: "form-control", type: "text" %>
+    <%= f.text_field :firstName, class: "col-sm-6 form-control", type: "text" %>
 
     <%= f.label :lastName, "Nachname", class:"col-sm-6 control-label" %>
-    <%= f.text_field :lastName, class: "form-control", type: "text" %>
+    <%= f.text_field :lastName, class: "col-sm-6 form-control", type: "text" %>
   </div>
 
     <div class="form-group">
       <%= f.label :plz, "Postleitzahl", class:"col-sm-6 control-label" %>
-      <%= f.text_field :plz, class: "form-control", type: "text" %>
+      <%= f.text_field :plz, class: "col-sm-6 form-control", type: "text" %>
 
       <%= f.label :place, "Wohnort", class:"col-sm-6 control-label" %>
-      <%= f.text_field :place, class: "form-control", type: "text" %>
+      <%= f.text_field :place, class: "col-sm-6 form-control", type: "text" %>
     </div>
 
   <div class="form-group">
