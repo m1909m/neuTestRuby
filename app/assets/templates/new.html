@@ -1,10 +1,10 @@
 
 <div ng-app="roomsContainer" >
-    <form ng-submit="addEvent()" action="administrator/rooms/">
+    <form ng-submit="addEvent()" action="/administrator/rooms/">
 
         <div class="form-group">
             <label for="title">Titel</label>
-            <input id="title" type="text" ng-model="newEvent.title" class="form-control" placeholder="Titel" />
+            <input id="title" type="text" ng-model="newEvent.title" class="form-control" placeholder="Titel" require/>
         </div>
         <div class="form-group">
             <label for="description">Beschreibung</label>
