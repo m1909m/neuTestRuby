@@ -29,7 +29,7 @@
             <input id="date" type="daterange" ng-model="newEvent.date" name="daterange"> {{newEvent.date|json}}
         </div>
         <input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" options='{locale: { applyLabel: "Wählen", fromLabel: "Von", format: "YYYY-MM-DD hh:mm",toLabel: "Bis",
-        cancelLabel: "Schließen" }}'/>{{datePicker.date|json}}
+        cancelLabel: "Schließen" },timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>{{datePicker.date|json}}
 
 
         <button type="submit" class="btn btn-default" >Speichern</button>
