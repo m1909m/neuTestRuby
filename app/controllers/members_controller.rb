@@ -18,7 +18,7 @@ class MembersController < ApplicationController
   # GET /members/new
   def new
     @member = Member.new
-    @events = CEvent.where(free: true)
+    @event = CEvent.where(id: @eventNumber)
   end
 
   # GET /members/1/edit
@@ -46,7 +46,7 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1.json
   def update
     respond_to do |format|
-      if @member.update(newssystem_params)
+      if @member.update(member_params)
         format.html { redirect_to @member, notice: 'Mitglied wurde erfolgreich geändert.' }
         format.json { render :show, status: :ok, location: @member }
       else
@@ -73,7 +73,7 @@ class MembersController < ApplicationController
   end
 
   def set_event
-    $eventNumber = params[:id]
+    @eventNumber = params[:id]
   end
 
   def member_params
