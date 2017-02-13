@@ -6,7 +6,7 @@ class MembersController < ApplicationController
   # GET /members.json
   def index
     @members = Member.all
-    @events = CEvent.where(free: true).where('`c_events`.`startLogin` < ?', Date.current.strftime('%Y-%m-%dT%H:%M:%S%Z')).where('`c_events`.`endLogin` > ?', Date.current.strftime('%Y-%m-%dT%H:%M:%S%Z'))
+    @events = CEvent.where(free: true) #.where('`c_events`.`startLogin` < ?', Date.current.strftime('%Y-%m-%dT%H:%M:%S%Z')).where('`c_events`.`endLogin` > ?', Date.current.strftime('%Y-%m-%dT%H:%M:%S%Z'))
     @rooms = Room.all
   end
 
