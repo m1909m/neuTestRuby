@@ -7,5 +7,6 @@ class Member < ApplicationRecord
   def increment_member
     c_event = CEvent.find(self.event_id)
     c_event.increment(:member)
+    c_event.save
   end
 end
