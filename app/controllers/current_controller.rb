@@ -20,4 +20,7 @@ class CurrentController < ApplicationController
   def arkrwl
 
   end
+  def arkdd
+
+  end
 end

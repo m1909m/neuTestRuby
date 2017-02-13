@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'impressum/', to: "current#impressum"
   get 'impressum/agb/', to: "current#agb"
   get 'ark-rwl/', to: "current#arkrwl"
+  get 'ark-dd/', to: "current#arkdd"
 
   root :to => "newssystems#index"
 
