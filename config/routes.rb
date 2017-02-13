@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
   get 'verband/', to: "current#verband"
   get 'mitglied/', to: "current#mitglied"
+  get 'impressum/', to: "current#impressum"
+  get 'impressum/agb/', to: "current#agb"
+  get 'ark-rwl/', to: "current#arkrwl"
 
   root :to => "newssystems#index"
 

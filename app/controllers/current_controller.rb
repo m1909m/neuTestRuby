@@ -8,7 +8,16 @@ class CurrentController < ApplicationController
   def mitglied
 
   end
-  def Fortbildung
+  def fortbildung
+
+  end
+  def impressum
+
+  end
+  def agb
+
+  end
+  def arkrwl
 
   end
 end
