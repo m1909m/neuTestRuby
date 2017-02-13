@@ -16,7 +16,7 @@ myApp.factory("Room", function($resource) {
         });
 
     o.events = $resource("/c_events/:id", { id: '@id' }, {
-        index: { method: 'GET', isArray: true, responseType: 'json' },
+        index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
     });
     return o;
@@ -104,7 +104,11 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
-    $scope.room = Room.rooms.index($stateParams.id);
+    rooms = Room.rooms.index();
+    for(i = 0;i++;i<rooms.length) {
+        if(rooms[i].id == $stateParams.id)
+            $scope.room = rooms[i];
+    }
     $scope.addEvent = function() {
 
         newEvent = $scope.newEvent;
