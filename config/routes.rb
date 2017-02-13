@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :abo_newsletters
   resources :newsletters
   get 'current/index'
-  get 'verband', to "current#verband"
+
+  get 'verband/', to: "current#verband"
 
   root :to => "newssystems#index"
 
