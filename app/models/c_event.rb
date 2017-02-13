@@ -1,7 +1,12 @@
 class CEvent < ApplicationRecord
   has_one :room
   accepts_nested_attributes_for :room
+  before_create :addRoomSize
 
+  def addRoomSize
+    room = Room.find(self.room_id)
+    self.maxSize = room.size
+  end
 
   def name_with_initial
     "#{title}"
