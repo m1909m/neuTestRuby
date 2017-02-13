@@ -118,10 +118,6 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
     };*/
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
-    $scope.onTimeSet = function (newDate, oldDate) {
-        console.log(newDate);
-        console.log(oldDate);
-    };
     $scope.addEvent = function() {
 
         newEvent = $scope.newEvent;
@@ -131,6 +127,8 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
         event = Room.events.save(newEvent);
         $scope.events.push(event);
         $scope.newEvent = {};
+        $scope.datePicker.date = {};
+
     }
 }]);
 /*
