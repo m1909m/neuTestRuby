@@ -21,29 +21,29 @@
   </div>
 
   <div class="form-group">
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="margin-bottom: 10px;">
       <%= f.label :firstName, "Vorname", class:"control-label" %>
       <%= f.text_field :firstName, class: "form-control", type: "text", :required => true %>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="margin-bottom: 10px;">
       <%= f.label :lastName, "Nachname", class:"control-label" %>
       <%= f.text_field :lastName, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
 
     <div class="form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-6" style="margin-bottom: 10px;">
         <%= f.label :plz, "Postleitzahl", class:"control-label" %>
         <%= f.text_field :plz, class: "form-control", type: "text", :required => true %>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-6" style="margin-bottom: 10px;">
         <%= f.label :place, "Wohnort", class:"control-label" %>
         <%= f.text_field :place, class: "form-control", type: "text", :required => true %>
       </div>
     </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :street, "Straße und Hausnummer", class:"control-label" %>
       <%= f.text_field :street, class: "form-control", type: "text", :required => true %>
     </div>
@@ -52,28 +52,28 @@
 
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :job, "Beruf", class:"control-label" %>
       <%= f.text_field :job, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :phone, "Telefon", class:"control-label" %>
       <%= f.text_field :phone, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :eMail, "Email-Adresse", class:"control-label" %>
       <%= f.text_field :eMail, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :sleep, "Übernachtung", class:"control-label" %>
       <select class="form-control" name="member[sleep]">
         <option value="keine Übernachtung" selected="selected" >keine Übernachtung</option>
@@ -83,7 +83,7 @@
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :room, "Zimmer", class:"control-label" %>
       <select class="form-control" name="member[room]">
         <option value="kein Zimmer" selected="selected" >kein Zimmer</option>
@@ -94,41 +94,40 @@
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :nameCompany, "Name der Dienststelle", class:"control-label" %>
       <%= f.text_field :nameCompany, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :placeCompany, "PLZ und Ort der Dienststelle", class:"control-label" %>
       <%= f.text_field :placeCompany, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :streetCompany, "Straße der Dienststelle", class:"control-label" %>
       <%= f.text_field :streetCompany, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="margin-bottom: 10px;">
       <%= f.label :veggie, "Unverträglichkeit / Vegetarier", class:"control-label" %>
       <%= f.text_field :veggie, class: "form-control", type: "text", value: "nein" %>
     </div>
   </div>
 
   <div class="form-group ">
-    <div class="col-sm-12 well">
+    <div class="col-sm-12 well" style="margin-bottom: 10px;">
       <%= f.check_box :accept, :required => true %>
       <%= f.label :accept, "Hiermit akzeptiere ich die Seminarbedingungen (Stand: 1.1.2015)", class:"checkbox-inline" %>
     </div>
   </div>
-
-
+    <input type="hidden" id="member_event_id" class="form-control" name="member[event_id]" value="<%=@event.id%>"></input>
 
   <div class="actions">
     <%= f.submit "Jetzt Anmelden", class: "btn btn-default" %>
