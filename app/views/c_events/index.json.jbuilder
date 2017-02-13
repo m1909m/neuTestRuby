@@ -4,6 +4,8 @@ json.array! @c_events do |event|
   json.title event.title
   json.start event.start.strftime(date_format)
   json.end event.end.strftime(date_format)
+  json.startLogin event.startLogin.strftime(date_format)
+  json.endLogin event.endLogin.strftime(date_format)
   json.color event.color unless event.color.blank?
   json.allDay event.all_day_event? ? true : false
   json.room_id event.room_id

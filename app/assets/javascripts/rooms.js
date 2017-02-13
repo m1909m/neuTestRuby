@@ -110,6 +110,8 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
         newEvent = $scope.newEvent;
         newEvent.start = $scope.datePicker.date.startDate;
         newEvent.end = $scope.datePicker.date.endDate;
+        newEvent.startLogin =  $scope.datePicker.dateL.startDate;
+        newEvent.endLogin =  $scope.datePicker.dateL.endDate;
         newEvent.room_id = $stateParams.id;
         newEvent.member = 0;
         newEvent.free = 1;
