@@ -105,10 +105,10 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
     $scope.rooms = [];
-    rooms = Room.rooms.index();
-    for(i = 0; i++; i < rooms.length) {
-        if(rooms[i].id == $stateParams.id)
-            $scope.room = rooms[i];
+    $scope.rooms = Room.rooms.index();
+    for(i = 0; i++; i < $scope.rooms.length) {
+        if($scope.rooms[i].id == $stateParams.id)
+            $scope.room = $scope.rooms[i];
     }
     $scope.addEvent = function() {
 
