@@ -12,86 +12,92 @@
   <% end %>
 
 
-  <div class="field form-group">
-    <%= f.label :gender, 'Herr', :value => "Herr", class: "radio-inline" %>
+  <div class="form-group">
+
     <%= f.radio_button :gender, "Herr" %>
-    <%= f.label :gender, "Frau", :value => "Frau", class: "radio-inline"  %>
+    <%= f.label :gender, 'Herr', :value => "Herr", class: "radio-inline" %>
     <%= f.radio_button :gender, "Frau", :checked => true %>
+    <%= f.label :gender, "Frau", :value => "Frau", class: "radio-inline"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :firstName %>
-    <%= f.text_field :firstName %>
+  <div class="form-group">
+    <%= f.label :firstName, "Vorname", class:"col-sm-6 control-label" %>
+    <%= f.text_field :firstName, class: "form-control", type: "text" %>
+
+    <%= f.label :lastName, "Nachname", class:"col-sm-6 control-label" %>
+    <%= f.text_field :lastName, class: "form-control", type: "text" %>
   </div>
 
-  <div class="field">
-    <%= f.label :lastName %>
-    <%= f.text_field :lastName %>
+    <div class="form-group">
+      <%= f.label :plz, "Postleitzahl", class:"col-sm-6 control-label" %>
+      <%= f.text_field :plz, class: "form-control", type: "text" %>
+
+      <%= f.label :place, "Wohnort", class:"col-sm-6 control-label" %>
+      <%= f.text_field :place, class: "form-control", type: "text" %>
+    </div>
+
+  <div class="form-group">
+    <%= f.label :street, "Straße und Hausnummer", class:"control-label" %>
+    <%= f.text_field :street, class: "form-control", type: "text" %>
   </div>
 
-  <div class="field">
-    <%= f.label :street %>
-    <%= f.text_field :street %>
+
+
+  <div class="form-group">
+    <%= f.label :job, "Beruf", class:"control-label" %>
+    <%= f.text_field :job, class: "form-control", type: "text" %>
   </div>
 
-  <div class="field">
-    <%= f.label :plz %>
-    <%= f.text_field :plz %>
+  <div class="form-group">
+    <%= f.label :phone, "Telefon", class:"control-label" %>
+    <%= f.text_field :phone, class: "form-control", type: "text" %>
   </div>
 
-  <div class="field">
-    <%= f.label :place %>
-    <%= f.text_field :place %>
+  <div class="form-group">
+    <%= f.label :eMail, "Email-Adresse", class:"control-label" %>
+    <%= f.text_field :eMail, class: "form-control", type: "text" %>
   </div>
 
-  <div class="field">
-    <%= f.label :job %>
-    <%= f.text_field :job %>
+  <div class="form-group">
+    <%= f.label :sleep, "Übernachtung", class:"control-label" %>
+    <select class="form-control" name="member[sleep]">
+      <option value="keine Übernachtung" selected="selected" >keine Übernachtung</option>
+      <option value="mit Übernachtung" >mit Übernachtung</option>
+    </select>
   </div>
 
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
+  <div class="form-group">
+    <%= f.label :room, "Zimmer", class:"control-label" %>
+    <select class="form-control" name="member[room]">
+      <option value="kein Zimmer" selected="selected" >kein Zimmer</option>
+      <option value="Einzelzimmer">Einzelzimmer</option>
+      <option value="Doppelzimmer">Doppelzimmer</option>
+    </select>
   </div>
 
-  <div class="field">
-    <%= f.label :eMail %>
-    <%= f.text_field :eMail %>
+  <div class="form-group">
+    <%= f.label :nameCompany, "Name der Dienststelle", class:"control-label" %>
+    <%= f.text_field :nameCompany, class: "form-control", type: "text"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :sleep %>
-    <%= f.check_box :sleep %>
+  <div class="form-group">
+    <%= f.label :placeCompany, "PLZ und Ort der Dienststelle", class:"control-label" %>
+    <%= f.text_field :placeCompany, class: "form-control", type: "text"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :room %>
-    <%= f.text_field :room %>
+  <div class="form-group">
+    <%= f.label :streetCompany, "Straße der Dienststelle", class:"control-label" %>
+    <%= f.text_field :streetCompany, class: "form-control", type: "text"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :nameCompany %>
-    <%= f.text_field :nameCompany %>
+  <div class="form-group">
+    <%= f.label :veggie, "Unverträglichkeit / Vegetarier", class:"control-label" %>
+    <%= f.text_field :veggie, class: "form-control", type: "text", value: "nein" %>
   </div>
 
-  <div class="field">
-    <%= f.label :streetCompany %>
-    <%= f.text_field :streetCompany %>
-  </div>
-
-  <div class="field">
-    <%= f.label :placeCompany %>
-    <%= f.text_field :placeCompany %>
-  </div>
-
-  <div class="field">
-    <%= f.label :veggie %>
-    <%= f.check_box :veggie %>
-  </div>
-
-  <div class="field">
-    <%= f.label :accept %>
+  <div class="form-group well">
     <%= f.check_box :accept %>
+    <%= f.label :accept, "Hiermit akzeptiere ich die Seminarbedingungen (Stand: 1.1.2015)", class:"checkbox-inline" %>
   </div>
 
 
