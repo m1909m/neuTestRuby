@@ -32,11 +32,18 @@ class MembersController < ApplicationController
     respond_to do |format|
 
       if @member.save
-        format.html { redirect_to @member, notice: 'Mitglied wurde erfolgreich erstellt.' }
-        format.json { render :show, status: :created, location: @member }
+        @event = CEvent.where(id: member_params[:event_id])
+        @event.member = @event.member + 1
+        if @event.update(@event)
+          format.html { redirect_to @member, notice: 'Mitglied wurde erfolgreich erstellt.' }
+          format.json { render :show, status: :created, location: @member }
+        else
+          format.html { render :new }
+          format.json { render json: @member.errors, status: :unprocessable_entity }
+        end
       else
         format.html { render :new }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
   end

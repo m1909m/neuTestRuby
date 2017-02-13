@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :newssystems
   resources :abo_newsletters
   resources :newsletters
-  get 'current/index'
+
+  get 'zugangsbereich/', to: "current#index"
 
   get 'verband/', to: "current#verband"
   get 'mitglied/', to: "current#mitglied"

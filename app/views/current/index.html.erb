@@ -1,2 +1,14 @@
 <% content_for :title do %>TEST Kalender<% end %>
 
+<% if current_user.present? %>
+
+      <div class="list-group">
+        <a href="/administrator/rooms" class="list-group-item">Veranstaltungssystem</a>
+      </div>
+
+
+
+<%else%>
+
+
+<%end%>
