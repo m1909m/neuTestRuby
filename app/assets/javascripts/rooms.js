@@ -2,7 +2,7 @@
  * Created by Marian on 10.02.2017.
  * 'daterangepicker'
  */
-var myApp = angular.module('roomsContainer', ['ui.router', 'ngResource', 'ui.calendar' ]);
+var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngResource', 'ui.calendar' ]);
 
 
 
