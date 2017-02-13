@@ -5,7 +5,7 @@ class Member < ApplicationRecord
   after_create :increment_member
 
   def increment_member
-    c_event.member = c_event.member + 1
-
+    c_event = CEvent.find(self.event_id)
+    c_event.increment(:member)
   end
 end
