@@ -29,27 +29,7 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
-    @newEvent = CEvent.new()
 
-    puts @event.inspect
-    @event = CEvent.where(id: member_params[:event_id])
-    puts @event.inspect
-    @event.select{|t| t.respond_to?(:CEvent)}.each do |obj|
-      #check obj.attr
-      @newEvent.id = obj.id
-      @newEvent.title = obj.title
-      @newEvent.start = obj.start
-      @newEvent.end = obj.end
-      @newEvent.color = obj.color
-      @newEvent.description = obj.description
-      @newEvent.created_at = obj.created_at
-      @newEvent.room_id = obj.room_id
-      @newEvent.minSize = obj.minSize
-      @newEvent.maxSize = obj.maxSize
-      @newEvent.member = obj.member + 1
-      @newEvent.free = obj.free
-    end
-    puts @newEvent.inspect
 
 
     respond_to do |format|
@@ -57,17 +37,14 @@ class MembersController < ApplicationController
       if @member.save
 
 
-        if @event.update(@newEvent)
+
           format.html { redirect_to @member, notice: 'Mitglied wurde erfolgreich erstellt.' }
           format.json { render :show, status: :created, location: @member }
         else
           format.html { render :new }
           format.json { render json: @member.errors, status: :unprocessable_entity }
+
         end
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
     end
   end
 
