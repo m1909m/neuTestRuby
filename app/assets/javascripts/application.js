@@ -14,8 +14,14 @@
 //= require jquery_ujs
 //= require tinymce
 //= require twitter/bootstrap
+// require bootstrap-modal
 //= require angular
 //= require angular-ui-router
+//= require angular-resource
+//= require angular-route
 //= require angular-ui-calendar
+//= require angular-daterangepicker
+//= require moment
+//= require fullcalendar
 //= require turbolinks
 //= require_tree .

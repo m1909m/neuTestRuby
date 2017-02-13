@@ -1,4 +1,4 @@
 class Room < ApplicationRecord
   belongs_to :roomplaning
-  belongs_to :event
+  belongs_to :c_event
 end

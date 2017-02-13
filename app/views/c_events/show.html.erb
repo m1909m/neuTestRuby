@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @c_event.title %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @c_event.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @c_event.end %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @c_event.color %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @c_event.description %>
+</p>
+
+<%= link_to 'Edit', edit_c_event_path(@c_event) %> |
+<%= link_to 'Back', c_events_path %>

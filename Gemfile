@@ -6,6 +6,7 @@ gem 'less-rails'
 gem 'tinymce-rails', '~> 4.3'
 
 gem 'node'
+gem 'angularjs-rails', '~> 1.2.25'
 gem 'angular-rails-templates'
 gem 'angular-ui-calendar-rails'
 
@@ -28,6 +29,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap-datepicker-rails'
 gem 'momentjs-rails','>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
+gem 'fullcalendar-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

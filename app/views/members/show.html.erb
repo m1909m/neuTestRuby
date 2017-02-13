@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Geschlecht:</strong>
+  <%= @member.gender %>
+</p>
+
+<p>
+  <strong>Vorname:</strong>
+  <%= @member.firstName %>
+</p>
+
+<p>
+  <strong>Nachname:</strong>
+  <%= @member.lastName %>
+</p>
+
+<p>
+  <strong>Straße:</strong>
+  <%= @member.street %>
+</p>
+
+<p>
+  <strong>Postleitzahl:</strong>
+  <%= @member.plz %>
+</p>
+
+<p>
+  <strong>Wohnort:</strong>
+  <%= @member.place %>
+</p>
+
+<p>
+  <strong>Beruf:</strong>
+  <%= @member.job %>
+</p>
+
+<p>
+  <strong>Telefon:</strong>
+  <%= @member.phone %>
+</p>
+
+<p>
+  <strong>Email-Adresse:</strong>
+  <%= @member.eMail %>
+</p>
+
+<p>
+  <strong>Übernachtung:</strong>
+  <%= @member.sleep %>
+</p>
+
+<p>
+  <strong>Zimmer:</strong>
+  <%= @member.room %>
+</p>
+
+<p>
+  <strong>Name der Dienststelle:</strong>
+  <%= @member.nameCompany %>
+</p>
+
+<p>
+  <strong>Straße der Dienststelle:</strong>
+  <%= @member.streetCompany %>
+</p>
+
+<p>
+  <strong>PLZ und Ort der Dienststelle:</strong>
+  <%= @member.placeCompany %>
+</p>
+
+<p>
+  <strong>Unverträglichkeit / Vegetarier:</strong>
+  <%= @member.veggie %>
+</p>
+
+<p>
+  <strong>Seminarbedingungen:</strong>
+  <%= @member.accept %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @member.event_id %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

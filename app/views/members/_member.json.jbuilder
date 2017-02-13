@@ -1,0 +1,2 @@
+json.extract! member, :id, :gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :created_at, :updated_at
+json.url member_url(member, format: :json)

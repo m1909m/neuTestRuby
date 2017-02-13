@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aktuele Veranstaltungen</h1>
+
+<% @color = true %>
+<% @events.each do |event|
+  if(@color == true)
+    @color = false;%>
+
+        <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
+          <div class="caption">
+            <h3><%= event.start.strftime("%d.%m.%Y %H:%m") %> - <%= event.end.strftime("%d.%m.%Y %H:%m") %><br><%= event.title %></h3>
+            <%@rooms.each do |room|
+              if(event.room_id == room.id) %>
+                <p><%= room.building %></p>
+                    <a href="/members/new/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
+                <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+    <% elsif(@color == false)
+         @color = true%>
+        <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
+          <div class="caption">
+            <h3><%= event.start.strftime("%d.%m.%Y %H:%m") %> - <%= event.end.strftime("%d.%m.%Y %H:%m") %><br><%= event.title %></h3>
+            <%@rooms.each do |room|
+              if(event.room_id == room.id) %>
+                    <p><%= room.building %></p>
+                    <a href="/members/new/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
+                    <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+
+    <!--
+      <tr>
+        <td><%#= newssystem.title %></td>
+        <td><%#= newssystem.subTitle %></td>
+        <td><%#= newssystem.story %></td>
+        <td><%#= link_to 'Show', newssystem %></td>
+        <td><%#= link_to 'Edit', edit_newssystem_path(newssystem) %></td>
+        <td><%#= link_to 'Destroy', newssystem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>-->
+<% end %>
+
+
+
+
+
+<br>
+
+
