@@ -1,7 +1,7 @@
 class CEvent < ApplicationRecord
   has_one :room
   accepts_nested_attributes_for :room
-  belongs_to :member
+
 
   def name_with_initial
     "#{title}"
