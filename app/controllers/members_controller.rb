@@ -18,7 +18,6 @@ class MembersController < ApplicationController
   # GET /members/new
   def new
     @member = Member.new
-    @event = CEvent.where(id: @eventNumber)
   end
 
   # GET /members/1/edit
@@ -73,7 +72,7 @@ class MembersController < ApplicationController
   end
 
   def set_event
-    @eventNumber = params[:id]
+    @event = CEvent.find(params[:id])
   end
 
   def member_params
