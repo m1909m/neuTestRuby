@@ -1,0 +1,102 @@
+<%= form_for(member) do |f| %>
+  <% if member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstName %>
+    <%= f.text_field :firstName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastName %>
+    <%= f.text_field :lastName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street %>
+    <%= f.text_field :street %>
+  </div>
+
+  <div class="field">
+    <%= f.label :plz %>
+    <%= f.text_field :plz %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place %>
+    <%= f.text_field :place %>
+  </div>
+
+  <div class="field">
+    <%= f.label :job %>
+    <%= f.text_field :job %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :eMail %>
+    <%= f.text_field :eMail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sleep %>
+    <%= f.check_box :sleep %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room %>
+    <%= f.text_field :room %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nameCompany %>
+    <%= f.text_field :nameCompany %>
+  </div>
+
+  <div class="field">
+    <%= f.label :streetCompany %>
+    <%= f.text_field :streetCompany %>
+  </div>
+
+  <div class="field">
+    <%= f.label :placeCompany %>
+    <%= f.text_field :placeCompany %>
+  </div>
+
+  <div class="field">
+    <%= f.label :veggie %>
+    <%= f.check_box :veggie %>
+  </div>
+
+  <div class="field">
+    <%= f.label :accept %>
+    <%= f.check_box :accept %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_id %>
+    <%= f.number_field :event_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
