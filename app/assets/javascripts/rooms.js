@@ -123,9 +123,10 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
         console.log(oldDate);
     };
     $scope.addEvent = function() {
+
         newEvent = $scope.newEvent;
-        newEvent.start = datePicker.date.startDate;
-        newEvent.end = datePicker.date.endDate;
+        newEvent.start = $scope.datePicker.date.startDate;
+        newEvent.end = $scope.datePicker.date.endDate;
         newEvent.room_id = $stateParams.id;
         event = Room.events.save(newEvent);
         $scope.events.push(event);
