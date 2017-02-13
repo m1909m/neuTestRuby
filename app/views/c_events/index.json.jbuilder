@@ -10,7 +10,7 @@ json.array! @c_events do |event|
   json.minSize event.minSize
   json.member event.member
   json.maxSize event.maxSize
-  json.free event.is_free? ? true : false
+  json.free event.is_free? ? 1 : 0
   #json.update_url event_path(event, method: :patch)
   #json.edit_url edit_event_path(event)
 end

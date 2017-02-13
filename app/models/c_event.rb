@@ -12,6 +12,6 @@ class CEvent < ApplicationRecord
   end
 
   def is_free?
-    self.member <= self.maxSize ? true : false
+    self.member <= self.maxSize ? 1 : 0
   end
 end
