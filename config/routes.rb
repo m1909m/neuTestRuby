@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'current/index'
 
   get 'verband/', to: "current#verband"
+  get 'mitglied/', to "current#mitglied"
 
   root :to => "newssystems#index"
 
