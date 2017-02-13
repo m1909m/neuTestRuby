@@ -7,6 +7,9 @@ json.array! @c_events do |event|
   json.color event.color unless event.color.blank?
   json.allDay event.all_day_event? ? true : false
   json.room_id event.room_id
+  json.minSize event.minSize
+  json.member event.member
+  json.maxSize event.maxSize
   json.free event.is_free? ? true : false
   #json.update_url event_path(event, method: :patch)
   #json.edit_url edit_event_path(event)
