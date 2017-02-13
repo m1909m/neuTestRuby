@@ -6,7 +6,7 @@ class MembersController < ApplicationController
   # GET /members.json
   def index
     @members = Member.all
-    @events = CEvent.find_by_free(true)
+    @events = CEvent.where(free: true)
     @rooms = Room.all
   end
 
@@ -18,7 +18,7 @@ class MembersController < ApplicationController
   # GET /members/new
   def new
     @member = Member.new
-    @events = CEvent.find_by_free(true)
+    @events = CEvent.where(free: true)
   end
 
   # GET /members/1/edit
