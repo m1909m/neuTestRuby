@@ -29,8 +29,9 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
+    @event = CEvent.new()
 
-
+    puts @event.inspect
     @event = CEvent.where(id: member_params[:event_id])
     puts @event.inspect
 
