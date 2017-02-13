@@ -29,11 +29,15 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
 
+
+    @event = CEvent.where(id: member_params[:event_id])
+
+    @event.member = @event.member + 1
     respond_to do |format|
 
       if @member.save
-        @event = CEvent.where(id: member_params[:event_id])
-        @event.member = @event.member + 1
+
+
         if @event.update(@event)
           format.html { redirect_to @member, notice: 'Mitglied wurde erfolgreich erstellt.' }
           format.json { render :show, status: :created, location: @member }
