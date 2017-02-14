@@ -1,4 +1,4 @@
-class RoomplaningsController < InheritedResources::Base
+class RoomplaningsController < ApplicationController
 
   before_action :set_roomplaning, only: [:show, :edit, :update, :destroy]
 
