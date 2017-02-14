@@ -54,7 +54,8 @@ gem 'devise-bootstrap-views'
 
 gem 'coffee-script-source', '= 1.11.1'
 # gem 'sprockets', '3.7.1'
-gem 'sprockets', '~> 3.5', '>= 3.5.2'
+#gem 'sprockets', '~> 3.5', '>= 3.5.2'
+gem 'sprockets-rails', '~> 3.2'
 #Rollen von users
 gem 'rolify'
 
