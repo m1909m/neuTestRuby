@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
-gem 'less-rails'
+gem 'less-rails', '~> 2.7', '>= 2.7.1'
 gem 'tinymce-rails', '~> 4.3'
 
 gem 'nodejs-rails', '~> 0.0.1'
