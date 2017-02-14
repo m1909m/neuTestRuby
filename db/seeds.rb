@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-pass = SecureRandom.hex(5)
+pass = admin1234@
 admin = User.create email: "admin@vkm.de",
                     password: pass,
                     password_confirmation: pass
