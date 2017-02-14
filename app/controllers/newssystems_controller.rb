@@ -25,7 +25,7 @@ class NewssystemsController < ApplicationController
   # POST /newssystems.json
   def create
     @newssystem = Newssystem.new(newssystem_params)
-
+    @newssystem.send = false
 
     respond_to do |format|
 
