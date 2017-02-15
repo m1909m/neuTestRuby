@@ -92,7 +92,7 @@
 	<% if current_user.present? %>
 	  <li><%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %></li>
 	<% end %>
-          <li><%= link_to 'Kontakt', contact_forms_path %></li>
+          <!--<li><= link_to 'Kontakt', contact_forms_path %></li>-->
           <li><%= link_to 'Newsletter', new_abo_newsletter_path %></li>
           <% if current_user.present? %>
               <li><a href="/zugangsbereich">Zugangsbereich</a></li>
