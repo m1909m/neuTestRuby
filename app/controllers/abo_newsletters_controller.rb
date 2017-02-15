@@ -25,6 +25,7 @@ class AboNewslettersController < ApplicationController
   # POST /abo_newsletters.json
   def create
     @abo_newsletter = AboNewsletter.new(abo_newsletter_params)
+    @abo_newsletter.enable = true
 
     respond_to do |format|
       if @abo_newsletter.save
