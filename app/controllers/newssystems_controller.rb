@@ -4,7 +4,7 @@ class NewssystemsController < ApplicationController
   # GET /newssystems
   # GET /newssystems.json
   def index
-    @newssystems = Newssystem.all
+    @newssystems = Newssystem.last(12)
   end
 
   # GET /newssystems/1
