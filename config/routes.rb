@@ -22,6 +22,12 @@ Rails.application.routes.draw do
   get 'ark-rwl/', to: "current#arkrwl"
   get 'ark-dd/', to: "current#arkdd"
 
+  get 'bedingungen/', to: "current#bedingungen"
+  get 'fachgruppen/', to: "current#fachgruppen"
+  get 'fortbildung/', to: "current#fortbildung"
+  get 'seminarinhalte/', to: "current#seminarinhalte"
+
+
   root :to => "newssystems#index"
 
   get 'administrator/rooms', to: "rooms#angular"
