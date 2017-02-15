@@ -18,7 +18,7 @@
 <div class="thumbnail col-xs-12" style="max-width: 100%">
   <div class="caption">
     <h2><%= @newssystem.created_at.strftime("%d.%m.%Y") %><br><%= @newssystem.title %></h2>
-    <p style="font-size: 1.0em;"><%= @newssystem.story.html_save %></p>
+    <p style="font-size: 1.0em;"><%= @newssystem.story.html_safe %></p>
   </div>
 </div>
 
