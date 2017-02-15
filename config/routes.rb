@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   resources :rooms, defaults: {format: :json}
 
   resources :roomplanings
-  ActiveAdmin.routes(self)
+
   resources :events
   devise_for :users
   resources :newssystems
   resources :abo_newsletters
   resources :newsletters
-
+  ActiveAdmin.routes(self)
   get 'zugangsbereich/', to: "current#index"
 
   get 'verband/', to: "current#verband"
