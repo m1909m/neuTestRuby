@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :rooms, defaults: {format: :json}
 
   resources :roomplanings
-
+  resources :contact_forms
   resources :events
   devise_for :users
   resources :newssystems

@@ -1,0 +1,10 @@
+
+<%= form_for(@contact_forms) do |f| %>
+  <%= f.text_field :name %>
+
+    <%= f.text_field :email %>
+
+    <%= f.text_area :message%>
+
+    <%= f.submit "Absenden"%>
+<% end %>
