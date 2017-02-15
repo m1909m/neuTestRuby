@@ -23,7 +23,8 @@
       <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
         <div class="caption">
           <h3><%= newssystem.created_at.strftime("%d.%m.%Y") %><br><%= newssystem.title %></h3>
-          <p><%=  truncate(newssystem.story.html_safe, length: 200) %></p>
+
+          <p><%=  truncate(ActionView::Base.full_sanitizer.sanitize(newssystem.story.html_safe), length: 200) %></p>
           <%= link_to 'weiterlesen', newssystem, :style => 'float: right;color: #f4bfa5;'%>
 
         </div>
@@ -33,7 +34,7 @@
         <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
           <div class="caption">
             <h3><%= newssystem.created_at.strftime("%d.%m.%Y") %><br><%= newssystem.title %></h3>
-            <p><%= truncate(newssystem.story.html_safe, length: 200) %></p>
+            <p><%= truncate(ActionView::Base.full_sanitizer.sanitize(newssystem.story.html_safe), length: 200) %></p>
             <%= link_to 'weiterlesen', newssystem, :style => 'float: right;color: #f4bfa5;'%>
 
           </div>
