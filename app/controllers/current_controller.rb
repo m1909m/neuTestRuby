@@ -23,4 +23,16 @@ class CurrentController < ApplicationController
   def arkdd
 
   end
+  def bedingungen
+
+  end
+  def fachgruppen
+
+  end
+  def fortbildung
+
+  end
+  def seminarinhalte
+
+  end
 end
