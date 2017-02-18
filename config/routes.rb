@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   resources :members
 
   resources :c_events,only: [:index, :create, :destroy], defaults: {format: :json}
