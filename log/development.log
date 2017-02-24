@@ -24931,3 +24931,711 @@ puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
   Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (223.1ms)
+Started GET "/" for 127.0.0.1 at 2017-02-20 15:56:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (19.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (1.9ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (16.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered newssystems/index.html.erb within layouts/application (143.8ms)
+  Rendered layouts/_headerLogo.html.erb (3.3ms)
+Completed 200 OK in 17285ms (Views: 17046.0ms | ActiveRecord: 31.9ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2017-02-20 15:56:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.0ms)
+  Rendered collection of /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [175 times] (481.7ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.6ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (909.9ms)
+Started GET "/verband" for 127.0.0.1 at 2017-02-20 16:01:35 +0100
+Processing by CurrentController#verband as HTML
+  Rendering current/verband.html.erb within layouts/application
+  Rendered current/verband.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (1.2ms)
+Completed 200 OK in 732ms (Views: 723.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/newssystems" for 127.0.0.1 at 2017-02-20 16:01:41 +0100
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (1.4ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered newssystems/index.html.erb within layouts/application (23.6ms)
+  Rendered layouts/_headerLogo.html.erb (1.6ms)
+Completed 200 OK in 674ms (Views: 663.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-20 21:00:57 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (5.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (0.5ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  Rendered newssystems/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 11718ms (Views: 11609.3ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2017-02-20 21:01:13 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.7ms)
+  Rendered collection of /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [184 times] (461.3ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (24.8ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.0ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (954.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-20 21:01:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 666ms (Views: 601.8ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-20 21:01:26 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FktPttltcUWce3UTNHpxEF9GygQvhAXQe5R3Aro/kvkjcrliaKPaRhl8F4u4N8I/7rfWEoehOGR0KRSQxbTl+w==", "user"=>{"email"=>"admin@vkm.de", "password"=>"[FILTERED]"}, "commit"=>"Einloggen"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@vkm.de' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-02-20 20:01:27', `sign_in_count` = 2, `updated_at` = '2017-02-20 20:01:27' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 684ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-20 21:01:27 +0100
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (4.4ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered newssystems/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_headerLogo.html.erb (2.3ms)
+Completed 200 OK in 1330ms (Views: 1309.4ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/news" for 127.0.0.1 at 2017-02-20 21:01:38 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (2.0ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+  Rendering news/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered news/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_headerLogo.html.erb (8.6ms)
+Completed 200 OK in 1672ms (Views: 1645.9ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/news/new" for 127.0.0.1 at 2017-02-20 21:01:46 +0100
+Processing by NewsController#new as HTML
+  Rendering news/new.html.erb within layouts/application
+  Rendered news/_form.html.erb (26.7ms)
+  Rendered news/new.html.erb within layouts/application (35.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (18.3ms)
+Completed 200 OK in 1609ms (Views: 1562.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2017-02-20 21:02:54 +0100
+Processing by NewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"icXPjmT0y9hhxDIuhaQ3QPik7g32fnj/3McOf4nBdfAZRXW4MQzY8ct2chnL1DBUaencT9h6S1uXLnvl7ncoiw==", "news"=>{"title"=>"Jetzt auf Facebook", "subTitle"=>"", "story"=>"dsfjkldsjfkljdsfkljskldfjklfjasdfkbckbacdsbjckjbdsjkcbjdsklbjfioweruoiewhfhvbjkxcbvuiwhrfbkjbxcuivbwehfwbejvbjkxvbuiwebfbdsjbvvuisabuiewbrfbhbwiubuicbvabewuifbahbsfbdfkjb"}, "commit"=>"News erstellen"}
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `news` (`title`, `subTitle`, `story`, `created_at`, `updated_at`) VALUES ('Jetzt auf Facebook', '', 'dsfjkldsjfkljdsfkljskldfjklfjasdfkbckbacdsbjckjbdsjkcbjdsklbjfioweruoiewhfhvbjkxcbvuiwhrfbkjbxcuivbwehfwbejvbjkxvbuiwebfbdsjbvvuisabuiewbrfbhbwiubuicbvabewuifbahbsfbdfkjb', '2017-02-20 20:02:54', '2017-02-20 20:02:54')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/news/1
+Completed 302 Found in 38ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/news/1" for 127.0.0.1 at 2017-02-20 21:02:54 +0100
+Processing by NewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNews Load (2.1ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m
+  Rendering news/show.html.erb within layouts/application
+  Rendered news/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (2.0ms)
+Completed 200 OK in 1667ms (Views: 1637.8ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/newssystems" for 127.0.0.1 at 2017-02-20 21:03:03 +0100
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (56.0ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered newssystems/index.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_headerLogo.html.erb (14.3ms)
+Completed 200 OK in 2928ms (Views: 2856.1ms | ActiveRecord: 56.6ms)
+
+
+Started GET "/news" for 127.0.0.1 at 2017-02-20 21:03:14 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (0.5ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+  Rendering news/index.html.erb within layouts/application
+  [1m[36mUser Load (13.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered news/index.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_headerLogo.html.erb (2.1ms)
+Completed 200 OK in 1759ms (Views: 1734.1ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/news" for 127.0.0.1 at 2017-02-20 21:04:17 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (0.3ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+  Rendering news/index.html.erb within layouts/application
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered news/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_headerLogo.html.erb (18.1ms)
+Completed 200 OK in 1262ms (Views: 1243.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/news/new" for 127.0.0.1 at 2017-02-20 21:05:28 +0100
+Processing by NewsController#new as HTML
+  Rendering news/new.html.erb within layouts/application
+  Rendered news/_form.html.erb (14.8ms)
+  Rendered news/new.html.erb within layouts/application (29.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (12.9ms)
+Completed 200 OK in 1862ms (Views: 1843.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2017-02-20 21:06:21 +0100
+Processing by NewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dqkj/Kw+Q5jBeHlWeJy9ZYemyqaapdmAywQSeGwWnJTmKZnK+cZQsWvKOWE27LpxFuv45LSh6iSA7WfiC6DB7w==", "news"=>{"title"=>"Neue News", "subTitle"=>"", "story"=>"lkadsöfjklsdfjklösjdflksödjfklsdjfklöjsdölkfjk dsljflksdjfkljsdurowieurfvxjbvweriouvnjx cviowerurfjxckbvifewoiorucjxvbjkxcbvwherhubfdibfudshfushdfu sdfuhdshfdshfhdsuihfui shdiuafssdhfiusdhfiusdafiphasdiufhisudf"}, "commit"=>"News erstellen"}
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO `news` (`title`, `subTitle`, `story`, `created_at`, `updated_at`) VALUES ('Neue News', '', 'lkadsöfjklsdfjklösjdflksödjfklsdjfklöjsdölkfjk dsljflksdjfkljsdurowieurfvxjbvweriouvnjx cviowerurfjxckbvifewoiorucjxvbjkxcbvwherhubfdibfudshfushdfu sdfuhdshfdshfhdsuihfui shdiuafssdhfiusdhfiusdafiphasdiufhisudf', '2017-02-20 20:06:21', '2017-02-20 20:06:21')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/news/2
+Completed 302 Found in 36ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/news/2" for 127.0.0.1 at 2017-02-20 21:06:21 +0100
+Processing by NewsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNews Load (0.6ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 2 LIMIT 1[0m
+  Rendering news/show.html.erb within layouts/application
+  Rendered news/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (2.9ms)
+Completed 200 OK in 1549ms (Views: 1540.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/news/" for 127.0.0.1 at 2017-02-20 21:06:30 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (5.5ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+  Rendering news/index.html.erb within layouts/application
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered news/index.html.erb within layouts/application (59.5ms)
+  Rendered layouts/_headerLogo.html.erb (2.2ms)
+Completed 200 OK in 2370ms (Views: 2345.6ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2017-02-20 21:12:59 +0100
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (5.8ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/page/index.html.arb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/page/index.html.arb (954.4ms)
+Completed 200 OK in 1117ms (Views: 959.2ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/admin/rooms" for 127.0.0.1 at 2017-02-20 21:13:10 +0100
+Processing by Admin::RoomsController#index as HTML
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (6.7ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `rooms` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[36mRoomplaning Load (4.1ms)[0m  [1m[34mSELECT `roomplanings`.* FROM `roomplanings`[0m
+  [1m[36mCEvent Load (1.8ms)[0m  [1m[34mSELECT `c_events`.* FROM `c_events`[0m
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/resource/index.html.arb (986.3ms)
+Completed 200 OK in 1105ms (Views: 1030.1ms | ActiveRecord: 34.7ms)
+
+
+Started GET "/admin/news" for 127.0.0.1 at 2017-02-20 21:13:15 +0100
+Processing by Admin::NewsController#index as HTML
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (5.9ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `news` LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `news` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `news`[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM `news` LIMIT 30 OFFSET 0) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mNews Load (0.5ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` desc LIMIT 30 OFFSET 0[0m
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/resource/index.html.arb (837.6ms)
+Completed 200 OK in 889ms (Views: 856.5ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/admin/news/1/edit" for 127.0.0.1 at 2017-02-20 21:13:41 +0100
+Processing by Admin::NewsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (11.7ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[36mNews Load (2.8ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/app/views/active_admin/resource/edit.html.arb (889.2ms)
+Completed 200 OK in 1011ms (Views: 975.6ms | ActiveRecord: 24.5ms)
+
+
+Started PATCH "/admin/news/1" for 127.0.0.1 at 2017-02-20 21:14:10 +0100
+Processing by Admin::NewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ac5cyEo31EzB8XmEoS3aECzv5YUrtUWTzJjtqh6AyIv5Tub+H8/HZWtDObPvXd0EvaLXxwWxdjeHcZgweTaV8A==", "news"=>{"title"=>"Jetzt auf Facebook", "subTitle"=>"", "story"=>"dsfjkld sjfkljdsfkljsk ldfjklfj a sdfkbckbacdsbjc kjbdsjkcbjdsklbjfi o weruoiewhfhvbjk xcbvuiwhrf bkjbxcuivbw ehfwbejvbjkxvb uiwebfbdsjb vvuisabuiewbrf bhbwiubuic bvabewuif bahbsfbdfkjb", "sendDate(1i)"=>"", "sendDate(2i)"=>"", "sendDate(3i)"=>"", "sendDate(4i)"=>"", "sendDate(5i)"=>""}, "commit"=>"Update News", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (11.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[36mNews Load (0.5ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 12.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+activemodel (5.0.1) lib/active_model/forbidden_attributes_protection.rb:21:in `sanitize_for_mass_assignment'
+activemodel (5.0.1) lib/active_model/attribute_assignment.rb:33:in `assign_attributes'
+/home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/lib/active_admin/resource_controller/data_access.rb:294:in `assign_attributes'
+/home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-8ddc07eefb9c/lib/active_admin/resource_controller/data_access.rb:175:in `update_resource'
+inherited_resources (1.7.0) lib/inherited_resources/actions.rb:45:in `update'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.1ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.8ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (156.2ms)
+Started GET "/news/1/edit" for 127.0.0.1 at 2017-02-20 23:36:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (38.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNews Load (0.5ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m
+  Rendering news/edit.html.erb within layouts/application
+  Rendered news/_form.html.erb (37.3ms)
+  Rendered news/edit.html.erb within layouts/application (43.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (1.5ms)
+Completed 200 OK in 6664ms (Views: 6543.9ms | ActiveRecord: 51.6ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2017-02-20 23:36:28 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered collection of /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [184 times] (281.9ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (485.4ms)
+Started PATCH "/news/1" for 127.0.0.1 at 2017-02-20 23:37:19 +0100
+Processing by NewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WqdRnsk9T4xxWb2q5q5pmhoA8sQp0WNSCoJa2Y70+n/KJ+uonMVcpdvr/Z2o3m6Oi03AhgfVUPZBay9D6UKnBA==", "news"=>{"title"=>"Jetzt auf Facebook", "subTitle"=>"", "story"=>"dsfjklds jfkljdsfkljskldf jklfjasdfkbckbac dsbjckjbdsjk cbjdsklbjfio weruoiewhf hvbjkx  cbvuiwhrfbkjbxcuivb wehfwbejvbjk xvbuiwebfbdsjb vvuisabuiewb rfbhb wiubuicb vabewuifb ahbsfbdfkjb "}, "commit"=>"News erstellen", "id"=>"1"}
+  [1m[36mNews Load (7.0ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE `news` SET `story` = 'dsfjklds jfkljdsfkljskldf jklfjasdfkbckbac dsbjckjbdsjk cbjdsklbjfio weruoiewhf hvbjkx  cbvuiwhrfbkjbxcuivb wehfwbejvbjk xvbuiwebfbdsjb vvuisabuiewb rfbhb wiubuicb vabewuifb ahbsfbdfkjb ', `updated_at` = '2017-02-20 22:37:19' WHERE `news`.`id` = 1[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/news/1
+Completed 302 Found in 42ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/news/1" for 127.0.0.1 at 2017-02-20 23:37:19 +0100
+Processing by NewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNews Load (1.4ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m
+  Rendering news/show.html.erb within layouts/application
+  Rendered news/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (1.5ms)
+Completed 200 OK in 950ms (Views: 924.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/news/1" for 127.0.0.1 at 2017-02-21 00:06:45 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNews Load (0.3ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 1 LIMIT 1[0m
+  Rendering news/show.html.erb within layouts/application
+  Rendered news/show.html.erb within layouts/application (61.8ms)
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (6.9ms)
+Completed 200 OK in 5697ms (Views: 5635.7ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/news/new" for 127.0.0.1 at 2017-02-21 00:06:54 +0100
+Processing by NewsController#new as HTML
+  Rendering news/new.html.erb within layouts/application
+  Rendered news/_form.html.erb (117.7ms)
+  Rendered news/new.html.erb within layouts/application (144.3ms)
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (2.6ms)
+Completed 200 OK in 2128ms (Views: 2102.8ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2017-02-21 00:07:50 +0100
+Processing by NewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F1yif7bBgrfZaLnaNPzTVOCpc5EXVbImSFy5GeTZhkOH3BhJ4zmRnnPa+e16jNRAceRB0zlRgYIDtcyDg2/bOA==", "news"=>{"title"=>"Neue news", "subTitle"=>"", "story"=>"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."}, "commit"=>"News erstellen"}
+  [1m[35m (14.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.6ms)[0m  [1m[32mINSERT INTO `news` (`title`, `subTitle`, `story`, `created_at`, `updated_at`) VALUES ('Neue news', '', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', '2017-02-20 23:07:50', '2017-02-20 23:07:50')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/news/3
+Completed 302 Found in 75ms (ActiveRecord: 33.5ms)
+
+
+Started GET "/news/3" for 127.0.0.1 at 2017-02-21 00:07:50 +0100
+Processing by NewsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNews Load (0.6ms)[0m  [1m[34mSELECT  `news`.* FROM `news` WHERE `news`.`id` = 3 LIMIT 1[0m
+  Rendering news/show.html.erb within layouts/application
+  Rendered news/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_headerLogo.html.erb (14.6ms)
+Completed 200 OK in 1671ms (Views: 1654.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/newssystems" for 127.0.0.1 at 2017-02-21 00:07:59 +0100
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (6.3ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered newssystems/index.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_headerLogo.html.erb (4.4ms)
+Completed 200 OK in 3006ms (Views: 2805.8ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-02-21 00:08:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered collection of /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [184 times] (466.7ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.9ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (735.6ms)
+Started GET "/news" for 127.0.0.1 at 2017-02-21 00:08:12 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (3.7ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 3.7ms)
+
+
+  
+NoMethodError (undefined method `sorrt_by' for #<Array:0x007f365e5a16f8>
+Did you mean?  sort_by
+               sort_by!):
+  
+app/controllers/news_controller.rb:5:in `index'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (112.2ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.7ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (231.5ms)
+Started GET "/news" for 127.0.0.1 at 2017-02-21 00:08:38 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (0.5ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 4.9ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/news_controller.rb:5:in `sort_by'
+app/controllers/news_controller.rb:5:in `index'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (42.6ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.6ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (304.9ms)
+Started GET "/news" for 127.0.0.1 at 2017-02-21 00:09:08 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (0.2ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+  Rendering news/index.html.erb within layouts/application
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered news/index.html.erb within layouts/application (76.1ms)
+  Rendered layouts/_headerLogo.html.erb (6.9ms)
+Completed 200 OK in 1153ms (Views: 1104.2ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/news" for 127.0.0.1 at 2017-02-21 00:09:47 +0100
+Processing by NewsController#index as HTML
+  [1m[36mNews Load (0.6ms)[0m  [1m[34mSELECT  `news`.* FROM `news` ORDER BY `news`.`id` DESC LIMIT 12[0m
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 17.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/news_controller.rb:5:in `sort_by'
+app/controllers/news_controller.rb:5:in `index'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.5ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (210.0ms)
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:34:02 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (0.9ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  Rendered newssystems/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 5188ms (Views: 5127.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2017-02-24 15:34:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (148.4ms)
+  Rendered collection of /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [184 times] (289.5ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (41.7ms)
+  Rendering /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/docker/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (820.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-24 15:34:13 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 1470ms (Views: 1401.8ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-24 15:34:26 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bthiofHF0ro8UQUPHdwWaiNYl30mJWf+Y2RDjnB4zBsZoe9yWhaS8LHSDM5LX82j/GD3vn4gTOgFcY3Z/hXGiQ==", "user"=>{"email"=>"admin@vkm.de", "password"=>"[FILTERED]"}, "commit"=>"Einloggen"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@vkm.de' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.8ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-02-24 14:34:27', `last_sign_in_at` = '2017-02-20 20:01:27', `sign_in_count` = 3, `updated_at` = '2017-02-24 14:34:27' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 653ms (ActiveRecord: 17.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-24 15:34:27 +0100
+Processing by NewssystemsController#index as HTML
+  [1m[36mNewssystem Load (17.4ms)[0m  [1m[34mSELECT  `newssystems`.* FROM `newssystems` ORDER BY `newssystems`.`id` DESC LIMIT 12[0m
+  Rendering newssystems/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered newssystems/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_headerLogo.html.erb (9.8ms)
+Completed 200 OK in 754ms (Views: 731.8ms | ActiveRecord: 17.8ms)
+
+

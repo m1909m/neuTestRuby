@@ -21,7 +21,7 @@ class NewsController < ApplicationController
     respond_to do |format|
       if @news.save
         format.html { redirect_to @news, notice: 'News wurde erfolgreich gespeichert' }
-        format.json { render :show, status: :created, location: @news }
+        format.json { render :index, status: :created, location: @news }
       else
         format.html { render :new }
         format.json { render json: @news.errors, status: :unprocessable_entity }
@@ -33,7 +33,7 @@ class NewsController < ApplicationController
     respond_to do |format|
       if @news.update(news_params)
         format.html { redirect_to @news, notice: 'News wurde erfolgreich aktualisiert' }
-        format.json { render :show, status: :ok, location: @news }
+        format.json { render :index, status: :ok, location: @news }
       else
         format.html { render :edit }
         format.json { render json: @news.errors, status: :unprocessable_entity }
@@ -58,4 +58,3 @@ class NewsController < ApplicationController
       params.require(:news).permit(:title, :subTitle, :story, :sendDate)
     end
 end
-
