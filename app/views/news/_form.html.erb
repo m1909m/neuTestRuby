@@ -29,11 +29,14 @@
   <div class="form-group row">
     <%= f.label :story, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.text_area :story, class: "form-control tinymce", rows: "3" %>
+      <%= f.text_area :story, class: "tinymce", rows: "3" %>
     </div>
   </div>
 
   <div class="actions form-group row">
-    <%= f.submit 'News erstellen', class: "btn btn-default col-sm-offset-2", style: "padding-left: 15px; padding-right: 15px;" %>
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'News erstellen', class: "btn btn-default" %>
+    </div>
   </div>
 <% end %>
+<%= tinymce %>
