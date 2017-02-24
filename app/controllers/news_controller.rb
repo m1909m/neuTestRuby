@@ -3,6 +3,8 @@ class NewsController < ApplicationController
 
   def index
     @news = News.last(12)
+    @news.sort_by{|e| -e[:created_at]}
+
   end
 
   def show
