@@ -1,6 +1,6 @@
 class CreateContactForms < ActiveRecord::Migration
   def change
-    create_table :contactForms do |t|
+    create_table :contact_forms do |t|
       t.string :name
       t.string :email
       t.text :message
