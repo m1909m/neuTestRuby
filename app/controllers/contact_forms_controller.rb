@@ -23,6 +23,6 @@ class ContactFormsController < ApplicationController
   private
 
   def contactForms_params
-    params.require(:contact_forms).permit(:name, :email, :message)
+    params.require(:contact_form).permit(:name, :email, :message)
   end
 end
