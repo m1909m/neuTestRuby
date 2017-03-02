@@ -66,7 +66,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav" style="border-bottom: 5px solid #f59d0e; width: 100%;">
-            <li><%= link_to 'Aktuelles', newssystems_path %></li>
+            <li><%= link_to 'Aktuelles', news_index_path %></li>
             <li><a href="/verband">Verband</a></li>
             <li><a href="/mitglied">Mitgliedschaft</a></li>
             <li><a href="/fortbildung">Fortbildung</a></li>
@@ -98,7 +98,7 @@
 	<% if current_user.present? %>
 	  <li><%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %></li>
 	<% end %>
-          <!--<li><= link_to 'Kontakt', contact_forms_path %></li>-->
+          <li><%= link_to 'Kontakt', contact_forms_path %></li>
           <li><%= link_to 'Newsletter', new_abo_newsletter_path %></li>
           <% if current_user.present? %>
               <li><a href="/zugangsbereich">Zugangsbereich</a></li>

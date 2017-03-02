@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :contact_forms
   resources :events
   devise_for :users
-  resources :newssystems
   resources :abo_newsletters
   resources :newsletters
   ActiveAdmin.routes(self)
@@ -29,7 +28,7 @@ Rails.application.routes.draw do
   get 'seminarinhalte/', to: "current#seminarinhalte"
 
 
-  root :to => "newssystems#index"
+  root :to => "news#index"
 
   get 'administrator/rooms', to: "rooms#angular"
 
