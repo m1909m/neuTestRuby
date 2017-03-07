@@ -1,4 +1,4 @@
-ActiveAdmin.register Roomplaning do
+ActiveAdmin.register News do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -12,6 +12,16 @@ ActiveAdmin.register Roomplaning do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  permit_params :title, :subTitle, :story
+
+  form do |f|
+    f.inputs 'News Hinzufügen' do
+      f.input :title
+      f.input :subTitle
+      f.input :story
+    end
+    f.actions
+  end
 
 
 end

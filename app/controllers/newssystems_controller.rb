@@ -28,7 +28,6 @@ class NewssystemsController < ApplicationController
     @newssystem.send = false
 
     respond_to do |format|
-
       if @newssystem.save
         format.html { redirect_to @newssystem, notice: 'Newssystem was successfully created.' }
         format.json { render :show, status: :created, location: @newssystem }

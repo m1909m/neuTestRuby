@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213115449) do
+ActiveRecord::Schema.define(version: 20170216180901) do
 
   create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "eMail"
@@ -89,6 +89,15 @@ ActiveRecord::Schema.define(version: 20170213115449) do
     t.integer  "event_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "news", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.string   "subTitle"
+    t.text     "story",      limit: 65535
+    t.datetime "sendDate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
