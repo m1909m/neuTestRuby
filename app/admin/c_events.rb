@@ -1,4 +1,4 @@
-ActiveAdmin.register CEvent do
+ActiveAdmin.register CEvent, as: "Veranstaltungen" do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,5 +13,20 @@ ActiveAdmin.register CEvent do
 #   permitted
 # end
 
+  permit_params :title, :start, :end, :description, :created_at, :updated_at, :minSize, :maxSize, :member, :free, :room_id
+
+  index do
+    column "Veranstaltug", :title
+    column "Beschreibung", :description
+    column "Startdatum", :start
+    column "Enddatum", :end
+    column "Min. Teilnehmer", :minSize
+    column "Max. Teilnehmer", :maxSize
+    column "Angemeldete Teilnehmer", :member
+    column "Raumnummer", :room_id
+    column "Erstellt am", :created_at
+    column "Geändert am:", :updated_at
+    actions :all, :except => [:new]
+  end
 
 end
