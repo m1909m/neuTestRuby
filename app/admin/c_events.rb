@@ -13,7 +13,7 @@ ActiveAdmin.register CEvent, as: "Veranstaltungen" do
 #   permitted
 # end
 
-  permit_params :title, :start, :end, :description, :created_at, :updated_at, :minSize, :maxSize, :member, :free, :room_id
+  permit_params :title, :start, :end, :description, :created_at, :updated_at, :minSize, :maxSize, :member, :free
 
   index do
     column "Veranstaltug", :title
@@ -23,7 +23,6 @@ ActiveAdmin.register CEvent, as: "Veranstaltungen" do
     column "Min. Teilnehmer", :minSize
     column "Max. Teilnehmer", :maxSize
     column "Angemeldete Teilnehmer", :member
-    column "Raumnummer", :room_id
     column "Erstellt am", :created_at
     column "Geändert am:", :updated_at
     actions :all, :except => [:new]
