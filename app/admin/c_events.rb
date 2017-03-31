@@ -12,7 +12,7 @@ ActiveAdmin.register CEvent, as: "Veranstaltungen" do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+  actions :all, :except => [:new]
   permit_params :title, :start, :end, :description, :created_at, :updated_at, :minSize, :maxSize, :member, :free
 
   index do
@@ -25,7 +25,7 @@ ActiveAdmin.register CEvent, as: "Veranstaltungen" do
     column "Angemeldete Teilnehmer", :member
     column "Erstellt am", :created_at
     column "Geändert am:", :updated_at
-    actions :all, :except => [:new]
+    actions
   end
 
 end
