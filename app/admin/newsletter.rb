@@ -4,7 +4,7 @@ ActiveAdmin.register Newsletter do
 
   form do |f|
     f.inputs 'Newsletter layout erstellen' do
-      f.input :newsHeader, :html => { :class => "tinymce" }
+      f.input :newsHeader, :class => "tinymce"
       f.input :newsBody
       f.input :newsFooter
     end
