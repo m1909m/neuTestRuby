@@ -125,12 +125,15 @@ a {
 
 
 
-@media (min-width: 768px) {
+@media (min-width: @screen-sm-min) {
   .contaier-fluid {
     padding-left: 5.5em;
   }
   .topSize {
     margin-top: 150px;
+  }
+  #navbar-right {
+    position: relative;
   }
 
   .navbar-default ul li {
