@@ -13,7 +13,7 @@ class CEventsController < ApplicationController
 
   def byMail
     respond_to do |format|
-      format.json { render json: CEvent.where( userMail: current_user.eMail) }
+      format.json { render json: CEvent.where( userMail: current_user.email) }
     end
   end
 

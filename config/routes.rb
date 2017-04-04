@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :c_events,only: [:index, :create, :show, :destroy], defaults: {format: :json}
   resources :c_events,only: [:new]
-  get 'event/myEvent/', to: "c_events#byMail"
+  get 'event/myEvent/', to: "c_events#byMail", defaults: {format: :json}
   resources :rooms, defaults: {format: :json}
 
   resources :roomplanings
