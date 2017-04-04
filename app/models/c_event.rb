@@ -1,5 +1,7 @@
 class CEvent < ApplicationRecord
   has_one :room
+  belongs_to :member
+  accepts_nested_attributes_for :member
   accepts_nested_attributes_for :room
   before_create :addRoomSize
 

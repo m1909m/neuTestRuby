@@ -15,6 +15,7 @@ myApp.factory("Room", function($resource) {
             update:  { method: 'PUT', responseType: 'json' }
         });
 
+
     o.events = $resource("/c_events/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
@@ -30,6 +31,9 @@ myApp.factory("CEvent", function($resource) {
 });*/
 
 myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
+    $scope.myEvents = [];
+    // Get Abfrage des c_events controller byEmail
+    // $scope.myEvents = ....
     $scope.rooms = [];
     $scope.rooms = Room.rooms.index();
 
@@ -122,6 +126,12 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 
     }
 }]);
+myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
+
+    $scope.members = [];
+    $scope.members = Room.events.index({"roomid": $stateParams.id});
+
+}]);
 /*
 myApp.config(function($routeProvider) {
     //$locationProvider.html5Mode(true);
@@ -153,7 +163,15 @@ myApp.config([
                 url: '/{id}/new',
                 templateUrl: '../../assets/new.html',
                 controller: 'eventController'
+            })
+            .state('members', {
+                url: '/event/members/{id}',
+                templateUrl: '../../assets/event.html',
+                controller: 'myEventController'
             });
+            //.state('editEvent', {
+            //    url: '/event/edit/{id]'
+            //});
 
         $urlRouterProvider.otherwise('/');
     }]);

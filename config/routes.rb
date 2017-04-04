@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :news
   resources :members
 
-  resources :c_events,only: [:index, :create, :destroy], defaults: {format: :json}
+  resources :c_events,only: [:index, :create, :show, :destroy], defaults: {format: :json}
   resources :c_events,only: [:new]
+  get 'c_events/myEvent/', to: "c_events#byMail"
   resources :rooms, defaults: {format: :json}
 
   resources :roomplanings
