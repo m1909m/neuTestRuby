@@ -34,7 +34,7 @@ class CEventsController < ApplicationController
   def create
     @c_event = CEvent.new(c_event_params)
     # TODO Tests
-    @c_event = @c_event.userMail = current_user.email
+    @c_event.userMail = current_user.email
     @c_event.save
   end
 
