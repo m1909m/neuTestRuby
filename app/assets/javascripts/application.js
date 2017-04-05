@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+// require jquery_ujs
 //= require tinymce
-//= require twitter/bootstrap
+
+//  require twitter/bootstrap
 
 // require bootstrap-modal
 //= require angular
