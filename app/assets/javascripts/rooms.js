@@ -1,4 +1,4 @@
-/**
+  /**
  * Created by Marian on 10.02.2017.
  * 'daterangepicker'
  */
@@ -14,7 +14,9 @@ myApp.factory("Room", function($resource) {
             index:   { method: 'GET', isArray: true, responseType: 'json' },
             update:  { method: 'PUT', responseType: 'json' }
         });
-
+    o.myEvents = $resource("/event/myEvent", {
+        index:    { method: 'GET', isArray: true, responseType: 'json' }
+    });
 
     o.events = $resource("/c_events/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
@@ -33,7 +35,7 @@ myApp.factory("CEvent", function($resource) {
 myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
     $scope.myEvents = [];
     // Get Abfrage des c_events controller byEmail
-    // $scope.myEvents = ....
+    $scope.myEvents = Room.myEvents.index();
     $scope.rooms = [];
     $scope.rooms = Room.rooms.index();
 
