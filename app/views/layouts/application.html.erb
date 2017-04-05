@@ -67,7 +67,17 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav" style="border-bottom: 5px solid #f59d0e; width: 100%;">
             <li><%= link_to 'Aktuelles', news_index_path %></li>
-            <li><a href="/verband">Verband</a></li>
+
+            <!--<li><a href="/verband">Verband</a></li>-->
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/verband">Verband<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Vorstand</a></li>
+                <li><a href="#">Fachgruppen</a></li>
+                <li><a href="#">Berufsverbände</a></li>
+                <li><a href="#">Geschäftsstelle</a></li>
+              </ul>
+            </li>
             <li><a href="/mitglied">Mitgliedschaft</a></li>
             <li><a href="/fortbildung">Fortbildung</a></li>
           <!--  <li><a href="#">Shop / Arbeithilfen</a></li> -->
