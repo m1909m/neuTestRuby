@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'zugangsbereich/', to: "current#index"
 
   get 'verband/', to: "current#verband"
+  get 'vorstand/' to: "current#vorstand"
   get 'mitglied/', to: "current#mitglied"
   get 'impressum/', to: "current#impressum"
   get 'impressum/agb/', to: "current#agb"

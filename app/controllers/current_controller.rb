@@ -5,6 +5,10 @@ class CurrentController < ApplicationController
   def verband
 
   end
+
+  def vorstand
+
+  end
   def mitglied
 
   end
