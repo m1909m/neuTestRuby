@@ -16,8 +16,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'zugangsbereich/', to: "current#index"
 
-  get 'verband/', to: "current#verband"
-  get 'vorstand/', to: "current#vorstand"
+  get 'verband/berufsverbände/', to: "verbaand#verband"
+  get 'verband/vorstand/', to: "verbaand#vorstand"
+  get 'verband/geschäftsstelle', to: "verbaand#geschäftsstelle"
+
   get 'mitglied/', to: "current#mitglied"
   get 'impressum/', to: "current#impressum"
   get 'impressum/agb/', to: "current#agb"
