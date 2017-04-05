@@ -47,7 +47,7 @@
   </head>
   <% if current_user.present? %>
   <body class="container-fluid">
-  <%= bootstrap_flash %>
+
   <div class="row">
     <div class="container col-sm-8 col-md-10">
       <header>
@@ -89,7 +89,7 @@
 
       <main role="main" class="" style="padding-left: 3.0em;">
 
-
+        <%= bootstrap_flash %>
 
         <%= yield %>
       </main>
