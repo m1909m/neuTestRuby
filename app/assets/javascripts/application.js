@@ -10,12 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+
+
+
+//  require jquery
 // require jquery_ujs
 //= require tinymce
-
 //  require twitter/bootstrap
-
 // require bootstrap-modal
 //= require angular
 //= require angular-ui-router
