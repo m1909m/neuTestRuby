@@ -14,10 +14,9 @@ myApp.factory("Room", function($resource) {
             index:   { method: 'GET', isArray: true, responseType: 'json' },
             update:  { method: 'PUT', responseType: 'json' }
         });
-    o.myEvents = $resource("/event/myEvent", {
-        index:    { method: 'GET', isArray: true, responseType: 'json' }
-    });
-
+    o.myEvents = $resource("/event/myEvent/", { }, {
+            index:    { method: 'GET', isArray: true, responseType: 'json' }
+        });
     o.events = $resource("/c_events/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
