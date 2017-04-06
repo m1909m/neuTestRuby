@@ -21,5 +21,9 @@
     "angular-ui-calendar": "^1.0.2",
     "angular-ui-bootstrap-datetimepicker": "^2.0.3",
     "angular-daterangepicker": "^0.2.2"
+  },
+  "resolutions": {
+    "jquery": "^3.2.1",
+    "angular": "^1.6.2"
   }
 }
