@@ -48,7 +48,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($s
         }, function error(response) {
             $scope.myEvents = response.statusText;
         });
-    }, 5000);
+    }, 60000);
 
     $scope.rooms = [];
     $scope.rooms = Room.rooms.index();
