@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get '/fortbildung/seminare/neu/:id', to: "members#new"
 
   get '/fortbildung/seminare', to: "members#index", as: 'members'
+  post '/fortbildung/seminare', to: "members#create"
   get '/fortbldung/seminare/:id', to: "members#show", as: 'member'
   get 'membersAll/byEvent/:id', to: "members#byEvent", defaults: {format: :json}
 
