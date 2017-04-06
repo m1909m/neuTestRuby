@@ -39,7 +39,16 @@ myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($s
     // Get Abfrage des c_events controller byEmail
     //$scope.myEvents = Room.myEvents.index();
 
-    $interval(getMyEvents, 5000);
+    $interval(function () {
+        $http({
+            method: "GET",
+            url:"/event/myEvent"
+        }).then( function (response) {
+            $scope.myEvents = response.data;
+        }, function error(response) {
+            $scope.myEvents = response.statusText;
+        });
+    }, 5000);
 
     $scope.rooms = [];
     $scope.rooms = Room.rooms.index();
@@ -81,16 +90,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($s
     };
 
 }]);
-function getMyEvents() {
-    $http({
-        method: "GET",
-        url:"/event/myEvent"
-    }).then( function (response) {
-        $scope.myEvents = response.data;
-    }, function error(response) {
-        $scope.myEvents = response.statusText;
-    });
-}
+
 myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
     $scope.roomId = $stateParams.id;
     $scope.events = [];
