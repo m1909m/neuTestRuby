@@ -39,7 +39,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($s
     // Get Abfrage des c_events controller byEmail
     //$scope.myEvents = Room.myEvents.index();
 
-    $interval(function () {
+    $interval(function ($http) {
         $http({
             method: "GET",
             url:"/event/myEvent"
