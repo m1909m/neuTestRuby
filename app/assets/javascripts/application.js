@@ -13,7 +13,7 @@
 
 
 
-//=  require jquery
+//= require jquery/dist/jquery
 // require jquery_ujs
 //= require tinymce
 //  require twitter/bootstrap
