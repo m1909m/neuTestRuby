@@ -34,18 +34,13 @@ myApp.factory("CEvent", function($resource) {
     });
 });*/
 
-myApp.controller('RoomCtrl', ['$scope', 'Room','$http', function($scope, Room, $http) {
+myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($scope, Room, $http, $interval) {
     $scope.myEvents = [];
     // Get Abfrage des c_events controller byEmail
     //$scope.myEvents = Room.myEvents.index();
-    $http({
-        method: "GET",
-        url:"/event/myEvent"
-    }).then( function (response) {
-        $scope.myEvents = response.data;
-    }, function error(response) {
-        $scope.myEvents = response.statusText;
-    });
+
+    $interval(getMyEvents, 5000);
+
     $scope.rooms = [];
     $scope.rooms = Room.rooms.index();
 
@@ -86,6 +81,16 @@ myApp.controller('RoomCtrl', ['$scope', 'Room','$http', function($scope, Room, $
     };
 
 }]);
+function getMyEvents() {
+    $http({
+        method: "GET",
+        url:"/event/myEvent"
+    }).then( function (response) {
+        $scope.myEvents = response.data;
+    }, function error(response) {
+        $scope.myEvents = response.statusText;
+    });
+}
 myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
     $scope.roomId = $stateParams.id;
     $scope.events = [];
