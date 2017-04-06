@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   #get '/rooms', to: "rooms#index"
   get 'members/new/:id', to: "members#new"
-  get 'members/byEvent/:id', to: "members#byEvent", defaults: {format: :json}
+  get 'membersAll/byEvent/:id', to: "members#byEvent", defaults: {format: :json}
 
 
   get '/abo_newsletter/:email', to: "abo_newsletters#signOutNews"
