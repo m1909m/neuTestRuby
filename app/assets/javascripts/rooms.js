@@ -37,7 +37,15 @@ myApp.factory("CEvent", function($resource) {
 myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
     $scope.myEvents = [];
     // Get Abfrage des c_events controller byEmail
-    $scope.myEvents = Room.myEvents.index();
+    //$scope.myEvents = Room.myEvents.index();
+    $http({
+        method: "GET",
+        url:"/event/myEvent"
+    }).then( function (response) {
+        $scope.myEvents = response.data;
+    }, function error(response) {
+        $scope.myEvents = response.statusText;
+    });
     $scope.rooms = [];
     $scope.rooms = Room.rooms.index();
 
