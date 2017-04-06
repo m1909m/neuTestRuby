@@ -38,6 +38,14 @@ myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($s
     $scope.myEvents = [];
     // Get Abfrage des c_events controller byEmail
     //$scope.myEvents = Room.myEvents.index();
+    $http({
+        method: "GET",
+        url:"/event/myEvent"
+    }).then( function (response) {
+        $scope.myEvents = response.data;
+    }, function error(response) {
+        $scope.myEvents = response.statusText;
+    });
 
     $interval(function () {
         $http({
@@ -143,10 +151,13 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 
     }
 }]);
-myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
+myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', '$interval', function($scope, $stateParams, Room, $interval) {
 
     $scope.members = [];
-    $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
+    $interval(function(){
+        $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
+    }, 60000);
+
 
 }]);
 /*
