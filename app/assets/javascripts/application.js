@@ -27,5 +27,5 @@
 //= require moment
 //= require fullcalendar
 //= require turbolinks
-//= require bootstrap/js/bootstrap
+//= require bootstrap/js/
 //= require_tree .
