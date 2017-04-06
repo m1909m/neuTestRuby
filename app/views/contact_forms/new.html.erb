@@ -1,17 +1,26 @@
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9933.745465086298!2d7.405012!3d51.5052099!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7649713ab804a8d1!2sVerband+kirchlicher+Mitarbeiterinnen+u.+Mitarbeiter+Rheinland-Westfalen-Lippe+(vkm-rwl)!5e0!3m2!1sde!2sde!4v1488804297914" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-<%= form_for(@contact_form) do |f| %>
-    <div class="form-group">
-      <%= f.label :name, "Name" %>
-      <%= f.text_field :name %>
-    </div>
+<div class="col-xs-12">
+  <h1>Kontakt</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Kontakt.jpg", :alt => "Kontakt", :class => "img-responsive center-block") %>
+</div>
+<div class="col-xs-12 col-sm-6">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9933.745465086298!2d7.405012!3d51.5052099!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7649713ab804a8d1!2sVerband+kirchlicher+Mitarbeiterinnen+u.+Mitarbeiter+Rheinland-Westfalen-Lippe+(vkm-rwl)!5e0!3m2!1sde!2sde!4v1488804297914" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<div class="col-xs-12 col-sm-6">
+  <%= form_for(@contact_form) do |f| %>
       <div class="form-group">
-        <%= f.label :name, "Email Adresse" %>
-        <%= f.text_field :email %>
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name %>
       </div>
         <div class="form-group">
-          <%= f.label :name, "Nachricht" %>
-          <%= f.text_area :message%>
+          <%= f.label :name, "Email Adresse" %>
+          <%= f.text_field :email %>
         </div>
-    <%= f.submit "Absenden"%>
-<% end %>
+          <div class="form-group">
+            <%= f.label :name, "Nachricht" %>
+            <%= f.text_area :message%>
+          </div>
+      <%= f.submit "Absenden"%>
+  <% end %>
+</div>
