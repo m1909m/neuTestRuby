@@ -34,7 +34,7 @@ myApp.factory("CEvent", function($resource) {
     });
 });*/
 
-myApp.controller('RoomCtrl', ['$scope', 'Room', function($scope, Room) {
+myApp.controller('RoomCtrl', ['$scope', 'Room','$http', function($scope, Room, $http) {
     $scope.myEvents = [];
     // Get Abfrage des c_events controller byEmail
     //$scope.myEvents = Room.myEvents.index();
