@@ -17,7 +17,7 @@ myApp.factory("Room", function($resource) {
     o.myEvents = $resource("/event/myEvent/", { }, {
             index:    { method: 'GET', isArray: true, responseType: 'json' }
         });
-    o.membersByEvent = $resource("/members/byEvent/:id", { id: '@id' }, {
+    o.membersByEvent = $resource("/membersAll/byEvent/:id", { id: '@id' }, {
             index:    { method: 'GET', isArray: true, resoinseType: 'json' }
     });
     o.events = $resource("/c_events/:id", { id: '@id' }, {
