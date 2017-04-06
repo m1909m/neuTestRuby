@@ -24,8 +24,8 @@
 //= require angular-route
 //= require angular-ui-calendar
 //= require angular-daterangepicker
-//= require moment
+//  require moment
 //= require fullcalendar
 //= require turbolinks
-//= require bootstrap/dist/js/bootstrap
+//= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
