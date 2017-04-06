@@ -4,4 +4,4 @@
 #  require bootstrap
 # require bootstrap-datepicker
 #= require turbolinks
-#= require_tree .
+#= require_directory .
