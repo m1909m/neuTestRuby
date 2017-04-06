@@ -10,6 +10,12 @@ class MembersController < ApplicationController
     @rooms = Room.all
   end
 
+  def byEvent
+    respond_to do |format|
+      format.json { render json: Member.where(event_id: params[:eventid]) }
+    end
+  end
+
   # GET /members/1
   # GET /members/1.json
   def show

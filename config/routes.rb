@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
   #get '/rooms', to: "rooms#index"
   get 'members/new/:id', to: "members#new"
+  get 'members/byEvent/:id', to: "members#byEvent"
 
 
   get '/abo_newsletter/:email', to: "abo_newsletters#signOutNews"

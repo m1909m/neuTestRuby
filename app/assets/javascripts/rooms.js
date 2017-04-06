@@ -17,6 +17,9 @@ myApp.factory("Room", function($resource) {
     o.myEvents = $resource("/event/myEvent/", { }, {
             index:    { method: 'GET', isArray: true, responseType: 'json' }
         });
+    o.membersByEvent = $resource("/members/byEvent/:id", { id: '@id' }, {
+            index:    { method: 'GET', isArray: true, resoinseType: 'json' }
+    });
     o.events = $resource("/c_events/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
@@ -130,7 +133,7 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
 
     $scope.members = [];
-    $scope.members = Room.events.index({"roomid": $stateParams.id});
+    $scope.members = Room.membersByEvent.index({"eventid": $stateParams.id});
 
 }]);
 /*
