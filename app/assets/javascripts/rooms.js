@@ -133,7 +133,7 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
 
     $scope.members = [];
-    $scope.members = Room.membersByEvent.index({"eventid": $stateParams.id});
+    $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
 
 }]);
 /*
