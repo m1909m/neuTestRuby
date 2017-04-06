@@ -177,5 +177,4 @@ myApp.config([
             //    url: '/event/edit/{id]'
             //});
 
-        $urlRouterProvider.otherwise('/');
     }]);
