@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :news
-  resources :members
+ # resources :members
 
   resources :c_events,only: [:index, :create, :show, :destroy], defaults: {format: :json}
   resources :c_events,only: [:new]
@@ -26,10 +26,11 @@ Rails.application.routes.draw do
   get 'ark-rwl/', to: "current#arkrwl"
   get 'ark-dd/', to: "current#arkdd"
 
-  get 'bedingungen/', to: "current#bedingungen"
-  get 'fachgruppen/', to: "current#fachgruppen"
-  get 'fortbildung/', to: "current#fortbildung"
-  get 'seminarinhalte/', to: "current#seminarinhalte"
+  get 'fortbildung/fachgruppen/', to: "fortbildung#fachgruppen"
+  get 'fortbildung/seminarinhalte/', to: "fortbildung#seminarinhalte"
+  get 'fortbildung/inHouseSchulungen/', to: "fortbildung#schulung"
+  get 'fortbildung/bedingungen/', to: "fortbildung#bedingungen"
+  # get 'fortbildung/', to: "current#fortbildung"
 
 
   root :to => "news#index"
@@ -37,7 +38,9 @@ Rails.application.routes.draw do
   get 'administrator/rooms', to: "rooms#angular"
 
   #get '/rooms', to: "rooms#index"
-  get 'members/new/:id', to: "members#new"
+  get '/fortbildung/seminare/neu/:id', to: "members#new"
+  get '/fortbildung/seminare', to: "members#index"
+  get '/fortbldung/seminare/:id', to: "members#show"
   get 'membersAll/byEvent/:id', to: "members#byEvent", defaults: {format: :json}
 
 
