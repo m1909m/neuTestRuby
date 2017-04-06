@@ -1,55 +1,55 @@
-<p id="notice"><%= notice %></p>
+<div class="col-xs-12">
+  <h1>Aktuelle Veranstaltungen</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Schulungstermine.jpg", :alt => "Aktuelleveranstaltungen", :class => "img-responsive center-block") %>
 
-<h1>Aktuelle Veranstaltungen</h1>
+</div>
+  <div class="col-xs-12">
+  <p id="notice"><%= notice %></p>
 
-<% @color = true %>
-<% @events.each do |event|
-  if(@color == true)
-    @color = false;%>
+  <% @color = true %>
+  <% @events.each do |event|
+    if(@color == true)
+      @color = false;%>
 
-        <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
-          <div class="caption">
-            <h3><%= event.start.strftime("%d.%m.%Y %H:%M") %> - <%= event.end.strftime("%d.%m.%Y %H:%M") %><br><%= event.title %></h3>
-            <%@rooms.each do |room|
-              if(event.room_id == room.id) %>
-                <p><%= room.building %></p>
-                    <a href="/fortbildung/seminare/neu/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
-                <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
-            <% end %>
-            <% end %>
+          <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
+            <div class="caption">
+              <h3><%= event.start.strftime("%d.%m.%Y %H:%M") %> - <%= event.end.strftime("%d.%m.%Y %H:%M") %><br><%= event.title %></h3>
+              <%@rooms.each do |room|
+                if(event.room_id == room.id) %>
+                  <p><%= room.building %></p>
+                      <a href="/fortbildung/seminare/neu/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
+                  <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
+              <% end %>
+              <% end %>
+            </div>
           </div>
-        </div>
-    <% elsif(@color == false)
-         @color = true%>
-        <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
-          <div class="caption">
-            <h3><%= event.start.strftime("%d.%m.%Y %H:mm") %> - <%= event.end.strftime("%d.%m.%Y %H:mm") %><br><%= event.title %></h3>
-            <%@rooms.each do |room|
-              if(event.room_id == room.id) %>
-                    <p><%= room.building %></p>
-                    <a href="/fortbildung/seminare/neu/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
-                    <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
-                <% end %>
-            <% end %>
+      <% elsif(@color == false)
+           @color = true%>
+          <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
+            <div class="caption">
+              <h3><%= event.start.strftime("%d.%m.%Y %H:mm") %> - <%= event.end.strftime("%d.%m.%Y %H:mm") %><br><%= event.title %></h3>
+              <%@rooms.each do |room|
+                if(event.room_id == room.id) %>
+                      <p><%= room.building %></p>
+                      <a href="/fortbildung/seminare/neu/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
+                      <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
+                  <% end %>
+              <% end %>
+            </div>
           </div>
-        </div>
-    <% end %>
+      <% end %>
 
-    <!--
-      <tr>
-        <td><%#= newssystem.title %></td>
-        <td><%#= newssystem.subTitle %></td>
-        <td><%#= newssystem.story %></td>
-        <td><%#= link_to 'Show', newssystem %></td>
-        <td><%#= link_to 'Edit', edit_newssystem_path(newssystem) %></td>
-        <td><%#= link_to 'Destroy', newssystem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>-->
-<% end %>
+      <!--
+        <tr>
+          <td><%#= newssystem.title %></td>
+          <td><%#= newssystem.subTitle %></td>
+          <td><%#= newssystem.story %></td>
+          <td><%#= link_to 'Show', newssystem %></td>
+          <td><%#= link_to 'Edit', edit_newssystem_path(newssystem) %></td>
+          <td><%#= link_to 'Destroy', newssystem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>-->
+  <% end %>
 
-
-
-
-
-<br>
-
-
+</div>
