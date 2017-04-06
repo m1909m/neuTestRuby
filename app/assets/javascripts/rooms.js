@@ -154,6 +154,7 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', '$interval', function($scope, $stateParams, Room, $interval) {
 
     $scope.members = [];
+    $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
     $interval(function(){
         $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
     }, 60000);
