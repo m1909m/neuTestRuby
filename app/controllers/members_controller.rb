@@ -12,7 +12,7 @@ class MembersController < ApplicationController
 
   def byEvent
     respond_to do |format|
-      format.json { render json: Member.where(event_id: params[:eventid]) }
+      format.json { render json: Member.where(event_id: params[:id]) }
     end
   end
 
