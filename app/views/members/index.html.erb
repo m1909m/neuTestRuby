@@ -19,7 +19,7 @@
               <%@rooms.each do |room|
                 if(event.room_id == room.id) %>
                   <p><%= room.building %></p>
-                      <a href="/fortbildung/seminare/neu/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
+                      <a href="/fortbildung/seminare/neu/<%=event.id%>" style="position: absolute;color: #f59d0e; bottom: 1em; right: 1em;">Anmelden</a>
                   <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
               <% end %>
               <% end %>
@@ -33,9 +33,9 @@
               <%@rooms.each do |room|
                 if(event.room_id == room.id) %>
                       <p><%= room.building %></p>
-                      <a href="/fortbildung/seminare/neu/<%=event.id%>" style="float: right;color: #f4bfa5;">Anmelden</a>
+                      <a href="/fortbildung/seminare/neu/<%=event.id%>" style="position: absolute;color: #f59d0e; bottom: 1em; right: 1em;">Anmelden</a>
                       <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
-                  <% end %>
+            <% end %>
               <% end %>
             </div>
           </div>
