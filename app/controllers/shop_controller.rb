@@ -1,4 +1,4 @@
-class ShopController < ActionController
+class ShopController < ApplicationController
 
   def batkf
 
