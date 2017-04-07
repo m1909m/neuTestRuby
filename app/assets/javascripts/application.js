@@ -29,3 +29,13 @@
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap
 //= require_tree .
+
+
+$('#clickWarenkorb').click(function(){
+    $('#modalWarenkorb').show();
+});
+if($('#modalWarenkorb').show()) {
+    $('#clickWarenkorb').click(function(){
+        $('#modalWarenkorb').hide();
+    });
+}
