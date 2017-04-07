@@ -1,5 +1,5 @@
 <div ng-app="shopping">
-  <table class="table">
+  <table class="table" ng-controller="cartController">
     <tr ng-repeat="article in articles">
       <td>{{article.id}}</td>
       <td>{{article.title}}</td>
