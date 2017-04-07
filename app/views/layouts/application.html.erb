@@ -48,7 +48,7 @@
   <% if current_user.present? %>
   <body class="container-fluid">
 
-  <div class="row">
+  <div class="row" ng-app="shopping" ng-controller="cartController">
     <div class="container col-sm-8 col-md-10">
       <header>
 
@@ -125,9 +125,9 @@
           </div>
         </form>
         <ul class="nav">
-          <li ng-app="shopping">
+          <li>
             <div id="clickWarenkorb">Warenkorb</div>
-            <div id="modalWarenkorb" class="modal" ng-controller="cartController">
+            <div id="modalWarenkorb" class="modal">
               <table class="table">
                 <tr ng-repeat="cart in carts">
                   <td>{{cart.id}}</td>
