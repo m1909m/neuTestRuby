@@ -1,6 +1,6 @@
 var shopApp = angular.module('shopping', [ 'ui.router', 'ngResource' ]);
 
-shopApp.factory("Cart", function($resource) {
+shopApp.factory("Cart", function() {
     var o = { };
     var items = [];
     return {
