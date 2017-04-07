@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get 'fortbildung/bedingungen/', to: "fortbildung#bedingungen"
   # get 'fortbildung/', to: "current#fortbildung"
 
+  get 'shop/batkf', to: "shop#batkf"
+
 
   root :to => "news#index"
 

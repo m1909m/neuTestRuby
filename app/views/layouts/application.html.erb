@@ -91,7 +91,15 @@
               </ul>
             </li>
 
-          <!--  <li><a href="#">Shop / Arbeithilfen</a></li> -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop / Arbeithilfen<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/shop/batkf">BAT-KF</a></li>
+                <li><a href="#">Entgelttabellen</a></li>
+                <li><a href="#">MVG</a></li>
+                <li><a href="#">Handreichungen</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -162,6 +170,17 @@
       <a href="/impressum">Impressum</a>
     </footer>
 
+    <script>
+        $(document).ready(function() {
+            $("#clickWarenkorb").click(function () {
+                if ($("#modalWarenkorb").is(":visible")) {
+                    $("#modalWarenkorb").hide();
+                } else {
+                    $("#modalWarenkorb").show();
+                }
+            });
+        });
+    </script>
 
   </div>
   </body>
