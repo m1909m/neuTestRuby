@@ -128,7 +128,8 @@
           <li ng-module="shopping">
             <div id="clickWarenkorb">Warenkorb</div>
             <div id="modalWarenkorb" class="modal" ng-controller="cartController">
-              <div ng-hide="cart.getItems().length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
+              <!--<div ng-hide="cart.getItems().length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
+             -->
               <table ng-show="cart.getItems().length" class="table">
                 <tr ng-repeat="item in cart.getItems() track by $index">
                   <td>{{item.name}}</td>
