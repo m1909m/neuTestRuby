@@ -32,11 +32,11 @@
 
 $(document).ready(function() {
     $("#clickWarenkorb").click(function () {
-        $("#modalWarenkorb").show();
-    });
-    if ($("#modalWarenkorb").show()) {
-        $("#clickWarenkorb").click(function () {
+        if ($("#modalWarenkorb").is(":visible")) {
             $("#modalWarenkorb").hide();
-        });
-    }
+        } else {
+            $("#modalWarenkorb").show();
+        }
+    });
+
 });
