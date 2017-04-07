@@ -119,9 +119,9 @@
         <ul class="nav">
           <li ng-module="shopping">
             <div id="clickWarenkorb">Warenkorb</div>
-            <div id="modalWarenkorb" class="modal" ng-controller="cartCotroller">
+            <div id="modalWarenkorb" class="modal" ng-controller="cartController">
               <table class="table">
-                <tr nr-repeat="article inarticles">
+                <tr nr-repeat="article in articles">
                   <td>{{article.id}}</td>
                   <td>{{article.title}}</td>
                   <td>{{article.price}}</td>

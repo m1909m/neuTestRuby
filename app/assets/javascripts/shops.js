@@ -11,7 +11,7 @@ shopApp.factory("Cart", function($ressource) {
     return o;
 });
 
-shopApp.controller('cartCotroller', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
+shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
     $scope.articles = Cart.articles;
 
 }]);
