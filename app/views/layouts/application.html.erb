@@ -117,10 +117,17 @@
           </div>
         </form>
         <ul class="nav">
-          <li>
+          <li ng-module="shopping">
             <div id="clickWarenkorb">Warenkorb</div>
-            <div id="modalWarenkorb" class="modal">
-              Dies ist ein Test.
+            <div id="modalWarenkorb" class="modal" ng-controller="cartCotroller">
+              <table class="table">
+                <tr nr-repeat="article inarticles">
+                  <td>{{article.id}}</td>
+                  <td>{{article.title}}</td>
+                  <td>{{article.price}}</td>
+                </tr>
+              </table>
+
             </div>
           </li>
         <% if current_user.present? %>
