@@ -20,8 +20,7 @@ shopApp.factory("Cart", function($resource) {
     return o;
 });
 
-
-shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
+shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
     $scope.articles = [];
     $scope.articles = [
         {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
@@ -29,10 +28,15 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ];
+    $scope.cart = Cart.articles;
+
+}]);
+
+shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
+
 
 
     $scope.cart = Cart.articles;
 
 
 }]);
-
