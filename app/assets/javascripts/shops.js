@@ -3,7 +3,7 @@ var shopApp = angular.module('shopping', [ 'ui.router', 'ngResource' ]);
 shopApp.factory("Cart", function($resource) {
     var o = { };
     var items = [];
-    o.articles = {
+    o.cart = {
         getItems: function() {
             return items;
         },
@@ -28,7 +28,7 @@ shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', fun
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ];
-    $scope.cart = Cart.articles;
+    $scope.cart = Cart.cart;
 
 }]);
 
@@ -36,7 +36,7 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 
 
 
-    $scope.cart = Cart.articles;
+    $scope.cart = Cart.cart;
 
 
 }]);
