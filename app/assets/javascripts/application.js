@@ -23,6 +23,7 @@
 //= require angular-resource
 //= require angular-route
 //= require angular-ui-calendar
+//= require ng-module
 //= require angular-daterangepicker
 //= require moment
 //= require fullcalendar
