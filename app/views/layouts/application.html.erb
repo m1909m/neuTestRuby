@@ -117,6 +117,12 @@
           </div>
         </form>
         <ul class="nav">
+          <li>
+            <a href="#">Warenkorb</a>
+            <div id="modalWarenkorb" class="modal">
+              Dies ist ein Test.
+            </div>
+          </li>
         <% if current_user.present? %>
           <li><%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %></li>
         <% end %>
@@ -143,6 +149,7 @@
         </div>
       </nav>
     </div>
+
 
     <footer class="bd-footer col-md-offset-2 col-md-8" style="text-align: right;">
       <a href="/impressum">Impressum</a>
