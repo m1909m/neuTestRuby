@@ -121,7 +121,7 @@
             <div id="clickWarenkorb">Warenkorb</div>
             <div id="modalWarenkorb" class="modal" ng-controller="cartController">
               <table class="table">
-                <tr nr-repeat="article in articles">
+                <tr ng-repeat="article in articles">
                   <td>{{article.id}}</td>
                   <td>{{article.title}}</td>
                   <td>{{article.price}}</td>
