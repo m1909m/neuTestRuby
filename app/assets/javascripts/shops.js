@@ -2,18 +2,36 @@ var shopApp = angular.module('shopping', [ 'ui.router', 'ngResource' ]);
 
 shopApp.factory("Cart", function($resource) {
     var o = { };
-    o.articles = [
-        {"id": "1", "title": "Buch 1", "price": 5 }
-];
+    var items = [];
+    o.articles = {
+        getItems: function() {
+            return items;
+        },
+        addArticle: function(article) {
+            items.push(article);
+        },
+        sum: function() {
+            return items.reduce(function(total, article) {
+                return total + article.price;
+            }, 0);
+        }
+//        {"id": "1", "title": "Buch 1", "price": 5 }
+    };
     return o;
 });
 
-shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
-    $scope.articles = {};
-    $scope.articles = Cart.articles;
 
-    $scope.carts = {};
-    $scope.carts = {"id": "1", "title": "Buch in Carts", "price": 5 };
+shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
+    $scope.articles = [];
+    $scope.articles = [
+        {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
+        {"id": "2", "name": "Pizza Salami",    "price": 5.5 },
+        {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
+        {"id": "4", "name": "Aktueller Flyer", "price": 0 }
+    ];
+
+
+    $scope.cart = Cart.articles;
 
 
 }]);
