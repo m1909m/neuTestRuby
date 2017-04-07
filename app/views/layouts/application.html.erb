@@ -128,16 +128,16 @@
           <li ng-module="shopping">
             <div id="clickWarenkorb">Warenkorb</div>
             <div id="modalWarenkorb" class="modal" ng-controller="cartController">
-              <!--<div ng-hide="cart.getItems().length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
-             -->
-              <table ng-show="cart.getItems().length" class="table">
-                <tr ng-repeat="item in cart.getItems() track by $index">
+              <div ng-hide="cart.getItems().length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
+
+              <table ng-show="cart.length" class="table">
+                <tr ng-repeat="item in cart track by $index">
                   <td>{{item.name}}</td>
                   <td>{{item.price | currency}}</td>
                 </tr>
                 <tr>
-                  <td>{{cart.getItems().length}} Artikel</td>
-                  <td>{{cart.sum() | currency}}</td>
+                  <td>{{cart.length}} Artikel</td>
+
                 </tr>
               </table>
 

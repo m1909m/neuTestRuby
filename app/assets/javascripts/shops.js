@@ -2,8 +2,8 @@ var shopApp = angular.module('shopping', [ 'ui.router', 'ngResource' ]);
 
 shopApp.factory("Cart", function() {
     var o = { };
-    var items = [];
-    return {
+    o.items = [];
+    /*return {
         getItems: function() {
             return items;
         },
@@ -16,7 +16,8 @@ shopApp.factory("Cart", function() {
             }, 0);
         }
 //        {"id": "1", "title": "Buch 1", "price": 5 }
-    };
+    };*/
+    return o;
 });
 
 shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
@@ -27,15 +28,15 @@ shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', fun
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ];
-    $scope.cart = Cart;
+    $scope.cart = Cart.items;
+    $scope.addArticle = function(article) {
+        $scope.cart.push(article);
+    };
 
 }]);
 
 shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
 
-
-
-    $scope.cart = Cart;
-
+    $scope.cart = Cart.items;
 
 }]);
