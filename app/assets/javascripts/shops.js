@@ -1,4 +1,4 @@
-/*var shopApp = angular.module('shopping', [ 'ui.router', 'ngResource' ]);
+var shopApp = angular.module('shopping', [ 'ui.router', 'ngResource' ]);
 
 shopApp.factory("Cart", function($ressource) {
     var o = { };
@@ -16,4 +16,3 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 
 }]);
 
-    */
