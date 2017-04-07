@@ -1,5 +1,5 @@
-<div class = "col-xs-12">
-  <table class="table">
+<div ng-module="shopping">
+  <table class="table" ng-controller="cartController">
     <tr ng-repeat="article in articles">
       <td>{{article.id}}</td>
       <td>{{article.title}}</td>
