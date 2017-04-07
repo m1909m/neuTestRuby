@@ -203,3 +203,4 @@ myApp.config([
             //});
 
     }]);
+angular.bootstrap(document.getElementById("roomsContainerID"), ['roomsContainer']);
