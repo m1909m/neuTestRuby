@@ -9,3 +9,18 @@
   </table>
 
 </div>
+
+<div ng-module="shopping" ng-controller="cartController">
+<div ng-hide="cart.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
+
+<table ng-show="cart.length" class="table">
+  <tr ng-repeat="item in cart">
+    <td>{{item.name}}</td>
+    <td>{{item.price | currency}}</td>
+  </tr>
+  <tr>
+    <td>{{cart.length}} Artikel</td>
+
+  </tr>
+</table>
+</div>
