@@ -45,7 +45,7 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
 
 }]);
 
-var cartApp = angular.module('cartApp', [ 'myModule', 'ui.router' ]);
+var cartApp = angular.module('cartApp', [ 'myModule', 'shopping', 'ui.router' ]);
 
 cartApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
 
