@@ -39,6 +39,9 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
     $scope.cart = {};
     Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
     $scope.cart = Cart.getItems();
+    $scope.addArticle = function(article) {
+        Cart.addItems(article);
+    };
 
 
 }]);
