@@ -2,6 +2,7 @@
  * Created by Marian on 10.02.2017.
  * 'daterangepicker'
  */
+'use strict';
 var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngResource', 'ui.calendar' ]);
 
 
@@ -62,6 +63,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($s
     $scope.rooms = Room.rooms.index();
 
     $scope.addRoom = function() {
+        var room;
         room = Room.save($scope.newRoom);
 
         $scope.rooms.push(room);
@@ -135,6 +137,8 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
     $scope.events = Room.events.index({"roomid": $stateParams.id});
 
     $scope.addEvent = function() {
+        var newEvent;
+        var event;
 
         newEvent = $scope.newEvent;
         newEvent.start = $scope.datePicker.date.startDate;
