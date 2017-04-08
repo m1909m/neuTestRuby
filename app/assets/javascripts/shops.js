@@ -1,6 +1,6 @@
 'use strict';
 
-var shopApp = angular.module('shopping', [ 'ui.router', 'ngResource' ]);
+var shopApp = angular.module('shopping', [ 'ui.router']);
 
 shopApp.factory("Cart", function() {
     var o = { };
