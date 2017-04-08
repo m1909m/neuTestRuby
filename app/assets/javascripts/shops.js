@@ -39,6 +39,7 @@ shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', fun
 
 shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
 
+    $scope.cart = {};
     $scope.cart = Cart.items;
 
 }]);
