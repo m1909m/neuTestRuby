@@ -2,13 +2,12 @@
 angular.module('myModule', []).factory("Cart", function() {
 
     var o = { };
-    $rootscope.items = {};
     o.items = [];
     o.addItems = function(article) {
-        $rootscope.items.push(article);
+        o.items.push(article);
     };
     o.getItems = function() {
-        return $rootscope.items;
+        return o.items;
     };
     /*return {
      getItems: function() {
