@@ -125,14 +125,14 @@
           </div>
         </form>
         <ul class="nav">
-          <li><!--
-            <div ng-module="shopping">
+          <li>
+
             <div id="clickWarenkorb">Warenkorb</div>
             <div id="modalWarenkorb" class="modal" ng-controller="cartController">
               <div ng-hide="cart.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
 
               <table ng-show="cart.length" class="table">
-                <tr ng-repeat="item in cart">
+                <tr ng-repeat="item in cart track by $index">
                   <td>{{item.name}}</td>
                   <td>{{item.price | currency}}</td>
                 </tr>
@@ -143,7 +143,7 @@
               </table>
 
             </div>
-            </div>-->
+
           </li>
         <% if current_user.present? %>
           <li><%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %></li>
