@@ -1,6 +1,6 @@
 'use strict';
 
-var shopApp = angular.module('shopping', [ 'ui.router', '$provide'], function($provide) {
+var shopApp = angular.module('shopping', [ 'ui.router' ], function($provide) {
     $provide.factory("Cart", ['$rootscope', function($rootscope) {
         var o = { };
         $rootscope.items = {};
