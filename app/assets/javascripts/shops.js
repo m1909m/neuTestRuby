@@ -1,8 +1,37 @@
 'use strict';
 
-var shopApp = angular.module('shopping', [ 'ui.router']);
+var shopApp = angular.module('shopping', [ 'ui.router', '$provide'], function($provide) {
+    $provide.factory("Cart", ['$rootscope', function($rootscope) {
+        var o = { };
+        $rootscope.items = {};
+        o.items = [];
+        o.addItems = function(article) {
+            $rootscope.items.push(article);
+        };
+        o.getItems = function() {
+            return $rootscope.items;
+        };
+        /*return {
+         getItems: function() {
+         return items;
+         },
+         addArticle: function(article) {
+         items.push(article);
+         },
+         sum: function() {
+         return items.reduce(function(total, article) {
+         return total + article.price;
+         }, 0);
+         }
+         //        {"id": "1", "title": "Buch 1", "price": 5 }
+         };*/
+        return o;
+    }]);
+});
 
+/*
 shopApp.factory("Cart", ['$rootscope', function($rootscope) {
+
     var o = { };
     $rootscope.items = {};
     o.items = [];
@@ -25,10 +54,10 @@ shopApp.factory("Cart", ['$rootscope', function($rootscope) {
             }, 0);
         }
 //        {"id": "1", "title": "Buch 1", "price": 5 }
-    };*/
+    };
     return o;
 }]);
-
+*/
 shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
     $scope.articles = [];
     $scope.articles = [
