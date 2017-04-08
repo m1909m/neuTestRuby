@@ -30,8 +30,8 @@ shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', fun
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ];
-    $scope.cart = Cart.items;
     Cart.items.push({"id": "1", "name": "Test 1", "price": 5 });
+    $scope.cart = Cart.items;
     $scope.addArticle = function(article) {
         Cart.items.push(article);
     };
