@@ -1,5 +1,5 @@
 'use strict';
-angular.moule('myModule', []).factory("Cart", function() {
+angular.module('myModule', []).factory("Cart", function() {
 
     var o = { };
     $rootscope.items = {};
@@ -26,7 +26,7 @@ angular.moule('myModule', []).factory("Cart", function() {
      };*/
     return o;
 });
-var shopApp = angular.module('shopping', [ 'ui.router' ]);
+var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
 
 
 shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
