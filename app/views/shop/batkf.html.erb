@@ -14,7 +14,7 @@
 <div ng-hide="cart.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
 
 <table ng-show="cart.length" class="table">
-  <tr ng-repeat="item in cart">
+  <tr ng-repeat="item in cart track by $index">
     <td>{{item.name}}</td>
     <td>{{item.price | currency}}</td>
   </tr>
