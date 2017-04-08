@@ -25,7 +25,7 @@ angular.module('myModule', []).factory("Cart", function() {
      };*/
     return o;
 });
-var shopApp = angular.module('shopping', [ 'myModule', 'cartApp', 'ui.router' ]);
+var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
 
 shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
     $scope.articles = [];
@@ -45,9 +45,9 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
 
 }]);
 
-var cartApp = angular.module('cartApp', [ 'myModule', 'shopping', 'ui.router' ]);
+// var cartApp = angular.module('cartApp', [ 'myModule', 'shopping', 'ui.router' ]);
 
-cartApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
+shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
 
     $scope.cart = {};
     $scope.cart = Cart.getItems();
