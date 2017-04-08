@@ -32,7 +32,7 @@ shopApp.controller('shopController', ['$scope', 'Cart','$http', '$interval', fun
     ];
     $scope.cart = Cart.items;
     $scope.addArticle = function(article) {
-        $scope.cart.push(article);
+        Cart.items.push(article);
     };
 
 }]);
