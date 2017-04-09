@@ -54,8 +54,8 @@ class CardsController < ApplicationController
     puts(@articlePermit)
 
     @articlePermit.each do |a|
-      puts(a)
-      @localArticle.add(Article.find(a.permit[:id]))
+      puts(a.params[:id])
+      @localArticle.add(Article.find(a.params[:id]))
     end
 
     @card.articles = @localArticle
