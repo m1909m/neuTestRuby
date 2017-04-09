@@ -12,7 +12,7 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
             items = $window.sessionStorage.getItem("warenkorb");
 
         }
-        items.push(JSON.stringify(article));
+        items.push(article);
         $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
 
 
