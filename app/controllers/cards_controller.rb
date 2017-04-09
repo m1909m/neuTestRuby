@@ -47,13 +47,13 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
-  #  @localArticle = {}
-  #  @articles = article_params
-  #  @articles.each do |a|
-  #    @localArticle.add(Article.find(a.id))
-  #  end
+    @localArticle = {}
+    @articles = article_params
+    @articles.each do |a|
+      @localArticle.add(Article.find(a.id))
+    end
 
-    @card.articles = article_params
+    @card.articles = @localArticle
     # TODO Tests
     # @c_event.userMail = current_user.email
     respond_to do |format|
