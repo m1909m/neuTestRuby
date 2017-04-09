@@ -1,3 +1,3 @@
 class Person < ApplicationRecord
-  #has_one :card
+  has_one :card
 end
