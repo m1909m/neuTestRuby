@@ -45,6 +45,7 @@ class CardsController < ApplicationController
     else
 
     end
+    ActionController::Parameters.permit_all_parameters = true
 
     @card.person = @newPerson
     @articlePermit = params[:articles]
@@ -88,7 +89,7 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email)
+    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles => [])
 
   end
 
