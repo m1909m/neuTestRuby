@@ -1,0 +1,53 @@
+
+<div ng-controller="bookingContainer" >
+
+  <h1>Ihre Bestellung</h1>
+
+  <div ng-hide="cart.length" class="alert alert-info">Ihr Bestellung ist noch leer.</div>
+
+  <table ng-show="cart.length" class="table">
+    <tr ng-repeat="item in cart track by $index">
+      <td>{{item.name}}</td>
+      <td>{{item.price | currency}}</td>
+    </tr>
+    <tr>
+      <td>{{cart.length}} Artikel</td>
+      <td>{{ sum }}</td>
+    </tr>
+  </table>
+
+<!--
+  <form ng-submit="addEvent()" action="">
+
+    <div class="form-group">
+      <label for="title">Titel</label>
+      <input id="title" type="text" ng-model="newEvent.title" class="form-control" placeholder="Titel" require/>
+    </div>
+    <div class="form-group">
+      <label for="description">Beschreibung</label>
+      <textarea id="description" type="text" ng-model="newEvent.description" class="form-control" placeholder="Beschreibung" />
+    </div>
+    <div class="form-group">
+      <label for="date">Zeitraum</label>
+      <input date-range-picker id="date" class="form-control date-picker" type="text" ng-model="datePicker.date" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+    </div>
+
+    <div class="form-group">
+      <label for="minSize">Mindest Anzahl an Mitgliedern</label>
+      <input id="minSize" type="number" ng-model="newEvent.minSize" class="form-control" placeholder="Mindest Anzahl an Mitgliedern" />
+    </div>
+
+    <div class="form-group">
+      <label for="dateL">Anmeldezeitraum</label>
+      <input date-range-picker id="dateL" class="form-control date-picker" type="text" ng-model="datePicker.dateL" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+    </div>
+    <!--
+            <div class="form-group">
+                <label for="maxSize">Maximalanzahl an Mitgliedern</label>
+                <input id="maxSize" type="number" ng-model="newEvent.maxSize" class="form-control" placeholder="Maximalanzahl an Mitgliedern" value="{{room.size}}" disabled/>
+            </div>
+    <button type="submit" class="btn btn-default" >Speichern</button>
+
+-->
+  </form>
+</div>

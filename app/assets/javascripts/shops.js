@@ -76,3 +76,47 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
     $scope.cart = Cart.getItems();
 
 }]);
+
+shopApp.controller('bookingContainer', ['$scope', 'Cart', '$http', '$interval', function($scope, Cart, $http, $interval) {
+
+    $scope.cart = {};
+    $scope.cart = Cart.getItems();
+    $scope.sum = 0;
+    for(var i = 0;i < $scope.cart.length; i++) {
+        $scope.sum += $scope.cart(i).price;
+    }
+
+}]);
+/*
+shopApp.config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('/', {
+                url: '/',
+                templateUrl: '../../assets/rooms.html',
+                //templateUrl: '/rooms.html',
+                controller: 'RoomCtrl'
+            })
+            .state('rooms', {
+                url: '/{id}',
+                // parent: rooms,
+                templateUrl: '../../assets/calendar.html',
+                controller: 'calendarController'
+            })
+            .state('create', {
+                url: '/{id}/new',
+                templateUrl: '../../assets/new.html',
+                controller: 'eventController'
+            })
+            .state('members', {
+                url: '/event/members/{id}',
+                templateUrl: '../../assets/event.html',
+                controller: 'myEventController'
+            });
+        //.state('editEvent', {
+        //    url: '/event/edit/{id]'
+        //});
+
+    }]); */

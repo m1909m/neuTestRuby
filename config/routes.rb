@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get 'shop/batkf', to: "shop#batkf"
 
+  get 'warenkorb/', to: "cards#booking"
+
 
   root :to => "news#index"
 
