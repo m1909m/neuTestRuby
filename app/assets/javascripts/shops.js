@@ -10,7 +10,7 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
         $window.sessionStorage.setItem(count, JSON.stringify(article));
         count++;
 
-        o.items.push(JSON.stringify(article));
+        //o.items.push(JSON.stringify(article));
     };
     o.getItems = function() {
         var items = [];
@@ -18,7 +18,7 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
             console.log("items =>" + o.items[i]);
         }
         $.each($window.sessionStorage, function(i, v){
-            // o.items.push(v);
+            o.items.push(v);
             console.log("Ivar: " + i + "=> V Vari: " + v + " => JSON: " + v );
         });/*
         for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
