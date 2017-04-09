@@ -6,7 +6,7 @@ class CreateCards < ActiveRecord::Migration[5.0]
 
       t.integer :price
       t.integer :count
-      t.double :sum
+      t.decimal :sum
 
       t.timestamps
     end
