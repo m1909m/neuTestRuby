@@ -9,7 +9,7 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
     o.addItems = function(article) {
         var items = [];
         if($window.sessionStorage.getItem("warenkorb")) {
-            items = $window.sessionStorage.getItem("warenkorb");
+            items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
 
         }
         items.push(article);
