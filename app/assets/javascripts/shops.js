@@ -83,7 +83,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', '$http', '$interval', 
     $scope.cart = Cart.getItems();
     $scope.sum = 0;
     for(var i = 0;i < $scope.cart.length; i++) {
-        $scope.sum += $scope.cart(i).price;
+        $scope.sum += $scope.cart[i].price;
     }
 
 }]);
