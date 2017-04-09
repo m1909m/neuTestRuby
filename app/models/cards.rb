@@ -1,4 +1,4 @@
-class Card < ApplicationRecord
+class Cards < ApplicationRecord
 
   belongs_to :person
 
