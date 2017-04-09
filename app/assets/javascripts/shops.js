@@ -1,24 +1,22 @@
 'use strict';
-angular.module('myModule', ['ngStorage']).factory("Cart", function($sessionStorage) {
+angular.module('myModule', ['ngStorage', '$window']).factory("Cart", function($sessionStorage, $window) {
 
     var o = { };
-    var count = 0;
     o.items = [];
 
 
     o.addItems = function(article) {
-        $sessionStorage.put(count, article);
-        count++;
+        $window.sessionStorage.setItem(article.id, article);
         o.items.push(article);
     };
     o.getItems = function() {
         var items = [];
-        var count = $sessionStorage.length;
-        for(var i=0, len=$sessionStorage.length; i<len; i++) {
-//            var key = $sessionStorage.key(i);
-            var value = $sessionStorage.get(i);
+        var count = $window.sessionStorage.length;
+        for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
+            var key = $window.sessionStorage.key(i);
+            var value = $window.sessionStorage[key];
             items.push(value);
-            console.log(i + " => " + value);
+            console.log(key + " => " + value);
         }
         return items;
     };
