@@ -47,13 +47,13 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
-    @localArticle = {}
-    @articles = params[:articles]
-    @articles.each do |a|
-      @localArticle.add(Article.find(a.id))
-    end
+  #  @localArticle = {}
+  #  @articles = article_params
+  #  @articles.each do |a|
+  #    @localArticle.add(Article.find(a.id))
+  #  end
 
-    @card.articles = @localArticle
+    @card.articles = article_params
     # TODO Tests
     # @c_event.userMail = current_user.email
     respond_to do |format|
@@ -83,8 +83,12 @@ class CardsController < ApplicationController
   end
 
 
-
   def card_params
     params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles => [])
+
+  end
+
+  def article_params
+    params.require(:article).permit(:id, :name, :price)
   end
 end
