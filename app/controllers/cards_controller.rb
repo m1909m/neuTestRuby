@@ -49,6 +49,8 @@ class CardsController < ApplicationController
     @card.person = @newPerson
     @localArticle = {}
     @articles = article_params
+    puts(@articles)
+
     @articles.each do |a|
       @localArticle.add(Article.find(a.articles.id))
     end
