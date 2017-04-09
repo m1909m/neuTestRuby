@@ -1,6 +1,6 @@
 class CreateCards < ActiveRecord::Migration
   def change
-    create_table :card do |t|
+    create_table :cards do |t|
       t.integer :person_id
       t.text :articles
 
