@@ -47,7 +47,7 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
-    
+
     @articles = params[:articles]
 
     @card.articles = @articles
