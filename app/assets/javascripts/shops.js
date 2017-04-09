@@ -8,7 +8,10 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
 
     o.addItems = function(article) {
         var items = [];
-        items = $window.sessionStorage.getItem("warenkorb");
+        if($window.sessionStorage.getItem("warenkorb")) {
+            items = $window.sessionStorage.getItem("warenkorb");
+
+        }
         items.push(JSON.stringify(article));
         $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
 
