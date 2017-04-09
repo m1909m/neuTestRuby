@@ -47,7 +47,10 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
-    @card.articles = params[:articles]
+    
+    @articles = params[:articles]
+
+    @card.articles = @articles
     # TODO Tests
     # @c_event.userMail = current_user.email
     respond_to do |format|
@@ -79,6 +82,6 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles)
+    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles => [])
   end
 end
