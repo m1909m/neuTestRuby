@@ -14,14 +14,20 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
     };
     o.getItems = function() {
         var items = [];
+
+        $.each($window.sessionStorage, function(i, v){
+            o.items.push(angular.fromJson(v));
+            console.log("items =>" + o.items);
+            console.log("Ivar: " + i + "=> V Vari: " + v + " => JSON: " + angular.fromJson(v));
+        });/*
         for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
             var key = $window.sessionStorage.key(i);
             var value = $window.sessionStorage[key];
-            items.push(value);
-            console.log(items);
+            o.items.push(value);
+            console.log("items =>" + o.items);
             console.log(key + " => " + value);
-        }
-        return items;
+        }*/
+        return o.items;
     };
     /*return {
      getItems: function() {
