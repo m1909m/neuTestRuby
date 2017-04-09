@@ -3,19 +3,22 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
 
     var o = { };
     o.items = [];
+    var count = 0;
 
 
     o.addItems = function(article) {
-        $window.sessionStorage.setItem(article.id, article);
+        $window.sessionStorage.setItem(count, article);
+        count++;
+
         o.items.push(article);
     };
     o.getItems = function() {
         var items = [];
-        var count = $window.sessionStorage.length;
         for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
             var key = $window.sessionStorage.key(i);
             var value = $window.sessionStorage[key];
             items.push(value);
+            console.log(items);
             console.log(key + " => " + value);
         }
         return items;
