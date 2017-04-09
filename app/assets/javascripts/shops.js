@@ -13,23 +13,23 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
 
         }
         items.push(article);
-  //      $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
-        $window.sessionStorage.setItem("warenkorb", items);
+        $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
 
         //o.items.push(JSON.stringify(article));
     };
     o.getItems = function() {
         var items = [];
-        for(var i=0, len=o.items.length; i<len; i++) {
-            console.log("items =>" + o.items[i]);
-        }/*
+        /*
         $.each($window.sessionStorage, function(i, v){
             o.items.push(v);
             console.log("Ivar: " + i + "=> V Vari: " + v + " => JSON: " + v );
         });*/
-        console.log("Items Wraenkorb: " + $window.sessionStorage.getItem("warenkorb") );
-        o.items = $window.sessionStorage.getItem("warenkorb");
+        console.log("Items Wraenkorb: " + angular.fromJson($window.sessionStorage.getItem("warenkorb")) );
+        o.items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
         console.log("O.Items: " + o.items);
+        for(var i=0, len=o.items.length; i<len; i++) {
+            console.log("items =>" + o.items[i]);
+        }
         /*
         for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
             var key = $window.sessionStorage.key(i);
