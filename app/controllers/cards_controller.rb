@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
 
   respond_to :json
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :card_params, only: [:show, :edit, :update, :destroy]
 
   def index
     #  @events = CEvent.where(start: params[:start]..params[:end])
@@ -66,7 +66,7 @@ class CardsController < ApplicationController
   end
 
   def update
-    @card.update(article_params)
+    @card.update(card_params)
   end
 
   def destroy
