@@ -1,13 +1,24 @@
 'use strict';
-angular.module('myModule', []).factory("Cart", function() {
+angular.module('myModule', ['ngStorage']).factory("Cart", function($sessionStorage) {
 
     var o = { };
     o.items = [];
+
+
     o.addItems = function(article) {
+        $sessionStorage.setItem(article.id, article);
         o.items.push(article);
     };
     o.getItems = function() {
-        return o.items;
+        var items = [];
+        var count = $sessionStorage.length;
+        for(var i=0, len=$sessionStorage.length; i<len; i++) {
+            var key = $sessionStorage.key(i);
+            var value = $sessionStorage[key];
+            items.push(value);
+            console.log(key + " => " + value);
+        }
+        return items;
     };
     /*return {
      getItems: function() {
@@ -26,6 +37,9 @@ angular.module('myModule', []).factory("Cart", function() {
     return o;
 });
 var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
+shopApp.run( function() {
+
+});
 
 shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
     $scope.articles = [];
