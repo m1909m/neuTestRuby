@@ -37,12 +37,30 @@ class CardsController < ApplicationController
     @newPerson.adresse = params[:adresse]
     @newPerson.ort = params[:ort]
     @newPerson.email = params[:email]
-    @newPerson.save
+
+    respond_to do |format|
+      if @newPerson.save
+
+#        format.json { render :index, status: :created, location: @news }
+      else
+        format.html { render :booking }
+        format.json { render json: @newPerson.errors, status: :unprocessable_entity }
+      end
+    end
     @card.person = @newPerson
     @card.articles = params[:articles]
     # TODO Tests
     # @c_event.userMail = current_user.email
-    @card.save
+    respond_to do |format|
+      if @card.save
+
+#        format.json { render :index, status: :created, location: @news }
+      else
+        format.html { render :booking }
+        format.json { render json: @card.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
 
   def update
