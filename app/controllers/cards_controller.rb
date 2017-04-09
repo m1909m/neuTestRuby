@@ -94,6 +94,6 @@ class CardsController < ApplicationController
   end
 
   def article_params
-    params.require(:articles).permit(:id, :name, :price)
+    params[:articles].require(:articles).permit(:id, :name, :price)
   end
 end
