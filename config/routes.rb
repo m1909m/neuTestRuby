@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   get 'shop/batkf', to: "shop#batkf"
 
   get 'warenkorb/', to: "cards#booking"
+  post 'cards/', to: "cards#create", defaults: {format: :json}
+  get 'cards/new', to: "cards#new"
 
 
   root :to => "news#index"

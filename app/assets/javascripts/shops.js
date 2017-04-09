@@ -2,6 +2,10 @@
 angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
 
     var o = { };
+    o.cards = $resource("/cards/:id", { id: '@id' }, {
+        index:   { method: 'GET', isArray: true, responseType: 'json' },
+        update:  { method: 'PUT', responseType: 'json' }
+    });
     o.items = [];
     var count = 0;
 
@@ -10,8 +14,8 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
         var items = [];
         if($window.sessionStorage.getItem("warenkorb")) {
             items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
-
         }
+        // TODO anzahl articel
         items.push(article);
         $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
 
@@ -88,7 +92,7 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 
 }]);
 
-shopApp.controller('bookingContainer', ['$scope', 'Cart', '$http', '$interval', function($scope, Cart, $http, $interval) {
+shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http', '$interval', function($scope, $stateParams, Cart, $http, $interval) {
 
     $scope.cart = {};
     $scope.cart = Cart.getItems();
@@ -96,6 +100,15 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', '$http', '$interval', 
     for(var i = 0;i < $scope.cart.length; i++) {
         $scope.sum += $scope.cart[i].price;
     }
+    $scope.addCard = function(){
+        var newPerson;
+        newPerson = $scope.newPerson;
+        newPerson.articles = $scope.cart;
+        Cart.cards.save(newPerson);
+
+        $scope.newPerson = {};
+
+    };
 
 }]);
 /*

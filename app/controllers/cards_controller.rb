@@ -29,8 +29,17 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
-    @articles = params[:articles]
+    @card = Card.new
+    @newPerson = Person.new
+    @newPerson.name = params[:name]
+    @newPerson.vorname = params[:vorname]
+    @newPerson.einrichtung = params[:einrichtung]
+    @newPerson.adresse = params[:adresse]
+    @newPerson.ort = params[:ort]
+    @newPerson.email = params[:email]
+    @newPerson.save
+    @card.person = @newPerson
+    @card.articles = params[:articles]
     # TODO Tests
     # @c_event.userMail = current_user.email
     @card.save
@@ -53,6 +62,6 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email)
+    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles)
   end
 end
