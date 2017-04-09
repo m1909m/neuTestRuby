@@ -2,6 +2,7 @@ class CardsController < ApplicationController
 
   respond_to :json
   before_action :card_params, only: [:show, :edit, :update, :destroy]
+  before_action :article_params, only: [:create]
 
   def index
     #  @events = CEvent.where(start: params[:start]..params[:end])
@@ -49,10 +50,10 @@ class CardsController < ApplicationController
     @card.person = @newPerson
     articleParam = params[:articles]
     @localArticle = {}
-    puts(articleParam)
-    articleParam.require(:article).permit(:id, :name, :price)
-    puts(articleParam.id)
-    articlePermit.each do |a|
+    puts(article_params)
+    #articleParam.require(:article).permit(:id, :name, :price)
+    puts(article_params.id)
+    article_params.each do |a|
       puts(a.name)
       @localArticle.add(Article.find(a.id))
     end
@@ -93,6 +94,6 @@ class CardsController < ApplicationController
   end
 
   def article_params
-    params.require(:card).permit(:articles => [:id, :name, :price])
+    params.require(:articles).permit(:id, :name, :price)
   end
 end
