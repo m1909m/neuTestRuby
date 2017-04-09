@@ -7,7 +7,7 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
 
 
     o.addItems = function(article) {
-        $window.sessionStorage.setItem(count, article);
+        $window.sessionStorage.setItem(count, JSON.stringify(article));
         count++;
 
         o.items.push(article);
@@ -16,7 +16,7 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
         var items = [];
 
         $.each($window.sessionStorage, function(i, v){
-            o.items.push(v);
+            o.items.push(angular.fromJson(v));
             console.log("items =>" + o.items);
             console.log("Ivar: " + i + "=> V Vari: " + v + " => JSON: " + v);
         });/*
