@@ -45,16 +45,15 @@ class CardsController < ApplicationController
     else
 
     end
-    ActionController::Parameters.permit_all_parameters = true
+    ApplicationController::Parameters.permit_all_parameters = true
 
     @card.person = @newPerson
     @articlePermit = params[:articles]
     @localArticle = {}
-    @articles = article_params
     puts(@articlePermit)
 
     @articlePermit.each do |a|
-      puts(a.params[:id])
+      puts(a.permit[:id])
       @localArticle.add(Article.find(a.params[:id]))
     end
 
