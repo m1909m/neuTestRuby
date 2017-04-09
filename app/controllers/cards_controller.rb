@@ -30,7 +30,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new
+
     @newPerson = Person.new
     @newPerson.name = params[:name]
     @newPerson.vorname = params[:vorname]
@@ -48,6 +48,7 @@ class CardsController < ApplicationController
         format.json { render json: @newPerson.errors, status: :unprocessable_entity }
       end
     end
+    @card = Card.new
     @card.person = @newPerson
     @card.articles = params[:articles]
     # TODO Tests
