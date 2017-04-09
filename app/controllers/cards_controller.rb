@@ -30,7 +30,7 @@ class CardsController < ApplicationController
   end
 
   def create
-
+    @card = Card.new
     @newPerson = Person.new
     @newPerson.name = params[:name]
     @newPerson.vorname = params[:vorname]
@@ -39,16 +39,13 @@ class CardsController < ApplicationController
     @newPerson.ort = params[:ort]
     @newPerson.email = params[:email]
 
-    respond_to do |format|
-      if @newPerson.save
+    if @newPerson.save
 
 #        format.json { render :index, status: :created, location: @news }
-      else
-        format.html { render :booking }
-        format.json { render json: @newPerson.errors, status: :unprocessable_entity }
-      end
+    else
+
     end
-    @card = Card.new
+
     @card.person = @newPerson
     @card.articles = params[:articles]
     # TODO Tests
