@@ -88,7 +88,7 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles => [])
+    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles => [:id, :name, :price])
 
   end
 
