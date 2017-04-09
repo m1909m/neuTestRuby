@@ -1,5 +1,5 @@
 'use strict';
-angular.module('myModule', ['ngStorage', '$window']).factory("Cart", function($sessionStorage, $window) {
+angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
 
     var o = { };
     o.items = [];
