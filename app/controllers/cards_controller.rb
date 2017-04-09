@@ -50,7 +50,7 @@ class CardsController < ApplicationController
     @localArticle = {}
     @articles = article_params
     @articles.each do |a|
-      @localArticle.add(Article.find(a.id))
+      @localArticle.add(Article.find(a.articles.id))
     end
 
     @card.articles = @localArticle
