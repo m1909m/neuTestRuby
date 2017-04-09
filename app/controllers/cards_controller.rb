@@ -47,13 +47,14 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
+    @articlePermit = params[:articles]
     @localArticle = {}
     @articles = article_params
-    puts(@articles)
+    puts(@articlePermit)
 
-    @articles.each do |a|
+    @articlePermit.each do |a|
       puts(a)
-      @localArticle.add(Article.find(a.articles.id))
+      @localArticle.add(Article.find(a.permit[:id]))
     end
 
     @card.articles = @localArticle
