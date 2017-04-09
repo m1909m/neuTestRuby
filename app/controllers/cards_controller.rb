@@ -52,6 +52,7 @@ class CardsController < ApplicationController
     puts(@articles)
 
     @articles.each do |a|
+      puts(a)
       @localArticle.add(Article.find(a.articles.id))
     end
 
