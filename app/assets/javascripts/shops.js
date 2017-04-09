@@ -1,5 +1,5 @@
 'use strict';
-angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
+angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function($window, $resource) {
 
     var o = { };
     o.cards = $resource("/cards/:id", { id: '@id' }, {
