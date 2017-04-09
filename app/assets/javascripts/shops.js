@@ -14,7 +14,7 @@ angular.module('myModule', ['ngStorage']).factory("Cart", function($window) {
     };
     o.getItems = function() {
         var items = [];
-        for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
+        for(var i=0, len=o.items.length; i<len; i++) {
             console.log("items =>" + o.items[i]);
         }
         $.each($window.sessionStorage, function(i, v){
