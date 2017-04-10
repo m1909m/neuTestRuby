@@ -92,13 +92,13 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
     }, function () {
     });*/
 
-    this.card = Cart.getItems();
+    $scope.card = Cart.getItems();
     /*
     this.getCard = function() {
         this.card.push(Cart.getLastItem());
     };*/
     $scope.$watch(function () {
-        this.card.push(Cart.getLastItem());
+        $scope.card.push(Cart.getLastItem());
     }, function () {
     });
   //  $scope.cart = Cart.getItems();
