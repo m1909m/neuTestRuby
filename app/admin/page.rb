@@ -1,5 +1,5 @@
 ActiveAdmin.register Page do
-  permit_params :content, :for, :free
+  permit_params :content, :for, :accept
 
 
 end
