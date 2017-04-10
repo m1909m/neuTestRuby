@@ -1,9 +1,11 @@
 class Card < ApplicationRecord
 
   belongs_to :person
- # has_many :articles
+
+  has_many :bookings
+  has_many :articles, through: :booking
 
   accepts_nested_attributes_for :person
- # accepts_nested_attributes_for :articles
+  accepts_nested_attributes_for :articles
 
 end

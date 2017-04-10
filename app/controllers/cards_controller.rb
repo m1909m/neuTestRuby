@@ -2,7 +2,7 @@ class CardsController < ApplicationController
 
   respond_to :json
   before_action :card_params, only: [:show, :edit, :update, :destroy]
-  before_action :card_params, only: [:create]
+  before_action :article_params, only: [:create]
 
   def index
     #  @events = CEvent.where(start: params[:start]..params[:end])
@@ -89,7 +89,7 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, articles_attributes: [:id, :name, :price])
+    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles)
 
   end
 

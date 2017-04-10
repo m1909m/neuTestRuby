@@ -1,3 +1,7 @@
 class Article < ApplicationRecord
-  #belongs_to :card
+
+  has_many :bookings
+  has_many :cards, through: :bookings
+
+  accepts_nested_attributes_for :cards
 end
