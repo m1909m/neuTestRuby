@@ -36,8 +36,10 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
     };
     o.getLastItem = function() {
         var items = [];
-        items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
-        return items[items.length-1];
+        if($window.sessionStorage.getItem("warenkorb")) {
+            items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
+            return items[items.length - 1];
+        }
     };
     /*return {
      getItems: function() {
