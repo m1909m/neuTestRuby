@@ -83,6 +83,29 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
   //  $scope.cart = Cart.getItems();
     $scope.addArticle = function(article) {
         Cart.addItems(article);
+        /*
+        $http({
+            method: "GET",
+            url:"/cards/counterDown/{{article.id}}"
+        }).then( function (response) {
+
+        }, function error(response) {
+
+        });*/
+    };
+
+    $scope.removeArticle = function(article) {
+        var items = [];
+        var articles = Cart.getItems();
+        for(var i = 0; i < articles.length; i++) {
+            if(articles[i].id == article.id) {
+
+            } else {
+                items.push(articles[i])
+            }
+        }
+        Cart.clearItem();
+        $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
     };
 
 
@@ -118,6 +141,7 @@ shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http'
         Cart.cards.save(newPerson);
 
         $scope.newPerson = {};
+        Cart.clearItem();
 
     };
 

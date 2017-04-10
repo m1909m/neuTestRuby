@@ -17,6 +17,19 @@ class CardsController < ApplicationController
 
   end
 
+  def counterUp
+    @article = Article.find(params[:id])
+    count = @article.count
+    @article.count = count + 1
+    @article.save
+  end
+
+  def counterDown
+    @article = Article.find(params[:id])
+    count = @article.count
+    @article.count = count - 1
+    @article.save
+  end
 
   def show
     respond_to do |format|
@@ -59,6 +72,9 @@ class CardsController < ApplicationController
       @sum += @article.price
     #  puts(@article)
       @card.articles << @article
+
+      @article.count = @article.count - 1
+      @article.save
    #   @localArticle.add(Article.find(a.id))
     end
     @card.sum = @sum

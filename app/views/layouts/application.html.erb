@@ -135,6 +135,7 @@
                 <tr ng-repeat="item in cart track by $index">
                   <td>{{item.title}}</td>
                   <td>{{item.price | currency: '€'}}</td>
+                  <td><button ng-click="removeArticle(item)">Entfernen</button></td>
                 </tr>
                 <tr>
                   <td>{{cart.length}} Artikel</td>
