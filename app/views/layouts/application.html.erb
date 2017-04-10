@@ -128,17 +128,17 @@
           <li>
 
             <div id="clickWarenkorb">Warenkorb</div>
-            <div id="modalWarenkorb" class="modal" ng-controller="cartController">
-              <div ng-hide="card.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
+            <div id="modalWarenkorb" class="modal" ng-controller="cartController as cardC">
+              <div ng-hide="cardC.card.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
 
-              <table ng-show="card.length" class="table">
-                <tr ng-repeat="item in getCard() track by $index">
+              <table ng-show="cardC.card.length" class="table">
+                <tr ng-repeat="item in cardC.getCard() track by $index">
                   <td>{{item.title}}</td>
                   <td>{{item.price | currency: '€'}}</td>
-                  <td><button class="btn btn-default btn-sm"  ng-click="removeArticle(item)">Entfernen</button></td>
+                  <td><button class="btn btn-default btn-sm"  ng-click="cardC.removeArticle(item)">Entfernen</button></td>
                 </tr>
                 <tr>
-                  <td>{{cards.length}} Artikel</td>
+                  <td>{{cardC.cards.length}} Artikel</td>
                   <td><a href="/warenkorb" class="btn btn-default">Jetzt bestellen</a></td>
                 </tr>
               </table>
