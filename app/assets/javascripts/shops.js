@@ -64,10 +64,10 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
     return o;
 });
 var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
-shopApp.run( function() {
+shopApp.run( ['$scope' , function($scope) {
     $scope.articles = [];
     $scope.cart = {};
-});
+}]);
 
 shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
     /*
