@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave', '~> 1.0'
+
 gem 'therubyracer'
 gem 'less-rails', '~> 2.8'
 gem 'tinymce-rails', '~> 4.3'
