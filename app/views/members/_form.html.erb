@@ -71,16 +71,16 @@
       <%= f.text_field :eMail, class: "form-control", type: "text", :required => true %>
     </div>
   </div>
-
+<!--
   <div class="form-group">
     <div class="col-sm-12" style="margin-bottom: 10px;">
-      <%= f.label :sleep, "Übernachtung", class:"control-label" %>
+      <= f.label :sleep, "Übernachtung", class:"control-label" %>
       <select class="form-control" name="member[sleep]">
         <option value="keine Übernachtung" selected="selected" >keine Übernachtung</option>
         <option value="mit Übernachtung" >mit Übernachtung</option>
       </select>
     </div>
-  </div>
+  </div> -->
 
   <div class="form-group">
     <div class="col-sm-12" style="margin-bottom: 10px;">
@@ -124,13 +124,13 @@
   <div class="form-group ">
     <div class="col-sm-12 well" style="margin-bottom: 10px;">
       <%= f.check_box :accept, :required => true %>
-      <%= f.label :accept, "Hiermit akzeptiere ich die Seminarbedingungen (Stand: 1.1.2015)", class:"checkbox-inline" %>
-      <p class="lowercase">Hier finden Sie die aktuellen <a href="/bedingungen" style="color:#f5aa30;">Seminarbedingungen</a>.</p>
+      <%= f.label :accept, "Hiermit akzeptiere ich die Seminarbedingungen (Stand: 01.01.2015) und melde mich kostenpflichtig an.", class:"checkbox-inline" %>
+      <p class="lowercase">Hier finden Sie die aktuellen <a href="/bedingungen" style="color:#f5aa30;">Seminarbedingungen und Teilnehmergebühren</a> . Eine Abmeldung ist mit Gebühren verbunden.</p>
     </div>
   </div>
     <input type="hidden" id="member_event_id" class="form-control" name="member[event_id]" value="<%=@event.id%>"></input>
 
   <div class="actions">
-    <%= f.submit "Jetzt Anmelden", class: "btn btn-default" %>
+    <%= f.submit "Jetzt verbindlich Anmelden", class: "btn btn-default" %>
   </div>
 <% end %>
