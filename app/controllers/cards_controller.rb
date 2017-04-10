@@ -33,7 +33,7 @@ class CardsController < ApplicationController
   def create
     @card = Card.new
     @newPerson = Person.new
-    puts(params[:_json][:name])
+    puts(params[0][:name])
     @newPerson.name = params[:name]
     @newPerson.vorname = params[:vorname]
     @newPerson.einrichtung = params[:einrichtung]
