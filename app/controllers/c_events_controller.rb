@@ -23,6 +23,16 @@ class CEventsController < ApplicationController
     end
   end
 
+  def abmelden
+    @member = Member.where( id: params[:id])
+    @event = CEvent.find(@member.event_id)
+    @member.accept = false
+    @member.save
+    members = @event.member
+    @event.member = members - 1
+    @event.save
+  end
+
   def new
     @c_event = CEvent.new
 

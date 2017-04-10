@@ -35,7 +35,7 @@ myApp.factory("CEvent", function($resource) {
     });
 });*/
 
-myApp.controller('RoomCtrl', ['$scope', 'Room','$http', '$interval', function($scope, Room, $http, $interval) {
+myApp.controller('RoomCtrl', ['$scope', 'Room', '$http', '$interval', function($scope, Room, $http, $interval) {
     $scope.myEvents = [];
     // Get Abfrage des c_events controller byEmail
     //$scope.myEvents = Room.myEvents.index();
@@ -155,13 +155,24 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 
     }
 }]);
-myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', '$interval', function($scope, $stateParams, Room, $interval) {
+myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', '$http', '$interval', function($scope, $stateParams, Room, $http, $interval) {
 
     $scope.members = [];
     $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
     $interval(function(){
         $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
     }, 60000);
+
+    $scope.abmelden= function(member) {
+        $http({
+            method: "GET",
+            url:"event/member/abmelden/" + member.id
+        }).then( function (response) {
+
+        }, function error(response) {
+            $scope.status = response.statusText;
+        });
+    };
 
 
 }]);

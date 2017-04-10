@@ -3,7 +3,7 @@
     <div ng-show="!members.length">Keine Räume vorhanden</div>
     <div ng-repeat="member in members" style="margin: 5px;">
         <div class="list-group">
-            <a href="" ng-click="" class="list-group-item"><table><tr><td>{{member.lastName}}</td><td>{{member.firstName}}</td><td><b>{{member.accept}}</b></td></tr></table></a>
+            <a href="" ng-click="" class="list-group-item"><table><tr><td>{{member.lastName}}</td><td>{{member.firstName}}</td><td><b>{{member.accept ? 'Angemeldet' : 'Abgemeldet }}</b></td><td>{{member.accept ?  '<button class="btn" ng-click="abmelden(member)">Abmelden</button>' : '' }}</td></tr></table></a>
         </div>
 
     </div>
