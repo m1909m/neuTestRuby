@@ -9,13 +9,6 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
     o.items = [];
     var count = 0;
 
-    angular.element($window).on('storage', function(event) {
-        if (event.key === 'warenkorb') {
-            $rootScope.$apply();
-        }
-    });
-
-
     o.addItems = function(article) {
         var items = [];
         if($window.sessionStorage.getItem("warenkorb")) {
@@ -101,6 +94,7 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
     $scope.getCard = function() {
         return Cart.getItems();
     };
+    $scope.card = Cart.getItems();
 
   //  $scope.cart = Cart.getItems();
 
