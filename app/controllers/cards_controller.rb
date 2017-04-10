@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
 
   respond_to :json
-  before_action :card_params, only: [:show, :edit, :update, :destroy]
+  before_action :card_params, only: [:create, :show, :edit, :update, :destroy]
  # before_action :article_params, only: [:create]
 
   def index
@@ -51,8 +51,8 @@ class CardsController < ApplicationController
     @localArticle = {}
     puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
-    puts(params[:articles])
-    params[:articles].each do |a|
+    puts(card_params.to_s)
+    card_params.each do |a|
       puts(a.id)
    #   @localArticle.add(Article.find(a.id))
     end
@@ -90,7 +90,7 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:name, :vorname, :einrichtung, :adresse, :ort, :email, :articles)
+    params.require(:card).permit(:articles => [:id, :name, :price])
 
   end
 
