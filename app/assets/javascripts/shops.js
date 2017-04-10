@@ -1,5 +1,5 @@
 'use strict';
-angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function($window, $resource) {
+angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function($window, $rootScope, $resource) {
 
     var o = { };
     o.cards = $resource("/cards/:id", { id: '@id' }, {
@@ -8,6 +8,12 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
     });
     o.items = [];
     var count = 0;
+
+    angular.element($window).on('storage', function(event) {
+        if (event.key === 'warenkorb') {
+            $rootScope.$apply();
+        }
+    });
 
 
     o.addItems = function(article) {
