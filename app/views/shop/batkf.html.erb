@@ -47,12 +47,12 @@
   </p>
 </div>
 <div class="col-xs-12 col-sm-6">
-<table class="table" ng-controller="shopController">
-    <tr ng-repeat="article in articles">
+<table class="table" ng-controller="shopController as sdc">
+    <tr ng-repeat="article in sdc.articles">
       <td>{{article.id}}</td>
       <td>{{article.title}}</td>
       <td>{{article.price}}</td>
-      <td><a href class="btn btn-default btn-sm" ng-click="addArticle(article)">In den Warenkorb</a></td>
+      <td><a href class="btn btn-default btn-sm" ng-click="sdc.addArticle(article)">In den Warenkorb</a></td>
     </tr>
   </table>
 </div>

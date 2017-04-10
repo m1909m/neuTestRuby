@@ -27,27 +27,10 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
         o.items = [];
     };
     o.getItems = function() {
-        var items = [];
-        /*
-        $.each($window.sessionStorage, function(i, v){
-            o.items.push(v);
-            console.log("Ivar: " + i + "=> V Vari: " + v + " => JSON: " + v );
-        });*/
-      //  console.log("Items Wraenkorb: " + angular.fromJson($window.sessionStorage.getItem("warenkorb")) );
+        /*var items = [];
         o.items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
-      //  console.log("O.Items: " + o.items);
-      /*  for(var i=0, len=o.items.length; i<len; i++) {
-            console.log("items =>" + o.items[i]);
-        }*/
-        /*
-        for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
-            var key = $window.sessionStorage.key(i);
-            var value = $window.sessionStorage[key];
-            o.items.push(value);
-            console.log("items =>" + o.items);
-            console.log(key + " => " + value);
-        }*/
-        return o.items;
+        return o.items;*/
+        return angular.fromJson($window.sessionStorage.getItem("warenkorb"));
     };
     /*return {
      getItems: function() {
@@ -78,11 +61,12 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ]; */
-    $scope.articles = Cart.cards.index({"site": "batkf"});
+    sdc = this;
+    sdc.articles = Cart.cards.index({"site": "batkf"});
 
   //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
   //  $scope.cart = Cart.getItems();
-    $scope.addArticle = function(article) {
+    sdc.addArticle = function(article) {
         Cart.addItems(article);
         /*
         $http({
@@ -103,11 +87,18 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
 
 shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $window, $http, $interval) {
 
-    $scope.cart = {};
+    cdc = this;
 
-    $scope.cart = Cart.getItems();
 
-    $scope.removeArticle = function(article) {
+    $scope.$watch(function () {
+        return Cart.getItems();
+    }, function (value) {
+        cdc.card = value;
+    });
+
+  //  $scope.cart = Cart.getItems();
+
+    cdc.removeArticle = function(article) {
         var items = [];
         var articles = Cart.getItems();
         Cart.clearItem();
