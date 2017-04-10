@@ -93,6 +93,8 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
     }, function () {
     });*/
 
+    $scope.card = [];
+
     $scope.card = Cart.getItems();
     /*
     this.getCard = function() {
