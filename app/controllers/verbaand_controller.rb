@@ -6,7 +6,7 @@ class VerbaandController < ApplicationController
   end
 
   def fachgruppen
-
+    @page = Page.where(accept: true).order(:id).last
   end
 
   def vorstand

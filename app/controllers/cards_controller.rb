@@ -8,9 +8,10 @@ class CardsController < ApplicationController
     #  @events = CEvent.where(start: params[:start]..params[:end])
     #@c_events = CEvent.all
     respond_to do |format|
-#      format.json { render json: CEvent.where(room_id: params[:roomid])}
+      format.json { render json: Article.where(site: params[:site])}
     end
   end
+
 
   def booking
 
@@ -48,30 +49,30 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
-    @localArticle = {}
+    @sum = 0
     #puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
-    puts(card_params[:articles].to_s)
+    #puts(card_params[:articles].to_s)
     card_params[:articles].each do |a|
-      puts(a[:id])
+    #  puts(a[:id])
       @article = Article.find(a[:id])
-      puts(@article)
+      @sum += @article.price
+    #  puts(@article)
       @card.articles << @article
    #   @localArticle.add(Article.find(a.id))
     end
+    @card.sum = @sum
 
 
     # TODO Tests
     # @c_event.userMail = current_user.email
-    respond_to do |format|
-      if @card.save
 
+    if @card.save
 #        format.json { render :index, status: :created, location: @news }
-      else
-        format.html { render :booking }
-        format.json { render json: @card.errors, status: :unprocessable_entity }
-      end
+    else
+
     end
+
 
   end
 

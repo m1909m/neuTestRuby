@@ -21,6 +21,9 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
 
         //o.items.push(JSON.stringify(article));
     };
+    o.clearItem = function() {
+        $window.sessionStorage.removeItem("warenkorb");
+    };
     o.getItems = function() {
         var items = [];
         /*
@@ -28,12 +31,12 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
             o.items.push(v);
             console.log("Ivar: " + i + "=> V Vari: " + v + " => JSON: " + v );
         });*/
-        console.log("Items Wraenkorb: " + angular.fromJson($window.sessionStorage.getItem("warenkorb")) );
+      //  console.log("Items Wraenkorb: " + angular.fromJson($window.sessionStorage.getItem("warenkorb")) );
         o.items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
-        console.log("O.Items: " + o.items);
-        for(var i=0, len=o.items.length; i<len; i++) {
+      //  console.log("O.Items: " + o.items);
+      /*  for(var i=0, len=o.items.length; i<len; i++) {
             console.log("items =>" + o.items[i]);
-        }
+        }*/
         /*
         for(var i=0, len=$window.sessionStorage.length; i<len; i++) {
             var key = $window.sessionStorage.key(i);
@@ -62,20 +65,22 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
 });
 var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
 shopApp.run( function() {
-
+    $scope.articles = [];
+    $scope.cart = {};
 });
 
 shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
-    $scope.articles = [];
+    /*
     $scope.articles = [
         {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
         {"id": "2", "name": "Pizza Salami",    "price": 5.5 },
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
-    ];
-    $scope.cart = {};
-    Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
-    $scope.cart = Cart.getItems();
+    ]; */
+    $scope.articles = Cart.cards.index({"roomid": "batkf"});
+
+  //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
+  //  $scope.cart = Cart.getItems();
     $scope.addArticle = function(article) {
         Cart.addItems(article);
     };
