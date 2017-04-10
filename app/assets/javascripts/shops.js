@@ -106,7 +106,7 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 
     $scope.cart = {};
 
-    $scope.cart = Cart.items;
+    $scope.cart = Cart.getItems();
 
     $scope.removeArticle = function(article) {
         var items = [];
@@ -127,7 +127,7 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http', '$interval', function($scope, $stateParams, Cart, $http, $interval) {
 
     $scope.cart = {};
-    $scope.cart = Cart.items;
+    $scope.cart = Cart.getItems();
     $scope.sum = 0;
     for(var i = 0;i < $scope.cart.length; i++) {
         $scope.sum += $scope.cart[i].price;
