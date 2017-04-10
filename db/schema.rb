@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216180901) do
+ActiveRecord::Schema.define(version: 20170408166040) do
 
   create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "eMail"
@@ -33,6 +33,35 @@ ActiveRecord::Schema.define(version: 20170216180901) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
 
+  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.decimal  "price",      precision: 10
+    t.integer  "count"
+    t.string   "site"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "booking", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "article_id"
+    t.integer  "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "titel"
+    t.text     "beschreibung", limit: 65535
+    t.text     "bild",         limit: 65535
+    t.integer  "jahr"
+    t.string   "isbn"
+    t.string   "verlag"
+    t.string   "autor"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "anzahl"
+  end
+
   create_table "c_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.datetime "start"
@@ -49,6 +78,25 @@ ActiveRecord::Schema.define(version: 20170216180901) do
     t.boolean  "free"
     t.datetime "startLogin"
     t.datetime "endLogin"
+    t.string   "userMail"
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "person_id"
+    t.text     "articles",   limit: 65535
+    t.integer  "price"
+    t.integer  "count"
+    t.decimal  "sum",                      precision: 10
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
+
+  create_table "contact_forms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message",    limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -121,6 +169,17 @@ ActiveRecord::Schema.define(version: 20170216180901) do
     t.datetime "updated_at",               null: false
     t.boolean  "send"
     t.datetime "sendDate"
+  end
+
+  create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "vorname"
+    t.string   "einrichtung"
+    t.string   "adresse"
+    t.string   "ort"
+    t.string   "email"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

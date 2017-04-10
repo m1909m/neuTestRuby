@@ -77,6 +77,10 @@ GEM
     builder (3.2.3)
     byebug (9.0.6)
     cancan (1.6.10)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -295,11 +299,6 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
-    twitter-bootstrap-rails (4.0.0)
-      actionpack (~> 5.0, >= 5.0.1)
-      execjs (~> 2.7)
-      less-rails (~> 2.8, >= 2.8.0)
-      railties (~> 5.0, >= 5.0.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.4)
@@ -327,6 +326,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.17.43)
   byebug
   cancan
+  carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.11.1)
   devise
@@ -336,7 +336,6 @@ DEPENDENCIES
   fullcalendar-rails
   guard-rspec
   jbuilder (~> 2.5)
-  jquery-rails
   less-rails (~> 2.8)
   listen (~> 3.0.5)
   momentjs-rails (>= 2.9.0)
@@ -353,7 +352,6 @@ DEPENDENCIES
   therubyracer
   tinymce-rails (~> 4.3)
   turbolinks (~> 5)
-  twitter-bootstrap-rails
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
