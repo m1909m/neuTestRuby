@@ -85,7 +85,7 @@ shopApp.controller('shopController', ['Cart', function(Cart) {
 
 // var cartApp = angular.module('cartApp', [ 'myModule', 'shopping', 'ui.router' ]);
 
-shopApp.controller('cartController', ['Cart', function(Cart) {
+shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 /*
     $scope.$watch(function () {
         $scope.cards = Cart.getItems();
@@ -97,7 +97,7 @@ shopApp.controller('cartController', ['Cart', function(Cart) {
     this.getCard = function() {
         this.card.push(Cart.getLastItem());
     };*/
-    this.$watch(function () {
+    $scope.$watch(function () {
         this.card.push(Cart.getLastItem());
     }, function () {
     });
