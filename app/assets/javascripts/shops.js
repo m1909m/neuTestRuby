@@ -34,6 +34,11 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
         return o.items;*/
         return angular.fromJson($window.sessionStorage.getItem("warenkorb"));
     };
+    o.getLastItem = function() {
+        var items = [];
+        items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
+        return items[items.length-1];
+    };
     /*return {
      getItems: function() {
      return items;
@@ -86,7 +91,7 @@ shopApp.controller('cartController', ['Cart', function(Cart) {
 
     this.card = Cart.getItems();
     this.getCard = function() {
-        return Cart.getItems();
+        return Cart.getLastItem();
     };
   //  $scope.cart = Cart.getItems();
 
