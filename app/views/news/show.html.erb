@@ -11,12 +11,11 @@
 <% if(@news.subTitle == "") %>
 
 <% else %>
-  <h3><%= @news.subTitle %></h3>
+    <div class="col-sm-12">
+      <h3><%= @news.subTitle %></h3>
+    </div>
 <% end %>
-<div class="col-xs-12 col-sm-6">
+<div class="col-xs-12 mehrspaltig">
   <p><%= @news.story.html_safe %></p>
-</div>
-<div class="col-xs-12 col-sm-6">
-
 </div>
 <%= link_to 'Zurück', news_index_path %>
