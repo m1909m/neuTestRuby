@@ -11,8 +11,8 @@ ActiveAdmin.register Article do
 
   form do |f|
     f.inputs 'Neuen Artikel anlegen' do
-      f.input :title, "Artikel Titel"
-      f.input :price, "Preis pro Artikel"
+      f.input "Artikel Titel", :title
+      f.input :price, :as => "Preis pro Artikel"
       f.input :count, "Anzahl an Artikel"
       f.input :site, "Für Seite: "
     end
