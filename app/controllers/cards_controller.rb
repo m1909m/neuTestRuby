@@ -54,12 +54,13 @@ class CardsController < ApplicationController
     puts(card_params[:articles].to_s)
     card_params[:articles].each do |a|
       puts(a[:id])
+      @article = Article.find(a[:id])
+      puts(@article)
+      @card.articles << @article
    #   @localArticle.add(Article.find(a.id))
     end
 
-    @article = Article.find(1)
-    puts(@article)
-    @card.booking.create(article: @article)
+
     # TODO Tests
     # @c_event.userMail = current_user.email
     respond_to do |format|
