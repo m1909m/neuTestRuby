@@ -20,6 +20,7 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
         }
         // TODO anzahl articel
         items.push(article);
+        o.items = items;
         $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
         //o.items = items;
 
@@ -76,9 +77,14 @@ shopApp.controller('shopController', ['Cart', function(Cart) {
 
   //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
   //  $scope.cart = Cart.getItems();
-    this.addArticle = function(article) {
+    $scope.addArticle = function(article) {
         Cart.addItems(article);
     };
+/*
+    $scope.$watch('addArticle', function () {
+        $scope.card.push(Cart.getLastItem());
+    }, function () {
+    });*/
 
 
 
@@ -95,15 +101,12 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 
     $scope.card = [];
 
-    $scope.card = Cart.getItems();
+    $scope.card = Cart.items;
     /*
     this.getCard = function() {
         this.card.push(Cart.getLastItem());
     };*/
-    $scope.$watch(function () {
-        $scope.card.push(Cart.getLastItem());
-    }, function () {
-    });
+
   //  $scope.cart = Cart.getItems();
 
     this.removeArticle = function(article) {
