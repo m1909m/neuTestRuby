@@ -57,7 +57,9 @@ class CardsController < ApplicationController
    #   @localArticle.add(Article.find(a.id))
    # end
 
-    @card.articles = @localArticle
+    @article = Article.find(1)
+    puts(@article)
+    @card.booking.create(article: @article)
     # TODO Tests
     # @c_event.userMail = current_user.email
     respond_to do |format|
