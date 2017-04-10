@@ -48,7 +48,7 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
      };*/
     return o;
 });
-var shopApp = angular.module('shopping', [ 'myModule', 'ui.router', 'angular-storage' ]);
+var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
 shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.articles = [];
 }]);
@@ -61,12 +61,11 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ]; */
-    sdc = this;
-    sdc.articles = Cart.cards.index({"site": "batkf"});
+    $scope.articles = Cart.cards.index({"site": "batkf"});
 
   //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
   //  $scope.cart = Cart.getItems();
-    sdc.addArticle = function(article) {
+    $scope.addArticle = function(article) {
         Cart.addItems(article);
         /*
         $http({
@@ -87,18 +86,18 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
 
 shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $window, $http, $interval) {
 
-    cdc = this;
+    $scope.cards = [];
 
 
     $scope.$watch(function () {
         return Cart.getItems();
     }, function (value) {
-        cdc.card = value;
+        $scope.cards = value;
     });
 
   //  $scope.cart = Cart.getItems();
 
-    cdc.removeArticle = function(article) {
+    $scope.removeArticle = function(article) {
         var items = [];
         var articles = Cart.getItems();
         Cart.clearItem();
