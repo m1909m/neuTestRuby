@@ -132,7 +132,7 @@
               <div ng-hide="card.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
 
               <table ng-show="card.length" class="table">
-                <tr ng-repeat="item in card track by $index">
+                <tr ng-repeat="item in getCard() track by $index">
                   <td>{{item.title}}</td>
                   <td>{{item.price | currency: '€'}}</td>
                   <td><button class="btn btn-default btn-sm"  ng-click="removeArticle(item)">Entfernen</button></td>

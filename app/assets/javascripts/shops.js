@@ -83,7 +83,7 @@ shopApp.controller('shopController', ['$scope' , 'Cart', '$http', '$interval', f
 
 // var cartApp = angular.module('cartApp', [ 'myModule', 'shopping', 'ui.router' ]);
 
-shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $window, $http, $interval) {
+shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
 
 
 /*
@@ -91,11 +91,11 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
         $scope.cards = Cart.getItems();
     }, function () {
     });*/
+
+    $scope.card = Cart.getItems();
     $scope.getCard = function() {
         return Cart.getItems();
     };
-    $scope.card = Cart.getItems();
-
   //  $scope.cart = Cart.getItems();
 
     $scope.removeArticle = function(article) {
