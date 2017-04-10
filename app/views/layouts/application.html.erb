@@ -131,7 +131,7 @@
             <div id="modalWarenkorb" class="modal" ng-controller="cartController as cardC">
               <div ng-hide="cardC.card.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
 
-              <table ng-show="cardC.card.length" class="table">
+              <table ng-show="cardC.getCard().length" class="table">
                 <tr ng-repeat="item in cardC.getCard() track by $index">
                   <td>{{item.title}}</td>
                   <td>{{item.price | currency: '€'}}</td>

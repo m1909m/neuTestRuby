@@ -50,7 +50,7 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
      };*/
     return o;
 });
-var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
+var shopApp = angular.module('shopping', [ 'myModule' ]);
 shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.articles = [];
 }]);
@@ -132,36 +132,3 @@ shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http'
     };
 
 }]);
-/*
-shopApp.config([
-    '$stateProvider',
-    '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
-        $stateProvider
-            .state('/', {
-                url: '/',
-                templateUrl: '../../assets/rooms.html',
-                //templateUrl: '/rooms.html',
-                controller: 'RoomCtrl'
-            })
-            .state('rooms', {
-                url: '/{id}',
-                // parent: rooms,
-                templateUrl: '../../assets/calendar.html',
-                controller: 'calendarController'
-            })
-            .state('create', {
-                url: '/{id}/new',
-                templateUrl: '../../assets/new.html',
-                controller: 'eventController'
-            })
-            .state('members', {
-                url: '/event/members/{id}',
-                templateUrl: '../../assets/event.html',
-                controller: 'myEventController'
-            });
-        //.state('editEvent', {
-        //    url: '/event/edit/{id]'
-        //});
-
-    }]); */
