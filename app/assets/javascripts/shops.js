@@ -102,9 +102,11 @@ shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http'
     }
     $scope.addCard = function(){
         var newPerson;
+        var articles;
         newPerson = $scope.newPerson;
         newPerson.articles = $scope.cart;
-        Cart.cards.save(newPerson);
+        articles = $scope.cart;
+        Cart.cards.save(newPerson, articles);
 
         $scope.newPerson = {};
 
