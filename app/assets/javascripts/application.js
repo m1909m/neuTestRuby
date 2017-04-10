@@ -19,6 +19,7 @@
 //  require twitter/bootstrap
 // require bootstrap-modal
 //= require angular
+//= require a0-angular-storage
 //= require angular-ui-router
 //= require angular-resource
 //= require angular-route
