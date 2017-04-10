@@ -103,7 +103,8 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
 shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $window, $http, $interval) {
 
     $scope.cart = {};
-    $interval($scope.cart = Cart.getItems(), 30000);
+
+    $scope.cart = $interval(Cart.getItems(), 30000);
 
     $scope.removeArticle = function(article) {
         var items = [];
