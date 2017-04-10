@@ -164,9 +164,10 @@ myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', '$http'
     }, 60000);
 
     $scope.abmelden= function(member) {
+        var url = "event/member/abmelden/" + member.id;
         $http({
             method: "GET",
-            url:"event/member/abmelden/member.id"
+            url: url
         }).then( function (response) {
 
         }, function error(response) {
