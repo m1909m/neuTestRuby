@@ -106,7 +106,7 @@ shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http'
         newPerson = $scope.newPerson;
         //newPerson.articles = $scope.cart;
         articles = $scope.cart;
-        var json = [];
+        var json;
         json.person.push(newPerson);
         json.articles.push(articles);
         Cart.cards.save(json);
