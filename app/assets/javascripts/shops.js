@@ -65,7 +65,7 @@ shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.card = [];
 }]);
 
-shopApp.controller('shopController', ['Cart', function(Cart) {
+shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
     /*
     $scope.articles = [
         {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
