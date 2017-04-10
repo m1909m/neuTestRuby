@@ -12,7 +12,7 @@ ActiveAdmin.register Article do
   form do |f|
     f.inputs 'Neuen Artikel anlegen' do
       f.input :title, label: "Artikel Titel"
-      f.input :price, label: "Preis pro Artikel"
+      f.input :price, label: "Preis pro Artikel", :as => :decimal
       f.input :count, label: "Anzahl an Artikel"
       f.input :site, label: "Für Seite: "
     end
