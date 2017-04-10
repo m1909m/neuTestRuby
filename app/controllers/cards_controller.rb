@@ -51,7 +51,7 @@ class CardsController < ApplicationController
     @localArticle = {}
     puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
-    puts(params[:articles].id)
+    puts(params[:articles])
    # article_params.each do |a|
    #   puts(a.name)
    #   @localArticle.add(Article.find(a.id))
