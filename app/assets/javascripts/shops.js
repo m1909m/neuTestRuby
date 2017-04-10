@@ -86,13 +86,15 @@ shopApp.controller('shopController', ['$scope' , 'Cart', '$http', '$interval', f
 
 shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $window, $http, $interval) {
 
-    $scope.cards = [];
 
-
+/*
     $scope.$watch(function () {
         $scope.cards = Cart.getItems();
     }, function () {
-    });
+    });*/
+    $scope.getCard = function() {
+        return Cart.getItems();
+    };
 
   //  $scope.cart = Cart.getItems();
 
