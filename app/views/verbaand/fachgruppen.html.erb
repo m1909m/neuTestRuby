@@ -5,4 +5,4 @@
   <%= image_tag("Titelbild_Fachgruppen.jpg", :alt => "Fachgruppen", :class => "img-responsive center-block") %>
 
 </div>
-<%= ActionView::Base.full_sanitizer.sanitize(@page.content.html_safe) %>
+<%= @page.content.html_safe %>
