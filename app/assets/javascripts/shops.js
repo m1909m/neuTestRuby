@@ -77,7 +77,7 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ]; */
-    $scope.articles = Cart.cards.index({"roomid": "batkf"});
+    $scope.articles = Cart.cards.index({"site": "batkf"});
 
   //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
   //  $scope.cart = Cart.getItems();
