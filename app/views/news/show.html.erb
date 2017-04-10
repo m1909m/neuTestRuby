@@ -8,7 +8,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<% if(@news.subTitle.empty("")) %>
+<% if(@news.subTitle == "") %>
 
 <% else %>
   <h3><%= @news.subTitle %></h3>
