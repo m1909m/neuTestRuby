@@ -1,5 +1,5 @@
 ActiveAdmin.register Article do
-  permit_parmas :title, :price, :count, :site
+  permit_params :title, :price, :count, :site
 
   index do
     column "Artikel Titel", :title
