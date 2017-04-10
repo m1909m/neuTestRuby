@@ -94,19 +94,6 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
         });*/
     };
 
-    $scope.removeArticle = function(article) {
-        var items = [];
-        var articles = Cart.getItems();
-        for(var i = 0; i < articles.length; i++) {
-            if(articles[i].id == article.id) {
-
-            } else {
-                items.push(articles[i])
-            }
-        }
-        Cart.clearItem();
-        $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
-    };
 
 
 }]);
@@ -116,19 +103,19 @@ shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', fu
 shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', function($scope, Cart, $window, $http, $interval) {
 
     $scope.cart = {};
-    $scope.cart = Cart.getItems();
+    $interval($scope.cart = Cart.getItems(), 30000);
+
     $scope.removeArticle = function(article) {
         var items = [];
         var articles = Cart.getItems();
+        Cart.clearItem();
         for(var i = 0; i < articles.length; i++) {
             if(articles[i].id == article.id) {
 
             } else {
-                items.push(articles[i])
+                Cart.addItems(articles[i]);
             }
         }
-        Cart.clearItem();
-        $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
     };
 
 
