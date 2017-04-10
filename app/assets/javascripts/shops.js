@@ -18,11 +18,13 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
         // TODO anzahl articel
         items.push(article);
         $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
+        o.items = items;
 
         //o.items.push(JSON.stringify(article));
     };
     o.clearItem = function() {
         $window.sessionStorage.removeItem("warenkorb");
+        o.items = [];
     };
     o.getItems = function() {
         var items = [];
@@ -104,7 +106,7 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 
     $scope.cart = {};
 
-    $scope.cart = Cart.getItems();
+    $scope.cart = Cart.items;
 
     $scope.removeArticle = function(article) {
         var items = [];
@@ -125,7 +127,7 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http', '$interval', function($scope, $stateParams, Cart, $http, $interval) {
 
     $scope.cart = {};
-    $scope.cart = Cart.getItems();
+    $scope.cart = Cart.items;
     $scope.sum = 0;
     for(var i = 0;i < $scope.cart.length; i++) {
         $scope.sum += $scope.cart[i].price;
