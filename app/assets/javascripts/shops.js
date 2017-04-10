@@ -64,9 +64,9 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
     return o;
 });
 var shopApp = angular.module('shopping', [ 'myModule', 'ui.router' ]);
-shopApp.run( function($scope) {
-    $scope.articles = [];
-    $scope.cart = {};
+shopApp.run( function($rootscope) {
+    $rootscope.articles = [];
+    $rootscope.cart = {};
 });
 
 shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
