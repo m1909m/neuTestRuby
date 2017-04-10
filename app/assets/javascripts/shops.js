@@ -53,7 +53,7 @@ shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.articles = [];
 }]);
 
-shopApp.controller('shopController', ['$scope' , 'Cart','$http', '$interval', function($scope, Cart, $http, $interval) {
+shopApp.controller('shopController', ['$scope' , 'Cart', '$http', '$interval', function($scope, Cart, $http, $interval) {
     /*
     $scope.articles = [
         {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
@@ -90,9 +90,8 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 
 
     $scope.$watch(function () {
-        return Cart.getItems();
-    }, function (value) {
-        $scope.cards = value;
+        $scope.cards = Cart.getItems();
+    }, function () {
     });
 
   //  $scope.cart = Cart.getItems();
