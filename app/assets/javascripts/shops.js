@@ -1,10 +1,11 @@
 'use strict';
 angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function($window, $rootScope, $resource) {
+    /*
     angular.element($window).on('storage', function(event) {
         if (event.key === 'warenkorb') {
             $rootScope.$apply();
         }
-    });
+    }); */
     var o = { };
     o.cards = $resource("/cards/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
@@ -92,9 +93,14 @@ shopApp.controller('cartController', ['Cart', function(Cart) {
     });*/
 
     this.card = Cart.getItems();
+    /*
     this.getCard = function() {
-        return Cart.getLastItem();
-    };
+        this.card.push(Cart.getLastItem());
+    };*/
+    this.$watch(function () {
+        this.card.push(Cart.getLastItem());
+    }, function () {
+    });
   //  $scope.cart = Cart.getItems();
 
     this.removeArticle = function(article) {

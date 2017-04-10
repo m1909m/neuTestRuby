@@ -131,8 +131,8 @@
             <div id="modalWarenkorb" class="modal" ng-controller="cartController as cardC">
               <div ng-hide="cardC.card.length" class="alert alert-info">Ihr Warenkorb ist noch leer.</div>
 
-              <table ng-show="cardC.getCard().length" class="table">
-                <tr ng-repeat="item in cardC.getCard()">
+              <table ng-show="cardC.card.length" class="table">
+                <tr ng-repeat="item in cardC.card">
                   <td>{{item.title}}</td>
                   <td>{{item.price | currency: '€'}}</td>
                   <td><button class="btn btn-default btn-sm"  ng-click="cardC.removeArticle(item)">Entfernen</button></td>
