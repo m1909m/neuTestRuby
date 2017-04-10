@@ -117,6 +117,20 @@ shopApp.controller('cartController', ['$scope', 'Cart','$http', '$interval', fun
 
     $scope.cart = {};
     $scope.cart = Cart.getItems();
+    $scope.removeArticle = function(article) {
+        var items = [];
+        var articles = Cart.getItems();
+        for(var i = 0; i < articles.length; i++) {
+            if(articles[i].id == article.id) {
+
+            } else {
+                items.push(articles[i])
+            }
+        }
+        Cart.clearItem();
+        $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
+    };
+
 
 }]);
 
