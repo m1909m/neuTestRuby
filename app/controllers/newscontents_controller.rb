@@ -76,7 +76,7 @@ class NewscontentsController < ApplicationController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_newsletter
+  def set_newscontent
     @newscontent = Newscontent.find(params[:id])
   end
 
