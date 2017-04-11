@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :from %>
+    <%= f.label :from, "Titel"  %>
     <%= f.text_field :from %>
   </div>
 <!--
@@ -28,17 +28,17 @@
   </div> -->
 
   <div class="field">
-    <%= f.label :newsHeader %>
+    <%= f.label :newsHeader, "Newsletter Kopfbereich" %>
     <%= f.text_area :newsHeader, :class => "tinymce", :rows => 40, :cols => 120 %>
   </div>
 
   <div class="field">
-    <%= f.label :newsBody %>
+    <%= f.label :newsBody, "Newsletter Contentbereich" %>
     <%= f.text_area :newsBody, :class => "tinymce", :rows => 40, :cols => 120 %>
   </div>
 
   <div class="field">
-    <%= f.label :newsFooter %>
+    <%= f.label :newsFooter, "Newsletter Footerbereich" %>
     <%= f.text_area :newsFooter, :class => "tinymce", :rows => 40, :cols => 120 %>
   </div>
 
