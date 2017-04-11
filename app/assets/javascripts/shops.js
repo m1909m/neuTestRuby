@@ -148,10 +148,15 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
                 Cart.addItems(articles[i]);
             }
         }
+        $scope.sum = 0;
         $scope.cart = Cart.getItemsWaren();
+
+        for(var i = 0;i < $scope.cart.length; i++) {
+            $scope.sum += $scope.cart[i].price;
+        }
     };
 
-    $scope.addCard = function(){
+    $scope.addCard = function() {
         var newPerson;
         var articles;
         newPerson = $scope.newPerson;
