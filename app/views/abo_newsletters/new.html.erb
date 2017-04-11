@@ -13,7 +13,7 @@
   <h3>Newsletter Archiv</h3>
   <% @count = 13 %>
   <% @newsletter.each do |n| %>
-    <a href="newscontents/<%=n.id%>">vkm-rwl Newsletter <%=@count%>/2017</a>
+    <a href="newscontents/<%=n.id%>" style="color: #f59d0e;">vkm-rwl Newsletter <%=@count%>/2017</a><br />
       <% @count = @count + 1 %>
 
   <% end %>
