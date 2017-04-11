@@ -15,6 +15,7 @@ class AboNewslettersController < ApplicationController
   # GET /abo_newsletters/new
   def new
     @abo_newsletter = AboNewsletter.new
+    @newsletter = Newscontent.all
   end
 
   # GET /abo_newsletters/1/edit

@@ -9,6 +9,15 @@
   <p id="notice"><%= notice %></p>
 <%= render 'form', abo_newsletter: @abo_newsletter %>
 </div>
+<div class="col-sm-12">
+  <h3>Newsletter Archiv</h3>
+  <% @count = 13 %>
+  <% @newsletter.each do |n| %>
+    <a href="newscontents/<%=n.id%>">vkm-rwl Newsletter <%=count%>/2017</a>
+      <% @count = @count + 1 %>
+
+  <% end %>
+</div>
 <% if current_user.present? %>
 
 <% end %>
