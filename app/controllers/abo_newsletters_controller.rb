@@ -30,7 +30,7 @@ class AboNewslettersController < ApplicationController
     respond_to do |format|
       if @abo_newsletter.save
 
-        format.html { render :new, notice: 'Sie haben sich erfolgreich angemeldet.' }
+        format.html { redirect_to @abo_newsletter, notice: 'Sie haben sich erfolgreich angemeldet.' }
         format.json { render :new, status: :created, location: AboNewsletter.new }
       else
         format.html { render :new }
