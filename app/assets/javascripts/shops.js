@@ -80,6 +80,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
     $scope.addArticle = function(article) {
         article.price = article.price * article.anzahl;
         Cart.addItems(article);
+        $scope.articles = Cart.cards.index({"site": "batkf"});
     };
 /*
     $scope.$watch('addArticle', function () {
@@ -126,11 +127,12 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 
 }]);
 
-shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http', '$interval', function($scope, $stateParams, Cart, $http, $interval) {
+shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart) {
 
     $scope.cart = {};
-    $scope.cart = Cart.getItemsWaren();
     $scope.sum = 0;
+    $scope.cart = Cart.getItemsWaren();
+
     for(var i = 0;i < $scope.cart.length; i++) {
         $scope.sum += $scope.cart[i].price;
     }
