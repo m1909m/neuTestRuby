@@ -139,7 +139,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
 
     $scope.removeArticle = function(article) {
         var items = [];
-        var articles = Cart.getItems();
+        var articles = Cart.getItemsWaren();
         Cart.clearItem();
         for(var i = 0; i < articles.length; i++) {
             if(articles[i].id == article.id) {
@@ -148,6 +148,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
                 Cart.addItems(articles[i]);
             }
         }
+        $scope.cart = Cart.getItemsWaren();
     };
 
     $scope.addCard = function(){
