@@ -84,6 +84,7 @@ class CardsController < ApplicationController
     # @c_event.userMail = current_user.email
 
     if @card.save
+      BookingMailer.contact_email(@newPerson, @card.articles, @card).deliver
 #        format.json { render :index, status: :created, location: @news }
     else
 

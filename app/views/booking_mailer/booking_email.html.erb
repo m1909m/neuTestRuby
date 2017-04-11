@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ihre Buchung</title>
+</head>
+<body>
+<p>Vielen Dank für Ihre Bestellung</p>
+<ul style="list-style: none">
+  <li>Sie haben folgende Artikel bestellt:</li>
+  <table>
+  <%= @articles.each do |a| %>
+     <tr>
+       <td><%= a.title %></td>
+       <td><%= a.price%>€</td>
+     </tr>
+  <% end %>
+  </table>
+  <li>Sie erhalten in kürze eine Rechnung</li>
+
+</ul>
+
+<p>Mit freundlichen Grüßen</p>
+<p>Das VKM Team</p>
+</body>
+</html>

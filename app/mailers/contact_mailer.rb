@@ -7,4 +7,5 @@ class ContactMailer < ActionMailer::Base
     mail :to=> @email,
          :subject=> "Kontaktaufnahme"
   end
+
 end
