@@ -48,7 +48,7 @@ if (phpversion() >= "5.1.0" ) date_default_timezone_set('Europe/Berlin');
 // Dateiendungen, die von der Suche EINGESCHLOSSEN werden sollen
 // WICHTIG!!! Dateiendungen MÜSSEN durch Pipe (|) getrennt werden
 // WICHTIG!!! pdf, doc und xls Dateien werden vom Script nicht verarbeitet; also NICHT eintragen!
-$dat_type = "htm|html|shtml|php|php3|php4|php5";
+$dat_type = "htm|html|shtml|php|php3|php4|php5|erb";
 
 // Vorbelegung des Suchfelds (wird nicht ausgewertet) 
 $value = "Suchbegriffe";	
