@@ -5,18 +5,25 @@
   <title>Ihre Buchung</title>
 </head>
 <body>
-<p>Vielen Dank für Ihre Bestellung</p>
-<ul style="list-style: none">
-  <li>Sie haben folgende Artikel bestellt:</li>
+<p>Vielen Dank für Ihre Bestellung<br />
+
+Sie haben folgende Artikel bestellt:</p>
+
   <table>
-  <%= @articles.each do |a| %>
+    <thead>
+      <td>Artikel</td>
+      <td>Preis</td>
+    </thead>
+    <tbody>
+  <% @articles.each do |a| %>
      <tr>
        <td><%= a.title %></td>
        <td><%= a.price%>€</td>
      </tr>
   <% end %>
+    </tbody>
   </table>
-  <li>Sie erhalten in kürze eine Rechnung</li>
+  <p>Sie erhalten in kürze eine Rechnung</p>
 
 </ul>
 
