@@ -4,7 +4,7 @@ ActiveAdmin.register Newscontent do
 
   form do |f|
     f.inputs 'Newsletter layout erstellen' do
-      f.input :content, :class => "tinymce"
+      f.input :content
       f.input :sendtime, as: :datepicker
       f.input :newsletters
     end

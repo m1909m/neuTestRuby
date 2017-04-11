@@ -49,6 +49,13 @@
   -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.5);
   box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.5);
 }
+ #navbar-right .nav {
+   margin-bottom: -20px;
+ }
+ #navbar-right footer {
+   text-align: right;
+   bottom: 0px;
+ }
 
 #navbar-right ul li {
   border-top: 5px solid #f59d0e;
@@ -101,9 +108,11 @@ a {
 }
 
 .navbar-default {
-
-  background-color: transparent;
+  background-color: white;
+  z-index: 30;
   border: 0px;
+  position: sticky;
+  top: 0px;
 }
 
 .navbar-default ul li {

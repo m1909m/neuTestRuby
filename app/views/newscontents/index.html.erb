@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Newsletters</h1>
+<% if current_user.present? %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Newsletter Inhalt</th>
+      <th>Sendedatum</th>
+      <th>Gesendet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newscontents.each do |newscontent| %>
+      <tr>
+        <td><%= newscontent.content %></td>
+        <td><%= newscontent.sendtime %></td>
+        <td><% if newscontent.send %> Versendet <% else %> Nicht versendet <% end %></td>
+        <td><%= link_to 'Anzeigen', newscontent %></td>
+        <td><%= link_to 'Bearbeiten', edit_newscontent_path(newscontent) %></td>
+        <td><%= link_to 'Löschen', newscontent, method: :delete, data: { confirm: 'Sind sie sichsicher?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Neuer Newsletter erstellen', new_newsletter_path %>
+
+<% else %>
+<%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newsletter_path %>
+<% end %>
+
+

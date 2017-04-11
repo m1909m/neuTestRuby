@@ -15,11 +15,13 @@ class NewslettersController < ApplicationController
   # GET /newsletters/new
   def new
     @newscontent = Newscontent.new
+    @newsletters = Newsletter.all
   end
 
   # GET /newsletters/1/edit
   def edit
     @newscontent = Newscontent.find(params[:id])
+    @newsletters = Newsletter.all
   end
 
   # POST /newsletters
@@ -80,6 +82,6 @@ class NewslettersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def newscontent_params
-    params.require(:newscontent).permit(:content, :newsletter_id, :sendtime)
+    params.require(:newscontent).permit(:content, :sendtime, :newsletter_id)
   end
 end

@@ -9,6 +9,9 @@ class CurrentController < ApplicationController
   def impressum
 
   end
+  def informationen
+
+  end
   def agb
 
   end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :abo_newsletters
   resources :newsletters
+  resources :newscontents
   ActiveAdmin.routes(self)
   get 'zugangsbereich/', to: "current#index"
 
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
 
   get 'mitglied/', to: "current#mitglied"
   get 'impressum/', to: "current#impressum"
+  get 'informationen', to: "current#informationen"
   get 'impressum/agb/', to: "current#agb"
   get 'ark-rwl/', to: "current#arkrwl"
   get 'ark-dd/', to: "current#arkdd"

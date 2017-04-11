@@ -135,7 +135,7 @@
                 <tr ng-repeat="item in card">
                   <td>{{item.title}}</td>
                   <td>{{item.price | currency: '€'}}</td>
-                  <td><button class="btn btn-default btn-sm"  ng-click="cardC.removeArticle(item)">Entfernen</button></td>
+                  <td><button class="btn btn-default btn-sm"  ng-click="card.removeArticle(item)">Entfernen</button></td>
                 </tr>
                 <tr>
                   <td>{{cardC.card.length}} Artikel</td>
@@ -172,12 +172,14 @@
           <img alt="Siegel" class="img-responsive center-block" src="/siegel.png">
         </div>
       </nav>
+      <footer class="bd-footer col-md-offset-2 col-md-8" style="text-align: right;">
+        <a href="/informationen">Informationen</a>
+        <a href="/impressum">Impressum</a>
+      </footer>
     </div>
 
 
-    <footer class="bd-footer col-md-offset-2 col-md-8" style="text-align: right;">
-      <a href="/impressum">Impressum</a>
-    </footer>
+
 
     <script>
         $(document).ready(function() {
