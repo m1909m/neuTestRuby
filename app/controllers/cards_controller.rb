@@ -73,7 +73,7 @@ class CardsController < ApplicationController
     #  puts(@article)
       @card.articles << @article
 
-      @article.count = @article.count - @article.anzahl
+      @article.count = @article.count - a[:anzahl]
       @article.save
    #   @localArticle.add(Article.find(a.id))
     end
@@ -109,7 +109,7 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:articles => [:id, :name, :price, :count])
+    params.require(:card).permit(:articles => [:id, :name, :price, :count, :anzahl])
 
   end
 
