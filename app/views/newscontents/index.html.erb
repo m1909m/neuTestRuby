@@ -7,13 +7,15 @@
 </div>
 
 <p id="notice"><%= notice %></p>
-
+<div class="col-xs-12">
 
 <% if current_user.present? %>
     <div class="list-group">
       <a href="/newsletters/new" class="list-group-item">Neues Layout erstellen</a>
     </div>
+ </div>
     <h3>Newsletter Archiv</h3>
+
 <table class="table">
   <thead>
     <tr>
