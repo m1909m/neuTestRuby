@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get 'verband/vorstand/', to: "verbaand#vorstand"
   get 'verband/fachgruppen', to: "verbaand#fachgruppen"
+  get 'diakonie/', to: "verbaand#diakonie"
   get 'verband/berufsverbände/', to: "verbaand#verband"
   get 'verband/geschäftsstelle', to: "verbaand#geschäftsstelle"
 
