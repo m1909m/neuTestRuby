@@ -1,4 +1,4 @@
-class NewslettersController < ApplicationController
+class NewscontentsController < ApplicationController
   before_action :set_newscontent, only: [:show, :edit, :update, :destroy]
 
   # GET /newsletters
