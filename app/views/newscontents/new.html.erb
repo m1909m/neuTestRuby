@@ -1,57 +1,5 @@
 <h1>Newsletter erstellen</h1>
-<!--
-< render 'form', newscontent: @newscontent %>
--->
-<%= tinymce_assets %>
-<%= form_for(@newscontent) do |f| %>
-    <% if @newscontent.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@newscontent.errors.count, "error") %> Probleme beim Speichern</h2>
 
-          <ul>
-            <% @newscontent.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
+<%= render 'form', newscontent: @newscontent %>
 
-    <!--
-  <div class="field">
-    <#%= f.label :to %>
-    <#%= f.text_field :to %>
-  </div>
-
-  <div class="field">
-    <%#= f.label :type %>
-    <%#= f.text_field :type %>
-  </div> -->
-
-    <div class="form-group field">
-      <%= f.label :content, "Newsletter inhalt:" %>
-      <%= f.text_area :content %>
-    </div>
-
-    <div class="form-group field">
-      <%= f.label :sendtime, "Sende Datum" %>
-      <%= f.input :sendtime, :class => "date-picker" %>
-    </div>
-
-    <div class="form-group field">
-      <label for="newscontent_newsletter_id">Newsletter Layout</label>
-
-      <select class="form-group" name="newscontent[newsletter_id]" id="newscontent_newsletter_id">
-        <% @newsletters.each do |newsletter| %>
-            <option value="<%= newsletter.id %>"><%= newsletter.from %></option>
-        <% end %>
-      </select>
-
-    </div>
-
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
-<%= tinymce %>
 <%= link_to 'Zurück', newscontents_path %>
