@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :roomplanings
   resources :contact_forms
+  get '/kontakt', to: "contact_forms#new"
   #resources :events
   devise_for :users
   resources :abo_newsletters
