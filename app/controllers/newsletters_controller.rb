@@ -32,7 +32,7 @@ class NewslettersController < ApplicationController
         @aboNewsletters = AboNewsletter.all
         @aboNewsletters.each do |aboNewsletter|
           @abo_newsletter = aboNewsletter
-          NewsMailer.news_email(Newsletter.last, @abo_newsletter).deliver
+        #  NewsMailer.news_email(Newsletter.last, @abo_newsletter).deliver
 
         end
         format.html { redirect_to @newsletter, notice: 'Newsletter wurde erfolgreich erstellt.' }
