@@ -136,6 +136,20 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
     for(var i = 0;i < $scope.cart.length; i++) {
         $scope.sum += $scope.cart[i].price;
     }
+
+    $scope.removeArticle = function(article) {
+        var items = [];
+        var articles = Cart.getItems();
+        Cart.clearItem();
+        for(var i = 0; i < articles.length; i++) {
+            if(articles[i].id == article.id) {
+
+            } else {
+                Cart.addItems(articles[i]);
+            }
+        }
+    };
+
     $scope.addCard = function(){
         var newPerson;
         var articles;

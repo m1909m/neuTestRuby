@@ -10,9 +10,12 @@
       <td>{{item.title}}</td>
       <td>{{item.anzahl }}</td>
       <td>{{item.price | currency: '€'}}</td>
+      <td><button class="btn btn-default btn-sm"  ng-click="removeArticle(item)">Entfernen</button></td>
+
     </tr>
     <tr>
-      <td>{{cart.length}} Artikel</td>
+      <td></td>
+      <td></td>
       <td>Summe: {{ sum  | currency: '€'}}</td>
     </tr>
   </table>
