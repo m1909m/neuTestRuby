@@ -72,7 +72,8 @@ $length = 3; // ACHTUNG! Bei Aenderung auch in der Datei searchhi.js die Zeile i
 
 // in der folgenden Voreinstellung wird nur das Stammverzeichnis durchsucht
 $dirs = array(
-	'./'
+	'./',
+	'./app/views/'
 );	
 
 
