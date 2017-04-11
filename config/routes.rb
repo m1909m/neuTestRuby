@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   # get 'fortbildung/', to: "current#fortbildung"
 
   get 'shop/batkf', to: "shop#batkf"
+  get 'shop/entgelttabellen', to: "shop#entgelttabellen"
 
   get 'warenkorb/', to: "cards#booking"
   resources :cards, only: [:index, :new, :create, :show, :destroy], defaults: {format: :json}

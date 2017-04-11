@@ -4,9 +4,9 @@ class ShopController < ApplicationController
 
   end
 
-  #def entgelttabellen
+  def entgelttabellen
 
-  #end
+  end
 
   def mvg
 

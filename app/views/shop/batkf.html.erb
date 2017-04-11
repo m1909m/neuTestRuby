@@ -58,8 +58,8 @@
   <tbody>
     <tr ng-repeat="article in shop.articles">
       <td>{{article.title}}</td>
-      <td>{{article.count}}</td>
       <td>{{article.price | currency: '€'}}</td>
+      <td><input>{{article.count}}</td>
       <td><a href class="btn btn-default btn-sm" ng-click="shop.addArticle(article)">In den Warenkorb</a></td>
     </tr>
   </tbody>
