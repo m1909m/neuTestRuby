@@ -29,7 +29,7 @@
   <tbody>
     <% @newscontents.each do |newscontent| %>
       <tr>
-        <td><%= newscontent.content %></td>
+        <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(newscontent.content.html_safe), length: 200) %></td>
         <td><%= newscontent.sendtime %></td>
         <td><% if newscontent.send %> Versendet <% else %> Nicht versendet <% end %></td>
         <td><%= link_to 'Anzeigen', newscontent %></td>
