@@ -6,11 +6,11 @@ class VerbaandController < ApplicationController
   end
 
   def fachgruppen
-    @page = Page.where(accept: true, site: "Fachgruppen").order(:id).last
+    @page = Page.where(accept: true, for: "Fachgruppen").order(:id).last
   end
 
   def diakonie
-    @page = Page.where(accept: true, site: "Diakonie").order(:id).last
+    @page = Page.where(accept: true, for: "Diakonie").order(:id).last
   end
 
   def vorstand
