@@ -56,11 +56,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="article in shop.articles">
+    <tr ng-repeat="article in articles">
       <td>{{article.title}}</td>
       <td>{{article.price | currency: '€'}}</td>
-<!--      <td>{{article.count}}</td>  -->
-      <td><a href class="btn btn-default btn-sm" ng-click="shop.addArticle(article)">In den Warenkorb</a></td>
+      <td><input type="number" ng-model="article.anzahl" /></td>
+      <td><a href class="btn btn-default btn-sm" ng-click="addArticle(article)">In den Warenkorb</a></td>
     </tr>
   </tbody>
   </table>

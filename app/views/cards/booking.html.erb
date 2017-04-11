@@ -8,6 +8,7 @@
   <table ng-show="cart.length" class="table">
     <tr ng-repeat="item in cart track by $index">
       <td>{{item.title}}</td>
+      <td>{{item.anzahl }}</td>
       <td>{{item.price | currency: '€'}}</td>
     </tr>
     <tr>

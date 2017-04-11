@@ -30,7 +30,7 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
         $window.sessionStorage.removeItem("warenkorb");
         o.items = [];
     };
-    o.getItems = function() {
+    o.getItemsWaren = function() {
         /*var items = [];
         o.items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
         return o.items;*/
@@ -73,11 +73,12 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
         {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
         {"id": "4", "name": "Aktueller Flyer", "price": 0 }
     ]; */
-    this.articles = Cart.cards.index({"site": "batkf"});
+    $scope.articles = Cart.cards.index({"site": "batkf"});
 
   //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
   //  $scope.cart = Cart.getItems();
     $scope.addArticle = function(article) {
+        article.price = article.price * article.anzahl;
         Cart.addItems(article);
     };
 /*
@@ -101,7 +102,7 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 
     $scope.card = [];
 
-    $scope.card = Cart.items;
+    $scope.card = Cart.getItemsWaren;
     /*
     this.getCard = function() {
         this.card.push(Cart.getLastItem());
@@ -128,7 +129,7 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 shopApp.controller('bookingContainer', ['$scope','$stateParams', 'Cart', '$http', '$interval', function($scope, $stateParams, Cart, $http, $interval) {
 
     $scope.cart = {};
-    $scope.cart = Cart.getItems();
+    $scope.cart = Cart.getItemsWaren();
     $scope.sum = 0;
     for(var i = 0;i < $scope.cart.length; i++) {
         $scope.sum += $scope.cart[i].price;
