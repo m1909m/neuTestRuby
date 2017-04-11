@@ -49,9 +49,9 @@
 <div class="col-xs-12 col-sm-6">
 <table class="table" ng-controller="shopController as shop">
     <tr ng-repeat="article in shop.articles">
-      <td>{{article.id}}</td>
       <td>{{article.title}}</td>
-      <td>{{article.price}}</td>
+      <td>{{article.count}}</td>
+      <td>{{article.price | currency: '€'}}</td>
       <td><a href class="btn btn-default btn-sm" ng-click="shop.addArticle(article)">In den Warenkorb</a></td>
     </tr>
   </table>
