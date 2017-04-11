@@ -1,5 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="col-xs-12">
+  <h1>Newslettersystem</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Newsletter.jpg", :alt => "Newsletter", :class => "img-responsive center-block") %>
 
+</div>
+
+<p id="notice"><%= notice %></p>
+<div class="col-sm-12">
 <h1>Abonennten Newsletters</h1>
 <% if current_user.present? %>
 <table class="table">
@@ -28,6 +36,7 @@
 <br>
 
 <%= link_to 'Neuen Abonennten für den Newsletter hinzufügen', new_abo_newsletter_path %>
+</div>
 <% else %>
 <h2>Sie haben sich erfolgreich angemeldet</h2>
 <% end %>

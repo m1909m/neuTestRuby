@@ -29,8 +29,8 @@ class AboNewslettersController < ApplicationController
 
     respond_to do |format|
       if @abo_newsletter.save
-        format.html { redirect_to @abo_newsletter, notice: 'Abo newsletter was successfully created.' }
-        format.json { render :show, status: :created, location: @abo_newsletter }
+        format.html { render :new, notice: 'Sie haben sich erfolgreich angemeldet.' }
+        format.json { render :new, status: :created, location: @abo_newsletter }
       else
         format.html { render :new }
         format.json { render json: @abo_newsletter.errors, status: :unprocessable_entity }
