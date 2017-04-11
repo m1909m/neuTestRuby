@@ -48,12 +48,21 @@
 </div>
 <div class="col-xs-12 col-sm-6">
 <table class="table" ng-controller="shopController as shop">
+  <thead>
+    <tr>
+      <th>Artikel</th>
+      <th>Noch verfügbar</th>
+      <th>Preis</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr ng-repeat="article in shop.articles">
       <td>{{article.title}}</td>
       <td>{{article.count}}</td>
       <td>{{article.price | currency: '€'}}</td>
       <td><a href class="btn btn-default btn-sm" ng-click="shop.addArticle(article)">In den Warenkorb</a></td>
     </tr>
+  </tbody>
   </table>
 </div>
 
