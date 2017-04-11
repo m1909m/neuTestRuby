@@ -1,5 +1,5 @@
 <%= tinymce_assets %>
-<%= form_for(newscontent) do |f| %>
+<%= form_for(@newscontent) do |f| %>
   <% if newscontent.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(newscontent.errors.count, "error") %> Probleme beim Speichern</h2>
