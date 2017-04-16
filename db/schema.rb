@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408166040) do
+ActiveRecord::Schema.define(version: 20170410090910) do
 
   create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "eMail"
@@ -35,31 +35,18 @@ ActiveRecord::Schema.define(version: 20170408166040) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
-    t.decimal  "price",      precision: 10
+    t.float    "price",      limit: 53
     t.integer  "count"
     t.string   "site"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "booking", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "article_id"
     t.integer  "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "titel"
-    t.text     "beschreibung", limit: 65535
-    t.text     "bild",         limit: 65535
-    t.integer  "jahr"
-    t.string   "isbn"
-    t.string   "verlag"
-    t.string   "autor"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "anzahl"
   end
 
   create_table "c_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -171,7 +158,15 @@ ActiveRecord::Schema.define(version: 20170408166040) do
     t.datetime "sendDate"
   end
 
-  create_table "people", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "content",    limit: 65535
+    t.string   "for"
+    t.boolean  "accept"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "persons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "vorname"
     t.string   "einrichtung"
@@ -187,6 +182,15 @@ ActiveRecord::Schema.define(version: 20170408166040) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "event_id"
+  end
+
+  create_table "resumes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "userMail"
   end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

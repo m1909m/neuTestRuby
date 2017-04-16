@@ -1,0 +1,37 @@
+<%= form_for(news_content) do |f| %>
+  <% if news_content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(news_content.errors.count, "error") %> prohibited this news_content from being saved:</h2>
+
+      <ul>
+      <% news_content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sendtime %>
+    <%= f.datetime_select :sendtime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :newsletter_id %>
+    <%= f.number_field :newsletter_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
