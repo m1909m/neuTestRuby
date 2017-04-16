@@ -77,6 +77,11 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
     $scope.setArticles = function() {
         $scope.articles = Cart.cards.index({"site": "batkf"});
     };
+    $scope.init = function () {
+
+        $scope.articles = Cart.cards.index({"site": "batkf"});
+
+    };
 
 
   //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
