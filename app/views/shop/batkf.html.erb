@@ -47,7 +47,11 @@
   </p>
 </div>
 <div class="col-xs-12 col-sm-6">
-<table class="table" ng-controller="shopController as shop" ng-init="setArticles()">
+<table class="table" ng-controller="shopController" ng-init="articles = [
+        {'id': '1', 'name': 'Pizza Vegetaria', 'price': 5 },
+  {'id': '2', 'name': 'Pizza Salami',    'price': 5.5 },
+  {'id': '3', 'name': 'Pizza Thunfisch', 'price': 6 }
+  ]">
   <thead>
     <tr>
       <th>Artikel</th>
