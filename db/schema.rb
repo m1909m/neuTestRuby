@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410090910) do
+ActiveRecord::Schema.define(version: 20170420135809) do
 
   create_table "abo_newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "eMail"
@@ -133,6 +133,16 @@ ActiveRecord::Schema.define(version: 20170410090910) do
     t.datetime "sendDate"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "news_contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "content",       limit: 65535
+    t.datetime "sendtime"
+    t.integer  "newsletter_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "send"
   end
 
   create_table "newsletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
