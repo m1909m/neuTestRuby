@@ -65,41 +65,11 @@ shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.card = [];
 }]);
 
-shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
-    /*
-    $scope.articles = [
-        {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
-        {"id": "2", "name": "Pizza Salami",    "price": 5.5 },
-        {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
-        {"id": "4", "name": "Aktueller Flyer", "price": 0 }
-    ]; */
-    $scope.articles = [];
-    $scope.setArticles = function() {
-        $scope.articles = Cart.cards.index({"site": "batkf"});
-    };
-    $scope.init = function () {
-
-        $scope.articles = Cart.cards.index({"site": "batkf"});
-
-    };
-
-
-  //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
-  //  $scope.cart = Cart.getItems();
-    $scope.addArticle = function(article) {
-        article.price = article.price * article.anzahl;
-        Cart.addItems(article);
-        $scope.articles = Cart.cards.index({"site": "batkf"});
-    };
-/*
-    $scope.$watch('addArticle', function () {
-        $scope.card.push(Cart.getLastItem());
-    }, function () {
-    });*/
 
 
 
-}]);
+
+
 
 // var cartApp = angular.module('cartApp', [ 'myModule', 'shopping', 'ui.router' ]);
 
