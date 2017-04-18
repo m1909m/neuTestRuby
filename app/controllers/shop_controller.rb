@@ -1,10 +1,7 @@
 class ShopController < ApplicationController
 
   def batkf
-    respond_to do |format|
-      format.html
-      format.js { render layout: false }
-    end
+    respond_to :html, :js
   end
 
   def entgelttabellen
