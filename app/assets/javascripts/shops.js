@@ -1,5 +1,5 @@
 'use strict';
-angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function($window, $rootScope, $resource) {
+angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function($window, $rootScope, $resource, $http) {
     /*
      angular.element($window).on('storage', function(event) {
      if (event.key === 'warenkorb') {
