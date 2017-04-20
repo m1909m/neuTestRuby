@@ -34,7 +34,13 @@ class NewsContentsController < ApplicationController
 
     @news_content.sendStatus = false
 
-    @news_content.save
+    if @news_content.save
+      respond_to do |f|
+        f.html { redirect_to action: "index" }
+      end
+    else
+
+    end
 
   end
 
