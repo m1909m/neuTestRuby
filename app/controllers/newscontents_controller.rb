@@ -31,7 +31,7 @@ class NewscontentsController < ApplicationController
 
     respond_to do |format|
       if @newscontent.save
-        format.html { redirect_to action: "index", notice: 'Newsletter wurde erfolgreich erstellt.' }
+        format.html { redirect_to action: "index" }
       #  format.json { render :show, status: :created, location: @newscontent }
       else
         format.html { render :new }
