@@ -31,7 +31,7 @@
 
   <div class="field">
     <label for="newscontent_content">News</label>
-    <textarea type="text" class="tinymce" rows="40" cols="60" name="news_content[content]" id="newscontent_content" value="<%= @news_content.content %>"></textarea>
+    <textarea type="text" class="tinymce" rows="40" cols="60" name="news_content[content]" id="newscontent_content"><%= @news_content.content.html_safe %></textarea>
   </div>
 
   <div class="field">
@@ -69,6 +69,7 @@
             if (typeof tinyMCE != 'undefined') {
                 tinymce.remove();
                 tinyMCE.init({
+                    language: "de",
                     selector: "textarea.tinymce",
                     theme_advanced_toolbar_location: "top",
                     theme_advanced_toolbar_align: "left",

@@ -19,17 +19,17 @@
 
       <div class="field">
         <label for="newscontent_title">Überschrift</label>
-        <input type="text" name="news_content[title]" id="newscontent_title" ></textarea>
+        <input type="text" name="news_content[title]" id="newscontent_title" />
       </div>
 
       <div class="field">
         <label for="newscontent_content">News</label>
-        <textarea type="text" class="tinymce" rows="40" cols="60" name="news_content[content]" id="newscontent_content" ></textarea>
+        <textarea class="tinymce" rows="40" name="news_content[content]" id="newscontent_content" ></textarea>
       </div>
 
       <div class="field">
         <label for="newscontent_sendtime">Sendedatum</label>
-        <input size="16" type="text" name="news_content[sendtime]" id="newscontent_sendtime" readonly class="form_datetime">
+        <input size="16" type="text" name="news_content[sendtime]" id="newscontent_sendtime" readonly class="form_datetime" />
 
       </div>
 
@@ -57,15 +57,67 @@
             function initTinyMCE() {
                 if (typeof tinyMCE != 'undefined') {
                     tinymce.remove();
-                    tinyMCE.init({
+                    tinymce.init({
+                        language: "de",
                         selector: "textarea.tinymce",
-                        theme_advanced_toolbar_location: "top",
-                        theme_advanced_toolbar_align: "left",
-                        theme_advanced_statusbar_location: "bottom",
-                        theme_advanced_buttons3_add: ["tablecontrols","fullscreen"],
-                        plugins: "table,fullscreen",
-                        toolbar: "forecolor backcolor"
+                        height: 500,
+                        plugins: [
+                            "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                            "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                            "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
+                        ],
+
+                        toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+                        toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
+                        toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+
+                        menubar: false,
+                        toolbar_items_size: 'small',
+
+                        style_formats: [{
+                            title: 'Bold text',
+                            inline: 'b'
+                        }, {
+                            title: 'Red text',
+                            inline: 'span',
+                            styles: {
+                                color: '#ff0000'
+                            }
+                        }, {
+                            title: 'Red header',
+                            block: 'h1',
+                            styles: {
+                                color: '#ff0000'
+                            }
+                        }, {
+                            title: 'Example 1',
+                            inline: 'span',
+                            classes: 'example1'
+                        }, {
+                            title: 'Example 2',
+                            inline: 'span',
+                            classes: 'example2'
+                        }, {
+                            title: 'Table styles'
+                        }, {
+                            title: 'Table row 1',
+                            selector: 'tr',
+                            classes: 'tablerow1'
+                        }],
+
+                        templates: [{
+                            title: 'Test template 1',
+                            content: 'Test 1'
+                        }, {
+                            title: 'Test template 2',
+                            content: 'Test 2'
+                        }],
+                        content_css: [
+                            '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+                            '//www.tinymce.com/css/codepen.min.css'
+                        ]
                     });
+
                 } else {
                     setTimeout(initTinyMCE, 50);
                 }
