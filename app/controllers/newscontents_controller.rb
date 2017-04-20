@@ -31,17 +31,11 @@ class NewscontentsController < ApplicationController
 
     respond_to do |format|
       if @newscontent.save
-        @aboNewsletters = AboNewsletter.all
-        @aboNewsletters.each do |aboNewsletter|
-          @abo_newsletter = aboNewsletter
-        #  NewsMailer.news_email(Newsletter.find(@newscontent.newsletter_id), @newscontent, @abo_newsletter).deliver
-
-        end
-        format.html { redirect_to @newsletter, notice: 'Newsletter wurde erfolgreich erstellt.' }
-        format.json { render :show, status: :created, location: @newsletter }
+        format.html { redirect_to @newscontent, notice: 'Newsletter wurde erfolgreich erstellt.' }
+        format.json { render :show, status: :created, location: @newscontent }
       else
         format.html { render :new }
-        format.json { render json: @newsletter.errors, status: :unprocessable_entity }
+        format.json { render json: @newscontent.errors, status: :unprocessable_entity }
       end
     end
   end
