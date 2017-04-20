@@ -15,23 +15,28 @@
     <script src="/assets/tinymce/preinit.self-84328a53e798df12f891eb49871773fd9f925439c8630e9e22423a82ef9e6f89.js?body=1"></script>
     <script src="/assets/tinymce/tinymce.self-32bea8c9c9f81b871d51a186ff33640087e78acd6519c30da7b2797692227a6c.js?body=1"></script>
     <script src="/assets/tinymce.self-75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070.js?body=1"></script>
-    <form class="new_newscontent" id="new_newscontent" action="/newscontents" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XyPpaKiBx1NrFvhgzEvpJ0NI8TYObumPd89s98d/bl9y+ikAaYfFpfyHPHAIyzDC5PjK1rrm99ILqfK9+eUh8A==" />
+    <form class="new_newscontent" id="new_newscontent" action="/news_contents" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XyPpaKiBx1NrFvhgzEvpJ0NI8TYObumPd89s98d/bl9y+ikAaYfFpfyHPHAIyzDC5PjK1rrm99ILqfK9+eUh8A==" />
 
       <div class="field">
-        <label for="newscontent_content">Titel</label>
-        <textarea type="text" class="tinymce" rows="40" cols="60" name="newscontent[content]" id="newscontent_content" ></textarea>
+        <label for="newscontent_title">Überschrift</label>
+        <input type="text" name="news_content[title]" id="newscontent_title" ></textarea>
       </div>
 
       <div class="field">
-        <label for="newscontent_sendtime">Newsletter Kopfbereich</label>
-        <input size="16" type="text" name="newscontent[sendtime]" id="newscontent_sendtime" readonly class="form_datetime">
+        <label for="newscontent_content">News</label>
+        <textarea type="text" class="tinymce" rows="40" cols="60" name="news_content[content]" id="newscontent_content" ></textarea>
+      </div>
+
+      <div class="field">
+        <label for="newscontent_sendtime">Sendedatum</label>
+        <input size="16" type="text" name="news_content[sendtime]" id="newscontent_sendtime" readonly class="form_datetime">
 
       </div>
 
       <div class="form-group field">
         <label for="newscontent_newsletter_id">Newsletter Layout</label>
 
-        <select class="form-group" name="newscontent[newsletter_id]" id="newscontent_newsletter_id">
+        <select class="form-group" name="news_content[newsletter_id]" id="newscontent_newsletter_id">
           <% @newsletters.each do |newsletter| %>
               <option value="<%= newsletter.id %>"><%= newsletter.from %></option>
           <% end %>
