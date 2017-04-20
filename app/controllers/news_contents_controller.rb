@@ -36,7 +36,7 @@ class NewsContentsController < ApplicationController
 
     if @news_content.save
       respond_to do |f|
-        f.html { redirect_to action: "index" }
+        f.html { redirect_to news_contents_url, notice: 'News wurde erfolgreich erstellt'}
       end
     else
 
@@ -63,7 +63,7 @@ class NewsContentsController < ApplicationController
   def destroy
     @news_content.destroy
     respond_to do |format|
-      format.html { redirect_to newscontents_url, notice: 'Newsletter wurde erfolgreich gelöscht.' }
+      format.html { redirect_to news_contents_url, notice: 'Newsletter wurde erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end
