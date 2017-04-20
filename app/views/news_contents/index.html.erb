@@ -1,33 +1,51 @@
+<div class="col-xs-12">
+  <h1>Newslettersystem</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Newsletter.jpg", :alt => "Newsletter", :class => "img-responsive center-block") %>
+
+</div>
+
 <p id="notice"><%= notice %></p>
+<div class="col-xs-12">
 
-<h1>News Contents</h1>
+  <% if current_user.present? %>
+      <div class="list-group">
+        <a href="/newsletters/new" class="list-group-item">Neues Layout erstellen</a>
+      </div>
+      </div>
+      <h3>Newsletter Archiv</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Sendtime</th>
-      <th>Newsletter</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Newsletter Inhalt</th>
+          <th>Sendedatum</th>
+          <th>Gesendet</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
 
-  <tbody>
-    <% @news_contents.each do |news_content| %>
-      <tr>
-        <td><%= news_content.title %></td>
-        <td><%= news_content.content %></td>
-        <td><%= news_content.sendtime %></td>
-        <td><%= news_content.newsletter_id %></td>
-        <td><%= link_to 'Show', news_content %></td>
-        <td><%= link_to 'Edit', edit_news_content_path(news_content) %></td>
-        <td><%= link_to 'Destroy', news_content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+        <% @news_contents.each do |news_content| %>
+            <tr>
+              <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news_content.content.html_safe), length: 200) %></td>
+              <td><%= news_content.sendtime %></td>
+              <td><% if news_content.send %> Versendet <% else %> Nicht versendet <% end %></td>
+              <td><%= link_to 'Anzeigen', news_content %></td>
+              <td><%= link_to 'Bearbeiten', edit_news_content_path(news_content) %></td>
+              <td><%= link_to 'Löschen', news_content, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
 
-<br>
+      <br>
 
-<%= link_to 'New News Content', new_news_content_path %>
+      <%= link_to 'Neuer Newsletter erstellen', new_news_content_path %>
+
+  <% else %>
+      <%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newscontent_path %>
+  <% end %>
+
+
