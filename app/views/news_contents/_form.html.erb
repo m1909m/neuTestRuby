@@ -1,4 +1,4 @@
-<%= form_for(news_content) do |f| %>
+
   <% if news_content.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(news_content.errors.count, "error") %> prohibited this news_content from being saved:</h2>
@@ -11,33 +11,63 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
+    <script src="/assets/tinymce/preinit.self-84328a53e798df12f891eb49871773fd9f925439c8630e9e22423a82ef9e6f89.js?body=1"></script>
+    <script src="/assets/tinymce/tinymce.self-32bea8c9c9f81b871d51a186ff33640087e78acd6519c30da7b2797692227a6c.js?body=1"></script>
+    <script src="/assets/tinymce.self-75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070.js?body=1"></script>
+    <form class="new_newscontent" id="new_newscontent" action="/newscontents" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XyPpaKiBx1NrFvhgzEvpJ0NI8TYObumPd89s98d/bl9y+ikAaYfFpfyHPHAIyzDC5PjK1rrm99ILqfK9+eUh8A==" />
 
-  <div class="field">
-    <%= f.label :sendtime %>
-    <%= f.datetime_select :sendtime %>
-  </div>
+      <div class="field">
+        <label for="newscontent_content">Titel</label>
+        <textarea type="text" class="tinymce" rows="40" cols="60" name="newscontent[content]" id="newscontent_content" ></textarea>
+      </div>
 
-    <div class="form-group field">
-      <label for="newscontent_newsletter_id">Newsletter Layout</label>
+      <div class="field">
+        <label for="newscontent_sendtime">Newsletter Kopfbereich</label>
+        <input size="16" type="text" name="newscontent[sendtime]" id="newscontent_sendtime" readonly class="form_datetime">
 
-      <select class="form-group" name="newscontent[newsletter_id]" id="newscontent_newsletter_id">
-        <% @newsletters.each do |newsletter| %>
-            <option value="<%= newsletter.id %>"><%= newsletter.from %></option>
-        <% end %>
-      </select>
+      </div>
 
-    </div>
+      <div class="form-group field">
+        <label for="newscontent_newsletter_id">Newsletter Layout</label>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+        <select class="form-group" name="newscontent[newsletter_id]" id="newscontent_newsletter_id">
+          <% @newsletters.each do |newsletter| %>
+              <option value="<%= newsletter.id %>"><%= newsletter.from %></option>
+          <% end %>
+        </select>
+
+      </div>
+
+      <div class="actions">
+        <input type="submit" name="commit" value="Newsletter erstellen" data-disable-with="Newsletter erstellen" />
+      </div>
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+        });
+        //<![CDATA[
+        (function() {
+            function initTinyMCE() {
+                if (typeof tinyMCE != 'undefined') {
+                    tinymce.remove();
+                    tinyMCE.init({
+                        selector: "textarea.tinymce",
+                        theme_advanced_toolbar_location: "top",
+                        theme_advanced_toolbar_align: "left",
+                        theme_advanced_statusbar_location: "bottom",
+                        theme_advanced_buttons3_add: ["tablecontrols","fullscreen"],
+                        plugins: "table,fullscreen",
+                        toolbar: "forecolor backcolor"
+                    });
+                } else {
+                    setTimeout(initTinyMCE, 50);
+                }
+            }
+
+            initTinyMCE();
+        })();
+
+        //]]>
+    </script>
