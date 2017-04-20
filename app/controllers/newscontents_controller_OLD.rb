@@ -1,10 +1,10 @@
-class NewscontentsController < ApplicationController
+class NewscontentsControllerOLD < ApplicationController
   before_action :set_newscontent, only: [:show, :edit, :update, :destroy]
 
   # GET /newsletters
   # GET /newsletters.json
   def index
-    @newscontents = Newscontent.all
+    @newscontents = NewscontentOLD.all
   end
 
   # GET /newsletters/1
@@ -14,20 +14,20 @@ class NewscontentsController < ApplicationController
 
   # GET /newsletters/new
   def new
-    @newscontent = Newscontent.new
+    @newscontent = NewscontentOLD.new
     @newsletters = Newsletter.all
   end
 
   # GET /newsletters/1/edit
   def edit
-    @newscontent = Newscontent.find(params[:id])
+    @newscontent = NewscontentOLD.find(params[:id])
     @newsletters = Newsletter.all
   end
 
   # POST /newsletters
   # POST /newsletters.json
   def create
-    @newscontent = Newscontent.new(newscontent_params)
+    @newscontent = NewscontentOLD.new(newscontent_params)
 
     respond_to do |format|
       if @newscontent.save
@@ -71,7 +71,7 @@ class NewscontentsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_newscontent
-    @newscontent = Newscontent.find(params[:id])
+    @newscontent = NewscontentOLD.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

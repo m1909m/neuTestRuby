@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :abo_newsletters
   resources :newsletters
-  resources :newscontents
+
   ActiveAdmin.routes(self)
   get 'zugangsbereich/', to: "current#index"
 

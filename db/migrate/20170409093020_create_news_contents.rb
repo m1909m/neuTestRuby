@@ -1,6 +1,6 @@
 class CreateNewsContents < ActiveRecord::Migration[5.0]
   def change
-    create_table :newscontents do |t|
+    create_table :newscontentsOLD do |t|
       t.text :content
       t.boolean :send
       t.datetime :sendtime
