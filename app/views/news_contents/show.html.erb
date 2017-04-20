@@ -17,9 +17,9 @@
 </div>
 <div class="col-xs-12">
   <% if @news_content.sendStatus %>
-    <p>Wird am <%= @news_content.sendtime %> gesendet.</p>
+      <p>Wurde schon versendet.</p>
   <% else %>
-    <p>Wurde schon versendet.</p>
+      <p>Wird am <%= @news_content.sendtime %> gesendet.</p>
   <% end %>
 
 </div>
