@@ -11,6 +11,11 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
     });
+    o.create = function(card) {
+        $http.post('/cards.json', card).success(function(data){
+
+        });
+    };
     o.items = [];
 
     o.addItems = function(article) {
@@ -175,7 +180,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         json.push(newPerson);
         json.push(articles);
         newPerson.articles = articles;
-        Cart.cards.save(newPerson);
+        Cart.create(newPerson);
 
         $scope.newPerson = {};
         Cart.clearItem();
