@@ -32,15 +32,15 @@ class NewsContentsController < ApplicationController
 
     @news_content.send = false
 
-    respond_to do |format|
+  #  respond_to do |format|
       if @news_content.save
-        format.html { redirect_to action: "index" }
+       # format.html { redirect_to action: "index" }
         #  format.json { render :show, status: :created, location: @newscontent }
       else
-        format.html { render :new }
-        format.json { render json: @news_content.errors, status: :unprocessable_entity }
+        #format.html { render :new }
+        #format.json { render json: @news_content.errors, status: :unprocessable_entity }
       end
-    end
+ #   end
   end
 
   # PATCH/PUT /newsletters/1
