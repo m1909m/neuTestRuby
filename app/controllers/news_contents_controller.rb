@@ -32,7 +32,7 @@ class NewsContentsController < ApplicationController
     @news_content = NewsContent.new(news_content_params)
     puts(@news_content)
 
-    @news_content.send = false
+    @news_content.sendStatus = false
 
     @news_content.save
 
