@@ -16,9 +16,10 @@
       </div>
       <h3>Newsletter Archiv</h3>
 
-      <table class="table">
+      <table class="table table-responsive table-striped">
         <thead>
         <tr>
+          <th>Überschrift</th>
           <th>Newsletter Inhalt</th>
           <th>Sendedatum</th>
           <th>Gesendet</th>
@@ -29,6 +30,7 @@
         <tbody>
         <% @news_contents.each do |news_content| %>
             <tr>
+              <td><%= news_content.title %></td>
               <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news_content.content.html_safe), length: 200) %></td>
               <td><%= news_content.sendtime %></td>
               <td><% if news_content.sendStatus %> Versendet <% else %> Nicht versendet <% end %></td>

@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="col-xs-12">
+  <h1>Newslettersystem</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Newsletter.jpg", :alt => "Newsletter", :class => "img-responsive center-block") %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @news_content.title %>
-</p>
+</div>
+<div class="col-xs-12">
+  <p id="notice"><%= notice %></p>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @news_content.content %>
-</p>
+<div class="col-xs-12">
+  <h2><%= @newscontent.title %></h2>
+</div>
+<div class="col-xs-12 mehrspaltig">
+  <p><%= @newscontent.content.html_safe %></p>
+</div>
+<div class="col-xs-12">
+  <% if @newscontent.sendStatus %>
+    <p>Wird am <%= @newscontent.sendtime %> gesendet.</p>
+  <% else %>
+    <p>Wurde schon versendet.</p>
+  <% end %>
 
-<p>
-  <strong>Sendtime:</strong>
-  <%= @news_content.sendtime %>
-</p>
+</div>
 
-<p>
-  <strong>Newsletter:</strong>
-  <%= @news_content.newsletter_id %>
-</p>
-
-<%= link_to 'Edit', edit_news_content_path(@news_content) %> |
-<%= link_to 'Back', news_contents_path %>
+<div class="col-xs-12">
+  <%= link_to 'Zurück', news_contents_path %>
+</div>
