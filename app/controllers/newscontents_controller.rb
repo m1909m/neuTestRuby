@@ -31,8 +31,8 @@ class NewscontentsController < ApplicationController
 
     respond_to do |format|
       if @newscontent.save
-        format.html { redirect_to @newscontent, notice: 'Newsletter wurde erfolgreich erstellt.' }
-        format.json { render :show, status: :created, location: @newscontent }
+        format.html { redirect_to action: "index", notice: 'Newsletter wurde erfolgreich erstellt.' }
+      #  format.json { render :show, status: :created, location: @newscontent }
       else
         format.html { render :new }
         format.json { render json: @newscontent.errors, status: :unprocessable_entity }
