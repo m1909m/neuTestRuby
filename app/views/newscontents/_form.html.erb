@@ -19,24 +19,24 @@
 
   <div class="field">
     <label for="newscontent_content">Titel</label>
-    <textarea type="text" class="tinymce" rows="40" cols="120" name="newscontent[content]" id="newscontent_content" ></textarea>
+    <textarea type="text" class="tinymce" rows="40" cols="60" name="newscontent[content]" id="newscontent_content" ></textarea>
   </div>
-  <!--
-    <div class="field">
-      <#%= f.label :to %>
-      <#%= f.text_field :to %>
-    </div>
-
-    <div class="field">
-    </div> -->
 
   <div class="field">
     <label for="newscontent_sendtime">Newsletter Kopfbereich</label>
     <input size="16" type="text" name="newscontent[sendtime]" id="newscontent_sendtime" readonly class="form_datetime">
 
-<!--
-    <input date-picker id="date" class="form-control date-picker" type="text" name="newscontent[sendtime]" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today}'/>
--->
+  </div>
+
+  <div class="form-group field">
+    <label for="newscontent_newsletter_id">Newsletter Layout</label>
+
+    <select class="form-group" name="newscontent[newsletter_id]" id="newscontent_newsletter_id">
+      <% @newsletters.each do |newsletter| %>
+          <option value="<%= newsletter.id %>"><%= newsletter.from %></option>
+      <% end %>
+    </select>
+
   </div>
 
   <div class="actions">
