@@ -180,7 +180,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         json.push(newPerson);
         json.push(articles);
         newPerson.articles = articles;
-        Cart.create(newPerson);
+        Cart.cards.save(newPerson);
 
         $scope.newPerson = {};
         Cart.clearItem();
