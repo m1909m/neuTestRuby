@@ -28,6 +28,7 @@ class NewsContentsController < ApplicationController
   # POST /newsletters.json
   def create
     @news_content = NewsContent.new(news_content_params)
+    pull(@news_content)
 
     respond_to do |format|
       if @news_content.save
