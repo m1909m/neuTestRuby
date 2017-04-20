@@ -34,7 +34,7 @@
         <td><% if newscontent.send %> Versendet <% else %> Nicht versendet <% end %></td>
         <td><%= link_to 'Anzeigen', newscontent %></td>
         <td><%= link_to 'Bearbeiten', edit_newscontent_path(newscontent) %></td>
-        <td><%= link_to 'Löschen', newscontent, method: :delete, data: { confirm: 'Sind sie sichsicher?' } %></td>
+        <td><%= link_to 'Löschen', newscontent, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
       </tr>
     <% end %>
   </tbody>

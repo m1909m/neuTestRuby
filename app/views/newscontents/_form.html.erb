@@ -23,11 +23,13 @@
     <%#= f.text_field :type %>
   </div> -->
 
-  <div class="form-group field">
-    <%= f.label :content, "Newsletter inhalt:" %>
-    <%= f.text_area :content %>
-  </div>
 
+<!--
+  <div class="form-group field">
+    < %= f.label :content, "Newsletter inhalt:" %>
+    < %= f.text_area :content %>
+  </div>
+-->
   <div class="form-group field">
     <%= f.label :sendtime, "Sende Datum" %>
     <%= f.input :sendtime, :class => "date-picker" %>
@@ -49,4 +51,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-<%= tinymce %>
