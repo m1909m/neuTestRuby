@@ -30,6 +30,8 @@ class NewsContentsController < ApplicationController
     @news_content = NewsContent.new(news_content_params)
     puts(@news_content)
 
+    @news_content.send = false
+
     respond_to do |format|
       if @news_content.save
         format.html { redirect_to action: "index" }
