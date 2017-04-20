@@ -33,16 +33,16 @@
   <div class="field">
     <label for="newscontent_sendtime">Newsletter Kopfbereich</label>
     <input size="16" type="text" name="newscontent[sendtime]" id="newscontent_sendtime" readonly class="form_datetime">
-
-    <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-    </script>
   </div>
 
   <div class="actions">
     <input type="submit" name="commit" value="Newsletter erstellen" data-disable-with="Newsletter erstellen" />
   </div>
-</form><script>
+</form>
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+      });
     //<![CDATA[
     (function() {
         function initTinyMCE() {
