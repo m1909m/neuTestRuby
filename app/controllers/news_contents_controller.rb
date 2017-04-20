@@ -27,6 +27,8 @@ class NewsContentsController < ApplicationController
   # POST /newsletters
   # POST /newsletters.json
   def create
+    puts(news_content_params)
+    puts("Title" + news_content_params[:title])
     @news_content = NewsContent.new(news_content_params)
     puts(@news_content)
 
