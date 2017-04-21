@@ -106,9 +106,9 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', '$http
 
     /* event sources array*/
     $interval(function () {
-        $scope.eventSources = [Room.events.index({"roomid": $stateParams.id})];
+        $scope.events = Room.events.index({"roomid": $stateParams.id});
     }, 60000);
-
+    $scope.eventSources = [$scope.events];
 }]);
 myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
 
