@@ -108,7 +108,7 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', '$http
     $interval(function () {
         $http({
             method: "GET",
-            url:"/c_event?roomid=" + $stateParams.id
+            url:"/c_events?roomid=" + $stateParams.id
         }).then( function (response) {
             $scope.events = response.data;
         }, function error(response) {
