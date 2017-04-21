@@ -70,38 +70,11 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', '$http', '$interval', function($
         $scope.newRoom = {};
     };
 
-    $scope.showEventCal = function($id) {
-        $scope.events = [];
-       // $scope.events = Room.events.index([{'id': $id}]);
-        $scope.events = Room.events.index({"roomid": $id});
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
-        var currentView = "month";
 
-        /* config object */
-        $scope.uiConfig = {
-            calendar:{
-                height: 500,
-                editable: true,
-                selectable: true,
-                selectHelper: true,
-                header:{
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                }
-            }
-        };
-
-        /* event sources array*/
-        $scope.eventSources = [$scope.events];
-    };
 
 }]);
 
-myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
+myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', '$http', '$interval', function($scope, $stateParams, Room, $http, $interval) {
     $scope.roomId = $stateParams.id;
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $stateParams.id});
@@ -130,9 +103,12 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', functi
     $scope.uiConfig.calendar.dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
     $scope.uiConfig.calendar.dayNamesShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
     $scope.uiConfig.calendar.monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November",  "Dezember"];
-    
+
     /* event sources array*/
-    $scope.eventSources = [Room.events.index({"roomid": $stateParams.id})];
+    $interval(function () {
+        $scope.eventSources = [Room.events.index({"roomid": $stateParams.id})];
+    }, 60000);
+
 }]);
 myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
 
