@@ -86,9 +86,7 @@ myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', '$http
 
     /* config object */
     $scope.uiConfig = {
-        locale: 'de',
         calendar:{
-            locale: 'de',
             height: 550,
             editable: true,
             selectable: true,
