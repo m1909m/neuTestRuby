@@ -1,5 +1,7 @@
 //<![CDATA[
+(function() {
 
+            tinymce.remove();
             tinymce.init({
                 language: "de",
                 selector: ".tinymce",
@@ -22,5 +24,6 @@
                 ]
             });
 
+})();
 
 //]]>
