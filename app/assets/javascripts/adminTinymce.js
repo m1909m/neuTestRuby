@@ -1,6 +1,6 @@
 //<![CDATA[
 (function() {
-
+        if (typeof tinyMCE != 'undefined') {
             tinymce.remove();
             tinymce.init({
                 language: "de",
@@ -24,6 +24,9 @@
                 ]
             });
 
+        } else {
+            setTimeout(initTinyMCE, 50);
+        }
 })();
 
 //]]>
