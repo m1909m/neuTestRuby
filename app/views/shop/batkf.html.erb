@@ -60,7 +60,7 @@
         <tr ng-repeat="article in articles">
           <td>{{article.title}}</td>
           <td>{{article.price | currency: '€'}}</td>
-          <td><input type="number" class="form-control bfh-number" min="0" ng-model="article.anzahl" /></td>
+          <td><input type="number" class="form-control bfh-number" data-min="0" ng-model="article.anzahl" /></td>
         </tr>
         <tr>
           <td></td>
