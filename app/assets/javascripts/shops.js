@@ -196,6 +196,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
 
         if(Cart.getItemsWaren() != null) {
             $scope.cart = Cart.getItemsWaren();
+            $scope.sum = 0;
             for(var i = 0;i < $scope.cart.length; i++) {
                 $scope.sum += $scope.cart[i].sum;
             }
