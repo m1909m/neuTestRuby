@@ -166,6 +166,7 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 }]);
 
 shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart) {
+    $scope.sum = 0;
 
     if(Cart.getItemsWaren() != null) {
         $scope.cart = Cart.getItemsWaren();
