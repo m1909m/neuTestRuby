@@ -93,7 +93,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
     //  $scope.cart = Cart.getItems();
     $scope.addArticle = function(articles) {
         var sessionarticle = Cart.getItemsWaren();
-        if(sessionarticle.length > 0) {
+        if(sessionarticle != null && sessionarticle.length > 0) {
             for(var i = 0; i < sessionarticle.length; i++) {
                 for(var j = 0; j < articles.length; j++) {
                     if(sessionarticle[i].id == articles[j].id) {
