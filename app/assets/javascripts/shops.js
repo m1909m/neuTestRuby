@@ -100,7 +100,9 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
                         sessionarticle[i].anzahl = sessionarticle[i].anzahl + articles[j].anzahl;
                         sessionarticle[i].sum = sessionarticle[i].anzahl * sessionarticle[i].price;
                     } else {
-                        $window.alert("Bitte keine negativen Bestellungen!");
+                        if(sessionarticle[i].id == articles[j].id && articles[j].anzahl < 0) {
+                            $window.alert("Bitte keine negativen Bestellungen!");
+                        }
                     }
                 }
             }
@@ -114,7 +116,9 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
                     articles[i].sum = articles[i].price * articles[i].anzahl;
                     Cart.addItems(articles[i]);
                 } else {
-                    $window.alert("Bitte keine negativen Bestellungen!");
+                    if(articles[i].anzahl < 0 ) {
+                        $window.alert("Bitte keine negativen Bestellungen!");
+                    }
                 }
             }
         }
