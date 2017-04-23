@@ -96,7 +96,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
         if(sessionarticle != null && sessionarticle.length > 0) {
             for(var i = 0; i < sessionarticle.length; i++) {
                 for(var j = 0; j < articles.length; j++) {
-                    if(sessionarticle[i].id == articles[j].id) {
+                    if(sessionarticle[i].id == articles[j].id && articles[j].anzahl > 0 && articles[j].anzahl != null) {
                         sessionarticle[i].anzahl = sessionarticle[i].anzahl + articles[j].anzahl;
                         sessionarticle[i].sum = sessionarticle[i].anzahl * sessionarticle[i].price;
                     }
@@ -108,8 +108,10 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
             }
         } else {
             for(var i = 0; i < articles.length; i++) {
-                articles[i].sum = articles[i].price * articles[i].anzahl;
-                Cart.addItems(articles[i]);
+                if(articles[i].anzahl > 0 && articles[i].anzahl != null) {
+                    articles[i].sum = articles[i].price * articles[i].anzahl;
+                    Cart.addItems(articles[i]);
+                }
             }
         }
         $scope.articles = Cart.cards.index({"site": "batkf"});
@@ -149,7 +151,11 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
         Cart.clearItem();
         for(var i = 0; i < articles.length; i++) {
             if(articles[i].id == article.id) {
-
+                if(articles[i].anzahl > 1) {
+                    articles[i].anzahl = articles[i].anzahl - 1;
+                    articles[i].sum = articles[i].sum - articles[i].price;
+                    Cart.addItems(articles[i]);
+                }
             } else {
                 Cart.addItems(articles[i]);
             }
