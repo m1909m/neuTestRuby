@@ -1,8 +1,9 @@
-<% if current_user.present? %>
+<% # if current_user.present? %>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Aktuelles</h1>
     <p id="notice"><%= notice %></p>
-
-<h1>Aktuelles</h1>
-
+  </div>
   <% @color = true %>
     <% @news.each do |news|
         if(@color == true)
@@ -30,12 +31,4 @@
         <% end %>
 
     <% end %>
-
-<br>
-
-<div class="col-sm-12">
-
 </div>
-<% else %>
-    <ul><li><%= link_to 'Bitte Anmelden', new_user_session_path %></li></ul>
-<% end %>
