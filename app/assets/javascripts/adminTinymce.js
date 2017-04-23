@@ -1,8 +1,5 @@
 //<![CDATA[
-(function() {
-    function initTinyMCE() {
-        if (typeof tinyMCE != 'undefined') {
-            tinymce.remove();
+
             tinymce.init({
                 language: "de",
                 selector: ".tinymce",
@@ -25,10 +22,5 @@
                 ]
             });
 
-        } else {
-            setTimeout(initTinyMCE, 50);
-        }
-    }
 
-    initTinyMCE();
-})();
+//]]>
