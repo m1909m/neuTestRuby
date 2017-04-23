@@ -19,16 +19,16 @@
 
   <%= form_for(@contact_form) do |f| %>
       <div class="form-group">
-        <%= f.label :name, "Name", input_html: { class: "control-label" } %>
-        <%= f.text_field :name, input_html: { class: "form-control" } %>
+        <%= f.label :name, "Name", class: "control-label" %>
+        <%= f.text_field :name, class: "form-control" %>
       </div>
         <div class="form-group">
-          <%= f.label :name, "Email Adresse", input_html: { class: "control-label" } %>
-          <%= f.text_field :email, input_html: { class: "form-control" } %>
+          <%= f.label :name, "Email Adresse", class: "control-label" %>
+          <%= f.text_field :email, class: "form-control" %>
         </div>
           <div class="form-group">
-            <%= f.label :name, "Nachricht", input_html: { class: "control-label" } %>
-            <%= f.text_area :message, input_html: { class: "form-control" }%>
+            <%= f.label :name, "Nachricht", class: "control-label" %>
+            <%= f.text_area :message, class: "form-control" %>
           </div>
       <%= f.submit "Absenden"%>
   <% end %>
