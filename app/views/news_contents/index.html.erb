@@ -11,7 +11,7 @@
 
   <% if current_user.present? %>
       <div class="list-group">
-        <a href="/newsletters/new" class="list-group-item">Neues Layout erstellen</a>
+        <a href="/newsletters/new" class="list-group-item" target="_self">Neues Layout erstellen</a>
       </div>
       </div>
       <h3>Newsletter Archiv</h3>
@@ -44,7 +44,7 @@
 
       <br>
 
-      <%= link_to 'Neuer Newsletter erstellen', new_news_content_path %>
+      <%= link_to 'Neuer Newsletter erstellen', new_news_content_path, target: "_self" %>
 
   <% else %>
       <%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newscontent_path %>
