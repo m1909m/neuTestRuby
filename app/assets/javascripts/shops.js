@@ -91,9 +91,27 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
 
     //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
     //  $scope.cart = Cart.getItems();
-    $scope.addArticle = function(article) {
-        article.price = article.price * article.anzahl;
-        Cart.addItems(article);
+    $scope.addArticle = function(articles) {
+        var sessionarticle = Cart.getItemsWaren();
+        if(sessionarticle.length > 0) {
+            for(var i = 0; i < sessionarticle.length; i++) {
+                for(var j = 0; j < articles.length; j++) {
+                    if(sessionarticle[i].id == articles[j].id) {
+                        sessionarticle[i].anzahl = sessionarticle[i].anzahl + articles[j].anzahl;
+                        sessionarticle[i].sum = sessionarticle[i].anzahl * sessionarticle[i].price;
+                    }
+                }
+            }
+            Cart.clearItem();
+            for(var i = 0; i < sessionarticle.length; i++) {
+                Cart.addItems(sessionarticle[i]);
+            }
+        } else {
+            for(var i = 0; i < articles.length; i++) {
+                articles[i].sum = articles[i].price * articles[i].anzahl;
+                Cart.addItems(articles[i]);
+            }
+        }
         $scope.articles = Cart.cards.index({"site": "batkf"});
     };
     /*
@@ -117,7 +135,7 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 
     $scope.card = [];
 
-    $scope.card = Cart.getItemsWaren;
+    $scope.card = Cart.getItemsWaren();
     /*
      this.getCard = function() {
      this.card.push(Cart.getLastItem());
@@ -127,7 +145,7 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 
     this.removeArticle = function(article) {
         var items = [];
-        var articles = Cart.getItems();
+        var articles = Cart.getItemsWaren();
         Cart.clearItem();
         for(var i = 0; i < articles.length; i++) {
             if(articles[i].id == article.id) {

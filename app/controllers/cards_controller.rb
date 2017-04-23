@@ -69,7 +69,7 @@ class CardsController < ApplicationController
     card_params[:articles].each do |a|
     #  puts(a[:id])
       @article = Article.find(a[:id])
-      @sum += @article.price
+      @sum += @article.sum
     #  puts(@article)
       @card.articles << @article
 
@@ -114,6 +114,6 @@ class CardsController < ApplicationController
   end
 
   def article_params
-    params[:card].require(:articles).permit(:id, :name, :price)
+    params[:card].require(:articles).permit(:id, :name, :price, :sum)
   end
 end

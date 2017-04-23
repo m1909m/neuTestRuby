@@ -48,23 +48,28 @@
 </div>
 <div class="col-xs-12 col-sm-6">
   <div ng-controller="shopController" >
-<table class="table" data-ng-init="init()">
-  <thead>
-    <tr>
-      <th>Artikel</th>
-      <th>Preis</th>
-<!--      <th>Noch verfügbar</th> -->
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="article in articles">
-      <td>{{article.title}}</td>
-      <td>{{article.price | currency: '€'}}</td>
-      <td><input type="number" ng-model="article.anzahl" /></td>
-      <td><a href class="btn btn-default btn-sm" ng-click="addArticle(article)">In den Warenkorb</a></td>
-    </tr>
-  </tbody>
-  </table>
+    <table class="table" data-ng-init="init()">
+      <thead>
+        <tr>
+          <th>Artikel</th>
+          <th>Preis</th>
+    <!--      <th>Noch verfügbar</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="article in articles">
+          <td>{{article.title}}</td>
+          <td>{{article.price | currency: '€'}}</td>
+          <td><input type="number" ng-model="article.anzahl" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href class="btn btn-default btn-sm" ng-click="addArticle(articles)">In den Warenkorb</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 <script>
