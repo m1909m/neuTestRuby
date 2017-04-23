@@ -1,5 +1,6 @@
 //<![CDATA[
 (function() {
+    function initTinyMCE() {
         if (typeof tinyMCE != 'undefined') {
             tinymce.remove();
             tinymce.init({
@@ -27,6 +28,9 @@
         } else {
             setTimeout(initTinyMCE, 50);
         }
+    }
+
+    initTinyMCE();
 })();
 
 //]]>
