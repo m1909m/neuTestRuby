@@ -145,7 +145,7 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 
     //  $scope.cart = Cart.getItems();
 
-    this.removeArticle = function(article) {
+    $scope.removeArticle = function(article) {
         var items = [];
         var articles = Cart.getItemsWaren();
         Cart.clearItem();
@@ -167,12 +167,14 @@ shopApp.controller('cartController', ['$scope', 'Cart', function($scope, Cart) {
 
 shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart) {
 
-    $scope.cart = {};
-    $scope.sum = 0;
-    $scope.cart = Cart.getItemsWaren();
-
-    for(var i = 0;i < $scope.cart.length; i++) {
-        $scope.sum += $scope.cart[i].price;
+    if(Cart.getItemsWaren() != null) {
+        $scope.cart = Cart.getItemsWaren();
+        for(var i = 0;i < $scope.cart.length; i++) {
+            $scope.sum += $scope.cart[i].sum;
+        }
+    } else {
+        $scope.cart = {};
+        $scope.sum = 0;
     }
 
     $scope.removeArticle = function(article) {
@@ -181,17 +183,26 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         Cart.clearItem();
         for(var i = 0; i < articles.length; i++) {
             if(articles[i].id == article.id) {
-
+                if(articles[i].anzahl > 1) {
+                    articles[i].anzahl = articles[i].anzahl - 1;
+                    articles[i].sum = articles[i].sum - articles[i].price;
+                    Cart.addItems(articles[i]);
+                }
             } else {
                 Cart.addItems(articles[i]);
             }
         }
-        $scope.sum = 0;
-        $scope.cart = Cart.getItemsWaren();
 
-        for(var i = 0;i < $scope.cart.length; i++) {
-            $scope.sum += $scope.cart[i].price;
+        if(Cart.getItemsWaren() != null) {
+            $scope.cart = Cart.getItemsWaren();
+            for(var i = 0;i < $scope.cart.length; i++) {
+                $scope.sum += $scope.cart[i].sum;
+            }
+        } else {
+            $scope.cart = {};
+            $scope.sum = 0;
         }
+
     };
 
     $scope.addCard = function() {
