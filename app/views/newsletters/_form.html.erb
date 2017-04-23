@@ -13,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :from, "Titel"  %>
-    <%= f.text_field :from %>
+    <%= f.label :from, "Titel", :class => "control-label"  %>
+    <%= f.text_field :from, :class => "form-control" %>
   </div>
 <!--
   <div class="field">
@@ -28,18 +28,18 @@
   </div> -->
 
   <div class="field">
-    <%= f.label :newsHeader, "Newsletter Kopfbereich" %>
-    <%= f.text_area :newsHeader, :class => "tinymce", :rows => 40, :cols => 120 %>
+    <%= f.label :newsHeader, "Newsletter Kopfbereich", :class => "control-label" %>
+    <%= f.text_area :newsHeader, :class => "tinymce", :rows => 40 %>
   </div>
 
   <div class="field">
-    <%= f.label :newsBody, "Newsletter Contentbereich" %>
-    <%= f.text_area :newsBody, :class => "tinymce", :rows => 40, :cols => 120 %>
+    <%= f.label :newsBody, "Newsletter Contentbereich", :class => "control-label" %>
+    <%= f.text_area :newsBody, :class => "tinymce", :rows => 40 %>
   </div>
 
   <div class="field">
-    <%= f.label :newsFooter, "Newsletter Footerbereich" %>
-    <%= f.text_area :newsFooter, :class => "tinymce", :rows => 40, :cols => 120 %>
+    <%= f.label :newsFooter, "Newsletter Footerbereich", :class => "control-label" %>
+    <%= f.text_area :newsFooter, :class => "tinymce", :rows => 40 %>
   </div>
 
     <!--
