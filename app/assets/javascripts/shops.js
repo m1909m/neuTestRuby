@@ -70,7 +70,7 @@ shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.card = [];
 }]);
 
-shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
+shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($scope, Cart, $window) {
     /*
      $scope.articles = [
      {"id": "1", "name": "Pizza Vegetaria", "price": 5 },
@@ -99,6 +99,8 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
                     if(sessionarticle[i].id == articles[j].id && articles[j].anzahl > 0 && articles[j].anzahl != null) {
                         sessionarticle[i].anzahl = sessionarticle[i].anzahl + articles[j].anzahl;
                         sessionarticle[i].sum = sessionarticle[i].anzahl * sessionarticle[i].price;
+                    } else {
+                        $window.alert("Bitte keine negativen Bestellungen!");
                     }
                 }
             }
@@ -111,6 +113,8 @@ shopApp.controller('shopController', ['$scope', 'Cart', function($scope, Cart) {
                 if(articles[i].anzahl > 0 && articles[i].anzahl != null) {
                     articles[i].sum = articles[i].price * articles[i].anzahl;
                     Cart.addItems(articles[i]);
+                } else {
+                    $window.alert("Bitte keine negativen Bestellungen!");
                 }
             }
         }
