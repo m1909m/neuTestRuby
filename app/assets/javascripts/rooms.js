@@ -3,7 +3,7 @@
  * 'daterangepicker'
  */
 'use strict';
-var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngResource', 'ui.calendar' ]);
+var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngStorage', 'ngResource', 'ui.calendar' ]);
 
 
 
