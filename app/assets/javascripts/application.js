@@ -22,7 +22,7 @@
 //= require a0-angular-storage
 //= require angular-ui-router
 //= require angular-resource
-// require angular-bootstrap
+//= require angular-bootstrap
 //= require angular-route
 //= require angular-ui-calendar
 //= require ng-module
