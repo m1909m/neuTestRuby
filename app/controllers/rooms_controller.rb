@@ -67,7 +67,7 @@ class RoomsController < ApplicationController
     @event.end = date[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
     @event.minSize = event_params[:minSize]
     @event.save
-    redirect_to :action => calendar, :id => @event.room_id
+    redirect_to :action => "calendar", :id => @event.room_id
   end
 
   def destroy
