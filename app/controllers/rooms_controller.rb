@@ -54,8 +54,12 @@ class RoomsController < ApplicationController
 
   def update
     @event.title = params[:title]
-    @event.dateL = params[:dateL]
-    @event.date = params[:date]
+    @dateL = params[:dateL]
+    @event.startLogin = @dateL.startDate
+    @event.endLogin = @dateL.endDate
+    @date = params[:date]
+    @event.start = @date.startDate
+    @event.end = @date.endDate
     @event.minSize = params[:minSize]
     @event.update
     @id = params[:id]
