@@ -79,7 +79,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
     $scope.eventClickEdit = function(date, jsEvent, view) {
-        $window.open('administrator/rooms/event/' + date.id, '_self')
+        $window.open('event/' + date.id, '_self')
     };
     var date = new Date();
     var d = date.getDate();
