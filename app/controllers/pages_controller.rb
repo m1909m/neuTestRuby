@@ -45,7 +45,7 @@ class PagesController < ApplicationController
     @page = Page.where(for: params[:site]).order(:id).last
   end
   def page_params
-    params.require(:page).permit(:content, :for, :free)
+    params.require(:page_content).permit(:content, :for, :free)
   end
 end
 
