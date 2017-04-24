@@ -31,10 +31,18 @@ class ArticlesController < ApplicationController
     # TODO Tests
    # @c_event.userMail = current_user.email
     @article.save
+    respond_to do |format|
+      format.html { redirect_to articles_url, notice: 'Artikel wurde erfolgreich erstellt.' }
+      format.json { head :no_content }
+    end
   end
 
   def update
     @article.update(article_params)
+    respond_to do |format|
+      format.html { redirect_to articles_url, notice: 'Artikel wurde erfolgreich gespeichert.' }
+      format.json { head :no_content }
+    end
   end
 
   def destroy
