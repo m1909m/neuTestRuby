@@ -47,6 +47,7 @@ Rails.application.routes.draw do
 
   get 'warenkorb/', to: "cards#booking"
   resources :cards, only: [:index, :new, :create, :show, :destroy], defaults: {format: :json}
+  resources :articles
 
 
   root :to => "news#index"

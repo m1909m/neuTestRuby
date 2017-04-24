@@ -3,16 +3,16 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    #  @events = CEvent.where(start: params[:start]..params[:end])
-    #@c_events = CEvent.all
-    respond_to do |format|
-#      format.json { render json: CEvent.where(room_id: params[:roomid])}
+    @articles = Article.where(site: "batkf")
+    respond_to do |f|
+      f.html
     end
   end
 
 
   def show
     respond_to do |format|
+      format.html
  #     format.json { render json: Member.where( event_id: params[:id]) }
     end
   end
@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.site = "batkf"
     # TODO Tests
    # @c_event.userMail = current_user.email
     @article.save
@@ -39,6 +40,7 @@ class ArticlesController < ApplicationController
     @article.destroy
   end
 
+
   private
 
   def set_article
@@ -48,6 +50,6 @@ class ArticlesController < ApplicationController
 
 
   def article_params
-    params.require(:article).permit(:title, :price, :count, :site)
+    params.require(:article).permit(:title, :price, :count)
   end
 end

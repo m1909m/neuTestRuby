@@ -1,0 +1,48 @@
+<div class="col-xs-12">
+  <h1>Neuer Artikel</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_BAT-KF.jpg", :alt => "artikelliste", :class => "img-responsive center-block") %>
+
+</div>
+
+<p id="notice"><%= notice %></p>
+<div class="col-xs-12">
+
+  <% if current_user.present? %>
+      <form class="new_article" id="new_article" action="/articles" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XyPpaKiBx1NrFvhgzEvpJ0NI8TYObumPd89s98d/bl9y+ikAaYfFpfyHPHAIyzDC5PjK1rrm99ILqfK9+eUh8A==" />
+
+        <div class="form-group row">
+          <label for="articles_title" class="col-sm-2 control-label">Artikel Beschreibung</label>
+          <div class="col-sm-10">
+            <input type="text" name="articles[title]" id="articles_title" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="articles_price" class="col-sm-2 control-label">Preis</label>
+          <div class="col-sm-10">
+            <input type="text" name="articles[price]" id="articles_price" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="articles_count" class="col-sm-2 control-label">Anzahl</label>
+          <div class="col-sm-10">
+            <input type="text" name="articles[count]" id="articles_count" class="form-control" />
+          </div>
+        </div>
+
+
+        <div class="actions">
+          <input type="submit" name="commit" value="Artikel erstellen" data-disable-with="Artikel erstellen" />
+        </div>
+      </form>
+
+
+  <% else %>
+      <%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newscontent_path %>
+  <% end %>
+
+
+</div>
