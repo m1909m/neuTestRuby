@@ -56,12 +56,12 @@ class RoomsController < ApplicationController
     @event.title = event_params[:title]
     dateL = event_params[:dateL].split(' - ')
     puts(dateL)
-    @event.startLogin = dateL[0].strftime("%Y-%m-%d %k:%M:%S")
+    @event.startLogin = dateL[0].to_time.strftime("%Y-%m-%d %k:%M:%S")
 
-    @event.endLogin = dateL[1].strftime("%Y-%m-%d %k:%M:%S")
-    date = event_params[:date].split('-')
-    @event.start = date[0].strftime("%Y-%m-%d %k:%M:%S")
-    @event.end = date[1].strftime("%Y-%m-%d %k:%M:%S")
+    @event.endLogin = dateL[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    date = event_params[:date].split(' - ')
+    @event.start = date[0].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @event.end = date[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
     @event.minSize = event_params[:minSize]
     @event.save
     @id = params[:id]
