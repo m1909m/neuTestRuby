@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
   end
 
   def calendar
+    @id = params[:id]
     render 'rooms/calendar'
   end
 
