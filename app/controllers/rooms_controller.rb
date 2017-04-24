@@ -15,6 +15,14 @@ class RoomsController < ApplicationController
     render 'rooms/calendar'
   end
 
+  def angularNew
+    render 'rooms/new'
+  end
+
+  def showMembers
+    render 'rooms/event'
+  end
+
   # GET /rooms
   # GET /rooms.json
   def index

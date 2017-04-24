@@ -9,7 +9,7 @@
     <div ng-show="!rooms.length">Keine Räume vorhanden</div>
     <div ng-repeat="room in rooms" style="margin: 5px;">
       <div class="list-group">
-        <a href="#/{{room.id}}" ng-click="" class="list-group-item"><table><tr><td><b>Raumnummer: </b>{{room.number}}</td><td><b>Seminarteilnehmer: </b>{{room.size}}</td><td><b>{{room.building}}</b></td></tr></table></a>
+        <a href="/{{room.id}}" ng-click="" class="list-group-item"><table><tr><td><b>Raumnummer: </b>{{room.number}}</td><td><b>Seminarteilnehmer: </b>{{room.size}}</td><td><b>{{room.building}}</b></td></tr></table></a>
       </div>
 
     </div>
@@ -17,7 +17,7 @@
     <div ng-show="!myEvents.length">Sie haben noch keine Veranstaltungen erstellt</div>
     <div ng-repeat="myEvent in myEvents" style="margin: 5px;">
       <div cllass="ist-group">
-        <a href="#/event/members/{{myEvent.id}}" ng-click="" class="list-group-item"><table><tr><td>{{ myEvent.title }}</td><td>Aktuelle Teilnehmer: <b>{{ myEvent.member }}</b></td></tr></table></a>
+        <a href="/event/members/{{myEvent.id}}" ng-click="" class="list-group-item"><table><tr><td>{{ myEvent.title }}</td><td>Aktuelle Teilnehmer: <b>{{ myEvent.member }}</b></td></tr></table></a>
       </div>
     </div>
   </div>

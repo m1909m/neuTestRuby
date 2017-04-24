@@ -118,10 +118,11 @@ myApp.controller('calendarController', ['$scope', '$location', '$stateParams', '
     $scope.eventSources = [$scope.events];
 
 }]);
-myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function($scope, $stateParams, Room) {
+myApp.controller('eventController', ['$scope', '$location', '$stateParams', 'Room', function($scope, $location, $stateParams, Room) {
 
     $scope.events = [];
-    $scope.events = Room.events.index({"roomid": $stateParams.id});
+    var id = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
+    $scope.events = Room.events.index({"roomid": id});
 
     $scope.addEvent = function() {
         var newEvent;
@@ -142,12 +143,13 @@ myApp.controller('eventController', ['$scope', '$stateParams', 'Room', function(
 
     }
 }]);
-myApp.controller('myEventController', ['$scope', '$stateParams', 'Room', '$http', '$interval', function($scope, $stateParams, Room, $http, $interval) {
+myApp.controller('myEventController', ['$scope', '$location', '$stateParams', 'Room', '$http', '$interval', function($scope, $location, $stateParams, Room, $http, $interval) {
 
     $scope.members = [];
-    $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
+    var id = (/administrator\/rooms\/event\/members\/(\d+)/.exec($location.absUrl())[1]);
+    $scope.members = Room.membersByEvent.index({"id": id});
     $interval(function(){
-        $scope.members = Room.membersByEvent.index({"id": $stateParams.id});
+        $scope.members = Room.membersByEvent.index({"id": id});
     }, 60000);
 
     $scope.abmelden= function(member) {
