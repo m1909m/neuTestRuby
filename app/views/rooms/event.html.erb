@@ -1,23 +1,24 @@
 <div ng-app="roomsContainer">
-<div ng-controller="myEventController">
-    <h1>AngemeldeteTeilnehmer</h1>
-    <div ng-show="!members.length">Keine Räume vorhanden</div>
-    <div ng-repeat="member in members" style="margin: 5px;">
-        <div class="list-group">
-            <div class="list-group-item">
-                <table>
-                    <tr>
-                        <td>{{member.lastName}}</td>
-                        <td>{{member.firstName}}</td>
-                        <td><b>{{member.accept ? 'Angemeldet' : 'Abgemeldet' }}</b></td>
-                        <td><button class="btn" ng-show="member.accept" ng-click="abmelden(member)">Abmelden</button></td>
-                    </tr>
-                </table></div>
-        </div>
+  <div ng-controller="myEventController">
+      <h1>Angemeldete Teilnehmer</h1>
+      <div ng-show="!members.length">Keine Räume vorhanden</div>
+      <div ng-repeat="member in members" style="margin: 5px;">
+          <div class="list-group">
+              <div class="list-group-item">
+                  <table>
+                      <tr>
+                          <td>{{member.lastName}}</td>
+                          <td>{{member.firstName}}</td>
+                          <td><b>{{member.accept ? 'Angemeldet' : 'Abgemeldet' }}</b></td>
+                          <td><button class="btn" ng-show="member.accept" ng-click="abmelden(member)">Abmelden</button></td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
 
-    </div>
+      </div>
 
-</div>
+  </div>
 
 
 

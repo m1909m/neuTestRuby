@@ -20,6 +20,7 @@ class NewsContentsController < ApplicationController
 
   # GET /newsletters/1/edit
   def edit
+    @id = params[:id]
     @news_content = NewsContent.find(params[:id])
     @newsletters = Newsletter.all
   end

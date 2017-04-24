@@ -1,0 +1,43 @@
+<div class="col-xs-12">
+  <h1>Veranstaltung bearbeiten</h1>
+</div>
+<div class="col-xs-12">
+<form class="new_event" id="new_event" action="/administrator/rooms/event/<%= @id %>" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XyPpaKiBx1NrFvhgzEvpJ0NI8TYObumPd89s98d/bl9y+ikAaYfFpfyHPHAIyzDC5PjK1rrm99ILqfK9+eUh8A==" />
+
+
+    <div class="form-group">
+    <label for="title">Titel</label>
+    <input id="title" type="text" value="<%= @event.title %>" name="event[title]" class="form-control" placeholder="Titel" require/>
+  </div>
+  <div class="form-group">
+    <label for="description">Beschreibung</label>
+    <textarea id="description" type="text" class="form-control" name="event[description]" placeholder="Beschreibung" ><%= @event.description %></textarea>
+  </div>
+
+
+  <div class="form-group">
+    <label for="dateL">Anmeldezeitraum</label>
+    <input date-range-picker id="dateL" class="form-control date-picker" type="text" value="<%= @event.dateL %>" name="event[dateL]" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Zeitraum</label>
+    <input date-range-picker id="date" class="form-control date-picker" type="text" value="<%= @event.date %>" name="event[date]" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+  </div>
+
+  <div class="form-group">
+    <label for="minSize">Mindest Anzahl an Mitgliedern</label>
+    <input id="minSize" type="number" value="<%= @event.minSize %>" class="form-control" name="event[minSize]" placeholder="Mindest Anzahl an Mitgliedern" />
+  </div>
+
+  <!--
+          <div class="form-group">
+              <label for="maxSize">Maximalanzahl an Mitgliedern</label>
+              <input id="maxSize" type="number" ng-model="newEvent.maxSize" class="form-control" placeholder="Maximalanzahl an Mitgliedern" value="{{room.size}}" disabled/>
+          </div> -->
+  <button type="submit" class="btn btn-default" >Speichern</button>
+
+
+</form>
+</div>

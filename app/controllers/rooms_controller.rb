@@ -2,7 +2,8 @@ class RoomsController < ApplicationController
 
   respond_to :json
 
-  before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :set_room, only: [:show, :destroy]
+  before_action :set_event, only: [:edit, :update]
 
   def angular
 
@@ -42,6 +43,8 @@ class RoomsController < ApplicationController
   end
 
   def edit
+
+    render 'rooms/edit'
   end
 
   def create
@@ -50,8 +53,13 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @room.update(room_params)
-
+    @event.title = params[:title]
+    @event.dateL = params[:dateL]
+    @event.date = params[:date]
+    @event.minSize = params[:minSize]
+    @event.update
+    @id = params[:id]
+    render 'rooms/index'
   end
 
   def destroy
@@ -63,6 +71,9 @@ class RoomsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
     def set_room
       @room = Room.find(params[:id])
+    end
+    def set_event
+      @event = CEvent.find(params[:id])
     end
     def room_params
       params.require(:room).permit(:number, :size, :building)

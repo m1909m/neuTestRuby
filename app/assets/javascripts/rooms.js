@@ -74,7 +74,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', '$http', '$interval', function($
 
 }]);
 
-myApp.controller('calendarController', ['$scope', '$location', '$stateParams', 'Room', '$http', '$interval', function($scope, $location, $stateParams, Room, $http, $interval) {
+myApp.controller('calendarController', ['$scope', '$location', '$window', '$stateParams', 'Room', '$http', '$interval', function($scope, $location, $window, $stateParams, Room, $http, $interval) {
     $scope.roomId = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
@@ -95,12 +95,16 @@ myApp.controller('calendarController', ['$scope', '$location', '$stateParams', '
                 left: 'prev,next today',
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
-            }
+            },
+            eventClick: $scope.eventClick
         }
     };
     $scope.uiConfig.calendar.dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
     $scope.uiConfig.calendar.dayNamesShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
     $scope.uiConfig.calendar.monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November",  "Dezember"];
+    $scope.eventClick = function(date, jsEvent, view) {
+        $window.open('administrator/rooms/event/' + date.id, '_self')
+    };
 
     /* event sources array*/
     $interval(function () {
@@ -142,6 +146,7 @@ myApp.controller('eventController', ['$scope', '$location', '$stateParams', 'Roo
         $scope.datePicker.date = {};
 
     }
+
 }]);
 myApp.controller('myEventController', ['$scope', '$location', '$stateParams', 'Room', '$http', '$interval', function($scope, $location, $stateParams, Room, $http, $interval) {
 
