@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pages
 
   resources :news
   get '/admin/news', to: "news#admin"
