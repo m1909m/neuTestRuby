@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_action :set_pages, only: [:index]
+  before_action :set_page, only: [:index, :update]
 
   # GET /rooms
   # GET /rooms.json
@@ -25,12 +25,12 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Room.new(room_params)
-    @room.save
+    @page = Page.new(page_params)
+    @page.save
   end
 
   def update
-    @page.update(room_params)
+    @page.update(page_params)
 
   end
 
@@ -41,10 +41,10 @@ class PagesController < ApplicationController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_pages
-    @pages = Page.where(for: params[:site])
+  def set_page
+    @page = Page.where(for: params[:site]).order(:id).last
   end
-  def room_params
+  def page_params
     params.require(:page).permit(:content, :for, :free)
   end
 end
