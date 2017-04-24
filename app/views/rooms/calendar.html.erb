@@ -2,7 +2,7 @@
 <div ng-app="roomsContainer">
     <div id="roomsContainerID" ng-controller="calendarController">
         <h1>Kalender</h1>
-        <a href="new" target="_self" type="button" class="btn btn-default btn-lg">Veranstaltung erstellen</a><br />
+        <a href="<%= @id %>/new" target="_self" type="button" class="btn btn-default btn-lg">Veranstaltung erstellen</a><br />
 
         <div class="calendar" ng-model="eventSources" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
     </div>
