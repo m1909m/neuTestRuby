@@ -54,9 +54,9 @@ class RoomsController < ApplicationController
 
   def update
     @event.title = params[:title]
-    
+
     @event.minSize = params[:minSize]
-    @event.update
+    @event.save
     @id = params[:id]
     render 'rooms/index'
   end
