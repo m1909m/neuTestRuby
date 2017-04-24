@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   root :to => "news#index"
 
   get 'administrator/rooms', to: "rooms#angular"
+  get 'administrator/rooms/:id', to: "rooms#calendar"
 
   #get '/rooms', to: "rooms#index"
   get '/fortbildung/seminare/neu/:id', to: "members#new"

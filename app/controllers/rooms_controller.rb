@@ -10,6 +10,10 @@ class RoomsController < ApplicationController
     render 'rooms/index'
   end
 
+  def calendar
+    render 'rooms/calendar'
+  end
+
   # GET /rooms
   # GET /rooms.json
   def index
