@@ -18,12 +18,12 @@
 
   <div class="form-group">
     <label for="dateL">Anmeldezeitraum</label>
-    <input id="dateL" class="form-control date-picker" type="text" name="event[dateL]" value="<%= @event.startLogin.strftime("DD-MM-YYYY HH:mm") %> - <%= @event.endLogin.strftime("DD-MM-YYYY HH:mm") %>"/>
+    <input id="dateL" class="form-control date-picker" type="text" name="event[dateL]" value="<%= @event.startLogin.strftime("%d-%m-%Y %k:%M") %> - <%= @event.endLogin.strftime("%d-%m-%Y %k:%M") %>"/>
   </div>
 
   <div class="form-group">
     <label for="date">Zeitraum</label>
-    <input date-range-picker id="date" class="form-control date-picker" type="text" name="event[date]" value="<%= @event.start.strftime("DD-MM-YYYY HH:mm") %> - <%= @event.end.strftime("DD-MM-YYYY HH:mm") %>"/>
+    <input date-range-picker id="date" class="form-control date-picker" type="text" name="event[date]" value="<%= @event.start.strftime("%d-%m-%Y %k:%M") %> - <%= @event.end.strftime("%d-%m-%Y %k:%M") %>"/>
   </div>
 
   <div class="form-group">
