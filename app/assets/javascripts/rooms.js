@@ -90,10 +90,8 @@ myApp.controller('calendarController', ['$scope', '$location', '$window', '$stat
     /* config object */
     $scope.uiConfig = {
         calendar:{
-            height: 550,
+            height: 560,
             editable: true,
-            selectable: true,
-            selectHelper: true,
             header:{
                 left: 'prev,next today',
                 center: 'title',
