@@ -2,7 +2,8 @@
   <h1>Veranstaltung bearbeiten</h1>
 </div>
 <div class="col-xs-12">
-<form class="new_event" id="new_event" action="/administrator/rooms/event/<%= @id %>" accept-charset="UTF-8" method="post">
+  <div ng-app="roomsContainer" >
+  <form class="new_event" id="new_event" action="/administrator/rooms/event/<%= @id %>" accept-charset="UTF-8" method="post">
   <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XyPpaKiBx1NrFvhgzEvpJ0NI8TYObumPd89s98d/bl9y+ikAaYfFpfyHPHAIyzDC5PjK1rrm99ILqfK9+eUh8A==" />
 
 
@@ -40,4 +41,5 @@
 
 
 </form>
+  </div>
 </div>
