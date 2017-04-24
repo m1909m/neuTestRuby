@@ -55,11 +55,11 @@ class RoomsController < ApplicationController
   def update
     @event.title = event_params[:title]
     dateL = event_params[:dateL].split('-')
-    @event.startLogin = dateL[0].strftime("%Y-%m-%d %k:%M:00")
-    @event.endLogin = dateL[1].strftime("%Y-%m-%d %k:%M:00")
+    @event.startLogin = dateL[0].strftime("%Y-%m-%d %k:%M:%S")
+    @event.endLogin = dateL[1].strftime("%Y-%m-%d %k:%M:%S")
     date = event_params[:date].split('-')
-    @event.start = date[0].strftime("%Y-%m-%d %k:%M:00")
-    @event.end = date[1].strftime("%Y-%m-%d %k:%M:00")
+    @event.start = date[0].strftime("%Y-%m-%d %k:%M:%S")
+    @event.end = date[1].strftime("%Y-%m-%d %k:%M:%S")
     @event.minSize = event_params[:minSize]
     @event.save
     @id = params[:id]
