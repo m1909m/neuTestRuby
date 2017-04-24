@@ -31,7 +31,7 @@
               <td>€ <%= article.price %></td>
               <td><%= article.count %></td>
               <td><%= link_to 'Anzeigen', article %></td>
-              <td><%= link_to 'Bearbeiten', edit_article_path(news) %></td>
+              <td><%= link_to 'Bearbeiten', edit_article_path(article) %></td>
               <td><%= link_to 'Löschen', article, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
             </tr>
         <% end %>
