@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   post 'administrator/rooms/event/:id', to:  "rooms#update"
   get 'administrator/rooms/event/members/:id', to: "rooms#showMembers"
   get 'administrator/rooms/event/:id', to: "rooms#edit"
+  delete 'event/:id', to: "rooms#deleteEvent"
 
   #get '/rooms', to: "rooms#index"
   get '/fortbildung/seminare/neu/:id', to: "members#new"

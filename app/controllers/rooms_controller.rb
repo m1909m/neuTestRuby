@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
   respond_to :json
 
   before_action :set_room, only: [:show, :destroy]
-  before_action :set_event, only: [:edit, :update]
+  before_action :set_event, only: [:edit, :update, :deleteEvent]
 
   def angular
 
@@ -73,6 +73,12 @@ class RoomsController < ApplicationController
   def destroy
     @room.destroy
 
+  end
+
+  def deleteEvent
+    @id = @event.room_id
+    @event.destroy
+    redirect_to :action => "calendar", :id => @id
   end
 
   private
