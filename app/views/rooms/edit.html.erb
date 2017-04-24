@@ -2,8 +2,6 @@
   <h1>Veranstaltung bearbeiten</h1>
 </div>
 <div class="col-xs-12">
-  <div ng-app="roomsContainer" >
-    <div ng-controller="eventController">
   <form class="new_event" id="new_event" action="/administrator/rooms/event/<%= @id %>" accept-charset="UTF-8" method="post">
   <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XyPpaKiBx1NrFvhgzEvpJ0NI8TYObumPd89s98d/bl9y+ikAaYfFpfyHPHAIyzDC5PjK1rrm99ILqfK9+eUh8A==" />
 
@@ -20,12 +18,12 @@
 
   <div class="form-group">
     <label for="dateL">Anmeldezeitraum</label>
-    <input id="dateL" class="form-control date-picker" type="text" name="event[dateL]" value="<%= @event.startLogin %> - <%= @event.endLogin %>"/>
+    <input id="dateL" class="form-control date-picker" type="text" name="event[dateL]" value="<%= @event.startLogin.strftime("DD-MM-YYYY HH:mm") %> - <%= @event.endLogin.strftime("DD-MM-YYYY HH:mm") %>"/>
   </div>
 
   <div class="form-group">
     <label for="date">Zeitraum</label>
-    <input date-range-picker id="date" class="form-control date-picker" type="text" name="event[date]" value="<%= @event.start %> - <%= @event.end %>"/>
+    <input date-range-picker id="date" class="form-control date-picker" type="text" name="event[date]" value="<%= @event.start.strftime("DD-MM-YYYY HH:mm") %> - <%= @event.end.strftime("DD-MM-YYYY HH:mm") %>"/>
   </div>
 
   <div class="form-group">
@@ -42,8 +40,6 @@
 
 
 </form>
-    </div>
-  </div>
 </div>
 <script type="text/javascript">
     $(function() {
