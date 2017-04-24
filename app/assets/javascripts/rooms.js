@@ -98,7 +98,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
             },
             editable: true,
             eventClick: function(date, jsEvent, view) {
-                $window.open('administrator/rooms/event/' + date.id, '_self')
+                $window.open('/administrator/rooms/event/' + date.id, '_self')
             }
         }
     };
