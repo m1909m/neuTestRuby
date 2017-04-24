@@ -3,7 +3,7 @@
  * 'daterangepicker'
  */
 'use strict';
-var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngStorage', 'ngResource', 'ui.calendar' ]);
+var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngStorage', 'ngResource', 'ui.calendar', 'ui.bootstrap' ]);
 
 
 
@@ -74,7 +74,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', '$http', '$interval', function($
 
 }]);
 
-myApp.controller('calendarController', ['$scope', '$location', '$window', '$stateParams', 'Room', '$http', '$interval', function($scope, $location, $window, $stateParams, Room, $http, $interval) {
+myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', '$location', '$window', function($scope, Room, $http, $interval, $location, $window) {
     $scope.roomId = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
