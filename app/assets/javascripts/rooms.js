@@ -91,14 +91,16 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
     $scope.uiConfig = {
         calendar:{
             height: 560,
-            editable: true,
             header:{
                 left: 'prev,next today',
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            eventClick: function(date, jsEvent, view) {
+                $window.open('administrator/rooms/event/' + date.id, '_self')
             }
-        },
-        eventClick: $scope.eventClickEdit
+        }
     };
     $scope.uiConfig.calendar.dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
     $scope.uiConfig.calendar.dayNamesShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
