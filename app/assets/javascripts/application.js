@@ -28,7 +28,8 @@
 //= require ngstorage
 //= require angular-daterangepicker
 //= require moment
-//= require fullcalendar
+//= require fullcalendar/dist/fullcalendar
+//= require fullcalendar/dist/gcal
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap
 //= require_tree .
