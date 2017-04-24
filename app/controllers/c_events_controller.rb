@@ -55,7 +55,7 @@ class CEventsController < ApplicationController
   def destroy
     @id = @c_event.room_id
     @c_event.destroy
-    redirect_to "/administrator/rooms/" + @id
+   # redirect_to "/administrator/rooms/" + @id
   end
 
   private
