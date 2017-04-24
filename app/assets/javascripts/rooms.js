@@ -75,7 +75,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', '$http', '$interval', function($
 }]);
 
 myApp.controller('calendarController', ['$scope', '$stateParams', 'Room', '$http', '$interval', function($scope, $stateParams, Room, $http, $interval) {
-    $scope.roomId = <%= @id %>;
+    $scope.roomId = '#{@id}';
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
     var date = new Date();
