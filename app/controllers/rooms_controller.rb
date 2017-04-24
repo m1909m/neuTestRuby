@@ -13,7 +13,9 @@ class RoomsController < ApplicationController
 
   def calendar
     @id = params[:id]
-    render 'rooms/calendar'
+    respond_to do |f|
+      f.html
+    end
   end
 
   def angularNew
