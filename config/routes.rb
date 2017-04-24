@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pages
+  get 'pages/:site', to: "pages#index"
 
   resources :news
   get '/admin/news', to: "news#admin"
