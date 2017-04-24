@@ -78,6 +78,9 @@ myApp.controller('calendarController', ['$scope', '$location', '$window', '$stat
     $scope.roomId = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
+    $scope.eventClickEdit = function(date, jsEvent, view) {
+        $window.open('administrator/rooms/event/' + date.id, '_self')
+    };
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -96,15 +99,13 @@ myApp.controller('calendarController', ['$scope', '$location', '$window', '$stat
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
-            eventClick: $scope.eventClick
+            eventClick: $scope.eventClickEdit
         }
     };
     $scope.uiConfig.calendar.dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
     $scope.uiConfig.calendar.dayNamesShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
     $scope.uiConfig.calendar.monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November",  "Dezember"];
-    $scope.eventClick = function(date, jsEvent, view) {
-        $window.open('administrator/rooms/event/' + date.id, '_self')
-    };
+
 
     /* event sources array*/
     $interval(function () {
