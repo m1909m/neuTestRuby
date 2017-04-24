@@ -7,23 +7,27 @@
 
 <% if current_user.present? %>
     <div class="col-xs-12">
-
+    <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:admin)%>
       <div class="list-group">
         <a href="/administrator/rooms" class="list-group-item" target="_self">Veranstaltungssystem</a>
       </div>
+    <% end %>
+    <% if current_user.has_role?(:newsletter) || current_user.has_role?(:admin)%>
 
       <div class="list-group">
         <a href="/news_contents" class="list-group-item" target="_self">Newssystem</a>
       </div>
-
+    <% end %>
+    <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
       <div class="list-group">
         <a href="/admin/news" class="list-group-item" target="_self">News verwalten</a>
       </div>
-
+    <% end %>
+    <% if current_user.has_role?(:shop) || current_user.has_role?(:admin)%>
       <div class="list-group">
         <a href="/articles" class="list-group-item" target="_self">Artikelliste</a>
       </div>
-
+    <% end %>
     </div>
 
 
