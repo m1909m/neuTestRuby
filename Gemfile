@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave', '~> 1.0'
+gem 'sunspot_rails', '~> 1.3.0'
 
 gem 'therubyracer'
 gem 'less-rails', '~> 2.8'
