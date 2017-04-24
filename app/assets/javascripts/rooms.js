@@ -98,9 +98,9 @@ myApp.controller('calendarController', ['$scope', '$location', '$window', '$stat
                 left: 'prev,next today',
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
-            },
-            eventClick: $scope.eventClickEdit
-        }
+            }
+        },
+        eventClick: $scope.eventClickEdit
     };
     $scope.uiConfig.calendar.dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
     $scope.uiConfig.calendar.dayNamesShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
