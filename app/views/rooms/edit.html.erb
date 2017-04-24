@@ -20,12 +20,12 @@
 
   <div class="form-group">
     <label for="dateL">Anmeldezeitraum</label>
-    <input id="dateL" class="form-control date-picker" type="text" name="event[dateL]" />
+    <input id="dateL" class="form-control date-picker" type="text" name="event[dateL]" value="<%= @event.startLogin %> - <%= @event.endLogin %>"/>
   </div>
 
   <div class="form-group">
     <label for="date">Zeitraum</label>
-    <input date-range-picker id="date" class="form-control date-picker" type="text" name="event[date]" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: <%= @event.start %>, endDate: <%= @event.end %>}'/>
+    <input date-range-picker id="date" class="form-control date-picker" type="text" name="event[date]" value="<%= @event.start %> - <%= @event.end %>"/>
   </div>
 
   <div class="form-group">
@@ -49,6 +49,18 @@
     $(function() {
 
         $('input[name="event[dateL]"]').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 5,
+            timePicker24Hour: true,
+            locale: {
+                applyLabel: "Waehlen",
+                fromLabel: "Von",
+                format: "DD-MM-YYYY HH:mm",
+                toLabel: "Bis",
+                cancelLabel: "Schließen"
+            }
+        });
+        $('input[name="event[date]"]').daterangepicker({
             timePicker: true,
             timePickerIncrement: 5,
             timePicker24Hour: true,
