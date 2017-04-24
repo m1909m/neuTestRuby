@@ -123,7 +123,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
     $scope.eventSources = [$scope.events];
 
 }]);
-myApp.controller('eventController', ['$scope', '$location', '$stateParams', 'Room', function($scope, $location, $stateParams, Room) {
+myApp.controller('eventController', ['$scope', '$location', 'Room', function($scope, $location, Room) {
 
     $scope.events = [];
     var id = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);

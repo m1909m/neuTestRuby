@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :news
+  get '/admin/news', to: "news#admin"
  # resources :members
 
   resources :c_events,only: [:index, :create, :show, :destroy], defaults: {format: :json}

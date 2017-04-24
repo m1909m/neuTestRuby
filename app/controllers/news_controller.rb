@@ -8,6 +8,10 @@ class NewsController < ApplicationController
     @news.reverse!
   end
 
+  def admin
+    @news = News.all
+  end
+
   def show
   end
 
