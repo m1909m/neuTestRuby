@@ -3,7 +3,7 @@
  * 'daterangepicker'
  */
 'use strict';
-var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngStorage', 'ngResource', 'ui.calendar', 'ui.bootstrap' ]);
+var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngStorage', 'ngResource', 'ui.calendar' ]);
 
 
 
@@ -172,45 +172,3 @@ myApp.controller('myEventController', ['$scope', '$location', '$stateParams', 'R
 
 
 }]);
-/*
-myApp.config(function($routeProvider) {
-    //$locationProvider.html5Mode(true);
-    $routeProvider
-        .when("/", {
-            templateUrl : "../../assets/rooms.html",
-            controller : "RoomCtrl"
-        }).otherwise({ redirectTo: "/administrator/rooms" });
-});*/
-
-myApp.config([
-    '$stateProvider',
-    '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
-        $stateProvider
-            .state('/', {
-                url: '/',
-                templateUrl: '../../assets/rooms.html',
-                //templateUrl: '/rooms.html',
-                controller: 'RoomCtrl'
-            })
-            .state('rooms', {
-                url: '/{id}',
-               // parent: rooms,
-                templateUrl: '../../assets/calendar.html',
-                controller: 'calendarController'
-            })
-            .state('create', {
-                url: '/{id}/new',
-                templateUrl: '../../assets/new.html',
-                controller: 'eventController'
-            })
-            .state('members', {
-                url: '/event/members/{id}',
-                templateUrl: '../../assets/event.html',
-                controller: 'myEventController'
-            });
-            //.state('editEvent', {
-            //    url: '/event/edit/{id]'
-            //});
-
-    }]);
