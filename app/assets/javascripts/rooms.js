@@ -78,9 +78,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
     $scope.roomId = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
-    $scope.eventClickEdit = function(date, jsEvent, view) {
-        $window.open('event/' + date.id, '_self')
-    };
+
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -111,7 +109,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
     $interval(function () {
         $http({
             method: "GET",
-            url:"/c_events?roomid=" + $stateParams.id
+            url:"/c_events?roomid=" + $scope.roomId
         }).then( function (response) {
             $scope.events = response.data;
         }, function error(response) {
@@ -138,7 +136,7 @@ myApp.controller('eventController', ['$scope', 'Room', '$location', function($sc
         newEvent.end = $scope.datePicker.date.endDate;
         newEvent.startLogin =  $scope.datePicker.dateL.startDate;
         newEvent.endLogin =  $scope.datePicker.dateL.endDate;
-        newEvent.room_id = $stateParams.id;
+        newEvent.room_id = id;
         newEvent.member = 0;
         newEvent.free = 1;
         event = Room.events.save(newEvent);
@@ -149,7 +147,7 @@ myApp.controller('eventController', ['$scope', 'Room', '$location', function($sc
     }
 
 }]);
-myApp.controller('myEventController', ['$scope', '$location', '$stateParams', 'Room', '$http', '$interval', function($scope, $location, $stateParams, Room, $http, $interval) {
+myApp.controller('myEventController', ['$scope', '$location', 'Room', '$http', '$interval', function($scope, $location, Room, $http, $interval) {
 
     $scope.members = [];
     var id = (/administrator\/rooms\/event\/members\/(\d+)/.exec($location.absUrl())[1]);
