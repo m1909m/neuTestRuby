@@ -53,9 +53,9 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @event.title = params[:title]
+    @event.title = event_params[:title]
 
-    @event.minSize = params[:minSize]
+    @event.minSize = event_params[:minSize]
     @event.save
     @id = params[:id]
     render 'rooms/index'
@@ -73,6 +73,9 @@ class RoomsController < ApplicationController
     end
     def set_event
       @event = CEvent.find(params[:id])
+    end
+    def event_params
+      params.require(:event).permit(:title, :description, :dateL, :date, :minSize)
     end
     def room_params
       params.require(:room).permit(:number, :size, :building)
