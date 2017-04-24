@@ -9,7 +9,8 @@ class NewsController < ApplicationController
   end
 
   def admin
-    @news = News.all
+    @news = News.last(20)
+    @news.reverse!
   end
 
   def show
