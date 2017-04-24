@@ -65,7 +65,7 @@ class RoomsController < ApplicationController
     @event.minSize = event_params[:minSize]
     @event.save
     @id = params[:id]
-    render 'rooms/index'
+    redirect_to :action => calendar, :id => @event.room_id
   end
 
   def destroy
