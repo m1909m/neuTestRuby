@@ -44,7 +44,9 @@ class RoomsController < ApplicationController
 
   def edit
     @id = params[:id]
-    render 'rooms/edit'
+    respond_to do |f|
+      f.html
+    end
   end
 
   def create
@@ -55,7 +57,6 @@ class RoomsController < ApplicationController
   def update
     @event.title = event_params[:title]
     dateL = event_params[:dateL].split(' - ')
-    puts(dateL)
     @event.startLogin = dateL[0].to_time.strftime("%Y-%m-%d %k:%M:%S")
 
     @event.endLogin = dateL[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
@@ -64,7 +65,6 @@ class RoomsController < ApplicationController
     @event.end = date[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
     @event.minSize = event_params[:minSize]
     @event.save
-    @id = params[:id]
     redirect_to :action => calendar, :id => @event.room_id
   end
 
