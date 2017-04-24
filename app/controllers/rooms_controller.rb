@@ -43,7 +43,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
-
+    @id = params[:id]
     render 'rooms/edit'
   end
 
