@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ihre Buchung</title>
+</head>
+<body>
+<p>Es ist eine neue Bestellung eingegangen<br />
+
+  Folgende Person hat bestellt:<br />
+</p>
+<table>
+
+  <tbody>
+      <tr>
+        <td>Name: </td>
+        <td><%= @person.name %></td>
+      </tr>
+      <tr>
+        <td>Vorname: </td>
+        <td><%= @person.vorname %></td>
+      </tr>
+      <tr>
+        <td>Einrichtung: </td>
+        <td><%= @person.einrichtung%></td>
+      </tr>
+      <tr>
+        <td>Adresse: </td>
+        <td><%= @person.adresse %></td>
+      </tr>
+      <tr>
+        <td>Ort: </td>
+        <td><%= @person.ort %></td>
+      </tr>
+      <tr>
+        <td>Email Adresse: </td>
+        <td><%= @person.email %></td>
+      </tr>
+  </tbody>
+</table>
+<p>
+<%= @person.name %> möchte folgende Artikel bestellen:</p>
+
+<table>
+  <thead>
+  <td>Artikel</td>
+  <td>Preis</td>
+  </thead>
+  <tbody>
+  <% @articles.each do |a| %>
+      <tr>
+        <td><%= a.title %></td>
+        <td><%= a.price%>€</td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>Bitte senden Sie in kürze "<%= @person.name %>" eine Rechnung.</p>
+
+</body>
+</html>

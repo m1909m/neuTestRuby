@@ -9,5 +9,13 @@ class BookingMailer < ActionMailer::Base
     mail :to=> @email,
          :subject=> "Ihre Bestellung"
   end
+  def booking_new(person, articles, card)
+    @person = person
+    @articles = articles
+    @card = card
+    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    mail :to=> @email,
+         :subject=> "Neue Bestellung"
+  end
 
 end

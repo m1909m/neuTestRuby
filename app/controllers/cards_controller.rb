@@ -85,6 +85,7 @@ class CardsController < ApplicationController
 
     if @card.save
       BookingMailer.booking_email(@newPerson, @card.articles, @card).deliver
+      BookingMailer.create_booking_new(@newPerson, @card.articles, @card).deliver
 #        format.json { render :index, status: :created, location: @news }
     else
 
