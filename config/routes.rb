@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'verband/berufsverbände/', to: "verbaand#verband"
   get 'verband/geschäftsstelle', to: "verbaand#geschäftsstelle"
 
-  get 'mitglied/', to: "current#mitglied"
+  get 'mitgliedschaft/', to: "current#mitgliedschaft"
   get 'impressum/', to: "current#impressum"
   get 'informationen', to: "current#informationen"
   get 'impressum/agb/', to: "current#agb"

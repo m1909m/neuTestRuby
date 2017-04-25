@@ -2,8 +2,8 @@ class CurrentController < ApplicationController
   def index
   end
 
-  def mitglied
-
+  def mitgliedschaft
+    @page = Page.where(accept: true, for: "Mitgliedschaft").order(:id).last
   end
 
   def impressum
