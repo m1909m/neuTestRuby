@@ -5,47 +5,8 @@
   <%= image_tag("Titelbild_BAT-KF.jpg", :alt => "BAT-KF", :class => "img-responsive center-block") %>
 
 </div>
-<div class="col-xs-12 col-sm-6">
-  <h3>BAT-KF</h3>
-  <p style="color: #f59d0e"><b>Download</b></p>
-  <p>Hier können Sie ein Inhaltsverzeichnis der aktuellen Version des <a href="../uploads/resume/attachment/12/BAT-KF2016inhalt.pdf" target="_blank" style="color: #f59d0e;">BAT-KF als PDF Datei herunterladen</a>.</p>
-  <p style="color: #f59d0e"><b>Bestellung</b></p>
-  <p>das Handbuch ist in Druck und wird im Dezember 2016 erscheinen.</p><br />
-  <p><b>BAT-KF Handbuch</b><br />
-  Die Textfassung des BAT-KF mit allen Überleitungsregelungen und ergänzenden sonstigen Ordnungen
-    (Stand November 2016).</p>
+<%= @page.content.html_safe %>
 
-  <p>
-    Inhalt:
-    <ul class="minus">
-      <li>Bundes-Angestelltentarifvertrag in kirchlicher Fassung (BAT-KF)</li>
-      <li>Tarifvertrag für Ärztinnen und Ärzte - Kirchliche Fassung (TV-Ärzte-KF)</li>
-      <li>Tarifvertrag zur Überleitung der Ärztinnen und Ärzte in den TV-Ärzte-KF (TVÜ-Ärzte-KF)</li>
-      <li>Manteltarifvertrag für Arbeiterinnen und Arbeiter in kirchlicher Fassung (MTArb-KF)</li>
-      <li>Arbeitsrechtsregelung zu Übergangsregelungen im Zuge der Neufassung des BAT-KF und MTArb-KF</li>
-      <li>Arbeitsrechtsregelung zur Ergänzung der Übergangsregelungen im Zuge der Neufassung des BAT-KF</li>
-      <li>Zuordnung der (alten) Vergütungs- und Lohngruppen zu den (neuen) Entgeltgruppen</li>
-    </ul>
-  Zusätzlich:
-    <ul class="plus">
-      <li>Arbeitshilfen</li>
-      <li>Ergänzende Arbeitsrechtsregelungen und Ordnungen:</li>
-      <li>Arbeitsrechtsregelung zur Entgeltumwandlung für die freiwillige Zusatzversicherung</li>
-      <li>Ordnung über vermögenswirksame Leistungen an kirchliche Angestellte und Arbeiter</li>
-      <li>Ordnung zur Beschäftigungssicherung für kirchliche Mitarbeitende</li>
-      <li>Ordnung zur Förderung eines gleitenden Übergangs in den Ruhestand & Altersteilzeitordnung</li>
-      <li>Ordnung zur Sicherung von Mitarbeitern bei Rationalisierungsmaßnahmen</li>
-    </ul>
-  </p>
-  <p>
-    <b>Bestellpreis: 19,80 Euro</b></p>
-  <p style="color:#f59d0e">Für Interessierte ist das Handbuch auch als CD-ROM zu erwerben. Der Preis beträgt ebenfalls 19,80
-    Euro. Handbuch und CD-ROM kosten zusammen 35,00 Euro.</p>
-  <p>Weitere Informationen und Bestellung:
-  Verband kirchlicher Mitarbeiterinnen und Mitarbeiter Rheinland-Westfalen-Lippe, Beratgerstr. 36,
-  44149 Dortmund, Tel.: 0231/579743, Fax: 0231/579754, E-Mail: info@vkm-rwl.de
-  </p>
-</div>
 <div class="col-xs-12 col-sm-6">
   <div ng-controller="shopController" >
     <table class="table" data-ng-init="init()">

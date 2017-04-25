@@ -5,10 +5,4 @@
   <%= image_tag("Titelbild_MVG.jpg", :alt => "MVG", :class => "img-responsive center-block") %>
 
 </div>
-<div class="col-xs-12 col-sm-6">
-  <p>
-    Hier gibt es den Text des aktuellen Mitarbeitervertretungsgesetzes:<br />
-    <a href="../uploads/resume/attachment/5/MVG-EKvW-LLK2015.pdf" target="_blank" style="color: #f59d0e;">MVG-EKvW-LLK2015.pdf</a>: MVG in der Fassung für Westfalen und Lippe<br />
-
-    <a href="../uploads/resume/attachment/6/MVG-EKiR2015.pdf" target="_blank" style="color: #f59d0e;">MVG-EKiR2015.pdf </a>: MVG in der Fassung für das Rheinland</p>
-</div>
+<%= @page.content.html_safe %>
