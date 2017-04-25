@@ -18,6 +18,6 @@ class VerbaandController < ApplicationController
   end
 
   def geschäftsstelle
-
+    @page = Page.where(accept: true, for: "geschäftsstelle").order(:id).last
   end
 end
