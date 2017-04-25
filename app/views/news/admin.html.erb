@@ -31,7 +31,7 @@
               <td><%= news.subTitle %></td>
               <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news.story.html_safe), length: 200) %></td>
               <td><%= link_to 'Anzeigen', news %></td>
-              <td><%= link_to 'Bearbeiten', edit_news_path(news) %></td>
+              <td><%= link_to 'Bearbeiten', edit_news_path(news), :target => "_self" %></td>
               <td><%= link_to 'Löschen', news, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
             </tr>
         <% end %>
