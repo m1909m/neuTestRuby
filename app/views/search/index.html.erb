@@ -2,30 +2,38 @@
   <h1>Suchergebnis</h1>
 </div>
 <div class="col-xs-12">
-  <table class="table table-responsive table-striped">
+
     <% @news.each do |news| %>
+      <div class="list-group">
+      <table class="table table-responsive table-striped">
         <tr>
-          <td><%= link_to ''+news.title, news %></td>
+          <td style="color: #f59d0e;"><%= link_to ''+news.title, news %></td>
         </tr>
         <tr>
           <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news.story.html_safe), length: 200) %></td>
         </tr>
+      </table>
+      </div>
     <% end %>
 
-  </table>
-  <table class="table table-responsive table-striped">
+
+
     <% @news_contents.each do |news_content| %>
         <% if news_content.sendStatus %>
-          <tr>
-            <td><%=link_to '' + news_content.title, news_content %></td>
-          </tr>
-          <tr>
-            <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news_content.content.html_safe), length: 200) %></td>
-          </tr>
+          <div class="list-group">
+          <table class="table table-responsive table-striped">
+            <tr>
+              <td><%=link_to '' + news_content.title, news_content %></td>
+            </tr>
+            <tr>
+              <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news_content.content.html_safe), length: 200) %></td>
+            </tr>
+          </table>
+          </div>
         <% else %>
 
         <% end %>
     <% end %>
 
-  </table>
+
 </div>
