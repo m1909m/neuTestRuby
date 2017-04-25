@@ -66,7 +66,15 @@ class RoomsController < ApplicationController
     @event.start = date[0].to_time.strftime("%Y-%m-%d %k:%M:%S")
     @event.end = date[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
     @event.minSize = event_params[:minSize]
-    @event.save
+
+    if @event.save
+
+      @members = Member.where(event_id: @event.id)
+      @members.each do |member|
+        @member = member
+        ContactMailer.change_event(@member, @event)
+      end
+    end
     redirect_to :action => "calendar", :id => @event.room_id
   end
 

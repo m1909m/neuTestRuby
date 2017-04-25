@@ -13,6 +13,8 @@ class NewsMailer < ActionMailer::Base
              :subject=> "News-Mail"
       end
 
-
+      @news = NewsContent.find(@newscontent.id)
+      @news.sendStatus = 1
+      @news.save
   end
 end

@@ -30,7 +30,14 @@ class PagesController < ApplicationController
   end
 
   def update
-    @page.update(page_params)
+    if @page.for == "diakonie"
+      if @page.update(page_params)
+        ContactMailer.change_diakonie(page_params[:content]).deliver
+      end
+    else
+      @page.update(page_params)
+    end
+
 
   end
 
