@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave', '~> 1.0'
-gem 'sunspot'
-gem 'sunspot_solr'
-gem 'sunspot_rails', '~> 2.2.4'
-gem 'sunspot_with_kaminari', '~> 0.1.0'
+#gem 'sunspot'
+#gem 'sunspot_solr'
+#gem 'sunspot_rails', '~> 2.2.4'
+#gem 'sunspot_with_kaminari', '~> 0.1.0'
 
 gem 'therubyracer'
 gem 'less-rails', '~> 2.8'
