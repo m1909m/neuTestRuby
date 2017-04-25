@@ -119,9 +119,11 @@
 
     <div class="col-sm-4 col-md-2">
       <nav id="navbar-right" class="nav">
-        <form class="navbar-form" role="search" style="margin-bottom: 20px">
+
+          <form class="navbar-form" id="new_search" action="/search" role="search" style="margin-bottom: 15px" accept-charset="UTF-8" method="post">
+            <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Suchen" style="float: left;width: 80%;">
+            <input type="text" class="form-control" placeholder="Suchen" name="keyword" style="float: left;width: 80%;">
             <button type="submit" class="btn btn-default" style="width: 20%;">Los</button>
           </div>
         </form>
