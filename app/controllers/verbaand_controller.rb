@@ -2,7 +2,7 @@
 class VerbaandController < ApplicationController
 
   def verband
-
+    @page = Page.where(accept: true, for: "Berufsverbände").order(:id).last
   end
 
   def fachgruppen
@@ -14,10 +14,10 @@ class VerbaandController < ApplicationController
   end
 
   def vorstand
-
+    @page = Page.where(accept: true, for: "Vorstand").order(:id).last
   end
 
   def geschäftsstelle
-    @page = Page.where(accept: true, for: "geschäftsstelle").order(:id).last
+    @page = Page.where(accept: true, for: "Geschäftsstelle").order(:id).last
   end
 end
