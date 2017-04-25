@@ -6,6 +6,8 @@ gem 'carrierwave', '~> 1.0'
 #gem 'sunspot_rails', '~> 2.2.4'
 #gem 'sunspot_with_kaminari', '~> 0.1.0'
 
+gem 'search_cop'
+
 gem 'therubyracer'
 gem 'less-rails', '~> 2.8'
 gem 'tinymce-rails', '~> 4.3'
