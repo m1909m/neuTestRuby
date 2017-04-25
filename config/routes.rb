@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'pages/', to: "page#all"
+  get 'pages/', to: "pages#all"
   get 'pages/:site', to: "pages#index"
   post 'pages/:site', to: "pages#update"
   post 'search/', to: "search#index"
