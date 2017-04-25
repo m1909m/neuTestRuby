@@ -37,7 +37,7 @@
               <td><%= news_content.sendtime %></td>
               <td><% if news_content.sendStatus %> Versendet <% else %> Nicht versendet <% end %></td>
               <td><%= link_to 'Anzeigen', news_content %></td>
-              <td><%= link_to 'Bearbeiten', edit_news_content_path(news_content) %></td>
+              <td><%= link_to 'Bearbeiten', edit_news_content_path(news_content), :target => "_self" %></td>
               <td><%= link_to 'Löschen', news_content, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
             </tr>
         <% end %>
