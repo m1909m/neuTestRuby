@@ -5,9 +5,4 @@
   <%= image_tag("Titelbild_InHouseSchulungen.jpg", :alt => "InHouseSchulungen", :class => "img-responsive center-block") %>
 
 </div>
-<div class="col-sm-6">
-  <p>Der vkm-rwl biete neben den bekannten Seminaren zu diversen Themen auch In-House-Schulungen an. Hier schulen wir die Mitarbeitervertretungen vor Ort in ihren Dienststellen. Sowohl Themen wie auch Termine und Länge der Schulungen sind in Absprache mit der Geschäftsstell frei wählbar.</p>
-</div>
-<div class="col-sm-6">
-
-</div>
+<%= @page.content.html_safe %>
