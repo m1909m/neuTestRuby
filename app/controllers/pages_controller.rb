@@ -14,6 +14,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def all
+
+  end
+
   def show
   end
 

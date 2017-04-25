@@ -33,6 +33,11 @@
           <a href="/pages/Diakonie" class="list-group-item" target="_self">Diakonie Seite Bearbeiten</a>
         </div>
     <% end %>
+    <% if current_user.has_role?(:admin) %>
+        <div class="list-group">
+          <a href="/pages/" class="list-group-item" target="_self">Diakonie Seite Bearbeiten</a>
+        </div>
+    <% end %>
     </div>
 
 

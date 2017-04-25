@@ -1,0 +1,84 @@
+<div class="col-xs-12">
+  <h1>Seiten</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
+</div>
+
+<% if current_user.present? %>
+    <div class="col-xs-12">
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/vorstand" class="list-group-item" target="_self">Vorstand</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/fachgruppen" class="list-group-item" target="_self">Fachgruppen</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:diakonie) || current_user.has_role?(:admin)%>
+          <div class="list-group">
+            <a href="/pages/Diakonie" class="list-group-item" target="_self">Diakonie Seite Bearbeiten</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/Berufsverbände" class="list-group-item" target="_self">Berufsverbände</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/geschäftsstelle" class="list-group-item" target="_self">Geschäftsstelle</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/Mitgliedschaft" class="list-group-item" target="_self">Mitgliedschaft</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/Seminarinhalte" class="list-group-item" target="_self">Seminarinhalte</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/Schulung" class="list-group-item" target="_self">Schulung</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/Teilnahmebedingungen" class="list-group-item" target="_self">Teilnahmebedingungen</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/batkf" class="list-group-item" target="_self">BATKF</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/entgelttabellen" class="list-group-item" target="_self">Entgelttabellen</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/mvg" class="list-group-item" target="_self">MVG</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/handreichungen" class="list-group-item" target="_self">Handreichungen</a>
+          </div>
+      <% end %>
+
+
+
+    </div>
+
+
+<%else%>
+
+
+<%end%>
