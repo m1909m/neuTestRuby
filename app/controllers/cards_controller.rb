@@ -62,7 +62,7 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
-
+    @sum = 0
     #puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
     #puts(card_params[:articles].to_s)
@@ -79,12 +79,12 @@ class CardsController < ApplicationController
         @card.articles << @article
       end
 
-
+      @sum = @sum + a[:sum]
       @article.count = @article.count - a[:anzahl]
       @article.save
    #   @localArticle.add(Article.find(a.id))
     end
-    @card.sum = article_params[:sum]
+    @card.sum = @sum
 
 
     # TODO Tests
