@@ -85,7 +85,7 @@
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fortbildung<span class="caret"></span></a>
               <ul class="dropdown-menu naviDropdown">
-                <li><a href="/fortbildung/seminarinhalte">Inhalte</a></li>
+                <li><a href="/fortbildung/seminarinhalte">Seminarinhalte</a></li>
                 <li><a href="/fortbildung/seminare">Schulungstermine</a></li>
                 <li><a href="/fortbildung/inHouseSchulungen">In House Schulungen</a></li>
                 <li><a href="/fortbildung/bedingungen">Teilnahmebedingungen</a></li>
@@ -151,30 +151,32 @@
             </div> -->
 
           </li>
-        <% if current_user.present? %>
-          <li><%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %></li>
-        <% end %>
         <!--  <li><= link_to 'Kontakt', new_contact_form_path %></li> -->
           <li><a href="/kontakt">Kontakt</a></li>
           <li><%= link_to 'Newsletter', new_abo_newsletter_path %></li>
-          <% if current_user.present? %>
+          <!--<li><a href="#">Download</a></li> -->
+          <li class="dropdown"><a href="/ark-rwl" class="dropdown-toggle">ARK-RWL</a><ul class="dropdown-menu"><li><a href="#">ARRG</a></li></ul></li>
+          <li><a href="/ark-dd">ARK-DD</a></li>
+		  <% if current_user.present? %>
               <li><a href="/zugangsbereich">Zugangsbereich</a></li>
           <% else %>
               <li><%= link_to 'Zugangsbereich', new_user_session_path %></li>
           <%end%>
-          <!--<li><a href="#">Download</a></li> -->
-          <li class="dropdown"><a href="/ark-rwl" class="dropdown-toggle">ARK-RWL</a><ul class="dropdown-menu"><li><a href="#">ARRG</a></li></ul></li>
-          <li><a href="/ark-dd">ARK-DD</a></li>
+		  <% if current_user.present? %>
+          <li><%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %></li>
+          <% end %>
         </ul>
-        <div style="width: 90%; margin-left:auto; margin-right: auto;border: 0px solid black;">
-          <a class="" href="http://vrk.de/">
-            <img alt="bruder" class="img-responsive center-block" src="/bruderlogo.jpg">
-        </a>
-        <a class="" href="http://kzvk-dortmund.de/">
-          <img alt="kzyk" class="img-responsive center-block" src="/kzvk.jpg">
+        <div style="width: 100%; border-top:5px solid #f59d0e;">
+			<br>
+          <a href="http://www.vrk.de/" target="_blank">
+            <img alt="bruder" class="img-responsive center-block" src="/bruderlogo.jpg" style="margin-bottom:10px; border: 2px solid rgba(0,0,0,0.4)">
         </a>
 
-          <img alt="Siegel" class="img-responsive center-block" src="/siegel.png">
+        <a class="" href="http://www.kzvk-dortmund.de/" target="_blank">
+          <img alt="kzyk" class="img-responsive center-block" src="/kzvk.jpg" style="border: 1px solid rgba(0,0,0,0.4)">
+        </a>
+
+          <img alt="Siegel" class="img-responsive center-block" src="/siegel.png" style="width:100%; max-width: 160px; height:auto;">
         </div>
         <footer class="bd-footer col-sm-4 col-md-2" style="text-align: right;">
           <a href="/informationen">Informationen </a>  |  <a href="/impressum"> Impressum</a>
