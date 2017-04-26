@@ -203,9 +203,7 @@
   </div>
   </body>
     <%  else %>
-    <ul>
-      <li><%= link_to 'Bitte Anmelden', new_user_session_path %></li>
-    </ul>
-      <%  yield %>
+
+      <%=  yield %>
     <% end %>
 </html>
