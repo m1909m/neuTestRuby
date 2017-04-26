@@ -71,7 +71,14 @@ class CardsController < ApplicationController
       @article = Article.find(a[:id])
       @sum += @article.sum
     #  puts(@article)
-      @card.articles << @article
+      if a[:anzahl] > 1
+        a[:anzahl].times do |i|
+          @card.articles << @article
+        end
+      else
+        @card.articles << @article
+      end
+
 
       @article.count = @article.count - a[:anzahl]
       @article.save
@@ -88,7 +95,9 @@ class CardsController < ApplicationController
       BookingMailer.create_booking_new(@newPerson, @card.articles, @card).deliver
 #        format.json { render :index, status: :created, location: @news }
     else
-
+      respond_to  do |f|
+        f.json { render json: @card.errors, status: :unprocessable_entity }
+      end
     end
 
 
