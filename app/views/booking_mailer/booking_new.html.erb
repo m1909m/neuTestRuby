@@ -62,15 +62,15 @@
       <% @sum = @sum + a[:sum] %>
       <tr>
         <td><%= a[:title] %></td>
-        <td><%= a[:price] %>€</td>
+        <td><%= a[:price] %> €</td>
         <% if a[:anzahl] > 1 %>
-            <td><%= a[:anzahl] %>€</td>
+            <td><%= a[:anzahl] %></td>
         <% end %>
       </tr>
   <% end %>
   <tr>
-    <td></td>
-    <td><%= @sum %></td>
+    <td style="text-align: right;">Summe:</td>
+    <td><%= @sum %> €</td>
   </tr>
   </tbody>
 </table>

@@ -9,38 +9,38 @@
 
 Sie haben folgende Artikel bestellt:</p>
 <%
-   @articles.each do |a|
-      if a[:anzahl] > 1
-        @anzahl = true
-      end
+  @articles.each do |a|
+    if a[:anzahl] > 1
+      @anzahl = true
+    end
 
-   end
+  end
 %>
-  <table>
-    <thead>
-      <td>Artikel</td>
-      <td>Preis</td>
-      <% if @anzahl %>
-        <td>Anzahl</td>
-      <% end %>
-    </thead>
-    <tbody>
-  <% @articles.each do |a| %>
-    <% @sum = @sum + a[:sum] %>
-     <tr>
-       <td><%= a[:title] %></td>
-       <td><%= a[:price] %>€</td>
-       <% if a[:anzahl] > 1 %>
-           <td><%= a[:anzahl] %>€</td>
-       <% end %>
-     </tr>
+<table>
+  <thead>
+  <td>Artikel</td>
+  <td>Preis</td>
+  <% if @anzahl %>
+      <td>Anzahl</td>
   <% end %>
-    <tr>
-      <td></td>
-      <td><%= @sum %></td>
-    </tr>
-    </tbody>
-  </table>
+  </thead>
+  <tbody>
+  <% @articles.each do |a| %>
+      <% @sum = @sum + a[:sum] %>
+      <tr>
+        <td><%= a[:title] %></td>
+        <td><%= a[:price] %> €</td>
+        <% if a[:anzahl] > 1 %>
+            <td><%= a[:anzahl] %></td>
+        <% end %>
+      </tr>
+  <% end %>
+  <tr>
+    <td style="text-align: right;">Summe:</td>
+    <td><%= @sum %> €</td>
+  </tr>
+  </tbody>
+</table>
   <p>Sie erhalten in kürze eine Rechnung</p>
 
 
