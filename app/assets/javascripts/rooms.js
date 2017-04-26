@@ -102,7 +102,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
         }
     };
     $scope.uiConfig.calendar.dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-    $scope.uiConfig.calendar.dayNamesShort = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
+    $scope.uiConfig.calendar.dayNamesShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
     $scope.uiConfig.calendar.monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November",  "Dezember"];
 
 
