@@ -66,7 +66,7 @@ class CardsController < ApplicationController
     #puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
     #puts(card_params[:articles].to_s)
-    card_params[:articles].each do |a|
+    params[:articles].each do |a|
     #  puts(a[:id])
       @article = Article.find(a[:id])
 
