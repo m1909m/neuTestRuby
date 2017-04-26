@@ -42,12 +42,12 @@
 <%= @person.name %> möchte folgende Artikel bestellen:</p>
 
 <%
-   @articles.each do |a|
-     if a.anzahl > 1
-       $anzahl = true
-     end
+  @articles.each do |a|
+    if a[:anzahl] > 1
+      @anzahl = true
+    end
 
-   end
+  end
 %>
 <table>
   <thead>
@@ -59,12 +59,12 @@
   </thead>
   <tbody>
   <% @articles.each do |a| %>
-      <% @sum = @sum + a.sum %>
+      <% @sum = @sum + a[:sum] %>
       <tr>
-        <td><%= a.title %></td>
-        <td><%= a.price%>€</td>
-        <% if a.anzahl > 1 %>
-            <td><%= a.anzahl%>€</td>
+        <td><%= a[:title] %></td>
+        <td><%= a[:price] %>€</td>
+        <% if a[:anzahl] > 1 %>
+            <td><%= a[:anzahl] %>€</td>
         <% end %>
       </tr>
   <% end %>

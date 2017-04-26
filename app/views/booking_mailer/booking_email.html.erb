@@ -10,8 +10,8 @@
 Sie haben folgende Artikel bestellt:</p>
 <%
    @articles.each do |a|
-      if a.anzahl > 1
-        $anzahl = true
+      if a[:anzahl] > 1
+        @anzahl = true
       end
 
    end
@@ -26,12 +26,12 @@ Sie haben folgende Artikel bestellt:</p>
     </thead>
     <tbody>
   <% @articles.each do |a| %>
-    <% @sum = @sum + a.sum %>
+    <% @sum = @sum + a[:sum] %>
      <tr>
-       <td><%= a.title %></td>
-       <td><%= a.price%>€</td>
-       <% if a.anzahl > 1 %>
-           <td><%= a.anzahl%>€</td>
+       <td><%= a[:title] %></td>
+       <td><%= a[:price] %>€</td>
+       <% if a[:anzahl] > 1 %>
+           <td><%= a[:anzahl] %>€</td>
        <% end %>
      </tr>
   <% end %>
