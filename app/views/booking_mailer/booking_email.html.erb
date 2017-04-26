@@ -8,8 +8,7 @@
 <p>Vielen Dank für Ihre Bestellung<br />
 
 Sie haben folgende Artikel bestellt:</p>
-<% @sum = 0
-   @anzahl = false
+<%
    @articles.each do |a|
       if a.anzahl > 1
         $anzahl = true

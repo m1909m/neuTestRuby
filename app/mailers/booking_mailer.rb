@@ -6,6 +6,8 @@ class BookingMailer < ActionMailer::Base
     @articles = articles
     @card = card
     @email = person.email
+    @sum = 0
+    @anzahl = false
     mail :to=> @email,
          :subject=> "Ihre Bestellung"
   end
@@ -13,6 +15,8 @@ class BookingMailer < ActionMailer::Base
     @person = person
     @articles = articles
     @card = card
+    @sum = 0
+    @anzahl = false
     @email = "verbandkirchlichermmitarbeiter@gmail.com"
     mail :to=> @email,
          :subject=> "Neue Bestellung"

@@ -41,8 +41,7 @@
 <p>
 <%= @person.name %> möchte folgende Artikel bestellen:</p>
 
-<% @sum = 0
-   @anzahl = false
+<%
    @articles.each do |a|
      if a.anzahl > 1
        $anzahl = true
