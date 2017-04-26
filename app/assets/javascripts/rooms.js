@@ -162,7 +162,7 @@ myApp.controller('myEventController', ['$scope', '$location', 'Room', '$http', '
             method: "GET",
             url: url
         }).then( function (response) {
-
+            $scope.members = Room.membersByEvent.index({"id": id});
         }, function error(response) {
             $scope.status = response.statusText;
         });

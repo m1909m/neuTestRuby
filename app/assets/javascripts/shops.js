@@ -221,9 +221,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         newPerson = $scope.newPerson;
         //newPerson.articles = $scope.cart;
         articles = $scope.cart;
-        var json = [];
-        json.push(newPerson);
-        json.push(articles);
+
         newPerson.articles = articles;
         Cart.cards.save(newPerson);
 
