@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
 
   respond_to :json
-  before_action :card_params, only: [:create, :show, :edit, :update, :destroy]
+ # before_action :card_params, only: [:create, :show, :edit, :update, :destroy]
  # before_action :article_params, only: [:create]
 
   def index
@@ -119,7 +119,7 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).require(:articles).permit(:id, :title, :price, :count, :anzahl, :sum)
+    params.require(:card).permit(:articles => [:id, :title, :price, :count, :anzahl, :sum])
 
   end
 
