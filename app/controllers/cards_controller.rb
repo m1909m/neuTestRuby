@@ -91,8 +91,8 @@ class CardsController < ApplicationController
     # @c_event.userMail = current_user.email
 
     if @card.save
-      BookingMailer.booking_email(@newPerson, @card.articles, @card).deliver
-      BookingMailer.create_booking_new(@newPerson, @card.articles, @card).deliver
+      BookingMailer.booking_email(@newPerson, params[:articles], @card).deliver
+      BookingMailer.booking_new(@newPerson, params[:articles], @card).deliver
 #        format.json { render :index, status: :created, location: @news }
     else
       respond_to  do |f|

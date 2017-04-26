@@ -41,18 +41,38 @@
 <p>
 <%= @person.name %> möchte folgende Artikel bestellen:</p>
 
+<% @sum = 0
+   @anzahl = false
+   @articles.each do |a|
+     if a.anzahl > 1
+       $anzahl = true
+     end
+
+   end
+%>
 <table>
   <thead>
   <td>Artikel</td>
   <td>Preis</td>
+  <% if @anzahl %>
+      <td>Anzahl</td>
+  <% end %>
   </thead>
   <tbody>
   <% @articles.each do |a| %>
+      <% @sum = @sum + a.sum %>
       <tr>
         <td><%= a.title %></td>
         <td><%= a.price%>€</td>
+        <% if a.anzahl > 1 %>
+            <td><%= a.anzahl%>€</td>
+        <% end %>
       </tr>
   <% end %>
+  <tr>
+    <td></td>
+    <td><%= @sum %></td>
+  </tr>
   </tbody>
 </table>
 
