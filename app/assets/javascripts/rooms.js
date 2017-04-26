@@ -96,6 +96,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
             },
             editable: true,
             firstDay: 1,
+            tiemFormat: 'HH:mm',
             eventClick: function(date, jsEvent, view) {
                 $window.open('/administrator/rooms/event/' + date.id, '_self')
             }
