@@ -62,14 +62,14 @@ class CardsController < ApplicationController
     end
 
     @card.person = @newPerson
-    @sum = 0
+
     #puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
     #puts(card_params[:articles].to_s)
     card_params[:articles].each do |a|
     #  puts(a[:id])
       @article = Article.find(a[:id])
-      @sum += @article.sum
+
     #  puts(@article)
       if a[:anzahl] > 1
         a[:anzahl].times do |i|
@@ -84,7 +84,7 @@ class CardsController < ApplicationController
       @article.save
    #   @localArticle.add(Article.find(a.id))
     end
-    @card.sum = @sum
+    @card.sum = article_params[:sum]
 
 
     # TODO Tests
@@ -119,11 +119,11 @@ class CardsController < ApplicationController
 
 
   def card_params
-    params.require(:card).permit(:articles => [:id, :name, :price, :count, :anzahl])
+    params.require(:card).permit(:articles => [:id, :title, :price, :count, :anzahl, :sum])
 
   end
 
   def article_params
-    params[:card].require(:articles).permit(:id, :title, :price, :anzahl, :sum)
+    params[:card].require(:articles).permit(:id, :title, :price, :count, :anzahl, :sum)
   end
 end
