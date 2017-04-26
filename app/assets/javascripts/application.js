@@ -31,6 +31,7 @@
 //= require moment
 //= require fullcalendar/dist/fullcalendar
 //= require fullcalendar/dist/gcal
+//= require fullcalendar/dist/lang/de
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap
 //= require_tree .
