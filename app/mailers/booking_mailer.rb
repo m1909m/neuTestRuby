@@ -11,6 +11,7 @@ class BookingMailer < ActionMailer::Base
     mail :to=> @email,
          :subject=> "Ihre Bestellung"
   end
+
   def booking_new(person, articles, card)
     @person = person
     @articles = articles

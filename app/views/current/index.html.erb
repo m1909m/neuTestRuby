@@ -8,6 +8,17 @@
 <% if current_user.present? %>
     <div class="col-xs-12">
     <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:admin)%>
+		<p><strong style="color:#f59d0e">Folgende Bereiche können Sie bearbeiten:</strong></p>
+	  <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
+      <div class="list-group">
+        <a href="/admin/news" class="list-group-item" target="_self">Aktuelles</a>
+      </div>
+    <% end %>
+	<% if current_user.has_role?(:admin) %>
+        <div class="list-group">
+          <a href="/pages/" class="list-group-item" target="_self">Seiten</a>
+        </div>
+    <% end %>
       <div class="list-group">
         <a href="/administrator/rooms" class="list-group-item" target="_self">Veranstaltungssystem</a>
       </div>
@@ -15,27 +26,17 @@
     <% if current_user.has_role?(:newsletter) || current_user.has_role?(:admin)%>
 
       <div class="list-group">
-        <a href="/news_contents" class="list-group-item" target="_self">Newssystem</a>
-      </div>
-    <% end %>
-    <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
-      <div class="list-group">
-        <a href="/admin/news" class="list-group-item" target="_self">News verwalten</a>
+        <a href="/news_contents" class="list-group-item" target="_self">Newslettersystem</a>
       </div>
     <% end %>
     <% if current_user.has_role?(:shop) || current_user.has_role?(:admin)%>
       <div class="list-group">
-        <a href="/articles" class="list-group-item" target="_self">Artikelliste</a>
+        <a href="/articles" class="list-group-item" target="_self">BAT-KF: Artikelliste</a>
       </div>
     <% end %>
     <% if current_user.has_role?(:diakonie) || current_user.has_role?(:admin)%>
         <div class="list-group">
-          <a href="/pages/Diakonie" class="list-group-item" target="_self">Diakonie Seite Bearbeiten</a>
-        </div>
-    <% end %>
-    <% if current_user.has_role?(:admin) %>
-        <div class="list-group">
-          <a href="/pages/" class="list-group-item" target="_self">Alle Seiten</a>
+          <a href="/pages/Diakonie" class="list-group-item" target="_self">Fachgruppe Diakonie Rheinland Westfalen Lippe</a>
         </div>
     <% end %>
     </div>
