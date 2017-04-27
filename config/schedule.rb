@@ -18,7 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.hours do
+every 1.minutes do
+  puts(Time.now())
   @newsletters = NewsContent.where(sendStatus: false)
   @newsletters.each do |newsletterContent|
     if newsletterContent.sendTime <= Time.now()
