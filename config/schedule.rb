@@ -18,3 +18,16 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+every 1.hours do
+  @newsletters = NewsContent.where(sendStatus: false)
+  @newsletters.each do |newsletterContent|
+    if newsletterContent.sendTime <= Time.now()
+      puts(Time.now())
+      @layout = Newsletter.find(newsletterContent.newsletter_id)
+      @abo_newsletters = AboNewsletter.where(enable: 1)
+      NewsMailer.news_email(@layout, @news_content, @abo_newsletters).deliver
+    end
+
+  end
+
+end

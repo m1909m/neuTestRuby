@@ -3,7 +3,7 @@ class CEvent < ApplicationRecord
   # belongs_to :member
 
   accepts_nested_attributes_for :room
-  before_create :addRoomSize
+ # before_create :addRoomSize
 
   def addRoomSize
     room = Room.find(self.room_id)

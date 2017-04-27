@@ -33,9 +33,6 @@ class NewsContentsController < ApplicationController
     @news_content.sendStatus = false
 
     if @news_content.save
-      @layout = Newsletter.find(@news_content.newsletter_id)
-      @abo_newsletters = AboNewsletter.where(enable: 1)
-      NewsMailer.news_email(@layout, @news_content, @abo_newsletters).deliver_later(wait_until: @news_content.sendtime.to_datetime.to_s)
       respond_to do |f|
         f.html { redirect_to news_contents_url, notice: 'News wurde erfolgreich erstellt'}
       end

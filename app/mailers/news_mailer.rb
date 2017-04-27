@@ -10,11 +10,11 @@ class NewsMailer < ActionMailer::Base
         @id = @aboNewsletters.id
         @url = "http://vkm.marianit.de/abo_newsletter/" + String(@id)
         mail :to=> @email,
-             :subject=> "News-Mail"
+             :subject=> "Newsletter VKM-RWL"
       end
 
       @news = NewsContent.find(@newscontent.id)
-      @news.sendStatus = 1
+      @news.sendStatus = true
       @news.save
   end
 end
