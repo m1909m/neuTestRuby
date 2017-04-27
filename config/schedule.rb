@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.minutes do
+every 1.minute do
   puts(Time.now())
   @newsletters = NewsContent.where(sendStatus: false)
   @newsletters.each do |newsletterContent|
