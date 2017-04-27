@@ -1,9 +1,8 @@
+﻿<div ng-controller="bookingContainer" >
 
-<div ng-controller="bookingContainer" >
+  <h1>Warenkorb</h1>
 
-  <h1>Ihre Bestellung</h1>
-
-  <div ng-hide="cart.length" class="alert alert-info">Ihr Bestellung ist noch leer.</div>
+  <div ng-hide="cart.length" class="alert alert-info">Der Warenkorb ist noch leer.</div>
 
   <table ng-show="cart.length" class="table">
     <tr ng-repeat="item in cart track by $index">
@@ -21,10 +20,11 @@
   </table>
 
 
-  <form ng-submit="addCard()" action="">
-
+<h2>Lieferanschrift</h2>
+  <form ng-submit="addCard()" action="" onload="toggle_form_element()">
+	<!-- Lieferanschrift -->
     <div class="form-group">
-      <label for="name">Name:</label>
+      <label for="name">Name</label>
       <input id="name" type="text" ng-model="newPerson.name" class="form-control" placeholder="Name" require/>
     </div>
     <div class="form-group">
@@ -32,28 +32,69 @@
       <input id="vorname" type="text" ng-model="newPerson.vorname" class="form-control" placeholder="Vorname" require/>
     </div>
     <div class="form-group">
-      <label for="einrichtung">Einrichtung</label>
-      <input id="einrichtung" class="form-control" type="text" ng-model="newPerson.einrichtung" placeholder="Einrichtung" require/>
+		<label for="dienststelle">Dienststelle <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+      <input id="dienststelle" class="form-control" type="text" ng-model="newPerson.dienststelle" placeholder="Dienststelle" require/>
     </div>
-
     <div class="form-group">
-      <label for="adresse">Straße und Hausnummer</label>
-      <input id="adresse" class="form-control" type="text" ng-model="newPerson.adresse" placeholder="Straße und Hausnummer" require/>
+      <label for="adresse">Straße und Hausnr.</label>
+      <input id="adresse" class="form-control" type="text" ng-model="newPerson.adresse" placeholder="Straße und Hausnr." require/>
     </div>
     <div class="form-group">
       <label for="ort">PLZ und Ort</label>
       <input id="ort" class="form-control" type="text" ng-model="newPerson.ort" placeholder="PLZ und Ort" require/>
     </div>
     <div class="form-group">
-      <label for="email">Email-Adresse</label>
-      <input id="email" class="form-control" type="text" ng-model="newPerson.email" placeholder="Email-Adresse" require/>
+      <label for="email">E-Mail-Adresse</label>
+      <input id="email" class="form-control" type="text" ng-model="newPerson.email" placeholder="E-Mail-Adresse" require/>
     </div>
-    <!--
-            <div class="form-group">
-                <label for="maxSize">Maximalanzahl an Mitgliedern</label>
-                <input id="maxSize" type="number" ng-model="newEvent.maxSize" class="form-control" placeholder="Maximalanzahl an Mitgliedern" value="{{room.size}}" disabled/>
-            </div>-->
-    <button type="submit" class="btn btn-default" >Jetzt bestellen</button>
-
+	<div class="form-group">
+	  <input type="radio" id="lieferanschrift" name="switch" value="Lieferanschrift" onclick="toggle_form_element()" style="float:left;" require checked>
+	  <label for="lieferanschrift" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Rechnungsanschrift</label>
+	  	<div  style="clear:both;"></div>
+	  <input type="radio" id="rechnungsanschrift" name="switch" value="Rechnungsanschrift" onclick="toggle_form_element()" style="float:left;" require>
+	  <label for="rechnungsanschrift" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
+		<div  style="clear:both;"></div>
+	</div>
+	
+	<div id="vipInputContainer" style="display:none;">
+	<h2>Rechnungsanschrift</h2>
+	<!-- Rechnungsanschrift -->
+	<div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" ng-model="newPerson.name" class="form-control" placeholder="Name" require/>
+    </div>
+    <div class="form-group">
+      <label for="vorname">Vorname</label>
+      <input id="vorname" type="text" ng-model="newPerson.vorname" class="form-control" placeholder="Vorname" require/>
+    </div>
+    <div class="form-group">
+		<label for="dienststelle">Dienststelle <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+      <input id="dienststelle" class="form-control" type="text" ng-model="newPerson.dienststelle" placeholder="Dienststelle" require/>
+    </div>
+    <div class="form-group">
+      <label for="adresse">Straße und Hausnr.</label>
+      <input id="adresse" class="form-control" type="text" ng-model="newPerson.adresse" placeholder="Straße und Hausnr." require/>
+    </div>
+    <div class="form-group">
+      <label for="ort">PLZ und Ort</label>
+      <input id="ort" class="form-control" type="text" ng-model="newPerson.ort" placeholder="PLZ und Ort" require/>
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail-Adresse</label>
+      <input id="email" class="form-control" type="text" ng-model="newPerson.email" placeholder="E-Mail-Adresse" require/>
+    </div>
+	</div>
+    <button type="submit" class="btn btn-success">Verbindlich bestellen</button>
   </form>
 </div>
+
+<!-- JavaScript -->
+  <script type="text/javascript">
+    function toggle_form_element() {
+      if (document.getElementsByName('switch')[0].checked) {
+        document.getElementById('vipInputContainer').style.display = 'none';
+      } else {
+        document.getElementById('vipInputContainer').style.display = 'block';
+      }
+    }
+  </script>
