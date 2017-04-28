@@ -13,6 +13,11 @@ class NewsController < ApplicationController
     @news.reverse!
   end
 
+  def archiv
+    @news = News.last(40)
+    @news.reverse!
+  end
+
   def show
   end
 
