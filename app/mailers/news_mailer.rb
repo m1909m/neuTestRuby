@@ -1,7 +1,7 @@
 class NewsMailer < ActionMailer::Base
   default from: 'info@vkm.de'
-  def news_email(newsletter, newscontent, abo_newsletter)
-    @aboNewsletters = abo_newsletter
+  def news_email(newsletter, newscontent)
+    @aboNewsletters = AboNewsletter.all
     @newsletter = newsletter
     @newscontent = newscontent
 

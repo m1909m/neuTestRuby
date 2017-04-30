@@ -33,6 +33,8 @@ class NewsContentsController < ApplicationController
     @news_content.sendStatus = false
 
     if @news_content.save
+      @layout = Newsletter.find(@news_content.newsletter_id)
+      SendEmailJob.set(wait_until: @news_content.sendTime).perform_later(@layout, @news_content)
       respond_to do |f|
         f.html { redirect_to news_contents_url, notice: 'News wurde erfolgreich erstellt'}
       end

@@ -6,6 +6,8 @@ gem 'carrierwave', '~> 1.0'
 #gem 'sunspot_rails', '~> 2.2.4'
 #gem 'sunspot_with_kaminari', '~> 0.1.0'
 
+gem 'delayed_job_active_record'
+
 gem 'search_cop'
 
 gem 'therubyracer'
