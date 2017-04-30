@@ -4,14 +4,15 @@ class NewsMailer < ActionMailer::Base
     @aboNewsletters = AboNewsletter.all
     @newsletter = newsletter
     @newscontent = newscontent
-
-      if(@aboNewsletters.enable == true)
-        @email = @aboNewsletters.eMail
-        @id = @aboNewsletters.id
+    @abo_newsletters.each do |abo_newsletter|
+      if(abo_newsletter.enable == true)
+        @email = abo_newsletter.eMail
+        @id = abo_newsletter.id
         @url = "http://vkm.marianit.de/abo_newsletter/" + String(@id)
         mail :to=> @email,
-             :subject=> "Newsletter VKM-RWL"
+             :subject=> @newscontent.title
       end
+    end
 
       @news = NewsContent.find(@newscontent.id)
       @news.sendStatus = true
