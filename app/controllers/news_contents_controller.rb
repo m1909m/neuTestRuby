@@ -34,7 +34,8 @@ class NewsContentsController < ApplicationController
 
     if @news_content.save
       @layout = Newsletter.find(@news_content.newsletter_id)
-      SendEmailJob.set(wait: 20.seconds).perform_later(@layout, @news_content)
+      @abo_newsletters = AboNewsletter.all
+      SendEmailJob.set(wait: 20.seconds).perform_later(@layout, @news_content, @abo_newsletters)
       respond_to do |f|
         f.html { redirect_to news_contents_url, notice: 'News wurde erfolgreich erstellt'}
       end

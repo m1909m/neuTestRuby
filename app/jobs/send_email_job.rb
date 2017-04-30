@@ -1,8 +1,8 @@
 class SendEmailJob < ApplicationJob
   queue_as :default
 
-  def perform(newsletter, newscontent)
-    @aboNewsletters = AboNewsletter.all
+  def perform(newsletter, newscontent, abo_newsletters)
+    @aboNewsletters = abo_newsletters
     @newsletter = newsletter
     @newscontent = newscontent
     @abo_newsletters.each do |abo_newsletter|
