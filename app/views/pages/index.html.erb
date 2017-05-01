@@ -18,7 +18,8 @@
               <input type="submit" class="btn btn-default" name="commit" value="Änderungen speichern" data-disable-with="Änderungen speichern" />
             </div>
           </form>
-          <form id="my_form" action="/tinymce_assets/" accept-charset="UTF-8" method="post" enctype="multipart/form-data" style="width:0px;height:0px;overflow:hidden">
+          <iframe id="form_target" name="form_target" style="display:none"></iframe>
+          <form id="my_form" action="/tinymce_assets/" target="form_target" accept-charset="UTF-8" method="post" enctype="multipart/form-data" style="width:0px;height:0px;overflow:hidden">
             <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <input name="image[file]" type="file" onchange="$('#my_form').submit();this.value='';">
           </form>
