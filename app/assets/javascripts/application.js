@@ -16,6 +16,7 @@
 //= require jquery/dist/jquery
 //  require jquery_ui/jquery-ui
 //= require tinymce
+
 //  require twitter/bootstrap
 // require bootstrap-modal
 //= require angular
