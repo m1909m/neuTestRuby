@@ -3,8 +3,9 @@ class TinymceAssetsController < ApplicationController
 
   def create
 
-    @image = Image.create params.permit(:file, :alt, :hint)
-
+    @image = Image.create
+    @image.file = params.permit(:image)
+    @image.save
     render json: {
         image: {
             url:    @image.file.url,
