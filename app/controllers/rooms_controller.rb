@@ -114,7 +114,7 @@ class RoomsController < ApplicationController
 
   def destroy
     @room.destroy
-
+    redirect_to :action => "angular"
   end
 
   def deleteEvent
