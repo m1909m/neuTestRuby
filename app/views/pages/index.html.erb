@@ -21,7 +21,17 @@
           <iframe id="form_target" name="form_target" style="display:none"></iframe>
           <form id="my_form" action="/tinymce_assets/" target="form_target" accept-charset="UTF-8" method="post" enctype="multipart/form-data" style="width:0px;height:0px;overflow:hidden">
             <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-            <input name="image[file]" type="file" onchange="$('#my_form').submit();this.value='';">
+            <input name="image[file]" type="file" onchange="$('#my_form').submit(function() { // catch the form's submit event
+                $.ajax({ // create an AJAX call...
+                    data: $(this).serialize(), // get the form data
+                    type: $(this).attr('method'), // GET or POST
+                    url: $(this).attr('action'), // the file to call
+                    success: function(response) { // on success..
+                        response; // update the DIV
+                        }
+                    });
+                return false; // cancel original event to prevent form submitting
+                });this.value='';">
           </form>
           <script type="text/javascript">
 
