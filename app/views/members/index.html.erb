@@ -46,8 +46,8 @@
   <div class="col-xs-12" style="margin-top: 5px; border-top: 0.5px solid #f59d0e; padding-top: 5px;">
 
     <% @color = true %>
-    <% if events1 != null %>
-    <% @events1.each do |event|
+    <% if @eventsOver != null %>
+    <% @eventsOver.each do |event|
       if(@color == true)
         @color = false;%>
 
