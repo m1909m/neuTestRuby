@@ -10,8 +10,11 @@
                 plugins: [
                     "advlist autolink autosave link image imagetools lists charmap print preview hr anchor pagebreak spellchecker",
                     "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                    "table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern"
+                    "table contextmenu directionality template textcolor paste textcolor colorpicker textpattern"
                 ],
+                file_browser_callback: function(field_name, url, type, win) {
+                    if(type=='image') $('#my_form input').click();
+                },
 
                 toolbar1: "fontselect | fontsizeselect | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | table spellchecker | outdent indent | link unlink | image | rotateleft rotateright | flipv fliph | blockquote code | preview",
 
