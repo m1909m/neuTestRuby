@@ -3,7 +3,7 @@ class CreateImages < ActiveRecord::Migration[5.0]
     create_table :images do |t|
       t.string :alt
       t.string :hint
-      t.string :attachment
+      t.string :file
 
       t.timestamps
     end

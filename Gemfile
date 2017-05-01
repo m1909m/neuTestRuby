@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave', '~> 1.0'
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
+
 #gem 'sunspot'
 #gem 'sunspot_solr'
 #gem 'sunspot_rails', '~> 2.2.4'
