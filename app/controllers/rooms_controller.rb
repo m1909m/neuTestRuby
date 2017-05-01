@@ -81,6 +81,15 @@ class RoomsController < ApplicationController
     end
   end
 
+  def roomCreate
+    @room = Room.new(room_params)
+    respond_to do |format|
+      if @room.save
+        format.html { redirect_to action: "angular", notice: "Raum wurde erfolgreich hinzugefügt" }
+      end
+    end
+  end
+
   def update
     @event.title = event_params[:title]
     dateL = event_params[:dateL].split(' - ')

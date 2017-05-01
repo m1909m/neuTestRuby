@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'event/myEvent/', to: "c_events#byMail", defaults: {format: :json}
   get 'administrator/rooms/event/member/abmelden/:id', to: "c_events#abmelden", defaults: {format: :json}
   resources :rooms, defaults: {format: :json}
-  resources :rooms, only: [:create], defaults: {format: :html}
+
   get 'administrator/raum/new', to: "rooms#neu"
   get 'administrator/raum/:id/edit', to: "rooms#roomEdit"
   post 'administrator/raum/:id', to: "rooms#roomUpdate"
@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   root :to => "news#index"
 
   get 'administrator/rooms', to: "rooms#angular"
+  post 'administrator/rooms', to: "rooms#roomCreate"
   get 'administrator/rooms/:id', to: "rooms#calendar"
   get 'administrator/rooms/:id/new', to: "rooms#angularNew"
   post 'administrator/rooms/event/:id', to:  "rooms#update"
