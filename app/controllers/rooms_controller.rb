@@ -2,8 +2,27 @@ class RoomsController < ApplicationController
 
   respond_to :json
 
-  before_action :set_room, only: [:show, :destroy]
+  before_action :set_room, only: [:show, :destroy, :roomUpdate, :roomEdit]
   before_action :set_event, only: [:edit, :update, :deleteEvent]
+
+  def neu
+    @room = Room.new
+    respond_to do |f|
+      f.html
+    end
+  end
+
+  def roomEdit
+    respond_to do |f|
+      f.html
+    end
+  end
+
+  def roomUpdate
+    if @room.update(room_params)
+
+    end
+  end
 
   def angular
 

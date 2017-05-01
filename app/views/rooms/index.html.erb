@@ -6,13 +6,17 @@
  <!-- <ui-view></ui-view>-->
   <div id="roomsContainerID" ng-controller="RoomCtrl">
     <h1>Alle eingetragene Räume</h1>
-    <div ng-show="!rooms.length">Keine Räume vorhanden</div>
-    <div ng-repeat="room in rooms" style="margin: 5px;">
-      <div class="list-group">
-        <a href="/administrator/rooms/{{room.id}}" target="_self" ng-click="" class="list-group-item"><table><tr><td style="color: #f59d0e;"><b style="color: #000;">Raumnummer: </b>{{room.number}}</td><td style="color: #f59d0e;"><b style="color: #000;">Seminarteilnehmer: </b>{{room.size}}</td><td><b style="color: #f59d0e;">{{room.building}}</b></td></tr></table></a>
-      </div>
+    <div class="col-xs-12">
+      <div ng-show="!rooms.length">Keine Räume vorhanden</div>
+      <div ng-repeat="room in rooms" style="margin: 5px;">
+        <div class="list-group">
+          <a href="/administrator/rooms/{{room.id}}" target="_self" ng-click="" class="list-group-item"><table><tr><td style="color: #f59d0e;"><b style="color: #000;">Raumnummer: </b>{{room.number}}</td><td style="color: #f59d0e;"><b style="color: #000;">Seminarteilnehmer: </b>{{room.size}}</td><td><b style="color: #f59d0e;">{{room.building}}</b></td></tr></table></a>
+        </div>
 
+      </div>
     </div>
+    <!-- add role -->
+    <a href="administrator/raum/new" target="_self">Neuen Raum hinzufügen</a>
     <h2>Meine Veranstaltungen</h2>
     <div ng-show="!myEvents.length">Sie haben noch keine Veranstaltungen erstellt</div>
     <div ng-repeat="myEvent in myEvents" style="margin: 5px;">
