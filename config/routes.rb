@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get 'administrator/rooms/event/member/abmelden/:id', to: "c_events#abmelden", defaults: {format: :json}
   resources :rooms, defaults: {format: :json}
   get 'administrator/raum/new', to: "rooms#neu"
-  get 'administrator/raum/:id/edit', to: "rooms#roomsEdit"
-  post 'administrator/raum/:id', to: "rooms#roomsUpdate"
+  get 'administrator/raum/:id/edit', to: "rooms#roomEdit"
+  post 'administrator/raum/:id', to: "rooms#roomUpdate"
 
 
   resources :contact_forms
