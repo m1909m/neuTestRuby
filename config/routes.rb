@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'event/myEvent/', to: "c_events#byMail", defaults: {format: :json}
   get 'administrator/rooms/event/member/abmelden/:id', to: "c_events#abmelden", defaults: {format: :json}
   resources :rooms, defaults: {format: :json}
+  resources :rooms, only: [:create], defaults: {format: :html}
   get 'administrator/raum/new', to: "rooms#neu"
   get 'administrator/raum/:id/edit', to: "rooms#roomEdit"
   post 'administrator/raum/:id', to: "rooms#roomUpdate"
