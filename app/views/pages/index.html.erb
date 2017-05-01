@@ -23,9 +23,9 @@
             <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <input name="image[file]" type="file" onchange="$('#my_form').submit(function() { // catch the form's submit event
                 $.ajax({ // create an AJAX call...
-                    data: $(this).serialize(), // get the form data
-                    type: $(this).attr('method'), // GET or POST
-                    url: $(this).attr('action'), // the file to call
+                    data: $('#my_form').serialize(), // get the form data
+                    type: $('#my_form').attr('method'), // GET or POST
+                    url: $('#my_form').attr('action'), // the file to call
                     success: function(response) { // on success..
                         response; // update the DIV
                         }
