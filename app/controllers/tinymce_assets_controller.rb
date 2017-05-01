@@ -8,11 +8,7 @@ class TinymceAssetsController < ApplicationController
     @image.save
     puts(@image.file_url)
     render json: {
-        image: {
-            url:    @image.file_url,
-            height: 250,
-            width:  250
-        }
+        location: @image.file_url
     }, layout: false, content_type: "text/html"
   end
 
