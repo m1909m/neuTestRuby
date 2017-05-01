@@ -4,7 +4,7 @@ class TinymceAssetsController < ApplicationController
   def create
 
     @image = Image.new
-    @image.file = params.permit(:image)
+    @image.file = image_params[:file]
     @image.save
     puts(@image.file_url)
     render json: {
@@ -14,5 +14,10 @@ class TinymceAssetsController < ApplicationController
             width:  250
         }
     }, layout: false, content_type: "text/html"
+  end
+
+  private
+  def image_params
+    params.require(:image).permit(:file)
   end
 end
