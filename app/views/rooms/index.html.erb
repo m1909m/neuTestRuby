@@ -10,7 +10,14 @@
       <div ng-show="!rooms.length">Keine Räume vorhanden</div>
       <div ng-repeat="room in rooms" style="margin: 5px;">
         <div class="list-group">
+          <div class="col-xs-10">
           <a href="/administrator/rooms/{{room.id}}" target="_self" ng-click="" class="list-group-item"><table><tr><td style="color: #f59d0e;"><b style="color: #000;">Raumnummer: </b>{{room.number}}</td><td style="color: #f59d0e;"><b style="color: #000;">Seminarteilnehmer: </b>{{room.size}}</td><td><b style="color: #f59d0e;">{{room.building}}</b></td></tr></table></a>
+          </div>
+          <div class="col-xs-2">
+            <% if current_user.has_role?(:admin) %>
+              <a href="/administrator/raum/{{room.id}}/edit" target="_self" style="color: #f59d0e;">Raum bearbeiten</a>
+            <% end %>
+          </div>
         </div>
 
       </div>

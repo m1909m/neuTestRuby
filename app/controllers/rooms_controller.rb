@@ -19,8 +19,10 @@ class RoomsController < ApplicationController
   end
 
   def roomUpdate
-    if @room.update(room_params)
-
+    respond_to do |format|
+      if @room.update(room_params)
+        format.html { redirect_to action: "angular", notice: "Raumdaten wurde erfolgreich verändert" }
+      end
     end
   end
 
@@ -72,7 +74,11 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    @room.save
+    respond_to do |format|
+      if @room.save
+        format.html { redirect_to action: "angular", notice: "Raum wurde erfolgreich hinzugefügt" }
+      end
+    end
   end
 
   def update
