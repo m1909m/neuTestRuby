@@ -40,16 +40,47 @@
             </div>
           </div>
       <% end %>
-
-      <!--
-        <tr>
-          <td><%#= newssystem.title %></td>
-          <td><%#= newssystem.subTitle %></td>
-          <td><%#= newssystem.story %></td>
-          <td><%#= link_to 'Show', newssystem %></td>
-          <td><%#= link_to 'Edit', edit_newssystem_path(newssystem) %></td>
-          <td><%#= link_to 'Destroy', newssystem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>-->
   <% end %>
+  </div>
+
+  <div class="col-xs-12" style="margin-top: 5px; border-top: 0.5px solid #f59d0e; padding-top: 5px;">
+
+    <% @color = true %>
+    <% if events1 != null %>
+    <% @events1.each do |event|
+      if(@color == true)
+        @color = false;%>
+
+            <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
+              <div class="caption">
+                <h3><%= event.start.strftime("%d.%m.%Y %H:%M") %> - <%= event.end.strftime("%d.%m.%Y %H:%M") %><br><%= event.title %></h3>
+                <%@rooms.each do |room|
+                  if(event.room_id == room.id) %>
+                        <p><%= room.building %></p>
+                        <p>Die Anmeldung kann nicht Online erfolgen, da die Frist bereits abgelaufen ist.
+                          Da noch Plätze zur Verfügung stehen, können Sie aber ggf. noch manuell angemeldet werden.
+                          Melden Sie sich dafür bei unserem Sekretariat.</p>
+                    <% end %>
+                <% end %>
+              </div>
+            </div>
+        <% elsif(@color == false)
+             @color = true%>
+            <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
+              <div class="caption">
+                <h3><%= event.start.strftime("%d.%m.%Y %H:%M") %> - <%= event.end.strftime("%d.%m.%Y %H:%M") %><br><%= event.title %></h3>
+                <%@rooms.each do |room|
+                  if(event.room_id == room.id) %>
+                        <p><%= room.building %></p>
+                        <p>Die Anmeldung kann nicht Online erfolgen, da die Frist bereits abgelaufen ist.
+                          Da noch Plätze zur Verfügung stehen, können Sie aber ggf. noch manuell angemeldet werden.
+                          Melden Sie sich dafür bei unserem Sekretariat.</p>
+                    <% end %>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
+    <% end %>
 
 </div>

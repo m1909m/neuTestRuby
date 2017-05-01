@@ -8,6 +8,9 @@ class MembersController < ApplicationController
     @members = Member.all
  #   puts(DateTime.now.to_date)
     @events = CEvent.where(free: true).where('`c_events`.`startLogin` < ?', Time.now.utc).where('`c_events`.`endLogin` > ?', Time.now.utc)
+
+    @events1 = CEvent.where(free: true).where('`c_events`.`endLogin` < ?', Time.now.utc)
+
     @rooms = Room.all
   end
 
