@@ -27,10 +27,9 @@
                     type: $('#my_form').attr('method'), // GET or POST
                     url: $('#my_form').attr('action'), // the file to call
                     success: function(response) { // on success..
-                        response; // update the DIV
+                        alert(response); // update the DIV
                         }
-                    });
-                return false; // cancel original event to prevent form submitting
+                    }); // cancel original event to prevent form submitting
                 });this.value='';">
           </form>
           <script type="text/javascript">
