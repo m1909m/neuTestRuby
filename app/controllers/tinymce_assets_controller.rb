@@ -7,7 +7,7 @@ class TinymceAssetsController < ApplicationController
     @image.file = image_params[:file]
     @image.save
     puts(@image.file_url)
-    render :html => "<script>alert('Hello Rails');</script>"
+    render :html => "<script>alert('Hello Rails');</script>".html_safe
    # render json: {
    #     location: @image.file_url
    # }, layout: false, content_type: "text/html"
