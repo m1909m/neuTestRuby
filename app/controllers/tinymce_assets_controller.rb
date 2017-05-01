@@ -7,7 +7,7 @@ class TinymceAssetsController < ApplicationController
     @image.file = image_params[:file]
     @image.save
     puts(@image.file_url)
-    render js: "<script>top.$('.mce-btn.mce-open').parent().find('.mce-textbox').val('" + @image.file_url + "');</script>"
+    render js: "top.$('.mce-btn.mce-open').parent().find('.mce-textbox').val('" + @image.file_url + "');"
    # render json: {
    #     location: @image.file_url
    # }, layout: false, content_type: "text/html"
