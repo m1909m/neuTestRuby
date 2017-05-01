@@ -22,20 +22,22 @@
               <a data-confirm="Sind sie sich sicher?" rel="nofollow" data-method="delete" style="color: #f59d0e;" href="/rooms/{{room.id}}">Entfernen</a>
           <% end %>
         </div>
-       </div>
-
       </div>
     </div>
+
     <!-- add role -->
-    <a href="/administrator/raum/new" target="_self">Neuen Raum hinzufügen</a>
-    <h2>Meine Veranstaltungen</h2>
-    <div ng-show="!myEvents.length">Sie haben noch keine Veranstaltungen erstellt</div>
-    <div ng-repeat="myEvent in myEvents" style="margin: 5px;">
-      <div cllass="ist-group">
-        <a href="/administrator/rooms/event/members/{{myEvent.id}}" target="_self" ng-click="" class="list-group-item"><table><tr><td style="color: #f59d0e;">{{ myEvent.title }}</td><td>Aktuelle Teilnehmer: <b style="color: #f59d0e;">{{ myEvent.member }}</b></td></tr></table></a>
+    <div class="col-xs-12">
+      <a href="/administrator/raum/new" target="_self">Neuen Raum hinzufügen</a>
+    </div>
+    <div class="col-xs-12">
+      <h2>Meine Veranstaltungen</h2>
+      <div ng-show="!myEvents.length">Sie haben noch keine Veranstaltungen erstellt</div>
+      <div ng-repeat="myEvent in myEvents" style="margin: 5px;">
+        <div cllass="ist-group">
+          <a href="/administrator/rooms/event/members/{{myEvent.id}}" target="_self" ng-click="" class="list-group-item"><table><tr><td style="color: #f59d0e;">{{ myEvent.title }}</td><td>Aktuelle Teilnehmer: <b style="color: #f59d0e;">{{ myEvent.member }}</b></td></tr></table></a>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 
