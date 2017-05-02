@@ -9,6 +9,42 @@ body {
   min-height: 101%; /*Scrollbar immer anzeigen*/
 }
 
+.aus {
+    color: #333;
+    cursor: pointer;
+}
+
+.aus:before {
+    content: '+';
+	color: #f59d0e;
+	font-size: 30px;
+	font-weight: bold;
+    padding: 0 10px;
+}
+
+.aus:hover,
+.aus:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.ein {
+    color: #333;
+}
+
+.ein:before {
+    content: '-';
+	color: #f59d0e;
+	font-size: 30px;
+	font-weight: bold;
+    padding: 0 10px;
+}
+
+.accordion {
+    width: 100%;
+}
+
+
 .ssbottom {
   width: 100%;
   line-height: 50px;

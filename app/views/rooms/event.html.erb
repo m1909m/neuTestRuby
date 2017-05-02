@@ -1,4 +1,3 @@
-
   <div ng-controller="myEventController">
       <h1>Angemeldete Teilnehmer</h1>
       <div ng-show="!members.length">Keine Teilnehmer vorhanden</div>
@@ -7,11 +6,33 @@
               <div class="list-group-item">
                   <table>
                       <tr>
-                          <td>{{member.lastName}}</td>
-                          <td>{{member.firstName}}</td>
-                          <td><b>{{member.accept ? 'Angemeldet' : 'Abgemeldet' }}</b></td>
-                          <td><button class="btn" ng-show="member.accept" ng-click="abmelden(member)">Abmelden</button></td>
-                      </tr>
+						  <td><small><b>Status:</b> {{member.accept ? 'Angemeldet <div style="width:10px; height:10px; border-radius:25px; background:green;"></div>' : 'Abgemeldet <div style="width:10px; height:10px; border-radius:25px; background:red;"></div>' }}</small></td>
+                          <td><button class="btn btn-default" ng-show="member.accept" ng-click="abmelden(member)">Abmelden</button></td>
+					  </tr>
+					  		<tr><td>&nbsp;</td></tr>
+					  <tr>
+						  <td><p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b><span class="aus"></span></p>
+							  <div class="accordion">
+								  
+								  <p><small>{{member.job}} aus {{member.place}}</small></p>
+								  
+								<p><b><i>Kontaktdaten</i></b><br>
+							  <small>{{member.street}}<br>
+							  {{member.plz}} {{member.place}}<br>
+							  <div style="margin-top:15px;">Telefon: {{member.phone}}<br>
+								  E-Mail: {{member.eMail}}</div></small></p>
+					  			
+								  <p><b><i>Dienststelle</i></b><br>
+							  <small>{{member.nameCompany}}<br>
+						  {{member.streetCompany}}<br>
+							  {{member.placeCompany}}</small></p>
+					  			
+								  <p><b><i>Buchung</i></b><br>
+							  <small>Zimmer: {{member.room}}<br>
+								  Unverträglichkeiten / Vegetarier: {{member.veggie}}</small></p>
+					  		</div>
+						  </td>
+					  </tr>
                   </table>
               </div>
           </div>
@@ -21,24 +42,20 @@
   </div>
 
 
-
-<!--
-
-  member.gender
-  member.firstName
-  member.lastName
-  member.street
-  member.plz
-  member.place
-  member.job
-  member.phone
-  member.eMail
-  member.room
-  member.nameCompany
-  member.streetCompany
-  member.placeCompany
-  member.veggie  // Unverträglichkeiten/Vegetarier
-
-
-
--->
+<script>
+	$(document).ready( function() {
+  $('.aus').not('.ein').next('.accordion').hide();
+  $('.aus').click( function() {
+    if ($(this).hasClass('ein')) {
+      $(this).next('.accordion').slideToggle('slow');
+      $(this).removeClass('ein');
+    } else {
+	  $('.ein').next('.accordion').slideToggle('slow');
+      $('.ein').removeClass('ein');
+      $(this).next('.accordion').slideToggle('slow');
+      $(this).addClass('ein');
+    };
+    return false;
+  });
+});
+</script>
