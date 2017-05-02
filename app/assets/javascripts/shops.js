@@ -1,4 +1,4 @@
-angular.module('myModule', ['ngStorage', 'ngResource','daterangepicker']).factory("Cart", function($window, $rootScope, $resource, $http) {
+angular.module('myModule', ['ngStorage', 'ngResource','daterangepicker', 'ui.calendar']).factory("Cart", function($window, $rootScope, $resource, $http) {
     /*
      angular.element($window).on('storage', function(event) {
      if (event.key === 'warenkorb') {
