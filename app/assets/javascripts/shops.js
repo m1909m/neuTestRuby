@@ -219,6 +219,14 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         var newPerson;
         var articles;
         newPerson = $scope.newPerson;
+        if(newPerson.nameR == "") {
+            newPerson.nameR = newPerson.name;
+            newPerson.vornameR = newPerson.vorname;
+            newPerson.dienstelleR = newPerson.dienstelle;
+            newPerson.adresseR = newPerson.adresse;
+            newPerson.ortR = newPerson.ort;
+            newPerson.emailR = newPerson.email;
+        }
         //newPerson.articles = $scope.cart;
         articles = $scope.cart;
 

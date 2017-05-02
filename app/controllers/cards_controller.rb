@@ -54,6 +54,14 @@ class CardsController < ApplicationController
     @newPerson.ort = params[:ort]
     @newPerson.email = params[:email]
 
+    @newPerson.nameR = params[:nameR]
+    @newPerson.vornameR = params[:vornameR]
+    @newPerson.einrichtungR = params[:einrichtungR]
+    @newPerson.adresseR = params[:adresseR]
+    @newPerson.ortR = params[:ortR]
+    @newPerson.emailR = params[:emailR]
+
+
     if @newPerson.save
 
 #        format.json { render :index, status: :created, location: @news }
