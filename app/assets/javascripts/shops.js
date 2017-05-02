@@ -343,9 +343,6 @@ shopApp.directive('datetimepicker', function(){
                 element.find('input').val( ngModel.$viewValue || '' );
             };
 
-            element.datetimepicker({
-                language: 'de'
-            });
 
             element.on('dp.change', function(){
                 scope.$apply(read);
