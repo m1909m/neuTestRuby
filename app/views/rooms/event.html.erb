@@ -6,7 +6,9 @@
               <div class="list-group-item">
                   <table>
                       <tr>
-						  <td><small><b>Status:</b> <div ng-show="member.accept" style="width:10px; height:10px; border-radius:25px; background:green;">Angemeldet</div><div ng-show="!member.accept" style="width:10px; height:10px; border-radius:25px; background:red;">Abgemeldet</div>{{member.accept ? 'Angemeldet ' : 'Abgemeldet ' }}</small></td>
+                        <td><small><b>Status:</b></small></td>
+                        <td ng-show="member.accept"><div style="width:10px; height:10px; border-radius:25px; background:green;"></div>Angemeldet</td>
+                        <td ng-show="!member.accept" ><div style="width:10px; height:10px; border-radius:25px; background:red;"></div>Abgemeldet</td>
                           <td><button class="btn btn-default" ng-show="member.accept" ng-click="abmelden(member)">Abmelden</button></td>
 					  </tr>
 					  		<tr><td>&nbsp;</td></tr>
