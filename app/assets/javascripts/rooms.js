@@ -151,8 +151,12 @@ myApp.controller('eventController', ['$scope', 'Room', '$location', function($sc
         var event;
 
         newEvent = $scope.newEvent;
-        newEvent.start = $scope.datePicker.date.startDate;
-        newEvent.end = $scope.datePicker.date.endDate;
+        newEvent.start = $scope.date.startOne;
+        newEvent.end = $scope.date.endOne;
+        newEvent.startSecond = $scope.date.startTwo;
+        newEvent.endSecond = $scope.date.endTwo;
+        newEvent.startThird = $scope.date.startThree;
+        newEvent.endThird = $scope.date.endThree;
         newEvent.startLogin =  $scope.datePicker.dateL.startDate;
         newEvent.endLogin =  $scope.datePicker.dateL.endDate;
         newEvent.room_id = id;

@@ -4,6 +4,10 @@ json.array! @c_events do |event|
   json.title event.title
   json.start event.start.strftime(date_format)
   json.end event.end.strftime(date_format)
+  json.startSecond event.startSecond.strftime(date_format)
+  json.endSecond event.endSecond.strftime(date_format)
+  json.startThird event.startThird.strftime(date_format)
+  json.endThird event.endThird.strftime(date_format)
   json.startLogin event.startLogin.strftime(date_format)
   json.endLogin event.endLogin.strftime(date_format)
   json.color event.color unless event.color.blank?
