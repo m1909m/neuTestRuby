@@ -78,6 +78,7 @@ class CEventsController < ApplicationController
     @c_event.member = 0
     @c_event.free = 1
     @c_event.save
+    redirect_to "/administrator/rooms/" + c_event_params[:room_id]
   end
 
   def update
