@@ -120,7 +120,31 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
         //$scope.events = Room.events.index({"roomid": $stateParams.id});
         $scope.eventSources = [$scope.events];
     }, 60000);
-    $scope.eventSources = [$scope.events];
+    var myEvent = {
+        title: "Birmingham Comic Con",
+        start: new Date('2017-05-03T09:00'),
+        end: new Date('2017-05-05T19:00'),
+        id: 1,
+        isMultipleDay: true,
+        multipleDayEvents: [
+            {
+                start: new Date('2017-05-03T09:00'),
+                end: new Date('2017-05-03T19:00'),
+                description: 'Day 1'
+            },
+            {
+                start: new Date('2017-05-04T09:00'),
+                end: new Date('2017-05-04T19:00'),
+                description: 'Day 2'
+            },
+            {
+                start: new Date('2017-05-05T09:00'),
+                end: new Date('2017-05-05T19:00'),
+                description: 'Day 3'
+            }
+        ]
+    };
+    $scope.eventSources = [$scope.events, myEvent];
 
 }]);
 myApp.controller('eventController', ['$scope', 'Room', '$location', function($scope, Room, $location) {
