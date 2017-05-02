@@ -112,13 +112,13 @@ class RoomsController < ApplicationController
 
     if @c_event.save
 
-      @members = Member.where(event_id: @event.id)
+      @members = Member.where(event_id: @c_event.id)
       @members.each do |member|
         @member = member
-        ContactMailer.change_event(@member, @event)
+        ContactMailer.change_event(@member, @c_event)
       end
     end
-    redirect_to :action => "calendar", :id => @event.room_id
+    redirect_to :action => "calendar", :id => @c_event.room_id
   end
 
   def destroy
@@ -127,8 +127,8 @@ class RoomsController < ApplicationController
   end
 
   def deleteEvent
-    @id = @event.room_id
-    @event.destroy
+    @id = @c_event.room_id
+    @c_event.destroy
     redirect_to :action => "calendar", :id => @id
   end
 
@@ -138,7 +138,7 @@ class RoomsController < ApplicationController
       @room = Room.find(params[:id])
     end
     def set_event
-      @event = CEvent.find(params[:id])
+      @c_event = CEvent.find(params[:id])
     end
     def c_event_params
       params.require(:event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
