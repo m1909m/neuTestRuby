@@ -56,20 +56,20 @@ class CEventsController < ApplicationController
   def create
     @c_event = CEvent.new
     # TODO Tests
-    @c_events.title = c_event_params[:title]
-    @c_events.description = c_event_params[:description]
-    @c_events.minSize = c_event_params[:minSize]
-    @c_events.maxSize = c_event_params[:maxSize]
-    @c_events.start = c_event_params[:start]
-    @c_events.end = c_event_params[:end]
-    @c_events.startSecond = c_event_params[:startSecond]
-    @c_events.endSecond = c_event_params[:endSecond]
-    @c_events.startThird = c_event_params[:startThird]
-    @c_events.endThird = c_event_params[:endThird]
-    @c_events.room_id = c_event_params[:room_id]
+    @c_event.title = c_event_params[:title]
+    @c_event.description = c_event_params[:description]
+    @c_event.minSize = c_event_params[:minSize]
+    @c_event.maxSize = c_event_params[:maxSize]
+    @c_event.start = c_event_params[:start]
+    @c_event.end = c_event_params[:end]
+    @c_event.startSecond = c_event_params[:startSecond]
+    @c_event.endSecond = c_event_params[:endSecond]
+    @c_event.startThird = c_event_params[:startThird]
+    @c_event.endThird = c_event_params[:endThird]
+    @c_event.room_id = c_event_params[:room_id]
 
-    @c_events.startLogin = c_event_params[:startLogin]
-    @c_events.endLogin = c_event_params[:endLogin]
+    @c_event.startLogin = c_event_params[:startLogin]
+    @c_event.endLogin = c_event_params[:endLogin]
     @c_event.userMail = current_user.email
     @c_event.member = 0
     @c_event.free = 1
