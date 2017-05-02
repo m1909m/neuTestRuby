@@ -74,7 +74,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', '$http', '$interval', function($
 
 }]);
 
-myApp.controller('calendarController', function($scope, Room, $http, $interval, $location, $window) {
+myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', '$location', '$window', function($scope, Room, $http, $interval, $location, $window) {
     $scope.roomId = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
@@ -120,33 +120,26 @@ myApp.controller('calendarController', function($scope, Room, $http, $interval, 
         //$scope.events = Room.events.index({"roomid": $stateParams.id});
         $scope.eventSources = [$scope.events];
     }, 60000);
-    var myEvent = {
+    var myEvent = [{
         title: "Birmingham Comic Con",
-        start: new Date('2017-05-03T09:00'),
-        end: new Date('2017-05-05T19:00'),
-        id: 1,
-        isMultipleDay: true,
-        multipleDayEvents: [
-            {
-                start: new Date('2017-05-03T09:00'),
-                end: new Date('2017-05-03T19:00'),
-                description: 'Day 1'
-            },
-            {
-                start: new Date('2017-05-04T09:00'),
-                end: new Date('2017-05-04T19:00'),
-                description: 'Day 2'
-            },
-            {
-                start: new Date('2017-05-05T09:00'),
-                end: new Date('2017-05-05T19:00'),
-                description: 'Day 3'
-            }
-        ]
-    };
+        start: new Date('2014-11-20T09:00'),
+        end: new Date('2014-11-20T19:00'),
+        id: 1
+    }, {
+        title: "Birmingham Comic Con",
+        start: new Date('2014-11-21T09:00'),
+        end: new Date('2014-11-21T19:00'),
+        id: 1
+},
+    {
+        title: "Birmingham Comic Con",
+            start: new Date('2014-11-22T09:00'),
+        end: new Date('2014-11-22T19:00'),
+        id: 1
+    }];
     $scope.eventSources = [$scope.events, myEvent];
 
-});
+}]);
 myApp.controller('eventController', ['$scope', 'Room', '$location', function($scope, Room, $location) {
 
     $scope.events = [];

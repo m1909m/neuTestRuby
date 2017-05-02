@@ -5,9 +5,21 @@ class CEventsController < ApplicationController
 
   def index
   #  @events = CEvent.where(start: params[:start]..params[:end])
-    #@c_events = CEvent.all
+    @c_events = CEvent.where(room_id: params[:roomid])
+    @json = []
+    @c_events.each do |event|
+      if(event.start != nil && event.end != nil)
+        json.push({title: event.title, start: event.start, end: event.end, id: event.id})
+      end
+      if(event.startSecond != nil && event.endSecond != nil)
+        json.push({title: event.title, start: event.startSecond, end: event.endSecond, id: event.id})
+      end
+      if(event.startThird != nil && event.endThird != nil)
+        json.push({title: event.title, start: event.startThird, end: event.endThird, id: event.id})
+      end
+    end
     respond_to do |format|
-      format.json { render json: CEvent.where(room_id: params[:roomid])}
+      format.json { render json: @json}
     end
   end
 

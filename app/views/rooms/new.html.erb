@@ -3,42 +3,158 @@
   <div ng-controller="eventController">
 
     <form ng-submit="addEvent()" action="/administrator/rooms/">
-
+<div class="col-xs-12">
         <div class="form-group">
             <label for="title">Titel</label>
             <input id="title" type="text" ng-model="newEvent.title" class="form-control" placeholder="Titel" require/>
         </div>
+</div>
+<div class="col-xs-12">
         <div class="form-group">
             <label for="description">Beschreibung</label>
             <textarea id="description" type="text" ng-model="newEvent.description" class="form-control" placeholder="Beschreibung" ></textarea>
         </div>
-        <div class="form-group">
+</div>
+<div class="col-xs-12">
+    <!--    <div class="form-group">
             <label for="date">Zeitraum</label>
             <input date-range-picker id="date" class="form-control date-picker" type="text" ng-model="datePicker.date" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+        </div> -->
+  <div class='col-sm-5'>
+    <div class="form-group">
+      <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" ng-model="date.startOne" />
+        <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+      </div>
+    </div>
+  </div>
+  <div class='col-sm-5'>
+    <div class="form-group">
+      <div class='input-group date' id='datetimepicker2'>
+        <input type='text' class="form-control" ng-model="date.endOne"/>
+        <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="col-xs-12">
+        <!--    <div class="form-group">
+                <label for="date">Zeitraum</label>
+                <input date-range-picker id="date" class="form-control date-picker" type="text" ng-model="datePicker.date" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+            </div> -->
+        <div class='col-sm-5'>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker3'>
+              <input type='text' class="form-control" ng-model="date.startTwo" />
+              <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
         </div>
-
+        <div class='col-sm-5'>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker4'>
+              <input type='text' class="form-control" ng-model="date.endTwo"/>
+              <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <!--    <div class="form-group">
+                <label for="date">Zeitraum</label>
+                <input date-range-picker id="date" class="form-control date-picker" type="text" ng-model="datePicker.date" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+            </div> -->
+        <div class='col-sm-5'>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker5'>
+              <input type='text' class="form-control" ng-model="date.startThree" />
+              <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+        </div>
+        <div class='col-sm-5'>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker6'>
+              <input type='text' class="form-control" ng-model="date.endThree"/>
+              <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="col-xs-12">
         <div class="form-group">
             <label for="minSize">Mindestanzahl an Mitgliedern</label>
             <input id="minSize" type="number" ng-model="newEvent.minSize" class="form-control" placeholder="Mindestanzahl an Mitgliedern" />
         </div>
-
+</div>
+<div class="col-xs-12">
       <div class="form-group">
         <label for="maxSize">Maximalanzahl an Mitgliedern</label>
         <input id="maxSize" type="number" ng-model="newEvent.maxSize" class="form-control" placeholder="Maximalanzahl an Mitgliedern" />
       </div>
+</div>
+<div class="col-xs-12">
 
         <div class="form-group">
             <label for="dateL">Anmeldezeitraum</label>
             <input date-range-picker id="dateL" class="form-control date-picker" type="text" ng-model="datePicker.dateL" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
         </div>
-<!--
-        <div class="form-group">
-            <label for="maxSize">Maximalanzahl an Mitgliedern</label>
-            <input id="maxSize" type="number" ng-model="newEvent.maxSize" class="form-control" placeholder="Maximalanzahl an Mitgliedern" value="{{room.size}}" disabled/>
-        </div> -->
+</div>
+      <div class="form-group">
         <button type="submit" class="btn btn-default" >Speichern</button>
-
-
+      </div>
     </form>
   </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+        $('#datetimepicker1').datetimepicker({locale: 'de'});
+        $('#datetimepicker2').datetimepicker({
+            locale: 'de',
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker1").on("dp.change", function (e) {
+            $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker2").on("dp.change", function (e) {
+            $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+        });
+
+        $('#datetimepicker3').datetimepicker({locale: 'de'});
+        $('#datetimepicker4').datetimepicker({
+            locale: 'de',
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker3").on("dp.change", function (e) {
+            $('#datetimepicker4').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker4").on("dp.change", function (e) {
+            $('#datetimepicker3').data("DateTimePicker").maxDate(e.date);
+        });
+
+        $('#datetimepicker5').datetimepicker({locale: 'de'});
+        $('#datetimepicker6').datetimepicker({
+            locale: 'de',
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker5").on("dp.change", function (e) {
+            $('#datetimepicker6').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker6").on("dp.change", function (e) {
+            $('#datetimepicker5').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>
