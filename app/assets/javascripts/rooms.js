@@ -1,6 +1,6 @@
 
 
-var myApp = angular.module('roomsContainer', ['ngStorage', 'ngResource', 'ui.calendar' ]);
+var myApp = angular.module('roomsContainer', ['daterangepicker', 'ngStorage', 'ngResource', 'ui.calendar' ]);
 
 
 
@@ -137,7 +137,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
     $scope.eventSources = [$scope.events];
 
 }]);
-myApp.controller('eventController', ['$scope', 'Room', '$location', function($scope, Room, $location) {
+myApp.controller('eventController', function($scope, Room, $location) {
 
     $scope.events = [];
     var id = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
@@ -168,7 +168,7 @@ myApp.controller('eventController', ['$scope', 'Room', '$location', function($sc
 
     }
 
-}]);
+});
 myApp.controller('myEventController', ['$scope', '$location', 'Room', '$http', '$interval', function($scope, $location, Room, $http, $interval) {
 
     $scope.members = [];
