@@ -159,6 +159,7 @@ myApp.controller('eventController', ['$scope', 'Room', '$location', function($sc
         newEvent.room_id = id;
         newEvent.member = 0;
         newEvent.free = 1;
+
         event = Room.events.save(newEvent);
 
         $scope.events.push(event);
