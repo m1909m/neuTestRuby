@@ -1,5 +1,6 @@
 
   <div ng-controller="eventController">
+    <h1>Veranstaltung erstellen</h1>
 
     <form action="/c_events" accept-charset="UTF-8" method="post">
       <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
@@ -21,7 +22,7 @@
     <div class="form-group">
       <label for="datetimepicker1">Startdatum</label>
       <div class='input-group date' id='datetimepicker1'>
-        <input type='text' class="form-control" name="c_event[start]" />
+        <input type='text' class="form-control" name="c_event[start]" required/>
         <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -32,7 +33,7 @@
     <div class="form-group">
       <label for="datetimepicker2">Enddatum</label>
       <div class='input-group date' id='datetimepicker2'>
-        <input type='text' class="form-control" name="c_event[end]"/>
+        <input type='text' class="form-control" name="c_event[end]" required/>
         <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -79,7 +80,7 @@
           <div class="form-group">
             <label for="datetimepicker5">Startdatum</label>
             <div class='input-group date' id='datetimepicker5'>
-              <input type='text' class="form-control" name="c_event[startThird]" />
+              <input type='text' class="form-control" name="c_event[startThird]" required/>
               <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -90,7 +91,7 @@
           <div class="form-group">
             <label for="datetimepicker6">Enddatum</label>
             <div class='input-group date' id='datetimepicker6'>
-              <input type='text' class="form-control" name="c_event[endThird]"/>
+              <input type='text' class="form-control" name="c_event[endThird]" required/>
               <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -101,13 +102,13 @@
 <div class="col-xs-12">
         <div class="form-group">
             <label for="minSize">Mindestanzahl an Mitgliedern</label>
-            <input id="minSize" type="number" min="0" name="c_event[minSize]" class="form-control" placeholder="Mindestanzahl an Mitgliedern" />
+            <input id="minSize" type="number" min="0" name="c_event[minSize]" class="form-control" placeholder="Mindestanzahl an Mitgliedern" required/>
         </div>
 </div>
 <div class="col-xs-12">
       <div class="form-group">
         <label for="maxSize">Maximalanzahl an Mitgliedern</label>
-        <input id="maxSize" type="number" min="0" name="c_event[maxSize]" class="form-control" placeholder="Maximalanzahl an Mitgliedern" />
+        <input id="maxSize" type="number" min="0" name="c_event[maxSize]" class="form-control" placeholder="Maximalanzahl an Mitgliedern" required/>
       </div>
 </div><!--
 <div class="col-xs-12">

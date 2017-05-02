@@ -27,7 +27,7 @@
           </div>
       <% elsif(@color == false)
            @color = true%>
-          <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
+          <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #f1f1f1;">
             <div class="caption">
               <h3><%= event.start.to_time.strftime("%d.%m.%Y %H:%M") %> - <%= event.end.to_time.strftime("%d.%m.%Y %H:%M") %><br><%= event.title %></h3>
               <%@rooms.each do |room|
@@ -58,14 +58,14 @@
                         <p><%= room.building %></p>
                         <p style="padding-top: 2px; border-top: 0.4px solid #f59d0e;">Die Anmeldung kann nicht Online erfolgen, da die Frist bereits abgelaufen ist.
                           Da noch Plätze zur Verfügung stehen, können Sie aber ggf. noch manuell angemeldet werden.
-                          Melden Sie sich dafür bei unserem Sekretariat.</p>
+                          Melden Sie sich dafür bei unserer Geschäftsstelle.</p>
                     <% end %>
                 <% end %>
               </div>
             </div>
         <% elsif(@color == false)
              @color = true%>
-            <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #dfdfde;">
+            <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #f1f1f1;">
               <div class="caption">
                 <h3><%= event.start.to_time.strftime("%d.%m.%Y %H:%M") %> - <%= event.end.to_time.strftime("%d.%m.%Y %H:%M") %><br><%= event.title %></h3>
                 <%@rooms.each do |room|
@@ -73,7 +73,7 @@
                         <p><%= room.building %></p>
                         <p style="padding-top: 2px; border-top: 0.4px solid #f59d0e;">Die Anmeldung kann nicht Online erfolgen, da die Frist bereits abgelaufen ist.
                           Da noch Plätze zur Verfügung stehen, können Sie aber ggf. noch manuell angemeldet werden.
-                          Melden Sie sich dafür bei unserem Sekretariat.</p>
+                          Melden Sie sich dafür bei unserer Geschäftsstelle.</p>
                     <% end %>
                 <% end %>
               </div>
