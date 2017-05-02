@@ -1,6 +1,6 @@
 
 
-var myApp = angular.module('roomsContainer', ['ngResource', 'ui.calendar' ]);
+var myApp = angular.module('roomsContainer', ['ngStorage', 'ngResource', 'ui.calendar' ]);
 
 
 

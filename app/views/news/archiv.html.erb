@@ -10,7 +10,7 @@
 <div class="col-xs-12">
   <p id="notice"><%= notice %></p>
 
-      <h3>Archiv Aktuelle Neuigkeiten</h3>
+      <h3>Archiv</h3>
 
       <table class="table table-responsive table-striped">
         <thead>
@@ -28,7 +28,7 @@
               <td><%= news.created_at.strftime("%d.%m.%Y") %></td>
               <td><%= news.title %></td>
               <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news.story.html_safe), length: 200) %></td>
-              <td><%= link_to 'Anzeigen', news %></td>
+              <td><%= link_to 'Anzeigen', news, class: "btn btn-default" %></td>
             </tr>
         <% end %>
         </tbody>
