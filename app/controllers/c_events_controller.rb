@@ -67,10 +67,9 @@ class CEventsController < ApplicationController
     @c_events.startThird = c_event_params[:startThird]
     @c_events.endThird = c_event_params[:endThird]
     @c_events.room_id = c_event_params[:room_id]
-    @dateL = c_event_params[:dateL]
-    @date = @dateL.split('-')
-    @c_events.startLogin = @date[0]
-    @c_events.endLogin = @date[1]
+
+    @c_events.startLogin = c_event_params[:startLogin]
+    @c_events.endLogin = c_event_params[:endLogin]
     @c_event.userMail = current_user.email
     @c_event.member = 0
     @c_event.free = 1
