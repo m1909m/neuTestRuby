@@ -92,17 +92,25 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @event.title = event_params[:title]
-    dateL = event_params[:dateL].split(' - ')
-    @event.startLogin = dateL[0].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @c_event.title = c_event_params[:title]
+    @c_event.description = c_event_params[:description]
+    @c_event.minSize = c_event_params[:minSize]
+    @c_event.maxSize = c_event_params[:maxSize]
+    @c_event.start = c_event_params[:start].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @c_event.end = c_event_params[:end].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    if(c_event_params[:startSecond] != "")
+      @c_event.startSecond = c_event_params[:startSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
+      @c_event.endSecond = c_event_params[:endSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    end
+    if(c_event_params[:startThird] != "")
+      @c_event.startThird = c_event_params[:startThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
+      @c_event.endThird = c_event_params[:endThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    end
 
-    @event.endLogin = dateL[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
-    date = event_params[:date].split(' - ')
-    @event.start = date[0].to_time.strftime("%Y-%m-%d %k:%M:%S")
-    @event.end = date[1].to_time.strftime("%Y-%m-%d %k:%M:%S")
-    @event.minSize = event_params[:minSize]
+    @c_event.startLogin = c_event_params[:startLogin]
+    @c_event.endLogin = c_event_params[:endLogin]
 
-    if @event.save
+    if @c_event.save
 
       @members = Member.where(event_id: @event.id)
       @members.each do |member|
@@ -132,8 +140,8 @@ class RoomsController < ApplicationController
     def set_event
       @event = CEvent.find(params[:id])
     end
-    def event_params
-      params.require(:event).permit(:title, :description, :dateL, :date, :minSize)
+    def c_event_params
+      params.require(:event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
     end
     def room_params
       params.require(:room).permit(:number, :size, :building)
