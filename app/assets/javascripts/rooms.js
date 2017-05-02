@@ -74,7 +74,7 @@ myApp.controller('RoomCtrl', ['$scope', 'Room', '$http', '$interval', function($
 
 }]);
 
-myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', '$location', '$window', function($scope, Room, $http, $interval, $location, $window) {
+myApp.controller('calendarController', function($scope, Room, $http, $interval, $location, $window) {
     $scope.roomId = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
     $scope.events = [];
     $scope.events = Room.events.index({"roomid": $scope.roomId });
@@ -146,7 +146,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
     };
     $scope.eventSources = [$scope.events, myEvent];
 
-}]);
+});
 myApp.controller('eventController', ['$scope', 'Room', '$location', function($scope, Room, $location) {
 
     $scope.events = [];
