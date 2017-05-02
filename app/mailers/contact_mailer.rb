@@ -23,4 +23,21 @@ class ContactMailer < ActionMailer::Base
          :subject=> "Änderungen einer Veranstalltung von der VKM"
   end
 
+  def new_member(member, event)
+    @member = member
+    @event = event
+    @email = @member.eMail
+    mail :to=> @email,
+         :subject=> "Anmeldung einer Veranstalltung von der VKM"
+  end
+
+  def new_member_vkm(member, event)
+    @member = member
+    @event = event
+    @email = @member.eMail
+    mail :to=> "verbandkirchlichermmitarbeiter@gmail.com",
+         :subject=> "Anmeldung einer Veranstalltung von der VKM"
+  end
+
+
 end

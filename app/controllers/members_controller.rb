@@ -38,9 +38,10 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
-
+    @event = CEvent.find(@member.event_id)
     respond_to do |format|
       if @member.save
+          ContactMailer.new_member(@member, @event).deliver
           format.html { redirect_to :action => "index", notice: 'Mitglied wurde erfolgreich erstellt.' }
           format.json { render :show, status: :created, location: @member }
         else

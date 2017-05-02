@@ -115,7 +115,7 @@ class RoomsController < ApplicationController
       @members = Member.where(event_id: @c_event.id)
       @members.each do |member|
         @member = member
-        ContactMailer.change_event(@member, @c_event)
+        ContactMailer.change_event(@member, @c_event).deliver
       end
     end
     redirect_to :action => "calendar", :id => @c_event.room_id
