@@ -6,13 +6,13 @@
               <div class="list-group-item">
                   <table>
                       <tr>
-						  <td><small><b>Status:</b> {{member.accept ? 'Angemeldet <div style="width:10px; height:10px; border-radius:25px; background:green;"></div>' : 'Abgemeldet <div style="width:10px; height:10px; border-radius:25px; background:red;"></div>' }}</small></td>
+						  <td><small><b>Status:</b> <div ng-show="member.accept" style="width:10px; height:10px; border-radius:25px; background:green;">Angemeldet</div><div ng-show="!member.accept" style="width:10px; height:10px; border-radius:25px; background:red;">Abgemeldet</div>{{member.accept ? 'Angemeldet ' : 'Abgemeldet ' }}</small></td>
                           <td><button class="btn btn-default" ng-show="member.accept" ng-click="abmelden(member)">Abmelden</button></td>
 					  </tr>
 					  		<tr><td>&nbsp;</td></tr>
 					  <tr>
-						  <td><p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b><span class="aus"></span></p>
-							  <div class="accordion">
+						  <td><p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b></p>
+
 								  
 								  <p><small>{{member.job}} aus {{member.place}}</small></p>
 								  
@@ -30,7 +30,7 @@
 								  <p><b><i>Buchung</i></b><br>
 							  <small>Zimmer: {{member.room}}<br>
 								  Unverträglichkeiten / Vegetarier: {{member.veggie}}</small></p>
-					  		</div>
+
 						  </td>
 					  </tr>
                   </table>
@@ -40,22 +40,3 @@
       </div>
 
   </div>
-
-
-<script>
-	$(document).ready( function() {
-  $('.aus').not('.ein').next('.accordion').hide();
-  $('.aus').click( function() {
-    if ($(this).hasClass('ein')) {
-      $(this).next('.accordion').slideToggle('slow');
-      $(this).removeClass('ein');
-    } else {
-	  $('.ein').next('.accordion').slideToggle('slow');
-      $('.ein').removeClass('ein');
-      $(this).next('.accordion').slideToggle('slow');
-      $(this).addClass('ein');
-    };
-    return false;
-  });
-});
-</script>
