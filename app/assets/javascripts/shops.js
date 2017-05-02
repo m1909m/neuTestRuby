@@ -6,9 +6,19 @@ angular.module('myModule', ['ngStorage', 'ngResource','daterangepicker']).factor
      }
      }); */
     var o = { };
+    o.rooms = $resource("/rooms/:id", { id: '@id' }, {
+        index:   { method: 'GET', isArray: true, responseType: 'json' },
+        update:  { method: 'PUT', responseType: 'json' }
+    });
     o.events = $resource("/c_events/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
+    });
+    o.myEvents = $resource("/event/myEvent/", { }, {
+        index:    { method: 'GET', isArray: true, responseType: 'json' }
+    });
+    o.membersByEvent = $resource("/membersAll/byEvent/:id", { id: '@id' }, {
+        index:    { method: 'GET', isArray: true, resoinseType: 'json' }
     });
     o.cards = $resource("/cards/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
@@ -242,6 +252,86 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
     };
 
 }]);
+shopApp.controller('RoomCtrl', ['$scope', 'Cart', '$http', '$interval', function($scope, Cart, $http, $interval) {
+    $scope.myEvents = [];
+    // Get Abfrage des c_events controller byEmail
+    //$scope.myEvents = Room.myEvents.index();
+    $http({
+        method: "GET",
+        url:"/event/myEvent"
+    }).then( function (response) {
+        $scope.myEvents = response.data;
+    }, function error(response) {
+        $scope.myEvents = response.statusText;
+    });
+
+    $interval(function () {
+        $http({
+            method: "GET",
+            url:"/event/myEvent"
+        }).then( function (response) {
+            $scope.myEvents = response.data;
+        }, function error(response) {
+            $scope.myEvents = response.statusText;
+        });
+    }, 60000);
+
+    $scope.rooms = [];
+    $scope.rooms = Cart.rooms.index();
+
+
+}]);
+shopApp.controller('calendarController', ['$scope', 'Cart', '$http', '$interval', '$location', '$window', function($scope, Cart, $http, $interval, $location, $window) {
+    $scope.roomId = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
+    $scope.events = [];
+    $scope.events = Cart.events.index({"roomid": $scope.roomId });
+
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    var currentView = "month";
+
+    /* config object */
+    $scope.uiConfig = {
+        calendar:{
+            height: 560,
+            header:{
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            firstDay: 1,
+            locale: 'de',
+            eventClick: function(date, jsEvent, view) {
+                $window.open('/administrator/rooms/event/' + date.id, '_self')
+            }
+        }
+    };
+    $scope.uiConfig.calendar.dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+    $scope.uiConfig.calendar.dayNamesShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+    $scope.uiConfig.calendar.monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November",  "Dezember"];
+
+
+    /* event sources array*/
+    $interval(function () {
+        $http({
+            method: "GET",
+            url:"/c_events?roomid=" + $scope.roomId
+        }).then( function (response) {
+            $scope.events = response.data;
+        }, function error(response) {
+            $scope.events = response.statusText;
+        });
+        //$scope.events = Room.events.index({"roomid": $stateParams.id});
+        $scope.eventSources = [$scope.events];
+    }, 60000);
+
+    $scope.eventSources = [$scope.events];
+
+}]);
+
 shopApp.controller('eventController', function($scope, Cart) {
 
     $scope.events = [];
@@ -275,3 +365,27 @@ shopApp.controller('eventController', function($scope, Cart) {
     }
 
 });
+
+shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http', '$interval', function($scope, $location, Cart, $http, $interval) {
+
+    $scope.members = [];
+    var id = (/administrator\/rooms\/event\/members\/(\d+)/.exec($location.absUrl())[1]);
+    $scope.members = Cart.membersByEvent.index({"id": id});
+    $interval(function(){
+        $scope.members = Cart.membersByEvent.index({"id": id});
+    }, 60000);
+
+    $scope.abmelden= function(member) {
+        var url = "/administrator/rooms/event/member/abmelden/" + member.id;
+        $http({
+            method: "GET",
+            url: url
+        }).then( function (response) {
+            $scope.members = Room.membersByEvent.index({"id": id});
+        }, function error(response) {
+            $scope.status = response.statusText;
+        });
+    };
+
+
+}]);
