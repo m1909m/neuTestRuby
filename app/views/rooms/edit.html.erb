@@ -159,14 +159,14 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#datetimepicker1").val('<%= @c_event.start.to_time.strftime("%Y-%m-%d %k:%M") %>');
-        $("#datetimepicker2").val('<%= @c_event.end.to_time.strftime("%Y-%m-%d %k:%M") %>');
-        $("#datetimepicker3").val('<%= @c_event.startSecond != "" && @c_event.startSecond != nil ? @c_event.startSecond.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker4").val('<%= @c_event.endSecond != "" && @c_event.endSecond != nil  ? @c_event.endSecond.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker5").val('<%= @c_event.startThird != "" && @c_event.startThird != nil  ? @c_event.startThird.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker6").val('<%= @c_event.endThird != "" && @c_event.endThird != nil  ? @c_event.endThird.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker7").val('<%= @c_event.startLogin.to_time.strftime("%Y-%m-%d %k:%M") %>');
-        $("#datetimepicker8").val('<%= @c_event.endLogin.to_time.strftime("%Y-%m-%d %k:%M") %>');
+        $("#datetimepicker1 input").val('<%= @c_event.start.to_time.strftime("%Y-%m-%d %k:%M") %>');
+        $("#datetimepicker2 input").val('<%= @c_event.end.to_time.strftime("%Y-%m-%d %k:%M") %>');
+        $("#datetimepicker3 input").val('<%= @c_event.startSecond != "" && @c_event.startSecond != nil ? @c_event.startSecond.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
+        $("#datetimepicker4 input").val('<%= @c_event.endSecond != "" && @c_event.endSecond != nil  ? @c_event.endSecond.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
+        $("#datetimepicker5 input").val('<%= @c_event.startThird != "" && @c_event.startThird != nil  ? @c_event.startThird.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
+        $("#datetimepicker6 input").val('<%= @c_event.endThird != "" && @c_event.endThird != nil  ? @c_event.endThird.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
+        $("#datetimepicker7 input").val('<%= @c_event.startLogin.to_time.strftime("%Y-%m-%d %k:%M") %>');
+        $("#datetimepicker8 input").val('<%= @c_event.endLogin.to_time.strftime("%Y-%m-%d %k:%M") %>');
 
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
         $('#datetimepicker1').datetimepicker({locale: 'de'});
