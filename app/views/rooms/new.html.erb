@@ -135,9 +135,11 @@
             useCurrent: false //Important! See issue #1075
         });
         $("#datetimepicker1").on("dp.change", function (e) {
+            $scope.datePicker.startOne = $("#datetimepicker1").val();
             $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
         });
         $("#datetimepicker2").on("dp.change", function (e) {
+            $scope.datePicker.endOne = $("#datetimepicker2").val();
             $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
         });
 
@@ -147,9 +149,11 @@
             useCurrent: false //Important! See issue #1075
         });
         $("#datetimepicker3").on("dp.change", function (e) {
+            $scope.datePicker.startTwo = $("#datetimepicker3").val();
             $('#datetimepicker4').data("DateTimePicker").minDate(e.date);
         });
         $("#datetimepicker4").on("dp.change", function (e) {
+            $scope.datePicker.endTwo = $("#datetimepicker4").val();
             $('#datetimepicker3').data("DateTimePicker").maxDate(e.date);
         });
 
@@ -159,9 +163,11 @@
             useCurrent: false //Important! See issue #1075
         });
         $("#datetimepicker5").on("dp.change", function (e) {
+            $scope.datePicker.startThree = $("#datetimepicker5").val();
             $('#datetimepicker6').data("DateTimePicker").minDate(e.date);
         });
         $("#datetimepicker6").on("dp.change", function (e) {
+            $scope.datePicker.endThree = $("#datetimepicker6").val();
             $('#datetimepicker5').data("DateTimePicker").maxDate(e.date);
         });
     });
