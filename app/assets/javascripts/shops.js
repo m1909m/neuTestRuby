@@ -254,12 +254,12 @@ shopApp.controller('eventController', function($scope, Cart) {
         var event;
 
         newEvent = $scope.newEvent;
-        newEvent.start = $scope.date.startOne;
-        newEvent.end = $scope.date.endOne;
-        newEvent.startSecond = $scope.date.startTwo;
-        newEvent.endSecond = $scope.date.endTwo;
-        newEvent.startThird = $scope.date.startThree;
-        newEvent.endThird = $scope.date.endThree;
+        newEvent.start = $scope.datePicker.startOne;
+        newEvent.end = $scope.datePicker.endOne;
+        newEvent.startSecond = $scope.datePicker.startTwo;
+        newEvent.endSecond = $scope.datePicker.endTwo;
+        newEvent.startThird = $scope.datePicker.startThree;
+        newEvent.endThird = $scope.datePicker.endThree;
         newEvent.startLogin =  $scope.datePicker.dateL.startDate;
         newEvent.endLogin =  $scope.datePicker.dateL.endDate;
         newEvent.room_id = id;
