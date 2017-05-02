@@ -1,4 +1,4 @@
-angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function($window, $rootScope, $resource, $http) {
+angular.module('myModule', ['ngStorage', 'ngResource','daterangepicker']).factory("Cart", function($window, $rootScope, $resource, $http) {
     /*
      angular.element($window).on('storage', function(event) {
      if (event.key === 'warenkorb') {
@@ -6,6 +6,10 @@ angular.module('myModule', ['ngStorage', 'ngResource']).factory("Cart", function
      }
      }); */
     var o = { };
+    o.events = $resource("/c_events/:id", { id: '@id' }, {
+        index:   { method: 'GET', isArray: true, responseType: 'json' },
+        update:  { method: 'PUT', responseType: 'json' }
+    });
     o.cards = $resource("/cards/:id", { id: '@id' }, {
         index:   { method: 'GET', isArray: true, responseType: 'json' },
         update:  { method: 'PUT', responseType: 'json' }
@@ -238,3 +242,36 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
     };
 
 }]);
+shopApp.controller('eventController', function($scope, Cart) {
+
+    $scope.events = [];
+    // var id = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
+    var id = 1;
+    $scope.events = Cart.events.index({"roomid": id});
+
+    $scope.addEvent = function() {
+        var newEvent;
+        var event;
+
+        newEvent = $scope.newEvent;
+        newEvent.start = $scope.date.startOne;
+        newEvent.end = $scope.date.endOne;
+        newEvent.startSecond = $scope.date.startTwo;
+        newEvent.endSecond = $scope.date.endTwo;
+        newEvent.startThird = $scope.date.startThree;
+        newEvent.endThird = $scope.date.endThree;
+        newEvent.startLogin =  $scope.datePicker.dateL.startDate;
+        newEvent.endLogin =  $scope.datePicker.dateL.endDate;
+        newEvent.room_id = id;
+        newEvent.member = 0;
+        newEvent.free = 1;
+
+        event = Room.events.save(newEvent);
+
+        $scope.events.push(event);
+        $scope.newEvent = {};
+        $scope.datePicker.date = {};
+
+    }
+
+});

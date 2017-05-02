@@ -142,7 +142,7 @@ myApp.controller('eventController', function($scope, Room) {
     $scope.events = [];
    // var id = (/administrator\/rooms\/(\d+)/.exec($location.absUrl())[1]);
     var id = 1;
-        $scope.events = Room.events.index({"roomid": id});
+    $scope.events = Room.events.index({"roomid": id});
 
     $scope.addEvent = function() {
         var newEvent;
