@@ -60,12 +60,16 @@ class CEventsController < ApplicationController
     @c_event.description = c_event_params[:description]
     @c_event.minSize = c_event_params[:minSize]
     @c_event.maxSize = c_event_params[:maxSize]
-    @c_event.start = c_event_params[:start]
-    @c_event.end = c_event_params[:end]
-    @c_event.startSecond = c_event_params[:startSecond]
-    @c_event.endSecond = c_event_params[:endSecond]
-    @c_event.startThird = c_event_params[:startThird]
-    @c_event.endThird = c_event_params[:endThird]
+    @c_event.start = c_event_params[:start].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @c_event.end = c_event_params[:end].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    if(c_event_params[:startSecond] != nil)
+      @c_event.startSecond = c_event_params[:startSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
+      @c_event.endSecond = c_event_params[:endSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    end
+    if(c_event_params[:startThird] != nil)
+      @c_event.startThird = c_event_params[:startThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
+      @c_event.endThird = c_event_params[:endThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    end
     @c_event.room_id = c_event_params[:room_id]
 
     @c_event.startLogin = c_event_params[:startLogin]
