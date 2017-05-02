@@ -54,9 +54,26 @@ class CEventsController < ApplicationController
   end
 
   def create
-    @c_event = CEvent.new(c_event_params)
+    @c_event = CEvent.new
     # TODO Tests
+    @c_events.title = c_event_params[:title]
+    @c_events.description = c_event_params[:description]
+    @c_events.minSize = c_event_params[:minSize]
+    @c_events.maxSize = c_event_params[:maxSize]
+    @c_events.start = c_event_params[:start]
+    @c_events.end = c_event_params[:end]
+    @c_events.startSecond = c_event_params[:startSecond]
+    @c_events.endSecond = c_event_params[:endSecond]
+    @c_events.startThird = c_event_params[:startThird]
+    @c_events.endThird = c_event_params[:endThird]
+    @c_events.room_id = c_event_params[:room_id]
+    @dateL = c_event_params[:dateL]
+    @date = @dateL.split('-')
+    @c_events.startLogin = @date[0]
+    @c_events.endLogin = @date[1]
     @c_event.userMail = current_user.email
+    @c_event.member = 0
+    @c_event.free = 1
     @c_event.save
   end
 
@@ -80,7 +97,7 @@ class CEventsController < ApplicationController
 
 
     def c_event_params
-      params.require(:c_event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
+      params.require(:c_event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
     end
 end
 

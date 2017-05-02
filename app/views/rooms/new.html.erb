@@ -1,30 +1,27 @@
 
   <div ng-controller="eventController">
 
-    <form ng-submit="addEvent()" action="/administrator/rooms/">
+    <form action="/c_events" accept-charset="UTF-8" method="post">
+      <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 <div class="col-xs-12">
         <div class="form-group">
             <label for="title">Titel</label>
-            <input id="title" type="text" ng-model="newEvent.title" class="form-control" placeholder="Titel" require/>
+            <input id="title" type="text" name="c_event[title]" class="form-control" placeholder="Titel" require/>
         </div>
 </div>
 <div class="col-xs-12">
         <div class="form-group">
             <label for="description">Beschreibung</label>
-            <textarea id="description" type="text" ng-model="newEvent.description" class="form-control" placeholder="Beschreibung" ></textarea>
+            <textarea id="description" type="text" name="c_event[description]" class="form-control" placeholder="Beschreibung" ></textarea>
         </div>
 </div>
 <div class="col-xs-12">
-    <!--    <div class="form-group">
-            <label for="date">Zeitraum</label>
-            <input date-range-picker id="date" class="form-control date-picker" type="text" ng-model="datePicker.date" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
-        </div> -->
   <label>Tag 1</label>
   <div class='col-sm-5'>
     <div class="form-group">
       <label for="datetimepicker1">Startdatum</label>
       <div class='input-group date' id='datetimepicker1'>
-        <input type='text' class="form-control" datetimepicker ng-model="datePicker.startOne" />
+        <input type='text' class="form-control" name="c_event[startOne]" />
         <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -35,7 +32,7 @@
     <div class="form-group">
       <label for="datetimepicker2">Enddatum</label>
       <div class='input-group date' id='datetimepicker2'>
-        <input type='text' class="form-control" datetimepicker ng-model="datePicker.endOne"/>
+        <input type='text' class="form-control" name="c_event[endOne]"/>
         <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -53,7 +50,7 @@
           <div class="form-group">
             <label for="datetimepicker3">Startdatum</label>
             <div class='input-group date' id='datetimepicker3'>
-              <input type='text' class="form-control" datetimepicker ng-model="datePicker.startTwo" />
+              <input type='text' class="form-control" name="c_event[startTwo]" />
               <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -64,7 +61,7 @@
           <div class="form-group">
             <label for="datetimepicker4">Enddatum</label>
             <div class='input-group date' id='datetimepicker4'>
-              <input type='text' class="form-control" datetimepicker ng-model="datePicker.endTwo"/>
+              <input type='text' class="form-control" name="c_event[endTwo]"/>
               <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -82,7 +79,7 @@
           <div class="form-group">
             <label for="datetimepicker5">Startdatum</label>
             <div class='input-group date' id='datetimepicker5'>
-              <input type='text' class="form-control" datetimepicker ng-model="datePicker.startThree" />
+              <input type='text' class="form-control" name="c_event[startThree]" />
               <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -93,7 +90,7 @@
           <div class="form-group">
             <label for="datetimepicker6">Enddatum</label>
             <div class='input-group date' id='datetimepicker6'>
-              <input type='text' class="form-control" datetimepicker ng-model="datePicker.endThree"/>
+              <input type='text' class="form-control" name="c_event[endThree]"/>
               <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -104,22 +101,24 @@
 <div class="col-xs-12">
         <div class="form-group">
             <label for="minSize">Mindestanzahl an Mitgliedern</label>
-            <input id="minSize" type="number" ng-model="newEvent.minSize" class="form-control" placeholder="Mindestanzahl an Mitgliedern" />
+            <input id="minSize" type="number" name="c_event[minSize]" class="form-control" placeholder="Mindestanzahl an Mitgliedern" />
         </div>
 </div>
 <div class="col-xs-12">
       <div class="form-group">
         <label for="maxSize">Maximalanzahl an Mitgliedern</label>
-        <input id="maxSize" type="number" ng-model="newEvent.maxSize" class="form-control" placeholder="Maximalanzahl an Mitgliedern" />
+        <input id="maxSize" type="number" name="c_event[maxSize]" class="form-control" placeholder="Maximalanzahl an Mitgliedern" />
       </div>
 </div>
 <div class="col-xs-12">
 
         <div class="form-group">
             <label for="dateL">Anmeldezeitraum</label>
-            <input date-range-picker id="dateL" class="form-control date-picker" type="text" ng-model="datePicker.dateL" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD-MM-YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
+            <input date-range-picker id="dateL" class="form-control date-picker" type="text" name="c_event[dateL]" options='{locale: { applyLabel: "Waehlen", fromLabel: "Von", format: "DD.MM.YYYY HH:mm", toLabel: "Bis", cancelLabel: "Schließen" }, timePicker: true, timePickerIncrement: 5, timePicker24Hour: true, startDate: Date.today, endDate: Date.today}'/>
         </div>
 </div>
+      <input id="room_id" type="number" name="c_event[room_id]" class="form-control" style="display: none;" type="hidden" value="<%= @id %>" />
+
       <div class="form-group">
         <button type="submit" class="btn btn-default" >Speichern</button>
       </div>

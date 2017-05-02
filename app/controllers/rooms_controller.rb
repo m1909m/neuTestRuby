@@ -40,6 +40,7 @@ class RoomsController < ApplicationController
   end
 
   def angularNew
+    @id = params[:id]
     render 'rooms/new'
   end
 
