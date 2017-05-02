@@ -1,8 +1,5 @@
-  /**
- * Created by Marian on 10.02.2017.
- * 'daterangepicker'
- */
-'use strict';
+
+
 var myApp = angular.module('roomsContainer', ['daterangepicker', 'ui.router', 'ngStorage', 'ngResource', 'ui.calendar' ]);
 
 
@@ -137,7 +134,7 @@ myApp.controller('calendarController', ['$scope', 'Room', '$http', '$interval', 
         end: new Date('2014-11-22T19:00'),
         id: 1
     }];
-    $scope.eventSources = [$scope.events, myEvent];
+    $scope.eventSources = [$scope.events];
 
 }]);
 myApp.controller('eventController', ['$scope', 'Room', '$location', function($scope, Room, $location) {
@@ -163,6 +160,7 @@ myApp.controller('eventController', ['$scope', 'Room', '$location', function($sc
         newEvent.member = 0;
         newEvent.free = 1;
         event = Room.events.save(newEvent);
+
         $scope.events.push(event);
         $scope.newEvent = {};
         $scope.datePicker.date = {};
