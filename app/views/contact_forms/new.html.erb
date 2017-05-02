@@ -22,13 +22,13 @@
         <%= f.text_field :name, class: "form-control" %>
       </div>
         <div class="form-group">
-          <%= f.label :name, "Email Adresse", class: "control-label" %>
+          <%= f.label :name, "E-Mail Adresse", class: "control-label" %>
           <%= f.text_field :email, class: "form-control" %>
         </div>
           <div class="form-group">
             <%= f.label :name, "Nachricht", class: "control-label" %>
             <%= f.text_area :message, class: "form-control" %>
           </div>
-      <%= f.submit "Absenden"%>
+      <%= f.submit "Absenden", class: "btn btn-default" %>
   <% end %>
 </div>

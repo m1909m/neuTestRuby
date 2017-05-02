@@ -36,9 +36,9 @@
               <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news_content.content.html_safe), length: 200) %></td>
               <td><%= news_content.sendtime %></td>
               <td><% if news_content.sendStatus %> Versendet <% else %> Nicht versendet <% end %></td>
-              <td><%= link_to 'Anzeigen', news_content %></td>
-              <td><%= link_to 'Bearbeiten', edit_news_content_path(news_content), :target => "_self" %></td>
-              <td><%= link_to 'Löschen', news_content, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
+              <td><%= link_to 'Anzeigen', news_content, class: "btn btn-default" %></td>
+              <td><%= link_to 'Bearbeiten', edit_news_content_path(news_content), class: "btn btn-default", :target => "_self" %></td>
+              <td><%= link_to 'Löschen', news_content, class: "btn btn-default", method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
             </tr>
         <% end %>
         </tbody>
@@ -46,11 +46,11 @@
 
       <br>
 
-      <%= link_to 'Neuer Newsletter erstellen', new_news_content_path, target: "_self" %>
+      <%= link_to 'Neuer Newsletter erstellen', new_news_content_path, target: "_self", class: "btn btn-default" %>
 </div>
 
   <% else %>
-      <%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newscontent_path %>
+      » <%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newscontent_path %>
   <% end %>
 
 

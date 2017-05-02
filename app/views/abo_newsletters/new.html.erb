@@ -1,5 +1,5 @@
 <div class="col-xs-12">
-  <h1>Neuen Abonennten für den Newsletter</h1>
+  <h1>Newsletter abonnieren</h1>
 </div>
 <div class="col-xs-12" style="margin-bottom: 1em;">
   <%= image_tag("Titelbild_Newsletter.jpg", :alt => "Newsletter", :class => "img-responsive center-block") %>
@@ -12,7 +12,7 @@
 <div class="col-sm-12">
   <h3>Newsletter Archiv</h3>
   <% @newsletter.each do |n| %>
-    <a href="../news_contents/<%=n.id%>" style="color: #f59d0e;"><%= n.title %></a><br />
+    » <a href="../news_contents/<%=n.id%>" style="color: #f59d0e;"><%= n.title %></a><br />
   <% end %>
 </div>
 <% if current_user.present? %>
