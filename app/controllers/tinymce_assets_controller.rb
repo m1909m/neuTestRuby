@@ -11,7 +11,7 @@ class TinymceAssetsController < ApplicationController
    # render :html => "<script>top.$('.mce-btn.mce-open').parent().find('.mce-textbox').val('" + @image.file_url + "');</script>".html_safe
 
 
-    render :html => "<script type='text/javascript'>alert('test'); $('#mceu_59-inp').val('" + @image.file_url + "');</script>".html_safe
+    render :html => "<script type='text/javascript'>alert('Bitte folgende URL kopieren und in Quelle einfügen: " + @image.file_url + ");</script>".html_safe
    # render json: {
    #     location: @image.file_url
    # }, layout: false, content_type: "text/html"
