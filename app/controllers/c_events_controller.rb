@@ -9,13 +9,13 @@ class CEventsController < ApplicationController
     @json = []
     @c_events.each do |event|
       if(event.start != nil && event.end != nil)
-        json.push({title: event.title, start: event.start, end: event.end, id: event.id})
+        @json.push({title: event.title, start: event.start, end: event.end, id: event.id})
       end
       if(event.startSecond != nil && event.endSecond != nil)
-        json.push({title: event.title, start: event.startSecond, end: event.endSecond, id: event.id})
+        @json.push({title: event.title, start: event.startSecond, end: event.endSecond, id: event.id})
       end
       if(event.startThird != nil && event.endThird != nil)
-        json.push({title: event.title, start: event.startThird, end: event.endThird, id: event.id})
+        @json.push({title: event.title, start: event.startThird, end: event.endThird, id: event.id})
       end
     end
     respond_to do |format|
