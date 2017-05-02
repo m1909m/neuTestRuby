@@ -62,11 +62,11 @@ class CEventsController < ApplicationController
     @c_event.maxSize = c_event_params[:maxSize]
     @c_event.start = c_event_params[:start].to_time.strftime("%Y-%m-%d %k:%M:%S")
     @c_event.end = c_event_params[:end].to_time.strftime("%Y-%m-%d %k:%M:%S")
-    if(c_event_params[:startSecond] != nil)
+    if(c_event_params[:startSecond] != "")
       @c_event.startSecond = c_event_params[:startSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
       @c_event.endSecond = c_event_params[:endSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
     end
-    if(c_event_params[:startThird] != nil)
+    if(c_event_params[:startThird] != "")
       @c_event.startThird = c_event_params[:startThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
       @c_event.endThird = c_event_params[:endThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
     end
