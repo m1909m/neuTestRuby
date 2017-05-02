@@ -104,13 +104,13 @@
     <div class="col-xs-12">
       <div class="form-group">
         <label for="minSize">Mindestanzahl an Mitgliedern</label>
-        <input id="minSize" type="number" name="c_event[minSize]" class="form-control" placeholder="Mindestanzahl an Mitgliedern" value="<%= @c_event.minSize %>" />
+        <input id="minSize" type="number" min="0" name="c_event[minSize]" class="form-control" placeholder="Mindestanzahl an Mitgliedern" value="<%= @c_event.minSize %>" />
       </div>
     </div>
     <div class="col-xs-12">
       <div class="form-group">
         <label for="maxSize">Maximalanzahl an Mitgliedern</label>
-        <input id="maxSize" type="number" name="c_event[maxSize]" class="form-control" placeholder="Maximalanzahl an Mitgliedern" value="<%= @c_event.maxSize %>" />
+        <input id="maxSize" type="number" min="0" name="c_event[maxSize]" class="form-control" placeholder="Maximalanzahl an Mitgliedern" value="<%= @c_event.maxSize %>" />
       </div>
     </div><!--
 <div class="col-xs-12">
