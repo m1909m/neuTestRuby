@@ -7,8 +7,8 @@
                   <table>
                       <tr>
                         <td><small><b>Status:</b></small></td>
-                        <td ng-show="member.accept"><div style="width:10px; height:10px; border-radius:25px; background:green;"></div>Angemeldet</td>
-                        <td ng-show="!member.accept" ><div style="width:10px; height:10px; border-radius:25px; background:red;"></div>Abgemeldet</td>
+                        <td ng-show="member.accept"><div style="width:10px; height:10px; border-radius:25px; background:green;"></div><p style="padding-left: 15px">Angemeldet</p></td>
+                        <td ng-show="!member.accept" ><div style="width:10px; height:10px; border-radius:25px; background:red;"></div><p style="padding-left: 15px">Abgemeldet</p></td>
                           <td><button class="btn btn-default" ng-show="member.accept" ng-click="abmelden(member)">Abmelden</button></td>
 					  </tr>
 					  		<tr><td>&nbsp;</td></tr>
