@@ -28,7 +28,7 @@
 //= require ng-module
 //= require ngstorage
 //= require angular-daterangepicker
-//= require eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker
+//= require bootstrap-datetimepicker-master/build/js/bootstrap-datetimepicker.min
 //= require moment
 //= require fullcalendar/dist/fullcalendar
 //= require fullcalendar/dist/gcal
