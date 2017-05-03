@@ -53,7 +53,7 @@ class RoomsController < ApplicationController
   def index
    # @rooms = Room.all
     respond_to do |format|
-      format.json { render json: Room.all}
+      format.json { render json: Room.order(:building)}
 
     end
   end
