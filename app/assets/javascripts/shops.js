@@ -406,7 +406,7 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
             method: "GET",
             url: url
         }).then( function (response) {
-            $scope.members = Room.membersByEvent.index({"id": id});
+            $scope.members = Cart.membersByEvent.index({"id": id});
         }, function error(response) {
             $scope.status = response.statusText;
         });

@@ -53,7 +53,7 @@ class RoomsController < ApplicationController
   def index
    # @rooms = Room.all
     respond_to do |format|
-      format.json { render json: Room.all}
+      format.json { render json: Room.order(:building)}
 
     end
   end
@@ -141,7 +141,7 @@ class RoomsController < ApplicationController
       @c_event = CEvent.find(params[:id])
     end
     def c_event_params
-      params.require(:event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
+      params.require(:c_event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
     end
     def room_params
       params.require(:room).permit(:number, :size, :building)
