@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module NeuTestRuby
   class Application < Rails::Application
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components', 'bootstrap')
     config.assets.paths << Rails.root.join("vendor","assets", "fonts")
     config.assets.paths << Rails.root.join("vendor","assets", "stylesheets")
     # Settings in config/environments/* take precedence over those specified here.
