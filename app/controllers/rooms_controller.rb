@@ -154,11 +154,8 @@ class RoomsController < ApplicationController
     @account = Account.find(params[:id])
     @event = CEvent.where(accountName: @account.accountName)
     @account.destroy
-    puts(@event)
-    puts(@event.ids)
-    puts(@event.__id__)
 
-    redirect_to "/administrator/rooms/event/" + @event.id.to_s
+    redirect_to "/administrator/rooms/event/" + @event.ids.to_s
   end
 
   private
