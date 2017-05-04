@@ -152,7 +152,9 @@ class RoomsController < ApplicationController
 
   def destroyDocument
     @account = Account.find(params[:id])
+    @event = CEvent.where(accountName: @account.accountName)
     @account.destroy
+    redirect_to "administrator/rooms/event/" + @event.id.to_s
   end
 
   private

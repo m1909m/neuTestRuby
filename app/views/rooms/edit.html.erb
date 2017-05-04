@@ -154,7 +154,7 @@
       <button type="submit" class="btn btn-default" >Änderungen Speichern</button>
     </div>
   </form>
-  <a data-confirm="Sind sie sich sicher?" class="btn btn-danger"  style="margin-top: 20px;" rel="nofollow" data-method="delete" href="/event/<%= @c_event.id %>">Veranstaltung Löschen</a>
+  <a data-confirm="Sind Sie sich sicher?" class="btn btn-danger"  style="margin-top: 20px;" rel="nofollow" data-method="delete" href="/event/<%= @c_event.id %>">Veranstaltung Löschen</a>
 </div>
 <div class="col-sm-12">
   <h2>Dokument hochladen</h2>
@@ -202,11 +202,8 @@
           <td><%= resume[:name] %></td>
           <td><a style="color: #f59d0e;" href="<%= resume[:url] %>" target="_blank" rel="noopener noreferrer">Anzeigen</a></td>
           <td>
-            <form class="button_to" method="post" action="/account/<%= resume[:accountId] %>">
-              <input name="_method" value="delete" autocomplete="off" type="hidden">
-              <input class="btn btn-danger" confirm="Sind Sie sicher?" value="Dokument entfernen" type="submit">
-              <input name="authenticity_token" value="<%= form_authenticity_token %>" autocomplete="off" type="hidden">
-            </form>
+            <a data-confirm="Sind Sie sich sicher?" class="btn btn-danger" style="margin-top: 20px;" rel="nofollow" data-method="delete" href="/account/<%= resume[:accountId] %>">Dokument entfernen</a>
+
           </td>
         </tr>
 
