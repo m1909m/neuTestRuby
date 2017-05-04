@@ -155,7 +155,7 @@ class RoomsController < ApplicationController
     @event = CEvent.where(accountName: @account.accountName)
     @account.destroy
     puts(@event)
-    puts(@event.id)
+    puts(@event.ids)
     puts(@event.__id__)
 
     redirect_to "administrator/rooms/event/" + @event.id.to_s
