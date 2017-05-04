@@ -42,6 +42,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       if @member.save
           ContactMailer.new_member(@member, @event).deliver
+          flash[:notice] = "Sie haben sich erfolgreich angemeldet und erhalten in Kürze eine Bestätigung per E-Mail."
           format.html { redirect_to :action => "index", notice: 'Mitglied wurde erfolgreich erstellt.' }
           format.json { render :show, status: :created, location: @member }
         else
