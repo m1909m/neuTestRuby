@@ -249,8 +249,8 @@
     $(document).ready(function(){
         $('#docExist_name').on('change', function() {
           var otherValue = $(this).attr('data-othervalue');
-          $('#linkDocument').href = otherValue;
-          $('#linkDocument').val = $(this).value;
+          $('#linkDocument').attr('href', otherValue);
+          $('#linkDocument').text($(this).value + ' Anzeigen');
 
         });
         $(':file').on('fileselect', function(event, numFiles, label) {
