@@ -248,9 +248,8 @@
     });
     $(document).ready(function(){
         $('#docExist_name').on('change', function() {
-          var otherValue = $('#docExist_name').attr('data-othervalue');
-          $('#linkDocument').attr('href', $('#docExist_name').attr('data-othervalue'));
-          $('#linkDocument').text($('#docExist_name').value + ' Anzeigen');
+          $('#linkDocument').attr('href', $('#docExist_name').find(":selected").attr('data-othervalue'));
+          $('#linkDocument').text($('#docExist_name').find(":selected").text() + ' Anzeigen');
 
         });
         $(':file').on('fileselect', function(event, numFiles, label) {
