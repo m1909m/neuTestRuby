@@ -91,7 +91,12 @@ class RoomsController < ApplicationController
     redirect_to "/administrator/rooms/event/" + params[:id]
   end
   def addDocWithExist
-
+    @event = CEvent.find(params[:id])
+    @account = Account.new
+    @account.accountName = @event.accountName
+    @account.resume_id = doc_exist_params[:resume_id]
+    @account.save
+    redirect_to "/administrator/rooms/event/" + params[:id]
   end
 
   def create
@@ -175,6 +180,10 @@ class RoomsController < ApplicationController
 
     def doc_params
       params.require(:doc).permit(:name, :attachment)
+    end
+
+    def doc_exist_params
+      params.require(:docExist).permit(:resume_id)
     end
     def room_params
       params.require(:room).permit(:number, :size, :building)
