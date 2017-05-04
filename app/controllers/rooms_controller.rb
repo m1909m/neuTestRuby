@@ -70,7 +70,7 @@ class RoomsController < ApplicationController
     @id = params[:id]
     @accounts = Account.where(accountName: @c_event.accountName)
     @documents = []
-    @acc = []
+    @allDocuments = Resume.all
     @accounts.each do |d|
       @resume = Resume.find(d.resume_id)
       @documents.push({:id => d.resume_id, :name => @resume.name, :url => @resume.attachment_url, :accountId => d.id})
@@ -89,6 +89,9 @@ class RoomsController < ApplicationController
     @account.resume_id = @resume.id
     @account.save
     redirect_to "/administrator/rooms/event/" + params[:id]
+  end
+  def addDocWithExist
+
   end
 
   def create
@@ -153,10 +156,6 @@ class RoomsController < ApplicationController
   def destroyDocument
     @account = Account.find(params[:id])
     @event = CEvent.where(accountName: @account.accountName).last
-    puts(@event)
-    puts(@event.id)
-    puts(@event.id.to_s)
-
     @account.destroy
 
     redirect_to "/administrator/rooms/event/" + @event.id.to_s

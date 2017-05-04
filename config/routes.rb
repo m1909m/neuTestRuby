@@ -71,7 +71,10 @@ Rails.application.routes.draw do
   get 'administrator/rooms/:id', to: "rooms#calendar"
   get 'administrator/rooms/:id/new', to: "rooms#angularNew"
   post 'administrator/rooms/event/:id', to:  "rooms#update"
+
   post 'administrator/rooms/event/:id/doc', to:  "rooms#addDoc"
+  post 'administrator/rooms/event/:id/docExist', to:  "rooms#addDocWithExist"
+
 
   get 'administrator/rooms/event/members/:id', to: "rooms#showMembers"
   get 'administrator/rooms/event/:id', to: "rooms#edit"
