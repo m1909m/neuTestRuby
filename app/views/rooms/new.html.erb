@@ -125,8 +125,8 @@
       <label>Anmeldezeitraum</label>
       <div class='col-sm-5'>
         <div class="form-group">
-          <label for="datetimepicker5">Startdatum</label>
-          <div class='input-group date' id='datetimepicker7'>
+          <label for="datetimepicker1">Startdatum</label>
+          <div class='input-group date' id='datetimepicker1'>
             <input type='text' class="form-control" name="c_event[startLogin]" />
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
@@ -134,8 +134,8 @@
       </div>
       <div class='col-sm-5'>
         <div class="form-group">
-          <label for="datetimepicker6">Enddatum</label>
-          <div class='input-group date' id='datetimepicker8'>
+          <label for="datetimepicker2">Enddatum</label>
+          <div class='input-group date' id='datetimepicker2'>
             <input type='text' class="form-control" name="c_event[endLogin]"/>
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
@@ -182,6 +182,15 @@
         $("#endtimeThree").on("dp.change", function (e) {
             //          $scope.datePicker.endOne = $("#datetimepicker2").val();
             $('#starttimeThree').data("DateTimePicker").maxDate(e.date);
+        });
+        $('#datetimepicker1').datetimepicker({locale: 'de'});
+        $('#datetimepicker2').datetimepicker({locale: 'de', useCurrent: false});
+        $("#datetimepicker1").on("dp.change", function (e) {
+            $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker2").on("dp.change", function (e) {
+            //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+            $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
         });
     });
 </script>
