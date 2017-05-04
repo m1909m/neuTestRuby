@@ -122,19 +122,25 @@ class RoomsController < ApplicationController
     @c_event.description = c_event_params[:description]
     @c_event.minSize = c_event_params[:minSize]
     @c_event.maxSize = c_event_params[:maxSize]
-    @c_event.start = c_event_params[:start].to_time.strftime("%Y-%m-%d %k:%M:%S")
-    @c_event.end = c_event_params[:end].to_time.strftime("%Y-%m-%d %k:%M:%S")
-    if(c_event_params[:startSecond] != "")
-      @c_event.startSecond = c_event_params[:startSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
-      @c_event.endSecond = c_event_params[:endSecond].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @startdateOne = c_event_params[:dateOne] + " " + c_event_params[:starttimeOne]
+    @enddateOne = c_event_params[:dateOne] + " " + c_event_params[:endtimeOne]
+    @c_event.start =  @startdateOne.to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @c_event.end = @enddateOne.to_time.strftime("%Y-%m-%d %k:%M:%S")
+    if(c_event_params[:dateTwo] != "")
+      @startdateTwo = c_event_params[:dateTwo] + " " + c_event_params[:starttimeTwo]
+      @enddateTwo = c_event_params[:dateTwo] + " " + c_event_params[:endtimeTwo]
+      @c_event.startSecond = @startdateTwo.to_time.strftime("%Y-%m-%d %k:%M:%S")
+      @c_event.endSecond = @enddateTwo.to_time.strftime("%Y-%m-%d %k:%M:%S")
     end
-    if(c_event_params[:startThird] != "")
-      @c_event.startThird = c_event_params[:startThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
-      @c_event.endThird = c_event_params[:endThird].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    if(c_event_params[:dateThree] != "")
+      @startdateThree = c_event_params[:dateThree] + " " + c_event_params[:starttimeThree]
+      @enddateThree = c_event_params[:dateThree] + " " + c_event_params[:endtimeThree]
+      @c_event.startThird = @startdateThree.to_time.strftime("%Y-%m-%d %k:%M:%S")
+      @c_event.endThird = @enddateThree.to_time.strftime("%Y-%m-%d %k:%M:%S")
     end
 
-    @c_event.startLogin = c_event_params[:startLogin]
-    @c_event.endLogin = c_event_params[:endLogin]
+    @c_event.startLogin = c_event_params[:startLogin].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @c_event.endLogin = c_event_params[:endLogin].to_time.strftime("%Y-%m-%d %k:%M:%S")
 
     if @c_event.save
 
@@ -175,7 +181,7 @@ class RoomsController < ApplicationController
       @c_event = CEvent.find(params[:id])
     end
     def c_event_params
-      params.require(:c_event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
+      params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
     end
 
     def doc_params
