@@ -191,7 +191,7 @@
       <label class="control-label" for="docExist_name">Dokumentenname</label>
       <select class="form-group form-control" name="docExist[resume_id]" id="docExist_name" >
         <% @allDocuments.each do |resume| %>
-            <option value="<%= resume.id %>" data-othervalue="<%= resume.attachement_url %>"><%= resume.name %></option>
+            <option value="<%= resume.id %>" data-othervalue="<%= resume.attachment_url %>"><%= resume.name %></option>
         <% end %>
       </select>
     </div>
