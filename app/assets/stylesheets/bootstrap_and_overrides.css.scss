@@ -1,6 +1,5 @@
  // @import "twitter/bootstrap/bootstrap";
 
- @import "bootstrap/less/bootstrap";
 
 // Set correct font paths
  /*
@@ -203,7 +202,7 @@ a {
 
 
 
-@media (min-width: @screen-sm-min) {
+@media (min-width: 768px) {
   .container-fluid {
     padding-left: 0.5em;
   }
@@ -224,7 +223,7 @@ a {
   }
 
 }
-@media (max-width: @screen-sm-min) {
+@media (max-width: 768px) {
   .mehrspaltig {
     width: 100%;
     -moz-column-count: 0;
