@@ -85,7 +85,7 @@ class RoomsController < ApplicationController
     @resume = Resume.new(doc_params)
     @resume.save
     @account = Account.new
-    @account.accountName = @event.account
+    @account.accountName = @event.accountName
     @account.resume_id = @resume.id
     @account.save
     redirect_to "administrator/rooms/event/" + @event.id
