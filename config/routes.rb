@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   post '/tinymce_assets' => 'tinymce_assets#create'
 
+  delete 'account/:id', to: "rooms#destroyDocument"
+
   get 'pages/', to: "pages#all"
   get 'pages/:site', to: "pages#index"
   post 'pages/:site', to: "pages#update"
@@ -69,6 +71,8 @@ Rails.application.routes.draw do
   get 'administrator/rooms/:id', to: "rooms#calendar"
   get 'administrator/rooms/:id/new', to: "rooms#angularNew"
   post 'administrator/rooms/event/:id', to:  "rooms#update"
+  post 'administrator/rooms/event/:id/doc', to:  "rooms#addDoc"
+
   get 'administrator/rooms/event/members/:id', to: "rooms#showMembers"
   get 'administrator/rooms/event/:id', to: "rooms#edit"
   delete 'event/:id', to: "rooms#deleteEvent"

@@ -5,12 +5,14 @@ class SendEmailJob < ApplicationJob
     @aboNewsletters = abo_newsletters
     @newsletter = newsletter
     @newscontent = newscontent
-    @abo_newsletters.each do |abo_newsletter|
+    @abos = []
+    @aboNewsletters.each do |abo_newsletter|
       if(abo_newsletter.enable == true)
-        NewsMailer.news_email(@newsletter, @newscontent, abo_newsletter).deliver_later
+        @abos.push(abo_newsletter)
     # Do something later
       end
     end
+    NewsMailer.news_email(@newsletter, @newscontent, @abos).deliver
     @news = NewsContent.find(@newscontent.id)
     @news.sendStatus = true
     @news.save

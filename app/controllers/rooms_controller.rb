@@ -68,9 +68,27 @@ class RoomsController < ApplicationController
 
   def edit
     @id = params[:id]
+    @accounts = Account.where(accountName: @c_event.accountName)
+    @documents = []
+    @acc = []
+    @accounts.each do |d|
+      @resume = Resume.find(d.resume_id)
+      @documents.push({:id => d.resume_id, :name => @resume.name, :url => @resume.attachment_url, :accountId => d.id})
+    end
     respond_to do |f|
       f.html
     end
+  end
+
+  def addDoc
+    @event = CEvent.find(params[:id])
+    @resume = Resume.new(doc_params)
+    @resume.save
+    @account = Account.new
+    @account.accountName = @event.account
+    @account.resume_id = @resume.id
+    @account.save
+    redirect_to "administrator/rooms/event/" + @event.id
   end
 
   def create
@@ -132,6 +150,11 @@ class RoomsController < ApplicationController
     redirect_to :action => "calendar", :id => @id
   end
 
+  def destroyDocument
+    @account = Account.find(params[:id])
+    @account.destroy
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
     def set_room
@@ -142,6 +165,10 @@ class RoomsController < ApplicationController
     end
     def c_event_params
       params.require(:c_event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
+    end
+
+    def doc_params
+      params.require(:doc).permit(:name, :attachment)
     end
     def room_params
       params.require(:room).permit(:number, :size, :building)

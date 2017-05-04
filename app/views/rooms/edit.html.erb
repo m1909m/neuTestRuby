@@ -156,20 +156,68 @@
   </form>
   <a data-confirm="Sind sie sich sicher?" class="btn btn-danger"  style="margin-top: 20px;" rel="nofollow" data-method="delete" href="/event/<%= @c_event.id %>">Veranstaltung Löschen</a>
 </div>
+<div class="col-sm-12">
+  <h2>Dokument hochladen</h2>
+  <form class="new_doc" id="new_doc" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/doc" accept-charset="UTF-8" method="post">
+    <input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <div class="form-group row">
+      <label class="col-sm-2 control-label" for="doc_name">Dokumentenname</label>
+      <div class="col-sm-10">
+        <input class="form-control" name="doc[name]" id="doc_name" type="text">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 control-label" for="doc_attachment">Quelle</label>
+      <div class="col-sm-10">
+        <input class="form-control" name="doc[attachment]" id="doc_attachment" type="file">
+      </div>
+    </div>
+    <div class="form-group row">
+      <input class="col-sm-offset-2" name="commit" value="Hochladen" class="btn btn-default" data-disable-with="Save" type="submit">
+    </div>
+  </form>
+</div>
+<div class="col-sm-12">
+  <h2>Dokumente der Veranstaltung</h2>
+  <% if @documents != nil %>
+  <table class="table table-responsive table-striped">
+    <thead>.
+    <tr>
+      <th>Dokumentenname</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @documents.each do |resume| %>
+
+        <tr>
+          <td><%= resume.name %></td>
+          <td><a style="color: #f59d0e;" href="<%= resume.url %>>" target="_blank" rel="noopener noreferrer">Anzeigen</a></td>
+          <td>
+            <form class="button_to" method="post" action="/account/<%= resume.accountId %>">
+              <input name="_method" value="delete" autocomplete="off" type="hidden">
+              <input class="btn btn-danger" confirm="Sind Sie sicher?" value="Dokument entfernen" type="submit">
+              <input name="authenticity_token" value="<%= form_authenticity_token %>" autocomplete="off" type="hidden">
+            </form>
+          </td>
+        </tr>
+
+    <% end %>
+    </tbody>
+
+  </table>
+  <% else%>
+    <p>Die Veranstaltung hat keine Dokumente</p>
+  <% end %>
+
+
+
+</div>
 
 <script type="text/javascript">
     $(document).ready(function(){
-        /*
-        $("#datetimepicker1 input").val('< = @c_event.start.to_time.strftime("%Y-%m-%d %k:%M") %>');
-        $("#datetimepicker2 input").val('<= @c_event.end.to_time.strftime("%Y-%m-%d %k:%M") %>');
-        $("#datetimepicker3 input").val('<= @c_event.startSecond != "" && @c_event.startSecond != nil ? @c_event.startSecond.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker4 input").val('<= @c_event.endSecond != "" && @c_event.endSecond != nil  ? @c_event.endSecond.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker5 input").val('<= @c_event.startThird != "" && @c_event.startThird != nil  ? @c_event.startThird.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker6 input").val('<= @c_event.endThird != "" && @c_event.endThird != nil  ? @c_event.endThird.to_time.strftime("%Y-%m-%d %k:%M") : "" %>');
-        $("#datetimepicker7 input").val('<= @c_event.startLogin.to_time.strftime("%Y-%m-%d %k:%M") %>');
-        $("#datetimepicker8 input").val('<= @c_event.endLogin.to_time.strftime("%Y-%m-%d %k:%M") %>');
-*/
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
         $('#datetimepicker1').datetimepicker({locale: 'de'});
         $('#datetimepicker2').datetimepicker({
             locale: 'de',

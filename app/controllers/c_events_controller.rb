@@ -18,6 +18,7 @@ class CEventsController < ApplicationController
         @json.push({title: event.title, start: event.startThird, end: event.endThird, id: event.id})
       end
     end
+
     respond_to do |format|
       format.json { render json: @json}
     end
@@ -55,7 +56,8 @@ class CEventsController < ApplicationController
 
   def create
     @c_event = CEvent.new
-    # TODO Tests
+
+
     @c_event.title = c_event_params[:title]
     @c_event.description = c_event_params[:description]
     @c_event.minSize = c_event_params[:minSize]
@@ -77,7 +79,17 @@ class CEventsController < ApplicationController
     @c_event.userMail = current_user.email
     @c_event.member = 0
     @c_event.free = 1
+    # TODO formular Usernick eingabe
+    @password = SecureRandom.hex(8)
+    puts(@password)
+    @user = User.new({:email => "Veranstaltung", :roles => ["event"], :password => @password, :password_confirmation => @password })
+    if @user.save
+      @c_event.account = @user.email
+
+    end
+
     @c_event.save
+    #TODO send Email
     redirect_to "/administrator/rooms/" + c_event_params[:room_id]
   end
 
@@ -92,13 +104,13 @@ class CEventsController < ApplicationController
 
   end
 
+
+
   private
 
     def set_c_event
       @c_event = CEvent.find(params[:id])
     end
-
-
 
     def c_event_params
       params.require(:c_event).permit(:title, :start, :end, :startSecond, :endSecond, :startThird, :endThird, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
