@@ -250,7 +250,7 @@
         $('#docExist_name').on('change', function() {
           var otherValue = $(this).attr('data-othervalue');
           $('#linkDocument').href = otherValue;
-          $('#linkDocument').val = $(this).find('option:selected').val;
+          $('#linkDocument').val = $(this).value;
 
         });
         $(':file').on('fileselect', function(event, numFiles, label) {
