@@ -248,7 +248,7 @@
     });
     $(document).ready(function(){
         $('#docExist_name').on('change', function() {
-          var otherValue = $(this).find('option:selected').attr('data-othervalue');
+          var otherValue = $(this).attr('data-othervalue');
           $('#linkDocument').href = otherValue;
           $('#linkDocument').val = $(this).find('option:selected').val;
 
