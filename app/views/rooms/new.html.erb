@@ -154,8 +154,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#dateOne').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
-        $('#starttimeOne').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
-        $('#endtimeOne').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
+        $('#starttimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $('#endtimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
         $("#starttimeOne").on("dp.change", function (e) {
             $('#endtimeOne').data("DateTimePicker").minDate(e.date);
         });
@@ -164,8 +164,8 @@
             $('#starttimeOne').data("DateTimePicker").maxDate(e.date);
         });
         $('#dateTwo').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
-        $('#starttimeTwo').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
-        $('#endtimeTwo').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
+        $('#starttimeTwo').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $('#endtimeTwo').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
         $("#starttimeTwo").on("dp.change", function (e) {
             $('#endtimeTwo').data("DateTimePicker").minDate(e.date);
         });
@@ -174,8 +174,8 @@
             $('#starttimeTwo').data("DateTimePicker").maxDate(e.date);
         });
         $('#dateThree').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
-        $('#starttimeThree').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
-        $('#endtimeThree').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
+        $('#starttimeThree').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $('#endtimeThree').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
         $("#starttimeThree").on("dp.change", function (e) {
             $('#endtimeThree').data("DateTimePicker").minDate(e.date);
         });
