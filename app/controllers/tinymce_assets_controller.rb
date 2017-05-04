@@ -12,7 +12,7 @@ class TinymceAssetsController < ApplicationController
 
 
  #   render :plain => "alert('Bitte folgende URL kopieren und in Quelle einfügen: " + @image.file_url + "');"
-    render :plain => "$('#mceu_59-inp').val('" + @image.file_url + "');"
+    render :plain => "$('.mce-textbox').val('" + @image.file_url + "');"
    # render json: {
    #     location: @image.file_url
    # }, layout: false, content_type: "text/html"
