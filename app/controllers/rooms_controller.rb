@@ -88,7 +88,7 @@ class RoomsController < ApplicationController
     @account.accountName = @event.accountName
     @account.resume_id = @resume.id
     @account.save
-    redirect_to "administrator/rooms/event/" + params[:id]
+    redirect_to "/administrator/rooms/event/" + params[:id]
   end
 
   def create
@@ -158,7 +158,7 @@ class RoomsController < ApplicationController
     puts(@event.ids)
     puts(@event.__id__)
 
-    redirect_to "administrator/rooms/event/" + @event.id.to_s
+    redirect_to "/administrator/rooms/event/" + @event.id.to_s
   end
 
   private
