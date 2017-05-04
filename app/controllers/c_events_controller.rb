@@ -82,9 +82,9 @@ class CEventsController < ApplicationController
     # TODO formular Usernick eingabe
     @password = SecureRandom.hex(8)
     puts(@password)
-    @user = User.new({:email => "Veranstaltung", :roles => Role.where(name: "event"), :password => @password, :password_confirmation => @password })
+    @user = User.new({:email => "veranstaltung", :roles => Role.where(name: "event"), :password => @password, :password_confirmation => @password })
     if @user.save
-      @c_event.account = @user.email
+      @c_event.accountName = @user.email
 
     end
 
