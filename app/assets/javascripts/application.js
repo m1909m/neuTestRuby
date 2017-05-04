@@ -33,5 +33,7 @@
 //= require fullcalendar/dist/gcal
 //= require fullcalendar/dist/lang/de
 //= require turbolinks
-//= require bootstrap/dist/js/bootstrap
+//  require bootstrap/dist/js/bootstrap
+//= require bootstrap-sprockets
+
 //= require_tree .

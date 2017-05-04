@@ -45,9 +45,6 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
-  config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components', 'bootstrap')
-  config.assets.paths << Rails.root.join("vendor","assets", "fonts")
-  config.assets.paths << Rails.root.join("vendor","assets", "stylesheets")
   config.assets.precompile += %w( .svg .eot .woff .ttf )
   # Suppress logger output for asset requests.
   config.assets.quiet = true
