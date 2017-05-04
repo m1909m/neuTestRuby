@@ -53,7 +53,7 @@
           <label for="dateTwo">Datum: </label>
           <div class='input-group date' id='dateTwo'>
             <input type='text' class="form-control" name="c_event[dateTwo]" />
-            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
         </div>
         <div class="form-group">
@@ -153,9 +153,9 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#dateOne').datetimepicker({locale: 'de', pickTime: false});
-        $('#starttimeOne').datetimepicker({locale: 'de', pickDate: false});
-        $('#endtimeOne').datetimepicker({locale: 'de', pickDate: false});
+        $('#dateOne').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+        $('#starttimeOne').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
+        $('#endtimeOne').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
         $("#starttimeOne").on("dp.change", function (e) {
             $('#endtimeOne').data("DateTimePicker").minDate(e.date);
         });
@@ -163,9 +163,9 @@
             //          $scope.datePicker.endOne = $("#datetimepicker2").val();
             $('#starttimeOne').data("DateTimePicker").maxDate(e.date);
         });
-        $('#dateTwo').datetimepicker({locale: 'de', pickTime: false});
-        $('#starttimeTwo').datetimepicker({locale: 'de', pickDate: false});
-        $('#endtimeTwo').datetimepicker({locale: 'de', pickDate: false});
+        $('#dateTwo').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+        $('#starttimeTwo').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
+        $('#endtimeTwo').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
         $("#starttimeTwo").on("dp.change", function (e) {
             $('#endtimeTwo').data("DateTimePicker").minDate(e.date);
         });
@@ -173,9 +173,9 @@
             //          $scope.datePicker.endOne = $("#datetimepicker2").val();
             $('#starttimeTwo').data("DateTimePicker").maxDate(e.date);
         });
-        $('#dateThree').datetimepicker({locale: 'de', pickTime: false});
-        $('#starttimeThree').datetimepicker({locale: 'de', pickDate: false});
-        $('#endtimeThree').datetimepicker({locale: 'de', pickDate: false});
+        $('#dateThree').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+        $('#starttimeThree').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
+        $('#endtimeThree').datetimepicker({locale: 'de', format: "hh:mm", useCurrent: false});
         $("#starttimeThree").on("dp.change", function (e) {
             $('#endtimeThree').data("DateTimePicker").minDate(e.date);
         });
