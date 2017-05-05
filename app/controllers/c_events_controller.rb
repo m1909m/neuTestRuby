@@ -86,17 +86,27 @@ class CEventsController < ApplicationController
     @c_event.member = 0
     @c_event.free = 1
 
-    @password = SecureRandom.hex(8)
+    if current_user.email == "admin@vkm.de"
+      @password = "admin1234"
+    else
+      @password = SecureRandom.hex(8)
+    end
+
     # TODO Password per mail senden / bei admin nicht möglich
-    @password = "admin1234"
-    puts(@password)
+
     @user = User.new({:email => c_event_params[:nickname], :roles => Role.where(name: "event"), :password => @password, :password_confirmation => @password })
     if @user.save
       @c_event.accountName = @user.email
 
     end
 
-    @c_event.save
+    if @c_event.save
+      if current_user.email == "admin@vkm.de"
+
+      else
+        ContactMailer.create_event(current_user.email, @password, @c_event)
+      end
+    end
     #TODO send Email
     redirect_to "/administrator/rooms/" + c_event_params[:room_id]
   end

@@ -15,6 +15,14 @@ class ContactMailer < ActionMailer::Base
          :subject=> "Diakonie Seite wurde verändert"
   end
 
+  def create_event(email, password, event)
+    @event = event
+    @password = password
+    @email = email
+    mail :to=> @email,
+         :subject=> "Neue Veranstaltung erstellt"
+  end
+
   def change_event(member, event)
     @member = member
     @event = event
