@@ -41,6 +41,35 @@
     <% end %>
     </div>
 
+    <% if current_user.has_role?(:event) %>
+      <div class="col-xs-12">
+        <p><strong>Folgende Dateien stehen zum Downloaden zur Verfügung:</strong></p>
+        <% if @resumes.length > 0 %>
+            <table class="table table-responsive table-striped half">
+              <thead>
+              <tr>
+                <th>Dokumentenname</th>
+                <th></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% @resumes.each do |resume| %>
+
+                  <tr>
+                    <td><%= resume.name %></td>
+                    <td><a style="color: #f59d0e;" href="<%= resume.attachment_url %>" target="_blank" rel="noopener noreferrer">Anzeigen</a></td>
+                  </tr>
+
+              <% end %>
+              </tbody>
+
+            </table>
+        <% else%>
+            <p>Die Veranstaltung hat keine Dokumente</p>
+        <% end %>
+      </div>
+    <% end %>
 
 <% else %>
 
