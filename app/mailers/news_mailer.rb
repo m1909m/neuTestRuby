@@ -2,7 +2,7 @@ class NewsMailer < ActionMailer::Base
   default from: 'info@vkm.de'
   def news_email(newsletter, newscontent, abo_newsletter)
     @newsletter = newsletter
-    @newsletter.newsBody.gsub "CONTENT", @newscontent.content
+    @newsletter.newsBody.gsub('CONTENT', @newscontent.content)
     @newscontent = newscontent
 
     abo_newsletter.each { |abo|
