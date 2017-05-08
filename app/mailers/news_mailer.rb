@@ -4,8 +4,8 @@ class NewsMailer < ActionMailer::Base
     @newsletter = newsletter
     @newscontent = newscontent
     abo_newsletter.each { |abo|
-        @url = "http://vkm.marianit.de/abo_newsletter/" + String(abo.id)
-        mail :to=> abo.eMail,
+        @url = "http://vkm.marianit.de/abo_newsletter/" + String(abo)
+        mail :to=> abo,
              :subject=> @newscontent.title
     }
   end
