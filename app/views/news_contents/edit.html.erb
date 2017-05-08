@@ -25,26 +25,25 @@
 <form class="new_newscontent" id="new_newscontent" action="/news_contents/<%= @id %>" accept-charset="UTF-8" method="post">
   <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
-  <div class="field">
-    <label for="newscontent_title">Überschrift</label>
-    <input type="text" name="news_content[title]" id="newscontent_title" value="<%= @news_content.title %>"></textarea>
+  <div class="form-group row">
+    <label for="newscontent_title" class="col-sm-2 control-label">Überschrift</label>
+    <div class="col-sm-10">
+      <input type="text" name="news_content[title]" id="newscontent_title" class="form-control" value="<%= @news_content.title %>" />
+    </div>
   </div>
 
-  <div class="field">
-    <label for="newscontent_content">News</label>
-    <textarea type="text" class="tinymce" rows="40" cols="60" name="news_content[content]" id="newscontent_content"><%= @news_content.content.html_safe %></textarea>
+  <div class="form-group row">
+    <label for="newscontent_sendtime" class="col-sm-2 control-label">Sendedatum</label>
+    <div class='input-group date col-sm-10' id="newscontent_sendtime">
+      <input type='text' class="form-control" name="news_content[sendtime]" value="<%= @news_content.sendtime %>" required/>
+      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
   </div>
 
-  <div class="field">
-    <label for="newscontent_sendtime">Sendedatum</label>
-    <input size="16" type="text" name="news_content[sendtime]" id="newscontent_sendtime" readonly class="form_datetime" value="<%= @news_content.sendtime %>">
-
-  </div>
-
-  <div class="form-group field">
-    <label for="newscontent_newsletter_id">Newsletter Layout</label>
-
-    <select class="form-group" name="news_content[newsletter_id]" id="newscontent_newsletter_id">
+  <div class="form-group row">
+    <label for="newscontent_newsletter_id" class="col-sm-2 control-label">Newsletter Layout</label>
+    <div class="col-sm-10">
+      <select class="form-group form-control" name="news_content[newsletter_id]" id="newscontent_newsletter_id" >
       <% @newsletters.each do |newsletter| %>
           <% if newsletter.id == @news_content.newsletter_id %>
             <option value="<%= newsletter.id %>" selected ><%= newsletter.from %></option>
@@ -53,32 +52,60 @@
           <% end %>
       <% end %>
     </select>
-
+    </div>
   </div>
 
-  <div class="actions">
-    <input type="submit" name="commit" value="Newsletter erstellen" data-disable-with="Newsletter erstellen" />
+  <div class="form-group row">
+    <label for="newscontent_content" class="col-sm-2 control-label">News</label>
+    <div class="col-sm-10">
+      <textarea class="tinymce" rows="30" name="news_content[content]" id="newscontent_content" ><%= @news_content.content.html_safe %></textarea>
+    </div>
   </div>
+
+  <div class="form-group row actions">
+    <div class="col-sm-offset-2">
+      <input type="submit" class="btn btn-default" name="commit" value="Newsletter erstellen" data-disable-with="Newsletter erstellen" />
+    </div>
+  </div>
+</form>
+<iframe id="form_target" name="form_target" style="display:none"></iframe>
+<form id="my_form" action="/tinymce_assets/" accept-charset="UTF-8" method="post" enctype="multipart/form-data" style="width:0px;height:0px;overflow:hidden">
+  <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input name="image[file]" type="file" onchange="$('#my_form').ajaxSubmit({ success: function(d){eval(d);} });this.value='';">
 </form>
 <script type="text/javascript">
     $(document).ready(function(){
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+        $('#newscontent_sendtime').datetimepicker({
+            locale: 'de'
+        });
     });
     //<![CDATA[
     (function() {
         function initTinyMCE() {
             if (typeof tinyMCE != 'undefined') {
                 tinymce.remove();
-                tinyMCE.init({
+                tinymce.init({
                     language: "de",
-                    selector: "textarea.tinymce",
-                    theme_advanced_toolbar_location: "top",
-                    theme_advanced_toolbar_align: "left",
-                    theme_advanced_statusbar_location: "bottom",
-                    theme_advanced_buttons3_add: ["tablecontrols","fullscreen"],
-                    plugins: "table,fullscreen",
-                    toolbar: "forecolor backcolor"
+                    selector: ".tinymce",
+                    height: 500,
+                    plugins: [
+                        "advlist autolink autosave link image imagetools lists charmap print preview hr anchor pagebreak spellchecker",
+                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                        "table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern"
+                    ],
+                    file_browser_callback: function(field_name, url, type, win) {
+                        if(type=='image') $('#my_form input').click();
+                    },
+                    toolbar1: "fontselect | fontsizeselect | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | table spellchecker | outdent indent | link unlink | image | rotateleft rotateright | flipv fliph | blockquote code | preview",
+
+                    menubar: 'file edit insert view format',
+                    toolbar_items_size: 'normal',
+
+                    content_css: [
+                        '//https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+                    ]
                 });
+
             } else {
                 setTimeout(initTinyMCE, 50);
             }

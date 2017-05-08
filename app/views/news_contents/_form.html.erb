@@ -24,8 +24,9 @@
 
       <div class="form-group row">
         <label for="newscontent_sendtime" class="col-sm-2 control-label">Sendedatum</label>
-        <div class="col-sm-10">
-          <input size="16" type="text" name="news_content[sendtime]" id="newscontent_sendtime" readonly class="form_datetime form-control" />
+        <div class='input-group date col-sm-10' id="newscontent_sendtime">
+          <input type='text' class="form-control" name="news_content[sendtime]" required/>
+          <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
         </div>
       </div>
 
@@ -44,12 +45,14 @@
       <div class="form-group row">
         <label for="newscontent_content" class="col-sm-2 control-label">News</label>
         <div class="col-sm-10">
-          <textarea class="tinymce" rows="40" name="news_content[content]" id="newscontent_content" ></textarea>
+          <textarea class="tinymce" rows="30" name="news_content[content]" id="newscontent_content" ></textarea>
         </div>
       </div>
 
-      <div class="actions">
-        <input type="submit" name="commit" value="Newsletter erstellen" data-disable-with="Newsletter erstellen" />
+      <div class="form-group row actions">
+        <div class="col-sm-offset-2">
+          <input type="submit" class="btn btn-default" name="commit" value="Newsletter erstellen" data-disable-with="Newsletter erstellen" />
+        </div>
       </div>
     </form>
     <iframe id="form_target" name="form_target" style="display:none"></iframe>
@@ -59,7 +62,9 @@
     </form>
     <script type="text/javascript">
         $(document).ready(function(){
-            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+            $('#newscontent_sendtime').datetimepicker({
+                locale: 'de'
+            });
         });
         //<![CDATA[
         (function() {
