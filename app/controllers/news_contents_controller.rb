@@ -35,6 +35,12 @@ class NewsContentsController < ApplicationController
     if @news_content.save
       @layout = Newsletter.find(@news_content.newsletter_id)
       @aboNewsletters = AboNewsletter.all
+      @mails = []
+      @aboNewsletters.each do |abo|
+        if abo.enable == 1
+          @mails.push(abo.eMail)
+        end
+      end
       puts(@aboNewsletters)
       SendEmailJob.set(wait: 20.seconds).perform_later(@layout, @news_content,@aboNewsletters)
       respond_to do |f|
