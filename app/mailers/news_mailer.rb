@@ -3,7 +3,7 @@ class NewsMailer < ActionMailer::Base
   def news_email(newsletter, newscontent, abo_newsletter)
     @newsletter = newsletter
     @newscontent = newscontent
-    @newsletter.newsBody.gsub('CONTENT', @newscontent.content)
+    @newsletter.newsBody = @newsletter.newsBody.gsub('CONTENT', @newscontent.content)
 
 
     abo_newsletter.each { |abo|
