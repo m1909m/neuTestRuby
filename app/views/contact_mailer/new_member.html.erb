@@ -20,36 +20,47 @@
   </tr>
   <tr>
     <td>Tag 1</td>
-    <td>Startzeit: </td>
-    <td><%= @event.start %></td>
+    <td></td>
+    <td><%= @event.start.to_time.strftime("%d.%m.%Y") %></td>
+    <td></td>
   </tr>
   <tr>
-    <td>Tag 1</td>
-    <td>endzeit: </td>
-    <td><%= @event.end %></td>
+    <td>Beginn:</td>
+    <td><%= @event.start.to_time.strftime("%k:%M") %></td>
+    <td>Ende:</td>
+    <td><%= @event.end.to_time.strftime("%k:%M") %></td>
   </tr>
-  <tr>
-    <td>Tag 2</td>
-    <td>Startzeit: </td>
-    <td><%= @event.startSecond %></td>
-  </tr>
-  <tr>
-    <td>Tag 2</td>
-    <td>endzeit: </td>
-    <td><%= @event.endSecond %></td>
-  </tr>
-  <tr>
-    <td>Tag 3</td>
-    <td>Startzeit: </td>
-    <td><%= @event.startThird %></td>
-  </tr>
-  <tr>
-    <td>Tag 3</td>
-    <td>endzeit: </td>
-    <td><%= @event.endThird %></td>
-  </tr>
+  <% if event.startSecond != "" && event.startSecond != nil %>
+      <tr>
+        <td>Tag 2</td>
+        <td></td>
+        <td><%= @event.startSecond.to_time.strftime("%d.%m.%Y") %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Beginn:</td>
+        <td><%= @event.startSecond.to_time.strftime("%k:%M") %></td>
+        <td>Ende:</td>
+        <td><%= @event.endSecond.to_time.strftime("%k:%M") %></td>
+      </tr>
+  <% end %>
+  <% if @event.startThird != "" && @event.startThird != nil %>
+      <tr>
+        <td>Tag 3</td>
+        <td></td>
+        <td><%= @event.startThird.to_time.strftime("%d.%m.%Y") %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Beginn:</td>
+        <td><%= @event.startThird.to_time.strftime("%k:%M") %></td>
+        <td>Ende:</td>
+        <td><%= @event.endThird.to_time.strftime("%k:%M") %></td>
+      </tr>
+  <% end %>
 
 </table>
+
 Sie erhalten in Kürze eine weitere Bestätigung.
 </p>
 
