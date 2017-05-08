@@ -37,11 +37,13 @@ class NewsContentsController < ApplicationController
       @aboNewsletters = AboNewsletter.all
       @mails = []
       @aboNewsletters.each do |abo|
-        if abo.enable == 1
+        if abo.enable == true
+          puts(abo.eMail)
           @mails.push(abo.eMail)
         end
       end
       puts(@aboNewsletters)
+      I18n.locale = :de
       SendEmailJob.set(wait: 20.seconds).perform_later(@layout, @news_content,@mails)
       respond_to do |f|
         f.html { redirect_to news_contents_url, notice: 'News wurde erfolgreich erstellt'}
