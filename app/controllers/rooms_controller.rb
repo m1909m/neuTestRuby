@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
     end
   end
 
+
   def roomEdit
     respond_to do |f|
       f.html
@@ -42,6 +43,11 @@ class RoomsController < ApplicationController
   def angularNew
     @id = params[:id]
     render 'rooms/new'
+  end
+
+  def neuEvent
+    @rooms = Room.all
+    render'rooms/neuEvent'
   end
 
   def showMembers

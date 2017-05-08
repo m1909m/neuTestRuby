@@ -1,0 +1,206 @@
+
+<div ng-controller="eventController">
+  <h1>Veranstaltung erstellen</h1>
+
+  <form action="/c_events" accept-charset="UTF-8" method="post">
+    <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="title">Titel</label>
+        <input id="title" type="text" name="c_event[title]" class="form-control" placeholder="Titel" required/>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="description">Beschreibung</label>
+        <textarea id="description" type="text" name="c_event[description]" class="form-control" placeholder="Beschreibung" ></textarea>
+      </div>
+    </div>
+
+    <div class="col-xs-12 form-group">
+      <label>Tag 1</label>
+      <div class='row'>
+        <div class="form-group col-md-4">
+          <p for="dateOne" class="col-sm-4" style="padding-top: 5px;">Datum: </p>
+          <div class='input-group date col-sm-8' id='dateOne'>
+            <input type='text' class="form-control" name="c_event[dateOne]" required/>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <p for="starttimeOne" class="col-sm-4" style="padding-top: 5px;">Beginn: </p>
+          <div class='input-group date col-sm-8' id='starttimeOne'>
+            <input type='text' class="form-control" name="c_event[starttimeOne]" required/>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <p for="endtimeOne" class="col-sm-4" style="padding-top: 5px;">Ende: </p>
+          <div class='input-group date col-sm-8' id='endtimeOne'>
+            <input type='text' class="form-control" name="c_event[endtimeOne]" required/>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 form-group">
+      <label>Tag 2</label>
+      <div class='row'>
+        <div class="form-group col-md-4">
+          <p for="dateTwo" class="col-sm-4" style="padding-top: 5px;">Datum: </p>
+          <div class='input-group date col-sm-8' id='dateTwo'>
+            <input type='text' class="form-control" name="c_event[dateTwo]" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <p for="starttimeTwo" class="col-sm-4" style="padding-top: 5px;">Beginn: </p>
+          <div class='input-group date col-sm-8' id='starttimeTwo'>
+            <input type='text' class="form-control" name="c_event[starttimeTwo]" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <p for="endtimeTwo" class="col-sm-4" style="padding-top: 5px;">Ende: </p>
+          <div class='input-group date col-sm-8' id='endtimeTwo'>
+            <input type='text' class="form-control" name="c_event[endtimeTwo]" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 form-group">
+      <label>Tag 3</label>
+      <div class='row'>
+        <div class="form-group col-md-4">
+          <p for="dateThree" class="col-sm-4" style="padding-top: 5px;">Datum: </p>
+          <div class='input-group date col-sm-8' id='dateThree'>
+            <input type='text' class="form-control" name="c_event[dateThree]" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <p for="starttimeThree" class="col-sm-4" style="padding-top: 5px;">Beginn: </p>
+          <div class='input-group date col-m-8' id='starttimeThree'>
+            <input type='text' class="form-control" name="c_event[starttimeThree]" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <p for="endtimeThree" class="col-sm-4" style="padding-top: 5px;">Ende: </p>
+          <div class='input-group date col-sm-8' id='endtimeThree'>
+            <input type='text' class="form-control" name="c_event[endtimeThree]" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-group">
+        <label for="minSize">Mindestanzahl an Mitgliedern</label>
+        <input id="minSize" type="number" min="0" name="c_event[minSize]" class="form-control" placeholder="Mindestanzahl an Mitgliedern" required/>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-group">
+        <label for="maxSize">Maximalanzahl an Mitgliedern</label>
+        <input id="maxSize" type="number" min="0" name="c_event[maxSize]" class="form-control" placeholder="Maximalanzahl an Mitgliedern" required/>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="nickname">Benutzername</label>
+        <input id="nickname" type="text" name="c_event[nickname]" class="form-control" placeholder="Benutzernme" required/>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <label>Anmeldezeitraum</label>
+      <div class='col-sm-5'>
+        <div class="form-group">
+          <label for="datetimepicker1">Startdatum</label>
+          <div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control" name="c_event[startLogin]" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+        </div>
+      </div>
+      <div class='col-sm-5'>
+        <div class="form-group">
+          <label for="datetimepicker2">Enddatum</label>
+          <div class='input-group date' id='datetimepicker2'>
+            <input type='text' class="form-control" name="c_event[endLogin]"/>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label class="control-label" for="room_id">Raum</label>
+        <select class="form-group form-control" name="c_event[room_id]" id="room_id" >
+          <% @rooms.each do |room| %>
+              <option value="<%= room.id %>" ><%= room.building %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+<!--    <input id="room_id" type="number" name="c_event[room_id]" class="form-control" style="display: none;" type="hidden" value="<%= @id %>" />
+-->
+    <div class="form-group">
+      <button type="submit" class="btn btn-default" >Speichern</button>
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#dateOne').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+        $('#starttimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $('#endtimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $("#starttimeOne").on("dp.change", function (e) {
+            $('#endtimeOne').data("DateTimePicker").minDate(e.date);
+        });
+        $("#endtimeOne").on("dp.change", function (e) {
+            //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+            $('#starttimeOne').data("DateTimePicker").maxDate(e.date);
+        });
+        $('#dateTwo').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+        $('#starttimeTwo').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $('#endtimeTwo').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $("#starttimeTwo").on("dp.change", function (e) {
+            $('#endtimeTwo').data("DateTimePicker").minDate(e.date);
+        });
+        $("#endtimeTwo").on("dp.change", function (e) {
+            //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+            $('#starttimeTwo').data("DateTimePicker").maxDate(e.date);
+        });
+        $('#dateThree').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+        $('#starttimeThree').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $('#endtimeThree').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+        $("#starttimeThree").on("dp.change", function (e) {
+            $('#endtimeThree').data("DateTimePicker").minDate(e.date);
+        });
+        $("#endtimeThree").on("dp.change", function (e) {
+            //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+            $('#starttimeThree').data("DateTimePicker").maxDate(e.date);
+        });
+        $('#datetimepicker1').datetimepicker({locale: 'de'});
+        $('#datetimepicker2').datetimepicker({locale: 'de', useCurrent: false});
+        $("#datetimepicker1").on("dp.change", function (e) {
+            $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker2").on("dp.change", function (e) {
+            //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+            $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>
