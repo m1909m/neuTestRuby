@@ -4,39 +4,53 @@
       <a href="/administrator/raum/new" target="_self" class="btn btn-default">Neuen Raum hinzufügen</a>
     </div>
 	<br><br>
-    <div class="col-xs-12">
+    <div class="col-xs-12 table-scrollable">
       <div ng-show="!rooms.length">Keine Räume vorhanden</div>
-      <div ng-repeat="room in rooms" style="margin: 5px;">
-        <div class="list-group <% if current_user.has_role?(:admin) %>col-xs-8<%else%> col-xs-12 <%end%>" style="margin-bottom: 5px;height: 50px;">
-          <a href="/administrator/rooms/{{room.id}}" target="_self" ng-click="" class="list-group-item"><table><tr><td style="color: #f59d0e;"><b style="color: #000;">Raumnummer: </b>{{room.number}}</td><td style="color: #f59d0e;"><b style="color: #000;">Seminarteilnehmer: </b>{{room.size}}</td><td><b style="color: #f59d0e;">{{room.building}}</b></td></tr></table></a>
-        </div>
-		<div class="list-group col-xs-2" style="margin-bottom: 5px; height: 50px; text-align: center;vertical-align: middle;">
-          <% if current_user.has_role?(:admin) %>
-            <a href="/administrator/rooms/{{room.id}}/new" target="_self" class="btn btn-default">Veranstaltung erstellen</a>
-          <% end %>
+      <div ng-repeat="room in rooms" style="width:100%; margin: 5px;">
+        <div class="list-group <% if current_user.has_role?(:admin) %>col-xs-12<%else%> col-xs-12 <%end%>" style="margin-bottom: 5px;height: auto;">
+          <a href="/administrator/rooms/{{room.id}}" target="_self" ng-click="" class="list-group-item"><span class="raumnummer">Raumnummer: <b style="color:#f59d0e;">{{room.number}}</b></span> <span class="btn-trenner">|</span> <span class="platzanzahl">Platzanzahl: <b style="color:#f59d0e;">{{room.size}}</b></span> <span class="btn-trenner">|</span> <span class="ort">Ort: <b style="color:#f59d0e;">{{room.building}}</b></span></a>
         </div>
 			  
-        <div class="list-group col-xs-1" style="margin-bottom: 5px; height: 50px; text-align: center;vertical-align: middle;">
+        <div class="list-group col-xs-1" id="formcontent">
           <% if current_user.has_role?(:admin) %>
-            <a href="/administrator/raum/{{room.id}}/edit" target="_self" class="btn btn-default">Bearbeiten</a>
+            <a href="/administrator/raum/{{room.id}}/edit" target="_self" class="btn btn-default bearbeitenbutton">Bearbeiten</a>
           <% end %>
         </div>
-        <div class="list-group col-xs-1" style="margin-bottom: 5px;height: 50px;text-align: center;vertical-align: middle;">
+        <div class="list-group col-xs-1" id="formcontent">
           <% if current_user.has_role?(:admin) %>
-              <a data-confirm="Sind sie sich sicher?" rel="nofollow" data-method="delete" class="btn btn-default" href="/rooms/{{room.id}}">Entfernen</a>
+              <a data-confirm="Sind sie sich sicher?" rel="nofollow" data-method="delete" class="btn btn-default entfernenbutton" href="/rooms/{{room.id}}">Entfernen</a>
           <% end %>
         </div>
       </div>
     </div>
 
     <!-- add role --> 
-	<hr>
     <div class="col-xs-12">
+		<br><br>
       <h2>Meine Veranstaltungen</h2>
+		<div class="col-xs-12">
+          <% if current_user.has_role?(:admin) %>
+            <a href="/administrator/rooms/{{room.id}}/new" target="_self" class="btn btn-default">Neue Veranstaltung hinzufügen</a>
+          <% end %>
+        </div>
+			  <br><br>
+	  <div class="col-xs-12 table-scrollable">
       <div ng-show="!myEvents.length">Sie haben noch keine Veranstaltungen erstellt</div>
       <div ng-repeat="myEvent in myEvents" style="margin: 5px;">
-        <div cllass="ist-group">
-          <a href="/administrator/rooms/event/members/{{myEvent.id}}" target="_self" ng-click="" class="list-group-item"><table><tr><td style="color: #f59d0e;">{{ myEvent.title }}</td><td>Aktuelle Teilnehmer: <b style="color: #f59d0e;">{{ myEvent.member }}</b></td></tr></table></a>
+        <div class="list-group <% if current_user.has_role?(:admin) %>col-xs-12<%else%> col-xs-12 <%end%>" style="margin-bottom: 5px;height: auto;">
+          <a href="/administrator/rooms/event/members/{{myEvent.id}}" target="_self" ng-click="" class="list-group-item"><span class="myevent"><b style="color:#f59d0e;">{{ myEvent.title }}</b></span> <span class="btn-trenner">|</span> <span class="teilnehmer">Aktuelle Teilnehmer: <b style="color:#f59d0e;">{{ myEvent.member }}</b></span></a>
+        </div>
+			  
+        <div class="list-group col-xs-1" id="formcontent">
+          <% if current_user.has_role?(:admin) %>
+            <a href="/administrator/rooms/event/{{myEvent.id}}" target="_self" class="btn btn-default bearbeitenbutton">Bearbeiten</a>
+          <% end %>
+        </div>
+        <div class="list-group col-xs-1" id="formcontent">
+          <% if current_user.has_role?(:admin) %>
+              <a data-confirm="Sind sie sich sicher?" rel="nofollow" data-method="delete" class="btn btn-default entfernenbutton" href="/event/{{myEvent.id}}">Entfernen</a>
+          <% end %>
+		  </div>
         </div>
       </div>
     </div>

@@ -9,6 +9,33 @@ body {
   min-height: 101%; /*Scrollbar immer anzeigen*/
 }
 
+#logo {
+	width: 100%;
+	max-width: 850px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.btn-trenner {
+	color: #eee;
+	margin: 0 2%;
+}
+
+.bearbeitenbutton, .entfernenbutton {
+  width: 100%;
+  height: auto;
+  max-width: 108px;
+}
+
+#formcontent {
+	width: 100%;
+	max-width: 108px;
+	margin-bottom: 5px; 
+	height: 50px; 
+	text-align: center;
+	vertical-align: middle;
+}
+
 .aus {
     color: #333;
     cursor: pointer;
@@ -44,6 +71,24 @@ body {
     width: 100%;
 }
 
+.table-scrollable {
+  width: 100%;
+  overflow-y: auto;
+  margin: 0 0 1em;
+}
+
+.table-scrollable::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+}
+
+.table-scrollable::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 3px solid #fff;
+  background-color: rgba(0, 0, 0, .3);
+}
+
 
 .ssbottom {
   width: 100%;
@@ -58,7 +103,7 @@ body {
 .sswidth {
   float: left;
   width: 100%;
-  max-width: 45px;
+  max-width: 40px;
   margin-left: 2px;
 }
 
@@ -164,11 +209,33 @@ label {
 .col-sm-6 {
   width: 100%;
 }
+
+.bearbeitenbutton, .entfernenbutton {
+  width: 100%;
+  height: auto;
+  min-width: 100% !important;
+}
+#formcontent {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 5px; 
+	height: 50px; 
+	text-align: center;
+	vertical-align: middle;
+}
 }
 
 @media only screen and (max-width: 767px) {
 body {
   font-size: 14px;
+}
+.btn-trenner {
+  display: none;
+}
+.raumnummer, .platzanzahl, .ort, .myevent, .teilnehmer {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .content_padding {
   padding-left: 0;

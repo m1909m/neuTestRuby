@@ -53,7 +53,7 @@
     <div class="container col-sm-8 col-md-10">
       <header>
 
-        <%= render 'layouts/headerLogo' %>
+		  <div id="logo"><%= render 'layouts/headerLogo' %></div>
       </header>
 
       <div class="navbar navbar-default" role="navigation">
@@ -204,6 +204,11 @@
         });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+	<script>
+		$(document).ready(function(){
+		$("table").wrap('<div class="table-scrollable"></div>');
+		});
+	</script>
 
   </div>
   </div>
