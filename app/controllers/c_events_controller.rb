@@ -43,6 +43,9 @@ class CEventsController < ApplicationController
     @member.save
     members = @event.member
     @event.member = members - 1
+    if @event.free = 0 && @event.maxSize > @event.member
+      @event.free = 1
+    end
     @event.save
   end
 
@@ -117,6 +120,8 @@ class CEventsController < ApplicationController
 
   def destroy
     @id = @c_event.room_id
+    @accounts = Account.where(accountName: @c_event.accountName)
+    @accounts.destroy_all
     @c_event.destroy
    # redirect_to "/administrator/rooms/" + @id
 

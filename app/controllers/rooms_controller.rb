@@ -154,12 +154,20 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    @events = CEvent.where(room_id: params[:id])
+    @events.each do |event|
+      @accounts = Account.where(accountName: event.accountName)
+      @accounts.destroy_all
+    end
+    @events.destroy_all
     @room.destroy
     redirect_to :action => "angular"
   end
 
   def deleteEvent
     @id = @c_event.room_id
+    @accounts = Account.where(accountName: @c_event.accountName)
+    @accounts.destroy_all
     @c_event.destroy
     redirect_to :action => "calendar", :id => @id
   end
