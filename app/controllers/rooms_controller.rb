@@ -150,7 +150,7 @@ class RoomsController < ApplicationController
 
     if @c_event.save
 
-      @members = Member.where(event_id: @c_event.id)
+      @members = Member.where(event_id: @c_event.id).where(accept: 1)
       @members.each do |member|
         @member = member
         ContactMailer.change_event(@member, @c_event).deliver
