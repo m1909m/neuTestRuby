@@ -11,7 +11,7 @@
   <tr>
     <td></td>
     <td>Veranstaltung: </td>
-    <td><%= @event.title %></td>
+    <td style="min-width: 150px;"><%= @event.title %></td>
   </tr>
   <tr>
     <td></td>
@@ -20,42 +20,42 @@
   </tr>
   <tr>
     <td>Tag 1</td>
-    <td></td>
+    <td style="text-align: right;">am </td>
     <td><%= @event.start.to_time.strftime("%d.%m.%Y") %></td>
     <td></td>
   </tr>
   <tr>
-    <td>Beginn:</td>
-    <td><%= @event.start.to_time.strftime("%k:%M") %></td>
-    <td>Ende:</td>
-    <td><%= @event.end.to_time.strftime("%k:%M") %></td>
+    <td style="text-align: right">Beginn:</td>
+    <td><%= @event.start.to_time.strftime("%k:%M") %> Uhr</td>
+    <td style="text-align: right">Ende:</td>
+    <td><%= @event.end.to_time.strftime("%k:%M") %> Uhr</td>
   </tr>
   <% if @event.startSecond != "" && @event.startSecond != nil %>
   <tr>
     <td>Tag 2</td>
-    <td></td>
+    <td style="text-align: right;">am </td>
     <td><%= @event.startSecond.to_time.strftime("%d.%m.%Y") %></td>
     <td></td>
   </tr>
   <tr>
-    <td>Beginn:</td>
-    <td><%= @event.startSecond.to_time.strftime("%k:%M") %></td>
-    <td>Ende:</td>
-    <td><%= @event.endSecond.to_time.strftime("%k:%M") %></td>
+    <td style="text-align: right">Beginn:</td>
+    <td><%= @event.startSecond.to_time.strftime("%k:%M") %> Uhr</td>
+    <td style="text-align: right">Ende:</td>
+    <td><%= @event.endSecond.to_time.strftime("%k:%M") %> Uhr</td>
   </tr>
   <% end %>
   <% if @event.startThird != "" && @event.startThird != nil %>
   <tr>
     <td>Tag 3</td>
-    <td></td>
+    <td style="text-align: right;">am </td>
     <td><%= @event.startThird.to_time.strftime("%d.%m.%Y") %></td>
     <td></td>
   </tr>
   <tr>
-    <td>Beginn:</td>
-    <td><%= @event.startThird.to_time.strftime("%k:%M") %></td>
-    <td>Ende:</td>
-    <td><%= @event.endThird.to_time.strftime("%k:%M") %></td>
+    <td style="text-align: right">Beginn:</td>
+    <td><%= @event.startThird.to_time.strftime("%k:%M") %> Uhr</td>
+    <td style="text-align: right">Ende:</td>
+    <td><%= @event.endThird.to_time.strftime("%k:%M") %> Uhr</td>
   </tr>
   <% end %>
 
