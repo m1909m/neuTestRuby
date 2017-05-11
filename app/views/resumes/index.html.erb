@@ -24,7 +24,7 @@
 
         <tr>
           <td><%= resume.name %></td>
-          <td><%= link_to "Download Anzeigen", resume.attachment_url, :target => "_blank" %></td>
+          <td><%= link_to "Anzeigen", resume.attachment_url, :target => "_blank" %></td>
           <td><%= button_to "Löschen",  resume, method: :delete, class: "btn btn-danger", confirm: "Sind Sie sich sicher \"#{resume.name}\" zu Löschen?" %></td>
         </tr>
 
