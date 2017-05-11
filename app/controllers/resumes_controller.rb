@@ -19,7 +19,7 @@ class ResumesController < ApplicationController
   end
 
   def getDocuments
-    @accounts = Account.where(params[:accountName])
+    @accounts = Account.where(accountName: params[:accountName])
     @documents = []
     @accounts.each do |d|
       @resume = Resume.find(d.resume_id)
