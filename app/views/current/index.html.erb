@@ -7,7 +7,7 @@
 
 <% if current_user.present? %>
     <div class="col-xs-12">
-    <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:admin)%>
+
 		<p><strong>Folgende Bereiche können Sie bearbeiten:</strong></p>
 	  <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
       <div class="list-group">
@@ -19,6 +19,10 @@
           <a href="/pages/" class="list-group-item" target="_self">Seiten</a>
         </div>
     <% end %>
+    <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:admin)%>
+      <div class="list-group">
+        <a href="/dokumente" class="list-group-item" target="_self">Dokumentenbereich</a>
+      </div>
       <div class="list-group">
         <a href="/administrator/rooms" class="list-group-item" target="_self">Veranstaltungssystem</a>
       </div>
