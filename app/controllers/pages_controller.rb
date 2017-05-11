@@ -31,18 +31,22 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
     @page.save
+    flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" erstellt."
+    redirect_to "/zugangsbereich"
   end
 
   def update
     if @page.for == "diakonie"
       if @page.update(page_params)
+        flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
         ContactMailer.change_diakonie(page_params[:content]).deliver
       end
     else
       @page.update(page_params)
+      flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
     end
 
-
+    redirect_to "/zugangsbereich"
   end
 
   def destroy

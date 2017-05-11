@@ -117,7 +117,7 @@
     <div class="col-xs-12">
       <div class="form-group">
         <label for="nickname">Benutzername</label>
-        <input id="nickname" type="text" name="c_event[nickname]" class="form-control" placeholder="Benutzernme" required/>
+        <input id="nickname" type="text" name="c_event[nickname]" class="form-control" placeholder="Benutzername" required/>
       </div>
     </div>
 
@@ -148,7 +148,7 @@
         <label class="control-label" for="room_id">Raum</label>
         <select class="form-group form-control" name="c_event[room_id]" id="room_id" >
           <% @rooms.each do |room| %>
-              <option value="<%= room.id %>" ><%= room.building %></option>
+              <option value="<%= room.id %>" ><%= room.building %> | <%= room.number %></option>
           <% end %>
         </select>
       </div>

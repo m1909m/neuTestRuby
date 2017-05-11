@@ -1,34 +1,35 @@
-<% if !flash[:notice].blank? %>
-    <div class = "alert alert-info">
-      <%= flash[:notice] %>
-    </div>
-<% end %>
-
+<div class="col-xs-12">
+  <h1>Dokumentenbereich</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
+</div>
 <br />
 
-<%= link_to "New Resume", new_resume_path, class: "btn btn-primary" %>
+<%= link_to "Neues Dokument hochladen", new_resume_path, class: "btn btn-default" %>
 <br />
 <br />
+<div class="col-xs-12">
+  <table class = "table table-responsive table-striped half">
+    <thead>.
+    <tr>
+      <th>Name</th>
+      <th>Dokumenten Link</th>
+      <th> </th>
+    </tr>
+    </thead>
 
-<table class = "table table-responsive table-striped half">
-  <thead>.
-  <tr>
-    <th>Name</th>
-    <th>Download Link</th>
-    <th> </th>
-  </tr>
-  </thead>
+    <tbody>
+    <% @resumes.each do |resume| %>
 
-  <tbody>
-  <% @resumes.each do |resume| %>
+        <tr>
+          <td><%= resume.name %></td>
+          <td><%= link_to "Download Anzeigen", resume.attachment_url, :target => "_blank" %></td>
+          <td><%= button_to "Löschen",  resume, method: :delete, class: "btn btn-danger", confirm: "Sind Sie sich sicher \"#{resume.name}\" zu Löschen?" %></td>
+        </tr>
 
-      <tr>
-        <td><%= resume.name %></td>
-        <td><%= link_to "Download Resume", resume.attachment_url %></td>
-        <td><%= button_to "Delete",  resume, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resume.name}?" %></td>
-      </tr>
+    <% end %>
+    </tbody>
 
-  <% end %>
-  </tbody>
-
-</table>
+  </table>
+</div>
