@@ -114,12 +114,30 @@
       </div>
     </div>
 
-    <div class="col-xs-12">
-      <div class="form-group">
-        <label for="nickname">Benutzername</label>
-        <input id="nickname" type="text" name="c_event[nickname]" class="form-control" placeholder="Benutzername" required/>
+    <div class="col-sm-12">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="nickname">Benutzername</label>
+          <input id="nickname" type="text" name="c_event[nickname]" class="form-control" placeholder="Benutzername" />
+        </div>
+      </div>
+
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="nickname1">Benutzername</label>
+          <select class="form-group form-control" name="c_event[nicknameSelect]" id="nickname1" >
+            <% @users.each do |user| %>
+                <option value="<%= user.email %>" ><%= user.email %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <a id="linkDocument" style="color: #f59d0e;" href="" target="_blank" rel="noopener noreferrer"></a>
       </div>
     </div>
+    <!-- TODO vorschau der beinhaltenden Dokumenten -->
 
     <div class="col-xs-12">
       <label>Anmeldezeitraum</label>
@@ -163,6 +181,12 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $('#nickname1').on('change', function() {
+            $('#linkDocument').attr('href', '/dokumente/' + $('#nickname1').find(":selected").attr('value'));
+            $('#linkDocument').text('Zu den Dokumenten des Benutzers "' + $('#nickname1').find(":selected").text() + '"');
+
+        });
+
         $('#dateOne').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
         $('#starttimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
         $('#endtimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});

@@ -95,9 +95,16 @@ class CEventsController < ApplicationController
       @password = SecureRandom.hex(8)
     end
 
-    # TODO Password per mail senden / bei admin nicht möglich
+    # TODO return error when :nickname and :nicknameSelect = nil
+
+    if c_event_params[:nickname] != "" && c_event_params[:nickname] != nil
+      @email = c_event_params[:nickname]
+    elsif c_event_params[:nicknameSelect] != "" && c_event_params[:nicknameSelect] != nil
+      @email = c_event_params[:nicknameSelect]
+    end
 
     @user = User.new({:email => c_event_params[:nickname], :roles => Role.where(name: "event"), :password => @password, :password_confirmation => @password })
+
     if @user.save
       @c_event.accountName = @user.email
 
@@ -113,6 +120,8 @@ class CEventsController < ApplicationController
     #TODO send Email
     redirect_to "/administrator/rooms/" + c_event_params[:room_id]
   end
+
+
 
   def update
     @c_event.update(c_event_params)
@@ -136,7 +145,7 @@ class CEventsController < ApplicationController
     end
 
     def c_event_params
-      params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :nickname, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
+      params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :nickname, :nicknameSelect, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
     end
 end
 

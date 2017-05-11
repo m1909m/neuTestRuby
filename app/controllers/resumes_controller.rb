@@ -18,6 +18,15 @@ class ResumesController < ApplicationController
 
   end
 
+  def getDocuments
+    @accounts = Account.where(params[:accountName])
+    @documents = []
+    @accounts.each do |d|
+      @resume = Resume.find(d.resume_id)
+      @documents.push({:id => d.resume_id, :name => @resume.name, :url => @resume.attachment_url, :accountId => d.id})
+    end
+  end
+
   def destroy
     @resume = Resume.find(params[:id])
     @resume.destroy
