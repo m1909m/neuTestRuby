@@ -47,7 +47,7 @@ class RoomsController < ApplicationController
 
   def neuEvent
     @rooms = Room.all
-    @users = User.all.hasRole?(:event)
+    @users = User.with_role(:event)
     render'rooms/neuEvent'
   end
 
