@@ -114,7 +114,6 @@ class RoomsController < ApplicationController
       else
         format.html { redirect_to action: "neu" }
         format.json { render json: @room.errors, status: :unprocessable_entity }
-
       end
     end
   end
@@ -124,6 +123,9 @@ class RoomsController < ApplicationController
     respond_to do |format|
       if @room.save
         format.html { redirect_to action: "angular", notice: "Raum wurde erfolgreich hinzugefügt" }
+      else
+        format.html { redirect_to action: "neu" }
+        format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end
   end
