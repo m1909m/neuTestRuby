@@ -11,7 +11,7 @@ class ResumesController < ApplicationController
     @resume = Resume.new(resume_params)
 
     if @resume.save
-      redirect_to resumes_path, notice: "The resume #{@resume.name} has been uploaded."
+      redirect_to resumes_path, success: "Das Dokument \"#{@resume.name}\" wurde erfolgreich hochgeladen."
     else
       render "new"
     end
@@ -30,7 +30,7 @@ class ResumesController < ApplicationController
   def destroy
     @resume = Resume.find(params[:id])
     @resume.destroy
-    redirect_to resumes_path, notice:  "The resume #{@resume.name} has been deleted."
+    redirect_to resumes_path, error:  "Das Dokument \"#{@resume.name}\" wurde erfolgreich gelöscht."
   end
 
   private
