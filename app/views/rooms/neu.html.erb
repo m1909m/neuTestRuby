@@ -6,6 +6,19 @@
 
 </div>
 <div class="col-xs-12">
+  <% if @room.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@room.errors.count, "error") %> Fehler beim Speichern</h2>
+
+        <ul>
+          <% @room.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+</div>
+<div class="col-xs-12">
   <form class="new_room" id="new_room" action="/administrator/rooms" accept-charset="UTF-8" method="post">
     <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
