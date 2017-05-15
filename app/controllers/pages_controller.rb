@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     @page = Page.new(page_params)
     @page.save
     flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" erstellt."
-    redirect_to "/zugangsbereich/pages"
+    redirect_to "/pages"
   end
 
   def update
@@ -46,7 +46,7 @@ class PagesController < ApplicationController
       flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
     end
 
-    redirect_to "/zugangsbereich/pages"
+    redirect_to "/pages"
   end
 
   def destroy
