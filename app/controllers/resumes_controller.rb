@@ -1,6 +1,7 @@
 class ResumesController < ApplicationController
   def index
     @resumes = Resume.all
+    @users = User.with_role(:event)
   end
 
   def new
@@ -18,9 +19,21 @@ class ResumesController < ApplicationController
 
   end
 
+  def showAccount
+    @accounts = Account.where(accountName: params[:name])
+    @documents = []
+    @allDocuments = Resume.all
+    @accounts.each do |d|
+      @resume = Resume.find(d.resume_id)
+      @documents.push({:id => d.resume_id, :name => @resume.name, :url => @resume.attachment_url, :accountId => d.id})
+    end
+  end
+
   def getDocuments
+    @name = params[:accountName]
     @accounts = Account.where(accountName: params[:accountName])
     @documents = []
+    @allDocuments = Resume.all
     @accounts.each do |d|
       @resume = Resume.find(d.resume_id)
       @documents.push({:id => d.resume_id, :name => @resume.name, :url => @resume.attachment_url, :accountId => d.id})

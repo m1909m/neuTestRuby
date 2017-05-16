@@ -97,6 +97,7 @@ class RoomsController < ApplicationController
     @account.save
     redirect_to "/administrator/rooms/event/" + params[:id]
   end
+
   def addDocWithExist
     @event = CEvent.find(params[:id])
     @account = Account.new
