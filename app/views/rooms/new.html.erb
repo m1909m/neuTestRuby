@@ -118,7 +118,7 @@
       <div class="form-group">
         <label for="nickname1">Benutzername</label>
         <select class="form-group form-control" name="c_event[nickname]" id="nickname1" >
-          <option value="" selected>existierende Benutzer...</option>
+          <option value="" selected>Benutzername</option>
           <% @users.each do |user| %>
               <option value="<%= user.email %>" ><%= user.email %></option>
           <% end %>

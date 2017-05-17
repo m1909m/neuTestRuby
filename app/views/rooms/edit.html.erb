@@ -173,6 +173,9 @@
     </div>
   </form>
 </div>
+<div class="col-sm-12">
+  <p>Dokumente des Benutzers: <%= @c_event.accountName %></p>
+</div>
 <div class="col-sm-6">
   <h2>Dokument auswählen</h2>
   <form class="new_docExist" id="new_docExist" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/docExist" accept-charset="UTF-8" method="post">
@@ -194,7 +197,7 @@
   </div>
 </div>
 <div class="col-sm-12">
-  <h2>Dokumente der Veranstaltung</h2>
+  <h2>Dokumente des Benutzers "<%= @c_event.accountName %>"</h2>
   <% if @documents.length > 0 %>
   <table class="table table-responsive table-striped">
     <thead>
