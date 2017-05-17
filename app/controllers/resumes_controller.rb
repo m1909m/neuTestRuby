@@ -12,7 +12,8 @@ class ResumesController < ApplicationController
     @resume = Resume.new(resume_params)
 
     if @resume.save
-      redirect_to resumes_path, success: "Das Dokument \"#{@resume.name}\" wurde erfolgreich hochgeladen."
+      flash[:success] = "Das Dokument \"#{@resume.name}\" wurde erfolgreich hochgeladen."
+      redirect_to resumes_path
     else
       render "new"
     end
@@ -26,7 +27,8 @@ class ResumesController < ApplicationController
     @account.accountName = params[:accountName]
     @account.resume_id = @resume.id
     @account.save
-    redirect_to "/dokumente/" + params[:accountName], success: "Das Dokument erfolgreich hochgeladen und Ihrem Benutzer hinzugefügt."
+    flash[:success] = "Das Dokument erfolgreich hochgeladen und Ihrem Benutzer hinzugefügt."
+    redirect_to "/dokumente/" + params[:accountName]
   end
 
   def addDocWithExist
@@ -34,7 +36,8 @@ class ResumesController < ApplicationController
     @account.accountName = params[:accountName]
     @account.resume_id = doc_exist_params[:resume_id]
     @account.save
-    redirect_to "/dokumente/" + params[:accountName], success: "Das Dokument erfolgreich Ihrem Benutzer hinzugefügt."
+    flash[:success] = "Das Dokument erfolgreich Ihrem Benutzer hinzugefügt."
+    redirect_to "/dokumente/" + params[:accountName]
   end
 
   def showAccount
@@ -62,8 +65,8 @@ class ResumesController < ApplicationController
     @account = Account.find(params[:id])
     @name = @account.accountName
     @account.destroy
-
-    redirect_to "/dokumente/" + @name, success: "Dokument wurde erfolgreich entfernt."
+    flash[:success] = "Dokument wurde erfolgreich entfernt."
+    redirect_to "/dokumente/" + @name
   end
 
   def destroyAcc
@@ -79,15 +82,18 @@ class ResumesController < ApplicationController
     end
     @account = Account.where(accountName: @user.email)
     @user.destroy
-    redirect_to "/dokumente/", success: "Benutzer wurde erfolgreich entfernt."
+    flash[:success] = "Benutzer wurde erfolgreich entfernt."
+    redirect_to "/dokumente/"
   end
 
   def newUser
     @user = User.new({:email => user_params[:nickname], :roles => Role.where(name: "event"), :password => user_params[:password], :password_confirmation => user_params[:password] })
     if @user.save
-      redirect_to "/dokumente", success: "Benutzer wurde erfolgreich erstellt."
+      flash[:success] = "Benutzer wurde erfolgreich erstellt."
+      redirect_to "/dokumente"
     else
-      redirect_to "/dokumente", alert: "Benutzer wurde nicht erstellt."
+      flash[:error] = "Benutzer wurde nicht erstellt."
+      redirect_to "/dokumente"
     end
   end
 
@@ -95,7 +101,8 @@ class ResumesController < ApplicationController
   def destroy
     @resume = Resume.find(params[:id])
     @resume.destroy
-    redirect_to resumes_path, error:  "Das Dokument \"#{@resume.name}\" wurde erfolgreich gelöscht."
+    flash[:success] = "Das Dokument \"#{@resume.name}\" wurde erfolgreich gelöscht."
+    redirect_to resumes_path
   end
 
   private
