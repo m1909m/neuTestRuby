@@ -27,7 +27,7 @@
         <tr>
           <td><%= user.email %></td>
           <td><%= link_to "Anzeigen", "/dokumente/" + user.email, :target => "_self" %></td>
-          <td><%= link_to "Löschen",  resume, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
+          <td><%= link_to "Löschen",  user, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
         </tr>
 
     <% end %>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="col-xs-12">
-  <h2>Liste aler Dokumente</h2>
+  <h2>Liste aller Dokumente</h2>
   <table class = "table table-responsive table-striped half">
     <thead>.
     <tr>
