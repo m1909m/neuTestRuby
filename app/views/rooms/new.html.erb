@@ -114,11 +114,19 @@
       </div>
     </div>
 
-    <div class="col-xs-12">
+    <div class="col-sm-12">
       <div class="form-group">
-        <label for="nickname">Benutzername</label>
-        <input id="nickname" type="text" name="c_event[nickname]" class="form-control" placeholder="Benutzernme" required/>
+        <label for="nickname1">Benutzername</label>
+        <select class="form-group form-control" name="c_event[nickname]" id="nickname1" >
+          <option value="" selected>existierende Benutzer...</option>
+          <% @users.each do |user| %>
+              <option value="<%= user.email %>" ><%= user.email %></option>
+          <% end %>
+        </select>
       </div>
+    </div>
+    <div class="col-sm-12">
+      <a id="linkDocument" style="color: #f59d0e;" href="" target="_blank" rel="noopener noreferrer"></a>
     </div>
 
     <div class="col-xs-12">
