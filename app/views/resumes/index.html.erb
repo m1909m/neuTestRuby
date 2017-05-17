@@ -27,7 +27,7 @@
         <tr>
           <td><%= user.email %></td>
           <td><%= link_to "Anzeigen", "/dokumente/" + user.email, :target => "_self" %></td>
-          <td><%= link_to "Löschen",  user, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
+          <td><%= link_to "Löschen",  user_registration_path, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
         </tr>
 
     <% end %>
