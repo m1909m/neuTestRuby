@@ -146,6 +146,9 @@
   </form>
   <a data-confirm="Sind Sie sich sicher?" class="btn btn-danger"  style="margin-top: 20px;" rel="nofollow" data-method="delete" href="/event/<%= @c_event.id %>">Veranstaltung Löschen</a>
 </div>
+<div class="col-sm-12">
+  <p>Dokumente des Benutzers: "<%= @c_event.accountName %>"</p>
+</div>
 <div class="col-sm-6">
   <h2>Dokument hochladen</h2>
   <form class="new_doc" id="new_doc" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/doc" accept-charset="UTF-8" method="post">
@@ -173,9 +176,7 @@
     </div>
   </form>
 </div>
-<div class="col-sm-12">
-  <p>Dokumente des Benutzers: <%= @c_event.accountName %></p>
-</div>
+
 <div class="col-sm-6">
   <h2>Dokument auswählen</h2>
   <form class="new_docExist" id="new_docExist" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/docExist" accept-charset="UTF-8" method="post">
