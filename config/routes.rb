@@ -99,4 +99,5 @@ Rails.application.routes.draw do
   post '/dokumente/:accountName', to: "resumes#addDoc"
   post '/dokumente/:accountName/exist', to: "resumes#addDocWithExist"
   delete '/dokumente/:id', to: "resumes#destroyDocument"
+  post '/dokumente/user', to: "resumes#newUser"
 end

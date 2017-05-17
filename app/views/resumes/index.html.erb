@@ -11,7 +11,7 @@
 <br />
 <br />
 <div class="col-xs-12">
-  <h2>Liste aller Accounts</h2>
+  <h2>Liste aller Benutzer</h2>
   <table class = "table table-responsive table-striped half">
     <thead>
     <tr>
@@ -34,6 +34,24 @@
     </tbody>
 
   </table>
+  <form class="new_user form-inline" id="new_user" enctype="multipart/form-data" action="/dokumente/user" accept-charset="UTF-8" method="post">
+    <input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <div class="form-group">
+      <label class="control-label" for="user_nickname">Benutzername</label>
+      <div class="" style="padding-left: 0px;padding-right: 0px;">
+        <input class="form-control" name="user[nickname]" id="user_nickname" type="text" placeholder="Benutzername" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="user_password">Password</label>
+      <div class="" style="padding-left: 0px;padding-right: 0px;">
+        <input class="form-control" name="user[password]" id="user_password" type="password" placeholder="Password" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-default" name="commit" value="Speichern" class="btn btn-default" data-disable-with="Speichern" type="submit">
+    </div>
+  </form>
 </div>
 
 <div class="col-xs-12">

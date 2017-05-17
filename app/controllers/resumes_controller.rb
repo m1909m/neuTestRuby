@@ -66,6 +66,26 @@ class ResumesController < ApplicationController
     redirect_to "/dokumente/" + @name, success: "Dokument wurde erfolgreich entfernt."
   end
 
+  def destroyAcc
+    @user = User.find(params[:id])
+    @events = CEvent.where(accountName: @user.email)
+    @events.each do |event|
+      event.accountName = ""
+      event.save
+    end
+    @user.destroy
+    redirect_to "/dokumente/", success: "Benutzer wurde erfolgreich entfernt."
+  end
+
+  def newUser
+    @user = User.new({:email => user_params[:nickname], :roles => Role.where(name: "event"), :password => user_params[:password], :password_confirmation => user_params[:password] })
+    if @user.save
+      redirect_to "/dokumente", success: "Benutzer wurde erfolgreich erstellt."
+    else
+      redirect_to "/dokumente", error: "Benutzer wurde nicht erstellt."
+    end
+  end
+
 
   def destroy
     @resume = Resume.find(params[:id])
@@ -76,6 +96,10 @@ class ResumesController < ApplicationController
   private
     def resume_params
       params.require(:resume).permit(:name, :attachment)
+    end
+
+    def user_params
+      params.require(:user).permit(:nickname, :password)
     end
 
     def doc_params
