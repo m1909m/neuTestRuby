@@ -6,7 +6,7 @@
 </div>
 <br />
 
-<%= link_to "Neues Dokument hochladen", new_resume_path, class: "btn btn-default" %>
+<%# link_to "Neues Dokument hochladen", new_resume_path, class: "btn btn-default" %>
 
 <br />
 <br />
@@ -16,7 +16,7 @@
     <thead>
     <tr>
       <th>Name</th>
-      <th>Zu den Dokumente</th>
+      <th>Zu den Dokumenten</th>
       <th> </th>
     </tr>
     </thead>
@@ -27,7 +27,7 @@
         <tr>
           <td><%= user.email %></td>
           <td><%= link_to "Anzeigen", "/dokumente/" + user.email, :target => "_self" %></td>
-          <td><%= link_to "Löschen",  user_registration_path, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
+          <td><%= link_to "Löschen",  "/dokumente/user/" + user.id, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
         </tr>
 
     <% end %>

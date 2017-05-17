@@ -73,6 +73,11 @@ class ResumesController < ApplicationController
       event.accountName = ""
       event.save
     end
+    @accounts = Account.where(accountName: @user.email)
+    @accounts.each do |account|
+      account.destroy
+    end
+    @account = Account.where(accountName: @user.email)
     @user.destroy
     redirect_to "/dokumente/", success: "Benutzer wurde erfolgreich entfernt."
   end
@@ -82,7 +87,7 @@ class ResumesController < ApplicationController
     if @user.save
       redirect_to "/dokumente", success: "Benutzer wurde erfolgreich erstellt."
     else
-      redirect_to "/dokumente", error: "Benutzer wurde nicht erstellt."
+      redirect_to "/dokumente", alert: "Benutzer wurde nicht erstellt."
     end
   end
 
