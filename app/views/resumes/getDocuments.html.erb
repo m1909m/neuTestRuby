@@ -70,7 +70,10 @@
             <tr>
               <td><%= resume[:name] %></td>
               <td><a style="color: #f59d0e;" href="<%= resume[:url] %>" target="_blank" rel="noopener noreferrer">Anzeigen</a></td>
+              <td>
+                <a data-confirm="Sind Sie sich sicher?" class="btn btn-danger" rel="nofollow" data-method="delete" href="/dokumente/<%= resume[:accountId] %>">Dokument entfernen</a>
 
+              </td>
             </tr>
 
         <% end %>

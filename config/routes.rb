@@ -98,4 +98,5 @@ Rails.application.routes.draw do
   get '/dokumente/:accountName', to: "resumes#getDocuments"
   post '/dokumente/:accountName', to: "resumes#addDoc"
   post '/dokumente/:accountName/exist', to: "resumes#addDocWithExist"
+  delete '/dokumente/:id', to: "resumes#destroyDocument"
 end

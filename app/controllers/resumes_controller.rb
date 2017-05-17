@@ -58,6 +58,15 @@ class ResumesController < ApplicationController
     end
   end
 
+  def destroyDocument
+    @account = Account.find(params[:id])
+    @name = @account.accountName
+    @account.destroy
+
+    redirect_to "/dokumente/" + @name, success: "Dokument wurde erfolgreich entfernt."
+  end
+
+
   def destroy
     @resume = Resume.find(params[:id])
     @resume.destroy
