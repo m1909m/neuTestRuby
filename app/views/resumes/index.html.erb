@@ -11,22 +11,23 @@
 <br />
 <br />
 <div class="col-xs-12">
+  <h2>Liste aller Accounts</h2>
   <table class = "table table-responsive table-striped half">
     <thead>.
     <tr>
       <th>Name</th>
-      <th>Dokumenten Link</th>
+      <th>Zu den Dokumente</th>
       <th> </th>
     </tr>
     </thead>
 
     <tbody>
-    <% @resumes.each do |resume| %>
+    <% @users.each do |user| %>
 
         <tr>
-          <td><%= resume.name %></td>
-          <td><%= link_to "Anzeigen", resume.attachment_url, :target => "_blank" %></td>
-          <td><%= link_to "Löschen",  resume, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{resume.name}\" zu Löschen?" } %></td>
+          <td><%= user.email %></td>
+          <td><%= link_to "Anzeigen", "/dokumente/" + user.email, :target => "_self" %></td>
+          <td><%= link_to "Löschen",  resume, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
         </tr>
 
     <% end %>
@@ -36,6 +37,7 @@
 </div>
 
 <div class="col-xs-12">
+  <h2>Liste aler Dokumente</h2>
   <table class = "table table-responsive table-striped half">
     <thead>.
     <tr>
