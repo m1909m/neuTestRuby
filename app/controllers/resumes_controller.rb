@@ -19,6 +19,24 @@ class ResumesController < ApplicationController
 
   end
 
+  def addDoc
+    @resume = Resume.new(doc_params)
+    @resume.save
+    @account = Account.new
+    @account.accountName = params[:accountName]
+    @account.resume_id = @resume.id
+    @account.save
+    redirect_to "/dokumente/" + params[:accountName], success: "Das Dokument erfolgreich hochgeladen und Ihrem Benutzer hinzugefügt."
+  end
+
+  def addDocWithExist
+    @account = Account.new
+    @account.accountName = params[:accountName]
+    @account.resume_id = doc_exist_params[:resume_id]
+    @account.save
+    redirect_to "/dokumente/" + params[:accountName], success: "Das Dokument erfolgreich Ihrem Benutzer hinzugefügt."
+  end
+
   def showAccount
     @accounts = Account.where(accountName: params[:name])
     @documents = []
@@ -49,6 +67,14 @@ class ResumesController < ApplicationController
   private
     def resume_params
       params.require(:resume).permit(:name, :attachment)
+    end
+
+    def doc_params
+      params.require(:doc).permit(:name, :attachment)
+    end
+
+    def doc_exist_params
+      params.require(:docExist).permit(:resume_id)
     end
 
 end

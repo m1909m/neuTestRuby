@@ -5,6 +5,55 @@
   <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
 </div>
 <div class="col-sm-12">
+  <h2>Dokument hochladen</h2>
+  <form class="new_doc" id="new_doc" enctype="multipart/form-data" action="/dokumente/<%= @name %>" accept-charset="UTF-8" method="post">
+    <input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <div class="form-group">
+      <label class="control-label" for="doc_name">Dokumentenname</label>
+      <div class="" style="padding-left: 0px;padding-right: 0px;">
+        <input class="form-control" name="doc[name]" id="doc_name" type="text" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="doc_attachment">Quelle</label>
+      <div class="input-group">
+        <label class="input-group-btn">
+                    <span class="btn btn-default">
+                        Durchsuchen<input type="file" style="display: none;" name="doc[attachment]" id="doc_attachment">
+                    </span>
+        </label>
+        <input type="text" class="form-control" readonly>
+        <!--   <input class="form-control" name="doc[attachment]" id="doc_attachment" type="file"> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-default" name="commit" value="Hochladen" class="btn btn-default" data-disable-with="Hochladen" type="submit">
+    </div>
+  </form>
+</div>
+<p><b>oder</b></p>
+<div class="col-sm-12">
+  <h2>Dokument auswählen</h2>
+  <form class="new_docExist" id="new_docExist" enctype="multipart/form-data" action="/dokumente/<%= @name %>/exist" accept-charset="UTF-8" method="post">
+    <input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <div class="form-group">
+      <label class="control-label" for="docExist_name">Dokumentenname</label>
+      <select class="form-group form-control" name="docExist[resume_id]" id="docExist_name" >
+        <% @allDocuments.each do |resume| %>
+            <option value="<%= resume.id %>" data-othervalue="<%= resume.attachment_url %>"><%= resume.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-default" name="commit" value="Auswählen" class="btn btn-default" data-disable-with="Auswählen" type="submit">
+    </div>
+  </form>
+  <div class="col-sm-12">
+    <a id="linkDocument" style="color: #f59d0e;" href="" target="_blank" rel="noopener noreferrer"></a>
+  </div>
+</div>
+
+<div class="col-sm-12">
   <h2>Dokumente des Benutzers "<%= @name %>"</h2>
   <% if @documents.length > 0 %>
       <table class="table table-responsive table-striped half">
@@ -35,3 +84,12 @@
 
 
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#docExist_name').on('change', function () {
+            $('#linkDocument').attr('href', $('#docExist_name').find(":selected").attr('data-othervalue'));
+            $('#linkDocument').text($('#docExist_name').find(":selected").text() + ' Anzeigen');
+
+        });
+    });
+</script>

@@ -199,9 +199,11 @@ class RoomsController < ApplicationController
     def set_room
       @room = Room.find(params[:id])
     end
+
     def set_event
       @c_event = CEvent.find(params[:id])
     end
+
     def c_event_params
       params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
     end
@@ -213,6 +215,7 @@ class RoomsController < ApplicationController
     def doc_exist_params
       params.require(:docExist).permit(:resume_id)
     end
+
     def room_params
       params.require(:room).permit(:number, :size, :building)
     end
