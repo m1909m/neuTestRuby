@@ -96,6 +96,6 @@ Rails.application.routes.draw do
   resources :resumes, only: [:index, :new, :create, :destroy]
   get '/dokumente', to: "resumes#index"
   get '/dokumente/:accountName', to: "resumes#getDocuments"
-  post '/dokumente/:accountName', to: "reumes#addDoc"
-  post '/dokumente/:accountName/exist', to: "reumes#addDocWithExist"
+  post '/dokumente/:accountName', to: "resumes#addDoc"
+  post '/dokumente/:accountName/exist', to: "resumes#addDocWithExist"
 end
