@@ -13,7 +13,7 @@ class ResumesController < ApplicationController
 
     if @resume.save
       flash[:success] = "Das Dokument \"#{@resume.name}\" wurde erfolgreich hochgeladen."
-      redirect_to resumes_path
+      redirect_to "/dokumente"
     else
       render "new"
     end
