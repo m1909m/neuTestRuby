@@ -97,10 +97,9 @@ class CEventsController < ApplicationController
 
     # TODO return error when :nickname and :nicknameSelect = nil
 
+
     if c_event_params[:nickname] != "" && c_event_params[:nickname] != nil
       @email = c_event_params[:nickname]
-    elsif c_event_params[:nicknameSelect] != "" && c_event_params[:nicknameSelect] != nil
-      @email = c_event_params[:nicknameSelect]
     end
 
     @user = User.new({:email => c_event_params[:nickname], :roles => Role.where(name: "event"), :password => @password, :password_confirmation => @password })
