@@ -174,10 +174,10 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#nickname1').on('change', function() {
-            if($('#nickname1').find(":selected").attr('value') != "") {
-                $('#linkDocument').attr('href', '/dokumente/' + $('#nickname1').find(":selected").attr('value'));
-                $('#linkDocument').text('Zu den Dokumenten des Benutzers "' + $('#nickname1').find(":selected").text() + '"');
+        $('#nickname').on('change', function() {
+            if($('#nickname').find(":selected").attr('value') != "") {
+                $('#linkDocument').attr('href', '/dokumente/' + $('#nickname').find(":selected").attr('value'));
+                $('#linkDocument').text('Zu den Dokumenten des Benutzers "' + $('#nickname').find(":selected").text() + '"');
             } else {
                 $('#linkDocument').text('');
             }

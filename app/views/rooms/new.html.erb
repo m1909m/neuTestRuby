@@ -161,6 +161,14 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $('#nickname').on('change', function() {
+            if($('#nickname').find(":selected").attr('value') != "") {
+                $('#linkDocument').attr('href', '/dokumente/' + $('#nickname').find(":selected").attr('value'));
+                $('#linkDocument').text('Zu den Dokumenten des Benutzers "' + $('#nickname').find(":selected").text() + '"');
+            } else {
+                $('#linkDocument').text('');
+            }
+        });
         $('#dateOne').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
         $('#starttimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
         $('#endtimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});

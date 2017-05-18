@@ -99,15 +99,11 @@ class CEventsController < ApplicationController
 
 
     if c_event_params[:nickname] != "" && c_event_params[:nickname] != nil
-      @email = c_event_params[:nickname]
+      @c_event.accountName = c_event_params[:nickname]
     end
 
-    @user = User.new({:email => c_event_params[:nickname], :roles => Role.where(name: "event"), :password => @password, :password_confirmation => @password })
 
-    if @user.save
-      @c_event.accountName = @user.email
 
-    end
 
     if @c_event.save
       if current_user.email == "admin@vkm.de"
