@@ -89,14 +89,6 @@ class CEventsController < ApplicationController
     @c_event.member = 0
     @c_event.free = 1
 
-    if current_user.email == "admin@vkm.de"
-      @password = "admin1234"
-    else
-      @password = SecureRandom.hex(8)
-    end
-
-    # TODO return error when :nickname and :nicknameSelect = nil
-
 
     if c_event_params[:nickname] != "" && c_event_params[:nickname] != nil
       @c_event.accountName = c_event_params[:nickname]
@@ -109,7 +101,9 @@ class CEventsController < ApplicationController
       if current_user.email == "admin@vkm.de"
 
       else
+
         ContactMailer.create_event(current_user.email, @password, @c_event)
+        flash[:success] = "Sie haben erfolgreich die Veranstaltung erstellt. Sie erhalten in kürze eine E-Mail."
       end
     end
     #TODO send Email

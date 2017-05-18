@@ -7,7 +7,7 @@ class UsersController < ActionController
   def create
     @user = Users.new(user_params)
     if @user.save
-      respond to |format|
+      respond_to do |format|
         format.html()
       end
     end
