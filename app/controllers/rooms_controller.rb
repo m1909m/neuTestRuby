@@ -42,6 +42,7 @@ class RoomsController < ApplicationController
 
   def angularNew
     @id = params[:id]
+    @users = User.with_role(:event)
     render 'rooms/new'
   end
 
