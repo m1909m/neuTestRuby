@@ -17,7 +17,10 @@
       <% end %>
 
       <h3>Neuigkeiten Archiv</h3>
-
+		  
+		  <%= link_to 'Neuer Newsletter erstellen', new_news_content_path, target: "_self", class: "btn btn-default" %>
+			<br><br>
+			  
       <table class="table table-responsive table-striped">
         <thead>
         <tr>
@@ -43,8 +46,6 @@
         <% end %>
         </tbody>
       </table>
-
-      <br>
 
       <%= link_to 'Neuer Newsletter erstellen', new_news_content_path, target: "_self", class: "btn btn-default" %>
 </div>

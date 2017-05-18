@@ -8,7 +8,7 @@
       <div ng-show="!rooms.length">Keine Räume vorhanden</div>
       <div ng-repeat="room in rooms" style="width:100%; margin: 5px;">
         <div class="list-group <% if current_user.has_role?(:admin) %>col-xs-12<%else%> col-xs-12 <%end%>" style="margin-bottom: 5px;height: auto;">
-          <a href="/administrator/rooms/{{room.id}}" target="_self" ng-click="" class="list-group-item"><span class="raumnummer">Raumnummer: <b style="color:#f59d0e;">{{room.number}}</b></span> <span class="btn-trenner">|</span> <span class="platzanzahl">Platzanzahl: <b style="color:#f59d0e;">{{room.size}}</b></span> <span class="btn-trenner">|</span> <span class="ort">Ort: <b style="color:#f59d0e;">{{room.building}}</b></span></a>
+          <a href="/administrator/rooms/{{room.id}}" target="_self" ng-click="" class="list-group-item" style="background:#fbfbfb;"><span class="raumnummer">Raumnummer: <b style="color:#f59d0e;">{{room.number}}</b></span> <span class="btn-trenner">|</span> <span class="platzanzahl">Platzanzahl: <b style="color:#f59d0e;">{{room.size}}</b></span> <span class="btn-trenner">|</span> <span class="ort">Ort: <b style="color:#f59d0e;">{{room.building}}</b></span></a>
         </div>
 			  
         <div class="list-group col-xs-1" id="formcontent">
@@ -38,7 +38,7 @@
       <div ng-show="!myEvents.length">Sie haben noch keine Veranstaltungen erstellt</div>
       <div ng-repeat="myEvent in myEvents" style="margin: 5px;">
         <div class="list-group <% if current_user.has_role?(:admin) %>col-xs-12<%else%> col-xs-12 <%end%>" style="margin-bottom: 5px;height: auto;">
-          <a href="/administrator/rooms/event/members/{{myEvent.id}}" target="_self" ng-click="" class="list-group-item"><span class="myevent"><b style="color:#f59d0e;">{{ myEvent.title }}</b></span> <span class="btn-trenner">|</span> <span class="teilnehmer">Aktuelle Teilnehmer: <b style="color:#f59d0e;">{{ myEvent.member }}</b></span></a>
+          <a href="/administrator/rooms/event/members/{{myEvent.id}}" target="_self" ng-click="" class="list-group-item" style="background:#fbfbfb;"><span class="myevent"><b style="color:#f59d0e;">{{ myEvent.title }}</b></span> <span class="btn-trenner">|</span> <span class="teilnehmer">Aktuelle Teilnehmer: <b style="color:#f59d0e;">{{ myEvent.member }}</b></span></a>
         </div>
 			  
         <div class="list-group col-xs-1" id="formcontent">

@@ -13,6 +13,7 @@
 
 
       <h3>Alle Artikel</h3>
+	  <%= link_to 'Neuer Artikel erstellen', new_article_path, target: "_self", class: "btn btn-default" %><br><br>
 
       <table class="table table-responsive table-striped">
         <thead>
@@ -30,16 +31,15 @@
               <td><%= article.title %></td>
               <td>€ <%= article.price %></td>
               <td><%= article.count %></td>
-              <td><%= link_to 'Bearbeiten', edit_article_path(article) %></td>
-              <td><%= link_to 'Löschen', article, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
+              <td><%= link_to 'Bearbeiten', edit_article_path(article), class: "btn btn-default" %></td>
+              <td><%= link_to 'Löschen', article, method: :delete, data: { confirm: 'Sind sie sich sicher?' }, class: "btn btn-danger" %></td>
             </tr>
         <% end %>
         </tbody>
       </table>
 
-      <br>
 
-      <%= link_to 'Neuer Artikel erstellen', new_article_path, target: "_self" %>
+      <%= link_to 'Neuer Artikel erstellen', new_article_path, target: "_self", class: "btn btn-default" %>
 
   <% else %>
       <%= link_to 'Melden Sie sich für den Newsletter an', new_abo_newscontent_path %>
