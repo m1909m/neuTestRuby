@@ -95,7 +95,7 @@ class CEventsController < ApplicationController
     end
 
 
-    @user = User.where(email: c_eent_params[:nickname]).last
+    @user = User.where(email: c_event_params[:nickname]).last
 
     if @c_event.save
       if current_user.email == "admin@vkm.de"
