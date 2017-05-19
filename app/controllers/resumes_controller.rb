@@ -93,8 +93,8 @@ class ResumesController < ApplicationController
     @key   = ActiveSupport::KeyGenerator.new('password').generate_key(@salt, 32) # => "\x89\xE0\x156\xAC..."
     @crypt = ActiveSupport::MessageEncryptor.new(@key)                           # => #<ActiveSupport::MessageEncryptor ...>
     @encrypted_data = @crypt.encrypt_and_sign(user_params[:password])
-    @user.pass = encrypted_data
-    @user.key = key
+    @user.pass = @encrypted_data
+    @user.key = @key
     # crypt.decrypt_and_verify(encrypted_data)
     if @user.save
       flash[:success] = "Benutzer wurde erfolgreich erstellt."
