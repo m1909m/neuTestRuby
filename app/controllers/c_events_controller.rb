@@ -95,14 +95,14 @@ class CEventsController < ApplicationController
     end
 
 
-
+    @user = User.where(email: c_eent_params[:nickname]).last
 
     if @c_event.save
       if current_user.email == "admin@vkm.de"
 
       else
-
-        ContactMailer.create_event(current_user.email, @password, @c_event)
+        @crypt = ActiveSupport::MessageEncryptor.new(@user.key)
+        ContactMailer.create_event(current_user.email, @crypt.decrypt_and_verify(@user.pass), @c_event)
         flash[:success] = "Sie haben erfolgreich die Veranstaltung erstellt. Sie erhalten in kürze eine E-Mail."
       end
     end
