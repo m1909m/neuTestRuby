@@ -94,7 +94,7 @@ class ResumesController < ApplicationController
     @crypt = ActiveSupport::MessageEncryptor.new(@key)                           # => #<ActiveSupport::MessageEncryptor ...>
     @encrypted_data = @crypt.encrypt_and_sign(user_params[:password])
     @user.pass = @encrypted_data
-    @user.key = @key
+    @user.salt = @salt
     # crypt.decrypt_and_verify(encrypted_data)
     if @user.save
       flash[:success] = "Benutzer wurde erfolgreich erstellt."
