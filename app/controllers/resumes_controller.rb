@@ -89,12 +89,12 @@ class ResumesController < ApplicationController
   def newUser
 
     @user = User.new({ :email => user_params[:nickname], :roles => Role.where(name: "event"), :password => user_params[:password], :password_confirmation => user_params[:password] })
-    @salt  = SecureRandom.random_bytes(64)
-    @key   = ActiveSupport::KeyGenerator.new('password').generate_key(@salt, 32) # => "\x89\xE0\x156\xAC..."
-    @crypt = ActiveSupport::MessageEncryptor.new(@key)                           # => #<ActiveSupport::MessageEncryptor ...>
+    #@salt  = SecureRandom.random_bytes(64)
+    #@key   = ActiveSupport::KeyGenerator.new('password').generate_key(@salt, 32) # => "\x89\xE0\x156\xAC..."
+    @crypt = ActiveSupport::MessageEncryptor.new(ENV['key'])                           # => #<ActiveSupport::MessageEncryptor ...>
     @encrypted_data = @crypt.encrypt_and_sign(user_params[:password])
     @user.pass = @encrypted_data
-    @user.salt = @salt
+   # @user.salt = @salt
     # crypt.decrypt_and_verify(encrypted_data)
     if @user.save
       flash[:success] = "Benutzer wurde erfolgreich erstellt."
