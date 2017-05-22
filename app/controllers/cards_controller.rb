@@ -102,6 +102,7 @@ class CardsController < ApplicationController
       BookingMailer.booking_email(@newPerson, params[:articles], @card).deliver
       BookingMailer.booking_new(@newPerson, params[:articles], @card).deliver
 #        format.json { render :index, status: :created, location: @news }
+      flash[:success] = "Sie haben Ihre Artikel erfolgreich bestellt."
     else
       respond_to  do |f|
         f.json { render json: @card.errors, status: :unprocessable_entity }
