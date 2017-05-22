@@ -9,14 +9,14 @@
       <td>{{item.title}}</td>
       <td>{{item.anzahl }}</td>
       <td>{{item.sum | currency: '€'}}</td>
-      <td><button class="btn btn-default btn-sm"  ng-click="removeArticle(item)">Entfernen</button></td>
+      <td><button class="btn btn-danger btn-sm"  ng-click="removeArticle(item)">Entfernen</button></td>
 
     </tr>
     <tr ng-show="cart.length">
       <td></td>
       <td></td>
       <td>Summe: {{ sum  | currency: '€'}}</td>
-      <td><button class="btn btn-default "  ng-click="removeAllArticles()">Alle Artiekl Entfernen</button></td>
+      <td><button class="btn btn-danger btn-sm"  ng-click="removeAllArticles()">Alle Artikel Entfernen</button></td>
     </tr>
   </table>
 
