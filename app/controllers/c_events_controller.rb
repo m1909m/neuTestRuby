@@ -98,11 +98,14 @@ class CEventsController < ApplicationController
     @user = User.where(email: c_event_params[:nickname]).last
 
     if @c_event.save
+      puts(current_user.email)
       if current_user.email == "admin@vkm.de"
+        puts("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
         ContactMailer.create_event("verbandkirchlichermmitarbeiter@gmail.com", @crypt.decrypt_and_verify(@user.pass), @c_event)
         flash[:success] = "Sie haben erfolgreich die Veranstaltung erstellt. Sie erhalten in kürze eine E-Mail."
       else
+        puts("------------------------------------------------------------------------------------------------------------------------------")
  #       @key   = ActiveSupport::KeyGenerator.new('password').generate_key(ENV['salt'], 32)
         @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
         ContactMailer.create_event(current_user.email, @crypt.decrypt_and_verify(@user.pass), @c_event)
