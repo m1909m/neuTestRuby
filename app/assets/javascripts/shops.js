@@ -227,6 +227,11 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         }
 
     };
+    $scope.removeAllArticles = function() {
+        Cart.clearItem();
+        $scope.cart = {};
+        $scope.sum = 0;
+    };
 
     $scope.addCard = function() {
         var newPerson;
