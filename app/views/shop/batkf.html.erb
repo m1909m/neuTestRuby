@@ -1,4 +1,4 @@
-<div id="message" class="alert alert-success fade in" ><button id="bClose" class="close" >x</button>Sie haben erfolgreich Artikel in den Warenkorb hinzugefügt.</div>
+<div id="message" class="alert alert-success fade in" ><input type="button" id="bClose" class="close btn" value="x" ></input>Sie haben erfolgreich Artikel in den Warenkorb hinzugefügt.</div>
 <div class="col-xs-12">
   <h1>Shop</h1>
 </div>
@@ -42,12 +42,8 @@
     $(document).ready(function() {
 
         $("#bClose").click(function () {
-        //    if ($("#message").is(":visible")) {
-        //        $("#message").hide();
-            //} else {
             console.log( "Click" );
-                $("#message").show();
-        //    }
+            $("#message").show();
         });
     });
 
