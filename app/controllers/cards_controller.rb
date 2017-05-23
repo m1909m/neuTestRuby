@@ -129,8 +129,8 @@ class CardsController < ApplicationController
     # @c_event.userMail = current_user.email
 
     if @card.save
-      BookingMailer.booking_email(@newPerson, params[:articles], @card).deliver
-      BookingMailer.booking_new(@newPerson, params[:articles], @card).deliver
+      BookingMailer.booking_email(@newPerson, @jsonArticles, @card).deliver
+      BookingMailer.booking_new(@newPerson, @jsonArticles, @card).deliver
 #        format.json { render :index, status: :created, location: @news }
       flash[:success] = "Sie haben Ihre Artikel erfolgreich bestellt."
       respond_to  do |f|
