@@ -104,8 +104,9 @@ class CardsController < ApplicationController
     puts(@jsonArticles)
     @jsonArticles.each do |a|
       puts("AAAAid")
-      puts(a[:id])
-      @article = Article.find(a[:id])
+      puts(a['id'])
+      puts("-----------------")
+      @article = Article.find(a['id'])
 
     #  puts(@article)
       if a[:anzahl] > 1
