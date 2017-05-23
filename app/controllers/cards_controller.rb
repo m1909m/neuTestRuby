@@ -99,13 +99,13 @@ class CardsController < ApplicationController
     @articles = params[:articles]
     @articles = @articles.delete '/\\'
   #  @articles = @articles.gsub(/["]/, "'")
-    puts(@articles)
+  #  puts(@articles)
     @jsonArticles = JSON.parse @articles
-    puts(@jsonArticles)
+  #  puts(@jsonArticles)
     @jsonArticles.each do |a|
-      puts("AAAAid")
-      puts(a['id'])
-      puts("-----------------")
+    #  puts("AAAAid")
+    #  puts(a['id'])
+    #  puts("-----------------")
       @article = Article.find(a['id'])
 
     #  puts(@article)
@@ -133,6 +133,9 @@ class CardsController < ApplicationController
       BookingMailer.booking_new(@newPerson, params[:articles], @card).deliver
 #        format.json { render :index, status: :created, location: @news }
       flash[:success] = "Sie haben Ihre Artikel erfolgreich bestellt."
+      respond_to  do |f|
+        f.html { redirect_to "/warenkorb" }
+      end
     else
       respond_to  do |f|
         f.json { render json: @card.errors, status: :unprocessable_entity }
