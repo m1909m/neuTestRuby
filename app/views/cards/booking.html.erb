@@ -92,7 +92,7 @@
 
   <form action="/cards" onload="toggle_form_element()">
     <!-- Lieferanschrift -->
-    <input class="hidden" name="articles" ng-model="cart" type="hidden"/>
+    <input class="hidden" name="articles" ng-model="cart" value="{{cart}}" type="hidden"/>
     <div class="form-group">
       <label for="name">Name</label>
       <input id="name" type="text" name="newPerson[name]" class="form-control" placeholder="Name" required/>
