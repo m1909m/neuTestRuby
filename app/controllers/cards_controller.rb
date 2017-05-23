@@ -96,7 +96,7 @@ class CardsController < ApplicationController
     #puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
     #puts(card_params[:articles].to_s)
-    @articles = person_params[:articles]
+    @articles = params[:articles]
     @articles = @articles.delete '/\\'
     @articles.each do |a|
     #  puts(a[:id])
@@ -151,7 +151,7 @@ class CardsController < ApplicationController
   end
 
   def person_params
-    params.require(:newPerson).permit(:name, :vorname, :dienststelle, :adresse, :ort, :email, :nameR, :vornameR, :dienstelleR, :ortR, :articles)
+    params.require(:newPerson).permit(:name, :vorname, :dienststelle, :adresse, :ort, :email, :nameR, :vornameR, :@articles,:adresseR, :ortR, :emailR, :articles)
 
   end
 
