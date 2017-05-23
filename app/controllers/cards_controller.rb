@@ -133,9 +133,9 @@ class CardsController < ApplicationController
       BookingMailer.booking_new(@newPerson, @jsonArticles, @card).deliver
 #        format.json { render :index, status: :created, location: @news }
       flash[:success] = "Sie haben Ihre Artikel erfolgreich bestellt."
-      respond_to  do |f|
-        f.html { redirect_to "/warenkorb" }
-      end
+
+      redirect_to "/warenkorb"
+
     else
       respond_to  do |f|
         f.json { render json: @card.errors, status: :unprocessable_entity }
