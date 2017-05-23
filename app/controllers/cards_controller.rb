@@ -97,7 +97,7 @@ class CardsController < ApplicationController
     #articleParam.require(:article).permit(:id, :name, :price)
     #puts(card_params[:articles].to_s)
     @articles = params[:articles]
-    @articles = @articles.delete '/\\'
+    @articles = @articles.delete '/\\"'
     puts(@articles)
     @jsonArticles = JSON.parse @articles
     puts(@jsonArticles)
