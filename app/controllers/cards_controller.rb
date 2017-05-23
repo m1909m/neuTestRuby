@@ -101,19 +101,19 @@ class CardsController < ApplicationController
     @jsonArticles = JSON.parse @articles
     @jsonArticles.each do |a|
     #  puts(a[:id])
-      @article = Article.find(a[:id])
+      @article = Article.find(a.id)
 
     #  puts(@article)
-      if a[:anzahl] > 1
-        a[:anzahl].times do |i|
+      if a.anzahl > 1
+        a.anzahl.times do |i|
           @card.articles << @article
         end
       else
         @card.articles << @article
       end
 
-      @sum = @sum + a[:sum]
-      @article.count = @article.count - a[:anzahl]
+      @sum = @sum + a.sum
+      @article.count = @article.count - a.anzahl
       @article.save
    #   @localArticle.add(Article.find(a.id))
     end
