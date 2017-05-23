@@ -32,11 +32,11 @@ class AboNewslettersController < ApplicationController
       if @abo_newsletter.save
         # TODOO Email link zum anmelden
         NewsMailer.anmelden_email(@abo_newsletter).deliver
-        format.html { redirect_to "/abo_newsletters/new" , notice: 'Sie haben sich erfolgreich angemeldet.' }
-        format.json { render :new, status: :created, location: AboNewsletter.new }
+        flash[:info] = 'Bitte bestätigen Sie in der kommenden Mail Ihre Identität.'
+        format.html { redirect_to "/abo_newsletters/new" }
       else
-        format.html { render :new }
-        format.json { render json: @abo_newsletter.errors, status: :unprocessable_entity }
+        flash[:error] = 'Fehler beim Abonieren des Newsletters. Bitte wenden Sie sich an vkm-rwl, oder versuchen Sie es erneut.'
+        format.html { redirect_to "/abo_newsletters/new" }
       end
     end
   end
@@ -60,7 +60,8 @@ class AboNewslettersController < ApplicationController
   def destroy
     @abo_newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to @abo_newsletters_url, notice: 'Abo newsletter was successfully destroyed.' }
+      flash[:success] = 'Ihr Abo wurde erfolgreich gelöscht.'
+      format.html { redirect_to @abo_newsletters_url }
       format.json { head :no_content }
     end
   end
