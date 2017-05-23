@@ -36,7 +36,6 @@ angular.module('myModule', ['ngStorage', 'ngResource','daterangepicker', 'ui.cal
         if($window.sessionStorage.getItem("warenkorb")) {
             items = angular.fromJson($window.sessionStorage.getItem("warenkorb"));
         }
-        // TODO anzahl articel
         items.push(article);
         o.items = items;
         $window.sessionStorage.setItem("warenkorb", JSON.stringify(items));
@@ -140,8 +139,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
         }
         $(function() {
             $('.alert').show();
-            $('#warenkorb').show();
-            //$('#warenkorb').css('background-color', '#ffd4b0');
+            $('#warenkorb').css('background-color', '#ffd4b0');
         });
         $scope.articles = Cart.cards.index({"site": "batkf"});
     };
@@ -226,8 +224,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
                 Cart.addItems(articles[i]);
             }
         }
-
-                if(Cart.getItemsWaren() != null) {
+        if(Cart.getItemsWaren() != null) {
             $scope.cart = Cart.getItemsWaren();
             $scope.sum = 0;
             for(var i = 0;i < $scope.cart.length; i++) {
@@ -245,7 +242,6 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         $scope.cart = {};
         $scope.sum = 0;
         $scope.anzahl = 0;
-        $('#warenkorb').hide();
     };
     $scope.removeAllArticles = function() {
         Cart.clearItem();
