@@ -138,6 +138,9 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
                 }
             }
         }
+        $(function() {
+            $('#warenkorb').css('background-color', '#ffd4b0;')
+        });
         $scope.articles = Cart.cards.index({"site": "batkf"});
     };
     /*
