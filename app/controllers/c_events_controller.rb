@@ -83,8 +83,8 @@ class CEventsController < ApplicationController
     end
     @c_event.room_id = c_event_params[:room_id]
 
-    @c_event.startLogin = c_event_params[:startLogin].to_time.strftime("%Y-%m-%d %k:%M:%S")
-    @c_event.endLogin = c_event_params[:endLogin].to_time.strftime("%Y-%m-%d %k:%M:%S")
+    @c_event.startLogin = c_event_params[:startLogin].to_time.strftime("%Y-%m-%d %k:%M:%S %z")
+    @c_event.endLogin = c_event_params[:endLogin].to_time.strftime("%Y-%m-%d %k:%M:%S %z")
     @c_event.userMail = current_user.email
     @c_event.member = 0
     @c_event.free = 1
