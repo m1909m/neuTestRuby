@@ -1,6 +1,12 @@
-<h1>Editing News</h1>
+<div class="col-xs-12">
+  <h1>Neuigkeit Bearbeiten</h1>
+</div>
+<div class="col-xs-12" style="margin-bottom: 1em;">
+  <%= image_tag("Titelbild_Newsletter.jpg", :alt => "Newsletter", :class => "img-responsive center-block") %>
+
+</div>
 
 <%= render 'form', news: @news %>
 
-<%= link_to 'Show', @news %> |
-<%= link_to 'Back', news_index_path %>
+<%= link_to 'Anzeigen', @news %> |
+<%= link_to 'Zurück',  zugangsbereich_path %>
