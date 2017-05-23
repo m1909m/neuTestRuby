@@ -81,7 +81,7 @@ var shopApp = angular.module('shopping', [ 'myModule' ]);
 shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.articles = [];
     $rootScope.card = [];
-    $scope.anzahl = 0;
+    $rootScope.anzahl = 0;
 }]);
 
 shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($scope, Cart, $window) {
