@@ -98,7 +98,7 @@ class CardsController < ApplicationController
     #puts(card_params[:articles].to_s)
     @articles = params[:articles]
     @articles = @articles.delete '/\\'
-    @articles = @articles..gsub(/["]/, "'")
+    @articles = @articles.gsub(/["]/, "'")
     puts(@articles)
     @jsonArticles = JSON.parse @articles
     puts(@jsonArticles)
