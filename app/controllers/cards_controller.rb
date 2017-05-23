@@ -102,7 +102,7 @@ class CardsController < ApplicationController
     @jsonArticles = JSON.parse @articles
     puts(@jsonArticles)
     @jsonArticles.each do |a|
-      puts(AAAAid)
+      puts("AAAAid")
       puts(a[:id])
       @article = Article.find(a[:id])
 
