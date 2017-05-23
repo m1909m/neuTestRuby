@@ -99,7 +99,7 @@ class CardsController < ApplicationController
     @articles = params[:articles]
     @articles = @articles.delete '/\\'
     puts(@articles)
-    @jsonArticles = Json.parse @articles
+    @jsonArticles = JSON.parse @articles
     puts(@jsonArticles)
     @jsonArticles.each do |a|
     #  puts(a[:id])
