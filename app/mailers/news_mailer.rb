@@ -15,7 +15,7 @@ class NewsMailer < ActionMailer::Base
   end
   def anmelden_email(abo_newsletter)
     @abo_newsletter = abo_newsletter
-    @url = "http://vkm.marianit.de/newsletter/" + @abo_newsletter.id
+    @url = "http://vkm.marianit.de/newsletter/" + @abo_newsletter.id.to_s
     mail :to=> @abo_newsletter.eMail,
          :subject=> "Anmeldung für den vkm-rwl Newsletter",
          :content_type => "text/html"
