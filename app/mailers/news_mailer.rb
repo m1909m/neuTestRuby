@@ -13,4 +13,11 @@ class NewsMailer < ActionMailer::Base
               :content_type => "text/html"
     }
   end
+  def anmelden_email(abo_newsletter)
+    @abo_newsletter = abo_newsletter
+    @url = "http://vkm.marianit.de/newsletter/" + @abo_newsletter.id
+    mail :to=> @abo_newsletter.eMail,
+         :subject=> "Anmeldung für den vkm-rwl Newsletter",
+         :content_type => "text/html"
+  end
 end

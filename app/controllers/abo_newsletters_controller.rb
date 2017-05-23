@@ -26,11 +26,12 @@ class AboNewslettersController < ApplicationController
   # POST /abo_newsletters.json
   def create
     @abo_newsletter = AboNewsletter.new(abo_newsletter_params)
-    @abo_newsletter.enable = true
+    @abo_newsletter.enable = false
 
     respond_to do |format|
       if @abo_newsletter.save
-
+        # TODOO Email link zum anmelden
+        NewsMailer.anmelden_email(@abo_newsletter).deliver
         format.html { redirect_to "/abo_newsletters/new" , notice: 'Sie haben sich erfolgreich angemeldet.' }
         format.json { render :new, status: :created, location: AboNewsletter.new }
       else
@@ -70,11 +71,25 @@ class AboNewslettersController < ApplicationController
     @abo_newsletter.enable = false
     respond_to do |format|
       if @abo_newsletter.save
-        format.html { redirect_to @abo_newsletter, notice: 'Abo fürs Newsletter wurde erfolgreich abgemeldet.' }
-        format.json { render :signOutNews, status: :created, location: @abo_newsletter }
+        flash[:success] = 'Ihr Abo für den Newsletter wurde erfolgreich abgemeldet.'
+        format.html { redirect_to "/abo_newsletters/new" }
       else
-        format.html { render :new }
-        format.json { render json: @abo_newsletter.errors, status: :unprocessable_entity }
+        flash[:error] = 'Ihr Abo für den Newsletter wurde nicht abgemeldet. Bittte wenden Sie sich an vkm-rwl'
+        format.html { redirect_to "/abo_newsletters/new" }
+      end
+    end
+  end
+
+  def signInNews
+    @abo_newsletter = AboNewsletter.find(params[:id])
+    @abo_newsletter.enable = true
+    respond_to do |format|
+      if @abo_newsletter.save
+        flash[:success] = 'Ihr Abo für den Newsletter wurde erfolgreich angemeldet.'
+        format.html { redirect_to "/abo_newsletters/new" }
+      else
+        flash[:error] = 'Ihr Abo für den Newsletter wurde nicht angemeldet. Bitte wenden Sie sich an vkm-rwl'
+        format.html { redirect_to "/abo_newsletters/new" }
       end
     end
   end
