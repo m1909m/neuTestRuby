@@ -140,7 +140,8 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
         }
         $(function() {
             $('.alert').show();
-            $('#warenkorb').css('background-color', '#ffd4b0');
+            $('#warenkorb').show();
+            //$('#warenkorb').css('background-color', '#ffd4b0');
         });
         $scope.articles = Cart.cards.index({"site": "batkf"});
     };
@@ -244,6 +245,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         $scope.cart = {};
         $scope.sum = 0;
         $scope.anzahl = 0;
+        $('#warenkorb').hide();
     };
     $scope.removeAllArticles = function() {
         Cart.clearItem();
