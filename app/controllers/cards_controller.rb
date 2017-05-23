@@ -98,7 +98,9 @@ class CardsController < ApplicationController
     #puts(card_params[:articles].to_s)
     @articles = params[:articles]
     @articles = @articles.delete '/\\'
+    puts(@articles)
     @jsonArticles = @articles.split(",")
+    puts(@jsonArticles)
     @jsonArticles.each do |a|
     #  puts(a[:id])
       @article = Article.find(a.id)
