@@ -222,7 +222,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
             }
         }
 
-        if(Cart.getItemsWaren() != null) {
+                if(Cart.getItemsWaren() != null) {
             $scope.cart = Cart.getItemsWaren();
             $scope.sum = 0;
             for(var i = 0;i < $scope.cart.length; i++) {
@@ -233,6 +233,13 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
             $scope.sum = 0;
         }
 
+    };
+    $scope.removeAllArticlesForms = function() {
+        $scope.cartSend = Cart.getItemsWaren();
+        Cart.clearItem();
+        $scope.cart = {};
+        $scope.sum = 0;
+        $scope.anzahl = 0;
     };
     $scope.removeAllArticles = function() {
         Cart.clearItem();
