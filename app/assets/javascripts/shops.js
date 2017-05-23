@@ -81,6 +81,7 @@ var shopApp = angular.module('shopping', [ 'myModule' ]);
 shopApp.run( ["$rootScope", function($rootScope) {
     $rootScope.articles = [];
     $rootScope.card = [];
+    $scope.anzahl = 0;
 }]);
 
 shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($scope, Cart, $window) {
@@ -91,6 +92,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
      {"id": "3", "name": "Pizza Thunfisch", "price": 6 },
      {"id": "4", "name": "Aktueller Flyer", "price": 0 }
      ]; */
+    $scope.anzahl = 0;
     $scope.articles = [];
     $scope.setArticles = function() {
         $scope.articles = Cart.cards.index({"site": "batkf"});
@@ -98,7 +100,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
     $scope.init = function () {
 
         $scope.articles = Cart.cards.index({"site": "batkf"});
-
+        $scope.anzahl = 0;
     };
 
 
@@ -111,6 +113,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
                 for(var j = 0; j < articles.length; j++) {
                     if(sessionarticle[i].id == articles[j].id && articles[j].anzahl > 0 && articles[j].anzahl != null) {
                         sessionarticle[i].anzahl = sessionarticle[i].anzahl + articles[j].anzahl;
+                        $scope.anzahl = $scope.anzahl + articles[j].anzahl;
                         sessionarticle[i].sum = sessionarticle[i].anzahl * sessionarticle[i].price;
                     } else {
                         if(sessionarticle[i].id == articles[j].id && articles[j].anzahl < 0) {
@@ -207,6 +210,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
             if(articles[i].id == article.id) {
                 if(articles[i].anzahl > 1) {
                     articles[i].anzahl = articles[i].anzahl - 1;
+                    $scope.anzahl = $scope.anzahl - 1;
                     articles[i].sum = articles[i].sum - articles[i].price;
                     Cart.addItems(articles[i]);
                 }
@@ -231,6 +235,7 @@ shopApp.controller('bookingContainer', ['$scope', 'Cart', function($scope, Cart)
         Cart.clearItem();
         $scope.cart = {};
         $scope.sum = 0;
+        $scope.anzahl = 0;
     };
 
     $scope.addCard = function() {
