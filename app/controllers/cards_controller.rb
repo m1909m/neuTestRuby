@@ -47,21 +47,43 @@ class CardsController < ApplicationController
   def create
     @card = Card.new
     @newPerson = Person.new
-    @newPerson.name = params[:name]
-    @newPerson.vorname = params[:vorname]
-    @newPerson.einrichtung = params[:einrichtung]
-    @newPerson.adresse = params[:adresse]
-    @newPerson.ort = params[:ort]
-    @newPerson.email = params[:email]
+    @newPerson.name = person_params[:name]
+    @newPerson.vorname = person_params[:vorname]
+    @newPerson.einrichtung = person_params[:einrichtung]
+    @newPerson.adresse = person_params[:adresse]
+    @newPerson.ort = person_params[:ort]
+    @newPerson.email = person_params[:email]
 
-    @newPerson.nameR = params[:nameR]
-    @newPerson.vornameR = params[:vornameR]
-    @newPerson.einrichtungR = params[:einrichtungR]
-    @newPerson.adresseR = params[:adresseR]
-    @newPerson.ortR = params[:ortR]
-    @newPerson.emailR = params[:emailR]
-
-
+    if person_params[:nameR] != ""
+      @newPerson.nameR = person_params[:nameR]
+    else
+      @newPerson.nameR = @newPerson.name
+    end
+    if person_params[:vornameR] != ""
+      @newPerson.vornameR = person_params[:vornameR]
+    else
+      @newPerson.vornameR = @newPerson.vorname
+    end
+    if person_params[:einrichtungR] != ""
+      @newPerson.einrichtungR = person_params[:einrichtungR]
+    else
+      @newPerson.einrichtungR = @newPerson.einrichtung
+    end
+    if person_params[:adresseR] != ""
+      @newPerson.adresseR = person_params[:adresseR]
+    else
+      @newPerson.adresseR = @newPerson.adresse
+    end
+    if person_params[:ortR] != ""
+      @newPerson.ortR = person_params[:ortR]
+    else
+      @newPerson.ortR = @newPerson.ort
+    end
+    if person_params[:emailR] != ""
+      @newPerson.emailR = person_params[:emailR]
+    else
+      @newPerson.emailR = @newPerson.email
+    end
     if @newPerson.save
 
 #        format.json { render :index, status: :created, location: @news }
@@ -74,7 +96,7 @@ class CardsController < ApplicationController
     #puts(params[:articles].to_s)
     #articleParam.require(:article).permit(:id, :name, :price)
     #puts(card_params[:articles].to_s)
-    params[:articles].each do |a|
+    person_params[:articles].each do |a|
     #  puts(a[:id])
       @article = Article.find(a[:id])
 
@@ -126,6 +148,10 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+  def person_params
+    params.require(:newPerson).permit(:name, :vorname, :dienststelle, :adresse, :ort, :email, :nameR, :vornameR, :dienstelleR, :ortR, :articles)
+
+  end
 
   def card_params
     params.require(:card).permit(:articles => [:id, :title, :price, :count, :anzahl, :sum])

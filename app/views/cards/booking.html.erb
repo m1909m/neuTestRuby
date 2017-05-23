@@ -22,8 +22,9 @@
 
 
 <h2>Lieferanschrift</h2>
+  <!--
   <form ng-submit="addCard()" action="" onload="toggle_form_element()">
-	<!-- Lieferanschrift -->
+	<!-- Lieferanschrift -
     <div class="form-group">
       <label for="name">Name</label>
       <input id="name" type="text" ng-model="newPerson.name" class="form-control" placeholder="Name" required/>
@@ -59,7 +60,7 @@
 	
 	<div id="vipInputContainer" style="display:none;">
 	<h2>Rechnungsanschrift</h2>
-	<!-- Rechnungsanschrift -->
+	<!-- Rechnungsanschrift -
 	<div class="form-group">
       <label for="name">Name</label>
       <input id="name" type="text" ng-model="newPerson.nameR" class="form-control" placeholder="Name" />
@@ -85,6 +86,74 @@
       <input id="email" class="form-control" type="text" ng-model="newPerson.emailR" placeholder="E-Mail-Adresse" />
     </div>
 	</div>
+    <button type="submit" class="btn btn-success">Verbindlich bestellen</button>
+  </form>
+  -->
+
+  <form action="/cards" onload="toggle_form_element()">
+    <!-- Lieferanschrift -->
+    <input class="hidden" name="articles" ng-model="cart" type="hidden"/>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="newPerson[name]" class="form-control" placeholder="Name" required/>
+    </div>
+    <div class="form-group">
+      <label for="vorname">Vorname</label>
+      <input id="vorname" type="text" name="newPerson[vorname]" class="form-control" placeholder="Vorname" required/>
+    </div>
+    <div class="form-group">
+      <label for="dienststelle">Dienststelle <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+      <input id="dienststelle" class="form-control" type="text" name="newPerson[dienststelle]" placeholder="Dienststelle" />
+    </div>
+    <div class="form-group">
+      <label for="adresse">Straße und Hausnr.</label>
+      <input id="adresse" class="form-control" type="text" name="newPerson[adresse]" placeholder="Straße und Hausnr." required/>
+    </div>
+    <div class="form-group">
+      <label for="ort">PLZ und Ort</label>
+      <input id="ort" class="form-control" type="text" name="newPerson[ort]" placeholder="PLZ und Ort" required/>
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail-Adresse</label>
+      <input id="email" class="form-control" type="text" name="newPerson[email]" placeholder="E-Mail-Adresse" required/>
+    </div>
+    <div class="form-group">
+      <input type="radio" id="lieferanschrift" name="switch" value="Lieferanschrift" onclick="toggle_form_element()" style="float:left;" required checked>
+      <label for="lieferanschrift" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Rechnungsanschrift</label>
+      <div  style="clear:both;"></div>
+      <input type="radio" id="rechnungsanschrift" name="switch" value="Rechnungsanschrift" onclick="toggle_form_element()" style="float:left;" required>
+      <label for="rechnungsanschrift" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
+      <div  style="clear:both;"></div>
+    </div>
+
+    <div id="vipInputContainer" style="display:none;">
+      <h2>Rechnungsanschrift</h2>
+      <!-- Rechnungsanschrift -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="newPerson[nameR]" class="form-control" placeholder="Name" />
+      </div>
+      <div class="form-group">
+        <label for="vorname">Vorname</label>
+        <input id="vorname" type="text" name="newPerson[vornameR]" class="form-control" placeholder="Vorname" />
+      </div>
+      <div class="form-group">
+        <label for="dienststelle">Dienststelle <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+        <input id="dienststelle" class="form-control" type="text" name="newPerson[dienststelleR]" placeholder="Dienststelle" />
+      </div>
+      <div class="form-group">
+        <label for="adresse">Straße und Hausnr.</label>
+        <input id="adresse" class="form-control" type="text" name="newPerson[adresseR]" placeholder="Straße und Hausnr." />
+      </div>
+      <div class="form-group">
+        <label for="ort">PLZ und Ort</label>
+        <input id="ort" class="form-control" type="text" name="newPerson[ortR]" placeholder="PLZ und Ort" />
+      </div>
+      <div class="form-group">
+        <label for="email">E-Mail-Adresse</label>
+        <input id="email" class="form-control" type="text" name="newPerson[emailR]" placeholder="E-Mail-Adresse" />
+      </div>
+    </div>
     <button type="submit" class="btn btn-success">Verbindlich bestellen</button>
   </form>
 </div>
