@@ -97,7 +97,8 @@ class CardsController < ApplicationController
     #articleParam.require(:article).permit(:id, :name, :price)
     #puts(card_params[:articles].to_s)
     @articles = params[:articles]
-    @articles = @articles.delete '/\\"'
+    @articles = @articles.delete '/\\'
+    @articles = @articles..gsub(/["]/, "'")
     puts(@articles)
     @jsonArticles = JSON.parse @articles
     puts(@jsonArticles)
@@ -155,7 +156,7 @@ class CardsController < ApplicationController
   end
 
   def person_params
-    params.require(:newPerson).permit(:name, :vorname, :dienststelle, :adresse, :ort, :email, :nameR, :vornameR, :@articles,:adresseR, :ortR, :emailR, :articles)
+    params.require(:newPerson).permit(:name, :vorname, :dienststelle, :adresse, :ort, :email, :nameR, :vornameR, :@articles, :dienststelleR,:adresseR, :ortR, :emailR, :articles)
 
   end
 

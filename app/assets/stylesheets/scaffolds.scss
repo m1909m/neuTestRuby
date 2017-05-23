@@ -71,6 +71,9 @@ body {
     width: 100%;
 }
 
+#drawers div { display:none; }
+#drawers div.first { display:block; }
+
 .table-scrollable {
   width: 100%;
   overflow-y: auto;
