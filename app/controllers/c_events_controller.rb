@@ -126,6 +126,12 @@ class CEventsController < ApplicationController
     @id = @c_event.room_id
     @accounts = Account.where(accountName: @c_event.accountName)
     @accounts.destroy_all
+    @members = Member.where(event_id: @c_event.id).where(accept: 1)
+    if @members != nil && @members.length > 0
+      @members.each do |m|
+        ContactMailer.storno_event(m, @c_event).deliver
+      end
+    end
     @c_event.destroy
    # redirect_to "/administrator/rooms/" + @id
 

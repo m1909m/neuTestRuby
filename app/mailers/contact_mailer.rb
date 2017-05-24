@@ -31,6 +31,14 @@ class ContactMailer < ActionMailer::Base
          :subject=> "Änderungen einer Veranstalltung von der VKM"
   end
 
+  def storno_event(member, event)
+    @member = member
+    @event = event
+    @email = @member.eMail
+    mail :to=> @email,
+         :subject=> "Änderungen einer Veranstalltung von der VKM"
+  end
+
   def new_member(member, event)
     @member = member
     @event = event
