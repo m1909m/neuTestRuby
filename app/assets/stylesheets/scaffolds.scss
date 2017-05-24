@@ -21,6 +21,17 @@ body {
 	margin: 0 2%;
 }
 
+.infodiv {
+	float: left; 
+	width: 20px; 
+	height: 20px; 
+	color: #fff; 
+	background: #f59d0e; 
+	border-radius: 25px; 
+	text-align: center; 
+	margin-right: 3px;
+}
+
 .bearbeitenbutton, .entfernenbutton {
   width: 100%;
   height: auto;
