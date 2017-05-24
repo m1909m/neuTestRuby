@@ -22,14 +22,18 @@ body {
 }
 
 .infodiv {
+	font-family: Times;
 	float: left; 
 	width: 20px; 
-	height: 20px; 
+	line-height: 20px; 
+	font-size: 16px;
+	font-weight: bold;
 	color: #fff; 
 	background: #f59d0e; 
 	border-radius: 25px; 
-	text-align: center; 
-	margin-right: 3px;
+	text-align: center;
+	margin-top: 3px;
+	margin-right: 5px;
 }
 
 .bearbeitenbutton, .entfernenbutton {
