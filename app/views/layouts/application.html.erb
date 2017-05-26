@@ -190,20 +190,23 @@
                     $('#imgSiegel').css("max-width", "100%");
                 }
             });
-            $(window).scroll(function () {
-                if ($('.navbar-default').offset().top > 171.53334045410156) {
-                    $("#changeLogo").css("display", "block");
-                    $("#changeLogo").css("width", "5%");
-                    $("#changeNav").css("width", "15%");
-                } else {
-                    $("#changeLogo").css("display", "none");
-                    $("#changeLogo").css("width", "5%");
-                    $("#changeNav").css("width", "20%");
-                }
-            });
+
+
             $(document).ready(function(){
 
-
+                var top = $('.navbar-default').offset().top;
+                $(window).scroll(function (event) {
+                    var y = $(this).scrollTop();
+                    if (y >= top) {
+                        $("#changeLogo").css("display", "block");
+                        $("#changeLogo").css("width", "5%");
+                        $("#changeNav").css("width", "15%");
+                    } else {
+                        $("#changeLogo").css("display", "none");
+                        $("#changeLogo").css("width", "5%");
+                        $("#changeNav").css("width", "20%");
+                    }
+                });
 
 
                 if( $( window ).height() <= 768) {
