@@ -3,6 +3,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#imgSiegel {
+
+  max-width: 200px !important;
+}
 
 #fixed {
   position: fixed;
@@ -274,10 +278,7 @@ a {
     margin-top: 0.2em;
     max-width: 80px;
   }
-  #imgSiegel {
 
-    max-width: 200px !important;
-  }
 
 }
 
