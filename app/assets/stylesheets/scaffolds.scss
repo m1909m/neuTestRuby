@@ -10,30 +10,30 @@ body {
 }
 
 #logo {
-	width: 100%;
-	max-width: 850px;
-	height: auto;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .btn-trenner {
-	color: #eee;
-	margin: 0 2%;
+  color: #eee;
+  margin: 0 2%;
 }
 
 .infodiv {
-	font-family: Times;
-	float: left; 
-	width: 20px; 
-	line-height: 20px; 
-	font-size: 16px;
-	font-weight: bold;
-	color: #fff; 
-	background: #f59d0e; 
-	border-radius: 25px; 
-	text-align: center;
-	margin-top: 3px;
-	margin-right: 5px;
+  font-family: Times;
+  float: left;
+  width: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #f59d0e;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 3px;
+  margin-right: 5px;
 }
 
 .bearbeitenbutton, .entfernenbutton {
@@ -43,47 +43,47 @@ body {
 }
 
 #formcontent {
-	width: 100%;
-	max-width: 108px;
-	margin-bottom: 5px; 
-	height: 50px; 
-	text-align: center;
-	vertical-align: middle;
+  width: 100%;
+  max-width: 108px;
+  margin-bottom: 5px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .aus {
-    color: #333;
-    cursor: pointer;
+  color: #333;
+  cursor: pointer;
 }
 
 .aus:before {
-    content: '+';
-	color: #f59d0e;
-	font-size: 30px;
-	font-weight: bold;
-    padding: 0 10px;
+  content: '+';
+  color: #f59d0e;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 10px;
 }
 
 .aus:hover,
 .aus:focus {
-    color: #333;
-    text-decoration: none;
+  color: #333;
+  text-decoration: none;
 }
 
 .ein {
-    color: #333;
+  color: #333;
 }
 
 .ein:before {
-    content: '-';
-	color: #f59d0e;
-	font-size: 30px;
-	font-weight: bold;
-    padding: 0 10px;
+  content: '-';
+  color: #f59d0e;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 10px;
 }
 
 .accordion {
-    width: 100%;
+  width: 100%;
 }
 
 #drawers div { display:none; }
@@ -120,9 +120,9 @@ body {
 }
 .sswidth {
   float: left;
-//  width: 100%;
+  //  width: 100%;
   max-width: 40px;
-//  margin-left: 2px;
+  //  margin-left: 2px;
 }
 
 p, ol, ul, td {
@@ -209,71 +209,71 @@ label {
 }
 
 @media only screen and (max-width: 1580px) {
-.scontentwidth {
-  float: left;
-  width: 100%;
-  max-width: 120px;
-}
+  .scontentwidth {
+    float: left;
+    width: 100%;
+    max-width: 120px;
+  }
 }
 @media only screen and (max-width: 1500px) {
-.scontentwidth {
-  float: left;
-  width: 100%;
-  max-width: 80px;
-}
+  .scontentwidth {
+    float: left;
+    width: 100%;
+    max-width: 80px;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
-.col-sm-6 {
-  width: 100%;
-}
+  .col-sm-6 {
+    width: 100%;
+  }
 
-.bearbeitenbutton, .entfernenbutton {
-  width: 100%;
-  height: auto;
-  min-width: 100% !important;
-}
-#formcontent {
-	width: 100%;
-	max-width: 100%;
-	margin-bottom: 5px; 
-	height: 50px; 
-	text-align: center;
-	vertical-align: middle;
-}
+  .bearbeitenbutton, .entfernenbutton {
+    width: 100%;
+    height: auto;
+    min-width: 100% !important;
+  }
+  #formcontent {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 5px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-body {
-  font-size: 14px;
-}
-.btn-trenner {
-  display: none;
-}
-.raumnummer, .platzanzahl, .ort, .myevent, .teilnehmer {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.content_padding {
-  padding-left: 0;
-}
-.ssbottom {
-  margin-bottom: 40px;
-}
-.scontentwidth {
-  float: left;
-  width: 100%;
-  max-width: 145px;
-}
-.sswidth {
-  float: left;
-  width: 100%;
-  max-width: 45px;
-  margin-left: 2px;
-}
+  body {
+    font-size: 14px;
+  }
+  .btn-trenner {
+    display: none;
+  }
+  .raumnummer, .platzanzahl, .ort, .myevent, .teilnehmer {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .content_padding {
+    padding-left: 0;
+  }
+  .ssbottom {
+    margin-bottom: 40px;
+  }
+  .scontentwidth {
+    float: left;
+    width: 100%;
+    max-width: 145px;
+  }
+  .sswidth {
+    float: left;
+    width: 100%;
+    max-width: 45px;
+    margin-left: 2px;
+  }
 
-h1, h2, h3, h4, h5, h6, h7 {
-  font-size: 1.4em;
-}
+  h1, h2, h3, h4, h5, h6, h7 {
+    font-size: 1.4em;
+  }
 }
