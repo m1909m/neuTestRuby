@@ -199,10 +199,17 @@
                 $(window).scroll(function (event) {
                     var y = $(this).scrollTop();
                     if (y >= ($('header').height() + 45)) {
-                        $("#changeLogo").css("display", "block");
-                        $("#changeLogo").css("width", "7.5%");
-                        $("#changeNav").css("width", "12.5%");
+                        if($( window ).width() > 770) {
+                            $("#changeLogo").css("display", "block");
+                            $("#changeLogo").css("width", "7.5%");
+                            $("#changeNav").css("width", "12.5%");
+                        } else {
+                            $("#changeLogoHeader").css("display", "block");
+                        }
                     } else {
+                        if($( window ).width() <= 770) {
+                            $("#changeLogoHeader").css("display", "none");
+                        }
                         $("#changeLogo").css("display", "none");
                         $("#changeLogo").css("width", "7.5%");
                         $("#changeNav").css("width", "20%");
