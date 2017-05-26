@@ -197,7 +197,7 @@
                 var top = $('.navbar-default').offset().top + 50;
                 $(window).scroll(function (event) {
                     var y = $(this).scrollTop();
-                    if (y >= $('.navbar-default').height()) {
+                    if (y >= $('header').height()) {
                         $("#changeLogo").css("display", "block");
                         $("#changeLogo").css("width", "5%");
                         $("#changeNav").css("width", "15%");
