@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get 'fortbildung/fachgruppen/', to: "fortbildung#fachgruppen"
   get 'fortbildung/seminarinhalte/', to: "fortbildung#seminarinhalte"
   get 'fortbildung/inHouseSchulungen/', to: "fortbildung#schulung"
+  post '/schulung', to: "fortbildung#schulungForm"
   get 'fortbildung/bedingungen/', to: "fortbildung#bedingungen"
   # get 'fortbildung/', to: "current#fortbildung"
 

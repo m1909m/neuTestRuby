@@ -55,5 +55,9 @@ class ContactMailer < ActionMailer::Base
          :subject=> "Anmeldung einer Veranstalltung von der VKM"
   end
 
-
+  def new_schulung(schulung)
+    @schulung = schulung
+    mail :to=> "verbandkirchlichermmitarbeiter@gmail.com",
+         :subject=> "Neue Anfrage auf In House Schulung"
+  end
 end
