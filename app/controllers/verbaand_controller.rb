@@ -21,14 +21,5 @@ class VerbaandController < ApplicationController
     @page = Page.where(accept: true, for: "Geschäftsstelle").order(:id).last
   end
 
-  def schulungForm
-    ContactMailer.new_schulung(schulung_params).deliver
-    flash[:success] = "Ihre Anfrage wurde erfolgreich versendet."
-    redirect_to "/fortbildung/inHouseSchulungen"
-  end
 
-  private
-  def schulung_params
-    params.require(:schulung).permit(:einrichtung, :straße, :ort, :tel, :email, :thema, :partner, :personen, :termine)
-  end
 end
