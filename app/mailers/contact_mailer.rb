@@ -15,6 +15,34 @@ class ContactMailer < ActionMailer::Base
          :subject=> "Diakonie Seite wurde verändert"
   end
 
+  def change_gbb(gbb)
+    @content = gbb
+    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    mail :to=> @email,
+         :subject=> "GBB Seite wurde verändert"
+  end
+
+  def change_pädagogik(pädagogik)
+    @content = pädagogik
+    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    mail :to=> @email,
+         :subject=> "Pädagogik Seite wurde verändert"
+  end
+
+  def change_haustechnik_westfalen(hWestfalen)
+    @content = hWestfalen
+    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    mail :to=> @email,
+         :subject=> "Hauswirtschaft / Haustechnik Westfalen / Lippe Seite wurde verändert"
+  end
+
+  def change_hUndh_Rheinland(rheinland)
+    @content = rheinland
+    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    mail :to=> @email,
+         :subject=> "Hauswirtschaft und Haustechnik Rheinland Seite wurde verändert"
+  end
+
   def create_event(email, password, event)
     @event = event
     @password = password
@@ -57,7 +85,7 @@ class ContactMailer < ActionMailer::Base
 
   def new_schulung(schulung)
     @schulung = schulung
-    mail :to=> "verbandkirchlichermmitarbeiter@gmail.com",
+    mail :to=> "Susanne.Hohmann@vkm-rwl.de",
          :subject=> "Neue Anfrage auf In House Schulung"
   end
 end

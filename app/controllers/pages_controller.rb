@@ -41,6 +41,26 @@ class PagesController < ApplicationController
         flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
         ContactMailer.change_diakonie(page_params[:content]).deliver
       end
+    elsif @page.for == "GBB"
+      if @page.update(page_params)
+        flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
+        ContactMailer.change_gbb(page_params[:content]).deliver
+      end
+    elsif @page.for == "Pädagogik"
+      if @page.update(page_params)
+        flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
+        ContactMailer.change_pädagogik(page_params[:content]).deliver
+      end
+    elsif @page.for == "Hauswirtschaft_Rheinland"
+      if @page.update(page_params)
+        flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
+        ContactMailer.change_hUndh_Rheinland(page_params[:content]).deliver
+      end
+    elsif @page.for == "Hauswirtschaft_Lippe"
+      if @page.update(page_params)
+        flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
+        ContactMailer.change_haustechnik_westfalen(page_params[:content]).deliver
+      end
     else
       @page.update(page_params)
       flash[:success] = "Sie haben erfolgreich die Seite \"" + @page.for + "\" aktualisiert."
