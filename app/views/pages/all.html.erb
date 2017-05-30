@@ -18,9 +18,29 @@
             <a href="/pages/fachgruppen" class="list-group-item" target="_self">Fachgruppen</a>
           </div>
       <% end %>
+      <% if current_user.has_role?(:gbb) || current_user.has_role?(:admin)%>
+          <div class="list-group">
+            <a href="/pages/GBB" class="list-group-item" target="_self"><strong>&#8627;</strong> Gemeindepädagogik, Bildung und Beratung (GBB)</a>
+          </div>
+      <% end %>
       <% if current_user.has_role?(:diakonie) || current_user.has_role?(:admin)%>
           <div class="list-group">
-			  <a href="/pages/Diakonie" class="list-group-item" target="_self"><strong>&#8627;</strong> Diakonie</a>
+			      <a href="/pages/Diakonie" class="list-group-item" target="_self"><strong>&#8627;</strong> Diakonie</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:pädagogik) || current_user.has_role?(:admin)%>
+          <div class="list-group">
+            <a href="/pages/Pädagogik" class="list-group-item" target="_self"><strong>&#8627;</strong> Pädagogik</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:h_rheinland) || current_user.has_role?(:admin)%>
+          <div class="list-group">
+            <a href="/pages/Hauswirtschaft_Rheinland" class="list-group-item" target="_self"><strong>&#8627;</strong> Hauswirtschaft und Haustechnik Rheinland</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:h_lippe) || current_user.has_role?(:admin)%>
+          <div class="list-group">
+            <a href="/pages/Hauswirtschaft_Lippe" class="list-group-item" target="_self"><strong>&#8627;</strong> Hauswirtschaft / Haustechnik Westfalen / Lippe</a>
           </div>
       <% end %>
       <% if current_user.has_role?(:admin) %>
@@ -40,7 +60,7 @@
           </div>
       <% end %>
       <% if current_user.has_role?(:admin) %>
-		  <p><strong style="color:#f59d0e">Fortbildung</strong></p>
+		    <p><strong style="color:#f59d0e">Fortbildung</strong></p>
           <div class="list-group">
             <a href="/pages/Seminarinhalte" class="list-group-item" target="_self">Seminarinhalte</a>
           </div>
@@ -76,8 +96,17 @@
             <a href="/pages/handreichungen" class="list-group-item" target="_self">Handreichungen</a>
           </div>
       <% end %>
-
-
+      <% if current_user.has_role?(:admin) %>
+          <p><strong style="color:#f59d0e">ARK</strong></p>
+          <div class="list-group">
+            <a href="/pages/Ark-DD" class="list-group-item" target="_self">Ark-DD</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <div class="list-group">
+            <a href="/pages/Ark-Rwl" class="list-group-item" target="_self">Ark-Rwl</a>
+          </div>
+      <% end %>
 
     </div>
 

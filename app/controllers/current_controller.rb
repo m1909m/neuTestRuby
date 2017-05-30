@@ -24,10 +24,10 @@ class CurrentController < ApplicationController
 
   end
   def arkrwl
-    @page = Page.where(accept: true, for: "arkRwl").order(:id).last
+    @page = Page.where(accept: true, for: "Ark-Rwl").order(:id).last
   end
   def arkdd
-    @page = Page.where(accept: true, for: "arkDD").order(:id).last
+    @page = Page.where(accept: true, for: "Ark-DD").order(:id).last
   end
 
 end
