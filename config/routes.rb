@@ -36,7 +36,12 @@ Rails.application.routes.draw do
 
   get 'verband/vorstand/', to: "verbaand#vorstand"
   get 'verband/fachgruppen', to: "verbaand#fachgruppen"
-  get 'diakonie/', to: "verbaand#diakonie"
+  get '/gbb', to: "verband#gbb"
+  get '/diakonie', to: "verbaand#diakonie"
+  get '/pädagogik', to: "verbaand#pädagogik"
+  get '/HundHRheinland', to: "verbaand#hRheinland"
+  get '/haustechnickWestfalen', to: "verbaand#hLippe"
+
   get 'verband/berufsverbände/', to: "verbaand#verband"
   get 'verband/geschäftsstelle', to: "verbaand#geschäftsstelle"
 
