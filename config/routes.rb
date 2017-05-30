@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get '/diakonie', to: "verbaand#diakonie"
   get '/pädagogik', to: "verbaand#pädagogik"
   get '/HundHRheinland', to: "verbaand#hRheinland"
-  get '/haustechnickWestfalen', to: "verbaand#hLippe"
+  get '/haustechnikWestfalen', to: "verbaand#hLippe"
 
   get 'verband/berufsverbände/', to: "verbaand#verband"
   get 'verband/geschäftsstelle', to: "verbaand#geschäftsstelle"
