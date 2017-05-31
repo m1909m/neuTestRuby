@@ -18,7 +18,7 @@ class CurrentController < ApplicationController
 
   end
   def informationen
-
+    @page = Page.where(accept: true, for: "informationen").order(:id).last
   end
   def agb
 
