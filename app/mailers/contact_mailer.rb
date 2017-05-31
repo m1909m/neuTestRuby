@@ -3,7 +3,7 @@ class ContactMailer < ActionMailer::Base
   default from: 'info@vkm.de'
   def contact_email(contactForm)
     @contactForm = contactForm
-    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    @email = "info@vkm-rwl.de"
     mail :to=> @email,
          :subject=> "Kontaktaufnahme"
   end
@@ -79,8 +79,8 @@ class ContactMailer < ActionMailer::Base
     @member = member
     @event = event
     @email = @member.eMail
-    mail :to=> "verbandkirchlichermmitarbeiter@gmail.com",
-         :subject=> "Anmeldung einer Veranstalltung von der VKM"
+    mail :to=> "elke.vonkolken@vkm-rwl.de",
+         :subject=> "Anmeldung einer Veranstalltung"
   end
 
   def new_schulung(schulung)

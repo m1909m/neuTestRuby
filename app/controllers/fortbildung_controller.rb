@@ -26,7 +26,7 @@ class FortbildungController < ApplicationController
 
   private
   def schulung_params
-    params.require(:schulung).permit(:einrichtung, :straße, :ort, :tel, :email, :thema, :partner, :personen, :termine)
+    params.require(:schulung).permit(:einrichtung, :straße, :ort, :tel, :email, :thema, :partner, :personen, :termine, :anmerkungen)
   end
 
 end

@@ -6,3 +6,22 @@
 
 </div>
 <%= @page.content.html_safe %>
+
+<div class="col-sm-6">
+  <h2>Schulungsanfrage</h2>
+  <form accept-charset="UTF-8" action="/schulung" method="post"><input name="utf8" type="hidden" value="✓" /><input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    <div class="form-group"><label for="einrichtung">Einrichtung</label> <input id="name" class="form-control" name="schulung[einrichtung]" required="" type="text" placeholder="Einrichtung" /></div>
+    <div class="form-group"><label for="strassee">Stra&szlig;e</label> <input id="stra&szlig;e" class="form-control" name="schulung[strasse]" required="" type="text" placeholder="Straße" /></div>
+    <div class="form-group"><label for="ort">PLZ und Ort</label> <input id="ort" class="form-control" name="schulung[ort]" required="" type="text" placeholder="PLZ und Ort" /></div>
+    <div class="form-group"><label for="tel">Telefon</label> <input id="tel" class="form-control" name="schulung[tel]" required="" type="text" placeholder="Telefon" /></div>
+    <div class="form-group"><label for="eMail">E-Mail-Adresse</label> <input id="eMail" class="form-control" name="schulung[email]" required="" type="text" placeholder="E-Mail-Adresse" /></div>
+    <div class="form-group"><label for="partner">Ansprechpartner</label> <input id="partner" class="form-control" name="schulung[partner]" required="" type="text" placeholder="Ansprechpartner" /></div>
+    <br />
+    <div class="form-group"><label for="thema">Thema</label> <input id="thema" class="form-control" name="schulung[thema]" required="" type="text" placeholder="Thema" /></div>
+    <div class="form-group"><label for="person">Personenanzahl</label> <input id="person" class="form-control" min="0" name="schulung[personen]" required="" type="number" placeholder="Personenanzahl" /></div>
+    <div class="form-group"><label for="termine">Termine <small style="color: #f59d0e; font-weight: normal;"> (Bitte mehrere Terminvorschläge angeben)</small></label> <textarea id="termine" class="form-control" name="schulung[termine]" placeholder="Termine"></textarea></div>
+
+    <div class="form-group"><label for="anmerkung">Anmerkungen</label> <textarea id="anmerkung" class="form-control" name="schulung[anmerkungen]" placeholder="Anmerkungen"></textarea></div>
+    <div class="form-group actions"><input class="btn btn-default" name="commit" type="submit" value="Absenden" data-disable-with="Absenden" /></div>
+  </form>
+</div>
