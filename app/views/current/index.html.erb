@@ -38,11 +38,31 @@
         <a href="/articles" class="list-group-item" target="_self">BAT-KF: Artikelliste</a>
       </div>
     <% end %>
-    <% if current_user.has_role?(:diakonie) || current_user.has_role?(:admin)%>
-        <div class="list-group">
-          <a href="/pages/Diakonie" class="list-group-item" target="_self">Diakonie</a>
-        </div>
-    <% end %>
+      <% if current_user.has_role?(:gbb) %>
+          <div class="list-group">
+            <a href="/pages/GBB" class="list-group-item" target="_self">Gemeindepädagogik, Bildung und Beratung (GBB)</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:diakonie) %>
+          <div class="list-group">
+            <a href="/pages/Diakonie" class="list-group-item" target="_self">Diakonie</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:pädagogik) %>
+          <div class="list-group">
+            <a href="/pages/Pädagogik" class="list-group-item" target="_self">Pädagogik</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:h_rheinland) %>
+          <div class="list-group">
+            <a href="/pages/Hauswirtschaft_Rheinland" class="list-group-item" target="_self">Hauswirtschaft und Haustechnik Rheinland</a>
+          </div>
+      <% end %>
+      <% if current_user.has_role?(:h_lippe) %>
+          <div class="list-group">
+            <a href="/pages/Hauswirtschaft_Lippe" class="list-group-item" target="_self">Hauswirtschaft / Haustechnik Westfalen / Lippe</a>
+          </div>
+      <% end %>
     </div>
 
     <% if current_user.has_role?(:event) %>
