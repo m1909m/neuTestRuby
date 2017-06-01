@@ -35,6 +35,7 @@ class RoomsController < ApplicationController
 
   def calendar
     @id = params[:id]
+    @room = Room.find(@id)
     respond_to do |f|
       f.html
     end
