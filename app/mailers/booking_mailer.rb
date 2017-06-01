@@ -18,7 +18,7 @@ class BookingMailer < ActionMailer::Base
     @card = card
     @sum = 0.0
     @anzahl = false
-    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    @email = "Susanne.Hohmann@vkm-rwl.de"
     mail :to=> @email,
          :subject=> "Neue Bestellung"
   end
