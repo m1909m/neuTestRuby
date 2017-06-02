@@ -1,6 +1,6 @@
 <div id="roomsContainerID" ng-controller="calendarController">
   <h1>Kalender</h1>
-  <h3>Raum <%= @room.number %> im <%= @room.building %></h3>
+  <h3>Raum <%= @room.number %> | <%= @room.building %></h3>
   <div class="calendar" ng-model="eventSources" calendar="myCalendar" ui-calendar="uiConfig.calendar"></div><br>
   <a href="<%= @id %>/new" target="_self" type="button" class="btn btn-default" style="width:100%;height:auto;">Neue Veranstaltung für Raum <%= @room.number %> hinzufügen</a>
 </div>
