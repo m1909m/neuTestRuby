@@ -5,7 +5,7 @@
   <%= image_tag("Titelbild_Schulungstermine.jpg", :alt => "Aktuelleveranstaltungen", :class => "img-responsive center-block") %>
 
 </div>
-  <div id="event" class="col-xs-12">
+  <div class="col-xs-12">
 
   <% @color = true %>
   <% @events.each do |event|
@@ -48,7 +48,7 @@
 
     <% if @eventsOver != nil %>
     <% @color = false; %>
-    <div class="col-xs-12" style="margin-top: 5px; border-top: 0.5px solid #f59d0e; padding-top: 5px;">
+    <div id="event" class="col-xs-12" style="margin-top: 5px; border-top: 0.5px solid #f59d0e; padding-top: 5px;">
     <% @eventsOver.each do |event|
       if(@color == true)
         @color = false;%>
