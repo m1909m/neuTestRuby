@@ -158,28 +158,43 @@ a {
   font-size: 0.8em;
 }
 
+#event .caption h3 {
+  font-size: 1.0em;
+}
+
+#event .thumbnail {
+  -webkit-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+  -moz-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+  box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+  background-color: #fdfdfd;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 20px 10px 0;
+  height: 300px;
+}
+
 .minus {
   list-style: none;
 }
 .minus li {
-  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .minus li:before {
   content: "-";
-  padding-right: 8px;
+  margin: 0 8px 0 -13px;
 }
 
 .plus {
   list-style: none;
 }
 .plus li {
-  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .plus li:before {
   content: "+";
-  padding-right: 8px;
+  margin: 0 8px 0 -18px;
 }
 
 
