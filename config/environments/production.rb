@@ -90,7 +90,7 @@ Rails.application.configure do
       :address=> "smtp.gmail.com",
       :port=> 587,
       :user_name=> 'verbandkirchlichermmitarbeiter@gmail.com',
-      :password=> '.bEaQd.3BX',
+      :password=> 'n6P9rbpu',
       :domain=> "vkm.marianit.de",
       :authentication=> "plain",
       :enable_starttls_auto=> true
