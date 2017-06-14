@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get 'mitgliedschaft/', to: "current#mitgliedschaft"
   get 'impressum/', to: "current#impressum"
   get 'informationen', to: "current#informationen"
+  get '/veranstaltungen', to: "current#veranstaltungen"
   get 'impressum/agb/', to: "current#agb"
   get 'ark-rwl/', to: "current#arkrwl"
   get 'ark-dd/', to: "current#arkdd"

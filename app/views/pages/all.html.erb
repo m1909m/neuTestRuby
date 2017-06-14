@@ -113,6 +113,12 @@
             <a href="/pages/informationen" class="list-group-item" target="_self">Informationen</a>
           </div>
       <% end %>
+      <% if current_user.has_role?(:admin) %>
+          <p><strong style="color:#f59d0e">Veranstaltungen</strong></p>
+          <div class="list-group">
+            <a href="/pages/Veranstaltungen" class="list-group-item" target="_self">Veranstaltungen</a>
+          </div>
+      <% end %>
     </div>
 
 

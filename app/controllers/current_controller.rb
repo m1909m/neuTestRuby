@@ -30,4 +30,8 @@ class CurrentController < ApplicationController
     @page = Page.where(accept: true, for: "Ark-DD").order(:id).last
   end
 
+  def veranstaltungen
+    @page = Page.where(accept: true, for: "Veranstaltungen").order(:id).last
+  end
+
 end
