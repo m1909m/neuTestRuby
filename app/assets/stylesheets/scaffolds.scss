@@ -114,7 +114,7 @@ body {
 
 .ssbottom {
   width: 100%;
-  line-height: 50px;
+  line-height: 30px;
   text-align: center;
 }
 .scontentwidth {
@@ -129,6 +129,10 @@ body {
   max-width: 40px;
   max-height: 25px;
   //  margin-left: 2px;
+}
+
+.sswidth glyphicon {
+  top: -1px !important;
 }
 
 p, ol, ul, td {
