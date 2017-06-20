@@ -6,12 +6,12 @@
 </head>
 <body>
 <h1>Anmeldung zur Veranstaltung: "<%= @event.title %>"</h1>
-<p><b>Veranstaltung: <%= @event.title %></b></p>
-<p><b>Beschreibung: <%= @event.description %></b></p>
+<p style="font-size: 1.2em;"><b>Veranstaltung: <%= @event.title %></b></p>
+<p style="font-size: 1.2em;"><b>Beschreibung: <%= @event.description %></b></p>
 <table>
 
   <tr>
-    <td>Tag 1 am <%= @event.start.to_time.strftime("%d.%m.%Y") %></td>
+    <td><b>Tag 1 am <%= @event.start.to_time.strftime("%d.%m.%Y") %></b></td>
     <td></td>
   </tr>
   <tr>
@@ -20,7 +20,7 @@
   </tr>
   <% if @event.startSecond != "" && @event.startSecond != nil %>
       <tr>
-        <td>Tag 2 am <%= @event.startSecond.to_time.strftime("%d.%m.%Y") %></td>
+        <td><b>Tag 2 am <%= @event.startSecond.to_time.strftime("%d.%m.%Y") %></b></td>
         <td></td>
       </tr>
       <tr>
@@ -30,7 +30,7 @@
   <% end %>
   <% if @event.startThird != "" && @event.startThird != nil %>
       <tr>
-        <td>Tag 3 am <%= @event.startThird.to_time.strftime("%d.%m.%Y") %></td>
+        <td><b>Tag 3 am <%= @event.startThird.to_time.strftime("%d.%m.%Y") %></b></td>
         <td></td>
       </tr>
       <tr>
