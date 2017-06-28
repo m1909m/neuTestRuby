@@ -91,12 +91,13 @@ class ResumesController < ApplicationController
     @user = User.new({ :email => user_params[:nickname], :roles => Role.where(name: "event"), :password => user_params[:password], :password_confirmation => user_params[:password] })
     #@salt  = SecureRandom.random_bytes(64)
     #@key   = ActiveSupport::KeyGenerator.new('password').generate_key(@salt, 32) # => "\x89\xE0\x156\xAC..."
-    @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")                           # => #<ActiveSupport::MessageEncryptor ...>
+    @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
     @encrypted_data = @crypt.encrypt_and_sign(user_params[:password])
     @user.pass = @encrypted_data
    # @user.salt = @salt
     # crypt.decrypt_and_verify(encrypted_data)
     if @user.save
+      ContactMailer.new_user(user_params[:nickname], user_params[:password]).deliver
       flash[:success] = "Benutzer wurde erfolgreich erstellt."
       redirect_to "/dokumente"
     else

@@ -88,4 +88,13 @@ class ContactMailer < ActionMailer::Base
     mail :to=> "Susanne.Hohmann@vkm-rwl.de",
          :subject=> "Neue Anfrage auf In House Schulung"
   end
+
+  def new_user(username, password)
+    @username = username
+    @password = password
+    @email = "verbandkirchlichermmitarbeiter@gmail.com"
+    mail :to=> @email,
+         :subject=> "Neuer Benutzer wurde angelegt"
+  end
+
 end
