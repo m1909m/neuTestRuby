@@ -82,6 +82,7 @@ class MembersController < ApplicationController
     respond_to do |format|
       if @member.save
           ContactMailer.new_member(@member, @event).deliver
+          ContactMailer.new_member_vkm(@member, @event).deliver
           flash[:success] = "Sie haben sich erfolgreich angemeldet und erhalten in Kürze eine Bestätigung per E-Mail."
           format.html { redirect_to :action => "index" }
         else

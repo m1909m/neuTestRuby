@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Anmeldung zu der Vernstaltung "<%= @event.title %>"</title>
+</head>
+<body>
+<h1>Neue Anmeldung zur Veranstaltung: "<%= @event.title %>"</h1>
+<p style="font-size: 1.2em;"><b>Veranstaltung: <%= @event.title %></b></p>
+<p style="font-size: 1.2em;"><b>Beschreibung: <%= @event.description %></b></p>
+<table>
+
+  <tr>
+    <td><p><b><i><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></i></b></p>
+
+
+      <p><small><%= @member.job %> aus <%= @member.place %></small></p>
+
+      <p><b><i>Kontaktdaten</i></b><br>
+        <small><%= @member.street %><br>
+          <%= @member.plz %> <%= @member.place %><br>
+          <div style="margin-top:15px;">Telefon: <%= @member.phone %><br>
+            E-Mail: <%= @member.eMail %></div></small></p>
+
+      <p><b><i>Dienststelle</i></b><br>
+        <small><%= @member.nameCompany %><br>
+          <%= @member.streetCompany %><br>
+          <%= @member.placeCompany %></small></p>
+
+      <p><b><i>Buchung</i></b><br>
+        <small>Zimmer: <%= @member.room %><br>
+          Unverträglichkeiten / Vegetarier: <%= @member.veggie%></small></p>
+
+    </td>
+    <td><p><b>Rechnungsanschrift</b></p><p><b><i><%= @member.gender%> <%= @member.vornameR %> <%= @member.nameR %></i></b></p>
+
+
+      <p><small><%= @member.job %> aus <%= @member.place %></small></p>
+
+      <p><b><i>Kontaktdaten</i></b><br>
+        <small><%= @member.adresseR %><br>
+          <%= @member.ortR %> <br>
+          <div style="margin-top:15px;">E-Mail: <%= @member.emailR %></div></small></p>
+
+      <p><b><i>Dienststelle</i></b><br>
+        <small><%= @member.einrichtungR %></small></p>
+
+
+    </td>
+  </tr>
+</table>
+
+
+
+</body>
+</html>

@@ -80,7 +80,7 @@ class ContactMailer < ActionMailer::Base
     @event = event
     @email = @member.eMail
     mail :to=> "elke.vonkolken@vkm-rwl.de",
-         :subject=> "Anmeldung einer Veranstalltung"
+         :subject=> "Neue Anmeldung zu einer Veranstalltung"
   end
 
   def new_schulung(schulung)
