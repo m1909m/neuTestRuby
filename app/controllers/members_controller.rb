@@ -38,7 +38,47 @@ class MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
+    if member_params[:nameR] != ""
+      @member.nameR = member_params[:nameR]
+    else
+      @member.nameR = @member.lastName
+    end
+
+    if member_params[:vornameR] != ""
+      @member.vornameR = member_params[:vornameR]
+    else
+      @member.vornameR = @member.firstName
+    end
+
+    if member_params[:vornameR] != ""
+      @member.dienststelleR = member_params[:dienststelleR]
+    else
+      @member.dienststelleR = @member.nameCompany
+    end
+
+    if member_params[:adresseR] != ""
+      @member.adresseR = member_params[:adresseR]
+    else
+      @member.adresseR = @member.street
+    end
+
+    if member_params[:ortR] != ""
+      @member.ortR = member_params[:ortR]
+    else
+      @member.ortR = @member.plz
+    end
+
+    if member_params[:emailR] != ""
+      @member.emailR = member_params[:emailR]
+    else
+      @member.emailR = @member.eMail
+    end
+
+
+
+
     @event = CEvent.find(@member.event_id)
+    #  Rechnungsaanschrift
     respond_to do |format|
       if @member.save
           ContactMailer.new_member(@member, @event).deliver
@@ -87,7 +127,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id)
+      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :dienststelleR, :adresseR, :ortR, :emailR)
     end
 end
 
