@@ -10,6 +10,9 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+
+  config.active_job.queue_adapter = :delayed_job
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -67,6 +70,12 @@ Rails.application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
+  config.assets.debug = true
+  config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
+  # Suppress logger output for asset requests.
+  config.assets.quiet = true
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
