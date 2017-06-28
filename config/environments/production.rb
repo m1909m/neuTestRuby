@@ -48,6 +48,7 @@ Rails.application.configure do
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :info
+  config.secret_key = '2563498c789c491a149d046cdee12a3ef947da55652b3371ae063fee32db2753b6ed6deb887e16c188767920b63fe3eec92c994ee7aef30edc531e743444fc5b'
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
