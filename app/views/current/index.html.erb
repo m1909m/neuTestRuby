@@ -11,7 +11,11 @@
 <% if current_user.present? %>
     <div class="col-xs-12">
 
-		<p><strong>Folgende Bereiche können Sie bearbeiten:</strong></p>
+      <% if current_user.has_role?(:event) %>
+
+      <% else %>
+          <p><strong>Folgende Bereiche können Sie bearbeiten:</strong></p>
+      <% end %>
 	  <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
       <div class="list-group">
         <a href="/admin/news" class="list-group-item" target="_self">Aktuelles</a>
