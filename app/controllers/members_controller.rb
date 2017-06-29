@@ -51,7 +51,7 @@ class MembersController < ApplicationController
     end
 
     if member_params[:vornameR] != ""
-      @member.einrichtungR = member_params[:dienststelleR]
+      @member.einrichtungR = member_params[:einrichtungR]
     else
       @member.einrichtungR = @member.nameCompany
     end
@@ -128,7 +128,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :dienststelleR, :adresseR, :ortR, :emailR)
+      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :einrichtungR, :adresseR, :ortR, :emailR)
     end
 end
 
