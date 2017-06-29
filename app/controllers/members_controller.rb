@@ -51,9 +51,9 @@ class MembersController < ApplicationController
     end
 
     if member_params[:vornameR] != ""
-      @member.dienststelleR = member_params[:dienststelleR]
+      @member.einrichtungR = member_params[:dienststelleR]
     else
-      @member.dienststelleR = @member.nameCompany
+      @member.einrichtungR = @member.nameCompany
     end
 
     if member_params[:adresseR] != ""
