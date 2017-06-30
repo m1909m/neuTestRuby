@@ -16,6 +16,7 @@ class AboNewslettersController < ApplicationController
   def new
     @abo_newsletter = AboNewsletter.new
     @newsletter = NewsContent.all.order(:sendtime)
+    @newsletter.reverse!
   end
 
   # GET /abo_newsletters/1/edit
