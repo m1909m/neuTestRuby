@@ -5,7 +5,7 @@ class NewsContentsController < ApplicationController
   # GET /newsletters.json
   def index
     @news_contents = NewsContent.all
-    @news_contents.sort_by{|e| -e[:created_at]}
+    @news_contents.sort_by{|e| e[:created_at]}
   #  @news_contents.reverse!
   end
 
