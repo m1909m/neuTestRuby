@@ -18,10 +18,17 @@
 <div class="col-xs-12 mehrspaltig">
   <%= @news.story.html_safe %>
 </div>
-<%= link_to 'Zurück', news_index_path, class: "btn btn-default" %>
 
 <% if current_user.present? %>
     <% if current_user.has_role?(:news) || current_user.has_role?(:admin) || current_user.has_role?(:superadmin) %>
-        <%= link_to 'Zurück',  admin_news_path, class: "btn btn-default" %>
+
+        <%= link_to 'Zur Startseite', news_index_path, class: "btn btn-default" %>
+
+        <%= link_to 'Zurück', admin_news_path, class: "btn btn-default" %>
+    <% else %>
+        <%= link_to 'Zurück', news_index_path, class: "btn btn-default" %>
+
     <% end %>
+<% else %>
+    <%= link_to 'Zurück', news_index_path, class: "btn btn-default" %>
 <% end %>

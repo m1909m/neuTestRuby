@@ -14,29 +14,30 @@
 
       <h3>Alle Artikel</h3>
 	  <%= link_to 'Artikel hinzufügen', new_article_path, target: "_self", class: "btn btn-default" %><br><br>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Artikelbeschreibung</th>
+            <th>Preis</th>
+            <th>Noch verfügbar</th>
+            <th colspan="2"></th>
+          </tr>
+          </thead>
 
-      <table class="table table-responsive table-striped">
-        <thead>
-        <tr>
-          <th>Artikelbeschreibung</th>
-          <th>Preis</th>
-          <th>Noch verfügbar</th>
-          <th colspan="2"></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <% @articles.each do |article| %>
-            <tr>
-              <td><%= article.title %></td>
-              <td>€ <%= article.price %></td>
-              <td><%= article.count %></td>
-              <td><%= link_to 'Bearbeiten', edit_article_path(article), class: "btn btn-default" %></td>
-              <td><%= link_to 'Löschen', article, method: :delete, data: { confirm: 'Sind sie sich sicher?' }, class: "btn btn-danger" %></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
+          <tbody>
+          <% @articles.each do |article| %>
+              <tr>
+                <td><%= article.title %></td>
+                <td>€ <%= article.price %></td>
+                <td><%= article.count %></td>
+                <td><%= link_to 'Bearbeiten', edit_article_path(article), class: "btn btn-default" %></td>
+                <td><%= link_to 'Löschen', article, method: :delete, data: { confirm: 'Sind sie sich sicher?' }, class: "btn btn-danger" %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
 
 
       <%= link_to 'Artikel hinzufügen', new_article_path, target: "_self", class: "btn btn-default" %>
