@@ -24,7 +24,7 @@
             <% @abo_newsletters.each do |abo_newsletter| %>
               <tr>
                 <td><%= abo_newsletter.eMail %></td>
-                <td><% if abo_newsletter.enable == True %>Angemeldet<% else %>Abgemeldet<% end %></td>
+                <td><% if abo_newsletter.enable == 1 %>Angemeldet<% else %>Abgemeldet<% end %></td>
                 <td><%= link_to 'Bearbeiten', edit_abo_newsletter_path(abo_newsletter), class: "btn btn-default" %></td>
                 <td><%= link_to 'Löschen', abo_newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
               </tr>
