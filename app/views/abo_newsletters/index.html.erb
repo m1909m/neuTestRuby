@@ -10,32 +10,32 @@
 <div class="col-sm-12">
 <h1>Abonennten Newsletters</h1>
 <% if current_user.present? %>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Enable</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Email Adresse</th>
+              <th>Angemeldet</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @abo_newsletters.each do |abo_newsletter| %>
-      <tr>
-        <td><%= abo_newsletter.eMail %></td>
-        <td><%= abo_newsletter.enable %></td>
-       <!-- <td><%#= abo_newsletter.newsletter %></td> -->
-        <td><%= link_to 'Anzeigen', abo_newsletter %></td>
-        <td><%= link_to 'Bearbeiten', edit_abo_newsletter_path(abo_newsletter) %></td>
-        <td><%= link_to 'Löschen', abo_newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <tbody>
+            <% @abo_newsletters.each do |abo_newsletter| %>
+              <tr>
+                <td><%= abo_newsletter.eMail %></td>
+                <td><%= abo_newsletter.enable %></td>
+                <td><%= link_to 'Bearbeiten', edit_abo_newsletter_path(abo_newsletter) %></td>
+                <td><%= link_to 'Löschen', abo_newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
 
 <br>
 
-<%= link_to 'Neuen Abonennten für den Newsletter hinzufügen', new_abo_newsletter_path %>
+<%= link_to 'Neuen Abonennten für den Newsletter hinzufügen', new_abo_newsletter_path, class: "btn btn-default" %>
 </div>
 <% else %>
 <h2>Sie haben sich erfolgreich angemeldet</h2>

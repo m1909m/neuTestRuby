@@ -59,6 +59,15 @@ class ContactMailer < ActionMailer::Base
          :subject=> "Änderungen einer Veranstalltung von der VKM"
   end
 
+
+  def accept_eveent(member, event)
+    @member = member
+    @event = event
+    @email = @member.eMail
+    mail :to => @email,
+        :subject => "Ihre Bestätigung zu der Veranstaltung \"" + @event.title + "\""
+  end
+
   def storno_event(member, event)
     @member = member
     @event = event

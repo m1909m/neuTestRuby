@@ -15,7 +15,10 @@
           <a href="/newsletters/new" class="list-group-item" target="_self">Neues Layout erstellen</a>
         </div>
       <% end %>
+      <div class="list-group">
+        <%= link_to 'Newsletter Abonnenten', abo_newsletters_path, target: "_self", class: "list-group-item" %>
 
+      </div>
       <h3>Neuigkeiten Archiv</h3>
 		  
 		  <%= link_to 'Neuer Newsletter erstellen', new_news_content_path, target: "_self", class: "btn btn-default" %>

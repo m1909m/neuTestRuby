@@ -23,4 +23,5 @@ class BookingMailer < ActionMailer::Base
          :subject=> "Neue Bestellung"
   end
 
+
 end
