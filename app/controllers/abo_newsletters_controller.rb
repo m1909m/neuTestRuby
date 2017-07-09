@@ -46,7 +46,7 @@ class AboNewslettersController < ApplicationController
   def update
     respond_to do |format|
       if @abo_newsletter.update(abo_newsletter_params)
-        format.html { redirect_to @abo_newsletter, notice: 'Abo newsletter was successfully updated.' }
+        format.html { redirect_to abo_newsletters_path , success: 'Veränderungen für den Abonennt wurde erfolgreich gespeichert.' }
         format.json { render :show, status: :ok, location: @abo_newsletter }
       else
         format.html { render :edit }
