@@ -61,8 +61,10 @@ class RoomsController < ApplicationController
     @member = Member.find(params[:id])
     @member.sendAccept = true
     @event = CEvent.find(@member.event_id)
+    @room = Room.find(@event.room_id)
+    @user = User.where( email: @event.accountName)
     if @member.save
-      ContactMailer.accept_event(@member, @event).deliver
+      ContactMailer.accept_event(@member, @event, @room, @user).deliver
     else
 
     end
