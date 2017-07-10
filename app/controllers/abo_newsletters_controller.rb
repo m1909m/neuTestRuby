@@ -41,6 +41,21 @@ class AboNewslettersController < ApplicationController
     end
   end
 
+  def save
+    @abo_newsletter = AboNewsletter.new(abo_newsletter_params)
+    @abo_newsletter.enable = true
+
+    respond_to do |format|
+      if @abo_newsletter.save
+        flash[:info] = 'Abonennt erfolgreich gespeichert.'
+        format.html { redirect_to "/abo_newsletters" }
+      else
+        flash[:error] = 'Fehler beim Abonieren des Newsletters. Bitte wenden Sie sich an vkm-rwl, oder versuchen Sie es erneut.'
+        format.html { redirect_to "/abo_newsletters" }
+      end
+    end
+  end
+
   # PATCH/PUT /abo_newsletters/1
   # PATCH/PUT /abo_newsletters/1.json
   def update
