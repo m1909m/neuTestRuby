@@ -48,7 +48,7 @@ class AboNewslettersController < ApplicationController
 
     respond_to do |format|
       if @abo_newsletter.save
-        flash[:success] = 'Abonennt erfolgreich gespeichert.'
+        flash[:success] = 'Abonennt wurde erfolgreich gespeichert.'
         format.html { redirect_to "/abo_newsletters" }
       else
         flash[:error] = 'Fehler beim Abonieren des Newsletters. Bitte wenden Sie sich an vkm-rwl, oder versuchen Sie es erneut.'
@@ -77,7 +77,7 @@ class AboNewslettersController < ApplicationController
   def destroy
     @abo_newsletter.destroy
     respond_to do |format|
-      flash[:success] = 'Ihr Abo wurde erfolgreich gelöscht.'
+      flash[:success] = 'Abonennt wurde erfolgreich gelöscht.'
       format.html { redirect_to "/abo_newsletters" }
       format.json { head :no_content }
     end
