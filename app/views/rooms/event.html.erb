@@ -11,7 +11,9 @@
                         <td ng-show="!member.accept" ><div style="width:10px; height:10px; border-radius:25px; background:red;position: absolute;margin-top: 18px;"></div><p style="padding-left: 15px;margin-top: 12px;">Abgemeldet</p></td>
                           <td><button class="btn btn-default" ng-show="member.accept" ng-click="abmelden(member)" target="_self">Jetzt Abmelden</button></td>
 					  </tr>
-					  		<tr><td>&nbsp;</td></tr>
+					  		<tr>
+                  <td>&nbsp;</td><td></td>
+                </tr>
 					  <tr>
 						  <td>
                 <p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b></p>
@@ -35,7 +37,8 @@
 								  Unverträglichkeiten / Vegetarier: {{member.veggie}}</small></p>
 
 						  </td>
-              <td><p><b><i>{{member.vornameR}} {{member.nameR}}</i></b></p>
+              <td>
+                <p><b><i>{{member.vornameR}} {{member.nameR}}</i></b></p>
                 <p><small> </small></p>
                 <p><b><i>Rechnungsanschrift</i></b><br>
                   <small>{{member.adresseR}}<br>
@@ -45,7 +48,7 @@
                 <p><b><i>Dienststelle</i></b><br>
                   <small>{{member.einrichtungR}}</small></p>
 
-                </td>
+              </td>
 					  </tr>
                   </table>
               </div>
