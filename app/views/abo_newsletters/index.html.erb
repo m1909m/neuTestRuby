@@ -34,7 +34,7 @@
       </div>
 
 <br>
-      <%= form_for(abo_newsletter, url: new_abo_path) do |f| %>
+      <%= form_for(@abo_newsletter, url: new_abo_path) do |f| %>
           <% if abo_newsletter.errors.any? %>
               <div id="error_explanation">
                 <h2><%= pluralize(abo_newsletter.errors.count, "error") %> prohibited this abo_newsletter from being saved:</h2>
