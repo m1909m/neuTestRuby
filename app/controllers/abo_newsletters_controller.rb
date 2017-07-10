@@ -5,6 +5,7 @@ class AboNewslettersController < ApplicationController
   # GET /abo_newsletters.json
   def index
     @abo_newsletters = AboNewsletter.all
+    @abo_newsletter = AboNewsletter.new
   end
 
   # GET /abo_newsletters/1
