@@ -31,7 +31,6 @@ Rails.application.routes.draw do
   resources :abo_newsletters
   resources :newsletters
   resources :news_contents
-  ActiveAdmin.routes(self)
   get 'zugangsbereich/', to: "current#index"
 
   get 'verband/vorstand/', to: "verbaand#vorstand"
@@ -99,7 +98,7 @@ Rails.application.routes.draw do
 
 
   get '/abo_newsletter/:email', to: "abo_newsletters#signOutNews"
-  post '/abo_newsletter/new', to: "abo_newsletter#save", as: "new_abo"
+  post '/abo_newsletter/new', to: "abo_newsletters#save", as: "new_abo"
   get '/newsletter/:id', to: "abo_newsletters#signInNews"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :resumes, only: [:index, :new, :create, :destroy]
