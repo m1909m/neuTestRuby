@@ -13,7 +13,8 @@
 					  </tr>
 					  		<tr><td>&nbsp;</td></tr>
 					  <tr>
-						  <td><p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b></p>
+						  <td>
+                <p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b></p>
 
 								  
 								  <p><small>{{member.job}} aus {{member.place}}</small></p>
@@ -34,6 +35,17 @@
 								  Unverträglichkeiten / Vegetarier: {{member.veggie}}</small></p>
 
 						  </td>
+              <td><p><b><i>{{member.vornameR}} {{member.nameR}}</i></b></p>
+                <p><small> </small></p>
+                <p><b><i>Rechnungsanschrift</i></b><br>
+                  <small>{{member.adresseR}}<br>
+                    {{member.ort}} <br>
+                    <div style="margin-top:15px;">E-Mail: {{member.eMailR}}</div></small></p>
+
+                <p><b><i>Dienststelle</i></b><br>
+                  <small>{{member.einrichtungR}}</small></p>
+
+                </td>
 					  </tr>
                   </table>
               </div>
