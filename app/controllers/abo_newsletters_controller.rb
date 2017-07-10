@@ -33,7 +33,7 @@ class AboNewslettersController < ApplicationController
       if @abo_newsletter.save
         # TODOO Email link zum anmelden
         NewsMailer.anmelden_email(@abo_newsletter).deliver
-        flash[:info] = 'Bitte bestätigen Sie in der kommenden Mail Ihre Identität.'
+        flash[:notice] = 'Bitte bestätigen Sie in der kommenden Mail Ihre Identität.'
         format.html { redirect_to "/abo_newsletters/new" }
       else
         flash[:error] = 'Fehler beim Abonieren des Newsletters. Bitte wenden Sie sich an vkm-rwl, oder versuchen Sie es erneut.'
@@ -48,7 +48,7 @@ class AboNewslettersController < ApplicationController
 
     respond_to do |format|
       if @abo_newsletter.save
-        flash[:info] = 'Abonennt erfolgreich gespeichert.'
+        flash[:success] = 'Abonennt erfolgreich gespeichert.'
         format.html { redirect_to "/abo_newsletters" }
       else
         flash[:error] = 'Fehler beim Abonieren des Newsletters. Bitte wenden Sie sich an vkm-rwl, oder versuchen Sie es erneut.'
@@ -78,7 +78,7 @@ class AboNewslettersController < ApplicationController
     @abo_newsletter.destroy
     respond_to do |format|
       flash[:success] = 'Ihr Abo wurde erfolgreich gelöscht.'
-      format.html { redirect_to @abo_newsletters_url }
+      format.html { redirect_to "/abo_newsletters" }
       format.json { head :no_content }
     end
   end

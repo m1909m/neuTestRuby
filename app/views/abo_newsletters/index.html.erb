@@ -26,7 +26,7 @@
                 <td><%= abo_newsletter.eMail %></td>
                 <td><% if abo_newsletter.enable == TRUE %>Angemeldet<% else %>Abgemeldet<% end %></td>
                 <td><%= link_to 'Bearbeiten', edit_abo_newsletter_path(abo_newsletter), class: "btn btn-default" %></td>
-                <td><%= link_to 'Löschen', abo_newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+                <td><%= link_to 'Löschen', abo_newsletter, method: :delete, data: { confirm: 'Sind Sie sich sicher?' }, class: "btn btn-default" %></td>
               </tr>
             <% end %>
           </tbody>
@@ -34,7 +34,7 @@
       </div>
 
 <br>
-      <h2>Neuen Abonennten hinzufügen</h2>
+      <h2>Neuer Abonennt</h2>
       <%= form_for(@abo_newsletter, url: new_abo_path) do |f| %>
           <% if @abo_newsletter.errors.any? %>
               <div id="error_explanation">
