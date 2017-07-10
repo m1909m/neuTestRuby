@@ -55,6 +55,7 @@ class CEventsController < ApplicationController
     @event = CEvent.find(@member.event_id)
     @room = Room.find(@event.room_id)
     puts(@room)
+    puts(@event.accountName)
     @user = User.where( email: @event.accountName)
     puts(@user)
     puts(@user.email)
