@@ -49,6 +49,20 @@ class CEventsController < ApplicationController
     @event.save
   end
 
+  def sendAcceptMail
+    @member = Member.find(params[:id])
+    @member.sendAccept = true
+    @event = CEvent.find(@member.event_id)
+    @room = Room.find(@event.room_id)
+    @user = User.where( email: @event.accountName)
+    ContactMailer.accept_event(@member, @event, @room, @user).deliver
+    if @member.save
+
+    else
+
+    end
+  end
+
   def new
     @c_event = CEvent.new
 

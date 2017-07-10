@@ -434,7 +434,7 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
         });
     };
     $scope.sendAccept = function(member) {
-        var url = "/administrator/rooms/event/mamber/send/" + member.id;
+        var url = "/administrator/rooms/event/member/send/" + member.id;
         $http({
             method: "GET",
             url: url
