@@ -34,6 +34,7 @@
       </div>
 
 <br>
+      <h2>Neuen Abonennten hinzufügen</h2>
       <%= form_for(@abo_newsletter, url: new_abo_path) do |f| %>
           <% if @abo_newsletter.errors.any? %>
               <div id="error_explanation">
@@ -62,7 +63,7 @@
             </div>
           -->
           <div class="actions">
-            <%= f.submit "Änderungen speichern", class: "btn btn-default" %>
+            <%= f.submit "Neuen Abonennten hinzufügen", class: "btn btn-default" %>
           </div>
       <% end %>
 
