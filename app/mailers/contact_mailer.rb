@@ -55,8 +55,8 @@ class ContactMailer < ActionMailer::Base
     @member = member
     @event = event
     @user = User.where( email: @event.accountName)
-    crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
-    @pass = @crypt.decrypt_and_verify(@user.pass)
+    @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
+    @pass = @crypt.decrypt_and_verify(@user[0].passwordEncrypt)
     @email = @member.eMail
     mail :to=> @email,
          :subject=> "Änderungen einer Veranstalltung von der VKM"
