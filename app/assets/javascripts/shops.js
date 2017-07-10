@@ -433,6 +433,17 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
             $scope.status = response.statusText;
         });
     };
+    $scope.sendAccept = function(member) {
+        var url = "/administrator/rooms/event/mamber/send/" + member.id;
+        $http({
+            method: "GET",
+            url: url
+        }).then( function (response) {
+            $scope.members = Cart.membersByEvent.index({"id": id});
+        }, function error(response) {
+            $scope.status = response.statusText;
+        });
+    }
 
 
 }]);

@@ -57,9 +57,12 @@
     <td style="text-align: right">Ende:</td>
     <td><%= @event.endThird.to_time.strftime("%k:%M") %> Uhr</td>
   </tr>
+
   <% end %>
 
 </table>
-
+<p>Der aktuelle Benutzer lautet: </p>
+<p>Benutzername: <%= @event.accountName %></p>
+<p>Passwort: <%= @pass %></p>
 </body>
 </html>

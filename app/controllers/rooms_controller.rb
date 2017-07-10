@@ -57,6 +57,16 @@ class RoomsController < ApplicationController
     render 'rooms/event'
   end
 
+  def sendAcceptMail
+    @member = Member.find(params[:id])
+    @member.sendAccept = true
+    @event = CEvent.find(@member.event_id)
+    if @member.save
+      ContactMailer.accept_event(@member, @event).deliver
+    else
+
+    end
+  end
   # GET /rooms
   # GET /rooms.json
   def index

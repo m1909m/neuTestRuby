@@ -18,7 +18,6 @@
 						  <td>
                 <p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b></p>
 
-								  
 								  <p><small>{{member.job}} aus {{member.place}}</small></p>
 								  
 								<p><b><i>Kontaktdaten</i></b><br />
@@ -53,7 +52,7 @@
 
 
               </td>
-              <td> </td>
+              <td><button class="btn btn-default" ng-show="!member.sendAccept" ng-click="sendAccept(member)" target="_self">Bestätigungsmail abschicken</button></td>
 					  </tr>
                   </table>
               </div>
