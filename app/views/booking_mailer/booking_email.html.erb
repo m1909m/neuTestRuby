@@ -18,28 +18,32 @@ Sie haben folgende Artikel bestellt:</p>
 %>
 <table>
   <thead>
-  <td>Artikel</td>
+  <td style="width: 250px;">Artikel</td>
   <td>Preis</td>
   <% if @anzahl %>
-    <td></td>
+
     <td>Anzahl</td>
+  <% else %>
+    <td></td>
   <% end %>
   </thead>
   <tbody>
   <% @articles.each do |a| %>
       <% @sum = @sum + a['sum'] %>
       <tr>
-        <td><%= a['title'] %></td>
-        <td><%= a['price'] %>0 €</td>
+        <td style="width: 250px;"><%= a['title'] %></td>
+        <td style="width: 50px;"><%= a['price'] %>0 €</td>
         <% if a['anzahl'] > 1 %>
-          <td></td>
+
           <td><%= a['anzahl'] %></td>
         <% end %>
+        <td></td>
       </tr>
   <% end %>
   <tr>
-    <td style="text-align: right;">Summe:</td>
-    <td><%= @sum %>0 €</td>
+    <td style="text-align: right; width: 250px;">Summe:</td>
+    <td style="width: 50px;"><%= @sum %>0 €</td>
+    <td>inkl. MwSt., zzgl.  Porto und Versandkosten</td>
   </tr>
   </tbody>
 </table>
