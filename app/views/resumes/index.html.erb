@@ -48,8 +48,7 @@
 
         <tr>
           <td><%= user.email %></td>
-          <td><%= link_to "Verwalten", "/dokumente/" + user.email, :target => "_self", class: "btn btn-default" %></td>
-          <td><%= link_to "Löschen",  "/dokumente/user/" + user.id.to_s, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
+          <td class="btn-group-vertical"><%= link_to "Verwalten", "/dokumente/" + user.email, :target => "_self", class: "btn btn-default" %><%= link_to "Löschen",  "/dokumente/user/" + user.id.to_s, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
         </tr>
 
     <% end %>

@@ -20,9 +20,7 @@
         <td><%= newsletter.newsHeader %></td>
         <td><%= newsletter.newsBody %></td>
         <td><%= newsletter.newsFooter %></td>
-        <td><%= link_to 'Anzeigen', newsletter %></td>
-        <td><%= link_to 'Bearbeiten', edit_newsletter_path(newsletter) %></td>
-        <td><%= link_to 'Löschen', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="btn-group-vertical"><%= link_to 'Anzeigen', newsletter %><%= link_to 'Bearbeiten', edit_newsletter_path(newsletter) %><%= link_to 'Löschen', newsletter, method: :delete, data: { confirm: 'Sind Sie sich sicher?' } %></td>
       </tr>
     <% end %>
   </tbody>

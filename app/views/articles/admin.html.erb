@@ -30,9 +30,7 @@
               <td><%= article.title %></td>
               <td>€ <%= article.price %></td>
               <td><%= article.count %></td>
-              <td><%= link_to 'Anzeigen', news %></td>
-              <td><%= link_to 'Bearbeiten', edit_news_path(news) %></td>
-              <td><%= link_to 'Löschen', news, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
+              <td class="btn-group-vertical"><%= link_to 'Anzeigen', news %><%= link_to 'Bearbeiten', edit_news_path(news) %><%= link_to 'Löschen', news, method: :delete, data: { confirm: 'Sind sie sich sicher?' } %></td>
             </tr>
         <% end %>
         </tbody>
