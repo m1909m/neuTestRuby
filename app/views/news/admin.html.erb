@@ -34,7 +34,7 @@
               <td><%= news.title %></td>
               <td><%= news.subTitle %></td>
               <td><%= truncate(ActionView::Base.full_sanitizer.sanitize(news.story.html_safe), length: 200) %></td>
-              <td class="btn-group-vertical"><%= link_to 'Anzeigen', news, class: "btn btn-default" %><%= link_to 'Bearbeiten', edit_news_path(news), :target => "_self", class: "btn btn-default" %><%= link_to 'Löschen', news, method: :delete, data: { confirm: 'Sind sie sich sicher \"' + news.title + '\" zu Löschen ?' }, class: "btn btn-default" %></td>
+              <td class="btn-group-vertical"><%= link_to 'Anzeigen', news, class: "btn btn-default" %><%= link_to 'Bearbeiten', edit_news_path(news), :target => "_self", class: "btn btn-default" %><%= link_to 'Löschen', news, method: :delete, data: { confirm: 'Sind sie sich sicher "' + news.title + '" zu Löschen ?' }, class: "btn btn-default" %></td>
             </tr>
         <% end %>
         </tbody>
