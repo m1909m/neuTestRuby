@@ -52,7 +52,8 @@
 
 
               </td>
-              <td ng-show="member.accept"><button class="btn btn-default" ng-show="!member.sendAccept" ng-click="sendAccept(member)" target="_self">Bestätigungsmail abschicken</button></td>
+              <td ng-show="member.accept"><button class="btn btn-default" ng-show="!member.sendAccept" ng-click="sendAccept(member)" target="_self">Bestätigungsmail abschicken</button><p ng-show="member.sendAccept">Bestätigungsmail wurde versendet</p></td>
+
               <td ng-show="!member.accept"></td>
 					  </tr>
                   </table>
