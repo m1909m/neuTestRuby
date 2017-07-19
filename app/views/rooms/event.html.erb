@@ -42,17 +42,18 @@
                 <p><b><i>Rechnungsanschrift</i></b><br />
                   <small>{{member.adresseR}}<br />
                     {{member.ortR}} <br />
-                    <div style="margin-top:15px;"> <br />E-Mail: {{member.emailR}}</div></small></p>
+                    <div style="margin-top:15px;"> <br /></div></small></p>
 
-                <p><b><i>Dienststelle</i></b><br />
-                  <small>{{member.einrichtungR}}<br /> <br /></small></p>
+                <p><b><i></i></b><br />
+                  <small><br /> <br /></small></p>
 
                 <p><b><i> </i></b><br />
                   <small> <br /> </small></p>
 
 
               </td>
-              <td><button class="btn btn-default" ng-show="!member.sendAccept" ng-click="sendAccept(member)" target="_self">Bestätigungsmail abschicken</button></td>
+              <td ng-show="member.accept"><button class="btn btn-default" ng-show="!member.sendAccept" ng-click="sendAccept(member)" target="_self">Bestätigungsmail abschicken</button></td>
+              <td ng-show="!member.accept"></td>
 					  </tr>
                   </table>
               </div>
