@@ -16,7 +16,7 @@ class AboNewslettersController < ApplicationController
   # GET /abo_newsletters/new
   def new
     @abo_newsletter = AboNewsletter.new
-    @newsletter = NewsContent.all.order(:sendtime)
+    @newsletter = NewsContent.all.order(sendtime: :desc)
   end
 
   # GET /abo_newsletters/1/edit
