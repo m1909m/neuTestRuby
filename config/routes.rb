@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   #resources :events
   devise_for :users
   resources :abo_newsletters
+
   resources :newsletters
   resources :news_contents
   get 'zugangsbereich/', to: "current#index"

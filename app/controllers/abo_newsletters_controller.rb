@@ -98,6 +98,19 @@ class AboNewslettersController < ApplicationController
     end
   end
 
+
+
+  def export
+    @abo_newsletters = AboNewsletter.order(:eMail)
+    respond_to do |format|
+
+      format.csv { send_data @abo_newsletters.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
+    end
+  end
+
+
+
   def signInNews
     @abo_newsletter = AboNewsletter.find(params[:id])
     @abo_newsletter.enable = true
