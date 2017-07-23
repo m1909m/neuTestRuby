@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
   resources :newsletters
   resources :news_contents
+  post "/news_contents/:id/edit", to: "news_contents#update"
   get 'zugangsbereich/', to: "current#index"
 
   get 'verband/vorstand/', to: "verbaand#vorstand"
