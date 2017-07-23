@@ -103,7 +103,7 @@ class AboNewslettersController < ApplicationController
   def export
     @abo_newsletters = AboNewsletter.order(:eMail)
     respond_to do |format|
-
+      format.html
       format.csv { send_data @abo_newsletters.to_csv }
    #   format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
