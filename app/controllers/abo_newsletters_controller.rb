@@ -104,11 +104,11 @@ class AboNewslettersController < ApplicationController
     @abo_newsletters = AboNewsletter.order(:eMail)
     respond_to do |format|
       #format.html
-      format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"abos-list\""
-        headers['Content-Type'] ||= 'text/csv'
-      end
-      #format.csv { send_data @abo_newsletters.to_csv }
+   #   format.csv do
+   #     headers['Content-Disposition'] = "attachment; filename=\"abos-list\""
+    #    headers['Content-Type'] ||= 'text/csv'
+     # end
+      format.csv { send_data @abo_newsletters.to_csv }
    #   format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
   end
