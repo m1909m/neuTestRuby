@@ -13,7 +13,7 @@
       <% @abo_newsletters.each do |abos| %>
           <Row>
             <Cell><Data ss:Type="String"><%= abos.eMail %></Data></Cell>
-            <Cell><Data ss:Type="String"><% if abos.enable == True %>Angemeldet<% else %> Abgemeldet <% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><% if(abos.enable == 1) %>Angemeldet<% else %> Abgemeldet <% end %></Data></Cell>
           </Row>
       <% end %>
     </Table>
