@@ -144,6 +144,7 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
             $('#warenkorb').css('background-color', '#ffd4b0');
         });
         $scope.articles = Cart.cards.index({"site": "batkf"});
+        $scope.cart = Cart.getItemsWaren();
     };
     /*
      $scope.$watch('addArticle', function () {
