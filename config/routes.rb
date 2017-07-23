@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   #resources :events
   devise_for :users
   resources :abo_newsletters
-  get 'abo/export', to: "abo_newsletters#export"
+  get 'abo/export', to: "abo_newsletters#export",default: {format: "csv"}
 
   resources :newsletters
   resources :news_contents
