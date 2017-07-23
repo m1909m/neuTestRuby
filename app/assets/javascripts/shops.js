@@ -100,7 +100,9 @@ shopApp.controller('shopController', ['$scope', 'Cart', '$window', function($sco
 
         $scope.articles = Cart.cards.index({"site": "batkf"});
         $scope.anzahl = 0;
+        $scope.cart = Cart.getItemsWaren();
     };
+    $scope.cart = Cart.getItemsWaren();
 
 
     //  Cart.addItems({"id": "1", "name": "Test 1", "price": 5 });
