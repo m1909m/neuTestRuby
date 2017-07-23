@@ -10,7 +10,7 @@
 <div class="col-sm-12">
 <h2>Abonennten des Newsletters</h2>
 <% if current_user.present? %>
-      <%= link_to 'Liste Exportieren',  abo_export_path(format: :xls) %>
+      <%= link_to 'Exportieren', abo_export_path(format: :xls), class: "btn btn-default"  %>
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
