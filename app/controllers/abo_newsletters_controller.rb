@@ -109,7 +109,7 @@ class AboNewslettersController < ApplicationController
     #    headers['Content-Type'] ||= 'text/csv'
      # end
       format.csv { send_data @abo_newsletters.to_csv }
-   #   format.xls # { send_data @products.to_csv(col_sep: "\t") }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
     end
   end
 
