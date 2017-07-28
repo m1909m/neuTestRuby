@@ -1,6 +1,6 @@
 <h1>Anmeldung für <b><%=@event.title%></b></h1>
 
-<%= form_for(member, :url => "administrator/rooms/event/members/" + @event.id.to_s) do |f| %>
+<%= form_for(@member, :url => "administrator/rooms/event/members/" + @event.id.to_s) do |f| %>
     <% if member.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(member.errors.count, "error") %> Fehler beim Speichern</h2>
