@@ -285,5 +285,10 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:number, :size, :building)
     end
+
+  def member_params
+    params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :einrichtungR, :adresseR, :ortR, :emailR)
+  end
+
 end
 
