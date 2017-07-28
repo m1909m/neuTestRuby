@@ -20,7 +20,7 @@
         <Cell><Data ss:Type="String">Unverträglichkeiten / Vegetarier</Data></Cell>
       </Row>
       <% @members.each do |member| %>
-          <% if @member.accept == TRUE %>
+          <% if member.accept == TRUE %>
             <Row>
               <Cell><Data ss:Type="String"><%= member.firstName %></Data></Cell>
               <Cell><Data ss:Type="String"><%= member.lastName %></Data></Cell>
