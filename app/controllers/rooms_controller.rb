@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  def angulaxr
+  def angular
 
     #@rooms = Room.all
     render 'rooms/index'
