@@ -90,7 +90,7 @@ Rails.application.routes.draw do
 
   get 'administrator/rooms/event/members/:id', to: "rooms#showMembers"
 
-  get '/members/:id/export', to: "member#export", default: {format: "csv"}, as: "member_export"
+  get '/members/:id/export', to: "members#export", default: {format: "csv"}, as: "member_export"
 
 #---------------------------
   get 'administrator/rooms/event/members/:id/neu', to: "rooms#new_member"
