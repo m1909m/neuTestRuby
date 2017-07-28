@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   #resources :events
   devise_for :users
   resources :abo_newsletters
-  get 'abo/export', to: "abo_newsletters#export",default: {format: "csv"}
+
+  get 'abo/export', to: "abo_newsletters#export", default: {format: "csv"}
 
   resources :newsletters
   resources :news_contents
@@ -88,6 +89,17 @@ Rails.application.routes.draw do
 
 
   get 'administrator/rooms/event/members/:id', to: "rooms#showMembers"
+
+  get '/members/:id/export', to: "member#export", default: {format: "csv"}
+
+#---------------------------
+  get 'administrator/rooms/event/members/:id/neu', to: "rooms#new_member"
+
+
+  post 'administrator/rooms/event/members/:id', to: "rooms#addMember"
+
+#-----------------------------------
+
   get 'administrator/rooms/event/:id', to: "rooms#edit"
   delete 'event/:id', to: "rooms#deleteEvent"
 

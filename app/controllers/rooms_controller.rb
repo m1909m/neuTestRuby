@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  def angular
+  def angulaxr
 
     #@rooms = Room.all
     render 'rooms/index'
@@ -54,7 +54,68 @@ class RoomsController < ApplicationController
   end
 
   def showMembers
+    @event = CEvent.find(params[:id])
     render 'rooms/event'
+  end
+
+  def new_member
+    @event = CEvent.find(params[:id])
+    @member = Member.new
+  end
+
+  def addMember
+    @member = Member.new(member_params)
+    if member_params[:nameR] != ""
+      @member.nameR = member_params[:nameR]
+    else
+      @member.nameR = @member.lastName
+    end
+
+    if member_params[:vornameR] != ""
+      @member.vornameR = member_params[:vornameR]
+    else
+      @member.vornameR = @member.firstName
+    end
+
+    if member_params[:vornameR] != ""
+      @member.einrichtungR = member_params[:einrichtungR]
+    else
+      @member.einrichtungR = @member.nameCompany
+    end
+
+    if member_params[:adresseR] != ""
+      @member.adresseR = member_params[:adresseR]
+    else
+      @member.adresseR = @member.street
+    end
+
+    if member_params[:ortR] != ""
+      @member.ortR = member_params[:ortR]
+    else
+      @member.ortR = @member.plz
+    end
+
+    if member_params[:emailR] != ""
+      @member.emailR = member_params[:emailR]
+    else
+      @member.emailR = @member.eMail
+    end
+
+
+
+
+    @event = CEvent.find(@member.event_id)
+    #  Rechnungsaanschrift
+    respond_to do |format|
+      if @member.save
+        flash[:success] = "Neuen Teilnehmer erfolgeich eingefügt."
+        format.html { redirect_to "administrator/rooms/event/members/" + @event.id.to_s }
+      else
+        format.html { render :new_member}
+        format.json { render json: @member.errors, status: :unprocessable_entity }
+
+      end
+    end
   end
 
 
@@ -185,7 +246,9 @@ class RoomsController < ApplicationController
     @id = @c_event.room_id
     @accounts = Account.where(accountName: @c_event.accountName)
     @accounts.destroy_all
-    @c_event.destroy
+    if @c_event.destroy
+      flash[:success] = "Veranstaltung " + @c_event.title + " wurde erfolgreich gelöscht"
+    end
     redirect_to :action => "calendar", :id => @id
   end
 

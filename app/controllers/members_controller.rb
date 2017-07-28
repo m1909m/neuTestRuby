@@ -93,6 +93,19 @@ class MembersController < ApplicationController
     end
   end
 
+  def export
+    @members = Member.where(event_id: params[:id])
+    respond_to do |format|
+      #format.html
+      #   format.csv do
+      #     headers['Content-Disposition'] = "attachment; filename=\"abos-list\""
+      #    headers['Content-Type'] ||= 'text/csv'
+      # end
+      format.csv { send_data @members.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
+    end
+  end
+
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update

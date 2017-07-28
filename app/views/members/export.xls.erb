@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Vorname</Data></Cell>
+        <Cell><Data ss:Type="String">Nachname</Data></Cell>
+        <Cell><Data ss:Type="String">Straße</Data></Cell>
+        <Cell><Data ss:Type="String">Ort</Data></Cell>
+        <Cell><Data ss:Type="String">Beruf</Data></Cell>
+        <Cell><Data ss:Type="String">Telefonnummer</Data></Cell>
+        <Cell><Data ss:Type="String">E-Mail-Adresse</Data></Cell>
+        <Cell><Data ss:Type="String">Zimmer</Data></Cell>
+        <Cell><Data ss:Type="String">Arbeitgeber</Data></Cell>
+        <Cell><Data ss:Type="String">Firmenadresse</Data></Cell>
+        <Cell><Data ss:Type="String">Unverträglichkeiten / Vegetarier</Data></Cell>
+      </Row>
+      <% @members.each do |member| %>
+          <% if @member.accept == TRUE %>
+            <Row>
+              <Cell><Data ss:Type="String"><%= member.firstName %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.lastName %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.street %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.plz %> <%= member.place %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.job %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.phone %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.eMail %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.room %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.nameCompany %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.streetCompany %>, <%= member.placeCompany %></Data></Cell>
+              <Cell><Data ss:Type="String"><%= member.veggie %></Data></Cell>
+            </Row>
+          <% end %>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+

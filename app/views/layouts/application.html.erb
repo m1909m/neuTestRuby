@@ -20,25 +20,6 @@
   <%= csrf_meta_tags %>
 
 
-  <!-- For third-generation iPad with high-resolution Retina display: -->
-  <!-- Size should be 144 x 144 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
-
-  <!-- For iPhone with high-resolution Retina display: -->
-  <!-- Size should be 114 x 114 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
-
-  <!-- For first- and second-generation iPad: -->
-  <!-- Size should be 72 x 72 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
-
-  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <!-- Size should be 57 x 57 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
-
-  <!-- For all other devices -->
-  <!-- Size should be 32 x 32 pixels -->
-  <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -158,14 +139,15 @@
             <div style="width: 100%; border-top:5px solid #f59d0e;">
 
               <a href="http://www.vrk.de/" target="_blank">
-                <img alt="bruder" class="img-responsive center-block" src="/bruderlogo.jpg" id="imgBruder" style="margin-bottom:10px; border: 2px solid rgba(0,0,0,0.4); max-width:100%; margin-top: 10px;">
-              </a>
+                <%= image_tag("bruderlogo.jpg", :alt => "bruder", :id=> "imgBruder", :class => "img-responsive center-block", :style => "margin-bottom:10px; border: 2px solid rgba(0,0,0,0.4); max-width:100%; margin-top: 10px;") %>
+             </a>
 
               <a class="" href="http://www.kzvk-dortmund.de/" target="_blank">
-                <img alt="kzyk" class="img-responsive center-block" src="/kzvk.jpg" id="imgK" style="border: 1px solid rgba(0,0,0,0.4); max-width:100%;">
+                <%= image_tag("kzvk.jpg", :alt => "kzyk", :id=> "imgK", :class => "img-responsive center-block", :style => "border: 1px solid rgba(0,0,0,0.4); max-width:100%;") %>
               </a>
               <a class="" href="http://www.aktion-mensch.de/" target="_blank">
-                <img alt="Siegel" class="img-responsive center-block" src="/siegel.png" id="imgSiegel" style="width:100%; max-width:100%; height:auto;"></a>
+                <%= image_tag("siegel.png", :alt => "Siegel", :id=> "imgSiegel", :class => "img-responsive center-block", :style => "width:100%; max-width:100%; height:auto;") %>
+              </a>
             </div>
             <footer class="bd-footer col-sm-4 col-md-2" style="text-align: right;">
               <a href="/informationen">Informationen </a>  |  <a href="/impressum"> Impressum</a>

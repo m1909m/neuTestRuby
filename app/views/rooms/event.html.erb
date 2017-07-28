@@ -1,5 +1,13 @@
   <div ng-controller="myEventController">
       <h1>Angemeldete Teilnehmer</h1>
+    <div class="list-group">
+      <%= link_to 'Exportieren', abo_export_path(format: :xls), class: "list-group-item"  %>
+    </div>
+    <div class="list-group">
+      <a href="<%= @event.id %>/neu/" class="list-group-item" target="_self">Neuen Teilnehmer hinzuf&uuml;gen</a>
+    </div>
+
+
       <div ng-show="!members.length">Keine Teilnehmer vorhanden</div>
       <div ng-repeat="member in members" style="margin: 5px;">
           <div class="list-group">
