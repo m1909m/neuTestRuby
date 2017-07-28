@@ -109,7 +109,7 @@ class RoomsController < ApplicationController
     respond_to do |format|
       if @member.save
         flash[:success] = "Neuen Teilnehmer erfolgeich eingefügt."
-        format.html { redirect_to "administrator/rooms/event/members/" + @event.id.to_s }
+        format.html { redirect_to "/administrator/rooms/event/members/" + @event.id.to_s }
       else
         format.html { render :new_member}
         format.json { render json: @member.errors, status: :unprocessable_entity }
