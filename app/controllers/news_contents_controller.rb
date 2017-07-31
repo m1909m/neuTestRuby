@@ -46,7 +46,7 @@ class NewsContentsController < ApplicationController
       end
       puts(@aboNewsletters)
       I18n.locale = :de
-      SendEmailJob.set(wait_until: @news_content.sendtime.to_time.strftime("%Y-%m-%d %k:%M:%S %z")).perform_later(@layout, @news_content,@mails)
+      SendEmailJob.set(wait_until: @news_content.sendtime.to_time).perform_later(@layout, @news_content,@mails)
       respond_to do |f|
         f.html { redirect_to news_contents_url, notice: 'News wurde erfolgreich erstellt'}
       end
