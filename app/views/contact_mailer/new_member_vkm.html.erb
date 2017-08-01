@@ -7,6 +7,7 @@
 <body>
 <h1>Neue Anmeldung zur Veranstaltung: "<%= @event.title %>"</h1>
 <p style="font-size: 1.2em;"><b>Veranstaltung: <%= @event.title %></b></p>
+<p style="font-size: 1.2em;"><b>Zeitraum: <%= @event.start.to_time.strftime("%d.%m.%Y %H:%M") %> - <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.endThird.to_time.strftime("%d.%m.%Y %H:%M") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.endSecond.to_time.strftime("%d.%m.%Y %H:%M") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y %H:%M") %> <% end %></b></p>
 <p style="font-size: 1.2em;"><b>Beschreibung: <%= @event.description %></b></p>
 <table>
 

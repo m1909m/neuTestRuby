@@ -94,7 +94,7 @@ class ContactMailer < ActionMailer::Base
     @member = member
     @event = event
     @email = @member.eMail
-    mail :to=> "elke.vonkolken@vkm-rwl.de",
+    mail :to=> "marian.vennewald@gds-medien.de",
          :subject=> "Neue Anmeldung zu einer Veranstalltung"
   end
 

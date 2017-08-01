@@ -33,7 +33,7 @@ class AboNewslettersController < ApplicationController
       if @abo_newsletter.save
         # TODOO Email link zum anmelden
         NewsMailer.anmelden_email(@abo_newsletter).deliver
-        flash[:notice] = 'Bitte bestätigen Sie in der kommenden Mail Ihre Identität.'
+        flash[:notice] = 'Bitte best&auml;tigen Sie in der kommenden Mail Ihre Identit&auml;t.'
         format.html { redirect_to "/abo_newsletters/new" }
       else
         flash[:error] = 'Fehler beim Abonieren des Newsletters. Bitte wenden Sie sich an vkm-rwl, oder versuchen Sie es erneut.'
@@ -62,8 +62,8 @@ class AboNewslettersController < ApplicationController
   def update
     respond_to do |format|
       if @abo_newsletter.update(abo_newsletter_params)
-        flash[:success] = 'Veränderungen wurden erfolgreich gespeichert.'
-        format.html { redirect_to abo_newsletters_path , success: 'Veränderungen für den Abonennt wurde erfolgreich gespeichert.' }
+        flash[:success] = 'Ver&auml;nderungen wurden erfolgreich gespeichert.'
+        format.html { redirect_to abo_newsletters_path , success: 'Ver&auml;nderungen f&uuml;r den Abonennt wurde erfolgreich gespeichert.' }
         format.json { render :show, status: :ok, location: @abo_newsletter }
       else
         format.html { render :edit }
@@ -77,7 +77,7 @@ class AboNewslettersController < ApplicationController
   def destroy
     @abo_newsletter.destroy
     respond_to do |format|
-      flash[:success] = 'Abonennt wurde erfolgreich gelöscht.'
+      flash[:success] = 'Abonennt wurde erfolgreich gel&ouml;scht.'
       format.html { redirect_to "/abo_newsletters" }
       format.json { head :no_content }
     end
@@ -89,10 +89,10 @@ class AboNewslettersController < ApplicationController
     @abo_newsletter.enable = false
     respond_to do |format|
       if @abo_newsletter.save
-        flash[:success] = 'Ihr Abo für den Newsletter wurde erfolgreich abgemeldet.'
+        flash[:success] = 'Ihr Abo f&uuml;r den Newsletter wurde erfolgreich abgemeldet.'
         format.html { redirect_to "/abo_newsletters/new" }
       else
-        flash[:error] = 'Ihr Abo für den Newsletter wurde nicht abgemeldet. Bittte wenden Sie sich an vkm-rwl'
+        flash[:error] = 'Ihr Abo f&uuml;r den Newsletter wurde nicht abgemeldet. Bittte wenden Sie sich an vkm-rwl'
         format.html { redirect_to "/abo_newsletters/new" }
       end
     end
@@ -120,10 +120,10 @@ class AboNewslettersController < ApplicationController
     @abo_newsletter.enable = true
     respond_to do |format|
       if @abo_newsletter.save
-        flash[:success] = 'Ihr Abo für den Newsletter wurde erfolgreich angemeldet.'
+        flash[:success] = 'Ihr Abo f&uuml;r den Newsletter wurde erfolgreich angemeldet.'
         format.html { redirect_to "/abo_newsletters/new" }
       else
-        flash[:error] = 'Ihr Abo für den Newsletter wurde nicht angemeldet. Bitte wenden Sie sich an vkm-rwl'
+        flash[:error] = 'Ihr Abo f&uuml;r den Newsletter wurde nicht angemeldet. Bitte wenden Sie sich an vkm-rwl'
         format.html { redirect_to "/abo_newsletters/new" }
       end
     end
