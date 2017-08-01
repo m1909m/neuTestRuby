@@ -26,7 +26,7 @@ class CEventsController < ApplicationController
 
   def byMail
     respond_to do |format|
-      format.json { render json: CEvent.where('start > ? ', Time.now) }
+      format.json { render json: CEvent.where('start > ? ', Time.now).order(:start) }
     end
   end
 
