@@ -74,6 +74,15 @@ class ContactMailer < ActionMailer::Base
         :subject => "Ihre Bestätigung zu der Veranstaltung \"" + @event.title + "\""
   end
 
+  def accept_event_not_user(member, event, room)
+    @member = member
+    @event = event
+    @room = room
+    @email = @member.eMail
+    mail :to => @email,
+         :subject => "Ihre Bestätigung zu der Veranstaltung \"" + @event.title + "\""
+  end
+
   def storno_event(member, event)
     @member = member
     @event = event
