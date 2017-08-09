@@ -60,7 +60,7 @@ class CEventsController < ApplicationController
       @pass = @crypt.decrypt_and_verify(@user[0].passwordEncrypt)
       ContactMailer.accept_event(@member, @event, @room, @user[0], @pass).deliver
     else
-      ContactMailer.accept_event(@member, @event, @room).deliver
+      ContactMailer.accept_event_not_user(@member, @event, @room).deliver
     end
 
     if @member.save
