@@ -14,7 +14,7 @@
 
           <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
             <div class="caption">
-              <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %></h3>
+              <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %><br><%= event.title %></h3>
 
               <% if event.description != "" && event.description != nil %><p><small>Beschreibung:</small><br /><%= event.description %></p><% end %>
               <%@rooms.each do |room|
@@ -31,7 +31,7 @@
            @color = true%>
           <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #f1f1f1;">
             <div class="caption">
-              <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %></h3>
+              <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %><br><%= event.title %></h3>
 
               <% if event.description != "" && event.description != nil %><p><small>Beschreibung:</small><br /><%= event.description %></p><% end %>
               <%@rooms.each do |room|
@@ -59,7 +59,7 @@
 
             <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="">
               <div class="caption">
-                <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %></h3>
+                <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %><br><%= event.title %></h3>
 
                 <% if event.description != "" && event.description != nil %><p><small>Beschreibung:<br /><%= event.description %></small></p><% end %>
                 <%@rooms.each do |room|
@@ -77,8 +77,7 @@
              @color = true%>
             <div class="thumbnail col-xs-12 col-sm-6 col-md-3" style="background-color: #f1f1f1;">
               <div class="caption">
-                <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %></h3>
-
+                <h3><% if event.endThird != "" && event.endThird != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endThird.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endThird.to_time.strftime("%H:%M") %> <% elsif event.endSecond != "" && event.endSecond != nil %> <%= event.start.to_time.strftime("%d.%m.%Y") %> – <%= event.endSecond.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.endSecond.to_time.strftime("%H:%M") %> <% else %> <%= event.end.to_time.strftime("%d.%m.%Y") %> <%= event.start.to_time.strftime("%H:%M") %> - <%= event.end.to_time.strftime("%H:%M") %> <% end %><br><%= event.title %></h3>
                 <% if event.description != "" && event.description != nil %><p><small>Beschreibung:<br /><%= event.description %></small></p><% end %>
                 <%@rooms.each do |room|
                   if(event.room_id == room.id) %>
