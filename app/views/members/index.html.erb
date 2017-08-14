@@ -19,9 +19,10 @@
               <%@rooms.each do |room|
                 if(event.room_id == room.id) %>
                   <p><%= room.building %></p>
+                      <p style="position:absolute; bottom: 1em; left: 1em;"><%= (event.maxSize - event.member) %> freie Pl&auml;tze</p>
                       <a href="/fortbildung/seminare/neu/<%=event.id%>" style="position: absolute;color: #f59d0e; bottom: 1em; right: 1em;">Anmelden</a>
                   <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
-              <% end %>
+                <% end %>
               <% end %>
             </div>
           </div>
@@ -34,6 +35,7 @@
               <%@rooms.each do |room|
                 if(event.room_id == room.id) %>
                       <p><%= room.building %></p>
+                      <p style="position:absolute; bottom: 1em; left: 1em;"><%= (event.maxSize - event.member) %> freie Pl&auml;tze</p>
                       <a href="/fortbildung/seminare/neu/<%=event.id%>" style="position: absolute;color: #f59d0e; bottom: 1em; right: 1em;">Anmelden</a>
                       <%#= link_to 'Anmelden', new_member_path(event), :style => 'float: right;color: #f4bfa5;' %>
             <% end %>
@@ -63,6 +65,7 @@
                         <p style="padding-top: 2px; border-top: 0.4px solid #f59d0e;">Die Anmeldung kann nicht Online erfolgen, da die Frist bereits abgelaufen ist.
                           Da noch Plätze zur Verfügung stehen, können Sie aber ggf. noch manuell angemeldet werden.
                           Melden Sie sich dafür bei unserer <a href="/verband/geschäftsstelle" style="color: #f59d0e;">Geschäftsstelle</a>.</p>
+                        <p style="position:absolute; bottom: 1em; left: 1em;"><%= (event.maxSize - event.member) %> freie Pl&auml;tze</p>
                     <% end %>
                 <% end %>
               </div>
@@ -79,6 +82,7 @@
                         <p style="padding-top: 2px; border-top: 0.4px solid #f59d0e;">Die Anmeldung kann nicht Online erfolgen, da die Frist bereits abgelaufen ist.
                           Da noch Plätze zur Verfügung stehen, können Sie aber ggf. noch manuell angemeldet werden.
                           Melden Sie sich dafür bei unserer <a href="/verband/geschäftsstelle" style="color: #f59d0e;">Geschäftsstelle</a>.</p>
+                        <p style="position:absolute; bottom: 1em; left: 1em;"><%= (event.maxSize - event.member) %> freie Pl&auml;tze</p>
                     <% end %>
                 <% end %>
               </div>
