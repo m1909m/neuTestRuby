@@ -1,7 +1,12 @@
+# encoding: UTF-8
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_filter :set_locale
 
+  def set_locale
+    I18n.locale = request.compatible_language_from ["uk", "ru", "de", "en"]
+  end
 
   def authenticate_admin_user!
     redirect_to new_user_session_path unless can?(:manage, :all)
