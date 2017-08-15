@@ -1,3 +1,5 @@
+Encoding.default_internal = 'utf-8'
+Encoding.default_external = 'utf-8'
 require_relative 'boot'
 
 require 'rails/all'
@@ -12,6 +14,7 @@ Bundler.require(*Rails.groups)
 
 module NeuTestRuby
   class Application < Rails::Application
+    config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components', 'bootstrap')
     config.assets.paths << Rails.root.join("vendor","assets", "fonts")
