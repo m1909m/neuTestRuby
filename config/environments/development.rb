@@ -8,6 +8,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.i18n.default_locale = :de
 
 
   config.active_job.queue_adapter = :delayed_job
@@ -66,7 +67,7 @@ Rails.application.configure do
       :port=> 587,
       :user_name=> 'verbandkirchlichermmitarbeiter@gmail.com',
       :password=> 'n6P9rbpu',
-      :domain=> "vkm.marianit.de",
+      :domain=> "vkm-rwl.de",
       :authentication=> "plain",
       :enable_starttls_auto=> true
   }
