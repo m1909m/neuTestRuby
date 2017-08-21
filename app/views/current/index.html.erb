@@ -2,7 +2,7 @@
   <h1>Zugangsbereich</h1>
 </div>
 <div class="col-xs-4 col-sm-3" style="text-align:right;"><br>
-	» <a href="/uploads/resume/attachment/31/hilfe.pdf" target="_blank" style="color:#f59d0e;">Hilfe</a>
+	» <a href="/uploads/resume/attachment/34/hilfe.pdf" target="_blank" style="color:#f59d0e;">Hilfe</a>
 </div>
 <div class="col-xs-12" style="margin-bottom: 1em;">
   <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
@@ -14,7 +14,7 @@
       <% if current_user.has_role?(:event) %>
 
       <% else %>
-          <p><strong>Folgende Bereiche können Sie bearbeiten:</strong></p>
+          <p><strong>Folgende Bereiche können Sie bearbeiten:</strong><p style="float: right;">» <a href="/users/edit" target="_blank" style="color:#f59d0e;">Benutzerdaten &auml;ndern</a></p> </p>
       <% end %>
 	  <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
       <div class="list-group">
