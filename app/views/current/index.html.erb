@@ -14,7 +14,7 @@
       <% if current_user.has_role?(:event) %>
 
       <% else %>
-          <p><strong>Folgende Bereiche können Sie bearbeiten:</strong><p style="float: right;">» <a href="/users/edit" target="_blank" style="color:#f59d0e;">Benutzerdaten &auml;ndern</a></p> </p>
+          <p><strong>Folgende Bereiche können Sie bearbeiten:</strong><a href="/users/edit" target="_blank" style="color:#f59d0e;float: right;">Benutzerdaten &auml;ndern</a></p>
       <% end %>
 	  <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
       <div class="list-group">
