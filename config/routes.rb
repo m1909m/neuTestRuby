@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get '/kontakt', to: "contact_forms#new"
   #resources :events
   devise_for :users
+  resources :password, :only => [:edit, :update]
   resources :abo_newsletters
 
   get 'abo/export', to: "abo_newsletters#export", default: {format: "csv"}
