@@ -126,4 +126,6 @@ Rails.application.routes.draw do
   delete '/dokumente/:id', to: "resumes#destroyDocument"
   post '/dokumente/user/new', to: "resumes#newUser"
   delete '/dokumente/user/:id', to: "resumes#destroyAcc"
+  get '/dokumente/:id/edit', to: "resumes#changePassword"
+  post '/dokumente/:id/edit', to: "resumes#changePasswordL"
 end

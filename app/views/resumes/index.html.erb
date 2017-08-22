@@ -38,7 +38,7 @@
     <thead>
     <tr>
       <th>Benutzername</th>
-      <th>Dokument</th>
+      <th> </th>
       <th> </th>
     </tr>
     </thead>
@@ -49,6 +49,7 @@
         <tr>
           <td><%= user.email %></td>
           <td><%= link_to "Verwalten", "/dokumente/" + user.email, :target => "_self", class: "btn btn-default" %></td>
+          <td><a target="_self" class="btn btn-default" href="/dokumente/<%=user.id %>/edit">Passwort &auml;ndern</a></td>
           <td><%= link_to "Löschen",  "/dokumente/user/" + user.id.to_s, method: :delete, class: "btn btn-danger", data: { confirm: "Sind Sie sich sicher \"#{user.email}\" zu Löschen?" } %></td>
         </tr>
 
