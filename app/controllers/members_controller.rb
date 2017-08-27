@@ -67,6 +67,7 @@ class MembersController < ApplicationController
     else
       @member.ortR = @member.plz
     end
+      @member.phoneD = "00000"
 
     if member_params[:emailR] != ""
       @member.emailR = member_params[:emailR]
