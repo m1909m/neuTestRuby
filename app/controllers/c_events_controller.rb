@@ -161,8 +161,8 @@ class CEventsController < ApplicationController
   def destroy
     @id = @c_event.room_id
     @accounts = Account.where(accountName: @c_event.accountName)
-
-    @members = Member.where(event_id: @c_event.id).where(accept: 1)
+    puts("MEMBERS")
+    @members = Member.where(event_id: @c_event.id).where(accept: true)
     puts(@members)
   #  if @members != nil && @members.length > 0
       @members.each do |m|
