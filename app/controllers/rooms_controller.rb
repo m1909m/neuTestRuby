@@ -447,6 +447,16 @@ class RoomsController < ApplicationController
 
     @accounts = Account.where(accountName: @c_event.accountName)
 
+    puts("MEMBERS")
+    @members = Member.where(event_id: @c_event.id).where(accept: true)
+    puts(@members)
+      if @members != nil && @members.length > 0
+    @members.each do |m|
+      ContactMailer.storno_event(m, @c_event).deliver
+    end
+
+     end
+
     @accounts.destroy_all
 
     @c_event.destroy
@@ -502,7 +512,7 @@ class RoomsController < ApplicationController
 
   def c_event_params
 
-    params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :dateL,:startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
+    params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :dateL, :nickname, :startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
 
   end
 
