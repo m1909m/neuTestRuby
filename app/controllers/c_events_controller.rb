@@ -49,11 +49,26 @@ class CEventsController < ApplicationController
     @event.save
   end
 
+  def anmelden
+    @member = Member.find(params[:id])
+    @event = CEvent.find(@member.event_id)
+    @member.accept = true
+    @member.save
+    members = @event.member
+    @event.member = members + 1
+    if @event.free = 1 && @event.maxSize <= @event.member
+      @event.free = 0
+    end
+    @event.save
+  end
+
   def sendAcceptMail
     @member = Member.find(params[:id])
     @member.sendAccept = true
     @event = CEvent.find(@member.event_id)
     @room = Room.find(@event.room_id)
+
+    logger.info("TEST")
     if @event.accountName != nil && @event.accountName != ""
       @user = User.where( email: @event.accountName)
       @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
@@ -122,14 +137,14 @@ class CEventsController < ApplicationController
       puts(current_user.email)
       if current_user.email == "admin@vkm.de" || current_user.email == "admin"
         @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
-        @pass = @crypt.decrypt_and_verify(@user.pass)
+        @pass = @crypt.decrypt_and_verify(@user.passwordEncrypt)
 
         ContactMailer.create_event("verbandkirchlichermmitarbeiter@gmail.com", @pass, @c_event).deliver
         flash[:success] = "Sie haben erfolgreich die Veranstaltung erstellt. Sie erhalten in k&uuml;rze eine E-Mail."
       else
  #       @key   = ActiveSupport::KeyGenerator.new('password').generate_key(ENV['salt'], 32)
         @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
-        ContactMailer.create_event(current_user.email, @crypt.decrypt_and_verify(@user.pass), @c_event).deliver
+        ContactMailer.create_event(current_user.email, @crypt.decrypt_and_verify(@user.passwordEncrypt), @c_event).deliver
         flash[:success] = "Sie haben erfolgreich die Veranstaltung erstellt. Sie erhalten in k&uuml;rze eine E-Mail."
       end
     end
@@ -146,13 +161,15 @@ class CEventsController < ApplicationController
   def destroy
     @id = @c_event.room_id
     @accounts = Account.where(accountName: @c_event.accountName)
-    @accounts.destroy_all
+
     @members = Member.where(event_id: @c_event.id).where(accept: 1)
+    puts(@members)
     if @members != nil && @members.length > 0
       @members.each do |m|
         ContactMailer.storno_event(m, @c_event).deliver
       end
     end
+    @accounts.destroy_all
     @c_event.destroy
    # redirect_to "/administrator/rooms/" + @id
 
