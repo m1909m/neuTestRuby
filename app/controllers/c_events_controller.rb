@@ -164,11 +164,11 @@ class CEventsController < ApplicationController
 
     @members = Member.where(event_id: @c_event.id).where(accept: 1)
     puts(@members)
-    if @members != nil && @members.length > 0
+  #  if @members != nil && @members.length > 0
       @members.each do |m|
         ContactMailer.storno_event(m, @c_event).deliver
       end
-    end
+   # end
     @accounts.destroy_all
     @c_event.destroy
    # redirect_to "/administrator/rooms/" + @id
