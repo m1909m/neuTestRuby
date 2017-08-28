@@ -41,39 +41,35 @@ class MembersController < ApplicationController
     if member_params[:nameR] != ""
       @member.nameR = member_params[:nameR]
     else
-      @member.nameR = @member.lastName
+      @member.nameR = ""
     end
 
     if member_params[:vornameR] != ""
       @member.vornameR = member_params[:vornameR]
     else
-      @member.vornameR = @member.firstName
+      @member.vornameR = ""
     end
 
-    if member_params[:vornameR] != ""
+    if member_params[:einrichtungR] != ""
       @member.einrichtungR = member_params[:einrichtungR]
     else
-      @member.einrichtungR = @member.nameCompany
+      @member.einrichtungR = ""
     end
 
     if member_params[:adresseR] != ""
       @member.adresseR = member_params[:adresseR]
     else
-      @member.adresseR = @member.street
+      @member.adresseR = ""
     end
 
     if member_params[:ortR] != ""
       @member.ortR = member_params[:ortR]
     else
-      @member.ortR = @member.plz
+      @member.ortR = ""
     end
-      @member.phoneD = "00000"
 
-    if member_params[:emailR] != ""
-      @member.emailR = member_params[:emailR]
-    else
-      @member.emailR = @member.eMail
-    end
+
+
 
 
 
