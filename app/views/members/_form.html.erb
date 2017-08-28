@@ -83,31 +83,31 @@
     <div class="form-group">
       <div class="col-sm-12" style="margin-bottom: 10px;">
         <label class="control-label" for="member_nameCompany">Straße und Hausnr.</label>
-        <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle" %>
+        <%= f.text_field :streetCompany, class: "form-control", type: "text", placeholder: "Straße und Hausnr." %>
       </div>
     </div>
       <div class="form-group">
         <div class="col-sm-12" style="margin-bottom: 10px;">
           <label class="control-label" for="member_nameCompany">PLZ und Ort</label>
-          <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle" %>
+          <%= f.text_field :placeCompany, class: "form-control", type: "text", placeholder: "PLZ und Ort" %>
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-12" style="margin-bottom: 10px;">
-          <label class="control-label" for="member_nameCompany">E-Mail-Adresse</label>
-          <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle" %>
+          <label class="control-label" for="member_emailD">E-Mail-Adresse</label>
+          <input class="form-control" placeholder="E-Mail-Adresse" name="member[emailD]" id="member_emailD" type="email">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-12" style="margin-bottom: 10px;">
-          <label class="control-label" for="member_nameCompany">Telefonnr.</label>
-          <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle" %>
+          <label class="control-label" for="member_telefonD">Telefonnr.</label>
+          <input class="form-control" placeholder="Telefonnr." name="member[phoneD]" id="member_telefonD" type="text">
         </div>
       </div>
       <div class="form-group">
-        <div class="col-sm-12" style="margin-bottom: 10px;">
-          <label class="control-label" for="member_nameCompany">Fax</label>
-          <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle" %>
+        <input class="col-sm-12" style="margin-bottom: 10px;">
+          <label class="control-label" for="member_faxD">Fax</label>
+          <input class="form-control" placeholder="Fax." name="member[faxD]" id="member_faxD" type="text">
         </div>
       </div>
     </div>
@@ -171,7 +171,7 @@
       </div>
       <div class="form-group" >
         <label for="email" >Kostenstelle/Bestellkennzeichen</label>
-        <input id="email" class="form-control" style="display: none;" type="text" name="member[emailR]" placeholder="E-Mail-Adresse" />
+        <input id="email" class="form-control" type="text" name="member[emailR]" placeholder="E-Mail-Adresse" />
       </div>
     </div>
 		
