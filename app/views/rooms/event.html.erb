@@ -8,6 +8,7 @@
     </div>
 
 
+
       <div ng-show="!members.length">Keine Teilnehmer vorhanden</div>
       <div ng-repeat="member in members" style="margin: 5px;">
           <div class="list-group">
@@ -37,7 +38,10 @@
 								  <p><b><i>Dienststelle</i></b><br />
 							  <small>{{member.nameCompany}}<br />
 						  {{member.streetCompany}}<br />
-							  {{member.placeCompany}}</small></p>
+							  {{member.placeCompany}}<br />
+                  E-Mail: {{member.eMailD}}<br />
+                Telefon: {{member.phoneD }}<br />
+                Fax: {{member.faxD}}</small></p>
 					  			
 								  <p><b><i>Buchung</i></b><br />
 							  <small>Zimmer: {{member.room}}<br />
