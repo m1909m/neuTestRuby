@@ -160,7 +160,7 @@ class CEventsController < ApplicationController
 
   def destroy
     @id = @c_event.room_id
-    @accounts = Account.where(accountName: @c_event.accountName)
+    #@accounts = Account.where(accountName: @c_event.accountName)
     puts("MEMBERS")
     @members = Member.where(event_id: @c_event.id).where(accept: true)
     puts(@members)
@@ -169,7 +169,7 @@ class CEventsController < ApplicationController
         ContactMailer.storno_event(m, @c_event).deliver
       end
    # end
-    @accounts.destroy_all
+  #  @accounts.destroy_all
     @c_event.destroy
    # redirect_to "/administrator/rooms/" + @id
 
