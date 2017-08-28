@@ -68,6 +68,12 @@ class MembersController < ApplicationController
       @member.ortR = ""
     end
 
+    if member_params[:payed] != ""
+      @member.payed = member_params[:payed]
+    else
+      @member.payed = ""
+    end
+
 
 
 
