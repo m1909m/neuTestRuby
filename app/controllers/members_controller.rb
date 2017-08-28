@@ -138,7 +138,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :eMailD, :phoneD, :faxD, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :einrichtungR, :adresseR, :ortR, :emailR, :kostenstelle)
+      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :eMailD, :phoneD, :faxD, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :einrichtungR, :adresseR, :ortR, :emailR, :payed)
     end
 end
 
