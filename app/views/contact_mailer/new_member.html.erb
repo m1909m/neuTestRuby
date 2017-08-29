@@ -23,17 +23,10 @@
 </p>
 <p>Ihre angemeldeten Daten:</p>
 <table>
-
-
-
   <tr>
 
-    <td><p><b><i><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></i></b></p>
-
-
-
-
-
+    <td>
+      <p><b><i><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></i></b></p>
       <p><small>Beruf: <%= @member.job %></small></p>
 
 
@@ -68,41 +61,18 @@
         <small>Zimmer: <%= @member.room %><br>
 
           Unverträglichkeiten / Vegetarier: <%= @member.veggie%></small></p>
-
-
-
     </td>
 
-    <td><p><b>Rechnungsanschrift</b></p><p><i><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></i></p>
+    <td>
+      <p><b>Rechnungsanschrift</b></p>
+      <p><%= @member.nameR%></p>
+      <p><%= @member.adresseR %></p>
+      <p><%= @member.ortR %></p>
 
-
-
-
-
-      <p><small><%= @member.nameR%></small></p>
-
-
-
-
-
-      <p><b><i>Kontaktdaten</i></b><br>
-
-        <small><%= @member.adresseR %><br>
-
-          <%= @member.ortR %> <br>
-
-          <div style="margin-top:15px;">Kostenstelle/Bestellkennzeichen: <%= @member.payed %></div></small></p>
-
-
-
-      <p><b><i></i></b><br>
-
-        <small></small></p>
-
-
-
-
-
+      <% if @member.payed != "" %>
+          <br />
+          <p>Kostenstelle/Bestellkennzeichen: <%= @member.payed %></p>
+      <% end %>
     </td>
 
   </tr>
