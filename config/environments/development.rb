@@ -118,29 +118,28 @@ Rails.application.configure do
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-
-
   config.action_mailer.delivery_method = :smtp
 
-
-
   config.action_mailer.smtp_settings = {
-
       :address=> "smtp.gmail.com",
-
       :port=> 587,
-
       :user_name=> 'verbandkirchlichermmitarbeiter@gmail.com',
-
       :password=> 'n6P9rbpu',
-
       :domain=> "vkm-rwl.de",
-
       :authentication=> "plain",
-
       :enable_starttls_auto=> true
-
   }
+
+  config.log_formatter = ::Logger::Formatter.new
+  config.log_level = :info
+  config.log_tags = [ :request_id ]
+
+
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
 
 end
 

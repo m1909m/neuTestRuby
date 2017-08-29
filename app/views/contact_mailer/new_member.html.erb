@@ -14,9 +14,9 @@
 
 <h1>Anmeldung zur Veranstaltung: "<%= @event.title %>"</h1>
 
-<p style="font-size: 1.2em;"><b>Veranstaltung: <%= @event.title %></b></p>
+<h2>Veranstaltung: <%= @event.title %></h2>
 
-<p style="font-size: 1.2em;"><b>Beschreibung: <%= @event.description %></b></p>
+<h3>Beschreibung: <%= @event.description %></h3>
 
 
 <p>Seminartermin: <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>
@@ -25,21 +25,21 @@
 <table>
   <tr>
     <td colspan="2">
-      <p><b><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></b></p>
-      <p><small>Beruf: <%= @member.job %></small></p>
+      <h3><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></h3>
+      <p>Beruf: <%= @member.job %></p>
     </td>
   </tr>
   <tr>
-    <td>
-      <p><b>Kontaktdaten</b></p>
+    <td valign="top">
+      <h3>Kontaktdaten</h3>
       <%= @member.street %><br />
       <%= @member.plz %> <%= @member.place %><br />
       <br />
       Telefon: <%= @member.phone %><br />
       E-Mail:  <%= @member.eMail %>
     </td>
-    <td>
-      <p><b>Rechnungsanschrift</b></p>
+    <td valign="top">
+      <h3>Rechnungsanschrift</h3>
       <%= @member.nameR %><br />
       <%= @member.adresseR %><br />
       <%= @member.ortR %><br />
@@ -51,8 +51,8 @@
     </td>
   </tr>
   <tr>
-    <td>
-      <p><b>Dienststelle</b></p><br>
+    <td valign="top">
+      <h3>Dienststelle</h3>
       <%= @member.nameCompany %><br>
       <%= @member.streetCompany %><br>
       <%= @member.placeCompany %><br />
@@ -60,17 +60,17 @@
       Telefon: <%= @member.phoneD  %><br />
       Fax: <%= @member.faxD %>
     </td>
-    <td>
+    <td valign="top">
 
     </td>
   </tr>
   <tr>
-    <td>
-      <p><b>Buchung</b></p>
+    <td valign="top">
+      <h3>Buchung</h3>
       Zimmer: <%= @member.room %><br>
       Unverträglichkeiten / Vegetarier: <%= @member.veggie %>
     </td>
-    <td>
+    <td valign="top">
     </td>
   </tr>
 </table>
