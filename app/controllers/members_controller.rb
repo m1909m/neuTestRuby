@@ -78,11 +78,11 @@ class MembersController < ApplicationController
 
     @member = Member.new(member_params)
 
-    if member_params[:switch] == 'privat'
+    if params[:switch] == 'privat'
       @member.nameR = member_params[:firstName] + " " +  member_params[:lastName]
       @member.adresseR = member_params[:street]
       @member.ortR = member_params[:plz]
-    elsif member_params[:switch] == 'dienst'
+    elsif params[:switch] == 'dienst'
       @member.nameR = member_params[:nameCompany]
       @member.adresseR = member_params[:streetCompany]
       @member.ortR = member_params[:placeCompany]
