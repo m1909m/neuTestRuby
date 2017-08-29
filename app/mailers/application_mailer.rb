@@ -1,4 +1,8 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'news@vkm.com'
+
+  default from: 'info@vkm-rwl.com'
+
   layout 'mailer'
+
 end
+

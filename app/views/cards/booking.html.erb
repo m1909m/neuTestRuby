@@ -1,108 +1,215 @@
 ﻿<div ng-controller="bookingContainer" >
 
+
+
   <h1>Warenkorb</h1>
+
+
 
   <div ng-hide="cart.length" class="alert alert-info">Der Warenkorb ist noch leer.</div>
 
+
+
   <table ng-show="cart.length" class="table">
+
     <tr ng-repeat="item in cart track by $index">
+
       <td>{{item.title}}</td>
+
       <td>{{item.anzahl }}</td>
+
       <td>{{item.sum | currency: '€'}}</td>
+
       <td><button class="btn btn-danger btn-sm"  ng-click="removeArticle(item)">Entfernen</button></td>
 
+
+
     </tr>
+
     <tr ng-show="cart.length">
+
       <td></td>
+
       <td></td>
+
       <td>Summe: {{ sum  | currency: '€'}}</td>
+
       <td><button class="btn btn-danger btn-sm"  ng-click="removeAllArticles()">Alle Artikel Entfernen</button></td>
+
     </tr>
+
   </table>
+
+
+
 
 
 <h2>Lieferanschrift</h2>
 
+
+
   <form action="/cards" ng-submit="removeAllArticlesForms()" onload="toggle_form_element()" accept-charset="UTF-8" method="post">
+
     <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
+
+
     <!-- Lieferanschrift -->
+
     <input class="hidden" name="articles" value="{{cartSend}}" type="hidden"/>
+
     <div class="form-group">
+
       <label for="name">Name</label>
+
       <input id="name" type="text" name="newPerson[name]" class="form-control" placeholder="Name" required/>
+
     </div>
+
     <div class="form-group">
+
       <label for="vorname">Vorname</label>
+
       <input id="vorname" type="text" name="newPerson[vorname]" class="form-control" placeholder="Vorname" required/>
+
     </div>
+
     <div class="form-group">
+
       <label for="dienststelle">Dienststelle <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+
       <input id="dienststelle" class="form-control" type="text" name="newPerson[dienststelle]" placeholder="Dienststelle" />
+
     </div>
+
     <div class="form-group">
+
       <label for="adresse">Straße und Hausnr.</label>
+
       <input id="adresse" class="form-control" type="text" name="newPerson[adresse]" placeholder="Straße und Hausnr." required/>
+
     </div>
+
     <div class="form-group">
+
       <label for="ort">PLZ und Ort</label>
+
       <input id="ort" class="form-control" type="text" name="newPerson[ort]" placeholder="PLZ und Ort" required/>
+
     </div>
+
     <div class="form-group">
+
       <label for="email">E-Mail-Adresse</label>
+
       <input id="email" class="form-control" type="text" name="newPerson[email]" placeholder="E-Mail-Adresse" required/>
+
     </div>
+
     <div class="form-group">
+
       <input type="radio" id="lieferanschrift" name="switch" value="Lieferanschrift" onclick="toggle_form_element()" style="float:left;" required checked>
+
       <label for="lieferanschrift" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Rechnungsanschrift</label>
+
       <div  style="clear:both;"></div>
+
       <input type="radio" id="rechnungsanschrift" name="switch" value="Rechnungsanschrift" onclick="toggle_form_element()" style="float:left;" required>
+
       <label for="rechnungsanschrift" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
+
       <div  style="clear:both;"></div>
+
     </div>
+
+
 
     <div id="vipInputContainer" style="display:none;">
+
       <h2>Rechnungsanschrift</h2>
+
       <!-- Rechnungsanschrift -->
+
       <div class="form-group">
-        <label for="name">Rechnungsanschrift</label>
-        <input id="name" type="text" name="newPerson[nameR]" class="form-control" placeholder="Rechnungsanschrift" />
+
+        <label for="name">Name des Rechnungstr&auml;gers</label>
+
+        <input id="name" type="text" name="newPerson[nameR]" class="form-control" placeholder="Name des Rechnungstr&auml;gers" />
+
       </div>
+
       <div class="form-group" style="display: none;">
+
         <label for="vorname" style="display: none;">Vorname</label>
+
         <input id="vorname" type="text" name="newPerson[vornameR]" style="display: none;" class="form-control" placeholder="Vorname" />
+
       </div>
+
       <div class="form-group" style="display: none;">
+
         <label for="dienststelle" style="display: none;">Dienststelle</label>
+
         <input id="dienststelle" class="form-control" style="display: none;" type="text" name="newPerson[dienststelleR]" placeholder="Dienststelle" />
+
       </div>
+
       <div class="form-group">
+
         <label for="adresse">Straße und Hausnr.</label>
+
         <input id="adresse" class="form-control" type="text" name="newPerson[adresseR]" placeholder="Straße und Hausnr." />
+
       </div>
+
       <div class="form-group">
+
         <label for="ort">PLZ und Ort</label>
+
         <input id="ort" class="form-control" type="text" name="newPerson[ortR]" placeholder="PLZ und Ort" />
+
       </div>
+
       <div class="form-group" style="display: none;">
+
         <label for="email" style="display: none;">E-Mail-Adresse</label>
+
         <input id="email" style="display: none;" class="form-control" type="text" name="newPerson[emailR]" placeholder="E-Mail-Adresse" />
+
       </div>
+
     </div>
+
     <div class="form-group well">
+
       <p>Bitte beachten Sie, dass je nach Bestellmenge noch entsprechende Versandkosten berechnet werden.<br />Bei Rückfragen dazu, wenden Sie sich bitte an unsere Geschäftsstelle.</p>
+
     </div>
+
     <button type="submit" class="btn btn-success">Verbindlich bestellen</button>
+
   </form>
+
 </div>
 
+
+
 <!-- JavaScript -->
+
   <script type="text/javascript">
+
     function toggle_form_element() {
+
       if (document.getElementsByName('switch')[0].checked) {
+
         document.getElementById('vipInputContainer').style.display = 'none';
+
       } else {
+
         document.getElementById('vipInputContainer').style.display = 'block';
+
       }
+
     }
+
   </script>

@@ -1,315 +1,630 @@
 // @import "twitter/bootstrap/bootstrap";
 
+
+
 @import "bootstrap-sprockets";
+
 @import "bootstrap";
 
+
+
 #imgSiegel {
+
   max-width: 150px !important;
+
 }
+
+
 
 #fixed {
+
   position: fixed;
+
 }
+
 #changeLogo {
+
   display: none;
+
   width: 5%;
+
   padding: 5px;
+
 }
+
 #changeLogo img {
+
   margin-top: 0.5em;
+
   width: 100%;
+
 }
+
 #changeLogoHeader {
+
   position: relative;
+
   display: none;
+
   float: left;
+
   width: 15%;
+
   margin-left: 15px;
+
   padding: 0px;
+
   margin-top: 8px;
+
   margin-bottom: 8px;
+
   background-color: transparent;
+
   border: 1px solid transparent;
+
   border-radius: 4px;
+
 }
+
 #navbar-right {
+
   background-color: #feecde;
+
  // border-top: 5px solid #f59d0e;
+
   padding: 20px;
+
   margin-top: 0px;
+
   -webkit-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   -moz-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
 }
+
 #navbar-right .nav {
+
   margin-bottom: 0px;
+
 }
+
 #navbar-right .bd-footer {
+
   width:100%;
+
   text-align: center !important;
+
   bottom: 0px;
+
 }
+
+
 
 #navbar-right ul li {
+
   border-top: 5px solid #f59d0e;
+
   padding-left: 5px;
+
   margin-bottom: 0px;
+
   font-size: 1.2em;
+
 }
+
+
 
 .naviDropdown {
+
   border-top: 5px solid #f59d0e;
+
   border-radius: 4px;
+
   min-width: 100%;
+
 }
+
+
 
 .naviDropdown li {
+
   width: 100% !important;
+
   text-align: left !important;
+
 }
+
+
 
 #navbar-right ul li a {
+
   color: #626464;
+
   padding-top: 8.5px;
+
   padding-bottom: 5px;
+
   padding-left: 15px;
+
 }
+
+
 
 #clickWarenkorb {
+
   position: relative;
+
   display: block;
+
   padding: 10px 15px;
+
   text-decoration: none;
+
   cursor: pointer;
+
   color: #626464;
+
 }
+
+
 
 #clickWarenkorb:hover {
+
   color: #626464;
+
   background-color: #eeeeee;
+
 }
+
+
 
 #modalWarenkorb {
+
   position: absolute;
+
   width: 350px;
+
   height: 350px;
+
   left: -350px;
+
   overflow: auto;
+
   z-index: 40;
+
   top: 0px;
+
   background-color: white;
+
   border-radius: 5px;
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
 }
+
 a {
+
   color: #626464;
+
 }
+
+
 
 .navbar-default {
+
   background-color: white;
+
   z-index: 30;
+
   border: 0px;
+
   position: sticky;
+
   top: 0px;
+
 }
+
+
 
 .navbar-default ul li a:hover {
+
   color: #f5aa30 !important;
+
 }
+
+
 
 .open .dropdown-toggle {
+
   color: #f5aa30 !important;
+
 }
+
+
 
 .navbar-default ul li a:active {
+
   color: #f5aa30 !important;
+
   background-color: transparent;
+
   border: 0px;
+
 }
+
+
 
 .container-fluid h1 {
+
   color: #c2c3c1;
+
 }
+
+
 
 .thumbnail {
+
   -webkit-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   -moz-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   background-color: #fdfdfd;
+
   width: 100%;
+
   max-width: 300px;
+
   margin: 10px 20px 10px 0;
+
   height: 250px;
+
 }
+
+
 
 .thumbnail:hover {
+
   -webkit-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   -moz-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   background-color: #fdfdfd;
+
   width: 100%;
+
   max-width: 300px;
+
   margin: 10px 20px 10px 0;
+
   height: 250px;
+
 }
+
+
 
 .caption h3 {
+
   font-size: 1.1em;
+
 }
+
+
 
 .caption p {
-  font-size: 0.8em;
+
+  font-size: 0.7em;
+
 }
+
+
 
 #event .caption h3 {
+
   font-size: 1.0em;
+
 }
+
+
 
 #event .thumbnail {
+
   -webkit-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   -moz-box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   box-shadow: 3px 3px 5px -4px rgba(0,0,0,0.7);
+
   background-color: #fdfdfd;
+
   width: 100%;
+
   max-width: 300px;
+
   margin: 10px 20px 10px 0;
+
   height: 300px;
+
 }
+
+
 
 .minus {
+
   list-style: none;
+
 }
+
 .minus li {
+
   margin-left: 0px;
+
 }
+
+
 
 .minus li:before {
+
   content: "-";
+
   margin: 0 8px 0 -13px;
+
 }
+
+
 
 .plus {
+
   list-style: none;
-}
-.plus li {
-  margin-left: 0px;
+
 }
 
-.plus li:before {
-  content: "+";
-  margin: 0 8px 0 -18px;
+.plus li {
+
+  margin-left: 0px;
+
 }
+
+
+
+.plus li:before {
+
+  content: "+";
+
+  margin: 0 8px 0 -18px;
+
+}
+
+
+
 
 
 @media (max-width: 576px) {
+
   #fixed {
+
     position: relative;
+
   }
+
 }
 
+
+
 //------------------------------
+
+
 
 @media (min-width: 576px) {
+
   .mehrspaltig {
+
     width: 100%;
+
     -moz-column-count: 0;
+
     -webkit-column-count: 0;
+
     column-count: 0;
+
     padding: 1em;
+
   }
+
   #fixed {
+
     position: relative;
+
+  }
+
+
+
+  .navbar-default ul li {
+
+    font-size: 1.0em;
+
   }
 
   .navbar-default ul li {
+
     font-size: 1.0em;
+
   }
-  .navbar-default ul li {
-    font-size: 1.0em;
-  }
+
 }
+
 //-----------------------------
+
 @media (min-width: 768px) {
+
   .container-fluid {
+
     padding-left: 0.5em;
+
   }
+
   .topSize {
+
     margin-top: 150px;
+
   }
 
+
+
   .navbar-default ul li {
+
     width: 20%;
+
     text-align: center;
-  }
-  .mehrspaltig {
-    width: 100%;
-    -moz-column-count: 0;
-    -webkit-column-count: 0;
-    column-count: 0;
-    padding: 1em;
-  }
-  #fixed {
-    position: relative;
+
   }
 
+  .mehrspaltig {
+
+    width: 100%;
+
+    -moz-column-count: 0;
+
+    -webkit-column-count: 0;
+
+    column-count: 0;
+
+    padding: 1em;
+
+  }
+
+  #fixed {
+
+    position: relative;
+
+  }
+
+
+
   .navbar-default ul li {
+
     font-size: 0.8em;
+
   }
+
   nav li {
+
     font-size: 0.8em !important;
+
   }
+
 }
+
+
 
 //--------------------------------
+
 @media (min-width: 992px) {
+
   .mehrspaltig {
+
     width: 100%;
+
     -moz-column-count: 2;
+
     -webkit-column-count: 2;
+
     column-count: 2;
+
     padding: 1em;
+
   }
+
   #fixed {
+
     position: fixed;
+
     width: 22% ;
+
     margin-left: 78%;
+
   }
+
   .container {
+
     width: 79%;
+
   }
+
   .navbar-default ul li {
+
     font-size: 0.67em;
+
   }
+
+
 
   #navbar-right {
+
     font-size: 0.8em !important;
+
   }
+
   #navbar-right footer{
+
     font-size: 0.8em;
+
   }
 
+
+
 }
+
 //------------------------------
+
 @media (min-width: 1200px) {
+
   #fixed {
+
     position: fixed;
+
     width: 19% ;
+
     margin-left: 81%;
+
   }
+
   .navbar-default ul li {
+
     font-size: 1.2em;
+
   }
+
   nav li {
+
     font-size: 1.2em !important;
+
   }
+
   .container {
+
     width: 81%;
+
   }
+
   #changeLogo img {
+
     margin-top: 0.2em;
+
     max-width: 80px;
+
   }
+
+
+
 
 
 }
+
+
 

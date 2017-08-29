@@ -1,50 +1,100 @@
 <div class="col-xs-12">
+
   <h1>Newsletter abonnieren</h1>
+
 </div>
+
 <div class="col-xs-12" style="margin-bottom: 1em;">
+
   <%= image_tag("Titelbild_Newsletter.jpg", :alt => "Newsletter", :class => "img-responsive center-block") %>
 
+
+
 </div>
+
 <div class="col-sm-12">
+
   <p id="notice"><%= notice %></p>
+
   <%= form_for(@abo_newsletter) do |f| %>
+
       <% if @abo_newsletter.errors.any? %>
+
           <div id="error_explanation">
+
             <h2><%= pluralize(@abo_newsletter.errors.count, "error") %> prohibited this abo_newsletter from being saved:</h2>
 
+
+
             <ul>
+
               <% @abo_newsletter.errors.full_messages.each do |message| %>
+
                   <li><%= message %></li>
+
               <% end %>
+
             </ul>
+
           </div>
+
       <% end %>
 
+
+
       <div class="field form-group">
+
         <%= f.label :eMail, "E-Mail Adresse", class: "control-label" %>
+
         <%= f.email_field :eMail, class: "form-control" %>
+
       </div>
+
 <!--
+
       <div class="form-group checkbox">
+
         <label> f.check_box :enable %>Angemeldet</label>
+
       </div> -->
+
       <!--
+
         <div class="field">
+
           <#%= f.label :newsletter_id %>
+
           <#%= f.text_field :newsletter_id %>
+
         </div>
+
       -->
+
       <div class="actions">
+
         <%= f.submit "Newsletter Abonieren", class: "btn btn-default" %>
+
       </div>
+
   <% end %>
+
 </div>
+
 <div class="col-sm-12">
+
   <h3>Newsletter Archiv</h3>
+
   <% @newsletter.each do |n| %>
+
     » <a href="../news_contents/<%=n.id%>" style="color: #f59d0e;"><%= n.title %></a><br />
+
   <% end %>
+
 </div>
+
 <% if current_user.present? %>
 
+
+
 <% end %>
+

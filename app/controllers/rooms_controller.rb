@@ -45,9 +45,9 @@ class RoomsController < ApplicationController
     respond_to do |format|
 
       if @room.update(room_params)
-        flash[:success] = "Raumdaten wurde erfolgreich verÃ¤ndert"
+	flash[:success] = "Raumdaten wurde erfolgreich verändert"
 
-        format.html { redirect_to "administrator/rooms" }
+        format.html { redirect_to "/administrator/rooms" }
 
       end
 
@@ -60,8 +60,6 @@ class RoomsController < ApplicationController
   def angular
 
 
-
-    #@rooms = Room.all
 
     render 'rooms/index'
 
@@ -103,6 +101,7 @@ class RoomsController < ApplicationController
 
     @users = User.with_role(:event)
 
+
     render'rooms/neuEvent'
 
   end
@@ -117,48 +116,49 @@ class RoomsController < ApplicationController
   end
 
 
-
   def newMember
     @event = CEvent.find(params[:id])
     @member = Member.new
   end
+
+
 
   def createMember
     @member = Member.new(member_params)
     if member_params[:nameR] != ""
       @member.nameR = member_params[:nameR]
     else
-      @member.nameR = @member.lastName
+      @member.nameR = ""
     end
 
     if member_params[:vornameR] != ""
       @member.vornameR = member_params[:vornameR]
     else
-      @member.vornameR = @member.firstName
+      @member.vornameR = ""
     end
 
     if member_params[:vornameR] != ""
       @member.einrichtungR = member_params[:einrichtungR]
     else
-      @member.einrichtungR = @member.nameCompany
+      @member.einrichtungR = ""
     end
 
     if member_params[:adresseR] != ""
       @member.adresseR = member_params[:adresseR]
     else
-      @member.adresseR = @member.street
+      @member.adresseR = ""
     end
 
     if member_params[:ortR] != ""
       @member.ortR = member_params[:ortR]
     else
-      @member.ortR = @member.plz
+      @member.ortR = ""
     end
 
     if member_params[:emailR] != ""
       @member.emailR = member_params[:emailR]
     else
-      @member.emailR = @member.eMail
+      @member.emailR = ""
     end
 
 
@@ -168,7 +168,7 @@ class RoomsController < ApplicationController
     #  Rechnungsaanschrift
     respond_to do |format|
       if @member.save
-        flash[:success] = "Neuen Teilnehmer erfolgeich eingefügt."
+        flash[:success] = "Neuen Teilnehmer erfolgeich eingef&uuml;gt."
         format.html { redirect_to "/administrator/rooms/event/members/" + @event.id.to_s }
       else
         format.html { redirect_to "/administrator/rooms/event/members/" + @event.id.to_s + "/neu/" }
@@ -177,6 +177,7 @@ class RoomsController < ApplicationController
       end
     end
   end
+  
 
 
 
@@ -186,7 +187,7 @@ class RoomsController < ApplicationController
 
   def index
 
-    # @rooms = Room.all
+   # @rooms = Room.all
 
     respond_to do |format|
 
@@ -225,7 +226,7 @@ class RoomsController < ApplicationController
     @documents = []
 
     @allDocuments = Resume.all
-
+    
     @users = User.with_role(:event)
 
     @accounts.each do |d|
@@ -294,7 +295,7 @@ class RoomsController < ApplicationController
 
       if @room.save
 
-        flash[:success] = "Raum wurde erfolgreich hinzugefÃ¼gt"
+        flash[:success] = "Raum wurde erfolgreich hinzugefügt"
         format.html { redirect_to "/administrator/rooms" }
 
       else
@@ -318,7 +319,7 @@ class RoomsController < ApplicationController
     respond_to do |format|
 
       if @room.save
-        flash[:success] = "Raum wurde erfolgreich hinzugefÃ¼gt"
+	flash[:success] = "Raum wurde erfolgreich hinzugefügt"
         format.html { redirect_to "/administrator/rooms" }
 
       else
@@ -336,11 +337,7 @@ class RoomsController < ApplicationController
 
 
   def update
-    @change = False
 
-    if @c_event.title != c_event_params[:title]
-      @change = True
-    end
     @c_event.title = c_event_params[:title]
 
     @c_event.description = c_event_params[:description]
@@ -352,9 +349,7 @@ class RoomsController < ApplicationController
     @startdateOne = c_event_params[:dateOne] + " " + c_event_params[:starttimeOne]
 
     @enddateOne = c_event_params[:dateOne] + " " + c_event_params[:endtimeOne]
-    if @c_event.start != @startdateOne.to_time.strftime("%Y-%m-%d %k:%M:%S") || @c_event.end != @enddateOne.to_time.strftime("%Y-%m-%d %k:%M:%S")
-      @change = True
-    end
+
     @c_event.start =  @startdateOne.to_time.strftime("%Y-%m-%d %k:%M:%S")
 
     @c_event.end = @enddateOne.to_time.strftime("%Y-%m-%d %k:%M:%S")
@@ -383,30 +378,31 @@ class RoomsController < ApplicationController
 
     end
 
-    @oldLogin = @c_event.startLogin
-    @endLogin = @c_event.endLogin
+
 
     @c_event.startLogin = c_event_params[:startLogin].to_time.strftime("%Y-%m-%d %k:%M:%S")
 
     @c_event.endLogin = c_event_params[:endLogin].to_time.strftime("%Y-%m-%d %k:%M:%S")
 
+    if c_event_params[:nickname] != "" && c_event_params[:nickname] != nil
+      @c_event.accountName = c_event_params[:nickname]
+    end
+
+
 
     if @c_event.save
 
 
-      if @startdateOne == c_event_params[:startLogin].to_time.strftime("%Y-%m-%d %k:%M:%S") && @endLogin == c_event_params[:endLogin].to_time.strftime("%Y-%m-%d %k:%M:%S")
-        @members = Member.where(event_id: @c_event.id).where(accept: 1)
 
-        @members.each do |member|
+   #   @members = Member.where(event_id: @c_event.id).where(accept: 1)
 
-          @member = member
+   #   @members.each do |member|
 
-          ContactMailer.change_event(@member, @c_event).deliver
+     #   @member = member
 
-        end
+    #    ContactMailer.change_event(@member, @c_event).deliver
 
-      end
-
+    #  end
 
     end
     respond_to do |format|
@@ -447,13 +443,13 @@ class RoomsController < ApplicationController
 
     @accounts = Account.where(accountName: @c_event.accountName)
 
-    puts("MEMBERS")
     @members = Member.where(event_id: @c_event.id).where(accept: true)
-    puts(@members)
-      if @members != nil && @members.length > 0
-    @members.each do |m|
-      ContactMailer.storno_event(m, @c_event).deliver
-    end
+    
+    if @members != nil && @members.length > 0
+    	@members.each do |m|
+   	   ContactMailer.storno_event(m, @c_event).deliver
+           ContactMailer.abmelden_event_vkm(m, @c_event).deliver
+    	end
 
      end
 
@@ -465,10 +461,10 @@ class RoomsController < ApplicationController
       flash[:success] = 'Veranstaltung wurde erfolgreich entfernt.'
       format.html { redirect_to "/administrator/rooms/"}
     end
+    
+    
 
-
-
-
+    
 
   end
 
@@ -494,55 +490,55 @@ class RoomsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
 
-  def set_room
+    def set_room
 
-    @room = Room.find(params[:id])
+      @room = Room.find(params[:id])
 
-  end
-
-
-
-  def set_event
-
-    @c_event = CEvent.find(params[:id])
-
-  end
+    end
 
 
 
-  def c_event_params
+    def set_event
 
-    params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :dateL, :nickname, :startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
+      @c_event = CEvent.find(params[:id])
 
-  end
-
-
-
-  def doc_params
-
-    params.require(:doc).permit(:name, :attachment)
-
-  end
+    end
 
 
 
-  def doc_exist_params
+    def c_event_params
 
-    params.require(:docExist).permit(:resume_id)
+      params.require(:c_event).permit(:title, :dateOne, :starttimeOne, :endtimeOne, :dateTwo, :starttimeTwo, :endtimeTwo, :dateThree, :starttimeThree, :endtimeThree, :dateL, :nickname, :startLogin, :endLogin, :color, :description, :room_id, :minSize, :member, :maxSize, :free)
 
-  end
+    end
 
 
 
-  def room_params
+    def doc_params
 
-    params.require(:room).permit(:number, :size, :building)
+      params.require(:doc).permit(:name, :attachment)
 
-  end
+    end
 
-  def member_params
-    params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :einrichtungR, :adresseR, :ortR, :emailR)
-  end
+
+
+    def doc_exist_params
+
+      params.require(:docExist).permit(:resume_id)
+
+    end
+
+
+
+    def room_params
+
+      params.require(:room).permit(:number, :size, :building)
+
+    end
+
+    def member_params
+      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :einrichtungR, :adresseR, :ortR, :emailR)
+    end
 
 end
 

@@ -1,229 +1,439 @@
+#encoding: utf-8
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
+
   <meta charset="utf-8">
+
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title><%= content_for?(:title) ? yield(:title) : "vkm-rwl - Verband kirchlicher Mitarbeiterinnen und Mitarbeiter Rheinland Westfalen Lippe" %></title>
 
+
   <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
+
   <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+
   <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
   <script src="http://malsup.github.com/jquery.form.js"></script>
 
+
+
   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modal.min.js"></script>
+
 -->
+
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/schedulejs/0.6.3/schedule.min.js"></script>
+
 -->
+
+
 
   <%= csrf_meta_tags %>
 
 
 
 
+
+
+
+
+
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+
   <!--[if lt IE 9]>
+
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+
   <![endif]-->
+
 </head>
-<%  if current_user.present? %>
+
+
     <body class="container-fluid">
     <div ng-module="shopping">
+
       <div class="row" >
+
         <div class="container col-sm-12 col-md-9 col-lg-10 col-xl-11">
+
           <header>
 
+
+
             <div id="logo"><%= render 'layouts/headerLogo' %></div>
+
           </header>
+
+
 
           <div class="navbar navbar-default" role="navigation">
 
+
+
             <div class="navbar-header">
+
               <div id="changeLogoHeader" class="navbar-toggle"><%= image_tag("logoSmall.png", :alt => "Logo", :class => "img-responsive center-block") %></div>
+
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
                 <span class="sr-only">Toggle navigation</span>
+
                 <span class="icon-bar"></span>
+
                 <span class="icon-bar"></span>
+
                 <span class="icon-bar"></span>
+
               </button>
+
             </div>
+
             <div class="navbar-collapse collapse">
+
               <ul class="nav navbar-nav" style="border-bottom: 5px solid #f59d0e; width: 100%;">
-                <li id="changeLogo" ><a class="" href="http://vkm.marianit.de/" style="padding: 0px;line-height: 0px;"><%= image_tag("logoSmall.png", :alt => "Logo", :class => "img-responsive center-block") %></a></li>
+
+                <li id="changeLogo" ><a class="" href="http://vkm-rwl.de/" style="padding: 0px;line-height: 0px;"><%= image_tag("logoSmall.png", :alt => "Logo", :class => "img-responsive center-block") %></a></li>
+
                 <li id="changeNav"><%= link_to 'Aktuelles', news_index_path %></li>
 
+
+
                 <!--<li><a href="/verband">Verband</a></li>-->
+
                 <li class="dropdown">
+
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Verband<span class="caret"></span></a>
+
                   <ul class="dropdown-menu naviDropdown">
+
                     <li><a href="/verband/vorstand">Vorstand</a></li>
+
                     <li><a href="/verband/fachgruppen">Fachgruppen</a></li>
-                    <li><a href="/verband/berufsverbände">Berufsverbände</a></li>
-                    <li><a href="/verband/geschäftsstelle">Geschäftsstelle</a></li>
+
+                    <li><a href="/verband/berufsverbaende">Berufsverbände</a></li>
+
+                    <li><a href="/verband/geschaeftsstelle">Geschäftsstelle</a></li>
+
                   </ul>
+
                 </li>
+
+
 
                 <li><a href="/mitgliedschaft">Mitgliedschaft</a></li>
+
                 <!-- <li><a href="/fortbildung">Fortbildung</a></li> -->
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fortbildung<span class="caret"></span></a>
-                  <ul class="dropdown-menu naviDropdown">
-                    <li><a href="/fortbildung/seminarinhalte">Seminarinhalte</a></li>
-                    <li><a href="/fortbildung/seminare">Seminartermine</a></li>
-                    <li><a href="/fortbildung/inHouseSchulungen" target="_self">In House Schulungen</a></li>
-                    <li><a href="/fortbildung/bedingungen">Teilnahmebedingungen</a></li>
-                  </ul>
-                </li>
 
                 <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop / Arbeitshilfen<span class="caret"></span></a>
+
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Fortbildung<span class="caret"></span></a>
+
                   <ul class="dropdown-menu naviDropdown">
-                    <li><a href="/shop/batkf" target="_self">BAT-KF</a></li>
-                    <li><a href="/shop/entgelttabellen">Entgelttabellen</a></li>
-                    <li><a href="/shop/mvg">MVG</a></li>
-                    <li><a href="/shop/handreichungen">Handreichungen</a></li>
+
+                    <li><a href="/fortbildung/seminarinhalte">Seminarinhalte</a></li>
+
+                    <li><a href="/fortbildung/seminare">Seminartermine</a></li>
+
+                    <li><a href="/fortbildung/inHouseSchulungen" target="_self">In House Schulungen</a></li>
+
+                    <li><a href="/fortbildung/bedingungen">Teilnahmebedingungen</a></li>
+
                   </ul>
+
                 </li>
+
+
+
+                <li class="dropdown">
+
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop / Arbeitshilfen<span class="caret"></span></a>
+
+                  <ul class="dropdown-menu naviDropdown">
+
+                    <li><a href="/shop/batkf" target="_self">BAT-KF</a></li>
+
+                    <li><a href="/shop/entgelttabellen">Entgelttabellen</a></li>
+
+                    <li><a href="/shop/mvg">MVG</a></li>
+
+                    <li><a href="/shop/handreichungen">Handreichungen</a></li>
+
+                  </ul>
+
+                </li>
+
               </ul>
+
             </div>
+
           </div>
+
+
+
 
 
           <main role="main" class="content_padding">
 
+
+
             <!--  <=  bootstrap_flash %> -->
+
             <%= flash_messages %>
 
+
+
             <%= yield %>
+
           </main>
+
         </div>
+
+
+
+
+
 
 
 
 
         <div id="fixed" class="col-sm-12 col-md-offset-9 col-md-3 col-lg-offset-10 col-lg-2 col-xl-offset-11 col-xl-1">
+
           <nav id="navbar-right" class="nav" style="">
 
+
+
             <form class="navbar-form ssbottom" id="new_search" action="/search" role="search" accept-charset="UTF-8" method="post" style="margin-top: -12px;">
-              <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+
+		<input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
               <div class="form-group">
+
                 <input type="text" class="form-control scontentwidth" placeholder="Suchen" name="keyword">
+
                 <button type="submit" class="btn btn-default sswidth"><span class="glyphicon glyphicon-search"></span></button>
+
               </div>
+
             </form>
+
             <div style="clear:both;"></div>
+
             <ul class="nav">
+
               <li id="warenkorb" >
+
+
 
                 <a href="/warenkorb" target="_self">Warenkorb</a>
 
 
+
+
+
               </li>
+
               <!--  <li><= link_to 'Kontakt', new_contact_form_path %></li> -->
+
               <li><a href="/kontakt">Kontakt</a></li>
+
               <li><%= link_to 'Newsletter', new_abo_newsletter_path %></li>
+
               <li><a href="/veranstaltungen">Veranstaltungen</a></li>
+
               <li><a href="/ark-rwl" class="dropdown-toggle">ARK-RWL</a></li>
+
               <li><a href="/ark-dd">ARK-DD</a></li>
+
               <% if current_user.present? %>
+
                   <li><a href="/zugangsbereich">Zugangsbereich</a></li>
+
               <% else %>
+
                   <li><%= link_to 'Zugangsbereich', new_user_session_path %></li>
+
               <%end%>
+
               <% if current_user.present? %>
+
                   <li><%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %></li>
+
               <% end %>
+
             </ul>
+
             <div style="width: 100%; border-top:5px solid #f59d0e;">
 
-              <a href="http://www.vrk.de/" target="_blank">
+
+
+             <a href="http://www.vrk.de/" target="_blank">
                 <%= image_tag("bruderlogo.jpg", :alt => "bruder", :id=> "imgBruder", :class => "img-responsive center-block", :style => "margin-bottom:10px; border: 2px solid rgba(0,0,0,0.4); max-width:100%; margin-top: 10px;") %>
              </a>
 
-              <a class="" href="http://www.kzvk-dortmund.de/" target="_blank">
+              <a class="" href="http://www.kzvk-dortmund.de/" target="_blank">   
                 <%= image_tag("kzvk.jpg", :alt => "kzyk", :id=> "imgK", :class => "img-responsive center-block", :style => "border: 1px solid rgba(0,0,0,0.4); max-width:100%;") %>
               </a>
               <a class="" href="http://www.aktion-mensch.de/" target="_blank">
                 <%= image_tag("siegel.png", :alt => "Siegel", :id=> "imgSiegel", :class => "img-responsive center-block", :style => "width:100%; max-width:100%; height:auto;") %>
               </a>
+
             </div>
+
             <footer class="bd-footer col-sm-4 col-md-2" style="text-align: right;">
+
               <a href="/informationen">Informationen </a>  |  <a href="/impressum"> Impressum</a>
+
             </footer>
+
           </nav>
 
+
+
         </div>
+
+
+
+
+
 
 
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
 
+
+
         <script>
+
             $( window ).resize(function() {
+
                 if( $( window ).height() <= 768) {
+
                     $('#imgBruder').css("max-width", "100px");
+
                     $('#imgK').css("max-width", "100px");
+
                     $('#imgSiegel').css("max-width", "110px");
+
                 } else {
+
                     $('#imgBruder').css("max-width", "100%");
+
                     $('#imgK').css("max-width", "100%");
+
                     $('#imgSiegel').css("max-width", "100%");
+
                 }
+
             });
+
+
+
 
 
             $(document).ready(function(){
 
+
+
                 var top = $('.navbar-default').offset().top + 50;
+
                 $(window).scroll(function (event) {
+
                     var y = $(this).scrollTop();
+
                     if (y >= ($('header').height() + 45)) {
+
                         if($( window ).width() > 770) {
+
                             $("#changeLogo").css("display", "block");
+
                             $("#changeLogo").css("width", "7.5%");
+
                             $("#changeNav").css("width", "12.5%");
+
                         } else {
+
                             $("#changeLogoHeader").css("display", "block");
+
                         }
+
                     } else {
+
                         if($( window ).width() <= 770) {
+
                             $("#changeLogoHeader").css("display", "none");
+
                         }
+
                         $("#changeLogo").css("display", "none");
+
                         $("#changeLogo").css("width", "7.5%");
+
                         $("#changeNav").css("width", "20%");
+
                     }
+
                 });
 
 
+
+
+
                 if( $( window ).height() <= 768) {
+
                     $('#imgBruder').css("max-width", "100px");
+
                     $('#imgK').css("max-width", "100px");
+
                     $('#imgSiegel').css("max-width", "110px");
+
                 } else {
+
                     $('#imgBruder').css("max-width", "100%");
+
                     $('#imgK').css("max-width", "100%");
+
                     $('#imgSiegel').css("max-width", "100%");
+
                 }
+
                 //$("table").wrap('<div class="table-scrollable"></div>');
+
+            });
+
+
+
+        </script>
+
+        <script type="text/javascript">
+
+            $('#drawers').find('h3').click(function(){
+
+                $(this).next().slideToggle();
+
+                $("#drawers div").not($(this).next()).slideUp();
+
             });
 
         </script>
-        <script type="text/javascript">
-            $('#drawers').find('h3').click(function(){
-                $(this).next().slideToggle();
-                $("#drawers div").not($(this).next()).slideUp();
-            });
-        </script>
+
+
 
       </div>
-    </div>
-    </body>
-<%  else %>
 
-    <%=  yield %>
-<% end %>
+    </div>
+
+    </body>
+
+
+
 </html>
+

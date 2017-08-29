@@ -1,18 +1,30 @@
 <%= form_for(member) do |f| %>
+
   <% if member.errors.any? %>
+
     <div id="error_explanation">
+
       <h2><%= pluralize(member.errors.count, "error") %> Fehler beim Speichern</h2>
 
-      <ul>
-      <% member.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-	  
-	<br>
 
+
+      <ul>
+
+      <% member.errors.full_messages.each do |message| %>
+
+        <li><%= message %></li>
+
+      <% end %>
+
+      </ul>
+
+    </div>
+
+  <% end %>
+
+	  
+
+	<br>
     <div class="form-group">
       <div class="col-sm-12" style="margin-bottom: 10px;">
         <label class="control-label" for="member_gender">Anrede</label>
@@ -23,70 +35,121 @@
       </div>
     </div>
 	  
+
   <div class="form-group">
+
 	<div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :lastName, "Name", class:"control-label" %>
+
       <%= f.text_field :lastName, class: "form-control", type: "text", placeholder: "Name", :required => true %>
+
     </div>
+
   </div>
+
   
+
   <div class="form-group">
+
     <div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :firstName, "Vorname", class:"control-label" %>
+
       <%= f.text_field :firstName, class: "form-control", type: "text", placeholder: "Vorname", :required => true %>
+
     </div>
+
   </div>
-    <div class="col-sm-12" ><h2 class="control-label">Privatadresse der/des Teilnehmenden</h2></div>
+
+		
+
+  
+
+<div class="col-sm-12" ><h2>Privatadresse der/des Teilnehmenden</h2></div>
     <div class="col-sm-12" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
 
   <div class="form-group">
+
     <div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :street, "Straße und Hausnr.", class:"control-label" %>
+
       <%= f.text_field :street, class: "form-control", type: "text", placeholder: "Straße und Hausnr.", :required => true %>
+
     </div>
+
   </div>
 
+
+
     <div class="form-group">
+
       <div class="col-sm-12" style="margin-bottom: 10px;">
+
         <%= f.label :plz, "PLZ und Ort", class:"control-label" %>
+
         <%= f.text_field :plz, class: "form-control", type: "text", placeholder: "PLZ und Ort", :required => true %>
+
       </div>
+
     </div>
+
 		  
+
     <div class="form-group">
+
     <div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :eMail, "E-Mail-Adresse", class:"control-label" %>
 
-      <input class="form-control" placeholder="E-Mail-Adresse" required="required" name="member[eMail]" id="member_eMail" type="email">
+      <%= f.email_field :eMail, class: "form-control", placeholder: "E-Mail-Adresse", :required => true %>
 
     </div>
+
   </div>
+
 		
+
   <div class="form-group">
+
     <div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :phone, "Telefonnr.", class:"control-label" %>
 
-        <input class="form-control" placeholder="Telefonnr." required="required" name="member[phone]" id="member_phone" type="text">
+      <%= f.text_field :phone, class: "form-control", type: "text", placeholder: "Telefonnr.", :required => true %>
 
     </div>
+
   </div>
-    </div>
-    <div class="col-sm-12" ><h2 class="control-label">Adresse der Dienststelle</h2></div>
+</div>
+    <div class="col-sm-12" ><h2>Adresse der Dienststelle</h2></div>
     <div class="col-sm-12" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
 
-    <div class="form-group">
-      <div class="col-sm-12" style="margin-bottom: 10px;">
-        <label class="control-label" for="member_nameCompany">Dienststelle</label>
-        <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle", :required => true %>
-      </div>
+  <div class="form-group">
+
+    <div class="col-sm-12" style="margin-bottom: 10px;">
+
+      <label class="control-label" for="member_nameCompany">Dienststelle</label>
+
+      <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle" %>
+
     </div>
-    <div class="form-group">
-      <div class="col-sm-12" style="margin-bottom: 10px;">
-        <label class="control-label" for="member_nameCompany">Straße und Hausnr.</label>
-        <%= f.text_field :streetCompany, class: "form-control", type: "text", placeholder: "Straße und Hausnr.", :required => true %>
-      </div>
+
+  </div>
+
+  <div class="form-group">
+
+    <div class="col-sm-12" style="margin-bottom: 10px;">
+
+      <label class="control-label" for="member_nameCompany">Straße und Hausnr.</label>
+
+      <%= f.text_field :streetCompany, class: "form-control", type: "text", placeholder: "Straße und Hausnr.", :required => true %>
+
     </div>
-      <div class="form-group">
+
+  </div>
+  <div class="form-group">
         <div class="col-sm-12" style="margin-bottom: 10px;">
           <label class="control-label" for="member_nameCompany">PLZ und Ort</label>
           <%= f.text_field :placeCompany, class: "form-control", type: "text", placeholder: "PLZ und Ort", :required => true %>
@@ -100,102 +163,190 @@
       </div>
       <div class="form-group">
         <div class="col-sm-12" style="margin-bottom: 10px;">
-          <label class="control-label" for="member_telefonD">Telefonnr.<small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small></label>
+          <label class="control-label" for="member_telefonD">Telefonnr. <small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small></label>
           <input class="form-control" placeholder="Telefonnr." name="member[phoneD]" id="member_telefonD" type="text">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-12" style="margin-bottom: 10px;">
-          <label class="control-label" for="member_faxD">Fax<small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small></label>
+          <label class="control-label" for="member_faxD">Fax <small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small></label>
           <input class="form-control" placeholder="Fax." name="member[faxD]" id="member_faxD" type="text">
         </div>
       </div>
-    </div>
+</div>
+
+
+
 
   <div class="form-group">
+
     <div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :job, "Beruf", class:"control-label" %>
+
       <%= f.text_field :job, class: "form-control", type: "text", placeholder: "Beruf", :required => true %>
+
     </div>
+
   </div>
 
+
+
   <div class="form-group">
+
     <div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :room, "Zimmer", class:"control-label" %>
+
       <select class="form-control" name="member[room]">
+
         <option value="kein Zimmer" selected="selected" >kein Zimmer</option>
+
         <option value="Einzelzimmer">Einzelzimmer</option>
+
         <option value="Doppelzimmer">Doppelzimmer</option>
+
       </select>
+
     </div>
+
   </div>
 
+
+
   <div class="form-group">
+
     <div class="col-sm-12" style="margin-bottom: 10px;">
+
       <%= f.label :veggie, "Unverträglichkeiten / Vegetarier", class:"control-label" %>
+
       <%= f.text_field :veggie, class: "form-control", type: "text", placeholder: "nein" %>
+
     </div>
+
   </div>
+
 		
+
    <div class="form-group">
+
       <input type="radio" id="kontaktdaten" name="switch" value="Kontaktdaten" onclick="toggle_form_element()" style="float:left;" required checked>
+
       <label for="lieferanschrift" style="float:left; margin-left:5px; font-weight:normal;"> Kontaktdaten gleich Rechnungsanschrift</label>
+
       <div  style="clear:both;"></div>
+
       <input type="radio" id="rechnungsanschrift" name="switch" value="Rechnungsanschrift" onclick="toggle_form_element()" style="float:left;" required>
+
       <label for="rechnungsanschrift" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
+
       <div  style="clear:both;"></div>
+
     </div>
+
+
 
     <div id="vipInputContainer" style="display:none;">
+
       <h2>Rechnungsanschrift</h2>
+
       <!-- Rechnungsanschrift -->
+
       <div class="form-group">
-        <label for="name">Rechnungsanschrift</label>
-        <input id="name" type="text" name="member[nameR]" class="form-control" placeholder="Rechnungsanschrift" />
+
+        <label for="name">Name des Rechnungstr&auml;gers</label>
+
+        <input id="name" type="text" name="member[nameR]" class="form-control" placeholder="Name des Rechnungstr&auml;gers" />
+
       </div>
+
       <div class="form-group" style="display: none;">
+
         <label for="vorname" style="display: none;">Vorname</label>
+
         <input id="vorname" type="text" name="member[vornameR]" style="display: none;" class="form-control" placeholder="Vorname" />
+
       </div>
+
       <div class="form-group" style="display: none;">
+
         <label for="dienststelle" style="display: none;">Dienststelle</label>
+
         <input id="dienststelle" class="form-control" style="display: none;" type="text" name="member[einrichtungR]" placeholder="Dienststelle" />
+
       </div>
+
       <div class="form-group">
+
         <label for="adresse">Straße und Hausnr.</label>
+
         <input id="adresse" class="form-control" type="text" name="member[adresseR]" placeholder="Straße und Hausnr." />
+
       </div>
+
       <div class="form-group">
+
         <label for="ort">PLZ und Ort</label>
+
         <input id="ort" class="form-control" type="text" name="member[ortR]" placeholder="PLZ und Ort" />
+
       </div>
       <div class="form-group" >
-        <label for="email" >Kostenstelle/Bestellkennzeichen</label>
-        <input id="email" class="form-control" type="text" name="member[payed]" placeholder="Kostenstelle/Bestellkennzeichen" />
+        <label for="payed" >Kostenstelle/Bestellkennzeichen</label>
+        <input id="payed" class="form-control" type="text" name="member[payed]" placeholder="Kostenstelle/Bestellkennzeichen" />
       </div>
+
+      
+
     </div>
+
 		
+
   <div class="form-group ">
+
     <div class="col-sm-12 well" style="margin: 10px 0;">
+
       <%= f.check_box :accept, :required => true %>
+
       <%= f.label :accept, "Hiermit akzeptiere ich die Seminarbedingungen (Stand: 01.01.2015) und melde mich kostenpflichtig an.", class:"checkbox-inline" %>
+
       <p class="lowercase">Hier finden Sie die aktuellen <a href="/fortbildung/bedingungen" style="color:#f5aa30;">Seminarbedingungen und Teilnehmergebühren</a> . Eine Abmeldung ist mit Gebühren verbunden. <br />Ihre persönlichen Daten werden für die Abwicklung und Rechnungsstellung der Schulung gespeichert. Drei Monate nach der Schulung werden Ihre Daten automatisch aus unserem System gelöscht.</p>
+
     </div>
+
   </div>
+
     <input type="hidden" id="member_event_id" class="form-control" name="member[event_id]" value="<%=@event.id%>"></input>
 
+
+
   <div class="actions">
+
     <%= f.submit "Jetzt verbindlich Anmelden", class: "btn btn-default" %>
+
   </div>
+
 <% end %>
+
 	
+
 	<!-- JavaScript -->
+
   <script type="text/javascript">
+
     function toggle_form_element() {
+
       if (document.getElementsByName('switch')[0].checked) {
+
         document.getElementById('vipInputContainer').style.display = 'none';
+
       } else {
+
         document.getElementById('vipInputContainer').style.display = 'block';
+
       }
+
     }
+
   </script>
+

@@ -1,118 +1,233 @@
 <div class="col-xs-12">
+
   <h1>Veranstaltung bearbeiten</h1>
+
 </div>
+
 <div class="col-xs-12">
+
   <form class="new_event" id="new_event" action="/administrator/rooms/event/<%= @id %>" accept-charset="UTF-8" method="post">
+
   <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
 
+
+
+
     <div class="col-xs-12">
+
       <div class="form-group">
+
         <label for="title">Titel</label>
+
         <input id="title" type="text" name="c_event[title]" class="form-control" placeholder="Titel" value="<%= @c_event.title %>" required/>
+
       </div>
+
     </div>
+
     <div class="col-xs-12">
+
       <div class="form-group">
+
         <label for="description">Beschreibung</label>
+
         <textarea id="description" type="text" name="c_event[description]" class="form-control" placeholder="Beschreibung" ><%= @c_event.description %></textarea>
+
       </div>
+
     </div>
 
+
+
     <div class="col-xs-12 form-group">
+
       <label>Tag 1</label>
+
       <div class='row'>
+
         <div class="form-group col-md-4">
+
           <p for="dateOne" class="col-sm-4" style="padding-top: 5px;">Datum: </p>
+
           <div class='input-group date col-sm-8' id='dateOne'>
+
             <input type='text' class="form-control" name="c_event[dateOne]" value="<%= @c_event.start != "" && @c_event.start != nil  ? @c_event.start.to_time.strftime("%d.%m.%Y") : "" %>" required/>
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+
           </div>
+
         </div>
+
         <div class="form-group col-md-4">
+
           <p for="starttimeOne" class="col-sm-4" style="padding-top: 5px;">Beginn: </p>
+
           <div class='input-group date col-sm-8' id='starttimeOne'>
+
             <input type='text' class="form-control" name="c_event[starttimeOne]" value="<%= @c_event.start != "" && @c_event.start != nil  ? @c_event.start.to_time.strftime("%k:%M") : "" %>" required/>
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+
           </div>
+
         </div>
+
         <div class="form-group col-md-4">
+
           <p for="endtimeOne" class="col-sm-4" style="padding-top: 5px;">Ende: </p>
+
           <div class='input-group date col-sm-8' id='endtimeOne'>
+
             <input type='text' class="form-control" name="c_event[endtimeOne]" value="<%= @c_event.end != "" && @c_event.end != nil  ? @c_event.end.to_time.strftime("%k:%M") : "" %>" required/>
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
 
+
+
     <div class="col-xs-12 form-group">
+
       <label>Tag 2</label>
+
       <div class='row'>
+
         <div class="form-group col-md-4">
+
           <p for="dateTwo" class="col-sm-4" style="padding-top: 5px;">Datum: </p>
+
           <div class='input-group date col-sm-8' id='dateTwo'>
+
             <input type='text' class="form-control" name="c_event[dateTwo]" value="<%= @c_event.startSecond != "" && @c_event.startSecond != nil  ? @c_event.startSecond.to_time.strftime("%d.%m.%Y") : "" %>" />
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+
           </div>
+
         </div>
+
         <div class="form-group col-md-4">
+
           <p for="starttimeTwo" class="col-sm-4" style="padding-top: 5px;">Beginn: </p>
+
           <div class='input-group date col-sm-8' id='starttimeTwo'>
+
             <input type='text' class="form-control" name="c_event[starttimeTwo]" value="<%= @c_event.startSecond != "" && @c_event.startSecond != nil  ? @c_event.startSecond.to_time.strftime("%k:%M") : "" %>" />
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+
           </div>
+
         </div>
+
         <div class="form-group col-md-4">
+
           <p for="endtimeTwo" class="col-sm-4" style="padding-top: 5px;">Ende: </p>
+
           <div class='input-group date col-sm-8' id='endtimeTwo'>
+
             <input type='text' class="form-control" name="c_event[endtimeTwo]" value="<%= @c_event.endSecond != "" && @c_event.endSecond != nil  ? @c_event.endSecond.to_time.strftime("%k:%M") : "" %>" />
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
+
 
     <div class="col-xs-12 form-group">
+
       <label>Tag 3</label>
+
       <div class='row'>
+
         <div class="form-group col-md-4">
+
           <p for="dateThree" class="col-sm-4" style="padding-top: 5px;">Datum: </p>
+
           <div class='input-group date col-sm-8' id='dateThree'>
+
             <input type='text' class="form-control" name="c_event[dateThree]" value="<%= @c_event.startThird != "" && @c_event.startThird != nil  ? @c_event.startThird.to_time.strftime("%d.%m.%Y") : "" %>" />
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+
           </div>
+
         </div>
+
         <div class="form-group col-md-4">
+
           <p for="starttimeThree" class="col-sm-4" style="padding-top: 5px;">Beginn: </p>
+
           <div class='input-group date col-m-8' id='starttimeThree'>
+
             <input type='text' class="form-control" name="c_event[starttimeThree]" value="<%= @c_event.startThird != "" && @c_event.startThird != nil  ? @c_event.startThird.to_time.strftime("%k:%M") : "" %>" />
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+
           </div>
+
         </div>
+
         <div class="form-group col-md-4">
+
           <p for="endtimeThree" class="col-sm-4" style="padding-top: 5px;">Ende: </p>
+
           <div class='input-group date col-sm-8' id='endtimeThree'>
+
             <input type='text' class="form-control" name="c_event[endtimeThree]" value="<%= @c_event.endThird != "" && @c_event.endThird != nil  ? @c_event.endThird.to_time.strftime("%k:%M") : "" %>" />
+
             <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
 
+
+
     <div class="col-xs-12">
+
       <div class="form-group">
+
         <label for="minSize">Mindestanzahl an Teilnehmern</label>
+
         <input id="minSize" type="number" min="0" name="c_event[minSize]" class="form-control" placeholder="Mindestanzahl an Mitgliedern" value="<%= @c_event.minSize %>" />
+
       </div>
+
     </div>
 
+
+
     <div class="col-xs-12">
+
       <div class="form-group">
+
         <label for="maxSize">Maximalanzahl an Teilnehmern</label>
+
         <input id="maxSize" type="number" min="0" name="c_event[maxSize]" class="form-control" placeholder="Maximalanzahl an Mitgliedern" value="<%= @c_event.maxSize %>" />
+
       </div>
+
     </div>
+
 
     <div class="col-sm-12">
       <div class="form-group">
@@ -133,193 +248,415 @@
       <a id="linkDocument" style="color: #f59d0e;" href="" target="_blank" rel="noopener noreferrer"></a>
     </div>
 
+
+
     <div class="col-xs-12">
+
       <label>Anmeldezeitraum</label>
+
       <div class='col-sm-5'>
+
         <div class="form-group">
+
           <label for="datetimepicker1">Startdatum</label>
+
           <div class='input-group date' id='datetimepicker1'>
+
             <input type='text' class="form-control" name="c_event[startLogin]" value="<%= @c_event.startLogin.to_time.strftime("%d.%m.%Y %k:%M") %>" />
+
             <span class="input-group-addon">
+
                     <span class="glyphicon glyphicon-calendar"></span>
+
                 </span>
+
           </div>
+
         </div>
+
       </div>
+
       <div class='col-sm-5'>
+
         <div class="form-group">
+
           <label for="datetimepicker2">Enddatum</label>
+
           <div class='input-group date' id='datetimepicker2'>
+
             <input type='text' class="form-control" name="c_event[endLogin]" value="<%= @c_event.endLogin.to_time.strftime("%d.%m.%Y %k:%M") %>" />
+
             <span class="input-group-addon">
+
                     <span class="glyphicon glyphicon-calendar"></span>
+
                 </span>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
 
+
+
     <div class="form-group">
+
       <button type="submit" class="btn btn-default" >Änderungen Speichern</button>
+
     </div>
+
   </form>
+
   <a data-confirm="Sind Sie sich sicher?" class="btn btn-danger"  style="margin-top: 20px;" rel="nofollow" data-method="delete" href="/event/<%= @c_event.id %>">Veranstaltung Löschen</a>
+
 </div>
+
 <div class="col-sm-12" style="padding-top: 2.3em;">
+
   <p>Dokumente des Benutzers: "<%= @c_event.accountName %>"</p>
-</div>
-<div class="col-sm-6">
-  <h2>Dokument hochladen</h2>
-  <form class="new_doc" id="new_doc" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/doc" accept-charset="UTF-8" method="post">
-    <input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-    <div class="form-group">
-      <label class="control-label" for="doc_name">Dokumentenname</label>
-      <div class="" style="padding-left: 0px;padding-right: 0px;">
-        <input class="form-control" name="doc[name]" id="doc_name" type="text" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label" for="doc_attachment">Quelle</label>
-      <div class="input-group">
-        <label class="input-group-btn">
-                    <span class="btn btn-default">
-                        Durchsuchen<input type="file" style="display: none;" name="doc[attachment]" id="doc_attachment">
-                    </span>
-        </label>
-        <input type="text" class="form-control" readonly>
-     <!--   <input class="form-control" name="doc[attachment]" id="doc_attachment" type="file"> -->
-      </div>
-    </div>
-    <div class="form-group">
-      <input class="btn btn-default" name="commit" value="Hochladen" class="btn btn-default" data-disable-with="Hochladen" type="submit">
-    </div>
-  </form>
+
 </div>
 
 <div class="col-sm-6">
-  <h2>Dokument auswählen</h2>
-  <form class="new_docExist" id="new_docExist" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/docExist" accept-charset="UTF-8" method="post">
+
+  <h2>Dokument hochladen</h2>
+
+  <form class="new_doc" id="new_doc" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/doc" accept-charset="UTF-8" method="post">
+
     <input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
     <div class="form-group">
-      <label class="control-label" for="docExist_name">Dokumentenname</label>
-      <select class="form-group form-control" name="docExist[resume_id]" id="docExist_name" >
-        <% @allDocuments.each do |resume| %>
-            <option value="<%= resume.id %>" data-othervalue="<%= resume.attachment_url %>"><%= resume.name %></option>
-        <% end %>
-      </select>
+
+      <label class="control-label" for="doc_name">Dokumentenname</label>
+
+      <div class="" style="padding-left: 0px;padding-right: 0px;">
+
+        <input class="form-control" name="doc[name]" id="doc_name" type="text" required>
+
+      </div>
+
     </div>
+
     <div class="form-group">
-      <input class="btn btn-default" name="commit" value="Auswählen" class="btn btn-default" data-disable-with="Auswählen" type="submit">
+
+      <label class="control-label" for="doc_attachment">Quelle</label>
+
+      <div class="input-group">
+
+        <label class="input-group-btn">
+
+                    <span class="btn btn-default">
+
+                        Durchsuchen<input type="file" style="display: none;" name="doc[attachment]" id="doc_attachment">
+
+                    </span>
+
+        </label>
+
+        <input type="text" class="form-control" readonly>
+
+     <!--   <input class="form-control" name="doc[attachment]" id="doc_attachment" type="file"> -->
+
+      </div>
+
     </div>
+
+    <div class="form-group">
+
+      <input class="btn btn-default" name="commit" value="Hochladen" class="btn btn-default" data-disable-with="Hochladen" type="submit">
+
+    </div>
+
   </form>
-  <div class="col-sm-12">
-    <a id="linkDocument" style="color: #f59d0e;" href="" target="_blank" rel="noopener noreferrer"></a>
-  </div>
+
 </div>
+
+
+
+<div class="col-sm-6">
+
+  <h2>Dokument auswählen</h2>
+
+  <form class="new_docExist" id="new_docExist" enctype="multipart/form-data" action="/administrator/rooms/event/<%= @id %>/docExist" accept-charset="UTF-8" method="post">
+
+    <input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <div class="form-group">
+
+      <label class="control-label" for="docExist_name">Dokumentenname</label>
+
+      <select class="form-group form-control" name="docExist[resume_id]" id="docExist_name" >
+
+        <% @allDocuments.each do |resume| %>
+
+            <option value="<%= resume.id %>" data-othervalue="<%= resume.attachment_url %>"><%= resume.name %></option>
+
+        <% end %>
+
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <input class="btn btn-default" name="commit" value="Auswählen" class="btn btn-default" data-disable-with="Auswählen" type="submit">
+
+    </div>
+
+  </form>
+
+  <div class="col-sm-12">
+
+    <a id="linkDocument" style="color: #f59d0e;" href="" target="_blank" rel="noopener noreferrer"></a>
+
+  </div>
+
+</div>
+
 <div class="col-sm-12">
+
   <h2>Dokumente des Benutzers "<%= @c_event.accountName %>"</h2>
+
   <% if @documents.length > 0 %>
+
   <table class="table table-responsive table-striped">
+
     <thead>
+
     <tr>
+
       <th>Dokumentenname</th>
+
       <th></th>
+
       <th></th>
+
     </tr>
+
     </thead>
 
+
+
     <tbody>
+
     <% @documents.each do |resume| %>
 
+
+
         <tr>
+
           <td><%= resume[:name] %></td>
+
           <td><a style="color: #f59d0e;" href="<%= resume[:url] %>" target="_blank" rel="noopener noreferrer">Anzeigen</a></td>
+
           <td>
+
             <a data-confirm="Sind Sie sich sicher?" class="btn btn-danger" rel="nofollow" data-method="delete" href="/account/<%= resume[:accountId] %>">Dokument entfernen</a>
 
+
+
           </td>
+
         </tr>
 
+
+
     <% end %>
+
     </tbody>
 
+
+
   </table>
+
   <% else%>
+
     <p>Die Veranstaltung hat keine Dokumente</p>
+
   <% end %>
 
 
 
+
+
+
+
 </div>
 
+
+
 <script type="text/javascript">
+
     $(document).on('change', ':file', function() {
+
         var input = $(this),
+
             numFiles = input.get(0).files ? input.get(0).files.length : 1,
+
             label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+
         input.trigger('fileselect', [numFiles, label]);
+
     });
+
     $(document).ready(function(){
+	$('#nickname').on('change', function() {
+            if($('#nickname').find(":selected").attr('value') != "") {
+                $('#linkDocument').attr('href', '/dokumente/' + $('#nickname').find(":selected").attr('value'));
+                $('#linkDocument').text('Zu den Dokumenten des Benutzers "' + $('#nickname').find(":selected").text() + '"');
+            } else {
+                $('#linkDocument').text('');
+            }
+        });
+
         $('#docExist_name').on('change', function() {
+
           $('#linkDocument').attr('href', $('#docExist_name').find(":selected").attr('data-othervalue'));
+
           $('#linkDocument').text($('#docExist_name').find(":selected").text() + ' Anzeigen');
 
+
+
         });
+
         $(':file').on('fileselect', function(event, numFiles, label) {
 
+
+
             var input = $(this).parents('.input-group').find(':text'),
+
                 log = numFiles > 1 ? numFiles + ' files selected' : label;
 
+
+
             if( input.length ) {
+
                 input.val(log);
+
             } else {
+
                 if( log ) alert(log);
+
             }
 
+
+
         });
+
+
+
 
 
         $('#dateOne').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+
         $('#starttimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+
         $('#endtimeOne').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+
         $("#starttimeOne").on("dp.change", function (e) {
+
             $('#endtimeOne').data("DateTimePicker").minDate(e.date);
+
         });
+
         $("#endtimeOne").on("dp.change", function (e) {
+
             //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+
             $('#starttimeOne').data("DateTimePicker").maxDate(e.date);
+
         });
+
         $('#dateTwo').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+
         $('#starttimeTwo').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+
         $('#endtimeTwo').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+
         $("#starttimeTwo").on("dp.change", function (e) {
+
             $('#endtimeTwo').data("DateTimePicker").minDate(e.date);
+
         });
+
         $("#endtimeTwo").on("dp.change", function (e) {
+
             //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+
             $('#starttimeTwo').data("DateTimePicker").maxDate(e.date);
+
         });
+
         $('#dateThree').datetimepicker({locale: 'de', format: "DD.MM.YYYY"});
+
         $('#starttimeThree').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+
         $('#endtimeThree').datetimepicker({locale: 'de', format: "H:mm", useCurrent: false});
+
         $("#starttimeThree").on("dp.change", function (e) {
+
             $('#endtimeThree').data("DateTimePicker").minDate(e.date);
+
         });
+
         $("#endtimeThree").on("dp.change", function (e) {
+
             //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+
             $('#starttimeThree').data("DateTimePicker").maxDate(e.date);
+
         });
+
         $('#datetimepicker1').datetimepicker({locale: 'de'});
+
         $('#datetimepicker2').datetimepicker({locale: 'de', useCurrent: false});
+
         $("#datetimepicker1").on("dp.change", function (e) {
+
             $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+
         });
+
         $("#datetimepicker2").on("dp.change", function (e) {
+
             //          $scope.datePicker.endOne = $("#datetimepicker2").val();
+
             $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+
         });
+
     });
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

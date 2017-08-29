@@ -2,19 +2,19 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8">
-    <title>Ihre Bestätigung zu der Veranstaltung "<%= @event.title %>"</title>
+    <title>Ihre Best&auml;tigung zu der Veranstaltung "<%= @event.title %>"</title>
   </head>
   <body>
-    <h1>Ihre Bestätigung zu der Veranstaltung "<%= @event.title %>"</h1>
+    <h1>Ihre Best&auml;tigung zu der Veranstaltung "<%= @event.title %>"</h1>
     <p>Sehr geehrte(r) Seminarteilnehmer(in),</p>
 <p>
-  herzlichen Dank für die verbindliche Anmeldung zu unserem Seminar „<%= @event.title %>“ vom <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d") %> – <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d") %> – <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>. Veranstaltungsort „<%= @room.building %>“. Unsere Mehrtagesseminare beginnen am 1. Tag um 10.00 Uhr und enden dann jeweils am 2. bzw. 3. Tag um 15.00 Uhr. Unsere Tagesseminare beginnen um 9.30 Uhr und enden gegen 16.00 Uhr. </p>
+  herzlichen Dank f&uuml;r die verbindliche Anmeldung zu unserem Seminar „<%= @event.title %>“ vom <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d") %> – <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d") %> – <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>. Veranstaltungsort „<%= @room.building %>“. Unsere Mehrtagesseminare beginnen am 1. Tag um 10.00 Uhr und enden dann jeweils am 2. bzw. 3. Tag um 15.00 Uhr. Unsere Tagesseminare beginnen um 9.30 Uhr und enden gegen 16.00 Uhr. </p>
 
-    <p>Bezüglich der Seminargebühren und Stornierung weisen wir ausdrücklich auf unsere AGB hin, die Sie mit Ihrer Anmeldung bestätigt haben.  Eine Rechnung werden wir direkt an Ihren Dienstgeber an die von Ihnen angegebene Anschrift übersenden. Daher bitten wir Sie noch einmal um Überprüfung derselben.</p>
+    <p>Bez&uuml;glich der Seminargeb&uuml;hren und Stornierung weisen wir ausdr&uuml;cklich auf unsere AGB hin, die Sie mit Ihrer Anmeldung best&auml;tigt haben.  Eine Rechnung werden wir direkt an Ihren Dienstgeber an die von Ihnen angegebene Anschrift &uuml;bersenden. Daher bitten wir Sie noch einmal um &Uuml;berpr&uuml;fung derselben.</p>
 
-    <p>Wir wünschen Ihnen eine angenehme Anreise und einen erfolgreichen Seminarverlauf. Für Rückfragen steht Ihnen die Geschäftsstelle gerne zur Verfügung. Telefonisch erreichen Sie die Sachbearbeiterin von Montag – Donnerstag unter der Ruf-Nr. 0231/52 93 40.</p>
+    <p>Wir w&uuml;nschen Ihnen eine angenehme Anreise und einen erfolgreichen Seminarverlauf. F&uuml;r R&uuml;ckfragen steht Ihnen die Gesch&auml;ftsstelle gerne zur Verf&uuml;gung. Telefonisch erreichen Sie die Sachbearbeiterin von Montag – Donnerstag unter der Ruf-Nr. 0231/52 93 40.</p>
 
-    <p>Mit freundlichen Grüßen<br /><br />
+    <p>Mit freundlichen Gr&uuml;ßen<br /><br />
       Ihr vkm-rwl
     </p>
   </body>

@@ -1,128 +1,255 @@
 <div class="col-xs-12">
+
   <h1>Seiten bearbeiten</h1>
-</div>
-<div class="col-xs-12" style="margin-bottom: 1em;">
-  <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
+
 </div>
 
+<div class="col-xs-12" style="margin-bottom: 1em;">
+
+  <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
+
+</div>
+
+
+
 <% if current_user.present? %>
+
     <div class="col-xs-12">
+
       <% if current_user.has_role?(:admin) %>
+
 		  <p><strong style="color:#f59d0e">Verband</strong></p>
+
           <div class="list-group">
+
             <a href="/pages/vorstand" class="list-group-item" target="_self">Vorstand</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/fachgruppen" class="list-group-item" target="_self">Fachgruppen</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:gbb) || current_user.has_role?(:admin)%>
+
           <div class="list-group">
+
             <a href="/pages/GBB" class="list-group-item" target="_self"><strong>&#8627;</strong> Gemeindepädagogik, Bildung und Beratung (GBB)</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:diakonie) || current_user.has_role?(:admin)%>
+
           <div class="list-group">
+
 			      <a href="/pages/Diakonie" class="list-group-item" target="_self"><strong>&#8627;</strong> Diakonie</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:pädagogik) || current_user.has_role?(:admin)%>
+
           <div class="list-group">
-            <a href="/pages/Pädagogik" class="list-group-item" target="_self"><strong>&#8627;</strong> Pädagogik</a>
+
+            <a href="/pages/Paedagogik" class="list-group-item" target="_self"><strong>&#8627;</strong> Pädagogik</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:h_rheinland) || current_user.has_role?(:admin)%>
+
           <div class="list-group">
+
             <a href="/pages/Hauswirtschaft_Rheinland" class="list-group-item" target="_self"><strong>&#8627;</strong> Hauswirtschaft und Haustechnik Rheinland</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:h_lippe) || current_user.has_role?(:admin)%>
+
           <div class="list-group">
+
             <a href="/pages/Hauswirtschaft_Lippe" class="list-group-item" target="_self"><strong>&#8627;</strong> Hauswirtschaft / Haustechnik Westfalen / Lippe</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/Berufsverbände" class="list-group-item" target="_self">Berufsverbände</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
-            <a href="/pages/geschäftsstelle" class="list-group-item" target="_self">Geschäftsstelle</a>
+
+            <a href="/pages/geschaesftsstelle" class="list-group-item" target="_self">Geschäftsstelle</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
 		  <p><strong style="color:#f59d0e">Mitgliedschaft</strong></p>
+
           <div class="list-group">
+
             <a href="/pages/Mitgliedschaft" class="list-group-item" target="_self">Mitgliedschaft</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
 		    <p><strong style="color:#f59d0e">Fortbildung</strong></p>
+
           <div class="list-group">
+
             <a href="/pages/Seminarinhalte" class="list-group-item" target="_self">Seminarinhalte</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/Schulung" class="list-group-item" target="_self">Schulung</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/Teilnahmebedingungen" class="list-group-item" target="_self">Teilnahmebedingungen</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
 		  <p><strong style="color:#f59d0e">Shop / Arbeitshilfen</strong></p>
+
           <div class="list-group">
+
             <a href="/pages/batkf" class="list-group-item" target="_self">BAT-KF</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/entgelttabellen" class="list-group-item" target="_self">Entgelttabellen</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/mvg" class="list-group-item" target="_self">MVG</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/handreichungen" class="list-group-item" target="_self">Handreichungen</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <p><strong style="color:#f59d0e">ARK</strong></p>
+
           <div class="list-group">
+
             <a href="/pages/Ark-DD" class="list-group-item" target="_self">ARK-DD</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <div class="list-group">
+
             <a href="/pages/Ark-Rwl" class="list-group-item" target="_self">ARK-RWL</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <p><strong style="color:#f59d0e">Informationen</strong></p>
+
           <div class="list-group">
+
             <a href="/pages/informationen" class="list-group-item" target="_self">Informationen</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:admin) %>
+
           <p><strong style="color:#f59d0e">Veranstaltungen</strong></p>
+
           <div class="list-group">
+
             <a href="/pages/Veranstaltungen" class="list-group-item" target="_self">Veranstaltungen</a>
+
           </div>
+
       <% end %>
+
     </div>
 
 
+
+
+
 <%else%>
+
+
+
 
 
 <%end%>

@@ -1,50 +1,128 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
+
   <meta charset="UTF-8">
+
   <title>Anmeldung zu einer Vernstaltung der VKM</title>
+
 </head>
+
 <body>
+
 <h1>Anmeldung zur Veranstaltung: "<%= @event.title %>"</h1>
+
 <p style="font-size: 1.2em;"><b>Veranstaltung: <%= @event.title %></b></p>
+
 <p style="font-size: 1.2em;"><b>Beschreibung: <%= @event.description %></b></p>
+
+
+<p>Seminartermin: <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>
+</p>
+<p>Ihre angemeldeten Daten:</p>
 <table>
 
+
+
   <tr>
-    <td><b>Tag 1 am <%= @event.start.to_time.strftime("%d.%m.%Y") %></b></td>
-    <td></td>
+
+    <td><p><b><i><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></i></b></p>
+
+
+
+
+
+      <p><small>Beruf: <%= @member.job %></small></p>
+
+
+
+      <p><b><i>Kontaktdaten</i></b><br>
+
+        <small><%= @member.street %><br>
+
+          <%= @member.plz %> <%= @member.place %><br>
+
+          <div style="margin-top:15px;">Telefon: <%= @member.phone %><br>
+
+            E-Mail: <%= @member.eMail %></div></small></p>
+
+
+
+      <p><b><i>Dienststelle</i></b><br>
+
+        <small><%= @member.nameCompany %><br>
+
+          <%= @member.streetCompany %><br>
+
+          <%= @member.placeCompany %><br />
+                  E-Mail: <%= @member.eMailD %><br />
+                Telefon: <%= @member.phoneD  %><br />
+                Fax: <%= @member.faxD %></small></p>
+
+
+
+      <p><b><i>Buchung</i></b><br>
+
+        <small>Zimmer: <%= @member.room %><br>
+
+          Unverträglichkeiten / Vegetarier: <%= @member.veggie%></small></p>
+
+
+
+    </td>
+
+    <td><p><b>Rechnungsanschrift</b></p><p><i><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></i></p>
+
+
+
+
+
+      <p><small><%= @member.nameR%></small></p>
+
+
+
+
+
+      <p><b><i>Kontaktdaten</i></b><br>
+
+        <small><%= @member.adresseR %><br>
+
+          <%= @member.ortR %> <br>
+
+          <div style="margin-top:15px;">Kostenstelle/Bestellkennzeichen: <%= @member.payed %></div></small></p>
+
+
+
+      <p><b><i></i></b><br>
+
+        <small></small></p>
+
+
+
+
+
+    </td>
+
   </tr>
-  <tr>
-    <td>Beginn: <%= @event.start.to_time.strftime("%k:%M") %> Uhr</td>
-    <td>Ende: <%= @event.end.to_time.strftime("%k:%M") %> Uhr</td>
-  </tr>
-  <% if @event.startSecond != "" && @event.startSecond != nil %>
-      <tr>
-        <td><b>Tag 2 am <%= @event.startSecond.to_time.strftime("%d.%m.%Y") %></b></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Beginn: <%= @event.startSecond.to_time.strftime("%k:%M") %> Uhr</td>
-        <td>Ende: <%= @event.endSecond.to_time.strftime("%k:%M") %> Uhr</td>
-      </tr>
-  <% end %>
-  <% if @event.startThird != "" && @event.startThird != nil %>
-      <tr>
-        <td><b>Tag 3 am <%= @event.startThird.to_time.strftime("%d.%m.%Y") %></b></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Beginn: <%= @event.startThird.to_time.strftime("%k:%M") %> Uhr</td>
-        <td>Ende: <%= @event.endThird.to_time.strftime("%k:%M") %> Uhr</td>
-      </tr>
-  <% end %>
 
 </table>
+
+
+
 <p>
+
 Sie erhalten in Kürze eine weitere Bestätigung.
+
 </p>
 
+
+
 <p>Mit freundlichen Grüßen</p>
+
 <p>Ihr vkm-rwl</p>
+
 </body>
+
 </html>

@@ -1,108 +1,215 @@
 <div class="col-xs-8 col-sm-9">
+
   <h1>Zugangsbereich</h1>
-</div>
-<div class="col-xs-4 col-sm-3" style="text-align:right;"><br>
-	» <a href="/uploads/resume/attachment/34/hilfe.pdf" target="_blank" style="color:#f59d0e;">Hilfe</a>
-</div>
-<div class="col-xs-12" style="margin-bottom: 1em;">
-  <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
+
 </div>
 
+<div class="col-xs-4 col-sm-3" style="text-align:right;"><br>
+
+	» <a href="/uploads/resume/attachment/34/hilfe.pdf" target="_blank" style="color:#f59d0e;">Hilfe</a>
+
+</div>
+
+<div class="col-xs-12" style="margin-bottom: 1em;">
+
+  <%= image_tag("Titelbild_Zugangsbereich.jpg", :alt => "Zugangsbereich", :class => "img-responsive center-block") %>
+
+</div>
+
+
+
 <% if current_user.present? %>
+
     <div class="col-xs-12">
+
+
 
       <% if current_user.has_role?(:event) %>
 
+
+
       <% else %>
-          <p><strong>Folgende Bereiche können Sie bearbeiten:</strong><strong style="float: right;">&raquo; </strong><a href="/users/edit" target="_self" style="color:#f59d0e;float: right;">Benutzerdaten &auml;ndern</a></p>
+
+          <p><strong>Folgende Bereiche können Sie bearbeiten:</strong><a href="/users/edit" target="_self" style="color:#f59d0e;float: right;"><span style="color:#000000">&raquo;</span> Benutzerdaten &auml;ndern</a></p>
+
       <% end %>
-	  <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
+
+      <% if current_user.has_role?(:news) || current_user.has_role?(:admin)%>
+
       <div class="list-group">
+
         <a href="/admin/news" class="list-group-item" target="_self">Aktuelles</a>
+
       </div>
+
     <% end %>
+
 	<% if current_user.has_role?(:admin) %>
+
         <div class="list-group">
+
           <a href="/pages/" class="list-group-item" target="_self">Seiten</a>
+
         </div>
+
     <% end %>
+
     <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:admin)%>
+
       <div class="list-group">
+
         <a href="/dokumente" class="list-group-item" target="_self">Dokumentenbereich</a>
+
       </div>
+
       <div class="list-group">
+
         <a href="/administrator/rooms" class="list-group-item" target="_self">Veranstaltungssystem</a>
+
       </div>
+
     <% end %>
+
     <% if current_user.has_role?(:newsletter) || current_user.has_role?(:admin)%>
 
+
+
       <div class="list-group">
+
         <a href="/news_contents" class="list-group-item" target="_self">Newslettersystem</a>
+
       </div>
+
     <% end %>
+
     <% if current_user.has_role?(:shop) || current_user.has_role?(:admin)%>
+
       <div class="list-group">
+
         <a href="/articles" class="list-group-item" target="_self">BAT-KF: Artikelliste</a>
+
       </div>
+
     <% end %>
+
       <% if current_user.has_role?(:gbb) %>
+
           <div class="list-group">
+
             <a href="/pages/GBB" class="list-group-item" target="_self">Gemeindepädagogik, Bildung und Beratung (GBB)</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:diakonie) %>
+
           <div class="list-group">
+
             <a href="/pages/Diakonie" class="list-group-item" target="_self">Diakonie</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:pädagogik) %>
+
           <div class="list-group">
+
             <a href="/pages/Pädagogik" class="list-group-item" target="_self">Pädagogik</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:h_rheinland) %>
+
           <div class="list-group">
+
             <a href="/pages/Hauswirtschaft_Rheinland" class="list-group-item" target="_self">Hauswirtschaft und Haustechnik Rheinland</a>
+
           </div>
+
       <% end %>
+
       <% if current_user.has_role?(:h_lippe) %>
+
           <div class="list-group">
+
             <a href="/pages/Hauswirtschaft_Lippe" class="list-group-item" target="_self">Hauswirtschaft / Haustechnik Westfalen / Lippe</a>
+
           </div>
+
       <% end %>
+
     </div>
 
+
+
     <% if current_user.has_role?(:event) %>
+
       <div class="col-xs-12">
+
         <p><strong>Folgende Dateien stehen zum Downloaden zur Verfügung:</strong></p>
+
         <% if @resumes.length > 0 %>
+
             <table class="table table-responsive table-striped half">
+
               <thead>
+
               <tr>
+
                 <th>Dokumentenname</th>
+
                 <th></th>
+
               </tr>
+
               </thead>
 
+
+
               <tbody>
+
               <% @resumes.each do |resume| %>
 
+
+
                   <tr>
+
                     <td><%= resume.name %></td>
+
                     <td><a style="color: #f59d0e;" href="<%= resume.attachment_url %>" target="_blank" rel="noopener noreferrer">Anzeigen</a></td>
+
                   </tr>
 
+
+
               <% end %>
+
               </tbody>
 
+
+
             </table>
+
         <% else%>
+
             <p>Die Veranstaltung hat keine Dokumente</p>
+
         <% end %>
+
       </div>
+
     <% end %>
 
+
+
 <% else %>
+
+
+
 
 
 <%end%>
