@@ -98,7 +98,7 @@ Rails.application.configure do
 
   # when problems arise.
 
-  config.log_level = :debug
+  config.log_level = :info
 
   config.secret_key = '1e3ade20473412d1366248774792437df0f23a5c7e2459a7502d034e23b9b312260fb9c00e5b56fdbb0d159c55d88725707b931680cf737fbff07509e59882a8'
 

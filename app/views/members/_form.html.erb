@@ -173,6 +173,13 @@
           <input class="form-control" placeholder="Fax." name="member[faxD]" id="member_faxD" type="text">
         </div>
       </div>
+
+      <div class="form-group" >
+        <div class="col-sm-12" style="margin-bottom: 10px;">
+          <label for="payed" >Kostenstelle/Bestellkennzeichen <small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small></label>
+          <input id="payed" class="form-control" type="text" name="member[payed]" placeholder="Kostenstelle/Bestellkennzeichen" />
+        </div>
+      </div>
 </div>
 
 
@@ -230,15 +237,19 @@
 
    <div class="form-group">
 
-      <input type="radio" id="kontaktdaten" name="switch" value="Kontaktdaten" onclick="toggle_form_element()" style="float:left;" required checked>
+     <input type="radio" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element(false)" style="float:left;" required checked>
 
-      <label for="lieferanschrift" style="float:left; margin-left:5px; font-weight:normal;"> Kontaktdaten gleich Rechnungsanschrift</label>
+     <label for="switch_privat" style="float:left; margin-left:5px; font-weight:normal;"> Rechnungsanschrift gleich Privatadresse</label>
+
+     <input type="radio" id="switch_dienst" name="switch" value="dienst" onclick="toggle_form_element(false)" style="float:left;" required checked>
+
+      <label for="switch_dienst" style="float:left; margin-left:5px; font-weight:normal;"> Rechnungsanschrift gleich Adresse der Dienststelle</label>
 
       <div  style="clear:both;"></div>
 
-      <input type="radio" id="rechnungsanschrift" name="switch" value="Rechnungsanschrift" onclick="toggle_form_element()" style="float:left;" required>
+      <input type="radio" id="switch_rechnung" name="switch" value="rechnung" onclick="toggle_form_element(true)" style="float:left;" required>
 
-      <label for="rechnungsanschrift" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
+      <label for="switch_rechnung" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
 
       <div  style="clear:both;"></div>
 
@@ -256,23 +267,7 @@
 
         <label for="name">Name des Rechnungstr&auml;gers</label>
 
-        <input id="name" type="text" name="member[nameR]" class="form-control" placeholder="Name des Rechnungstr&auml;gers" />
-
-      </div>
-
-      <div class="form-group" style="display: none;">
-
-        <label for="vorname" style="display: none;">Vorname</label>
-
-        <input id="vorname" type="text" name="member[vornameR]" style="display: none;" class="form-control" placeholder="Vorname" />
-
-      </div>
-
-      <div class="form-group" style="display: none;">
-
-        <label for="dienststelle" style="display: none;">Dienststelle</label>
-
-        <input id="dienststelle" class="form-control" style="display: none;" type="text" name="member[einrichtungR]" placeholder="Dienststelle" />
+        <input id="name" type="text" name="member[nameR]" class="form-control" placeholder="Vor- und Nachname oder Firnemnname" />
 
       </div>
 
@@ -291,13 +286,6 @@
         <input id="ort" class="form-control" type="text" name="member[ortR]" placeholder="PLZ und Ort" />
 
       </div>
-      <div class="form-group" >
-        <label for="payed" >Kostenstelle/Bestellkennzeichen</label>
-        <input id="payed" class="form-control" type="text" name="member[payed]" placeholder="Kostenstelle/Bestellkennzeichen" />
-      </div>
-
-      
-
     </div>
 
 		
@@ -334,16 +322,12 @@
 
   <script type="text/javascript">
 
-    function toggle_form_element() {
+    function toggle_form_element(enable) {
 
-      if (document.getElementsByName('switch')[0].checked) {
-
+      if (enable) {
         document.getElementById('vipInputContainer').style.display = 'none';
-
       } else {
-
         document.getElementById('vipInputContainer').style.display = 'block';
-
       }
 
     }
