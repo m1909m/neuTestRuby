@@ -24,59 +24,55 @@
 <p>Ihre angemeldeten Daten:</p>
 <table>
   <tr>
-
-    <td>
-      <p><b><i><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></i></b></p>
+    <td colspan="2">
+      <p><b><%= @member.gender%> <%= @member.firstName %> <%= @member.lastName %></b></p>
       <p><small>Beruf: <%= @member.job %></small></p>
-
-
-
-      <p><b><i>Kontaktdaten</i></b><br>
-
-        <small><%= @member.street %><br>
-
-          <%= @member.plz %> <%= @member.place %><br>
-
-          <div style="margin-top:15px;">Telefon: <%= @member.phone %><br>
-
-            E-Mail: <%= @member.eMail %></div></small></p>
-
-
-
-      <p><b><i>Dienststelle</i></b><br>
-
-        <small><%= @member.nameCompany %><br>
-
-          <%= @member.streetCompany %><br>
-
-          <%= @member.placeCompany %><br />
-                  E-Mail: <%= @member.eMailD %><br />
-                Telefon: <%= @member.phoneD  %><br />
-                Fax: <%= @member.faxD %></small></p>
-
-
-
-      <p><b><i>Buchung</i></b><br>
-
-        <small>Zimmer: <%= @member.room %><br>
-
-          Unverträglichkeiten / Vegetarier: <%= @member.veggie%></small></p>
     </td>
-
+  </tr>
+  <tr>
+    <td>
+      <p><b>Kontaktdaten</b></p>
+      <%= @member.street %><br />
+      <%= @member.plz %> <%= @member.place %><br />
+      <br />
+      Telefon: <%= @member.phone %><br />
+      E-Mail:  <%= @member.eMail %>
+    </td>
     <td>
       <p><b>Rechnungsanschrift</b></p>
-      <p><%= @member.nameR%></p>
-      <p><%= @member.adresseR %></p>
-      <p><%= @member.ortR %></p>
+      <%= @member.nameR%><br />
+      <%= @member.adresseR %><br />
+      <%= @member.ortR %><br />
 
       <% if @member.payed != "" %>
           <br />
           <p>Kostenstelle/Bestellkennzeichen: <%= @member.payed %></p>
       <% end %>
     </td>
-
   </tr>
+  <tr>
+    <td>
+      <p><b>Dienststelle</b></p><br>
+      <%= @member.nameCompany %><br>
+      <%= @member.streetCompany %><br>
+      <%= @member.placeCompany %><br />
+      E-Mail: <%= @member.eMailD %><br />
+      Telefon: <%= @member.phoneD  %><br />
+      Fax: <%= @member.faxD %>
+    </td>
+    <td>
 
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p><b>Buchung</b></p>
+      Zimmer: <%= @member.room %><br>
+      Unverträglichkeiten / Vegetarier: <%= @member.veggie%>
+    </td>
+    <td>
+    </td>
+  </tr>
 </table>
 
 
