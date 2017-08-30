@@ -125,40 +125,15 @@ class RoomsController < ApplicationController
 
   def createMember
     @member = Member.new(member_params)
-    if member_params[:nameR] != ""
-      @member.nameR = member_params[:nameR]
-    else
-      @member.nameR = ""
-    end
 
-    if member_params[:vornameR] != ""
-      @member.vornameR = member_params[:vornameR]
-    else
-      @member.vornameR = ""
-    end
-
-    if member_params[:vornameR] != ""
-      @member.einrichtungR = member_params[:einrichtungR]
-    else
-      @member.einrichtungR = ""
-    end
-
-    if member_params[:adresseR] != ""
-      @member.adresseR = member_params[:adresseR]
-    else
-      @member.adresseR = ""
-    end
-
-    if member_params[:ortR] != ""
-      @member.ortR = member_params[:ortR]
-    else
-      @member.ortR = ""
-    end
-
-    if member_params[:emailR] != ""
-      @member.emailR = member_params[:emailR]
-    else
-      @member.emailR = ""
+    if params[:switch] == 'privat'
+      @member.nameR = member_params[:firstName] + " " +  member_params[:lastName]
+      @member.adresseR = member_params[:street]
+      @member.ortR = member_params[:plz]
+    elsif params[:switch] == 'dienst'
+      @member.nameR = member_params[:nameCompany]
+      @member.adresseR = member_params[:streetCompany]
+      @member.ortR = member_params[:placeCompany]
     end
 
 
@@ -168,7 +143,7 @@ class RoomsController < ApplicationController
     #  Rechnungsaanschrift
     respond_to do |format|
       if @member.save
-        flash[:success] = "Neuen Teilnehmer erfolgeich eingef&uuml;gt."
+        flash[:success] = "Neuen Teilnehmer erfolgeich gespeichert."
         format.html { redirect_to "/administrator/rooms/event/members/" + @event.id.to_s }
       else
         format.html { redirect_to "/administrator/rooms/event/members/" + @event.id.to_s + "/neu/" }
@@ -537,7 +512,7 @@ class RoomsController < ApplicationController
     end
 
     def member_params
-      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :place, :job, :phone, :eMail, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :vornameR, :einrichtungR, :adresseR, :ortR, :emailR)
+      params.require(:member).permit(:gender, :firstName, :lastName, :street, :plz, :job, :phone, :eMail, :eMailD, :phoneD, :faxD, :sleep, :room, :nameCompany, :streetCompany, :placeCompany, :veggie, :accept, :event_id, :nameR, :adresseR, :ortR, :payed, :switch)
     end
 
 end
