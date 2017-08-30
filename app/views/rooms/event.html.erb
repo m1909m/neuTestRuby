@@ -24,118 +24,87 @@
 
               <div class="list-group-item">
 
-                  <table>
+                <table>
+                  <tr>
 
-                      <tr>
+                    <td><b>Status:</b></td>
 
-                        <td><small><b>Status:</b></small></td>
+                    <td ng-show="member.accept"><div style="width:10px; height:10px; border-radius:25px; background:green;position: absolute;margin-top: 18px;"></div><p style="padding-left: 15px;margin-top: 12px;">Angemeldet</p></td>
 
-                        <td ng-show="member.accept"><div style="width:10px; height:10px; border-radius:25px; background:green;position: absolute;margin-top: 18px;"></div><p style="padding-left: 15px;margin-top: 12px;">Angemeldet</p></td>
+                    <td ng-show="!member.accept" ><div style="width:10px; height:10px; border-radius:25px; background:red;position: absolute;margin-top: 18px;"></div><p style="padding-left: 15px;margin-top: 12px;">Abgemeldet</p></td>
 
-                        <td ng-show="!member.accept" ><div style="width:10px; height:10px; border-radius:25px; background:red;position: absolute;margin-top: 18px;"></div><p style="padding-left: 15px;margin-top: 12px;">Abgemeldet</p></td>
+                    <td><button class="btn btn-default" ng-show="member.accept" ng-click="abmelden(member)" target="_self">Jetzt Abmelden</button></td>
 
-                        <td><button class="btn btn-default" ng-show="member.accept" ng-click="abmelden(member)" target="_self">Jetzt Abmelden</button></td>
-
-  			<td><button class="btn btn-default" ng-show="!member.accept" ng-click="anmelden(member)" target="_self">Jetzt Anmelden</button></td>
-
-
-					  </tr>
-
-					  		<tr>
-
-                  <td>&nbsp;</td><td> </td><td> </td>
-
-                </tr>
-
-					  <tr>
-
-						  <td>
-
-                <p><b><i>{{member.gender}} {{member.firstName}} {{member.lastName}}</i></b></p>
+                    <td><button class="btn btn-default" ng-show="!member.accept" ng-click="anmelden(member)" target="_self">Jetzt Anmelden</button></td>
 
 
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <h3>{{member.gender}} {{member.firstName}} {{member.lastName}}</h3>
+                      <p>Beruf: {{ member.job }}</p>
+                    </td>
+                    <td ng-show="member.accept" style="vertical-align:text-top;"><button class="btn btn-default" ng-show="!member.sendAccept" ng-click="sendAccept(member)" target="_self">Best&auml;tigungsmail abschicken</button><p ng-show="member.sendAccept">Best&auml;tigungsmail wurde versendet</p></td>
 
-								  <p><small>Beruf: {{member.job}}</small></p>
-
-								  
-
-								<p><b><i>Kontaktdaten</i></b><br />
-
-							  <small>{{member.street}}<br />
-
-							  {{member.plz}} {{member.place}}<br />
-
-							  <div style="margin-top:15px;">Telefon: {{member.phone}}<br />
-
-								  E-Mail: {{member.eMail}}</div></small></p>
-
-					  			
-
-								  <p><b><i>Dienststelle</i></b><br />
-
-							  <small>{{member.nameCompany}}<br />
-
-						  {{member.streetCompany}}<br />
-
-							  {{member.placeCompany}}<br />
-                  E-Mail: {{member.eMailD}}<br />
-                Telefon: {{member.phoneD }}<br />
-                Fax: {{member.faxD}}</small></p>
-
-					  			
-
-								  <p><b><i>Buchung</i></b><br />
-
-							  <small>Zimmer: {{member.room}}<br />
-
-								  Unverträglichkeiten / Vegetarier: {{member.veggie}}</small></p>
+                    <td ng-show="!member.accept"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+                      <h3>Kontaktdaten</h3>
+                      {{ member.street }}<br />
+                      {{ member.plz }} {{ member.place }}<br />
+                      <br />
+                      Telefon: {{ member.phone }}<br />
+                      E-Mail:  {{ member.eMail }}
+                    </td>
+                    <td valign="top">
+                      <h3>Rechnungsanschrift</h3>
+                      {{ member.nameR }}<br />
+                      {{ member.adresseR }}<br />
+                      {{ member.ortR }}<br />
 
 
 
-						  </td>
+                      <p ng-show="member.payed"><br />Kostenstelle/Bestellkennzeichen: <%= @member.payed %></p>
 
-              <td>
+                    </td>
+                    <td valign="top">
 
-                <p><b><i></i></b></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+                      <h3>Dienststelle</h3>
+                      {{ member.nameCompany }}<br>
+                      {{ member.streetCompany }}<br>
+                      {{ member.placeCompany }}<br />
+                      E-Mail: {{ member.eMailD }}<br />
+                      Telefon: {{ member.phoneD }}<br />
+                      Fax: {{ member.faxD }}
+                    </td>
+                    <td valign="top">
 
-                <p><small> </small></p>
+                    </td>
+                    <td valign="top">
 
-                <p><b><i>Rechnungsanschrift</i></b><br />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+                      <h3>Buchung</h3>
+                      Zimmer: {{ member.room }}<br>
+                      Unverträglichkeiten / Vegetarier: {{ member.veggie }}
+                    </td>
+                    <td valign="top">
 
-		<small><i>{{member.nameR}}</i><br />
-                  {{member.adresseR}}<br />
+                    </td>
+                    <td valign="top">
 
-                    {{member.ortR}} <br />
-
-                    <div style="margin-top:15px;">Kostenstelle/Bestellkennzeichen: {{member.payed}} <br /></div></small></p>
-
-
-
-                <p><b><i></i></b><br />
-
-                  <small><br /> <br /></small></p>
-
-
-
-                <p><b><i> </i></b><br />
-
-                  <small> <br /> </small></p>
+                    </td>
+                  </tr>
+                </table>
 
 
-
-
-
-              </td>
-
-              <td ng-show="member.accept" style="vertical-align:text-top;"><button class="btn btn-default" ng-show="!member.sendAccept" ng-click="sendAccept(member)" target="_self">Bestätigungsmail abschicken</button><p ng-show="member.sendAccept">Bestätigungsmail wurde versendet</p></td>
-
-
-
-              <td ng-show="!member.accept"></td>
-
-					  </tr>
-
-                  </table>
 
               </div>
 
