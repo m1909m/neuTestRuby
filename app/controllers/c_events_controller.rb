@@ -85,7 +85,7 @@ class CEventsController < ApplicationController
     @member.save
     if @member.eMail != ""
       ContactMailer.abmelden_event(@member, @event).deliver
-      ContactMailer.abmelden_event_vkm(@member, @event).deliver
+      ContactMailer.abmelden_event_vkm_only(@member, @event).deliver
     end
 
 

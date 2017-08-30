@@ -143,7 +143,7 @@ class RoomsController < ApplicationController
     #  Rechnungsaanschrift
     respond_to do |format|
       if @member.save
-        flash[:success] = "Neuen Teilnehmer erfolgeich gespeichert."
+        flash[:success] = "Neuer Teilnehmer erfolgeich gespeichert."
         format.html { redirect_to "/administrator/rooms/event/members/" + @event.id.to_s }
       else
         format.html { redirect_to "/administrator/rooms/event/members/" + @event.id.to_s + "/neu/" }
