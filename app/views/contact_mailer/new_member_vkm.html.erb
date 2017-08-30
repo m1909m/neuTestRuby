@@ -14,11 +14,11 @@
 
 <h1>Neue Anmeldung zur Veranstaltung: "<%= @event.title %>"</h1>
 
-<p style="font-size: 1.2em;"><b>Veranstaltung: <%= @event.title %></b></p>
+<h2>Veranstaltung: <%= @event.title %></h2>
 
-<p style="font-size: 1.2em;"><b>Zeitraum: <%= @event.start.to_time.strftime("%d.%m.%Y %H:%M") %> - <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.endThird.to_time.strftime("%d.%m.%Y %H:%M") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.endSecond.to_time.strftime("%d.%m.%Y %H:%M") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y %H:%M") %> <% end %></b></p>
+<h2>Zeitraum: <%= @event.start.to_time.strftime("%d.%m.%Y %H:%M") %> - <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.endThird.to_time.strftime("%d.%m.%Y %H:%M") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.endSecond.to_time.strftime("%d.%m.%Y %H:%M") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y %H:%M") %> <% end %></h2>
 
-<p style="font-size: 1.2em;"><b>Beschreibung: <%= @event.description %></b></p>
+<h3>Beschreibung: <%= @event.description %></h3>
 
 <table>
   <tr>
