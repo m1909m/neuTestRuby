@@ -224,9 +224,13 @@ class ResumesController < ApplicationController
         @user.update_attributes(:password => user_change_params[:newpassword], :password_confirmation => user_change_params[:newpassword_confirm])
         @passNeu = @crypt.encrypt_and_sign(user_change_params[:newpassword])
         @user.passwordEncrypt = @passNeu
-        @user.save
-        flash[:success] = "Passwort wurde erfolgreich aktualisiert."
-        redirect_to "/dokumente/" + @user.email
+        if @user.save
+          flash[:success] = "Passwort wurde erfolgreich aktualisiert."
+          redirect_to "/dokumente/" + @user.email
+        else
+          flash[:error] = "Speichern war nicht erfolgreich. Bitte ein st&auml;rkeres Passwort eingeben."
+
+        end
       else
         flash[:error] = "Neue Passwoerter stimmen nicht ueber ein."
       end
