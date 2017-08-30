@@ -448,9 +448,9 @@ class RoomsController < ApplicationController
     if @members != nil && @members.length > 0
     	@members.each do |m|
    	   ContactMailer.storno_event(m, @c_event).deliver
-           ContactMailer.abmelden_event_vkm(m, @c_event).deliver
-    	end
 
+    	end
+      ContactMailer.abmelden_event_vkm(@members, @c_event).deliver
      end
 
     @accounts.destroy_all
