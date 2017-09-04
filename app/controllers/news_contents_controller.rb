@@ -9,8 +9,12 @@ class NewsContentsController < ApplicationController
   # GET /newsletters.json
 
   def index
+    if current_user.present?
 
-    @news_contents = NewsContent.order(created_at: :desc)
+      @news_contents = NewsContent.order(created_at: :desc)
+    else
+      redirect_to "/users/sign_in"
+    end
 
   #  @news_contents.sort_by{|e| e[:created_at]}
 
