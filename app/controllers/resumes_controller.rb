@@ -1,10 +1,13 @@
 class ResumesController < ApplicationController
 
   def index
-
+    if current_user.present?
     @resumes = Resume.all
 
     @users = User.with_role(:event)
+    else
+      redirect_to "/users/sign_in"
+    end
 
   end
 
