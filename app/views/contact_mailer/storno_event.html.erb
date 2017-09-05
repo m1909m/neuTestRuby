@@ -12,7 +12,7 @@
 
   <body>
 
-  <p>Sehr <% if @member.gender == "Herr" %>geehrter<% else %>geehrte <% end %><%= @member.gender %> <%= @member.lastName %>,</p>
+  <p>Sehr <% if @member.gender == "Herr" %>geehrter <% else %>geehrte <% end %><%= @member.gender %> <%= @member.lastName %>,</p>
   <p>bezugnehmend auf Ihre Anmeldung zu unserem Seminar "<%= @event.title %>" am "<% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>" teilen wir Ihnen mit, dass wir Ihre Teilnahme aufgrund nicht ausreichender Teilnehmeranmeldungen oder aufgrund Ihrer Mitteilung storniert haben.</p>
 
 
