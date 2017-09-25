@@ -100,7 +100,7 @@ class NewsContentsController < ApplicationController
 
       I18n.locale = :de
 
-      SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 2.hours).perform_later(@layout, @news_content,@aboNewsletters)
+      SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 2.hours).perform_later(@layout, @news_content)
   #  NewsMailer.news_email(@layout, @news_content, @aboNewsletters).deliver
     
   #  @news = NewsContent.find(@news_content.id)

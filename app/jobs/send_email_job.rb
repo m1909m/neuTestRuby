@@ -4,7 +4,7 @@ class SendEmailJob < ApplicationJob
 
 
 
-  def perform(newsletter, newscontent, abo_newsletters)
+  def perform(newsletter, newscontent)
 
     @aboNewsletters = AboNewsletter.all
 
