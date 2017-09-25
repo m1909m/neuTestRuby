@@ -4,6 +4,12 @@ class NewsContent < ApplicationRecord
   search_scope :search do
     attributes :title, :content
   end
+
+  def update_status
+    self.sendStatus = True
+    save!
+  end
+
   has_one :newsletter
 
   validates :title, :content, :sendtime, :newsletter_id, presence: true

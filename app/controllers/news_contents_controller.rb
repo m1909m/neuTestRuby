@@ -84,7 +84,7 @@ class NewsContentsController < ApplicationController
 
       @aboNewsletters.each do |abo|
 
-        if abo.enable == true
+        if abo.enable == TRUE
  #         I18n.locale = :de
 #	  NewsMailer.news_email_only(@layout, @news_content,abo).deliver
 
