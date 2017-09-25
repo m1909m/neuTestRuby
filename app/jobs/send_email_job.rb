@@ -6,7 +6,7 @@ class SendEmailJob < ApplicationJob
 
   def perform(newsletter, newscontent, abo_newsletters)
 
-    @aboNewsletters = abo_newsletters
+    @aboNewsletters = AboNewsletter.all
 
     @newsletter = newsletter
 
@@ -16,11 +16,15 @@ class SendEmailJob < ApplicationJob
 
     @aboNewsletters.each do |abo_newsletter|
 
+      if abo_newsletter.enable == TRUE
+
+        @abos.push(abo_newsletter)
 	
 	      NewsMailer.news_email_only(@newsletter, @newscontent, abo_newsletter).deliver
 
     # Do something later
 
+      end
 
     end
 
