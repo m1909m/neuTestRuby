@@ -6,7 +6,7 @@ class NewsContent < ApplicationRecord
   end
 
   def update_status
-    self.sendStatus = True
+    self.sendStatus = TRUE
     save!
   end
 
