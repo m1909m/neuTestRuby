@@ -844,12 +844,12 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
 
     $scope.members = Cart.membersByEvent.index({"id": id});
 
-    $interval(function(){
+    /*$interval(function(){
 
         $scope.members = Cart.membersByEvent.index({"id": id});
 
     }, 60000);
-
+*/
 
 
     $scope.abmelden= function(member) {
