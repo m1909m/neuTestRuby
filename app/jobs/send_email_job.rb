@@ -30,9 +30,9 @@ class SendEmailJob < ApplicationJob
 
     
 
-    @news = NewsContent.find(@newscontent.id)
+ #   @news = NewsContent.find(@newscontent.id)
 
-    @news.update_status
+    @newscontent.update_status
 
 
 
