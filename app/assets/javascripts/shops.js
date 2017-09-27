@@ -873,7 +873,7 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
 
         });
         $location.hash('member' + member.id);
-    //    $anchorScroll();
+        $anchorScroll();
     };
 
     $scope.anmelden= function(member) {
