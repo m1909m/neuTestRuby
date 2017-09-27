@@ -18,9 +18,9 @@
 
       <div ng-show="!members.length">Keine Teilnehmer vorhanden</div>
 
-      <div ng-repeat="member in members" style="margin: 5px;">
+      <div ng-repeat="member in members" style="margin: 5px;" id="member{{member.id}}">
 
-          <div class="list-group" id="{{member.id}}">
+          <div class="list-group" >
 
               <div class="list-group-item">
 

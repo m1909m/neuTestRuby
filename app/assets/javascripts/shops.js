@@ -865,7 +865,7 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
         }).then( function (response) {
 
             $scope.members = Cart.membersByEvent.index({"id": id});
-            $location.hash(''+member.id);
+            $location.hash('member' + member.id);
             $anchorScroll();
 
         }, function error(response) {
