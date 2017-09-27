@@ -864,7 +864,7 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
 
         }).then( function (response) {
 
-            $scope.members = Cart.membersByEvent.index({"id": id});
+           // $scope.members = Cart.membersByEvent.index({"id": id});
 
         }, function error(response) {
 
