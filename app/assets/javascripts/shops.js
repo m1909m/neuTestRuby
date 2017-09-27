@@ -837,7 +837,7 @@ shopApp.controller('eventController', function($scope, Cart) {
 shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http', '$interval', '$anchorScroll', function($scope, $location, Cart, $http, $interval, $anchorScroll) {
 
 
-
+    $anchorScroll();
     $scope.members = [];
 
     var id = (/administrator\/rooms\/event\/members\/(\d+)/.exec($location.absUrl())[1]);
