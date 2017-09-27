@@ -834,7 +834,7 @@ shopApp.controller('eventController', function($scope, Cart) {
 
 
 
-shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http', '$interval', function($scope, $location, Cart, $http, $interval) {
+shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http', '$interval', '$anchorScroll', function($scope, $location, Cart, $http, $interval, $anchorScroll) {
 
 
 
