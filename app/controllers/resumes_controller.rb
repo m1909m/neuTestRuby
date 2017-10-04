@@ -2,7 +2,7 @@ class ResumesController < ApplicationController
 
   def index
     if current_user.present?
-    @resumes = Resume.all
+    @resumes = Resume.order(:name)
 
     @users = User.with_role(:event)
     else
@@ -91,7 +91,7 @@ class ResumesController < ApplicationController
 
     @documents = []
 
-    @allDocuments = Resume.all
+    @allDocuments = Resume.order(:name)
 
     @accounts.each do |d|
 
@@ -113,7 +113,7 @@ class ResumesController < ApplicationController
 
     @documents = []
 
-    @allDocuments = Resume.all
+    @allDocuments = Resume.order(:name)
 
     @accounts.each do |d|
 
