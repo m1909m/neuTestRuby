@@ -96,7 +96,7 @@
 
     <!--  <input type="checkbox" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element_privat(true)" style="float:left;" required checked>
 -->
-      <label for="switch_privat" data-toggle="collapse" data-target="#privat" style="float:left; margin-left:5px; font-weight:normal;"><i class="more-less glyphicon glyphicon-plus"></i> Rechnungsanschrift an Privatadresse</label>
+      <label for="switch_privat" data-toggle="collapse" data-target="#privat" style="float:left; margin-left:5px; font-weight:normal;"><i class="more-less glyphicon glyphicon-chevron-right"></i> Rechnungsanschrift an Privatadresse</label>
 
       <div  style="clear:both;"></div>
     </div>
@@ -225,7 +225,7 @@
           $(e.target)
               .prev('.head')
               .find(".more-less")
-              .toggleClass('glyphicon-plus glyphicon-minus');
+              .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
       }
       $('.group').on('hidden.bs.collapse', toggleIcon);
       $('.group').on('shown.bs.collapse', toggleIcon);
