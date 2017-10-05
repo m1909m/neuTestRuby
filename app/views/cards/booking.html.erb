@@ -48,7 +48,7 @@
 
 
 
-  <form action="/cards" ng-submit="removeAllArticlesForms()" onload="toggle_form_element()" accept-charset="UTF-8" method="post">
+  <form action="/cards" ng-submit="removeAllArticlesForms()" onload="toggle_form_element(false)" accept-charset="UTF-8" method="post">
 
     <input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
@@ -57,6 +57,16 @@
     <!-- Lieferanschrift -->
 
     <input class="hidden" name="articles" value="{{cartSend}}" type="hidden"/>
+
+    <div class="form-group">
+      <div class="col-sm-12" style="margin-bottom: 10px;">
+        <label class="control-label" for="newPerson_gender">Anrede</label>
+        <div class="" id="newPerson_gender">
+          <label class="radio-inline"><input type="radio" name="newPerson[gender]" value="Frau">Frau</label>
+          <label class="radio-inline"><input type="radio" name="newPerson[gender]" value="Herr">Herr</label>
+        </div>
+      </div>
+    </div>
 
     <div class="form-group">
 
@@ -74,47 +84,60 @@
 
     </div>
 
-    <div class="form-group">
+  <!--  <div class="form-group">
 
       <label for="dienststelle">Dienststelle <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
 
       <input id="dienststelle" class="form-control" type="text" name="newPerson[dienststelle]" placeholder="Dienststelle" />
 
-    </div>
+    </div> -->
 
     <div class="form-group">
 
-      <label for="adresse">Straße und Hausnr.</label>
+      <input type="radio" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element_privat(true)" style="float:left;" required checked>
 
-      <input id="adresse" class="form-control" type="text" name="newPerson[adresse]" placeholder="Straße und Hausnr." required/>
+      <label for="switch_privat" style="float:left; margin-left:5px; font-weight:normal;"> Rechnungsanschrift an Privatadresse</label>
 
+      <div  style="clear:both;"></div>
     </div>
+
+    <div class="col-sm-12" id="privat" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em; display: none;">
+      <div class="form-group">
+
+        <label for="adresse">Straße und Hausnr.</label>
+
+        <input id="adresse" class="form-control" type="text" name="newPerson[adresse]" placeholder="Straße und Hausnr." required/>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="ort">PLZ und Ort</label>
+
+        <input id="ort" class="form-control" type="text" name="newPerson[ort]" placeholder="PLZ und Ort" required/>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="email">E-Mail-Adresse</label>
+
+        <input id="email" class="form-control" type="text" name="newPerson[email]" placeholder="E-Mail-Adresse" required/>
+
+      </div>
+    </div>
+
+
 
     <div class="form-group">
 
-      <label for="ort">PLZ und Ort</label>
-
-      <input id="ort" class="form-control" type="text" name="newPerson[ort]" placeholder="PLZ und Ort" required/>
-
-    </div>
-
-    <div class="form-group">
-
-      <label for="email">E-Mail-Adresse</label>
-
-      <input id="email" class="form-control" type="text" name="newPerson[email]" placeholder="E-Mail-Adresse" required/>
-
-    </div>
-
-    <div class="form-group">
-
-      <input type="radio" id="lieferanschrift" name="switch" value="Lieferanschrift" onclick="toggle_form_element()" style="float:left;" required checked>
+      <input type="radio" id="lieferanschrift" name="switch" value="Lieferanschrift" onclick="toggle_form_element(false)" style="float:left;" required checked>
 
       <label for="lieferanschrift" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Rechnungsanschrift</label>
 
       <div  style="clear:both;"></div>
 
-      <input type="radio" id="rechnungsanschrift" name="switch" value="Rechnungsanschrift" onclick="toggle_form_element()" style="float:left;" required>
+      <input type="radio" id="rechnungsanschrift" name="switch" value="Rechnungsanschrift" onclick="toggle_form_element(true)" style="float:left;" required>
 
       <label for="rechnungsanschrift" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
 
@@ -198,17 +221,31 @@
 
   <script type="text/javascript">
 
-    function toggle_form_element() {
+    function toggle_form_element(enable) {
 
-      if (document.getElementsByName('switch')[0].checked) {
-
-        document.getElementById('vipInputContainer').style.display = 'none';
-
-      } else {
+      if (enable) {
 
         document.getElementById('vipInputContainer').style.display = 'block';
 
+      } else {
+
+        document.getElementById('vipInputContainer').style.display = 'none';
+
       }
+
+    }
+
+    function toggle_form_element_privat(enable) {
+
+        if (enable) {
+
+            document.getElementById('privat').style.display = 'block';
+
+        } else {
+
+            document.getElementById('privat').style.display = 'none';
+
+        }
 
     }
 
