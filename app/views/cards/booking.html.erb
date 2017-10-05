@@ -84,19 +84,11 @@
 
     </div>
 
-  <!--  <div class="form-group">
-
-      <label for="dienststelle">Dienststelle <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
-
-      <input id="dienststelle" class="form-control" type="text" name="newPerson[dienststelle]" placeholder="Dienststelle" />
-
-    </div> -->
-
     <div class="form-group head">
 
     <!--  <input type="checkbox" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element_privat(true)" style="float:left;" required checked>
 -->
-      <label for="switch_privat" data-toggle="collapse" data-target="#privat" style="float:left; margin-left:5px; font-weight:normal;"><i class="more-less glyphicon glyphicon-chevron-right"></i> Rechnungsanschrift an Privatadresse</label>
+      <label data-toggle="collapse" data-target="#privat" style="float:left; margin-left:5px; font-weight:normal;"><i class="more-less glyphicon glyphicon-chevron-right"></i> Rechnungsanschrift an Privatadresse</label>
 
       <div  style="clear:both;"></div>
     </div>
@@ -122,18 +114,86 @@
 
         <label for="email">E-Mail-Adresse</label>
 
-        <input id="email" class="form-control" type="text" name="newPerson[email]" placeholder="E-Mail-Adresse" required/>
+        <input id="email" class="form-control" type="email" name="newPerson[email]" placeholder="E-Mail-Adresse" required/>
+
+      </div>
+      <div class="form-group">
+
+        <label for="phone">Telefonnummer <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+
+        <input id="phone" class="form-control" type="text" name="newPerson[phone]" placeholder="Telefonnummer" />
+
+      </div>
+    </div>
+
+    <div class="form-group head">
+
+      <!--  <input type="checkbox" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element_privat(true)" style="float:left;" required checked>
+  -->
+      <label data-toggle="collapse" data-target="#dienst" style="float:left; margin-left:5px; font-weight:normal;"><i class="more-less glyphicon glyphicon-chevron-right"></i> Rechnungsanschrift an Dienststelle</label>
+
+      <div  style="clear:both;"></div>
+    </div>
+
+    <div class="col-sm-12 collapse group" id="dienst" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
+      <div class="form-group">
+
+        <label for="dienststelle">Name der Einrichtung</label>
+
+        <input id="dienststelle" class="form-control" type="text" name="newPerson[dienststelle]" placeholder="Dienststelle" />
+
+      </div>
+      <div class="form-group">
+
+        <label for="adresseD">Straße und Hausnr.</label>
+
+        <input id="adresseD" class="form-control" type="text" name="newPerson[adresseD]" placeholder="Straße und Hausnr." required/>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="ortD">PLZ und Ort</label>
+
+        <input id="ortD" class="form-control" type="text" name="newPerson[ortD]" placeholder="PLZ und Ort" required/>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="emailD">E-Mail-Adresse</label>
+
+        <input id="emailD" class="form-control" type="email" name="newPerson[emailD]" placeholder="E-Mail-Adresse" required/>
+
+      </div>
+      <div class="form-group">
+
+        <label for="phoneD">Telefonnummer <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+
+        <input id="phoneD" class="form-control" type="text" name="newPerson[phoneD]" placeholder="Telefonnummer" />
+
+      </div>
+      <div class="form-group">
+
+        <label for="bestell">Kostenstelle / Bestellkennzeichen</label>
+
+        <input id="bestell" class="form-control" type="text" name="newPerson[bestell]" placeholder="Kostenstelle / Bestellkennzeichen" required/>
 
       </div>
     </div>
 
 
-
     <div class="form-group">
 
-      <input type="radio" id="lieferanschrift" name="switch" value="Lieferanschrift" onclick="toggle_form_element(false)" style="float:left;" required checked>
+      <input type="radio" id="lieferanschrift_privat" name="switch" value="Lieferanschrift" onclick="toggle_form_element(false)" style="float:left;" required checked>
 
-      <label for="lieferanschrift" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Rechnungsanschrift</label>
+      <label for="lieferanschrift_privat" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Privatadresse</label>
+
+      <div  style="clear:both;"></div>
+
+      <input type="radio" id="lieferanschrift_dienst" name="switch" value="Lieferanschrift" onclick="toggle_form_element(false)" style="float:left;" required checked>
+
+      <label for="lieferanschrift_dienst" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Adresse der Dienststelle</label>
 
       <div  style="clear:both;"></div>
 
@@ -220,6 +280,20 @@
 <!-- JavaScript -->
 
   <script type="text/javascript">
+      $( document ).ready(function() {
+          if ($('#adresse').val() == "" || $('#adresse').val() == null) {
+              $('#lieferanschrift_privat').attr('disabled', true);
+
+          } else {
+              $('#lieferanschrift_privat').attr('disabled', false);
+          }
+          if ($('#adresseD').val() == "" || $('#adresseD').val() == null) {
+              $('#lieferanschrift_dienst').attr('disabled', true);
+
+          } else {
+              $('#lieferanschrift_dienst').attr('disabled', false);
+          }
+      });
 
       function toggleIcon(e) {
           $(e.target)
@@ -241,20 +315,6 @@
         document.getElementById('vipInputContainer').style.display = 'none';
 
       }
-
-    }
-
-    function toggle_form_element_privat(enable) {
-
-        if (enable) {
-
-            document.getElementById('privat').style.display = 'block';
-
-        } else {
-
-            document.getElementById('privat').style.display = 'none';
-
-        }
 
     }
 
