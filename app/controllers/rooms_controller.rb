@@ -200,7 +200,7 @@ class RoomsController < ApplicationController
 
     @documents = []
 
-    @allDocuments = Resume.all
+    @allDocuments = Resume.order(:name)
     
     @users = User.with_role(:event)
 
