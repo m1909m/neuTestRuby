@@ -93,9 +93,9 @@
       <div  style="clear:both;"></div>
     </div> -->
 
-    <div class="col-sm-12" ><h2>Rechnungsanschrift an Privatadresse</h2></div>
+    <div class="col-sm-12" data-toggle="collapse" data-target="#privat" ><h2><i class="more-less glyphicon glyphicon-chevron-right"></i>Rechnungsanschrift an Privatadresse</h2></div>
 
-    <div class="col-sm-12" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
+    <div class="col-sm-12 collapse group" id="privat" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
       <div class="form-group">
 
         <label for="adresse">Straße und Hausnr.</label>
@@ -137,12 +137,12 @@
       <div  style="clear:both;"></div>
     </div> -->
 
-    <div class="col-sm-12" ><h2>Rechnungsanschrift an Dienststelle</h2></div>
+    <div class="col-sm-12" data-toggle="collapse" data-target="#dienst" ><h2><i class="more-less glyphicon glyphicon-chevron-right"></i>Rechnungsanschrift der Dienststelle</h2></div>
 
-    <div class="col-sm-12 "style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
+    <div class="col-sm-12 collapse group" id="dienst" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
       <div class="form-group">
 
-        <label for="dienststelle">Name der Einrichtung</label>
+        <label for="dienststelle">Dienststelle</label>
 
         <input id="dienststelle" class="form-control" type="text" name="newPerson[dienststelle]" placeholder="Dienststelle" required />
 
@@ -177,11 +177,20 @@
         <input id="phoneD" class="form-control" type="text" name="newPerson[phoneD]" placeholder="Telefonnummer" />
 
       </div>
+
       <div class="form-group">
 
-        <label for="bestell">Kostenstelle / Bestellkennzeichen</label>
+        <label for="faxD">Fax <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
 
-        <input id="bestell" class="form-control" type="text" name="newPerson[bestell]" placeholder="Kostenstelle / Bestellkennzeichen" required />
+        <input id="faxD" class="form-control" type="text" name="newPerson[faxD]" placeholder="Fax" />
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="bestell">Kostenstelle / Bestellkennzeichen <small style="color:#f59d0e; font-weight:normal;">(freiwillige Angabe)</small></label>
+
+        <input id="bestell" class="form-control" type="text" name="newPerson[bestell]" placeholder="Kostenstelle / Bestellkennzeichen" />
 
       </div>
     </div>
@@ -203,7 +212,7 @@
 
       <input type="radio" id="switch_rechnung" name="switch" value="rechnung" onclick="toggle_form_element(true)" style="float:left;" required>
 
-      <label for="switch_rechnung" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Rechnungsanschrift angeben</label>
+      <label for="switch_rechnung" style="float:left; margin-left:5px; font-weight:normal;"> abweichende Lieferanschrift angeben</label>
 
       <div  style="clear:both;"></div>
 
@@ -219,51 +228,28 @@
 
       <div class="form-group">
 
-        <label for="name">Name des Rechnungstr&auml;gers</label>
+        <label for="nameR">Name der Einrichtung</label>
 
-        <input id="name" type="text" name="newPerson[nameR]" class="form-control" placeholder="Name des Rechnungstr&auml;gers" />
-
-      </div>
-
-      <div class="form-group" style="display: none;">
-
-        <label for="vorname" style="display: none;">Vorname</label>
-
-        <input id="vorname" type="text" name="newPerson[vornameR]" style="display: none;" class="form-control" placeholder="Vorname" />
-
-      </div>
-
-      <div class="form-group" style="display: none;">
-
-        <label for="dienststelle" style="display: none;">Dienststelle</label>
-
-        <input id="dienststelle" class="form-control" style="display: none;" type="text" name="newPerson[dienststelleR]" placeholder="Dienststelle" />
+        <input id="nameR" type="text" name="newPerson[nameR]" class="form-control" placeholder="Name der Einrichtung" />
 
       </div>
 
       <div class="form-group">
 
-        <label for="adresse">Straße und Hausnr.</label>
+        <label for="adresseR">Straße und Hausnr.</label>
 
-        <input id="adresse" class="form-control" type="text" name="newPerson[adresseR]" placeholder="Straße und Hausnr." />
+        <input id="adresseR" class="form-control" type="text" name="newPerson[adresseR]" placeholder="Straße und Hausnr." />
 
       </div>
 
       <div class="form-group">
 
-        <label for="ort">PLZ und Ort</label>
+        <label for="ortR">PLZ und Ort</label>
 
-        <input id="ort" class="form-control" type="text" name="newPerson[ortR]" placeholder="PLZ und Ort" />
-
-      </div>
-
-      <div class="form-group" style="display: none;">
-
-        <label for="email" style="display: none;">E-Mail-Adresse</label>
-
-        <input id="email" style="display: none;" class="form-control" type="text" name="newPerson[emailR]" placeholder="E-Mail-Adresse" />
+        <input id="ortR" class="form-control" type="text" name="newPerson[ortR]" placeholder="PLZ und Ort" />
 
       </div>
+
 
     </div>
 
@@ -284,6 +270,15 @@
 <!-- JavaScript -->
 
   <script type="text/javascript">
+
+      function toggleIcon(e) {
+          $(e.target)
+              .prev('.head')
+              .find(".more-less")
+              .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+      }
+      $('.group').on('hidden.bs.collapse', toggleIcon);
+      $('.group').on('shown.bs.collapse', toggleIcon);
 
     function toggle_form_element(enable) {
 
