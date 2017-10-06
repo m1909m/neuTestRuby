@@ -47,6 +47,7 @@ class CardsController < ApplicationController
   def create
     @card = Card.new
     @newPerson = Person.new
+    @newPerson.gender = person_params[:gender]
     @newPerson.name = person_params[:name]
     @newPerson.vorname = person_params[:vorname]
 
