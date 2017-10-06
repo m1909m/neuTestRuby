@@ -49,41 +49,42 @@ class CardsController < ApplicationController
     @newPerson = Person.new
     @newPerson.name = person_params[:name]
     @newPerson.vorname = person_params[:vorname]
-    @newPerson.einrichtung = person_params[:einrichtung]
+
     @newPerson.adresse = person_params[:adresse]
     @newPerson.ort = person_params[:ort]
     @newPerson.email = person_params[:email]
+    @newPerson.phone = person_params[:phone]
 
-    if person_params[:nameR] != ""
+    @newPerson.dienststelle = person_params[:dienststelle]
+    @newPerson.adresseD = person_params[:adresseD]
+    @newPerson.ortD = person_params[:ortD]
+    @newPerson.emailD = person_params[:emailD]
+    @newPerson.phoneD = person_params[:phoneD]
+    @newPerson.bestell = person_params[:bestell]
+
+    if params[:switch] == 'privat'
+      @newPerson.nameR = person_params[:name]
+      @newPerson.vornameR = person_params[:vorname]
+      @newPerson.dienststelleR = "Privatperson"
+      @newPerson.adresseR = person_params[:adresse]
+      @newPerson.ortR = person_params[:ort]
+      @newPerson.emailR = person_params[:email]
+    elsif params[:switch] == 'dienst'
+      @newPerson.nameR = person_params[:name]
+      @newPerson.vornameR = person_params[:vorname]
+      @newPerson.dienststelleR = person_params[:dienststelle]
+      @newPerson.adresseR = person_params[:adresseD]
+      @newPerson.ortR = person_params[:ortD]
+      @newPerson.emailR = person_params[:emailD]
+    elsif params[:switch] == 'rechnung'
       @newPerson.nameR = person_params[:nameR]
-    else
-      @newPerson.nameR = @newPerson.name
-    end
-    if person_params[:vornameR] != ""
       @newPerson.vornameR = person_params[:vornameR]
-    else
-      @newPerson.vornameR = @newPerson.vorname
-    end
-    if person_params[:einrichtungR] != ""
-      @newPerson.einrichtungR = person_params[:einrichtungR]
-    else
-      @newPerson.einrichtungR = @newPerson.einrichtung
-    end
-    if person_params[:adresseR] != ""
+      @newPerson.dienststelleR = person_params[:dienststelleR]
       @newPerson.adresseR = person_params[:adresseR]
-    else
-      @newPerson.adresseR = @newPerson.adresse
-    end
-    if person_params[:ortR] != ""
       @newPerson.ortR = person_params[:ortR]
-    else
-      @newPerson.ortR = @newPerson.ort
-    end
-    if person_params[:emailR] != ""
       @newPerson.emailR = person_params[:emailR]
-    else
-      @newPerson.emailR = @newPerson.email
     end
+
     if @newPerson.save
 
 #        format.json { render :index, status: :created, location: @news }
@@ -160,7 +161,7 @@ class CardsController < ApplicationController
   end
 
   def person_params
-    params.require(:newPerson).permit(:name, :vorname, :dienststelle, :adresse, :ort, :email, :nameR, :vornameR, :@articles, :dienststelleR,:adresseR, :ortR, :emailR, :articles)
+    params.require(:newPerson).permit(:gender, :name, :vorname, :adresse, :ort, :email, :phone, :dienststelle, :adresseD, :ortD, :emailD, :phoneD, :bestell, :nameR, :vornameR, :dienststelleR, :adresseR, :ortR, :emailR, :@articles, :articles)
 
   end
 
