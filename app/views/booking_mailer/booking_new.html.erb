@@ -10,32 +10,61 @@
   Folgende Person hat bestellt:<br />
 </p>
 <table>
+  <thead>
+    <td colspan="2">Privatadresse</td>
+    <td colspan="2">Adresse der Dienstelle</td>
+  </thead>
 
   <tbody>
+    <tr>
+      <td>Anrede: </td>
+      <td><%= @person.gender %></td>
+      <td colspan="2"></td>
+    </tr>
       <tr>
         <td>Name: </td>
         <td><%= @person.name %></td>
+        <td colspan="2"></td>
       </tr>
       <tr>
         <td>Vorname: </td>
         <td><%= @person.vorname %></td>
+        <td colspan="2"></td>
       </tr>
       <tr>
+        <td colspan="2"></td>
         <td>Einrichtung: </td>
-        <td><%= @person.einrichtung%></td>
+        <td><%= @person.dienststelle %></td>
       </tr>
       <tr>
         <td>Adresse: </td>
         <td><%= @person.adresse %></td>
+        <td></td>
+        <td><%= @person.adresseD %></td>
       </tr>
       <tr>
         <td>Ort: </td>
         <td><%= @person.ort %></td>
+        <td></td>
+        <td><%= @person.ortD %></td>
       </tr>
       <tr>
         <td>Email Adresse: </td>
         <td><%= @person.email %></td>
+        <td></td>
+        <td><%= @person.emailD %></td>
       </tr>
+    <tr>
+      <td>Telefonnummer: </td>
+      <td><%= @person.phone %></td>
+      <td></td>
+      <td><%= @person.phoneD %></td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td>Kostenstelle / Bestellkennzeichen</td>
+      <td><%= @person.bestell %></td>
+    </tr>
   </tbody>
 </table>
 <p>Rechnungsadresse:</p>
@@ -52,7 +81,7 @@
   </tr>
   <tr>
     <td>Einrichtung: </td>
-    <td><%= @person.einrichtungR %></td>
+    <td><%= @person.dienststelleR %></td>
   </tr>
   <tr>
     <td>Adresse: </td>
