@@ -11,60 +11,79 @@
 </p>
 <table>
   <thead>
+  <% if @person.adresse != "" %>
     <td colspan="2" style="text-align: center"><b>Privatadresse</b></td>
+  <% else %>
     <td colspan="2" style="text-align: center"><b>Adresse der Dienstelle</b></td>
+  <% end %>
   </thead>
 
   <tbody>
     <tr>
       <td>Anrede: </td>
       <td><%= @person.gender %></td>
-      <td colspan="2"></td>
+
     </tr>
       <tr>
         <td>Name: </td>
         <td><%= @person.name %></td>
-        <td colspan="2"></td>
+
       </tr>
       <tr>
         <td>Vorname: </td>
         <td><%= @person.vorname %></td>
-        <td colspan="2"></td>
+
       </tr>
+    <% if @person.dienstelle != "" %>
       <tr>
-        <td colspan="2"></td>
         <td>Einrichtung: </td>
         <td><%= @person.dienststelle %></td>
       </tr>
+    <% end %>
       <tr>
         <td>Adresse: </td>
+        <% if @person.adresse != "" %>
         <td><%= @person.adresse %></td>
-        <td></td>
+        <% elsif @person.adresseD != "" %>
         <td><%= @person.adresseD %></td>
+        <% end %>
       </tr>
       <tr>
         <td>Ort: </td>
+        <% if @person.ort != "" %>
         <td><%= @person.ort %></td>
-        <td></td>
+        <% else %>
         <td><%= @person.ortD %></td>
+        <% end %>
       </tr>
       <tr>
         <td>Email Adresse: </td>
+        <% if @person.email != "" %>
         <td><%= @person.email %></td>
-        <td></td>
+        <% else %>
         <td><%= @person.emailD %></td>
+        <% end %>
       </tr>
     <tr>
       <td>Telefonnummer: </td>
+      <% if @person.phone != "" %>
       <td><%= @person.phone %></td>
-      <td></td>
+      <% else %>
       <td><%= @person.phoneD %></td>
+      <% end %>
     </tr>
+    <% if @person.faxD != "" %>
     <tr>
-      <td colspan="2"></td>
+      <td>Fax: </td>
+      <td><%= @person.faxD %></td>
+    </tr>
+    <% end %>
+    <% if @person.bestell != "" %>
+    <tr>
       <td>Kostenstelle / Bestellkennzeichen</td>
       <td><%= @person.bestell %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 

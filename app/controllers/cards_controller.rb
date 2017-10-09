@@ -61,6 +61,7 @@ class CardsController < ApplicationController
     @newPerson.ortD = person_params[:ortD]
     @newPerson.emailD = person_params[:emailD]
     @newPerson.phoneD = person_params[:phoneD]
+    @newPerson.faxD = person_params[:faxD]
     @newPerson.bestell = person_params[:bestell]
 
     if params[:switch] == 'privat'
