@@ -93,7 +93,7 @@
       <div  style="clear:both;"></div>
     </div> -->
 
-    <div class="col-sm-12 head" data-toggle="collapse" data-target="#privat" style="cursor: pointer;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.75em;"></i>Rechnungsanschrift an Privatadresse</h2></div>
+    <div class="col-sm-12 head" data-toggle="collapse" data-target="#privat" style="cursor: pointer;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.7em;"></i>Rechnungsanschrift an Privatadresse</h2></div>
 
     <div class="col-sm-12 collapse group" id="privat" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
       <div class="form-group">
@@ -137,7 +137,7 @@
       <div  style="clear:both;"></div>
     </div> -->
 
-    <div class="col-sm-12 head" data-toggle="collapse" data-target="#dienst" style="cursor: pointer;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.75em;"></i>Rechnungsanschrift der Dienststelle</h2></div>
+    <div class="col-sm-12 head" data-toggle="collapse" data-target="#dienst" style="cursor: pointer;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.7em;"></i>Rechnungsanschrift der Dienststelle</h2></div>
 
     <div class="col-sm-12 collapse group" id="dienst" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
       <div class="form-group">
@@ -271,14 +271,83 @@
 
   <script type="text/javascript">
 
-      function toggleIcon(e) {
+      function toggleIconPrivatHiden(e) {
+
           $(e.target)
               .prev('.head')
               .find(".more-less")
               .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+          $('#adresse').val("");
+          $('#adresse').attr("require", false);
+          $('#ort').val("");
+          $('#ort').attr("require", false);
+          $('#email').val("");
+          $('#email').attr("require", false);
+          $('#phone').val("");
       }
-      $('.group').on('hidden.bs.collapse', toggleIcon);
-      $('.group').on('shown.bs.collapse', toggleIcon);
+      function toggleIconPrivatShow(e) {
+          $('#dienst').collapse("hide");
+          $(e.target)
+              .prev('.head')
+              .find(".more-less")
+              .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+          $('#adresse').val("");
+          $('#adresse').attr("require", true);
+          $('#ort').val("");
+          $('#ort').attr("require", true);
+          $('#email').val("");
+          $('#email').attr("require", true);
+          $('#phone').val("");
+      }
+      function toggleIconDienstHiden(e) {
+          $(e.target)
+              .prev('.head')
+              .find(".more-less")
+              .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+          $('#dienststelle').val("");
+          $('#dienststelle').attr("require", false);
+          $('#adresseD').val("");
+          $('#adresseD').attr("require", false);
+          $('#ortD').val("");
+          $('#ortD').attr("require", false);
+          $('#emailD').val("");
+          $('#emailD').attr("require", false);
+          $('#phoneD').val("");
+          $('#phoneD').attr("require", false);
+          $('#faxD').val("");
+          $('#faxD').attr("require", false);
+          $('#bestell').val("");
+          $('#bestell').attr("require", false);
+      }
+      function toggleIconDienstShow(e) {
+          $('#privat').collapse("hide");
+          $(e.target)
+              .prev('.head')
+              .find(".more-less")
+              .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+          $('#dienststelle').val("");
+          $('#dienststelle').attr("require", true);
+          $('#adresseD').val("");
+          $('#adresseD').attr("require", true);
+          $('#ortD').val("");
+          $('#ortD').attr("require", true);
+          $('#emailD').val("");
+          $('#emailD').attr("require", true);
+          $('#phoneD').val("");
+          $('#phoneD').attr("require", true);
+          $('#faxD').val("");
+          $('#faxD').attr("require", true);
+          $('#bestell').val("");
+          $('#bestell').attr("require", true);
+      }
+      $('#privat').on('hidden.bs.collapse', toggleIconPrivatHiden);
+
+      $('#privat').on('shown.bs.collapse', toggleIconPrivatShow);
+
+      $('#dienst').on('hidden.bs.collapse', toggleIconDienstHiden);
+
+      $('#dienst').on('shown.bs.collapse', toggleIconDienstShow);
+
 
     function toggle_form_element(enable) {
 
