@@ -277,6 +277,9 @@
               .prev('.head')
               .find(".more-less")
               .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+          $('#switch_privat').attr("checked", false);
+          $('#switch_privat').attr("disabled", true);
+          $('#labelPrivat').css({color: "gray", cursor: "not-allowed"});
           $('#adresse').val("");
           $('#adresse').attr("required", false);
           $('#ort').val("");
@@ -288,9 +291,8 @@
       function toggleIconPrivatShow(e) {
           $('#dienst').collapse("hide");
           $('#switch_privat').attr("checked", true);
+          $('#switch_privat').attr("disabled", false);
           $('#labelPrivat').css({color: "black", cursor: "default"});
-          $('#switch_dienst').attr("disabled", true);
-          $('#labelDienst').css({color: "gray", cursor: "not-allowed"});
           $(e.target)
               .prev('.head')
               .find(".more-less")
@@ -308,6 +310,9 @@
               .prev('.head')
               .find(".more-less")
               .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+          $('#switch_dienst').attr("checked", false);
+          $('#switch_dienst').attr("disabled", true);
+          $('#labelDienst').css({color: "gray", cursor: "not-allowed"});
           $('#dienststelle').val("");
           $('#dienststelle').attr("required", false);
           $('#adresseD').val("");
@@ -326,9 +331,8 @@
       function toggleIconDienstShow(e) {
           $('#privat').collapse("hide");
           $('#switch_dienst').attr("checked", true);
+          $('#switch_dienst').attr("disabled", false);
           $('#labelDienst').css({color: "black", cursor: "default"});
-          $('#switch_privat').attr("disabled", true);
-          $('#labelPrivat').css({color: "gray", cursor: "not-allowed"});
           $(e.target)
               .prev('.head')
               .find(".more-less")
