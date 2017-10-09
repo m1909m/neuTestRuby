@@ -11,9 +11,11 @@ class BookingMailer < ActionMailer::Base
     @articles = articles
 
     @card = card
-
-    @email = person.email
-
+    if @person.email != ""
+      @email = @person.email
+    else
+      @email = @person.emailD
+    end
     @sum = 0.0
 
     @anzahl = false
@@ -38,7 +40,7 @@ class BookingMailer < ActionMailer::Base
 
     @anzahl = false
 
-    @email = "susanne.hohmann@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 
