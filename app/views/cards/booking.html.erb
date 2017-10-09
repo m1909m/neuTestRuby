@@ -306,6 +306,21 @@
           $('#email').val("");
           $('#email').attr("required", true);
           $('#phone').val("");
+          $('#phone').attr("required", false);
+          $('#dienststelle').val("");
+          $('#dienststelle').attr("required", false);
+          $('#adresseD').val("");
+          $('#adresseD').attr("required", false);
+          $('#ortD').val("");
+          $('#ortD').attr("required", false);
+          $('#emailD').val("");
+          $('#emailD').attr("required", false);
+          $('#phoneD').val("");
+          $('#phoneD').attr("required", false);
+          $('#faxD').val("");
+          $('#faxD').attr("required", false);
+          $('#bestell').val("");
+          $('#bestell').attr("required", false);
       }
       function toggleIconDienstHiden(e) {
           $(e.target)
@@ -332,6 +347,7 @@
       }
       function toggleIconDienstShow(e) {
           $('#privat').collapse("hide");
+
           $('#switch_dienst').attr("checked", true);
           $('#switch_dienst').attr("disabled", false);
           $('#labelDienst').css({color: "black", cursor: "default"});
@@ -340,6 +356,12 @@
               .prev('.head')
               .find(".more-less")
               .toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+          $('#adresse').val("");
+          $('#adresse').attr("required", false);
+          $('#ort').val("");
+          $('#ort').attr("required", false);
+          $('#email').val("");
+          $('#email').attr("required", false);
           $('#dienststelle').val("");
           $('#dienststelle').attr("required", true);
           $('#adresseD').val("");
