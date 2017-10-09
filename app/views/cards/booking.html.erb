@@ -137,7 +137,7 @@
       <div  style="clear:both;"></div>
     </div> -->
 
-    <div class="col-sm-12 head" data-toggle="collapse" data-target="#dienst" style="cursor: pointer;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.7em;"></i>Rechnungsanschrift der Dienststelle</h2></div>
+    <div class="col-sm-12 head" data-toggle="collapse" data-target="#dienst" style="cursor: pointer;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.7em;"></i>Rechnungsanschrift an Dienststelle</h2></div>
 
     <div class="col-sm-12 collapse group" id="dienst" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
       <div class="form-group">
@@ -200,13 +200,13 @@
 
       <input type="radio" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element(false)" style="float:left;" required checked>
 
-      <label for="switch_privat" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Privatadresse</label>
+      <label for="switch_privat" id="labelPrivat" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Privatadresse</label>
 
       <div  style="clear:both;"></div>
 
       <input type="radio" id="switch_dienst" name="switch" value="dienst" onclick="toggle_form_element(false)" style="float:left;" required checked>
 
-      <label for="switch_dienst" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Adresse der Dienststelle</label>
+      <label for="switch_dienst" id="labelDienst" style="float:left; margin-left:5px; font-weight:normal;"> Lieferanschrift gleich Adresse der Dienststelle</label>
 
       <div  style="clear:both;"></div>
 
@@ -287,6 +287,10 @@
       }
       function toggleIconPrivatShow(e) {
           $('#dienst').collapse("hide");
+          $('#switch_privat').attr("checked", true);
+          $('#labelPrivat').css({color: "black", cursor: "default"});
+          $('#switch_dienst').attr("disabled", true);
+          $('#labelDienst').css({color: "gray", cursor: "not-allowed"});
           $(e.target)
               .prev('.head')
               .find(".more-less")
@@ -321,6 +325,10 @@
       }
       function toggleIconDienstShow(e) {
           $('#privat').collapse("hide");
+          $('#switch_dienst').attr("checked", true);
+          $('#labelDienst').css({color: "black", cursor: "default"});
+          $('#switch_privat').attr("disabled", true);
+          $('#labelPrivat').css({color: "gray", cursor: "not-allowed"});
           $(e.target)
               .prev('.head')
               .find(".more-less")
@@ -339,6 +347,7 @@
           $('#faxD').attr("required", true);
           $('#bestell').val("");
           $('#bestell').attr("required", true);
+
       }
       $('#privat').on('hidden.bs.collapse', toggleIconPrivatHiden);
 
