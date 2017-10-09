@@ -294,6 +294,7 @@
           $('#switch_privat').attr("checked", true);
           $('#switch_privat').attr("disabled", false);
           $('#labelPrivat').css({color: "black", cursor: "default"});
+          $('#labelDienst').css({color: "gray", cursor: "not-allowed"});
           $(e.target)
               .prev('.head')
               .find(".more-less")
@@ -334,6 +335,7 @@
           $('#switch_dienst').attr("checked", true);
           $('#switch_dienst').attr("disabled", false);
           $('#labelDienst').css({color: "black", cursor: "default"});
+          $('#labelPrivat').css({color: "gray", cursor: "not-allowed"});
           $(e.target)
               .prev('.head')
               .find(".more-less")
