@@ -53,6 +53,7 @@ class CardsController < ApplicationController
 
     @newPerson.adresse = person_params[:adresse]
     @newPerson.ort = person_params[:ort]
+
     @newPerson.email = person_params[:email]
     @newPerson.phone = person_params[:phone]
 
@@ -79,9 +80,9 @@ class CardsController < ApplicationController
       @newPerson.ortR = person_params[:ortD]
       @newPerson.emailR = person_params[:emailD]
     elsif params[:switch] == 'rechnung'
-      @newPerson.nameR = person_params[:nameR]
-      @newPerson.vornameR = person_params[:vornameR]
-      @newPerson.dienststelleR = person_params[:dienststelleR]
+      @newPerson.nameR = person_params[:name]
+      @newPerson.vornameR = person_params[:vorname]
+      @newPerson.dienststelleR = person_params[:nameR]
       @newPerson.adresseR = person_params[:adresseR]
       @newPerson.ortR = person_params[:ortR]
       @newPerson.emailR = person_params[:emailR]
