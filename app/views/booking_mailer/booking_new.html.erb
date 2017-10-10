@@ -12,9 +12,9 @@
 <table>
   <thead>
   <% if @person.adresse != "" %>
-    <td colspan="2" style="text-align: center"><b>Privatadresse</b></td>
+    <td colspan="2" ><b>Privatadresse</b></td>
   <% else %>
-    <td colspan="2" style="text-align: center"><b>Adresse der Dienstelle</b></td>
+    <td colspan="2" ><b>Adresse der Dienstelle</b></td>
   <% end %>
   </thead>
 
@@ -65,10 +65,11 @@
         <% end %>
       </tr>
     <tr>
-      <td>Telefonnummer: </td>
-      <% if @person.phone != "" %>
+      <% if @person.phone != "" && @person.phone != nil %>
+          <td>Telefonnummer: </td>
       <td><%= @person.phone %></td>
-      <% else %>
+      <% elsif @person.phoneD != "" && @person.phoneD != nil %>
+          <td>Telefonnummer: </td>
       <td><%= @person.phoneD %></td>
       <% end %>
     </tr>
@@ -89,7 +90,7 @@
 
 <table>
   <thead>
-    <td colspan="2" style="text-align: center"><b>Rechnungsadresse</b></td>
+    <td colspan="2" ><b>Lieferadresse</b></td>
   </thead>
   <tbody>
   <tr>
@@ -111,10 +112,6 @@
   <tr>
     <td>Ort: </td>
     <td><%= @person.ortR %></td>
-  </tr>
-  <tr>
-    <td>Email Adresse: </td>
-    <td><%= @person.emailR %></td>
   </tr>
   </tbody>
 </table>
@@ -150,7 +147,7 @@
   <% end %>
   <tr>
     <td style="text-align: right;">Summe:</td>
-    <td><%= @sum %> €</td>
+    <td><%= @sum %>0 €</td>
   </tr>
   </tbody>
 </table>
