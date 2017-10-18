@@ -940,14 +940,14 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
         }).then( function (response) {
 
             $scope.members = response.data;
-            $scope.successMessage = "Best&auml;tigungsmail wurde an Teilnehmer \"" + member.lastName + "\" erfolgreich versendet.";
+            $scope.successMessage = "Mail wurde an Teilnehmer \"" + member.lastName + "\" erfolgreich versendet.";
             $scope.success = true;
             $scope.dismiss = false;
 
         }, function error(response) {
 
             $scope.status = response.statusText;
-            $scope.dangerMessage = "Fehler beim versenden der Best&auml;tigungsmail an Teilnehmer \"" + member.lastName + "\".";
+            $scope.dangerMessage = "Fehler beim versenden der Mail an Teilnehmer \"" + member.lastName + "\".";
             $scope.success = false;
             $scope.dismiss = true;
 
