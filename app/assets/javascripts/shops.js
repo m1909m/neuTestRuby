@@ -834,10 +834,9 @@ shopApp.controller('eventController', function($scope, Cart) {
 
 
 
-shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http', '$interval', '$anchorScroll', function($scope, $location, Cart, $http, $interval, $anchorScroll) {
+shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope', 'Cart', '$http', '$interval', function($anchorScroll, $location, $scope,  Cart, $http, $interval) {
 
 
-    $anchorScroll();
     $scope.members = [];
 
     var id = (/administrator\/rooms\/event\/members\/(\d+)/.exec($location.absUrl())[1]);
@@ -865,6 +864,16 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
         }).then( function (response) {
 
             $scope.members = Cart.membersByEvent.index({"id": id});
+            var newHash = 'anchor' + member.id;
+            if ($location.hash() !== newHash) {
+                // set the $location.hash to `newHash` and
+                // $anchorScroll will automatically scroll to it
+                $location.hash('anchor' + member.id);
+            } else {
+                // call $anchorScroll() explicitly,
+                // since $location.hash hasn't changed
+                $anchorScroll();
+            }
 
 
         }, function error(response) {
@@ -872,8 +881,7 @@ shopApp.controller('myEventController', ['$scope', '$location', 'Cart', '$http',
             $scope.status = response.statusText;
 
         });
-        $location.hash('member' + member.id);
-        $anchorScroll();
+
     };
 
     $scope.anmelden= function(member) {
