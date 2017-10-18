@@ -835,7 +835,7 @@ shopApp.controller('eventController', function($scope, Cart) {
 
 
 shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope', 'Cart', '$http', '$interval', function($anchorScroll, $location, $scope,  Cart, $http, $interval) {
-
+    $anchorScroll();
 
     $scope.members = [];
 
