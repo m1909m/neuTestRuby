@@ -14,12 +14,12 @@
 
 
     <div ng-show="success" class="alert alert-success " style="position: fixed; bottom: 0%; z-index: 5; right: 20%;">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Schließen" ng-click="closeSuccess()"><span aria-hidden="true">&times;</span></button>
+      <button type="button" class="close" aria-label="Schließen" ng-click="closeSuccess()"><span aria-hidden="true">&times;</span></button>
       {{ successMessage }}
     </div>
 
     <div ng-show="dismiss" class="alert alert-danger " style="position: fixed; bottom: 0%; z-index: 5; right: 20%;">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Schließen" ng-click="closeDanger()"><span aria-hidden="true">&times;</span></button>
+      <button type="button" class="close" aria-label="Schließen" ng-click="closeDanger()"><span aria-hidden="true">&times;</span></button>
       {{ dangerMessage }}
     </div>
 
