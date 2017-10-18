@@ -863,7 +863,7 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
         }).then( function (response) {
             var newHash = 'anchor' + member.id;
-            $scope.members = response;
+            $scope.members = response.data;
             if ($location.hash() !== newHash) {
                 // set the $location.hash to `newHash` and
                 // $anchorScroll will automatically scroll to it
