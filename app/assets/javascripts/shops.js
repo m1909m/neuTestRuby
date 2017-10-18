@@ -862,17 +862,8 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
             url: url
 
         }).then( function (response) {
-            var newHash = 'anchor' + member.id;
             $scope.members = response.data;
-            if ($location.hash() !== newHash) {
-                // set the $location.hash to `newHash` and
-                // $anchorScroll will automatically scroll to it
-                $location.hash('anchor' + member.id);
-            } else {
-                // call $anchorScroll() explicitly,
-                // since $location.hash hasn't changed
-                $anchorScroll();
-            }
+
 
 
 
@@ -896,7 +887,7 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
         }).then( function (response) {
 
-            $scope.members = Cart.membersByEvent.index({"id": id});
+            $scope.members = response.data;
 
         }, function error(response) {
 
@@ -930,7 +921,6 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
     };
 
 
-    $anchorScroll();
 
 
 }]);

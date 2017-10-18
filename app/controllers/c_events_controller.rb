@@ -111,6 +111,7 @@ class CEventsController < ApplicationController
   def anmelden
     @member = Member.find(params[:id])
     @event = CEvent.find(@member.event_id)
+    @eventid = @member.event_id
     @member.accept = true
     @member.save
 
@@ -119,6 +120,11 @@ class CEventsController < ApplicationController
       @event.free = 0
     end
     @event.save
+    respond_to do |format|
+
+      format.json { render json: Member.where( event_id: @eventid) }
+
+    end
   end
 
 
