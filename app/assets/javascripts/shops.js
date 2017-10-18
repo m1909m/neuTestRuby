@@ -865,15 +865,7 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
             $scope.members = Cart.membersByEvent.index({"id": id});
             var newHash = 'anchor' + member.id;
-            if ($location.hash() !== newHash) {
-                // set the $location.hash to `newHash` and
-                // $anchorScroll will automatically scroll to it
-                $location.hash('anchor' + member.id);
-            } else {
-                // call $anchorScroll() explicitly,
-                // since $location.hash hasn't changed
-                $anchorScroll();
-            }
+
 
 
         }, function error(response) {
@@ -881,7 +873,15 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
             $scope.status = response.statusText;
 
         });
-
+        if ($location.hash() !== newHash) {
+            // set the $location.hash to `newHash` and
+            // $anchorScroll will automatically scroll to it
+            $location.hash('anchor' + member.id);
+        } else {
+            // call $anchorScroll() explicitly,
+            // since $location.hash hasn't changed
+            $anchorScroll();
+        }
     };
 
     $scope.anmelden= function(member) {
