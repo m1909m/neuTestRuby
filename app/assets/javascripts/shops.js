@@ -863,7 +863,7 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
         }).then( function (response) {
             var newHash = 'anchor' + member.id;
-            $scope.members = Cart.membersByEvent.index({"id": id});
+            $scope.members = response;
 
 
 

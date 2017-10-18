@@ -99,6 +99,11 @@ class CEventsController < ApplicationController
     end
 
     @event.save
+    respond_to do |format|
+
+      format.json { render json: Member.where( event_id: params[:id]) }
+
+    end
 
   end
 
@@ -130,7 +135,7 @@ class CEventsController < ApplicationController
       @pass = @crypt.decrypt_and_verify(@user[0].passwordEncrypt)
       ContactMailer.accept_event(@member, @event, @room, @user[0], @pass).deliver
     else
-	logger.info("Kein Benutzer definiert")
+	    logger.info("Kein Benutzer definiert")
       ContactMailer.accept_event_not_user(@member, @event, @room).deliver
     end
 
