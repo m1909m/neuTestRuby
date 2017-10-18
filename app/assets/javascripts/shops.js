@@ -843,12 +843,26 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
     $scope.members = Cart.membersByEvent.index({"id": id});
 
-    /*$interval(function(){
+    $interval(function(){
 
-        $scope.members = Cart.membersByEvent.index({"id": id});
+        $http({
+
+            method: "GET",
+
+            url: "/c_events/" + id
+
+        }).then( function (response) {
+            $scope.members = response.data;
+            
+
+        }, function error(response) {
+
+            $scope.status = response.statusText;
+
+        });
 
     }, 60000);
-*/
+
 
 
     $scope.abmelden= function(member) {
@@ -910,7 +924,7 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
         }).then( function (response) {
 
-            $scope.members = Cart.membersByEvent.index({"id": id});
+            $scope.members = response.data;
 
         }, function error(response) {
 

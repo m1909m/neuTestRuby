@@ -133,6 +133,7 @@ class CEventsController < ApplicationController
 
     @member = Member.find(params[:id])
     @member.sendAccept = true
+    @eventid = @member.event_id
     @event = CEvent.find(@member.event_id)
     @room = Room.find(@event.room_id)
     if @event.accountName != nil && @event.accountName != ""
@@ -147,7 +148,11 @@ class CEventsController < ApplicationController
     end
 
     if @member.save
+      respond_to do |format|
 
+        format.json { render json: Member.where( event_id: @eventid) }
+
+      end
     else
 
     end
