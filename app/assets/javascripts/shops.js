@@ -841,6 +841,13 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
     $scope.members = [];
 
     var id = (/administrator\/rooms\/event\/members\/(\d+)/.exec($location.absUrl())[1]);
+    $scope.closeSuccess = function() {
+        $scope.success = false;
+    };
+    $scope.closeDanger = function() {
+        $scope.dismiss = false;
+    };
+
 
     $scope.members = Cart.membersByEvent.index({"id": id});
 
