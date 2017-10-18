@@ -835,7 +835,8 @@ shopApp.controller('eventController', function($scope, Cart) {
 
 
 shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope', 'Cart', '$http', '$interval', function($anchorScroll, $location, $scope,  Cart, $http, $interval) {
-
+    $scope.success = false;
+    $scope.dismiss = false;
 
     $scope.members = [];
 
@@ -853,7 +854,6 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
         }).then( function (response) {
             $scope.members = response.data;
-            
 
         }, function error(response) {
 
@@ -877,13 +877,15 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
 
         }).then( function (response) {
             $scope.members = response.data;
-
-
-
-
+            $scope.successMessage = "Teilnehmer \"" + member.lastName + "\" wurde erfolgreich abgemeldet.";
+            $scope.success = true;
+            $scope.dismiss = false;
         }, function error(response) {
 
             $scope.status = response.statusText;
+            $scope.dangerMessage = "Fehler beim abmelden des Teilnehmers \"" + member.lastName + "\".";
+            $scope.success = false;
+            $scope.dismiss = true;
 
         });
 
@@ -902,10 +904,16 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
         }).then( function (response) {
 
             $scope.members = response.data;
+            $scope.successMessage = "Teilnehmer \"" + member.lastName + "\" wurde erfolgreich angemeldet.";
+            $scope.success = true;
+            $scope.dismiss = false;
 
         }, function error(response) {
 
             $scope.status = response.statusText;
+            $scope.dangerMessage = "Fehler beim anmelden des Teilnehmers \"" + member.lastName + "\".";
+            $scope.success = false;
+            $scope.dismiss = true;
 
         });
 
@@ -925,10 +933,16 @@ shopApp.controller('myEventController', ['$anchorScroll', '$location', '$scope',
         }).then( function (response) {
 
             $scope.members = response.data;
+            $scope.successMessage = "Best&auml;tigungsmail wurde an Teilnehmer \"" + member.lastName + "\" erfolgreich versendet.";
+            $scope.success = true;
+            $scope.dismiss = false;
 
         }, function error(response) {
 
             $scope.status = response.statusText;
+            $scope.dangerMessage = "Fehler beim versenden der Best&auml;tigungsmail an Teilnehmer \"" + member.lastName + "\".";
+            $scope.success = false;
+            $scope.dismiss = true;
 
         });
 
