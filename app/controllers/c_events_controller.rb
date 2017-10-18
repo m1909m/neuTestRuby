@@ -77,6 +77,7 @@ class CEventsController < ApplicationController
   def abmelden
 
     @member = Member.find(params[:id])
+    @eventid = @member.event_id
 
     @event = CEvent.find(@member.event_id)
 
@@ -101,7 +102,7 @@ class CEventsController < ApplicationController
     @event.save
     respond_to do |format|
 
-      format.json { render json: Member.where( event_id: params[:id]) }
+      format.json { render json: Member.where( event_id: @eventid) }
 
     end
 
