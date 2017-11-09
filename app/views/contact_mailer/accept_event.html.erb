@@ -12,9 +12,9 @@
 
   <body>
 
-    <h1>Ihre Bestätigung zu der Veranstaltung "<%= @event.title %>"</h1>
+    <h1>Ihre Best&auml;tigung zu der Veranstaltung "<%= @event.title %>"</h1>
 
-    <p>Sehr geehrte(r) Seminarteilnehmer(in),</p>
+    <p>Sehr <% if @member.gender == "Frau" %>geehrte <% else %> geehrter <% end %><%= @member.gender %> <%= @member.lastName %> </p>
 
 <p>
 

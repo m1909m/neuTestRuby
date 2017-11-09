@@ -132,7 +132,7 @@ class CEventsController < ApplicationController
   def sendAcceptMail
 
     @member = Member.find(params[:id])
-    @member.sendAccept = true
+
     @eventid = @member.event_id
     @event = CEvent.find(@member.event_id)
     @room = Room.find(@event.room_id)
@@ -141,10 +141,36 @@ class CEventsController < ApplicationController
       @user = User.where( email: @event.accountName)
       @crypt = ActiveSupport::MessageEncryptor.new("<\xE4i\x8BB\xD1[\x98{\x9F\xDE1\xC6u\x06\xFC\xF8!\xC6\xED\xFEh\xAF\xF5\xA2\xE8\xC6jy,\x19/1\xBB\xEE\x9Es\xA3(\x971\xD3\xBFR!8\x13\xB8\xCDV\xD7\x03\xC8R@v\xF5.\xCF\xBAA\x890\xD8")
       @pass = @crypt.decrypt_and_verify(@user[0].passwordEncrypt)
-      ContactMailer.accept_event(@member, @event, @room, @user[0], @pass).deliver
+      if ContactMailer.accept_event(@member, @event, @room, @user[0], @pass).deliver
+        @member.sendAccept = true
+      else
+        respond_to do |format|
+
+          format.json { render status: :unprocessable_entity, json: {
+              success: false,
+              info: "Fehler beim Senden der Email",
+              data: {}
+          } }
+
+        end
+        #flash[:error] = "Fehler beim Senden der Email"
+      end
     else
 	    logger.info("Kein Benutzer definiert")
-      ContactMailer.accept_event_not_user(@member, @event, @room).deliver
+       if ContactMailer.accept_event_not_user(@member, @event, @room).deliver
+         @member.sendAccept = true
+       else
+         respond_to do |format|
+
+           format.json { render status: :unprocessable_entity, json: {
+               success: false,
+               info: "Fehler beim Senden der Email",
+               data: {}
+           } }
+
+         end
+        # flash[:error] = "Fehler beim Senden der Email"
+       end
     end
 
     if @member.save
