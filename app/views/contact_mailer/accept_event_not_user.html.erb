@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Ihre Best&auml;tigung zu der Veranstaltung "<%= @event.title %>"</h1>
-    <p>Sehr geehrte(r) Seminarteilnehmer(in),</p>
+    <p>Sehr <% if @member.gender == "Frau" %>geehrte <% else %> geehrter <% end %><%= @member.gender %> <%= @member.lastName %>,</p>
 <p>
   herzlichen Dank f&uuml;r die verbindliche Anmeldung zu unserem Seminar „<%= @event.title %>“ vom <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d") %> – <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d") %> – <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>. Veranstaltungsort „<%= @room.building %>“. Unsere Mehrtagesseminare beginnen am 1. Tag um 10.00 Uhr und enden dann jeweils am 2. bzw. 3. Tag um 15.00 Uhr. Unsere Tagesseminare beginnen um 9.30 Uhr und enden gegen 16.00 Uhr. </p>
 
