@@ -165,7 +165,7 @@ class ResumesController < ApplicationController
 
     end
 
-    @account = Account.where(accountName: @user.email)
+
 
     @user.destroy
 
@@ -250,7 +250,12 @@ class ResumesController < ApplicationController
   def destroy
 
     @resume = Resume.find(params[:id])
+    @accounts = Account.where(resume_id: params[:id])
+    @accounts.each do |account|
 
+      account.destroy
+
+    end
     @resume.destroy
 
     flash[:success] = "Das Dokument \"#{@resume.name}\" wurde erfolgreich gelöscht."
