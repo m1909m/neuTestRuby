@@ -153,7 +153,7 @@ class NewsContentsController < ApplicationController
   # DELETE /newsletters/1.json
 
   def destroy
-    if @news_content.sendStatus == false
+    if @news_content.sendStatus == FALSE
       if Delayed::Job.find_by_id(@news_content.jobid) != nil
         Delayed::Job.find(@news_content.jobid).destroy
       end
