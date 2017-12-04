@@ -72,46 +72,30 @@ class NewsContentsController < ApplicationController
 
     @news_content.sendStatus = false
 
-
-
+    @layout = Newsletter.find(@news_content.newsletter_id)
+    I18n.locale = :de
+    @jobId = SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 1.hours).perform_later(@layout, @news_content).job_id
+    @news_content.jobid = @jobId
     if @news_content.save
 
-      @layout = Newsletter.find(@news_content.newsletter_id)
 
-      @aboNewsletters = AboNewsletter.all
 
-      @mails = []
 
-      @aboNewsletters.each do |abo|
 
-        if abo.enable == TRUE
- #         I18n.locale = :de
-#	  NewsMailer.news_email_only(@layout, @news_content,abo).deliver
 
-   #       puts(abo.eMail)
 
-          @mails.push(abo.eMail)
+
+        #  NewsMailer.news_email(@layout, @news_content, @aboNewsletters).deliver
+
+        #  @news = NewsContent.find(@news_content.id)
+        #  @news.sendStatus = true
+        #  @news.save
+
+        respond_to do |f|
+	        flash[:success] = 'Newsletter wurde erfolgreich erstellt.'
+          f.html { redirect_to "/news_contents", success: 'Newsletter wurde erfolgreich erstellt.'}
 
         end
-
-      end
-
-      puts(@aboNewsletters)
-
-      I18n.locale = :de
-
-      SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 2.hours).perform_later(@layout, @news_content)
-  #  NewsMailer.news_email(@layout, @news_content, @aboNewsletters).deliver
-    
-  #  @news = NewsContent.find(@news_content.id)
-  #  @news.sendStatus = true
-  #  @news.save
-
-      respond_to do |f|
-	flash[:success] = 'Newsletter wurde erfolgreich erstellt.'
-        f.html { redirect_to "/news_contents", success: 'Newsletter wurde erfolgreich erstellt.'}
-
-      end
 
     else
 
