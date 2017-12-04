@@ -77,6 +77,7 @@ class NewsContentsController < ApplicationController
     @news_content.jobid = 0
     @news_content.save
     @jobId = SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 1.hours).perform_later(@layout, @news_content).job_id
+    @news_content = NewsContent.find(@news_content.id)
     @news_content.jobid = @jobId
     if @news_content.save
 
