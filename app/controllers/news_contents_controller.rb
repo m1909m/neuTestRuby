@@ -154,7 +154,7 @@ class NewsContentsController < ApplicationController
 
   def destroy
     if @news_content.sendStatus == false
-      if Delayed::Job.find_by(@news_content.jobid) != NULL
+      if Delayed::Job.find_by_id(@news_content.jobid) != nil
         Delayed::Job.find(@news_content.jobid).destroy
       end
     end
