@@ -74,11 +74,10 @@ class NewsContentsController < ApplicationController
 
     @layout = Newsletter.find(@news_content.newsletter_id)
     I18n.locale = :de
-    @news_content.jobid = 0
     @news_content.save
-    @jobId = SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 1.hours).perform_later(@layout, @news_content).job_id
+    @jobId = SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 1.hours).perform_later(@layout, @news_content)
     @news_content = NewsContent.find(@news_content.id)
-    @news_content.jobid = @jobId
+    @news_content.jobid = @jobId.id
     if @news_content.save
 
 
