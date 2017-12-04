@@ -153,7 +153,7 @@ class NewsContentsController < ApplicationController
   # DELETE /newsletters/1.json
 
   def destroy
-    SendEmailJob.find(@news_content.jobid).destroy
+    SendEmailJob.find(@news_content.jobid).delete
     @news_content.destroy
 
     respond_to do |format|
