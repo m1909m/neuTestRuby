@@ -13,7 +13,7 @@ class NewsMailer < ActionMailer::Base
 
     abo_newsletter.each { |abo|
 
-        @url = "https://vkm-rwl.de/abo_newsletter/" + String(abo.id)
+        @url = "https://vkm.marianit.de/abo_newsletter/" + String(abo.id)
 
         mail :to=> abo.eMail,
 
@@ -34,7 +34,7 @@ class NewsMailer < ActionMailer::Base
     @newsletter.newsBody = @newsletter.newsBody.gsub('CONTENT', @newscontent.content)
 
 
-    @url = "https://vkm-rwl.de/abo_newsletter/" + String(abo.id)
+    @url = "https://vkm.marianit.de/abo_newsletter/" + String(abo.id)
 
     mail :to=> abo.eMail,
 
@@ -48,7 +48,7 @@ class NewsMailer < ActionMailer::Base
 
     @abo_newsletter = abo_newsletter
 
-    @url = "https://vkm-rwl.de/newsletter/" + @abo_newsletter.id.to_s
+    @url = "https://vkm.marianit.de/newsletter/" + @abo_newsletter.id.to_s
 
     mail :to=> @abo_newsletter.eMail,
 
@@ -61,7 +61,7 @@ class NewsMailer < ActionMailer::Base
   def abmelden_email(abo_newsletter)
     @abo_newsletter = abo_newsletter
 
-    @url = "https://vkm-rwl.de/abo_newsletter/" + @abo_newsletter.id.to_s
+    @url = "https://vkm.marianit.de/abo_newsletter/" + @abo_newsletter.id.to_s
 
     mail :to=> @abo_newsletter.eMail,
 
