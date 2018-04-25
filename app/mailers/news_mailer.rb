@@ -34,9 +34,6 @@ class NewsMailer < ActionMailer::Base
     @newsletter.newsBody = @newsletter.newsBody.gsub('CONTENT', @newscontent.content)
 
 
-
-
-
     @url = "https://vkm-rwl.de/abo_newsletter/" + String(abo.id)
 
     mail :to=> abo.eMail,
@@ -59,6 +56,18 @@ class NewsMailer < ActionMailer::Base
 
          :content_type => "text/html"
 
+  end
+
+  def abmelden_email(abo_newsletter)
+    @abo_newsletter = abo_newsletter
+
+    @url = "https://vkm-rwl.de/abo_newsletter/" + @abo_newsletter.id.to_s
+
+    mail :to=> @abo_newsletter.eMail,
+
+         :subject=> "Abmeldung für den Newsletter",
+
+         :content_type => "text/html"
   end
 
 end

@@ -41,7 +41,12 @@
       <% end %>
 
 
+      <div class="col-sm-12 field form-group" style="margin: 10px 0;">
 
+        <%= f.check_box :accept, :required => true %>
+
+        <%= f.label :accept, "Ja, ich möchte von vkm-rwl in der Regel einmal wöchentlich kostenfrei einen Newsletter mit aktuellen Informationen aus dem Verband, allgemeinen und speziellen rechtlichen Informationen und über Seminar- und Fortbildungsinformationen erhalten.", class:"checkbox-inline" %>
+      </div>
       <div class="field form-group">
 
         <%= f.label :eMail, "E-Mail Adresse", class: "control-label" %>
@@ -49,6 +54,7 @@
         <%= f.email_field :eMail, class: "form-control", required: true %>
 
       </div>
+
 
 <!--
 
@@ -79,6 +85,75 @@
   <% end %>
 
 </div>
+<div class="col-sm-12">
+  <p>Hinweis: <br />Sie erhalten nach Ihrer Anmeldung eine E-Mail mit Best&auml;tigungslink. Bitte best&auml;tigen Sie diesen, damit Sie in unseren Verteiler aufgenommen werden.</p>
+  <p><strong>Abmeldung / Widerruf</strong><br />
+    Sie k&ouml;nnen Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie im Newsletter unten auf
+    den Link „Newsletter abbestellen“ klicken. Hierf&uuml;r entstehen Ihnen keine Kosten, außer die &Uuml;bermittlungskosten
+    nach Basistarifen (Kosten Ihres Internet-Anschlusses).<br />
+    Ebenso k&ouml;nnen Sie die Nutzung Ihrer Daten zu Werbezwecken jederzeit kostenfrei unter +49 231/579743 widersprechen.</p>
+</div>
+<%= form_for(@abo_newsletter, url: "/abo_newsletter/abmelden") do |f| %>
+
+    <% if @abo_newsletter.errors.any? %>
+
+        <div id="error_explanation">
+
+          <h2><%= pluralize(@abo_newsletter.errors.count, "error") %> prohibited this abo_newsletter from being saved:</h2>
+
+
+
+          <ul>
+
+            <% @abo_newsletter.errors.full_messages.each do |message| %>
+
+                <li><%= message %></li>
+
+            <% end %>
+
+          </ul>
+
+        </div>
+
+    <% end %>
+
+
+    <div class="field form-group col-xs-6">
+
+      <%= f.label :eMail, "E-Mail Adresse", class: "control-label" %>
+
+      <%= f.email_field :eMail, class: "form-control", required: true %>
+
+    </div>
+
+
+    <!--
+
+          <div class="form-group checkbox">
+
+            <label> f.check_box :enable %>Angemeldet</label>
+
+          </div> -->
+
+    <!--
+
+      <div class="field">
+
+        <#%= f.label :newsletter_id %>
+
+        <#%= f.text_field :newsletter_id %>
+
+      </div>
+
+    -->
+
+    <div class="actions">
+
+      <%= f.submit "Newsletter Abmelden", class: "btn btn-default" %>
+
+    </div>
+
+<% end %>
 
 <div class="col-sm-12">
 

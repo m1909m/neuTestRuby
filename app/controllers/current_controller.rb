@@ -23,6 +23,9 @@ class CurrentController < ApplicationController
   def agb
 
   end
+  def datenschutz
+
+  end
   def arkrwl
     @page = Page.where(accept: true, for: "Ark-Rwl").order(:id).last
   end

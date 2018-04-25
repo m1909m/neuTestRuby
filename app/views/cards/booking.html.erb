@@ -83,15 +83,6 @@
       <input id="vorname" type="text" name="newPerson[vorname]" class="form-control" placeholder="Vorname" required/>
 
     </div>
-<!--
-    <div class="form-group head">
-
-    <!--  <input type="checkbox" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element_privat(true)" style="float:left;" required checked>
--
-      <label data-toggle="collapse" data-target="#privat" style="float:left; margin-left:5px; font-weight:normal;"><i class="more-less glyphicon glyphicon-chevron-right"></i> Rechnungsanschrift an Privatadresse</label>
-
-      <div  style="clear:both;"></div>
-    </div> -->
 
     <div class="col-sm-12 head" data-toggle="collapse" data-target="#privat" style="cursor: pointer; padding-left: 0px !important;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.7em;"></i>Rechnungsanschrift an Privatadresse</h2></div>
 
@@ -127,15 +118,6 @@
 
       </div>
     </div>
-
-   <!-- <div class="form-group head">
-
-      <!--  <input type="checkbox" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element_privat(true)" style="float:left;" required checked>
-  -
-      <label data-toggle="collapse" data-target="#dienst" style="float:left; margin-left:5px; font-weight:normal;"><i class="more-less glyphicon glyphicon-chevron-right"></i> Rechnungsanschrift an Dienststelle</label>
-
-      <div  style="clear:both;"></div>
-    </div> -->
 
     <div class="col-sm-12 head" data-toggle="collapse" data-target="#dienst" style="cursor: pointer; padding-left: 0px !important;" ><h2><i class="more-less glyphicon glyphicon-chevron-right" style="font-size: 0.7em;"></i>Rechnungsanschrift an Dienststelle</h2></div>
 
@@ -253,10 +235,15 @@
 
 
     </div>
+    <div class="form-group well col-sm-12">
+
+      <input name="newPerson[accept]" value="0" type="hidden"><input required="required" value="1" name="newPerson[accept]" id="newPerson_accept" type="checkbox">
+      <label class="checkbox-inline" for="newPerson_accept">Ich stimme zu, dass der vkm-rwl mich bei R&uuml;ckfragen bez&uuml;glich meiner Bestellung per E-Mail kontaktiert.</label>
+    </div>
 
     <div class="form-group well col-sm-12" >
 
-      <p>Bitte beachten Sie, dass je nach Bestellmenge noch entsprechende Versandkosten berechnet werden.<br />Bei Rückfragen dazu, wenden Sie sich bitte an unsere Geschäftsstelle.</p>
+      <p>Bitte beachten Sie, dass je nach Bestellmenge noch entsprechende Versandkosten berechnet werden.<br />Bei R&uuml;ckfragen dazu, wenden Sie sich bitte an unsere Gesch&auml;ftsstelle.</p>
 
     </div>
 

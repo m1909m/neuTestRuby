@@ -68,24 +68,15 @@ class NewsContentsController < ApplicationController
 
     @news_content = NewsContent.new(news_content_params)
 
-
-
     @news_content.sendStatus = false
 
     @layout = Newsletter.find(@news_content.newsletter_id)
     I18n.locale = :de
     @news_content.save
-    @jobId = SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 1.hours).perform_later(@layout, @news_content)
+    SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 1.hours).perform_later(@layout, @news_content)
     @news_content = NewsContent.find(@news_content.id)
     @news_content.jobid = Delayed::Job.last.id
     if @news_content.save
-
-
-
-
-
-
-
 
         #  NewsMailer.news_email(@layout, @news_content, @aboNewsletters).deliver
 
@@ -128,12 +119,27 @@ class NewsContentsController < ApplicationController
     respond_to do |format|
 
       if @news_content.update(news_content_params)
-        flash[:success] = 'Newsletter wurde erfolgreich geändert.'
 
-        format.html { redirect_to "/news_contents", success: 'Newsletter wurde erfolgreich geändert.' }
 
-        format.json { render :show, status: :ok, location: @news_content }
+        if @news_content.sendStatus == FALSE
+          if Delayed::Job.find_by_id(@news_content.jobid) != nil
+            Delayed::Job.find(@news_content.jobid).destroy
+          end
+        end
+        @layout = Newsletter.find(@news_content.newsletter_id)
+        SendEmailJob.set(wait_until: @news_content.sendtime.to_time - 1.hours).perform_later(@layout, @news_content)
+        @news_content = NewsContent.find(@news_content.id)
+        @news_content.jobid = Delayed::Job.last.id
+        if @news_content.save
+          flash[:success] = 'Newsletter wurde erfolgreich geändert.'
+          format.html { redirect_to "/news_contents", success: 'Newsletter wurde erfolgreich geändert.' }
 
+          format.json { render :show, status: :ok, location: @news_content }
+        else
+          format.html { render :edit }
+
+          format.json { render json: @news_content.errors, status: :unprocessable_entity }
+        end
       else
 
         format.html { render :edit }

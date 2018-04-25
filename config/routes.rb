@@ -110,6 +110,7 @@ Rails.application.routes.draw do
   get '/veranstaltungen', to: "current#veranstaltungen"
 
   get 'impressum/agb/', to: "current#agb"
+  get 'impressum/datenschutz/', to: "current#datenschutz"
 
   get 'ark-rwl/', to: "current#arkrwl"
 
@@ -216,6 +217,8 @@ Rails.application.routes.draw do
 
 
   get '/abo_newsletter/:email', to: "abo_newsletters#signOutNews"
+
+  post '/abo_newsletter/abmelden', to: "abo_newsletters#signPreOut"
 
   post '/abo_newsletter/new', to: "abo_newsletters#save", as: "new_abo"
 

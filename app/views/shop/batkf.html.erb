@@ -22,7 +22,7 @@
       <tbody>
         <tr ng-repeat="article in articles">
           <td>{{article.title}}</td>
-          <td>{{article.price | currency: '€'}}</td>
+          <td>{{article.price | currency: 'Euro'}}</td>
           <td><input type="number" min="0" ng-model="article.anzahl" /></td>
         </tr>
         <tr>

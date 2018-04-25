@@ -166,6 +166,22 @@ class AboNewslettersController < ApplicationController
 
   end
 
+  def signPreOut
+
+    if AboNewsletter.where(email: abo_newsletter_abmelden_params[:email])
+      @abo_newsletter = AboNewsletter.where(email: abo_newsletter_abmelden_params[:email])
+      NewsMailer.abmelden_email(@abo_newsletter).deliver
+      flash[:success] = 'Sie erhalten in k&uuml;rze eine Email.'
+
+      format.html { redirect_to "/abo_newsletters/new" }
+    else
+      flash[:error] = 'Ihr Abo f&uuml;r den Newsletter wurde nicht abgemeldet. Bittte wenden Sie sich an vkm-rwl'
+
+      format.html { redirect_to "/abo_newsletters/new" }
+    end
+
+  end
+
 
 
   # Get /abo_newsletter/email/signOut
@@ -276,9 +292,16 @@ class AboNewslettersController < ApplicationController
 
     def abo_newsletter_params
 
-      params.require(:abo_newsletter).permit(:eMail, :enable)
+      params.require(:abo_newsletter).permit(:eMail, :enable, :accept)
 
     end
+
+    def abo_newsletter_abmelden_params
+
+      params.require(:abo_newsletter).permit(:eMail)
+
+    end
+
 
 end
 

@@ -8,7 +8,7 @@ class ContactMailer < ActionMailer::Base
 
     @contactForm = contactForm
 
-    @email = "info@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 
@@ -22,7 +22,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = diakonie
 
-    @email = "system@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 
@@ -36,7 +36,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = gbb
 
-    @email = "system@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 
@@ -50,7 +50,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = paedagogik
 
-    @email = "system@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 
@@ -64,7 +64,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = hWestfalen
 
-    @email = "system@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 
@@ -78,7 +78,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = rheinland
 
-    @email = "system@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 
@@ -167,14 +167,24 @@ class ContactMailer < ActionMailer::Base
          :subject=> "Information zur Teilnahme am Seminar \"" + @event.title + "\""
   end
 
-  def abmelden_event_vkm(member, event)
+  def abmelden_event_vkm(members, event)
+    @members = members
+    @event = event
+
+
+    mail :to=> "marian.vennewald@gds-medien.de",
+
+         :subject=> "Abmeldung der Teilnehmer am Seminar \"" + @event.title + "\" "
+  end
+
+  def abmelden_event_vkm_only(member, event)
     @member = member
     @event = event
-    @email = @member.eMail
 
-    mail :to=> "elke.vonkolken@vkm-rwl.de",
 
-         :subject=> "Abmeldung zur Teilnahme am Seminar \"" + @event.title + "\" des Teilnehmers \"" + @member.lastName + "\""
+    mail :to=> "marian.vennewald@gds-medien.de",
+
+         :subject=> "Abmeldung des Teilnehmers \"" + @member.lastName + "\" am Seminar \"" + @event.title + "\" "
   end
 
   def storno_event(member, event)
@@ -203,7 +213,7 @@ class ContactMailer < ActionMailer::Base
 
     mail :to=> @email,
 
-         :subject=> "Anmeldung einer Veranstaltung von der VKM"
+         :subject=> "Anmeldung der Veranstaltung \"" + @event.title + "\" von der VKM"
 
   end
 
@@ -217,7 +227,7 @@ class ContactMailer < ActionMailer::Base
 
     @email = @member.eMail
 
-    mail :to=> "elke.vonkolken@vkm-rwl.de",
+    mail :to=> "marian.vennewald@gds-medien.de",
 
          :subject=> "Neue Anmeldung zu der Veranstaltung \"" + @event.title + "\""
 
@@ -229,7 +239,7 @@ class ContactMailer < ActionMailer::Base
 
     @schulung = schulung
 
-    mail :to=> "susanne.hohmann@vkm-rwl.de",
+    mail :to=> "marian.vennewald@gds-medien.de",
 
          :subject=> "Neue Anfrage auf In House Schulung"
 
@@ -243,7 +253,7 @@ class ContactMailer < ActionMailer::Base
 
     @password = password
 
-    @email = "system@vkm-rwl.de"
+    @email = "marian.vennewald@gds-medien.de"
 
     mail :to=> @email,
 

@@ -64,6 +64,7 @@ class CardsController < ApplicationController
     @newPerson.phoneD = person_params[:phoneD]
     @newPerson.faxD = person_params[:faxD]
     @newPerson.bestell = person_params[:bestell]
+    @newPerson.accept = person_params[:accept]
 
     if params[:switch] == 'privat'
       @newPerson.nameR = person_params[:name]
@@ -164,7 +165,7 @@ class CardsController < ApplicationController
   end
 
   def person_params
-    params.require(:newPerson).permit(:gender, :name, :vorname, :adresse, :ort, :email, :phone, :dienststelle, :adresseD, :ortD, :emailD, :phoneD, :bestell, :nameR, :vornameR, :dienststelleR, :adresseR, :ortR, :emailR, :@articles, :articles)
+    params.require(:newPerson).permit(:gender, :name, :vorname, :adresse, :ort, :email, :phone, :dienststelle, :adresseD, :ortD, :emailD, :phoneD, :faxD, :bestell, :nameR, :vornameR, :dienststelleR, :adresseR, :ortR, :emailR, :accept, :@articles, :articles)
 
   end
 

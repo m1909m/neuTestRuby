@@ -54,15 +54,19 @@
 
     <% end %>
 
-    <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:admin)%>
+    <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:dokumente) || current_user.has_role?(:admin)%>
 
       <div class="list-group">
 
         <a href="/dokumente" class="list-group-item" target="_self">Dokumentenbereich</a>
 
       </div>
+    <% end %>
 
-      <div class="list-group">
+
+    <% if current_user.has_role?(:fortbildung) || current_user.has_role?(:admin)%>
+
+    <div class="list-group">
 
         <a href="/administrator/rooms" class="list-group-item" target="_self">Veranstaltungssystem</a>
 

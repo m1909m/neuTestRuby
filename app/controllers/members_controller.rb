@@ -13,7 +13,7 @@ class MembersController < ApplicationController
   def index
 
     @members = Member.all
-
+    @page = Page.where(accept: true, for: "Seminartermine").order(:id).last
  #   puts(DateTime.now.to_date)
 
     @events = CEvent.where(free: true).where('`c_events`.`start` >= ?', Time.now.utc).where('`c_events`.`startLogin` < ?', Time.now.utc).where('`c_events`.`endLogin` > ?', Time.now.utc).order(:start)

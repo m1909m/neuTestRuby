@@ -22,7 +22,7 @@
 
   <% end %>
 
-	  
+
 
 	<br>
     <div class="form-group">
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-	  
+
 
   <div class="form-group">
 
@@ -67,7 +67,7 @@
   
 
 <div class="col-sm-12" ><h2>Privatadresse der/des Teilnehmenden</h2></div>
-    <div class="col-sm-12" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
+<div class="col-sm-12" style="border: 0.7px solid #c2c3c1; margin-bottom: 1em;padding-top: 0.4em; padding-bottom: 0.4em;">
 
   <div class="form-group">
 
@@ -115,7 +115,7 @@
 
     <div class="col-sm-12" style="margin-bottom: 10px;">
 
-      <%= f.label :phone, "Telefonnr.", class:"control-label" %>
+      <%= f.label :phone, "Telefonnr.", class:"control-label" %> <small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small>
 
       <%= f.text_field :phone, class: "form-control", type: "text", placeholder: "Telefonnr.", :required => true %>
 
@@ -132,7 +132,7 @@
 
       <label class="control-label" for="member_nameCompany">Dienststelle</label>
 
-      <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle" %>
+      <%= f.text_field :nameCompany, class: "form-control", type: "text", placeholder: "Dienststelle", :required => true %>
 
     </div>
 
@@ -149,7 +149,7 @@
     </div>
 
   </div>
-  <div class="form-group">
+      <div class="form-group">
         <div class="col-sm-12" style="margin-bottom: 10px;">
           <label class="control-label" for="member_nameCompany">PLZ und Ort</label>
           <%= f.text_field :placeCompany, class: "form-control", type: "text", placeholder: "PLZ und Ort", :required => true %>
@@ -161,18 +161,7 @@
           <input class="form-control" placeholder="E-Mail-Adresse" name="member[eMailD]" id="member_emailD" type="email"  required="required">
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-sm-12" style="margin-bottom: 10px;">
-          <label class="control-label" for="member_telefonD">Telefonnr. <small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small></label>
-          <input class="form-control" placeholder="Telefonnr." name="member[phoneD]" id="member_telefonD" type="text">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-12" style="margin-bottom: 10px;">
-          <label class="control-label" for="member_faxD">Fax <small style="color:#f59d0e; font-weight:normal;"> (freiwillige Angabe)</small></label>
-          <input class="form-control" placeholder="Fax." name="member[faxD]" id="member_faxD" type="text">
-        </div>
-      </div>
+
 
       <div class="form-group" >
         <div class="col-sm-12" style="margin-bottom: 10px;">
@@ -237,7 +226,7 @@
 
    <div class="form-group">
 
-     <input type="radio" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element(false)" style="float:left;" required checked>
+     <input type="radio" id="switch_privat" name="switch" value="privat" onclick="toggle_form_element(false)" style="float:left;" required >
 
      <label for="switch_privat" style="float:left; margin-left:5px; font-weight:normal;"> Rechnungsanschrift gleich Privatadresse</label>
 
@@ -296,10 +285,17 @@
 
     <div class="col-sm-12 well" style="margin: 10px 0;">
 
-      <%= f.check_box :accept, :required => true %>
+      <%= f.check_box :accept, :class => "form-check-input", :required => true %>
 
-      <%= f.label :accept, "Hiermit akzeptiere ich die Seminarbedingungen (Stand: 01.01.2015) und melde mich kostenpflichtig an.", class:"checkbox-inline" %>
+      <%= f.label :accept, "Hiermit akzeptiere ich die Seminarbedingungen (Stand: 01.01.2015) und melde mich kostenpflichtig an.", class:"form-check-label" %>
+    </div>
+    <div class="col-sm-12 well" style="margin: 10px 0;">
 
+      <%= f.check_box :acceptEmail, :required => true %>
+
+      <%= f.label :acceptEmail, "Ich stimme zu, dass der vkm-rwl mir E-Mails zum Zwecke der Informationen bez&uuml;glich des Seminarsbereichs &uuml;bersenden kann: &Uuml;bersendung von Seminarterminen mit Inhalten, Einladung zu Fachverstanstaltungen, zu &uumlberstellende Dokumente aus Schulungen, Veranstaltungen, Tagungen.", class:"checkbox-inline" %>
+    </div>
+    <div class="col-sm-12 well" style="margin: 10px 0;">
       <p class="lowercase">Hier finden Sie die aktuellen <a href="/fortbildung/bedingungen" style="color:#f5aa30;">Seminarbedingungen und Teilnehmergebühren</a> . Eine Abmeldung ist mit Gebühren verbunden. <br />Ihre persönlichen Daten werden für die Abwicklung und Rechnungsstellung der Schulung gespeichert. Drei Monate nach der Schulung werden Ihre Daten automatisch aus unserem System gelöscht.</p>
 
     </div>

@@ -32,7 +32,7 @@ Sie haben folgende Artikel bestellt:</p>
       <% @sum = @sum + a['sum'] %>
       <tr>
         <td style="width: 250px;"><%= a['title'] %></td>
-        <td style="width: 50px;"><%= a['price'] %>0 €</td>
+        <td style="width: 50px;"><%= number_to_currency a['price'], unit: "&#x20ac;", separator: ",", delimiter: "", format: "%n %u"    %></td>
         <% if a['anzahl'] > 1 %>
 
           <td><%= a['anzahl'] %></td>
@@ -42,7 +42,7 @@ Sie haben folgende Artikel bestellt:</p>
   <% end %>
   <tr>
     <td style="text-align: right; width: 250px;">Summe:</td>
-    <td style="width: 50px;"><%= @sum %>0 €</td>
+    <td style="width: 50px;"><%= number_to_currency @sum, unit: "&#x20ac;", separator: ",", delimiter: "", format: "%n %u"    %></td>
     <td>inkl. MwSt., zzgl.  Porto und Versandkosten</td>
   </tr>
   </tbody>
