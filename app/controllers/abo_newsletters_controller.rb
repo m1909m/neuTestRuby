@@ -170,14 +170,19 @@ class AboNewslettersController < ApplicationController
 
     if AboNewsletter.find_by(email: abo_newsletter_abmelden_params[:email])
       @abo_newsletter = AboNewsletter.find_by(email: abo_newsletter_abmelden_params[:email])
-      NewsMailer.abmelden_email(@abo_newsletter).deliver
-      flash[:success] = 'Sie erhalten in k&uuml;rze eine Email.'
+      if NewsMailer.abmelden_email(@abo_newsletter).deliver
+      respond_to do |format|
+        flash[:success] = 'Sie erhalten in k&uuml;rze eine Email.'
 
-      format.html { redirect_to "/abo_newsletters/new" }
+        format.html { redirect_to "/abo_newsletters/new" }
+      end
+      end
     else
-      flash[:error] = 'Ihr Abo f&uuml;r den Newsletter wurde nicht abgemeldet. Bittte wenden Sie sich an vkm-rwl'
+      respond_to do |format|
+        flash[:error] = 'Ihr Abo f&uuml;r den Newsletter wurde nicht abgemeldet. Bittte wenden Sie sich an vkm-rwl'
 
-      format.html { redirect_to "/abo_newsletters/new" }
+        format.html { redirect_to "/abo_newsletters/new" }
+      end
     end
 
   end
