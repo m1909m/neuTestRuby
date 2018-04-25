@@ -168,8 +168,8 @@ class AboNewslettersController < ApplicationController
 
   def signPreOut
 
-    if AboNewsletter.find_by(email: abo_newsletter_abmelden_params[:email])
-      @abo_newsletter = AboNewsletter.find_by(email: abo_newsletter_abmelden_params[:email])
+    if AboNewsletter.find(:all, :conditions => ["email = ?", abo_newsletter_abmelden_params[:email]])
+      @abo_newsletter = AboNewsletter.find(:all, :conditions => ["email = ?", abo_newsletter_abmelden_params[:email]])
       if NewsMailer.abmelden_email(@abo_newsletter).deliver
       respond_to do |format|
         flash[:success] = 'Sie erhalten in k&uuml;rze eine Email.'
