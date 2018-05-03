@@ -8,7 +8,7 @@ class ContactMailer < ActionMailer::Base
 
     @contactForm = contactForm
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
@@ -22,7 +22,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = diakonie
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
@@ -36,7 +36,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = gbb
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
@@ -50,7 +50,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = paedagogik
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
@@ -64,7 +64,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = hWestfalen
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
@@ -78,7 +78,7 @@ class ContactMailer < ActionMailer::Base
 
     @content = rheinland
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
@@ -172,7 +172,7 @@ class ContactMailer < ActionMailer::Base
     @event = event
 
 
-    mail :to=> "marian.vennewald@gds-medien.de",
+    mail :to=> "m.vennewald@schwerte.de",
 
          :subject=> "Abmeldung der Teilnehmer am Seminar \"" + @event.title + "\" "
   end
@@ -182,7 +182,7 @@ class ContactMailer < ActionMailer::Base
     @event = event
 
 
-    mail :to=> "marian.vennewald@gds-medien.de",
+    mail :to=> "m.vennewald@schwerte.de",
 
          :subject=> "Abmeldung des Teilnehmers \"" + @member.lastName + "\" am Seminar \"" + @event.title + "\" "
   end
@@ -227,7 +227,7 @@ class ContactMailer < ActionMailer::Base
 
     @email = @member.eMail
 
-    mail :to=> "marian.vennewald@gds-medien.de",
+    mail :to=> "m.vennewald@schwerte.de",
 
          :subject=> "Neue Anmeldung zu der Veranstaltung \"" + @event.title + "\""
 
@@ -239,7 +239,7 @@ class ContactMailer < ActionMailer::Base
 
     @schulung = schulung
 
-    mail :to=> "marian.vennewald@gds-medien.de",
+    mail :to=> "m.vennewald@schwerte.de",
 
          :subject=> "Neue Anfrage auf In House Schulung"
 
@@ -253,7 +253,7 @@ class ContactMailer < ActionMailer::Base
 
     @password = password
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
