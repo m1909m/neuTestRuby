@@ -29,6 +29,12 @@
             <%= f.label :name, "Nachricht", class: "control-label" %>
             <%= f.text_area :message, class: "form-control" %>
           </div>
+      <div class="form-group" style="margin: 10px 0;">
+
+        <%= f.check_box :accept, :required => true %>
+
+        <%= f.label :accept, "Hiermit erteile ich dem vkm-rwl die Erlaubnis, mich per Mail zu kontaktieren, wenn es meine Anfrage erfordert.", class:"checkbox-inline" %>
+      </div>
       <%= f.submit "Absenden", class: "btn btn-default" %>
   <% end %>
 </div>
