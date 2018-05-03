@@ -18,11 +18,11 @@
 <br>
   <%= form_for(@contact_form) do |f| %>
       <div class="form-group">
-        <%= f.label :name, "Name", class: "control-label" %>
+        <%= f.label :name, "Name", class: "control-label", :required => true %>
         <%= f.text_field :name, class: "form-control" %>
       </div>
         <div class="form-group">
-          <%= f.label :name, "E-Mail Adresse", class: "control-label" %>
+          <%= f.label :name, "E-Mail Adresse", class: "control-label", :required => true %>
           <%= f.text_field :email, class: "form-control" %>
         </div>
           <div class="form-group">
@@ -33,7 +33,7 @@
 
         <%= f.check_box :accept, :required => true %>
 
-        <%= f.label :accept, "Hiermit erteile ich dem vkm-rwl die Erlaubnis, mich per Mail zu kontaktieren, wenn es meine Anfrage erfordert.", class:"checkbox-inline" %>
+        <%= f.label :accept, "Hiermit erteile ich dem vkm-rwl die Erlaubnis, mich per Mail zu kontaktieren, wenn es meine Anfrage erfordert.", class:"checkbox-inline", style:"margin-top: -25px;" %>
       </div>
       <%= f.submit "Absenden", class: "btn btn-default" %>
   <% end %>
