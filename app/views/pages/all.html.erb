@@ -110,6 +110,16 @@
 
       <% if current_user.has_role?(:admin) %>
 
+          <div class="list-group">
+
+            <a href="/pages/ueberuns" class="list-group-item" target="_self">&Uuml;ber uns</a>
+
+          </div>
+
+      <% end %>
+
+      <% if current_user.has_role?(:admin) %>
+
 		  <p><strong style="color:#f59d0e">Mitgliedschaft</strong></p>
 
           <div class="list-group">
