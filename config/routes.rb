@@ -83,6 +83,8 @@ Rails.application.routes.draw do
 
   get 'verband/fachgruppen', to: "verbaand#fachgruppen"
 
+  get 'verband/ueberuns', to: "verbaand#ueberuns"
+
   get '/gbb', to: "verbaand#gbb"
 
   get '/diakonie', to: "verbaand#diakonie"
