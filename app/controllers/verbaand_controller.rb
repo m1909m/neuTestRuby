@@ -74,6 +74,11 @@ class VerbaandController < ApplicationController
 
   end
 
+  def ueberuns
+    @page = Page.where(accept: true, for: "ueberuns").order(:id).last
+
+  end
+
 
 
 
