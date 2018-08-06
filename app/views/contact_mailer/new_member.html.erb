@@ -19,7 +19,7 @@
 <h3>Beschreibung: <%= @event.description %></h3>
 
 
-<p>Seminartermin: <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>
+<p>Seminartermin: <% if @event.endThird != "" && @event.endThird != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; ca. <%= @event.endThird.to_time.strftime("%d.%m.%Y") %> <% elsif @event.endSecond != "" && @event.endSecond != nil %> <%= @event.start.to_time.strftime("%d.%m.%Y") %> &ndash; ca. <%= @event.endSecond.to_time.strftime("%d.%m.%Y") %> <% else %> <%= @event.end.to_time.strftime("%d.%m.%Y") %> <% end %>
 </p>
 <p>Ihre angemeldeten Daten:</p>
 <table>
@@ -79,7 +79,7 @@
 
 <p>
 
-Sie erhalten in Kürze eine weitere Bestätigung.
+Sie erhalten 2-6 Wochen vor Seminarbeginn eine weitere Bestätigung.
 
 </p>
 
