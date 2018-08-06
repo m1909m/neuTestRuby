@@ -40,7 +40,7 @@ class BookingMailer < ActionMailer::Base
 
     @anzahl = false
 
-    @email = "marian.vennewald@gds-medien.de"
+    @email = "m.vennewald@schwerte.de"
 
     mail :to=> @email,
 
